@@ -87,5 +87,5 @@ Navigate your browser to: **http://127.0.0.1:9000/**
 
 ## 🎓 Academic Credit & Upgrade Status
 
-*Initial Basic C Version Developed by:* Eashita Juneja and Team  
+*Initial Basic C Version Developed by:* Adarsh Dwivedi   
 *Advanced Upgrade Rewrite:* Upgraded entirely to high-performance C++ by overriding raw structs with decoupled OOP, establishing complexity tracking, sealing new algorithms (Bellman, Floyd, Greedy), scaling contextual data ingest, and building a premium Glassmorphism rendering client.
