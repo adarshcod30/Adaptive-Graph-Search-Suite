@@ -1,0 +1,43 @@
+src/alg_bellmanford.c:17:5: error: use of undeclared identifier 'EdgePair'
+   17 |     EdgePair *elist = malloc(sizeof(EdgePair) * m); // EdgePair = {int u,v; double w;} — if not present replace by local struct below
+      |     ^
+src/alg_bellmanford.c:17:15: error: use of undeclared identifier 'elist'; did you mean 'else'?
+   17 |     EdgePair *elist = malloc(sizeof(EdgePair) * m); // EdgePair = {int u,v; double w;} — if not present replace by local struct below
+      |               ^~~~~
+      |               else
+src/alg_bellmanford.c:17:15: error: expected expression
+src/alg_bellmanford.c:18:10: error: use of undeclared identifier 'elist'; did you mean 'exit'?
+   18 |     if (!elist) {
+      |          ^~~~~
+      |          exit
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h:165:7: note: 'exit' declared here
+  165 | void     exit(int) __dead2;
+      |          ^
+src/alg_bellmanford.c:18:10: warning: address of function 'exit' will always evaluate to 'true' [-Wpointer-bool-conversion]
+   18 |     if (!elist) {
+      |         ~^~~~~
+src/alg_bellmanford.c:18:10: note: prefix with the address-of operator to silence this warning
+   18 |     if (!elist) {
+      |          ^
+      |          &
+src/alg_bellmanford.c:31:49: error: use of undeclared identifier 'INFINITY'
+   31 |         for (int i = 0; i < n; ++i) { dist[i] = INFINITY; prev[i] = -1; }
+      |                                                 ^
+src/alg_bellmanford.c:38:22: error: call to undeclared function 'isfinite'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   38 |                 if (!isfinite(dist[u])) continue;
+      |                      ^
+src/alg_bellmanford.c:43:45: error: call to undeclared function 'isfinite'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   43 |             for (int i = 0; i < n; ++i) if (isfinite(dist[i])) expl[ec++] = i;
+      |                                             ^
+src/alg_bellmanford.c:50:13: error: call to undeclared function 'isfinite'; ISO C99 and later do not support implicit function declarations [-Wimplicit-function-declaration]
+   50 |         if (isfinite(dist[t])) {
+      |             ^
+src/alg_bellmanford.c:66:10: error: use of undeclared identifier 'elist'; did you mean 'exit'?
+   66 |     free(elist);
+      |          ^~~~~
+      |          exit
+/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_stdlib.h:165:7: note: 'exit' declared here
+  165 | void     exit(int) __dead2;
+      |          ^
+1 warning and 9 errors generated.
+make: *** [src/alg_bellmanford.o] Error 1
