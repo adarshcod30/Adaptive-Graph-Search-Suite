@@ -17,7 +17,7 @@ ADAPTIVE_BIN = os.path.join(ROOT_DIR, "bin", "adaptive_map")
 TRACE_OUT_PATH = os.path.join(UI_DIR, "trace.json")
 GRAPH_DIR = os.path.join(ROOT_DIR, "data", "graphs")
 MAPS_DIR = os.path.join(ROOT_DIR, "data", "maps")
-ALLOWED_ALGS = {"bfs", "dfs", "dijkstra", "astar"}
+ALLOWED_ALGS = {"bfs", "dfs", "dijkstra", "astar", "greedy", "bellmanford", "floydwarshall"}
 
 def parse_multipart_bytes(body_bytes, content_type_header):
     if not content_type_header or 'boundary=' not in content_type_header:

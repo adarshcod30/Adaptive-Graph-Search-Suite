@@ -1,16 +1,12 @@
-# 🧭 MapTrace.X — Advanced C++ Routing & Serialization Engine
+# Adaptive Graph Search Suite
 
-<p align="center">
-  <img src="https://img.shields.io/badge/C%2B%2B-17-blue.svg" alt="C++17">
-  <img src="https://img.shields.io/badge/Python-3-yellow.svg" alt="Python 3">
-  <img src="https://img.shields.io/badge/UI-Glassmorphism-purple.svg" alt="UI Theme">
-</p>
+The **Adaptive Graph Search Suite** is a high-performance, full-stack educational platform designed to visualize and analyze advanced graph traversal algorithms on realistic map topologies. At its core, the project utilizes a robust **C++17 simulation engine** capable of executing a wide array of classical algorithms, including Breadth-First Search, Depth-First Search, Dijkstra’s Algorithm, A* Heuristic Search, Greedy Best-First Search, Bellman-Ford, and the Floyd-Warshall algorithm. This low-level backend ensures highly optimized calculations, actively evaluating the time constraints, space complexities, and microsecond-level execution latency of paths mapping across thousands of nodes.
 
-## 🚀 Overview
+Bridging the native C++ engine is a lightweight **Python web server** that seamlessly coordinates backend-to-frontend communication. It also manages an onboard map generator that programmatically builds and serves complex JSON graph datasets themed around Indian contexts—such as the Mumbai-Pune Expressway, massive Delhi NCR road layouts, Bengaluru traffic hubs, and structured dimensional grids. 
 
-**MapTrace.X** is an advanced, high-performance graph processing engine built in **C++17**, wrapped with a lightweight **Python 3 API Bridge**, and visualized via an elevated, interactive **HTML5 Canvas UI** featuring Glassmorphism and dark mode aesthetics. 
+The user experience is anchored by a stunning, premium **glassmorphism web interface** built natively with HTML, CSS, and Vanilla JavaScript. As algorithms execute on the backend, the UI’s interactive HTML5 `<canvas>` parses the generated computation traces to vividly animate the step-by-step search process. The visualization engine incorporates silky-smooth mouse panning, dynamic zooming, adjustable playback speeds, and eye-catching neon glows that meticulously differentiate between the active search frontiers and the final deduced shortest path. 
 
-It explores complex city-scale datasets (nodes and weighted edges mapped to 2D coordinates) calculating traversal paths and animating the programmatic behavior of famous heuristic and non-heuristic search algorithms.
+Ultimately, the Adaptive Graph Search Suite serves as a powerful, visually captivating bridge between theoretical computer science and practical software engineering, allowing users to tangibly watch and compare how algorithmic logic systematically conquers complex geographic networks.
 
 ---
 
@@ -35,16 +31,21 @@ The project is structured into three strictly decoupled layers, communicating se
 | **Depth-First (DFS)** | No | $O(V + E)$ | $O(V)$ | Exhaustive maze solving and topological sorting. |
 | **Dijkstra's Algorithm** | No | $O((V+E) \log V)$ | $O(V)$ | Optimal shortest paths routing on weighted maps. |
 | **A* Search (A-Star)** | Yes (Euclidean) | $O((V+E) \log V)$ | $O(V)$ | High-speed, directed mapping prioritizing the goal. |
+| **Greedy Best-First** | Yes (Euclidean) | $O(V \log V)$ | $O(V)$ | Extreme-speed mapping prioritizing proximity over perfect optimality. |
+| **Bellman-Ford Algorithm** | No | $O(V \cdot E)$ | $O(V)$ | Advanced routing capable of handling negative edge constraints. |
+| **Floyd-Warshall** | No | $O(V^3)$ | $O(V^2)$ | All-pairs shortest path dynamic programming matrix solver. |
 
 ---
 
 ## 🗺 Map Datasets
 
-The repository includes a Python generator (`bin/generate_maps.py`) that proceduralizes map architectures into scalable datasets.
+The repository includes a Python generator (`bin/generate_maps.py`) that proceduralizes Map architectures into scalable datasets. Current profiles include contextualized Indian topologies generated with underlying Minimum Spanning Trees to guarantee connectivity:
 
-*   `manhattan_grid` (10x10 strict lattice network)
-*   `small_city` (50 unstructured randomized nodes imitating European roads)
-*   `large_city` (200 unstructured nodes simulating a major metropolitan area)
+*   `Mumbai_Pune_Expy` (50 unstructured randomized nodes mapped to highway distances)
+*   `Delhi_NCR` (200 unstructured nodes simulating a major metropolitan area)
+*   `Bengaluru_Traffic` (400 unstructured nodes mimicking dense traffic grids)
+*   `Indian_Grid` (15x15 cartesian grid map for structured metric testing)
+*   `Small_Campus` (5x5 small lattice network for algorithm dry runs)
 
 *Data format:* `nodes.csv` (id,x,y) and `edges.csv` (u,v,w)
 
@@ -52,7 +53,7 @@ The repository includes a Python generator (`bin/generate_maps.py`) that procedu
 
 ## 🛠 Compilation & Deployment
 
-This project strictly utilizes local standard libraries.
+This project strictly utilizes local standard libraries without bloat.
 
 ### 1. Compile the C++ Core
 ```bash
@@ -60,7 +61,7 @@ make clean && make
 ```
 *Outputs compiled binary to `bin/adaptive_map`.*
 
-### 2. Generate Synthetic Road Networks (Optional, maps are pre-included)
+### 2. Generate Synthetic Road Networks
 ```bash
 python3 bin/generate_maps.py
 ```
@@ -80,11 +81,11 @@ Navigate your browser to: **http://127.0.0.1:9000/**
 *   **Interactive Canvas:** Use Scroll Wheel to Zoom. Click and drag to Pan the camera around large networks.
 *   **Search Engine:** Select a map dataset, source node, target node, and algorithm.
 *   **Execution:** C++ executes the logic in roughly ~0.5ms. The UI then consumes the `trace.json` to animate the engine's internal states.
-*   **Metrics Bar:** Highlights Time/Space constraints theoretically, alongside actual microsecond latency retrieved via `<chrono>`.
+*   **Metrics Bar:** Highlights Time/Space constraints theoretically, alongside actual microsecond latency retrieved via `<chrono>` down at the bottom frame.
 
 ---
 
 ## 🎓 Academic Credit & Upgrade Status
 
 *Initial Basic C Version Developed by:* Eashita Juneja and Team  
-*Advanced V2 Rewrite:* Upgraded entirely to high-performance C++ by overriding raw structs with decoupled OOP, establishing complexity tracking, scaling data ingest, and building a premium Glassmorphism rendering client. 
+*Advanced Upgrade Rewrite:* Upgraded entirely to high-performance C++ by overriding raw structs with decoupled OOP, establishing complexity tracking, sealing new algorithms (Bellman, Floyd, Greedy), scaling contextual data ingest, and building a premium Glassmorphism rendering client.

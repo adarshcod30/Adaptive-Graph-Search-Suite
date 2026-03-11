@@ -47,6 +47,9 @@ int main(int argc, char** argv) {
     else if (algName == "dfs") alg = std::make_unique<DFS>();
     else if (algName == "dijkstra") alg = std::make_unique<Dijkstra>();
     else if (algName == "astar") alg = std::make_unique<AStar>();
+    else if (algName == "greedy") alg = std::make_unique<Greedy>();
+    else if (algName == "bellmanford") alg = std::make_unique<BellmanFord>();
+    else if (algName == "floydwarshall") alg = std::make_unique<FloydWarshall>();
     else {
         std::cerr << "Unsupported algorithm: " << algName << std::endl;
         delete g;

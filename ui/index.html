@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Advanced Map Traversal Platform</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -11,7 +12,7 @@
   <div class="app-container">
     <aside class="sidebar glass-panel">
       <div class="logo-container">
-        <h1>MapTrace<span class="accent">.X</span></h1>
+        <h1 style="white-space: nowrap; font-size: 19px;">Adaptive Graph Search Suite</h1>
         <p class="subtitle">High-Performance C++ Mapping Engine</p>
       </div>
 
@@ -39,6 +40,9 @@
           <option value="dfs">Depth-First Search (DFS)</option>
           <option value="dijkstra">Dijkstra's Algorithm</option>
           <option value="astar">A* Heuristic Search</option>
+          <option value="greedy">Greedy Best-First Search</option>
+          <option value="bellmanford">Bellman-Ford Algorithm</option>
+          <option value="floydwarshall">Floyd-Warshall Algorithm</option>
         </select>
       </div>
 
@@ -66,6 +70,10 @@
     </aside>
 
     <main class="main-content">
+      <div class="canvas-container glass-panel">
+        <canvas id="cv" width="1200" height="800"></canvas>
+      </div>
+
       <div class="metrics-bar">
         <div class="metric-card glass-panel">
           <span class="metric-label">Algorithm</span>
@@ -83,10 +91,6 @@
           <span class="metric-label">Engine Exec. Time</span>
           <strong id="m-exec-time">--</strong>
         </div>
-      </div>
-
-      <div class="canvas-container glass-panel">
-        <canvas id="cv" width="1200" height="800"></canvas>
       </div>
     </main>
   </div>

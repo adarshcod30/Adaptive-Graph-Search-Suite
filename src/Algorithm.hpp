@@ -53,6 +53,11 @@ public:
     SearchResult run(const Graph& graph, int sourceId, int targetId) override;
 };
 
+class FloydWarshall : public Algorithm {
+public:
+    SearchResult run(const Graph& graph, int sourceId, int targetId) override;
+};
+
 class BidirectionalBFS : public Algorithm {
 public:
     SearchResult run(const Graph& graph, int sourceId, int targetId) override;

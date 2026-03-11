@@ -39,7 +39,10 @@ window.addEventListener('resize', resizeCanvas);
 
 function log(s) {
     const time = new Date().toLocaleTimeString();
-    logEl.textContent = `[${time}] ${s}\n${logEl.textContent}`;
+    const currentLines = logEl.textContent.split('\n').filter(l => l.trim() !== '');
+    currentLines.unshift(`[${time}] ${s}`);
+    if(currentLines.length > 5) currentLines.length = 5;
+    logEl.textContent = currentLines.join('\n');
 }
 
 function clearFrames() {
@@ -99,7 +102,8 @@ function draw() {
     
     // Draw edges
     ctx.lineWidth = 1 * Math.max(0.5, camera.zoom/20);
-    ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+    ctx.shadowBlur = 0;
     ctx.beginPath();
     graph.edges.forEach(e => {
         const a = graph.nodes[e.u], b = graph.nodes[e.v];
@@ -109,19 +113,19 @@ function draw() {
     });
     ctx.stroke();
 
-    const nodeSize = Math.max(2, 6 * Math.min(1, camera.zoom/20));
-    const showText = camera.zoom > 15;
+    const nodeSize = Math.max(1.5, 4 * Math.min(1, camera.zoom/20));
+    const showText = camera.zoom > 10;
 
     // Base nodes
     graph.nodes.forEach(n => {
         const cx = tx(n.x), cy = ty(n.y);
         ctx.beginPath();
-        ctx.fillStyle = 'rgba(255,255,255,0.2)';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
         ctx.arc(cx, cy, nodeSize, 0, Math.PI*2);
         ctx.fill();
         
         if(showText) {
-            ctx.fillStyle = 'rgba(255,255,255,0.5)';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
             ctx.font = '10px Inter';
             ctx.fillText(n.id, cx + nodeSize + 4, cy + 3);
         }
@@ -130,28 +134,36 @@ function draw() {
     if(frames.length > 0) {
         const f = frames[Math.max(0, Math.min(frameIdx, frames.length-1))];
         
-        // Explored
+        // Explored nodes glow (Yellow/Orange)
         if(f.explored && f.explored.length > 0) {
-            ctx.fillStyle = 'rgba(88, 166, 255, 0.4)'; // Accent blue weak
+            ctx.fillStyle = 'rgba(251, 146, 60, 0.6)';
+            ctx.shadowColor = 'rgba(251, 146, 60, 0.8)';
+            ctx.shadowBlur = 8;
             f.explored.forEach(id => {
                 const n = graph.nodes[id]; if(!n) return;
                 ctx.beginPath(); ctx.arc(tx(n.x), ty(n.y), nodeSize * 1.5, 0, Math.PI*2); ctx.fill();
             });
+            ctx.shadowBlur = 0;
         }
         
-        // Frontier
+        // Frontier nodes intense pulse (Pink/Magenta)
         if(f.frontier && f.frontier.length > 0) {
-            ctx.fillStyle = 'rgba(248, 81, 73, 0.8)'; // Red active
+            ctx.fillStyle = 'rgba(217, 70, 239, 0.9)';
+            ctx.shadowColor = 'rgba(217, 70, 239, 1)';
+            ctx.shadowBlur = 12;
             f.frontier.forEach(id => {
                 const n = graph.nodes[id]; if(!n) return;
                 ctx.beginPath(); ctx.arc(tx(n.x), ty(n.y), nodeSize * 2, 0, Math.PI*2); ctx.fill();
             });
+            ctx.shadowBlur = 0;
         }
         
-        // Path
+        // Path rendering with neon effect (Bright Green)
         if(f.path && f.path.length > 0) {
-            ctx.strokeStyle = '#2ea043'; // Success green
-            ctx.lineWidth = Math.max(3, camera.zoom/5);
+            ctx.strokeStyle = '#22c55e';
+            ctx.shadowColor = '#22c55e';
+            ctx.shadowBlur = 15;
+            ctx.lineWidth = Math.max(3, camera.zoom/4);
             ctx.beginPath();
             f.path.forEach((id, i) => {
                 const n = graph.nodes[id]; if(!n) return;
@@ -160,11 +172,13 @@ function draw() {
             ctx.stroke();
             
             // Path nodes
-            ctx.fillStyle = '#2ea043';
+            ctx.fillStyle = '#ffffff';
+            ctx.shadowBlur = 20;
             f.path.forEach(id => {
                 const n = graph.nodes[id]; if(!n) return;
-                ctx.beginPath(); ctx.arc(tx(n.x), ty(n.y), nodeSize * 2, 0, Math.PI*2); ctx.fill();
+                ctx.beginPath(); ctx.arc(tx(n.x), ty(n.y), nodeSize * 2.5, 0, Math.PI*2); ctx.fill();
             });
+            ctx.shadowBlur = 0;
         }
     }
 }
@@ -175,22 +189,23 @@ function play() {
     timer = setInterval(() => {
         frameIdx++;
         if(frameIdx >= frames.length) { clearInterval(timer); timer = null; }
-        draw();
+        requestAnimationFrame(draw);
     }, parseInt(speed.value, 10));
 }
 
 function pause() { if(timer) { clearInterval(timer); timer = null; } }
-function step() { if(frames.length===0) return; pause(); frameIdx = Math.min(frames.length-1, frameIdx+1); draw(); }
+function step() { if(frames.length===0) return; pause(); frameIdx = Math.min(frames.length-1, frameIdx+1); requestAnimationFrame(draw); }
 
 async function runOnBackend() {
     pause();
+    clearFrames();
     const alg = algSel.value;
     const mId = mapSelect.value;
     const s = Number(sourceInput.value);
     const t = Number(targetInput.value);
 
     const payload = { alg: alg, map: mId, source: s, target: t };
-    log(`Executing C++ Engine (${alg}) on route ${s} -> ${t} [Map: ${mId}]...`);
+    log(`Executing ${alg} on route ${s} -> ${t} [${mId}]...`);
     
     try {
         const res = await fetch('/run', {
@@ -212,33 +227,45 @@ async function runOnBackend() {
             mSpaceC.textContent = meta.spaceComplexity || '--';
             mExecTime.textContent = (meta.executionTimeMs ? meta.executionTimeMs.toFixed(3) : '0.000') + ' ms';
             
-            log(`Success! Frames generated: ${frames.length}`);
-            clearFrames();
+            if (meta.success === false) {
+                log(`Failed: Route ${s} -> ${t} unreachable or nodes don't exist in ${mId}.`);
+            } else {
+                log(`Success! Animated ${frames.length} search frames.`);
+            }
+            
             resizeCanvas();
-            draw();
-            play(); // Auto-play
+            requestAnimationFrame(draw);
+            
+            if (frames.length > 0 && meta.success) {
+                play(); // Auto-play only if valid path explored
+            }
         } else {
-            log("Engine Error:\n" + String(obj.stdout) + "\n" + String(obj.stderr));
+            log("Engine Error: See console backend for C++ compilation or timeout issues.");
         }
     } catch(e) {
         log("Connection error: " + e);
     }
 }
 
-// Mouse panning & zooming
+// Mouse panning & zooming with smoother tracking
+let drawPending = false;
 CV.addEventListener('mousedown', e => { isDragging = true; dragStart = { x: e.offsetX, y: e.offsetY }; });
 CV.addEventListener('mousemove', e => {
     if(!isDragging) return;
     camera.x += (e.offsetX - dragStart.x);
     camera.y += (e.offsetY - dragStart.y);
     dragStart = { x: e.offsetX, y: e.offsetY };
-    draw();
+    
+    if(!drawPending) {
+        drawPending = true;
+        requestAnimationFrame(() => { draw(); drawPending = false; });
+    }
 });
 CV.addEventListener('mouseup', () => isDragging = false);
 CV.addEventListener('mouseleave', () => isDragging = false);
 CV.addEventListener('wheel', e => {
     e.preventDefault();
-    const zoomIntensity = 0.1;
+    const zoomIntensity = 0.05; // smoother scrolling
     const wheel = e.deltaY < 0 ? 1 : -1;
     const zoomFactor = Math.exp(wheel * zoomIntensity);
     
@@ -250,7 +277,10 @@ CV.addEventListener('wheel', e => {
     camera.y = mouseY - (mouseY - camera.y) * zoomFactor;
     camera.zoom *= zoomFactor;
     
-    draw();
+    if(!drawPending) {
+        drawPending = true;
+        requestAnimationFrame(() => { draw(); drawPending = false; });
+    }
 });
 
 // Bindings

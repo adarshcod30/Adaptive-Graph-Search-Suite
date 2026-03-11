@@ -96,18 +96,23 @@ select:focus, input[type="number"]:focus {
 /* Buttons */
 .btn-primary {
   padding: 12px;
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent), #2a50a1);
   color: #fff;
   border: none;
   border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease-in-out;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(88, 166, 255, 0.2);
 }
-.btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); }
+.btn-primary:hover { 
+  background: linear-gradient(135deg, var(--accent-hover), #1f3b7a);
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 16px rgba(88, 166, 255, 0.4);
+}
 
 .playback-controls { margin-top: auto; border-top: 1px solid var(--border-color); padding-top: 20px; }
 .btn-group { display: flex; gap: 8px; }
