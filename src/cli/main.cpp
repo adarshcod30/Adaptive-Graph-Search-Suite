@@ -444,7 +444,9 @@ int cmd_bench(const Args& a) {
         const auto& g = loaded.value().graph;
         const auto s = agss::NodeId{0};
         const auto t = static_cast<agss::NodeId>(g.num_nodes() - 1);
-        const auto name = dir.substr(dir.find_last_of('/') + 1);
+        // Accept either separator: Windows callers pass backslashes.
+        const auto cut = dir.find_last_of("/\\");
+        const auto name = cut == std::string::npos ? dir : dir.substr(cut + 1);
 
         if (!md) {
             std::cout << "\n"
