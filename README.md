@@ -6,6 +6,10 @@ Ten routing algorithms, six network-analysis algorithms, multi-modal road + metr
 routing across every operational metro system in India, and a browser visualiser —
 all built on a cache-friendly CSR graph that handles real city-scale data.
 
+**[Try it in your browser →](https://adarshcod30.github.io/Adaptive-Graph-Search-Suite/)**
+The C++ engine is compiled to WebAssembly and runs entirely in the page: no
+server, no install, nothing uploaded.
+
 `graph-algorithms` · `pathfinding` · `cpp20` · `dijkstra` · `astar` · `openstreetmap`
 · `route-planning` · `transit` · `india` · `betweenness-centrality` · `visualization`
 
@@ -25,6 +29,7 @@ all built on a cache-friendly CSR graph that handles real city-scale data.
 - [Correctness](#correctness)
 - [Project structure](#project-structure)
 - [Testing](#testing)
+- [Running it in the browser](#running-it-in-the-browser)
 - [Deployment](#deployment)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
@@ -69,6 +74,7 @@ shortest-path query cannot:
 | **Delta traces** | Θ(V + E) event stream instead of Θ(V²) frame snapshots |
 | **Geodesy done right** | Haversine and equirectangular metrics; admissible A\* on lat/lon |
 | **k-d tree** | O(log V) nearest-node snapping for coordinate queries |
+| **Runs in the browser** | The whole engine compiled to WebAssembly, 350 KB, no backend |
 
 ## Tech stack
 
@@ -79,8 +85,9 @@ shortest-path query cannot:
 | Tests | Custom 120-line header harness; 60 cases, 4,119 assertions |
 | CI | GitHub Actions — gcc/clang/MSVC on Linux, macOS, Windows; ASan + UBSan; differential correctness; data reproducibility |
 | Data | OpenStreetMap via Overpass API; Python 3.9+ import scripts (stdlib only) |
+| Browser | Emscripten → WebAssembly; string-in/string-out JSON boundary |
 | UI | Vanilla JS, HTML5 Canvas, CSS glassmorphism — no framework, no bundler |
-| Dev server | Python `http.server`, stdlib only |
+| Dev server | Python `http.server`, stdlib only (optional; the WASM build needs none) |
 
 ---
 
@@ -446,8 +453,12 @@ again reads as an algorithm problem.
 │   ├── maps/                   5 synthetic maps (committed, reproducible)
 │   ├── transit/                922 stations, 1,900 links (committed)
 │   └── cities/                 OSM imports (gitignored, fetched on demand)
-├── ui/                         Canvas visualiser
-└── server.py                   Development bridge
+├── web/                        Browser app (WebAssembly)
+│   ├── index.html              Shell
+│   ├── app.js                  Delta-trace replay, rendering, interaction
+│   └── engine/                 Generated .wasm + glue (gitignored)
+├── ui/                         Legacy server-backed visualiser
+└── server.py                   Development bridge (optional)
 ```
 
 ## Testing
@@ -464,8 +475,57 @@ make sanitize
 make verify
 ```
 
+```bash
+node tests/wasm_smoke.mjs
+```
+
 `make sanitize` rebuilds under AddressSanitizer and UndefinedBehaviorSanitizer and
-runs the whole suite; the same job runs in CI on every push.
+runs the whole suite; the same job runs in CI on every push. The WASM smoke test
+exercises every exported entry point and asserts the browser engine agrees with
+the native one, so a broken WebAssembly build cannot reach the published demo.
+
+## Running it in the browser
+
+```bash
+emcmake cmake -S . -B build/wasm -DCMAKE_BUILD_TYPE=Release -DAGSS_BUILD_TESTS=OFF -DAGSS_BUILD_CLI=OFF
+```
+
+```bash
+cmake --build build/wasm --parallel && python3 -m http.server 8080
+```
+
+Then open <http://127.0.0.1:8080/web/>.
+
+### Why WebAssembly replaced the Python bridge rather than fixing it
+
+The old flow was browser → Python server → `subprocess` → binary → shared file
+on disk → back. Two of its defects were only visible with more than one user:
+
+- the `map` parameter was joined onto the maps directory unnormalised, so `../`
+  read graphs from anywhere on disk;
+- every request wrote to one fixed `ui/trace.json` under a threading server.
+  Measured under ten concurrent requests, **five returned no trace at all and
+  three returned another client's algorithm** — zero correct.
+
+Both are now *unrepresentable* rather than patched: with the engine inside the
+page there is no subprocess, no filesystem path from user input, and no shared
+file, because each tab owns its own engine instance and its own memory. The
+`server.py` bridge is still there for local development and both defects are
+fixed in it too, but nothing in the published demo depends on it.
+
+### What the browser build costs
+
+| | Native | WebAssembly |
+|---|---|---|
+| A\* on 47,828-node Delhi | 0.29 ms | ~2 ms |
+| Engine size | 326 KB binary | 350 KB `.wasm` + 63 KB glue |
+| Install steps | clone, toolchain, build | open a link |
+
+One caveat the UI states honestly: browsers clamp `performance.now()` to about
+0.1 ms as a Spectre mitigation, and the engine's `steady_clock` rides on it. A
+single search on a small graph therefore reports either 0.0 or 0.1 ms and
+nothing between, so the page shows `< 0.1 ms` rather than a precise-looking
+zero, and **Race all** times a batch of runs to amortise the clamp away.
 
 ## Deployment
 
@@ -476,7 +536,8 @@ development server for the browser UI.
 |---|---|
 | Local CLI | `make -j` → `./bin/agss` |
 | Local UI | `python3 server.py` → <http://127.0.0.1:9000/> |
-| CI | GitHub Actions on push and PR — build matrix, sanitizers, differential correctness, data-reproducibility check, benchmark table published to the job summary |
+| Live demo | GitHub Pages, rebuilt from source on every push to `main` — the WASM smoke test gates publication |
+| CI | GitHub Actions on push and PR — build matrix, sanitizers, differential correctness, data-reproducibility check, WASM smoke test, benchmark table published to the job summary |
 | Library | `cmake --install` exports `agss_core` plus headers for `find_package`/`FetchContent` |
 
 `server.py` binds to loopback and is a development tool, not a hardened public
@@ -484,7 +545,7 @@ service.
 
 ## Roadmap
 
-- [ ] WebAssembly build so the visualiser is a link, not a clone
+- [x] WebAssembly build so the visualiser is a link, not a clone
 - [ ] Contraction Hierarchies and ALT landmark preprocessing
 - [ ] Time-dependent edge weights (rush-hour routing)
 - [ ] 50-city demo tier, with benchmark-tier extracts as release assets

@@ -152,18 +152,45 @@ TEST("kdtree", "empty graph yields no nearest node") {
     CHECK_EQ(tree.nearest(0, 0), kInvalidNode);
 }
 
-TEST("graph", "admissibility ratio is computed over every edge") {
+TEST("graph", "admissibility is measured over every edge") {
     GraphBuilder b;
     b.add_node(0, 0, 0);
     b.add_node(1, 3, 4);        // straight-line distance 5
-    b.add_edge(0, 1, 10.0);     // ratio 2.0
-    CHECK_NEAR(b.build().heuristic_admissibility(), 2.0, 1e-9);
+    b.add_edge(0, 1, 10.0);     // twice as long as the crow flies: fine
+    const auto ok = b.build();
+    CHECK_NEAR(ok.heuristic_admissibility(), 2.0, 1e-9);
+    CHECK_NEAR(ok.worst_heuristic_shortfall(), 0.0, 1e-12);
+    CHECK(ok.heuristic_is_admissible());
 
     GraphBuilder c;
     c.add_node(0, 0, 0);
     c.add_node(1, 3, 4);
-    c.add_edge(0, 1, 2.5);      // ratio 0.5 -- heuristic over-estimates
-    const auto g = c.build();
-    CHECK_NEAR(g.heuristic_admissibility(), 0.5, 1e-9);
-    CHECK(!g.heuristic_is_admissible());
+    c.add_edge(0, 1, 2.5);      // half the straight line: heuristic over-estimates
+    const auto bad = c.build();
+    CHECK_NEAR(bad.heuristic_admissibility(), 0.5, 1e-9);
+    CHECK_NEAR(bad.worst_heuristic_shortfall(), 2.5, 1e-9);
+    CHECK(!bad.heuristic_is_admissible());
+}
+
+TEST("graph", "millimetre rounding does not read as inadmissible") {
+    // Real OSM data contains sub-metre service roads. A 0.68 m edge that loses
+    // 4 mm to CSV rounding scores 0.995 on ratio, while a genuinely wrong
+    // weight on a long arterial can score 0.999 -- so the decision uses
+    // absolute shortfall, and a ratio test alone would flag the wrong one.
+    GraphBuilder tiny;
+    tiny.add_node(0, 0.0, 0.0);
+    tiny.add_node(1, 0.68, 0.0);
+    tiny.add_edge(0, 1, 0.676);            // 4 mm short of 0.68
+    const auto t = tiny.build();
+    CHECK(t.heuristic_admissibility() < 0.995);   // ratio looks alarming
+    CHECK(t.worst_heuristic_shortfall() < 0.01);  // absolute error is 4 mm
+    CHECK_MSG(t.heuristic_is_admissible(), "millimetre rounding must not fail the check");
+
+    GraphBuilder arterial;
+    arterial.add_node(0, 0.0, 0.0);
+    arterial.add_node(1, 1000.0, 0.0);
+    arterial.add_edge(0, 1, 999.0);        // 1 m short over a kilometre
+    const auto a = arterial.build();
+    CHECK(a.heuristic_admissibility() > 0.998);   // ratio looks harmless
+    CHECK_MSG(!a.heuristic_is_admissible(), "a metre of shortfall is a real modelling error");
 }

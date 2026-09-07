@@ -96,4 +96,16 @@ double Graph::heuristic_admissibility() const noexcept {
     return std::isfinite(worst) ? worst : 1.0;
 }
 
+double Graph::worst_heuristic_shortfall() const noexcept {
+    double worst = 0.0;
+    for (NodeId u = 0; u < num_nodes(); ++u) {
+        for (EdgeId e = edge_begin(u); e < edge_end(u); ++e) {
+            const double straight = straight_line(u, edge_target(e));
+            if (straight <= 1e-12) continue;
+            worst = std::max(worst, straight - edge_weight(e));
+        }
+    }
+    return worst;
+}
+
 }  // namespace agss

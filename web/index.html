@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adaptive Graph Search Suite</title>
+<meta name="description" content="Pathfinding and network analysis on real Indian road and metro networks, running entirely in your browser via WebAssembly.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='8' cy='8' r='4' fill='%23d946ef'/><circle cx='24' cy='24' r='4' fill='%2322c55e'/><path d='M8 8 L24 24' stroke='%234ea8ff' stroke-width='2.5'/></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <aside id="panel">
+    <h1>Adaptive Graph Search Suite</h1>
+    <div class="sub">C++ engine compiled to WebAssembly. Everything runs in this tab &mdash; no server.</div>
+
+    <div class="group">
+      <label for="mapSel">Network</label>
+      <select id="mapSel"></select>
+      <div class="hint" id="mapInfo">&mdash;</div>
+    </div>
+
+    <div class="group">
+      <label for="algSel">Algorithm</label>
+      <select id="algSel"></select>
+      <div class="hint" id="algInfo">&mdash;</div>
+    </div>
+
+    <div class="group">
+      <label>Endpoints <span style="text-transform:none;letter-spacing:0">(click the map to set)</span></label>
+      <div class="row">
+        <input id="srcIn" type="number" min="0" value="0" aria-label="source node">
+        <input id="dstIn" type="number" min="0" value="1" aria-label="target node">
+      </div>
+      <div class="hint">Left click sets the source, right click sets the target.</div>
+    </div>
+
+    <div class="group">
+      <button id="runBtn" class="primary">Run search</button>
+    </div>
+
+    <div class="group">
+      <label>Playback</label>
+      <div class="row">
+        <button id="playBtn">Play</button>
+        <button id="pauseBtn">Pause</button>
+        <button id="stepBtn">Step</button>
+      </div>
+      <div class="row" style="margin-top:8px">
+        <input id="speed" type="range" min="1" max="120" value="40" aria-label="playback speed">
+      </div>
+    </div>
+
+    <div class="group">
+      <label>Compare and analyse</label>
+      <div class="row">
+        <button id="raceBtn">Race all</button>
+        <button id="kpathBtn">Alt routes</button>
+      </div>
+      <div class="row" style="margin-top:8px">
+        <button id="bridgeBtn">Bridges</button>
+        <button id="centBtn">Centrality</button>
+      </div>
+      <div class="row" style="margin-top:8px">
+        <button id="isoBtn">Isochrones</button>
+        <button id="clearBtn">Clear</button>
+      </div>
+    </div>
+
+    <div class="group">
+      <label>What-if</label>
+      <button id="closeBtn">Close the road on the current route</button>
+      <div class="hint" id="closeInfo">Shuts the busiest edge of the last route and re-runs.</div>
+    </div>
+
+    <div id="results"></div>
+  </aside>
+
+  <main id="stage">
+    <canvas id="cv"></canvas>
+
+    <div class="overlay" id="metrics">
+      <div class="m"><span>algorithm</span><b id="mAlg">&mdash;</b></div>
+      <div class="m"><span>time</span><b id="mTime">&mdash;</b></div>
+      <div class="m"><span>space</span><b id="mSpace">&mdash;</b></div>
+      <div class="m"><span>search time</span><b id="mMs">&mdash;</b></div>
+      <div class="m"><span>trace write</span><b id="mTrace">&mdash;</b></div>
+      <div class="m"><span>expanded</span><b id="mExp">&mdash;</b></div>
+      <div class="m"><span>relaxed</span><b id="mRel">&mdash;</b></div>
+      <div class="m"><span>path cost</span><b id="mCost">&mdash;</b></div>
+      <div class="m"><span>events</span><b id="mEvents">&mdash;</b></div>
+    </div>
+
+    <div class="overlay" id="legend">
+      <span><i style="background:var(--frontier)"></i>frontier</span>
+      <span><i style="background:var(--explored)"></i>explored</span>
+      <span><i style="background:var(--path)"></i>path</span>
+      <span><i style="background:var(--danger)"></i>closed</span>
+    </div>
+
+    <div class="overlay" id="log"></div>
+
+    <div id="boot">
+      <div>
+        <div class="spinner"></div>
+        <div>Loading the WebAssembly engine&hellip;</div>
+        <div class="sub" style="margin-top:6px;color:var(--muted);font-size:12px">
+          A page served from <code>file://</code> cannot fetch the data files.<br>
+          Run <code>python3 -m http.server</code> from <code>web/</code> instead.
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="engine/agss_engine.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

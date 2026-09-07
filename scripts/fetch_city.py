@@ -175,7 +175,7 @@ def main() -> int:
         wr = csv.writer(fh)
         wr.writerow(["u", "v", "metres"])
         for (a, b), d in sorted(edges.items(), key=lambda kv: (remap[kv[0][0]], remap[kv[0][1]])):
-            wr.writerow([remap[a], remap[b], f"{d:.2f}"])
+            wr.writerow([remap[a], remap[b], f"{d:.3f}"])
 
     with open(f"{out_dir}/manifest.json", "w") as fh:
         json.dump({"name": name, "bbox": list(bbox), "source": "OpenStreetMap via Overpass",

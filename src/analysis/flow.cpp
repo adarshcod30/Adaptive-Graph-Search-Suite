@@ -78,9 +78,13 @@ struct Dinic {
         double flow = 0.0;
         while (bfs(s, t)) {
             std::fill(iter.begin(), iter.end(), 0);
-            while (const double f = dfs(s, t, kInf)) {
-                if (f <= 1e-12) break;
-                flow += f;
+            // Comparing against the epsilon explicitly, rather than letting the
+            // double convert to bool: a blocking flow ends when no augmenting
+            // path carries meaningful capacity, not when one carries exactly 0.
+            for (;;) {
+                const double pushed = dfs(s, t, kInf);
+                if (pushed <= 1e-12) break;
+                flow += pushed;
             }
         }
         return flow;

@@ -1,0 +1,71 @@
+name: Deploy demo to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never cancel a half-finished deployment; queue instead.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: mymindstorm/setup-emsdk@v14
+        with:
+          version: 3.1.61
+
+      - name: Build the engine for the browser
+        run: |
+          emcmake cmake -S . -B build/wasm -DCMAKE_BUILD_TYPE=Release \
+            -DAGSS_BUILD_TESTS=OFF -DAGSS_BUILD_CLI=OFF
+          cmake --build build/wasm --parallel
+
+      - name: Verify the module before publishing it
+        run: node tests/wasm_smoke.mjs
+
+      - name: Fetch a real city road network
+        # The OSM extract is not committed (a few MB), so the published demo
+        # pulls a fresh one at deploy time. A failure here is not fatal: the
+        # page still ships every synthetic map and all 23 metro systems.
+        continue-on-error: true
+        run: python3 scripts/fetch_city.py --city delhi
+
+      - name: Assemble the site
+        run: |
+          mkdir -p site
+          cp -r web/* site/
+          mkdir -p site/data
+          cp -r data/maps site/data/
+          cp -r data/transit site/data/
+          if [ -d data/cities ]; then cp -r data/cities site/data/; fi
+          # The page loads data via ../data/..., which resolves above web/;
+          # on Pages the site root is the page's own directory, so rewrite
+          # those references to a sibling path.
+          sed -i "s|'../data/|'data/|g" site/app.js
+          du -sh site
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -14,7 +14,7 @@ KdTree::KdTree(const Graph& g) : graph_(&g) {
 
 double KdTree::metric(double ax, double ay, double bx, double by) const {
     if (graph_ && graph_->coord_space() == CoordSpace::Geographic) {
-        return geo::equirectangular(ay, ax, by, bx);  // y=lat, x=lon
+        return geo::haversine(ay, ax, by, bx);  // y=lat, x=lon; matches Graph::straight_line
     }
     return geo::euclidean(ax, ay, bx, by);
 }

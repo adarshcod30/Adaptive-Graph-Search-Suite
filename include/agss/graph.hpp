@@ -83,9 +83,17 @@ public:
     /// Straight-line distance between two nodes under the graph's metric.
     /// This is the A* / Greedy heuristic, and is admissible provided edge
     /// weights are real distances in the same unit.
+    /// Haversine, not the cheaper equirectangular approximation, is used on
+    /// geographic graphs on purpose. The OSM importer measures road length
+    /// with haversine, so a haversine heuristic is a true lower bound by the
+    /// triangle inequality. Equirectangular can exceed it by up to ~0.5% over
+    /// city extents, which is enough to make the estimate an *over*-estimate
+    /// on short edges and quietly cost A* its optimality guarantee -- measured
+    /// at 0.995x on the real Delhi extract. Correctness wins over the couple
+    /// of trig operations saved.
     double straight_line(NodeId a, NodeId b) const noexcept {
         if (space_ == CoordSpace::Geographic) {
-            return geo::equirectangular(ys_[a], xs_[a], ys_[b], xs_[b]);
+            return geo::haversine(ys_[a], xs_[a], ys_[b], xs_[b]);
         }
         return geo::euclidean(xs_[a], ys_[a], xs_[b], ys_[b]);
     }
@@ -95,18 +103,30 @@ public:
     double min_edge_weight() const noexcept { return min_weight_; }
 
     /// Smallest ratio of edge weight to the straight-line distance between its
-    /// endpoints, over the whole graph.
-    ///
-    /// The straight-line heuristic that A* and Greedy use is admissible only
-    /// when this is >= 1: an edge weighing less than the crow-flies distance
-    /// makes the estimate an *over*-estimate, and A* silently starts returning
-    /// suboptimal paths. The bundled map generator once produced edges at 0.9x
-    /// the straight-line distance, which is exactly how that surfaced.
+    /// endpoints, over the whole graph. Reported for diagnostics.
     double heuristic_admissibility() const noexcept;
 
+    /// Largest amount, in the graph's own distance unit, by which an edge
+    /// weight falls below the straight-line distance between its endpoints.
+    /// Zero when none do.
+    ///
+    /// This is the number that decides whether A* and Greedy can be trusted.
+    /// An edge weighing less than the crow-flies distance turns the heuristic
+    /// into an *over*-estimate and costs A* its optimality guarantee -- the
+    /// map generator once emitted edges at 0.9x the straight-line distance,
+    /// which is exactly how that surfaced.
+    ///
+    /// The ratio alone is the wrong test: on real OSM data a 0.68 m service
+    /// road losing 4 mm to CSV rounding scores 0.995, while a genuinely broken
+    /// weight on a kilometre-long arterial might score 0.999. Absolute
+    /// shortfall separates rounding noise from a real modelling error.
+    double worst_heuristic_shortfall() const noexcept;
+
     /// True when a straight-line heuristic can be trusted on this graph.
-    bool heuristic_is_admissible(double tolerance = 1e-9) const noexcept {
-        return heuristic_admissibility() >= 1.0 - tolerance;
+    /// `tolerance` is an absolute slack for serialisation rounding: 1 cm when
+    /// weights are metres.
+    bool heuristic_is_admissible(double tolerance = 0.01) const noexcept {
+        return worst_heuristic_shortfall() <= tolerance;
     }
 
 private:

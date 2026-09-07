@@ -114,6 +114,27 @@ jobs:
             ./build/bin/agss bench --markdown --reps 7
           } >> "$GITHUB_STEP_SUMMARY"
 
+  wasm:
+    name: WebAssembly build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: mymindstorm/setup-emsdk@v14
+        with:
+          version: 3.1.61
+      - name: Configure
+        run: emcmake cmake -S . -B build/wasm -DCMAKE_BUILD_TYPE=Release
+                 -DAGSS_BUILD_TESTS=OFF -DAGSS_BUILD_CLI=OFF
+      - run: cmake --build build/wasm --parallel
+      - name: Smoke-test the module headlessly
+        # Proves the browser engine agrees with the native one, so a broken
+        # WASM build cannot reach the published demo.
+        run: node tests/wasm_smoke.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wasm-engine
+          path: web/engine/
+
   format:
     name: clang-format
     runs-on: ubuntu-latest

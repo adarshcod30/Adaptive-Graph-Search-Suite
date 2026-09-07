@@ -46,6 +46,9 @@ public:
             bool changed = false;
             for (NodeId u = 0; u < g.num_nodes(); ++u) {
                 if (dist[u] == kInf) continue;
+                // One "expansion" per node scan, so this column means the same
+                // thing here as it does for the frontier-based searches.
+                ++res.nodes_expanded;
                 for (EdgeId e = g.edge_begin(u); e < g.edge_end(u); ++e) {
                     if (!opts.edge_open(e)) continue;
                     const NodeId v = g.edge_target(e);
@@ -62,7 +65,6 @@ public:
                     }
                 }
             }
-            ++res.nodes_expanded;
             if (!changed) break;  // converged early
             if (round == g.num_nodes() - 1) {
                 // A change on the V-th pass means a negative cycle is

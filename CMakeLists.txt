@@ -83,5 +83,33 @@ if(AGSS_BUILD_TESTS)
     add_test(NAME agss_tests COMMAND agss_tests)
 endif()
 
+# ---------------------------------------------------------------- WebAssembly
+#
+# Configure with `emcmake cmake -S . -B build/wasm`. The browser build drops the
+# Python bridge entirely rather than porting it: with the engine running in the
+# page there is no subprocess, no shared trace file and no map parameter
+# reaching a filesystem, so the traversal and concurrency defects that bridge
+# had become unrepresentable rather than merely fixed.
+if(EMSCRIPTEN)
+    add_executable(agss_wasm src/wasm/bindings.cpp)
+    target_link_libraries(agss_wasm PRIVATE ${AGSS_WHOLE_ARCHIVE} agss_core)
+    set_target_properties(agss_wasm PROPERTIES
+        OUTPUT_NAME agss_engine
+        RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/web/engine
+        SUFFIX ".js")
+    target_link_options(agss_wasm PRIVATE
+        "-sMODULARIZE=1"
+        "-sEXPORT_NAME=createAgssEngine"
+        "-sENVIRONMENT=web,worker,node"   # node so CI can smoke-test the module headlessly
+        "-sALLOW_MEMORY_GROWTH=1"          # a real city graph is tens of MB
+        "-sINITIAL_MEMORY=64MB"
+        "-sSTACK_SIZE=8MB"                 # iterative algorithms still recurse in Dinic
+        "-sEXPORTED_RUNTIME_METHODS=['ccall','cwrap','UTF8ToString','stringToNewUTF8']"
+        "-sEXPORTED_FUNCTIONS=['_malloc','_free','_agss_free','_agss_load_graph','_agss_algorithms','_agss_route','_agss_graph_json','_agss_race','_agss_bench','_agss_analyze','_agss_isochrone','_agss_kpaths','_agss_directions','_agss_nearest','_agss_load_transit','_agss_build_transit','_agss_use_road_graph']"
+        "-sFILESYSTEM=1"                   # in-memory only; nothing touches a host disk
+        "--closure=0"
+        "-O3")
+endif()
+
 install(TARGETS agss_core EXPORT agssTargets ARCHIVE DESTINATION lib)
 install(DIRECTORY include/ DESTINATION include)

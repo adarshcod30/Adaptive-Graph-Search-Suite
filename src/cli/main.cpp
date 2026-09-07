@@ -354,9 +354,11 @@ int cmd_verify(const Args& a) {
     if (!g.heuristic_is_admissible()) {
         // Without this, A* legitimately disagrees with Dijkstra and the run
         // looks like an algorithm bug rather than a data problem.
-        std::cout << "  WARNING: an edge weighs only " << fmt(adm, 4)
-                  << "x its straight-line length, so the A*/Greedy heuristic "
-                     "over-estimates and A* is not optimal on this graph\n";
+        std::cout << "  WARNING: an edge falls "
+                  << fmt(g.worst_heuristic_shortfall(), 3)
+                  << " short of its straight-line length (" << fmt(adm, 4)
+                  << "x), so the A*/Greedy heuristic over-estimates and A* is "
+                     "not optimal on this graph\n";
     }
     for (const auto& k : optimal) std::cout << "  - " << k << "\n";
 
