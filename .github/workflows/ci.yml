@@ -1,0 +1,125 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: ${{ matrix.os }} / ${{ matrix.compiler }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-latest,  compiler: gcc,   cc: gcc,   cxx: g++ }
+          - { os: ubuntu-latest,  compiler: clang, cc: clang, cxx: clang++ }
+          - { os: macos-latest,   compiler: clang, cc: clang, cxx: clang++ }
+          - { os: windows-latest, compiler: msvc,  cc: cl,    cxx: cl }
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DAGSS_WERROR=ON
+        env:
+          CC: ${{ matrix.cc }}
+          CXX: ${{ matrix.cxx }}
+
+      - name: Build
+        run: cmake --build build --config Release --parallel
+
+      - name: Test
+        run: ctest --test-dir build --build-config Release --output-on-failure
+
+  sanitizers:
+    name: ASan + UBSan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure with sanitizers
+        # These would have caught the uncaught std::invalid_argument and
+        # std::out_of_range that used to abort the engine on malformed input.
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug -DAGSS_SANITIZE=ON
+        env: { CC: clang, CXX: clang++ }
+      - run: cmake --build build --parallel
+      - run: ctest --test-dir build --output-on-failure
+        env:
+          ASAN_OPTIONS: detect_leaks=1:abort_on_error=1
+          UBSAN_OPTIONS: print_stacktrace=1:halt_on_error=1
+
+  correctness:
+    name: Differential correctness
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+      - run: cmake --build build --parallel
+      - name: Every optimal algorithm must agree on every map
+        run: |
+          fail=0
+          for map in data/maps/*/; do
+            echo "== $map"
+            out=$(./build/bin/agss verify --graph "$map" --samples 150)
+            echo "$out"
+            # A warning here means the map violates heuristic admissibility,
+            # which makes A* legitimately suboptimal -- a data bug, not a
+            # search bug, and one that must not reach main.
+            if echo "$out" | grep -q "WARNING"; then
+              echo "::error::$map breaks the straight-line heuristic invariant"
+              fail=1
+            fi
+            if ! echo "$out" | grep -q "0 cost mismatches, 0 invalid paths"; then
+              echo "::error::$map produced disagreements between optimal algorithms"
+              fail=1
+            fi
+          done
+          exit $fail
+
+  data-reproducibility:
+    name: Bundled maps are reproducible
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Regenerating with the default seed must be a no-op
+        run: |
+          python3 scripts/generate_maps.py
+          if ! git diff --quiet -- data/maps; then
+            echo "::error::regenerating the maps changed them; the generator is not deterministic"
+            git --no-pager diff --stat -- data/maps
+            exit 1
+          fi
+          echo "maps are byte-identical after regeneration"
+
+  benchmarks:
+    name: Publish benchmark table
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+      - run: cmake --build build --parallel
+      - name: Benchmark every algorithm across every bundled map
+        run: |
+          {
+            echo "## Benchmark results"
+            echo
+            echo "Runner: \`${{ runner.os }}\`, commit \`${GITHUB_SHA::8}\`"
+            echo
+            ./build/bin/agss bench --markdown --reps 7
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  format:
+    name: clang-format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y clang-format
+      - run: |
+          find src include tests -name '*.cpp' -o -name '*.hpp' \
+            | xargs clang-format --dry-run --Werror
