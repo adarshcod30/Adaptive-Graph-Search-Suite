@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <chrono>
 #include <limits>
+#include <memory>
 #include <queue>
 #include <vector>
 
@@ -358,9 +359,11 @@ public:
     }
 };
 
-AGSS_REGISTER_ALGORITHM("dijkstra", Dijkstra)
-AGSS_REGISTER_ALGORITHM("astar", AStar)
-AGSS_REGISTER_ALGORITHM("greedy", Greedy)
-AGSS_REGISTER_ALGORITHM("bidijkstra", BidirectionalDijkstra)
+void register_weighted(Registry& r) {
+    r.add("dijkstra", [] { return std::unique_ptr<Algorithm>(new Dijkstra()); });
+    r.add("astar", [] { return std::unique_ptr<Algorithm>(new AStar()); });
+    r.add("greedy", [] { return std::unique_ptr<Algorithm>(new Greedy()); });
+    r.add("bidijkstra", [] { return std::unique_ptr<Algorithm>(new BidirectionalDijkstra()); });
+}
 
 }  // namespace agss

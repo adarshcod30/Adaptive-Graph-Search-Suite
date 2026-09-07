@@ -4,6 +4,7 @@
 #include <cmath>
 #include <deque>
 #include <limits>
+#include <memory>
 #include <queue>
 #include <vector>
 
@@ -246,8 +247,10 @@ public:
     }
 };
 
-AGSS_REGISTER_ALGORITHM("bfs", BFS)
-AGSS_REGISTER_ALGORITHM("dfs", DFS)
-AGSS_REGISTER_ALGORITHM("dial", Dial)
+void register_uninformed(Registry& r) {
+    r.add("bfs", [] { return std::unique_ptr<Algorithm>(new BFS()); });
+    r.add("dfs", [] { return std::unique_ptr<Algorithm>(new DFS()); });
+    r.add("dial", [] { return std::unique_ptr<Algorithm>(new Dial()); });
+}
 
 }  // namespace agss

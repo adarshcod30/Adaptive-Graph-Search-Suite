@@ -99,16 +99,17 @@ std::vector<NodeId> reconstruct_path(const std::vector<NodeId>& parent, NodeId s
 /// edge, which is what makes it usable as a test oracle.
 double path_cost(const Graph& g, const std::vector<NodeId>& path);
 
-}  // namespace agss
+/// Each algorithm translation unit exposes one of these; the registry calls
+/// them all exactly once when it is first constructed.
+///
+/// Registration used to happen through static initialisers inside the static
+/// library, which meant every consumer had to link the whole archive or the
+/// registry came up empty -- MSVC dropped those objects, `create()` returned
+/// null, and the test binary crashed on the first dereference before printing
+/// anything. Explicit calls need no linker flags and behave the same
+/// everywhere.
+void register_uninformed(Registry& r);
+void register_weighted(Registry& r);
+void register_global(Registry& r);
 
-/// Registers an Algorithm subclass under a CLI key at static-init time.
-#define AGSS_REGISTER_ALGORITHM(key, Type)                        \
-    namespace {                                                   \
-    std::unique_ptr<::agss::Algorithm> agss_make_##Type() {       \
-        return std::make_unique<Type>();                          \
-    }                                                             \
-    const bool agss_registered_##Type = [] {                      \
-        ::agss::Registry::instance().add(key, &agss_make_##Type); \
-        return true;                                              \
-    }();                                                          \
-    }
+}  // namespace agss

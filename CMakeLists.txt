@@ -47,16 +47,6 @@ else()
         $<$<BOOL:${AGSS_WERROR}>:-Werror>)
 endif()
 
-# Static-init algorithm registration lives in the library, so consumers must
-# link the whole archive or the registry comes up empty.
-if(APPLE)
-    set(AGSS_WHOLE_ARCHIVE -Wl,-force_load,$<TARGET_FILE:agss_core>)
-elseif(MSVC)
-    set(AGSS_WHOLE_ARCHIVE agss_core)
-else()
-    set(AGSS_WHOLE_ARCHIVE -Wl,--whole-archive agss_core -Wl,--no-whole-archive)
-endif()
-
 if(AGSS_SANITIZE AND NOT MSVC)
     target_compile_options(agss_core PUBLIC -fsanitize=address,undefined -fno-omit-frame-pointer -g)
     target_link_options(agss_core PUBLIC -fsanitize=address,undefined)
@@ -64,7 +54,7 @@ endif()
 
 if(AGSS_BUILD_CLI)
     add_executable(agss src/cli/main.cpp)
-    target_link_libraries(agss PRIVATE ${AGSS_WHOLE_ARCHIVE} agss_core)
+    target_link_libraries(agss PRIVATE agss_core)
     set_target_properties(agss PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 endif()
 
@@ -78,7 +68,7 @@ if(AGSS_BUILD_TESTS)
         tests/test_analysis.cpp
         tests/test_features.cpp
     )
-    target_link_libraries(agss_tests PRIVATE ${AGSS_WHOLE_ARCHIVE} agss_core)
+    target_link_libraries(agss_tests PRIVATE agss_core)
     target_include_directories(agss_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/third_party)
     add_test(NAME agss_tests COMMAND agss_tests)
 endif()
@@ -92,7 +82,7 @@ endif()
 # had become unrepresentable rather than merely fixed.
 if(EMSCRIPTEN)
     add_executable(agss_wasm src/wasm/bindings.cpp)
-    target_link_libraries(agss_wasm PRIVATE ${AGSS_WHOLE_ARCHIVE} agss_core)
+    target_link_libraries(agss_wasm PRIVATE agss_core)
     set_target_properties(agss_wasm PROPERTIES
         OUTPUT_NAME agss_engine
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/web/engine

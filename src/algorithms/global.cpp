@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <chrono>
 #include <limits>
+#include <memory>
 #include <queue>
 #include <set>
 #include <vector>
@@ -281,8 +282,10 @@ public:
     }
 };
 
-AGSS_REGISTER_ALGORITHM("bellmanford", BellmanFord)
-AGSS_REGISTER_ALGORITHM("floydwarshall", FloydWarshall)
-AGSS_REGISTER_ALGORITHM("johnson", Johnson)
+void register_global(Registry& r) {
+    r.add("bellmanford", [] { return std::unique_ptr<Algorithm>(new BellmanFord()); });
+    r.add("floydwarshall", [] { return std::unique_ptr<Algorithm>(new FloydWarshall()); });
+    r.add("johnson", [] { return std::unique_ptr<Algorithm>(new Johnson()); });
+}
 
 }  // namespace agss

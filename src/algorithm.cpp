@@ -23,7 +23,13 @@ std::size_t ClosureMask::close_road(const Graph& g, NodeId u, NodeId v) {
 }
 
 Registry& Registry::instance() {
-    static Registry r;
+    static Registry r = [] {
+        Registry reg;
+        register_uninformed(reg);
+        register_weighted(reg);
+        register_global(reg);
+        return reg;
+    }();
     return r;
 }
 
