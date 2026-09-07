@@ -58,8 +58,7 @@ bool constrained_dijkstra(const Graph& g, NodeId source, NodeId target,
 KShortestReport k_shortest_paths(const Graph& g, NodeId source, NodeId target, int k) {
     KShortestReport rep;
     const auto t0 = Clock::now();
-    if (k <= 0 || source < 0 || target < 0 || source >= g.num_nodes() ||
-        target >= g.num_nodes()) {
+    if (k <= 0 || source < 0 || target < 0 || source >= g.num_nodes() || target >= g.num_nodes()) {
         rep.elapsed_ms = std::chrono::duration<double, std::milli>(Clock::now() - t0).count();
         return rep;
     }
@@ -92,13 +91,13 @@ KShortestReport k_shortest_paths(const Graph& g, NodeId source, NodeId target, i
             // Ban the next hop of every accepted route sharing this root, so
             // the spur search is forced to diverge here.
             for (const auto& r : rep.routes) {
-                if (r.path.size() > i &&
-                    std::equal(root.begin(), root.end(), r.path.begin(),
-                               r.path.begin() + static_cast<long>(i) + 1)) {
+                if (r.path.size() > i && std::equal(root.begin(), root.end(), r.path.begin(),
+                                                    r.path.begin() + static_cast<long>(i) + 1)) {
                     if (i + 1 < r.path.size()) {
                         const NodeId nxt = r.path[i + 1];
                         for (EdgeId e = g.edge_begin(spur); e < g.edge_end(spur); ++e) {
-                            if (g.edge_target(e) == nxt) banned_edge[static_cast<std::size_t>(e)] = 1;
+                            if (g.edge_target(e) == nxt)
+                                banned_edge[static_cast<std::size_t>(e)] = 1;
                         }
                     }
                 }

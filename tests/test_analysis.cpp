@@ -31,8 +31,12 @@ TEST("bridges", "the single road joining two cycles is the only bridge") {
     // Two triangles joined by one edge 2--3.
     GraphBuilder b;
     for (int i = 0; i < 6; ++i) b.add_node(i, i, 0);
-    b.add_undirected(0, 1, 1); b.add_undirected(1, 2, 1); b.add_undirected(2, 0, 1);
-    b.add_undirected(3, 4, 1); b.add_undirected(4, 5, 1); b.add_undirected(5, 3, 1);
+    b.add_undirected(0, 1, 1);
+    b.add_undirected(1, 2, 1);
+    b.add_undirected(2, 0, 1);
+    b.add_undirected(3, 4, 1);
+    b.add_undirected(4, 5, 1);
+    b.add_undirected(5, 3, 1);
     b.add_undirected(2, 3, 1);
     const auto rep = find_bridges(b.build());
     CHECK_EQ(rep.bridges.size(), std::size_t{1});
@@ -78,8 +82,10 @@ TEST("mst", "picks the cheapest spanning set") {
     // Square with a cheap diagonal: 0-1 (1), 1-2 (1), 2-3 (1), 3-0 (5).
     GraphBuilder b;
     for (int i = 0; i < 4; ++i) b.add_node(i, i, 0);
-    b.add_undirected(0, 1, 1); b.add_undirected(1, 2, 1);
-    b.add_undirected(2, 3, 1); b.add_undirected(3, 0, 5);
+    b.add_undirected(0, 1, 1);
+    b.add_undirected(1, 2, 1);
+    b.add_undirected(2, 3, 1);
+    b.add_undirected(3, 0, 5);
     const auto rep = minimum_spanning_tree(b.build());
     CHECK_EQ(rep.edges.size(), std::size_t{3});
     CHECK_NEAR(rep.total_weight, 3.0, 1e-9);
@@ -106,8 +112,10 @@ TEST("maxflow", "matches the bottleneck on a series-parallel network") {
     //  max flow = 2 + 2 = 4
     GraphBuilder b;
     for (int i = 0; i < 4; ++i) b.add_node(i, i, 0);
-    b.add_edge(0, 1, 3); b.add_edge(0, 2, 2);
-    b.add_edge(1, 3, 2); b.add_edge(2, 3, 3);
+    b.add_edge(0, 1, 3);
+    b.add_edge(0, 2, 2);
+    b.add_edge(1, 3, 2);
+    b.add_edge(2, 3, 3);
     const auto rep = max_flow(b.build(), 0, 3);
     CHECK_NEAR(rep.max_flow, 4.0, 1e-9);
 }
@@ -115,7 +123,9 @@ TEST("maxflow", "matches the bottleneck on a series-parallel network") {
 TEST("maxflow", "a single chain is limited by its narrowest link") {
     GraphBuilder b;
     for (int i = 0; i < 4; ++i) b.add_node(i, i, 0);
-    b.add_edge(0, 1, 10); b.add_edge(1, 2, 1); b.add_edge(2, 3, 10);
+    b.add_edge(0, 1, 10);
+    b.add_edge(1, 2, 1);
+    b.add_edge(2, 3, 10);
     const auto rep = max_flow(b.build(), 0, 3);
     CHECK_NEAR(rep.max_flow, 1.0, 1e-9);
     CHECK_EQ(rep.min_cut.size(), std::size_t{1});

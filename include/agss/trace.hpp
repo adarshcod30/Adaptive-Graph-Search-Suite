@@ -34,9 +34,7 @@ struct Event {
 /// The client replays events to rebuild any frame it wants, so nothing is lost.
 class Trace {
 public:
-    void discover(NodeId node, NodeId parent) {
-        events_.push_back({Op::Discover, node, parent});
-    }
+    void discover(NodeId node, NodeId parent) { events_.push_back({Op::Discover, node, parent}); }
     void expand(NodeId node) { events_.push_back({Op::Expand, node, kInvalidNode}); }
     void relax(NodeId node, NodeId parent) { events_.push_back({Op::Relax, node, parent}); }
 

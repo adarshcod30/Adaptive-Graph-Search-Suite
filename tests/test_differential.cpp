@@ -44,9 +44,9 @@ TEST("differential", "every optimal algorithm agrees on cost (planar, 200 nodes)
                 reference = real;
                 ref_key = k;
             } else {
-                CHECK_MSG(mt::close(real, reference, 1e-9),
-                          k << "=" << real << " but " << ref_key << "=" << reference
-                            << " for " << s << "->" << t);
+                CHECK_MSG(mt::close(real, reference, 1e-9), k << "=" << real << " but " << ref_key
+                                                              << "=" << reference << " for " << s
+                                                              << "->" << t);
             }
         }
     }
@@ -64,8 +64,10 @@ TEST("differential", "optimal algorithms agree on geographic graphs") {
             const auto res = Registry::instance().create(k)->run(g, s, t, {});
             if (!res.success) continue;
             const double real = path_cost(g, res.path);
-            if (reference < 0.0) reference = real;
-            else CHECK_MSG(mt::close(real, reference, 1e-9), k << " disagreed on a geo graph");
+            if (reference < 0.0)
+                reference = real;
+            else
+                CHECK_MSG(mt::close(real, reference, 1e-9), k << " disagreed on a geo graph");
         }
     }
 }
@@ -232,7 +234,7 @@ TEST("differential", "A* is only trusted where the heuristic is admissible") {
     bad.add_node(0, 0, 0);
     bad.add_node(1, 100, 0);
     bad.add_node(2, 50, 1);
-    bad.add_edge(0, 1, 50.0);     // weight 50 across a straight-line gap of 100
+    bad.add_edge(0, 1, 50.0);  // weight 50 across a straight-line gap of 100
     bad.add_edge(0, 2, 10.0);
     bad.add_edge(2, 1, 10.0);
     const auto g = bad.build();
@@ -242,8 +244,8 @@ TEST("differential", "A* is only trusted where the heuristic is admissible") {
     // Every bundled map must stay on the right side of that line.
     for (auto space : {CoordSpace::Planar, CoordSpace::Geographic}) {
         const auto gen = testing::random_graph(300, 600, 2468, space);
-        CHECK_MSG(gen.heuristic_is_admissible(),
-                  "generated graph has an edge at "
-                      << gen.heuristic_admissibility() << "x its straight-line length");
+        CHECK_MSG(gen.heuristic_is_admissible(), "generated graph has an edge at "
+                                                     << gen.heuristic_admissibility()
+                                                     << "x its straight-line length");
     }
 }

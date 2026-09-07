@@ -51,10 +51,13 @@ bench: $(BIN)
 verify: $(BIN)
 	./$(BIN) verify --graph data/maps/Delhi_NCR --samples 200
 
+## Formats in place. CI pins clang-format 18.1.8; other versions disagree,
+## so install the same one (pip install clang-format==18.1.8) to match.
 format:
 	@command -v clang-format >/dev/null && \
-	  find src include tests -name '*.cpp' -o -name '*.hpp' | xargs clang-format -i || \
-	  echo "clang-format not installed, skipping"
+	  find src include tests \( -name '*.cpp' -o -name '*.hpp' \) -print0 \
+	    | xargs -0 clang-format -i && echo "formatted" || \
+	  echo "clang-format not installed; pip install clang-format==18.1.8"
 
 clean:
 	rm -rf $(BUILD) $(BIN) $(TEST_BIN)

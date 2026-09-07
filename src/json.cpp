@@ -9,6 +9,7 @@ std::string escape(std::string_view s) {
     std::string out;
     out.reserve(s.size() + 8);
     for (char c : s) {
+        // clang-format off
         switch (c) {
             case '"':  out += "\\\""; break;
             case '\\': out += "\\\\"; break;
@@ -17,6 +18,7 @@ std::string escape(std::string_view s) {
             case '\n': out += "\\n";  break;
             case '\r': out += "\\r";  break;
             case '\t': out += "\\t";  break;
+            // clang-format on
             default:
                 if (static_cast<unsigned char>(c) < 0x20) {
                     char buf[8];
@@ -44,7 +46,8 @@ void write_graph(std::ostream& out, const Graph& g, int indent) {
     out << pad << "  \"nodes\": [";
     for (NodeId u = 0; u < g.num_nodes(); ++u) {
         if (u) out << ',';
-        out << "\n" << pad << "    {\"id\":" << u << ",\"ext\":" << g.external_id(u)
+        out << "\n"
+            << pad << "    {\"id\":" << u << ",\"ext\":" << g.external_id(u)
             << ",\"x\":" << number(g.x(u)) << ",\"y\":" << number(g.y(u)) << "}";
     }
     out << "\n" << pad << "  ],\n" << pad << "  \"edges\": [";
@@ -53,8 +56,9 @@ void write_graph(std::ostream& out, const Graph& g, int indent) {
         for (EdgeId e = g.edge_begin(u); e < g.edge_end(u); ++e) {
             if (!first) out << ',';
             first = false;
-            out << "\n" << pad << "    {\"id\":" << e << ",\"u\":" << u
-                << ",\"v\":" << g.edge_target(e) << ",\"w\":" << number(g.edge_weight(e)) << "}";
+            out << "\n"
+                << pad << "    {\"id\":" << e << ",\"u\":" << u << ",\"v\":" << g.edge_target(e)
+                << ",\"w\":" << number(g.edge_weight(e)) << "}";
         }
     }
     out << "\n" << pad << "  ]\n" << pad << "}";
@@ -112,8 +116,8 @@ void write_trace(std::ostream& out, const TraceDocument& doc) {
         for (std::size_t i = 0; i < evs.size(); ++i) {
             if (i) out << ',';
             if (i % 16 == 0) out << "\n    ";
-            out << '[' << static_cast<int>(evs[i].op) << ',' << evs[i].node << ','
-                << evs[i].parent << ']';
+            out << '[' << static_cast<int>(evs[i].op) << ',' << evs[i].node << ',' << evs[i].parent
+                << ']';
         }
         if (!evs.empty()) out << "\n  ";
     }

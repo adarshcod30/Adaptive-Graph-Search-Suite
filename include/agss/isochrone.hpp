@@ -8,8 +8,8 @@
 namespace agss {
 
 struct IsochroneBand {
-    double cutoff = 0.0;             ///< cost budget for this band
-    std::vector<NodeId> nodes;       ///< nodes reachable within it
+    double cutoff = 0.0;                          ///< cost budget for this band
+    std::vector<NodeId> nodes;                    ///< nodes reachable within it
     std::vector<std::pair<double, double>> hull;  ///< convex hull, (x, y)
 };
 

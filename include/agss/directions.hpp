@@ -7,15 +7,25 @@
 
 namespace agss {
 
-enum class Maneuver { Depart, Straight, SlightLeft, Left, SharpLeft, SlightRight, Right,
-                      SharpRight, UTurn, Arrive };
+enum class Maneuver {
+    Depart,
+    Straight,
+    SlightLeft,
+    Left,
+    SharpLeft,
+    SlightRight,
+    Right,
+    SharpRight,
+    UTurn,
+    Arrive
+};
 
 struct Step {
     Maneuver maneuver = Maneuver::Straight;
     NodeId at = kInvalidNode;
-    double distance = 0.0;   ///< distance of the leg that follows this step
-    double bearing = 0.0;    ///< outgoing bearing, degrees clockwise from north
-    double turn = 0.0;       ///< signed turn angle, negative = left
+    double distance = 0.0;  ///< distance of the leg that follows this step
+    double bearing = 0.0;   ///< outgoing bearing, degrees clockwise from north
+    double turn = 0.0;      ///< signed turn angle, negative = left
     std::string text;
 };
 

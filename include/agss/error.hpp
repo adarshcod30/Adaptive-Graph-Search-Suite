@@ -31,8 +31,8 @@ struct Error {
 template <typename T>
 class Result {
 public:
-    Result(T value) : data_(std::move(value)) {}       // NOLINT(google-explicit-constructor)
-    Result(Error error) : data_(std::move(error)) {}   // NOLINT(google-explicit-constructor)
+    Result(T value) : data_(std::move(value)) {}      // NOLINT(google-explicit-constructor)
+    Result(Error error) : data_(std::move(error)) {}  // NOLINT(google-explicit-constructor)
 
     bool ok() const noexcept { return std::holds_alternative<T>(data_); }
     explicit operator bool() const noexcept { return ok(); }

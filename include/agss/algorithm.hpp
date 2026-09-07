@@ -40,7 +40,9 @@ struct SearchOptions {
     Trace* trace = nullptr;
     const ClosureMask* closures = nullptr;
 
-    bool edge_open(EdgeId e) const noexcept { return closures == nullptr || !closures->is_closed(e); }
+    bool edge_open(EdgeId e) const noexcept {
+        return closures == nullptr || !closures->is_closed(e);
+    }
 };
 
 class Algorithm {
@@ -100,13 +102,13 @@ double path_cost(const Graph& g, const std::vector<NodeId>& path);
 }  // namespace agss
 
 /// Registers an Algorithm subclass under a CLI key at static-init time.
-#define AGSS_REGISTER_ALGORITHM(key, Type)                                       \
-    namespace {                                                                  \
-    std::unique_ptr<::agss::Algorithm> agss_make_##Type() {                      \
-        return std::make_unique<Type>();                                         \
-    }                                                                            \
-    const bool agss_registered_##Type = [] {                                     \
-        ::agss::Registry::instance().add(key, &agss_make_##Type);                \
-        return true;                                                             \
-    }();                                                                         \
+#define AGSS_REGISTER_ALGORITHM(key, Type)                        \
+    namespace {                                                   \
+    std::unique_ptr<::agss::Algorithm> agss_make_##Type() {       \
+        return std::make_unique<Type>();                          \
+    }                                                             \
+    const bool agss_registered_##Type = [] {                      \
+        ::agss::Registry::instance().add(key, &agss_make_##Type); \
+        return true;                                              \
+    }();                                                          \
     }

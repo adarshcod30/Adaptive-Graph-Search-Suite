@@ -152,8 +152,8 @@ std::string fmt(double v, int prec = 4) {
 
 int cmd_algorithms() {
     auto& reg = agss::Registry::instance();
-    std::cout << std::left << std::setw(16) << "KEY" << std::setw(34) << "NAME"
-              << std::setw(22) << "TIME" << "OPTIMAL\n";
+    std::cout << std::left << std::setw(16) << "KEY" << std::setw(34) << "NAME" << std::setw(22)
+              << "TIME" << "OPTIMAL\n";
     for (const auto& k : reg.keys()) {
         auto alg = reg.create(k);
         std::cout << std::left << std::setw(16) << k << std::setw(34) << alg->name()
@@ -231,8 +231,8 @@ int cmd_route(const Args& a) {
         int n = 1;
         for (const auto& st : dir.steps) {
             std::cout << "  " << std::setw(2) << n++ << ". "
-                      << (st.text.empty() ? agss::to_string(st.maneuver) : st.text)
-                      << "  [node " << g.external_id(st.at) << "]\n";
+                      << (st.text.empty() ? agss::to_string(st.maneuver) : st.text) << "  [node "
+                      << g.external_id(st.at) << "]\n";
         }
     }
 
@@ -248,8 +248,8 @@ int cmd_route(const Args& a) {
         doc.trace_ms = std::chrono::duration<double, std::milli>(Clock::now() - t0).count();
         agss::json::write_trace(out, doc);
         if (!a.has("quiet")) {
-            std::cout << "trace          : " << trace.size() << " events -> "
-                      << a.str("trace-out") << "\n";
+            std::cout << "trace          : " << trace.size() << " events -> " << a.str("trace-out")
+                      << "\n";
         }
     }
     return res.success ? 0 : 2;
@@ -276,8 +276,8 @@ int cmd_race(const Args& a) {
     }
 
     std::cout << std::left << std::setw(14) << "ALG" << std::right << std::setw(10) << "MS"
-              << std::setw(11) << "EXPANDED" << std::setw(11) << "RELAXED" << std::setw(7)
-              << "HOPS" << std::setw(14) << "COST" << "  OPTIMAL\n";
+              << std::setw(11) << "EXPANDED" << std::setw(11) << "RELAXED" << std::setw(7) << "HOPS"
+              << std::setw(14) << "COST" << "  OPTIMAL\n";
     std::cout << std::string(76, '-') << "\n";
 
     double best_cost = -1.0;
@@ -337,8 +337,10 @@ int cmd_verify(const Args& a) {
     std::vector<std::string> optimal;
     for (const auto& k : agss::Registry::instance().keys()) {
         auto alg = agss::Registry::instance().create(k);
-        if (alg->guarantees_optimal() && !alg->handles_negative_weights()) optimal.push_back(k);
-        else if (k == "bellmanford" || k == "johnson") optimal.push_back(k);
+        if (alg->guarantees_optimal() && !alg->handles_negative_weights())
+            optimal.push_back(k);
+        else if (k == "bellmanford" || k == "johnson")
+            optimal.push_back(k);
     }
     if (a.has("skip")) {
         std::stringstream ss(a.str("skip"));
@@ -354,8 +356,7 @@ int cmd_verify(const Args& a) {
     if (!g.heuristic_is_admissible()) {
         // Without this, A* legitimately disagrees with Dijkstra and the run
         // looks like an algorithm bug rather than a data problem.
-        std::cout << "  WARNING: an edge falls "
-                  << fmt(g.worst_heuristic_shortfall(), 3)
+        std::cout << "  WARNING: an edge falls " << fmt(g.worst_heuristic_shortfall(), 3)
                   << " short of its straight-line length (" << fmt(adm, 4)
                   << "x), so the A*/Greedy heuristic over-estimates and A* is "
                      "not optimal on this graph\n";
@@ -446,7 +447,8 @@ int cmd_bench(const Args& a) {
         const auto name = dir.substr(dir.find_last_of('/') + 1);
 
         if (!md) {
-            std::cout << "\n" << name << "  (" << g.num_nodes() << " nodes, " << g.num_edges()
+            std::cout << "\n"
+                      << name << "  (" << g.num_nodes() << " nodes, " << g.num_edges()
                       << " edges)\n"
                       << std::left << std::setw(16) << "ALG" << std::right << std::setw(12)
                       << "MEDIAN ms" << std::setw(12) << "EXPANDED" << std::setw(14) << "COST"
@@ -495,9 +497,8 @@ int cmd_analyze(const Args& a) {
                   << "  bridges              : " << rep.bridges.size() << "\n"
                   << "  articulation points  : " << rep.articulation_points.size() << "\n";
         auto top = rep.bridges;
-        std::sort(top.begin(), top.end(), [](const auto& x, const auto& y) {
-            return x.isolated_nodes > y.isolated_nodes;
-        });
+        std::sort(top.begin(), top.end(),
+                  [](const auto& x, const auto& y) { return x.isolated_nodes > y.isolated_nodes; });
         const std::size_t show = std::min<std::size_t>(10, top.size());
         if (show) std::cout << "  most critical roads (by nodes cut off):\n";
         for (std::size_t i = 0; i < show; ++i) {
@@ -533,8 +534,9 @@ int cmd_analyze(const Args& a) {
             return rep.betweenness[x] > rep.betweenness[y];
         });
         std::cout << "\nBETWEENNESS CENTRALITY  (" << fmt(rep.elapsed_ms) << " ms, "
-                  << (rep.exact ? "exact" : "sampled from " +
-                                                std::to_string(rep.sources_sampled) + " sources")
+                  << (rep.exact
+                          ? "exact"
+                          : "sampled from " + std::to_string(rep.sources_sampled) + " sources")
                   << ")\n  busiest intersections:\n";
         for (std::size_t i = 0; i < std::min<std::size_t>(10, order.size()); ++i) {
             std::cout << "    node " << g.external_id(order[i]) << "   score "
@@ -599,8 +601,8 @@ int cmd_isochrone(const Args& a) {
         out << "{\n  \"origin\": " << g.external_id(origin) << ",\n  \"bands\": [\n";
         for (std::size_t i = 0; i < rep.bands.size(); ++i) {
             const auto& b = rep.bands[i];
-            out << "    {\"cutoff\": " << agss::json::number(b.cutoff) << ", \"nodes\": "
-                << b.nodes.size() << ", \"hull\": [";
+            out << "    {\"cutoff\": " << agss::json::number(b.cutoff)
+                << ", \"nodes\": " << b.nodes.size() << ", \"hull\": [";
             for (std::size_t j = 0; j < b.hull.size(); ++j) {
                 if (j) out << ",";
                 out << "[" << agss::json::number(b.hull[j].first) << ","
@@ -663,8 +665,7 @@ int cmd_transit(const Args& a) {
             if (it != sys_of.end()) per_system[it->second].second++;
         }
         std::cout << "TRANSIT NETWORKS  (" << network.station_count() << " stations, "
-                  << network.link_count() << " links, " << network.systems.size()
-                  << " systems)\n\n"
+                  << network.link_count() << " links, " << network.systems.size() << " systems)\n\n"
                   << std::left << std::setw(34) << "SYSTEM" << std::right << std::setw(11)
                   << "STATIONS" << std::setw(9) << "LINKS" << "\n"
                   << std::string(54, '-') << "\n";
@@ -758,8 +759,8 @@ int cmd_maps(const Args& a) {
     const std::string root = a.str("dir", "data/maps");
     std::cout << "maps under " << root << ":\n";
     // Deliberately no directory-walk dependency: probe the known layout.
-    for (const auto& name : {"Small_Campus", "Mumbai_Pune_Expy", "Indian_Grid", "Delhi_NCR",
-                             "Bengaluru_Traffic"}) {
+    for (const auto& name :
+         {"Small_Campus", "Mumbai_Pune_Expy", "Indian_Grid", "Delhi_NCR", "Bengaluru_Traffic"}) {
         agss::LoadOptions o;
         o.lenient = true;
         auto r = agss::load_csv_dir(root + "/" + name, o);

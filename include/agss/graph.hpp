@@ -132,10 +132,10 @@ public:
 private:
     friend class GraphBuilder;
 
-    std::vector<EdgeId> offsets_;   // size V + 1
-    std::vector<NodeId> targets_;   // size E
-    std::vector<double> weights_;   // size E
-    std::vector<double> xs_, ys_;   // size V
+    std::vector<EdgeId> offsets_;  // size V + 1
+    std::vector<NodeId> targets_;  // size E
+    std::vector<double> weights_;  // size E
+    std::vector<double> xs_, ys_;  // size V
     std::vector<std::int64_t> external_ids_;
     std::unordered_map<std::int64_t, NodeId> index_;
     CoordSpace space_ = CoordSpace::Planar;

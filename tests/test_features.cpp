@@ -20,8 +20,7 @@ TEST("trace", "delta stream is linear, not quadratic, in graph size") {
         Trace tr;
         SearchOptions o;
         o.trace = &tr;
-        const auto res = Registry::instance().create("dijkstra")->run(
-            g, 0, g.num_nodes() - 1, o);
+        const auto res = Registry::instance().create("dijkstra")->run(g, 0, g.num_nodes() - 1, o);
         CHECK(res.success);
         // Discover + expand are bounded by V; relax by E.
         CHECK_MSG(tr.size() <= static_cast<std::size_t>(2 * g.num_nodes() + g.num_edges()),
@@ -49,9 +48,17 @@ TEST("trace", "events replay into the frontier and explored sets") {
     std::vector<char> explored(static_cast<std::size_t>(g.num_nodes()), 0);
     for (const auto& e : tr.events()) {
         switch (e.op) {
-            case Op::Discover: in_frontier[e.node] = 1; parent[e.node] = e.parent; break;
-            case Op::Relax:    parent[e.node] = e.parent; break;
-            case Op::Expand:   in_frontier[e.node] = 0; explored[e.node] = 1; break;
+            case Op::Discover:
+                in_frontier[e.node] = 1;
+                parent[e.node] = e.parent;
+                break;
+            case Op::Relax:
+                parent[e.node] = e.parent;
+                break;
+            case Op::Expand:
+                in_frontier[e.node] = 0;
+                explored[e.node] = 1;
+                break;
         }
     }
     CHECK(explored[63]);
@@ -98,8 +105,12 @@ TEST("closures", "shutting a bridge forces a detour or cuts the route") {
     // Two triangles joined by the single edge 2--3.
     GraphBuilder b;
     for (int i = 0; i < 6; ++i) b.add_node(i, i, 0);
-    b.add_undirected(0, 1, 1); b.add_undirected(1, 2, 1); b.add_undirected(2, 0, 1);
-    b.add_undirected(3, 4, 1); b.add_undirected(4, 5, 1); b.add_undirected(5, 3, 1);
+    b.add_undirected(0, 1, 1);
+    b.add_undirected(1, 2, 1);
+    b.add_undirected(2, 0, 1);
+    b.add_undirected(3, 4, 1);
+    b.add_undirected(4, 5, 1);
+    b.add_undirected(5, 3, 1);
     b.add_undirected(2, 3, 1);
     const auto g = b.build();
 
@@ -117,8 +128,10 @@ TEST("closures", "a detour is taken when one exists") {
     // 0-1-2 direct (cost 10 via 1), plus a longer way round through 3.
     GraphBuilder b;
     for (int i = 0; i < 4; ++i) b.add_node(i, i, 0);
-    b.add_undirected(0, 1, 1); b.add_undirected(1, 2, 1);
-    b.add_undirected(0, 3, 5); b.add_undirected(3, 2, 5);
+    b.add_undirected(0, 1, 1);
+    b.add_undirected(1, 2, 1);
+    b.add_undirected(0, 3, 5);
+    b.add_undirected(3, 2, 5);
     const auto g = b.build();
     auto dij = Registry::instance().create("dijkstra");
 
@@ -187,8 +200,8 @@ TEST("directions", "a straight run collapses to one instruction") {
 TEST("directions", "a right-angle bend produces a turn") {
     GraphBuilder b;
     b.add_node(0, 0, 0);
-    b.add_node(1, 0, 1);   // north of 0
-    b.add_node(2, 1, 1);   // east of 1
+    b.add_node(1, 0, 1);  // north of 0
+    b.add_node(2, 1, 1);  // east of 1
     b.add_undirected(0, 1, 1.0);
     b.add_undirected(1, 2, 1.0);
     const auto g = b.build();
@@ -239,8 +252,10 @@ TEST("transit", "rail-only graph links adjacent stations both ways") {
     const auto& mm = built.value();
     CHECK_EQ(mm.graph.num_nodes(), 3);
     CHECK_EQ(mm.graph.num_edges(), 4);  // two links, both directions
-    const auto res = Registry::instance().create("dijkstra")->run(
-        mm.graph, mm.layers.station_node.at(1), mm.layers.station_node.at(3), {});
+    const auto res =
+        Registry::instance()
+            .create("dijkstra")
+            ->run(mm.graph, mm.layers.station_node.at(1), mm.layers.station_node.at(3), {});
     CHECK(res.success);
     CHECK_NEAR(res.path_cost, 240.0, 1e-9);
 }

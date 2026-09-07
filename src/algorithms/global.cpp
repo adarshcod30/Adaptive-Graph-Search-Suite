@@ -111,8 +111,8 @@ public:
         SearchResult res = make_result();
         if (!endpoints_valid(g, source, target)) return res;
         if (g.num_nodes() > kMaxNodes) {
-            res.algorithm = name() + " (skipped: graph exceeds " +
-                            std::to_string(kMaxNodes) + " nodes)";
+            res.algorithm =
+                name() + " (skipped: graph exceeds " + std::to_string(kMaxNodes) + " nodes)";
             return res;
         }
 

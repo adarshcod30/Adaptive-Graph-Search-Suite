@@ -15,8 +15,8 @@ namespace {
 struct TempDir {
     std::string path;
     explicit TempDir(const std::string& tag) {
-        path = std::string(std::getenv("TMPDIR") ? std::getenv("TMPDIR") : "/tmp") +
-               "/agss_test_" + tag;
+        path = std::string(std::getenv("TMPDIR") ? std::getenv("TMPDIR") : "/tmp") + "/agss_test_" +
+               tag;
         std::string cmd = "mkdir -p '" + path + "'";
         (void)std::system(cmd.c_str());
     }

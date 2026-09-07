@@ -16,7 +16,9 @@ double leg_bearing(const Graph& g, NodeId a, NodeId b) {
     return deg < 0.0 ? deg + 360.0 : deg;
 }
 
-double leg_distance(const Graph& g, NodeId a, NodeId b) { return g.straight_line(a, b); }
+double leg_distance(const Graph& g, NodeId a, NodeId b) {
+    return g.straight_line(a, b);
+}
 
 Maneuver classify(double turn, double straight_threshold) {
     const double a = std::abs(turn);
@@ -42,6 +44,7 @@ std::string format_distance(double d, bool geographic) {
 }  // namespace
 
 std::string to_string(Maneuver m) {
+    // clang-format off
     switch (m) {
         case Maneuver::Depart:      return "depart";
         case Maneuver::Straight:    return "continue straight";
@@ -54,6 +57,7 @@ std::string to_string(Maneuver m) {
         case Maneuver::UTurn:       return "make a U-turn";
         case Maneuver::Arrive:      return "arrive";
     }
+    // clang-format on
     return "continue";
 }
 
@@ -103,9 +107,8 @@ Directions build_directions(const Graph& g, const std::vector<NodeId>& path,
     }
 
     out.steps.back().distance = run;
-    out.steps.back().text =
-        to_string(out.steps.back().maneuver) + ", then continue for " +
-        format_distance(run, geographic);
+    out.steps.back().text = to_string(out.steps.back().maneuver) + ", then continue for " +
+                            format_distance(run, geographic);
 
     Step arrive;
     arrive.maneuver = Maneuver::Arrive;

@@ -22,8 +22,8 @@ struct Station {
 struct Link {
     std::int64_t from = 0;
     std::int64_t to = 0;
-    std::string line;     ///< e.g. "Blue Line"
-    double seconds = 0.0; ///< in-vehicle travel time
+    std::string line;      ///< e.g. "Blue Line"
+    double seconds = 0.0;  ///< in-vehicle travel time
 };
 
 struct Network {
@@ -45,8 +45,8 @@ Network filter(const Network& net, const std::string& needle);
 
 /// How the layers of a combined graph are laid out.
 struct LayerInfo {
-    NodeId road_node_count = 0;      ///< dense ids [0, road_node_count) are road
-    NodeId station_node_count = 0;   ///< [road_node_count, total) are stations
+    NodeId road_node_count = 0;                      ///< dense ids [0, road_node_count) are road
+    NodeId station_node_count = 0;                   ///< [road_node_count, total) are stations
     std::vector<std::int64_t> station_external_ids;  ///< index by (id - road_node_count)
     std::unordered_map<std::int64_t, NodeId> station_node;
 };

@@ -1,5 +1,3 @@
-#include "agss/transit.hpp"
-
 #include <algorithm>
 #include <cctype>
 #include <cerrno>
@@ -9,6 +7,7 @@
 
 #include "agss/graph_builder.hpp"
 #include "agss/kdtree.hpp"
+#include "agss/transit.hpp"
 
 namespace agss::transit {
 namespace {
@@ -257,8 +256,8 @@ Result<MultiModal> combine(const Graph& road, const Network& net, const BuildOpt
             const double metres = geo::equirectangular(s.lat, s.lon, road.lat(r), road.lon(r));
             const double walk = metres / opts.walk_speed_mps;
             // Boarding penalty applies on the way in; stepping off is free.
-            auto in = b.add_edge(road.external_id(r), kStationIdBase + s.id,
-                                 walk + opts.board_penalty_s);
+            auto in =
+                b.add_edge(road.external_id(r), kStationIdBase + s.id, walk + opts.board_penalty_s);
             auto out = b.add_edge(kStationIdBase + s.id, road.external_id(r), walk);
             if (!in) mm.warnings.push_back(in.error().message);
             if (!out) mm.warnings.push_back(out.error().message);

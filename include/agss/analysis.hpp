@@ -15,8 +15,8 @@ struct Bridge {
 };
 
 struct ConnectivityReport {
-    std::vector<Bridge> bridges;                ///< edges whose removal disconnects
-    std::vector<NodeId> articulation_points;    ///< nodes whose removal disconnects
+    std::vector<Bridge> bridges;              ///< edges whose removal disconnects
+    std::vector<NodeId> articulation_points;  ///< nodes whose removal disconnects
     std::int64_t component_count = 0;
     double elapsed_ms = 0.0;
 };

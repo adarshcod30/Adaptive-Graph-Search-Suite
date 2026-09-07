@@ -10,14 +10,14 @@
 // JavaScript side free of manual memory management, and the payloads are small
 // because traces are deltas rather than snapshots.
 #include <emscripten/emscripten.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 
 #include <algorithm>
 #include <chrono>
 #include <cmath>
 #include <cstdlib>
 #include <cstring>
-#include <sys/stat.h>
-#include <sys/types.h>
 #include <memory>
 #include <sstream>
 #include <string>
@@ -79,7 +79,9 @@ const agss::Graph& active_graph() {
 
 extern "C" {
 
-EMSCRIPTEN_KEEPALIVE void agss_free(char* p) { std::free(p); }
+EMSCRIPTEN_KEEPALIVE void agss_free(char* p) {
+    std::free(p);
+}
 
 /// Parse CSV text already fetched by the browser. Validation is identical to
 /// the native path, so a malformed file produces a file:line error here too.
@@ -117,8 +119,8 @@ char* agss_load_graph(const char* name, const char* nodes_csv, const char* edges
     s.loaded = true;
 
     std::ostringstream os;
-    os << "{\"ok\":true,\"name\":\"" << agss::json::escape(s.name) << "\",\"nodes\":"
-       << s.graph.num_nodes() << ",\"edges\":" << s.graph.num_edges()
+    os << "{\"ok\":true,\"name\":\"" << agss::json::escape(s.name)
+       << "\",\"nodes\":" << s.graph.num_nodes() << ",\"edges\":" << s.graph.num_edges()
        << ",\"geographic\":" << (geographic ? "true" : "false")
        << ",\"admissible\":" << (s.graph.heuristic_is_admissible() ? "true" : "false")
        << ",\"admissibility\":" << agss::json::number(s.graph.heuristic_admissibility())
@@ -141,8 +143,8 @@ char* agss_algorithms() {
         if (!first) os << ",";
         first = false;
         os << "{\"key\":\"" << k << "\",\"name\":\"" << agss::json::escape(alg->name())
-           << "\",\"time\":\"" << agss::json::escape(alg->time_complexity())
-           << "\",\"space\":\"" << agss::json::escape(alg->space_complexity())
+           << "\",\"time\":\"" << agss::json::escape(alg->time_complexity()) << "\",\"space\":\""
+           << agss::json::escape(alg->space_complexity())
            << "\",\"optimal\":" << (alg->guarantees_optimal() ? "true" : "false")
            << ",\"needsCoords\":" << (alg->needs_coordinates() ? "true" : "false") << "}";
     }
@@ -152,8 +154,7 @@ char* agss_algorithms() {
 
 /// Run one search. `closed` is a comma-separated "u:v" list of shut roads.
 EMSCRIPTEN_KEEPALIVE
-char* agss_route(const char* alg_key, int source, int target, int want_trace,
-                 const char* closed) {
+char* agss_route(const char* alg_key, int source, int target, int want_trace, const char* closed) {
     auto& s = session();
     if (!s.loaded) return error_json("no graph loaded");
     const auto& g = active_graph();
@@ -232,7 +233,7 @@ char* agss_bench(const char* alg_key, int source, int target, int reps) {
     agss::SearchResult last;
     const auto t0 = std::chrono::steady_clock::now();
     for (int i = 0; i < reps; ++i) {
-        last = alg->run(g, source, target, {});   // no Trace: zero observer cost
+        last = alg->run(g, source, target, {});  // no Trace: zero observer cost
         times.push_back(last.algorithm_ms);
     }
     const double wall =
@@ -240,11 +241,9 @@ char* agss_bench(const char* alg_key, int source, int target, int reps) {
     std::sort(times.begin(), times.end());
 
     std::ostringstream os;
-    os << "{\"ok\":true,\"reps\":" << reps
-       << ",\"amortisedMs\":" << agss::json::number(wall / reps)
+    os << "{\"ok\":true,\"reps\":" << reps << ",\"amortisedMs\":" << agss::json::number(wall / reps)
        << ",\"medianMs\":" << agss::json::number(times[times.size() / 2])
-       << ",\"totalMs\":" << agss::json::number(wall)
-       << ",\"expanded\":" << last.nodes_expanded
+       << ",\"totalMs\":" << agss::json::number(wall) << ",\"expanded\":" << last.nodes_expanded
        << ",\"relaxed\":" << last.edges_relaxed
        << ",\"success\":" << (last.success ? "true" : "false")
        << ",\"cost\":" << agss::json::number(last.path_cost) << "}";
@@ -294,14 +293,12 @@ char* agss_race(const char* keys_csv, int source, int target) {
         const bool declined = r.res.algorithm.find("skipped") != std::string::npos;
         os << "{\"key\":\"" << r.key << "\",\"name\":\"" << agss::json::escape(r.res.algorithm)
            << "\",\"ms\":" << agss::json::number(r.res.algorithm_ms)
-           << ",\"expanded\":" << r.res.nodes_expanded
-           << ",\"relaxed\":" << r.res.edges_relaxed
+           << ",\"expanded\":" << r.res.nodes_expanded << ",\"relaxed\":" << r.res.edges_relaxed
            << ",\"success\":" << (r.res.success ? "true" : "false")
            << ",\"declined\":" << (declined ? "true" : "false")
            << ",\"hops\":" << (r.res.path.empty() ? 0 : r.res.path.size() - 1)
            << ",\"cost\":" << agss::json::number(r.res.path_cost)
-           << ",\"claimsOptimal\":" << (r.claims_optimal ? "true" : "false")
-           << ",\"path\":[";
+           << ",\"claimsOptimal\":" << (r.claims_optimal ? "true" : "false") << ",\"path\":[";
         for (std::size_t j = 0; j < r.res.path.size(); ++j) {
             if (j) os << ",";
             os << r.res.path[j];
@@ -325,8 +322,7 @@ char* agss_analyze(const char* what, int source, int target, int samples) {
         std::sort(rep.bridges.begin(), rep.bridges.end(),
                   [](const auto& a, const auto& b) { return a.isolated_nodes > b.isolated_nodes; });
         os << "{\"ok\":true,\"kind\":\"bridges\",\"ms\":" << agss::json::number(rep.elapsed_ms)
-           << ",\"components\":" << rep.component_count
-           << ",\"bridgeCount\":" << rep.bridges.size()
+           << ",\"components\":" << rep.component_count << ",\"bridgeCount\":" << rep.bridges.size()
            << ",\"articulationCount\":" << rep.articulation_points.size() << ",\"bridges\":[";
         for (std::size_t i = 0; i < rep.bridges.size(); ++i) {
             if (i) os << ",";
@@ -469,8 +465,7 @@ char* agss_directions(const char* path_csv) {
            << "\",\"distance\":" << agss::json::number(st.distance)
            << ",\"bearing\":" << agss::json::number(st.bearing)
            << ",\"turn\":" << agss::json::number(st.turn) << ",\"text\":\""
-           << agss::json::escape(st.text.empty() ? agss::to_string(st.maneuver) : st.text)
-           << "\"}";
+           << agss::json::escape(st.text.empty() ? agss::to_string(st.maneuver) : st.text) << "\"}";
     }
     os << "]}";
     return to_js(os.str());
@@ -529,14 +524,13 @@ char* agss_build_transit(const char* city, int with_roads) {
     auto& s = session();
     if (!s.transit_loaded) return error_json("no transit data loaded");
 
-    auto net = (city != nullptr && *city != '\0') ? agss::transit::filter(s.network, city)
-                                                  : s.network;
+    auto net =
+        (city != nullptr && *city != '\0') ? agss::transit::filter(s.network, city) : s.network;
     if (net.stations.empty()) return error_json("no stations matched that city or system");
 
     agss::transit::BuildOptions opts;
-    auto built = with_roads && s.loaded
-                     ? agss::transit::combine(s.graph, net, opts)
-                     : agss::transit::rail_only(net, opts);
+    auto built = with_roads && s.loaded ? agss::transit::combine(s.graph, net, opts)
+                                        : agss::transit::rail_only(net, opts);
     if (!built) return error_json(built.error().what());
 
     s.multimodal = std::move(built.value());
@@ -554,8 +548,9 @@ char* agss_build_transit(const char* city, int with_roads) {
         if (!first) os << ",";
         first = false;
         os << "{\"node\":" << it->second << ",\"name\":\"" << agss::json::escape(st.name)
-           << "\",\"system\":\"" << agss::json::escape(st.system) << "\",\"lat\":"
-           << agss::json::number(st.lat) << ",\"lon\":" << agss::json::number(st.lon) << "}";
+           << "\",\"system\":\"" << agss::json::escape(st.system)
+           << "\",\"lat\":" << agss::json::number(st.lat)
+           << ",\"lon\":" << agss::json::number(st.lon) << "}";
     }
     os << "],\"warnings\":[";
     for (std::size_t i = 0; i < s.multimodal.warnings.size() && i < 10; ++i) {
@@ -572,8 +567,8 @@ char* agss_use_road_graph() {
     auto& s = session();
     s.multimodal_ready = false;
     std::ostringstream os;
-    os << "{\"ok\":true,\"nodes\":" << s.graph.num_nodes()
-       << ",\"edges\":" << s.graph.num_edges() << "}";
+    os << "{\"ok\":true,\"nodes\":" << s.graph.num_nodes() << ",\"edges\":" << s.graph.num_edges()
+       << "}";
     return to_js(os.str());
 }
 

@@ -71,7 +71,8 @@ TEST("geo", "equirectangular tracks haversine over city scales") {
     for (double dlat : {0.01, 0.05, 0.1}) {
         const double h = geo::haversine(12.97, 77.59, 12.97 + dlat, 77.59 + dlat);
         const double e = geo::equirectangular(12.97, 77.59, 12.97 + dlat, 77.59 + dlat);
-        CHECK_MSG(std::abs(h - e) / h < 0.005, "diverged by " << (100 * std::abs(h - e) / h) << "%");
+        CHECK_MSG(std::abs(h - e) / h < 0.005,
+                  "diverged by " << (100 * std::abs(h - e) / h) << "%");
     }
 }
 
@@ -79,16 +80,16 @@ TEST("geo", "euclidean on lat/lon would overestimate, which is why it is gone") 
     // A degree of longitude at Delhi's latitude is much shorter than a degree
     // of latitude; treating them as equal inflates the estimate, which is what
     // broke A* admissibility on geographic graphs.
-    const double true_m = geo::haversine(28.6, 77.0, 28.6, 78.0);   // 1 deg east
-    const double lat_m = geo::haversine(28.6, 77.0, 29.6, 77.0);    // 1 deg north
+    const double true_m = geo::haversine(28.6, 77.0, 28.6, 78.0);  // 1 deg east
+    const double lat_m = geo::haversine(28.6, 77.0, 29.6, 77.0);   // 1 deg north
     CHECK(true_m < lat_m * 0.9);
 }
 
 TEST("geo", "bearings and turn angles are sane") {
-    CHECK_NEAR(geo::bearing(0, 0, 1, 0), 0.0, 1e-6);      // due north
-    CHECK_NEAR(geo::bearing(0, 0, 0, 1), 90.0, 1e-6);     // due east
-    CHECK_NEAR(geo::turn_angle(350, 10), 20.0, 1e-9);     // wraps forward
-    CHECK_NEAR(geo::turn_angle(10, 350), -20.0, 1e-9);    // wraps back
+    CHECK_NEAR(geo::bearing(0, 0, 1, 0), 0.0, 1e-6);    // due north
+    CHECK_NEAR(geo::bearing(0, 0, 0, 1), 90.0, 1e-6);   // due east
+    CHECK_NEAR(geo::turn_angle(350, 10), 20.0, 1e-9);   // wraps forward
+    CHECK_NEAR(geo::turn_angle(10, 350), -20.0, 1e-9);  // wraps back
 }
 
 TEST("kdtree", "nearest matches brute force on random points") {
@@ -155,8 +156,8 @@ TEST("kdtree", "empty graph yields no nearest node") {
 TEST("graph", "admissibility is measured over every edge") {
     GraphBuilder b;
     b.add_node(0, 0, 0);
-    b.add_node(1, 3, 4);        // straight-line distance 5
-    b.add_edge(0, 1, 10.0);     // twice as long as the crow flies: fine
+    b.add_node(1, 3, 4);     // straight-line distance 5
+    b.add_edge(0, 1, 10.0);  // twice as long as the crow flies: fine
     const auto ok = b.build();
     CHECK_NEAR(ok.heuristic_admissibility(), 2.0, 1e-9);
     CHECK_NEAR(ok.worst_heuristic_shortfall(), 0.0, 1e-12);
@@ -165,7 +166,7 @@ TEST("graph", "admissibility is measured over every edge") {
     GraphBuilder c;
     c.add_node(0, 0, 0);
     c.add_node(1, 3, 4);
-    c.add_edge(0, 1, 2.5);      // half the straight line: heuristic over-estimates
+    c.add_edge(0, 1, 2.5);  // half the straight line: heuristic over-estimates
     const auto bad = c.build();
     CHECK_NEAR(bad.heuristic_admissibility(), 0.5, 1e-9);
     CHECK_NEAR(bad.worst_heuristic_shortfall(), 2.5, 1e-9);
@@ -180,7 +181,7 @@ TEST("graph", "millimetre rounding does not read as inadmissible") {
     GraphBuilder tiny;
     tiny.add_node(0, 0.0, 0.0);
     tiny.add_node(1, 0.68, 0.0);
-    tiny.add_edge(0, 1, 0.676);            // 4 mm short of 0.68
+    tiny.add_edge(0, 1, 0.676);  // 4 mm short of 0.68
     const auto t = tiny.build();
     CHECK(t.heuristic_admissibility() < 0.995);   // ratio looks alarming
     CHECK(t.worst_heuristic_shortfall() < 0.01);  // absolute error is 4 mm
@@ -189,8 +190,8 @@ TEST("graph", "millimetre rounding does not read as inadmissible") {
     GraphBuilder arterial;
     arterial.add_node(0, 0.0, 0.0);
     arterial.add_node(1, 1000.0, 0.0);
-    arterial.add_edge(0, 1, 999.0);        // 1 m short over a kilometre
+    arterial.add_edge(0, 1, 999.0);  // 1 m short over a kilometre
     const auto a = arterial.build();
-    CHECK(a.heuristic_admissibility() > 0.998);   // ratio looks harmless
+    CHECK(a.heuristic_admissibility() > 0.998);  // ratio looks harmless
     CHECK_MSG(!a.heuristic_is_admissible(), "a metre of shortfall is a real modelling error");
 }

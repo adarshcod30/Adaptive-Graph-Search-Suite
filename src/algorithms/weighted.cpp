@@ -296,7 +296,8 @@ public:
                         df[v] = nd;
                         pf[v] = u;
                         qf.push({nd, v});
-                        if (opts.trace) first ? opts.trace->discover(v, u) : opts.trace->relax(v, u);
+                        if (opts.trace)
+                            first ? opts.trace->discover(v, u) : opts.trace->relax(v, u);
                     }
                     if (db[v] != kInf && df[u] + g.edge_weight(e) + db[v] < mu) {
                         mu = df[u] + g.edge_weight(e) + db[v];
@@ -320,7 +321,8 @@ public:
                         db[v] = nd;
                         pb[v] = u;
                         qb.push({nd, v});
-                        if (opts.trace) first ? opts.trace->discover(v, u) : opts.trace->relax(v, u);
+                        if (opts.trace)
+                            first ? opts.trace->discover(v, u) : opts.trace->relax(v, u);
                     }
                     if (df[v] != kInf && df[v] + rw[i] + db[u] < mu) {
                         mu = df[v] + rw[i] + db[u];
