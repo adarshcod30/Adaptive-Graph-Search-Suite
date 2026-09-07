@@ -20,8 +20,23 @@ const mExecTime = document.getElementById('m-exec-time');
 speed.oninput = () => speedVal.textContent = speed.value;
 
 let graph = { nodes: [], edges: [] };
-let frames = [];
-let frameIdx = 0;
+
+// The engine now emits a delta stream ([op, node, parent] triples) instead of
+// a full frontier/explored snapshot per frame. Replaying it incrementally is
+// what keeps a large search cheap on the client: applying one event is O(1),
+// where materialising every frame would rebuild the O(V^2) structure the new
+// format exists to avoid.
+const OP_DISCOVER = 0, OP_EXPAND = 1, OP_RELAX = 2;
+let events = [];
+let eventIdx = 0;
+let finalPath = [];
+let stepSize = 1;          // events applied per animation tick
+const state = {
+    frontier: new Set(),
+    explored: new Set(),
+    parent: new Map(),
+    head: -1,              // most recently expanded node
+};
 let timer = null;
 
 // Camera state for pan/zoom
@@ -45,9 +60,56 @@ function log(s) {
     logEl.textContent = currentLines.join('\n');
 }
 
+function resetState() {
+    state.frontier.clear();
+    state.explored.clear();
+    state.parent.clear();
+    state.head = -1;
+    eventIdx = 0;
+}
+
+/// Apply events [0, n) from a clean slate. Seeking backwards replays rather
+/// than storing undo records, which keeps the per-step cost at O(1).
+function seekTo(n) {
+    if (n < eventIdx) resetState();
+    while (eventIdx < n && eventIdx < events.length) {
+        applyEvent(events[eventIdx++]);
+    }
+}
+
+function applyEvent(ev) {
+    const [op, node, parent] = ev;
+    if (op === OP_DISCOVER) {
+        state.frontier.add(node);
+        if (parent >= 0) state.parent.set(node, parent);
+    } else if (op === OP_RELAX) {
+        if (parent >= 0) state.parent.set(node, parent);
+    } else if (op === OP_EXPAND) {
+        state.frontier.delete(node);
+        state.explored.add(node);
+        state.head = node;
+    }
+}
+
+/// Path from the source to whichever node was expanded most recently, walked
+/// back through the parent pointers the events have set so far.
+function currentPath() {
+    if (state.head < 0) return [];
+    const out = [];
+    const seen = new Set();
+    let cur = state.head;
+    while (cur !== undefined && cur >= 0 && !seen.has(cur)) {
+        seen.add(cur);
+        out.push(cur);
+        cur = state.parent.get(cur);
+    }
+    return out.reverse();
+}
+
 function clearFrames() {
-    frames = [];
-    frameIdx = 0;
+    events = [];
+    finalPath = [];
+    resetState();
     mAlg.textContent = '--';
     mTimeC.textContent = '--';
     mSpaceC.textContent = '--';
@@ -131,11 +193,18 @@ function draw() {
         }
     });
 
-    if(frames.length > 0) {
-        const f = frames[Math.max(0, Math.min(frameIdx, frames.length-1))];
-        
+    if(events.length > 0 || finalPath.length > 0) {
+        const done = eventIdx >= events.length;
+        // Once playback finishes, show the final route rather than the
+        // partial path to the last node the search happened to expand.
+        const f = {
+            explored: state.explored,
+            frontier: state.frontier,
+            path: done && finalPath.length ? finalPath : currentPath(),
+        };
+
         // Explored nodes glow (Yellow/Orange)
-        if(f.explored && f.explored.length > 0) {
+        if(f.explored && f.explored.size > 0) {
             ctx.fillStyle = 'rgba(251, 146, 60, 0.6)';
             ctx.shadowColor = 'rgba(251, 146, 60, 0.8)';
             ctx.shadowBlur = 8;
@@ -147,7 +216,7 @@ function draw() {
         }
         
         // Frontier nodes intense pulse (Pink/Magenta)
-        if(f.frontier && f.frontier.length > 0) {
+        if(f.frontier && f.frontier.size > 0) {
             ctx.fillStyle = 'rgba(217, 70, 239, 0.9)';
             ctx.shadowColor = 'rgba(217, 70, 239, 1)';
             ctx.shadowBlur = 12;
@@ -185,16 +254,24 @@ function draw() {
 
 function play() {
     if(timer) return;
-    if(frameIdx >= frames.length - 1) frameIdx = 0;
+    if(eventIdx >= events.length) seekTo(0);
     timer = setInterval(() => {
-        frameIdx++;
-        if(frameIdx >= frames.length) { clearInterval(timer); timer = null; }
+        // A real city search emits hundreds of thousands of events, so advance
+        // by a batch sized to finish in a bounded number of ticks rather than
+        // one event per tick.
+        seekTo(Math.min(events.length, eventIdx + stepSize));
+        if(eventIdx >= events.length) { clearInterval(timer); timer = null; }
         requestAnimationFrame(draw);
     }, parseInt(speed.value, 10));
 }
 
 function pause() { if(timer) { clearInterval(timer); timer = null; } }
-function step() { if(frames.length===0) return; pause(); frameIdx = Math.min(frames.length-1, frameIdx+1); requestAnimationFrame(draw); }
+function step() {
+    if(events.length === 0) return;
+    pause();
+    seekTo(Math.min(events.length, eventIdx + stepSize));
+    requestAnimationFrame(draw);
+}
 
 async function runOnBackend() {
     pause();
@@ -219,25 +296,34 @@ async function runOnBackend() {
         const obj = await res.json();
         if(obj.trace && obj.trace.graph) {
             graph = obj.trace.graph;
-            frames = obj.trace.frames || [];
-            
+            events = obj.trace.events || [];
+            finalPath = obj.trace.path || [];
+            resetState();
+            // Aim for ~400 animation ticks regardless of how big the search was.
+            stepSize = Math.max(1, Math.ceil(events.length / 400));
+
             const meta = obj.trace.metadata || {};
             mAlg.textContent = meta.algorithm || '--';
             mTimeC.textContent = meta.timeComplexity || '--';
             mSpaceC.textContent = meta.spaceComplexity || '--';
-            mExecTime.textContent = (meta.executionTimeMs ? meta.executionTimeMs.toFixed(3) : '0.000') + ' ms';
-            
+            // algorithmMs times the search alone; traceMs covers writing the
+            // event stream, and is reported separately so neither figure
+            // contaminates the other.
+            const algMs = typeof meta.algorithmMs === 'number' ? meta.algorithmMs : 0;
+            mExecTime.textContent = algMs.toFixed(4) + ' ms';
+
             if (meta.success === false) {
-                log(`Failed: Route ${s} -> ${t} unreachable or nodes don't exist in ${mId}.`);
+                log(`No route: ${s} -> ${t} is unreachable in ${mId}.`);
             } else {
-                log(`Success! Animated ${frames.length} search frames.`);
+                log(`Found a route: ${meta.pathLength - 1} hops, cost ${
+                    (meta.pathCost ?? 0).toFixed(2)}, ${events.length} search events.`);
             }
-            
+
             resizeCanvas();
             requestAnimationFrame(draw);
-            
-            if (frames.length > 0 && meta.success) {
-                play(); // Auto-play only if valid path explored
+
+            if (events.length > 0 && meta.success) {
+                play();
             }
         } else {
             log("Engine Error: See console backend for C++ compilation or timeout issues.");

@@ -1,0 +1,923 @@
+id,name,system,city,lat,lon
+1,Dr. Ambedkar Chowk Station,Agra Metro,Agra,27.174969,78.022202
+2,Fatehabad Road,Agra Metro,Agra,27.160159,78.042660
+3,Mankameshwar Mandir,Agra Metro,Agra,27.178299,78.017104
+4,Shaheed Captain Shubham Gupta,Agra Metro,Agra,27.157835,78.050735
+5,Taj East Gate,Agra Metro,Agra,27.158413,78.057904
+6,Taj Mahal,Agra Metro,Agra,27.168252,78.035779
+7,AEC,Ahmedabad Metro,Ahmedabad,23.075108,72.593293
+8,APMC,Ahmedabad Metro,Ahmedabad,22.997808,72.537115
+9,Akshardham,Ahmedabad Metro,Ahmedabad,23.223677,72.664182
+10,Amraiwadi,Ahmedabad Metro,Ahmedabad,23.007870,72.628387
+11,Apparel Park,Ahmedabad Metro,Ahmedabad,23.010679,72.618237
+12,Commerce Six Roads,Ahmedabad Metro,Ahmedabad,23.040702,72.553074
+13,Dholakuva Circle,Ahmedabad Metro,Ahmedabad,23.185954,72.643310
+14,Doordarshan Kendra,Ahmedabad Metro,Ahmedabad,23.048162,72.524507
+15,GIFT City,Ahmedabad Metro,Ahmedabad,23.153356,72.685552
+16,GNLU,Ahmedabad Metro,Ahmedabad,23.154473,72.647467
+17,Gandhigram,Ahmedabad Metro,Ahmedabad,23.027174,72.568859
+18,Gheekanta,Ahmedabad Metro,Ahmedabad,23.028788,72.586777
+19,Gujarat University Station,Ahmedabad Metro,Ahmedabad,23.044863,72.543520
+20,Gurukul Road,Ahmedabad Metro,Ahmedabad,23.045898,72.534877
+21,Infocity,Ahmedabad Metro,Ahmedabad,23.192258,72.639712
+22,Jivraj Park,Ahmedabad Metro,Ahmedabad,23.005543,72.533489
+23,Juna Koba,Ahmedabad Metro,Ahmedabad,23.141981,72.638608
+24,Juna Sachivalaya,Ahmedabad Metro,Ahmedabad,23.228925,72.659415
+25,Kalupur Railway Station,Ahmedabad Metro,Ahmedabad,23.024697,72.603152
+26,Kankaria East,Ahmedabad Metro,Ahmedabad,23.015456,72.606996
+27,Koba Circle,Ahmedabad Metro,Ahmedabad,23.132251,72.631043
+28,Koba Gam,Ahmedabad Metro,Ahmedabad,23.147607,72.643905
+29,Koteshwar Road,Ahmedabad Metro,Ahmedabad,23.103112,72.602132
+30,Mahatma Mandir,Ahmedabad Metro,Ahmedabad,23.233939,72.633873
+31,Motera Stadium,Ahmedabad Metro,Ahmedabad,23.096774,72.596695
+32,Narmada Canal,Ahmedabad Metro,Ahmedabad,23.125144,72.622099
+33,Nirant Cross Roads,Ahmedabad Metro,Ahmedabad,22.999938,72.658529
+34,Old High Court,Ahmedabad Metro,Ahmedabad,23.037522,72.567013
+35,PDPU,Ahmedabad Metro,Ahmedabad,23.154937,72.661240
+36,Paldi,Ahmedabad Metro,Ahmedabad,23.018501,72.562354
+37,Rabari Colony,Ahmedabad Metro,Ahmedabad,23.005434,72.635610
+38,Rajiv Nagar,Ahmedabad Metro,Ahmedabad,23.009752,72.536760
+39,Randesan,Ahmedabad Metro,Ahmedabad,23.179086,72.647290
+40,Ranip,Ahmedabad Metro,Ahmedabad,23.067692,72.574152
+41,Raysan,Ahmedabad Metro,Ahmedabad,23.166394,72.648325
+42,Sabarmati,Ahmedabad Metro,Ahmedabad,23.085628,72.592203
+43,Sachivalaya,Ahmedabad Metro,Ahmedabad,23.215069,72.658752
+44,Sector-1,Ahmedabad Metro,Ahmedabad,23.204903,72.643146
+45,Sector-10A,Ahmedabad Metro,Ahmedabad,23.211482,72.650192
+46,Sector-16,Ahmedabad Metro,Ahmedabad,23.233883,72.650167
+47,Sector-24,Ahmedabad Metro,Ahmedabad,23.238506,72.641479
+48,Shahpur Station,Ahmedabad Metro,Ahmedabad,23.039204,72.581031
+49,Shreyas,Ahmedabad Metro,Ahmedabad,23.013626,72.549254
+50,Stadium,Ahmedabad Metro,Ahmedabad,23.039863,72.561639
+51,Tapovan Circle,Ahmedabad Metro,Ahmedabad,23.120126,72.615799
+52,Thaltej,Ahmedabad Metro,Ahmedabad,23.049766,72.516004
+53,Thaltej Gam,Ahmedabad Metro,Ahmedabad,23.050207,72.507013
+54,Usmanpura,Ahmedabad Metro,Ahmedabad,23.045923,72.564961
+55,Vadaj,Ahmedabad Metro,Ahmedabad,23.067671,72.565891
+56,Vastral,Ahmedabad Metro,Ahmedabad,23.003514,72.647708
+57,Vastral Gam,Ahmedabad Metro,Ahmedabad,22.997172,72.667471
+58,Vijay Nagar,Ahmedabad Metro,Ahmedabad,23.056443,72.562292
+59,Vishwakarma College,Ahmedabad Metro,Ahmedabad,23.114198,72.608385
+60,Attiguppe,Namma Metro,Bengaluru,12.961866,77.533572
+61,BTM Layout,Namma Metro,Bengaluru,12.916586,77.608127
+62,Baiyappanahalli,Namma Metro,Bengaluru,12.990694,77.652383
+63,Banashankari,Namma Metro,Bengaluru,12.915221,77.573600
+64,Benniganahalli,Namma Metro,Bengaluru,12.996516,77.668468
+65,Beratena Agrahara,Namma Metro,Bengaluru,12.863898,77.657889
+66,Biocon Hebbagodi,Namma Metro,Bengaluru,12.829015,77.681390
+67,Bommanahalli,Namma Metro,Bengaluru,12.910750,77.626415
+68,Central Silk Board,Namma Metro,Bengaluru,12.916568,77.620571
+69,Challaghatta,Namma Metro,Bengaluru,12.897310,77.461233
+70,Chickpete,Namma Metro,Bengaluru,12.966924,77.574553
+71,Chikkabidarakallu,Namma Metro,Bengaluru,13.052363,77.487916
+72,Cubbon Park,Namma Metro,Bengaluru,12.980937,77.597569
+73,Dasarahalli,Namma Metro,Bengaluru,13.043258,77.512549
+74,Deepanjali Nagar,Namma Metro,Bengaluru,12.952040,77.537018
+75,Delta Electronics Bommasandra,Namma Metro,Bengaluru,12.819422,77.688326
+76,Doddakallasandra,Namma Metro,Bengaluru,12.884655,77.552765
+77,"Dr. B. R. Ambedkar Station, Vidhana Soudha",Namma Metro,Bengaluru,12.978484,77.591470
+78,Electronic City,Namma Metro,Bengaluru,12.856539,77.663487
+79,Garudacharpalya,Namma Metro,Bengaluru,12.993428,77.703705
+80,Goraguntepalya,Namma Metro,Bengaluru,13.028430,77.540815
+81,Halasuru,Namma Metro,Bengaluru,12.976504,77.626686
+82,Hongasandra,Namma Metro,Bengaluru,12.901728,77.631970
+83,Hoodi,Namma Metro,Bengaluru,12.988839,77.711386
+84,Hopefarm Channasandra,Namma Metro,Bengaluru,12.987371,77.753915
+85,Hosa Road,Namma Metro,Bengaluru,12.870742,77.652447
+86,Huskur Road,Namma Metro,Bengaluru,12.839074,77.677435
+87,Indiranagar,Namma Metro,Bengaluru,12.978330,77.638659
+88,Infosys Foundation Konappana Agrahara,Namma Metro,Bengaluru,12.846444,77.671185
+89,Jalahalli,Namma Metro,Bengaluru,13.039409,77.519742
+90,Jaya Prakash Nagar,Namma Metro,Bengaluru,12.907479,77.573129
+91,Jayadeva Hospital,Namma Metro,Bengaluru,12.916746,77.600086
+92,Jayanagar,Namma Metro,Bengaluru,12.929507,77.580144
+93,Jnanabharathi,Namma Metro,Bengaluru,12.935426,77.512411
+94,Kadugodi Tree Park,Namma Metro,Bengaluru,12.985637,77.747054
+95,Kengeri,Namma Metro,Bengaluru,12.907913,77.476581
+96,Kengeri Bus Terminal,Namma Metro,Bengaluru,12.914688,77.487855
+97,Konanakunte Cross,Namma Metro,Bengaluru,12.888965,77.562679
+98,Krantivira Sangolli Rayanna Railway Station,Namma Metro,Bengaluru,12.975880,77.565377
+99,Krishna Rajendra Market,Namma Metro,Bengaluru,12.960893,77.574661
+100,Krishnarajapura,Namma Metro,Bengaluru,12.999912,77.677876
+101,Kudlu Gate,Namma Metro,Bengaluru,12.889940,77.639209
+102,Kundalahalli,Namma Metro,Bengaluru,12.977577,77.715572
+103,Lalbagh,Namma Metro,Bengaluru,12.946534,77.580017
+104,Madavara,Namma Metro,Bengaluru,13.057418,77.472805
+105,Magadi Road,Namma Metro,Bengaluru,12.975630,77.555356
+106,Mahakavi Kuvempu Road,Namma Metro,Bengaluru,12.998497,77.556877
+107,Mahalakshmi,Namma Metro,Bengaluru,13.008074,77.548804
+108,Mahatma Gandhi Road,Namma Metro,Bengaluru,12.975529,77.606781
+109,Manjunathanagara,Namma Metro,Bengaluru,13.050090,77.494447
+110,Mantri Square Sampige Road,Namma Metro,Bengaluru,12.990452,77.570727
+111,Mysore Road,Namma Metro,Bengaluru,12.946682,77.530080
+112,"Nadaprabhu Kempegowda Station, Majestic (Green Line)",Namma Metro,Bengaluru,12.975510,77.572953
+113,"Nadaprabhu Kempegowda Station, Majestic (Purple Line)",Namma Metro,Bengaluru,12.975711,77.572947
+114,Nagasandra,Namma Metro,Bengaluru,13.047958,77.500141
+115,Nallurahalli,Namma Metro,Bengaluru,12.976594,77.724848
+116,National College,Namma Metro,Bengaluru,12.950526,77.573691
+117,Pantharapalya - Nayandahalli,Namma Metro,Bengaluru,12.941672,77.525116
+118,Pattanagere,Namma Metro,Bengaluru,12.924252,77.498355
+119,Pattandur Agrahara,Namma Metro,Bengaluru,12.987615,77.737800
+120,Peenya,Namma Metro,Bengaluru,13.033016,77.533202
+121,Peenya Industry,Namma Metro,Bengaluru,13.036307,77.525507
+122,Ragigudda,Namma Metro,Bengaluru,12.917082,77.588241
+123,Rajajinagar,Namma Metro,Bengaluru,13.000530,77.549658
+124,Rajarajeshwari Nagar,Namma Metro,Bengaluru,12.936655,77.519663
+125,Rashtreeya Vidyalaya Road,Namma Metro,Bengaluru,12.921304,77.580209
+126,Sandal Soap Factory,Namma Metro,Bengaluru,13.014718,77.554010
+127,Seetharampalya,Namma Metro,Bengaluru,12.980950,77.708754
+128,Silk Institute,Namma Metro,Bengaluru,12.861679,77.529931
+129,Singasandra,Namma Metro,Bengaluru,12.880805,77.644860
+130,Singayyanapalya,Namma Metro,Bengaluru,12.996575,77.692596
+131,"Sir M. Visvesvaraya Stn., Central College",Namma Metro,Bengaluru,12.974521,77.584221
+132,South End Circle,Namma Metro,Bengaluru,12.938262,77.580056
+133,"Sri Balagangadharanatha Swamiji Stn., Hosahalli",Namma Metro,Bengaluru,12.974196,77.545619
+134,Sri Sathya Sai Hospital,Namma Metro,Bengaluru,12.981225,77.727579
+135,Srirampura,Namma Metro,Bengaluru,12.996518,77.563305
+136,Swami Vivekananda Road,Namma Metro,Bengaluru,12.985934,77.644899
+137,Thalaghattapura,Namma Metro,Bengaluru,12.871408,77.538391
+138,Trinity,Namma Metro,Bengaluru,12.973017,77.617018
+139,Vajarahalli,Namma Metro,Bengaluru,12.877530,77.544776
+140,Vijayanagar,Namma Metro,Bengaluru,12.970954,77.537385
+141,Vijayanagara,Namma Metro,Bengaluru,12.970939,77.537429
+142,Whitefield (Kadugodi),Namma Metro,Bengaluru,12.995577,77.757899
+143,Yelachenahalli,Namma Metro,Bengaluru,12.896051,77.570119
+144,Yeshwantpur,Namma Metro,Bengaluru,13.023333,77.549727
+145,AIIMS,Bhopal Metro,Bhopal,23.209844,77.456048
+146,Alkapuri,Bhopal Metro,Bhopal,23.216485,77.451039
+147,Board Office Chauraha,Bhopal Metro,Bhopal,23.232464,77.431667
+148,DRM Office,Bhopal Metro,Bhopal,23.216156,77.443272
+149,Kendriya Vidyalaya,Bhopal Metro,Bhopal,23.240244,77.431583
+150,MP Nagar,Bhopal Metro,Bhopal,23.227652,77.435203
+151,Rani Kamalapati Railway Station,Bhopal Metro,Bhopal,23.221272,77.438349
+152,Subhash Nagar,Bhopal Metro,Bhopal,23.247798,77.429998
+153,Alapakkam Metro,Chennai Metro,Chennai,13.038181,80.163590
+154,Alwarthirunagar Metro,Chennai Metro,Chennai,13.046288,80.188690
+155,Anna Nagar East,Chennai Metro,Chennai,13.084608,80.219488
+156,Anna Nagar Tower,Chennai Metro,Chennai,13.084984,80.208893
+157,Central Metro,Chennai Metro,Chennai,13.081728,80.273916
+158,Egmore Metro,Chennai Metro,Chennai,13.080280,80.263056
+159,High Court,Chennai Metro,Chennai,13.087211,80.284967
+160,Iyappanthangal Metro,Chennai Metro,Chennai,13.038183,80.134988
+161,Karambakkam Metro,Chennai Metro,Chennai,13.039565,80.170238
+162,Karayanchavadi Metro,Chennai Metro,Chennai,13.046711,80.110905
+163,Kattupakkam,Chennai Metro,Chennai,13.041979,80.125382
+164,Kilpauk,Chennai Metro,Chennai,13.077638,80.242621
+165,Koyambedu Market,Chennai Metro,Chennai,13.064991,80.198189
+166,Kumananchavadi Metro,Chennai Metro,Chennai,13.044683,80.118909
+167,Madhavaram Depot,Chennai Metro,Chennai,13.155758,80.238664
+168,Mannadi,Chennai Metro,Chennai,13.095364,80.286119
+169,Nanganallur Road,Chennai Metro,Chennai,12.999861,80.193989
+170,Natesan Nagar,Chennai Metro,Chennai,13.058362,80.194746
+171,Nehru Park,Chennai Metro,Chennai,13.078783,80.250473
+172,Pachaiyappa's College,Chennai Metro,Chennai,13.075550,80.232864
+173,Poonamallee Bus Stand Metro,Chennai Metro,Chennai,13.050922,80.094923
+174,Poonamallee Bypass,Chennai Metro,Chennai,13.047900,80.081565
+175,Poonamallee Government Hospital Metro,Chennai Metro,Chennai,13.049712,80.101998
+176,Porur Bypass,Chennai Metro,Chennai,13.036226,80.149971
+177,Porur Junction,Chennai Metro,Chennai,13.035861,80.156761
+178,Saligramam Metro,Chennai Metro,Chennai,13.048330,80.205241
+179,Shenoy Nagar,Chennai Metro,Chennai,13.078798,80.225133
+180,Sir Theagaraya College,Chennai Metro,Chennai,13.115761,80.284733
+181,Thelliyaragaram,Chennai Metro,Chennai,13.036864,80.141862
+182,Thirumangalam,Chennai Metro,Chennai,13.085245,80.201589
+183,Vadapalani,Chennai Metro,Chennai,13.049854,80.211547
+184,Valasaravakkam Metro,Chennai Metro,Chennai,13.042217,80.180389
+185,Virugambakkam North,Chennai Metro,Chennai,13.051015,80.192062
+186,Virugambakkam South Metro,Chennai Metro,Chennai,13.047462,80.196557
+187,Wimco Nagar,Chennai Metro,Chennai,13.179290,80.307343
+188,அசோக் நகர்,Chennai Metro,Chennai,13.035526,80.211199
+189,அரசினர் தோட்டம்,Chennai Metro,Chennai,13.069664,80.273057
+190,அரும்பாக்கம்,Chennai Metro,Chennai,13.061665,80.211654
+191,ஆயிரம் விளக்கு,Chennai Metro,Chennai,13.058601,80.258762
+192,ஆலந்தூர்,Chennai Metro,Chennai,13.004220,80.201540
+193,ஈக்காட்டுத்தாங்கல்,Chennai Metro,Chennai,13.016952,80.205434
+194,எல் ஐ சி,Chennai Metro,Chennai,13.064374,80.265846
+195,ஏ ஜி டி.எம்.எஸ்,Chennai Metro,Chennai,13.045866,80.248280
+196,காலடிபேட்டை,Chennai Metro,Chennai,13.150665,80.299391
+197,கிண்டி,Chennai Metro,Chennai,13.009263,80.213084
+198,கோயம்பேடு,Chennai Metro,Chennai,13.073445,80.194871
+199,சின்னமலை,Chennai Metro,Chennai,13.014650,80.224140
+200,சுங்கச்சாவடி,Chennai Metro,Chennai,13.143134,80.296329
+201,சென்னை புறநகர் பேருந்து நிலையம்,Chennai Metro,Chennai,13.068533,80.203938
+202,சென்னை விமான நிலையம்,Chennai Metro,Chennai,12.980795,80.164171
+203,சைதாப்பேட்டை,Chennai Metro,Chennai,13.023957,80.228077
+204,திருவொற்றியூர்,Chennai Metro,Chennai,13.171801,80.305270
+205,திருவொற்றியூர் தேரடி,Chennai Metro,Chennai,13.160278,80.302455
+206,தேனாம்பேட்டை,Chennai Metro,Chennai,13.036816,80.246424
+207,தொண்டையார்பேட்டை,Chennai Metro,Chennai,13.124523,80.288858
+208,நந்தனம்,Chennai Metro,Chennai,13.031702,80.241183
+209,பரங்கிமலை,Chennai Metro,Chennai,12.995039,80.198372
+210,புது வண்ணாரப்பேட்டை,Chennai Metro,Chennai,13.134518,80.292999
+211,மீனம்பாக்கம்,Chennai Metro,Chennai,12.987655,80.176454
+212,வடபழநி,Chennai Metro,Chennai,13.050930,80.212066
+213,வண்ணாரப்பேட்டை,Chennai Metro,Chennai,13.107965,80.280984
+214,விம்கோ நகர் டிப்போ,Chennai Metro,Chennai,13.183953,80.309040
+215,A.I.I.M.S.,Delhi Metro,Delhi,28.566861,77.207803
+216,Adarsh Nagar,Delhi Metro,Delhi,28.716582,77.170423
+217,Akshardham,Delhi Metro,Delhi,28.617885,77.279545
+218,Anand Vihar (Blue Line),Delhi Metro,Delhi,28.646866,77.316043
+219,Anand Vihar (Pink Line),Delhi Metro,Delhi,28.646687,77.315391
+220,Arjan Garh,Delhi Metro,Delhi,28.480737,77.125765
+221,Arthala,Delhi Metro,Delhi,28.676997,77.391888
+222,Ashok Park Main,Delhi Metro,Delhi,28.671577,77.155289
+223,Ashram,Delhi Metro,Delhi,28.572312,77.258473
+224,Azadpur (Pink Line),Delhi Metro,Delhi,28.705797,77.181969
+225,Azadpur (Yellow Line),Delhi Metro,Delhi,28.707044,77.180372
+226,Badarpur,Delhi Metro,Delhi,28.493165,77.302996
+227,Badhkal Mor,Delhi Metro,Delhi,28.422713,77.310349
+228,Bahadurgarh City,Delhi Metro,Delhi,28.690687,76.935444
+229,Barakhambha Road,Delhi Metro,Delhi,28.629770,77.225009
+230,Bata Chowk,Delhi Metro,Delhi,28.385834,77.313434
+231,Bhajanpura,Delhi Metro,Delhi,28.703598,77.262645
+232,Bhalaswa,Delhi Metro,Delhi,28.736919,77.168071
+233,Bhikaji Cama Place,Delhi Metro,Delhi,28.570260,77.187866
+234,Botanical Garden,Delhi Metro,Delhi,28.563919,77.334112
+235,Brigadier Hoshiyar Singh,Delhi Metro,Delhi,28.697368,76.919162
+236,Burari,Delhi Metro,Delhi,28.729829,77.199574
+237,Central Secretariat,Delhi Metro,Delhi,28.615877,77.212325
+238,Chandni Chowk,Delhi Metro,Delhi,28.658422,77.230336
+239,Chawri Bazaar,Delhi Metro,Delhi,28.649264,77.226516
+240,Chhatarpur,Delhi Metro,Delhi,28.506764,77.174919
+241,Chirag Delhi,Delhi Metro,Delhi,28.541114,77.230294
+242,Civil Lines,Delhi Metro,Delhi,28.676850,77.225027
+243,Dabri Mor - Janakpuri South,Delhi Metro,Delhi,28.615748,77.085202
+244,Dashrath Puri,Delhi Metro,Delhi,28.601871,77.082381
+245,Deepali Chowk,Delhi Metro,Delhi,28.698094,77.118277
+246,Delhi Aerocity,Delhi Metro,Delhi,28.548780,77.120807
+247,Delhi Cantt,Delhi Metro,Delhi,28.608621,77.140412
+248,Delhi Gate,Delhi Metro,Delhi,28.639215,77.240782
+249,Dhansa Bus Stand,Delhi Metro,Delhi,28.611909,76.978548
+250,Dhaula Kuan,Delhi Metro,Delhi,28.591896,77.161693
+251,Dilli Haat - INA,Delhi Metro,Delhi,28.573906,77.208445
+252,Dilshad Garden,Delhi Metro,Delhi,28.675855,77.321514
+253,Durgabai Deshmukh South Campus,Delhi Metro,Delhi,28.589291,77.169457
+254,Dwarka - Kakrola (Blue Line),Delhi Metro,Delhi,28.614937,77.022763
+255,Dwarka - Kakrola (Grey Line),Delhi Metro,Delhi,28.615911,77.022396
+256,Dwarka Mor,Delhi Metro,Delhi,28.619312,77.033280
+257,Dwarka Sector 10,Delhi Metro,Delhi,28.581057,77.057500
+258,Dwarka Sector 11,Delhi Metro,Delhi,28.586445,77.049441
+259,Dwarka Sector 12,Delhi Metro,Delhi,28.592235,77.040732
+260,Dwarka Sector 13,Delhi Metro,Delhi,28.597009,77.033541
+261,Dwarka Sector 14,Delhi Metro,Delhi,28.602219,77.025977
+262,Dwarka Sector 21,Delhi Metro,Delhi,28.551912,77.058556
+263,Dwarka Sector 8,Delhi Metro,Delhi,28.565610,77.067038
+264,Dwarka Sector 9,Delhi Metro,Delhi,28.574272,77.065330
+265,ESI - Basaidarapur,Delhi Metro,Delhi,28.658065,77.127260
+266,East Azad Nagar,Delhi Metro,Delhi,28.664676,77.284842
+267,East Vinod Nagar - Mayur Vihar - II,Delhi Metro,Delhi,28.620083,77.305418
+268,Escorts Mujesar,Delhi Metro,Delhi,28.370233,77.314892
+269,GTB Nagar,Delhi Metro,Delhi,28.698131,77.206411
+270,Ghevra,Delhi Metro,Delhi,28.685263,76.996126
+271,Ghitorni,Delhi Metro,Delhi,28.493752,77.149184
+272,Gokulpuri,Delhi Metro,Delhi,28.702438,77.286101
+273,Govind Puri,Delhi Metro,Delhi,28.544368,77.264239
+274,Greater Kailash,Delhi Metro,Delhi,28.541896,77.238450
+275,Green Park,Delhi Metro,Delhi,28.558007,77.206791
+276,Guru Dronacharya,Delhi Metro,Delhi,28.482024,77.102268
+277,Haiderpur Badli Mor,Delhi Metro,Delhi,28.729807,77.148887
+278,Haiderpur Village,Delhi Metro,Delhi,28.724881,77.142437
+279,Harkesh Nagar Okhla,Delhi Metro,Delhi,28.543260,77.275683
+280,Hauz Khas (Magenta Line),Delhi Metro,Delhi,28.543373,77.205023
+281,Hauz Khas (Yellow Line),Delhi Metro,Delhi,28.544260,77.206710
+282,Hindon River,Delhi Metro,Delhi,28.673428,77.406537
+283,IFFCO Chowk,Delhi Metro,Delhi,28.472327,77.072421
+284,IGI Airport,Delhi Metro,Delhi,28.556457,77.086717
+285,IIT Delhi,Delhi Metro,Delhi,28.547024,77.194523
+286,IP Extension,Delhi Metro,Delhi,28.631891,77.310730
+287,ITO,Delhi Metro,Delhi,28.628193,77.241045
+288,Inderlok,Delhi Metro,Delhi,28.672654,77.169115
+289,Inderlok (Red Line),Delhi Metro,Delhi,28.673589,77.170347
+290,Indraprastha,Delhi Metro,Delhi,28.620603,77.249551
+291,Jaffrabad,Delhi Metro,Delhi,28.682720,77.274839
+292,Jagatpur - Wazirabad,Delhi Metro,Delhi,28.721150,77.223935
+293,Jahangirpuri,Delhi Metro,Delhi,28.725973,77.162657
+294,Jama Masjid,Delhi Metro,Delhi,28.650031,77.237662
+295,Jamia Millia Islamia,Delhi Metro,Delhi,28.563051,77.286339
+296,Janakpuri East,Delhi Metro,Delhi,28.633008,77.086718
+297,Janakpuri West,Delhi Metro,Delhi,28.629272,77.078016
+298,Jangpura,Delhi Metro,Delhi,28.583039,77.239317
+299,Janpath,Delhi Metro,Delhi,28.624049,77.219259
+300,Jasola Apollo,Delhi Metro,Delhi,28.538416,77.283017
+301,Jasola Vihar Shaheen Bagh,Delhi Metro,Delhi,28.545829,77.296658
+302,Jawaharlal Nehru Stadium,Delhi Metro,Delhi,28.588239,77.233782
+303,Jhandewalan,Delhi Metro,Delhi,28.644318,77.199916
+304,Jharoda Majra,Delhi Metro,Delhi,28.724883,77.213678
+305,Jhilmil,Delhi Metro,Delhi,28.675720,77.312395
+306,Johri Enclave,Delhi Metro,Delhi,28.712879,77.290122
+307,Jor Bagh,Delhi Metro,Delhi,28.586596,77.212533
+308,Kailash Colony,Delhi Metro,Delhi,28.555327,77.241964
+309,Kalindi Kunj,Delhi Metro,Delhi,28.542914,77.310113
+310,Kalkaji Mandir,Delhi Metro,Delhi,28.549850,77.257944
+311,Kanhaiya Nagar,Delhi Metro,Delhi,28.682408,77.164775
+312,Karkarduma (Blue Line),Delhi Metro,Delhi,28.648409,77.305535
+313,Karkarduma (Pink Line),Delhi Metro,Delhi,28.649284,77.306110
+314,Karkarduma Court,Delhi Metro,Delhi,28.653616,77.295795
+315,Karol Bagh,Delhi Metro,Delhi,28.644011,77.188524
+316,Kashmere Gate,Delhi Metro,Delhi,28.667878,77.228163
+317,Kaushambi,Delhi Metro,Delhi,28.645387,77.324340
+318,Keshav Puram,Delhi Metro,Delhi,28.688926,77.161683
+319,Khajuri Khas,Delhi Metro,Delhi,28.705184,77.254473
+320,Khan Market,Delhi Metro,Delhi,28.602244,77.229125
+321,Kirti Nagar,Delhi Metro,Delhi,28.654543,77.151357
+322,Kirti Nagar (Blue Line),Delhi Metro,Delhi,28.655746,77.150664
+323,Kohat Enclave,Delhi Metro,Delhi,28.698041,77.140539
+324,Krishna Nagar,Delhi Metro,Delhi,28.657785,77.290145
+325,Krishna Park Extension,Delhi Metro,Delhi,28.647790,77.084346
+326,Lajpat Nagar (Pink Line),Delhi Metro,Delhi,28.569512,77.238573
+327,Lajpat Nagar (Violet Line),Delhi Metro,Delhi,28.570581,77.236392
+328,Lal Quila,Delhi Metro,Delhi,28.657477,77.236625
+329,Laxmi Nagar,Delhi Metro,Delhi,28.630594,77.277526
+330,Lok Kalyan Marg,Delhi Metro,Delhi,28.597350,77.211097
+331,M G Road,Delhi Metro,Delhi,28.479556,77.079889
+332,Madhuban Chowk,Delhi Metro,Delhi,28.703468,77.130798
+333,Madipur,Delhi Metro,Delhi,28.676434,77.119350
+334,Majlis Park,Delhi Metro,Delhi,28.724349,77.181801
+335,Malviya Nagar,Delhi Metro,Delhi,28.529062,77.204825
+336,Mandawali - West Vinod Nagar,Delhi Metro,Delhi,28.624990,77.304467
+337,Mandi House,Delhi Metro,Delhi,28.625565,77.234195
+338,Mansarovar Park,Delhi Metro,Delhi,28.675385,77.300869
+339,Maujpur-Babarpur,Delhi Metro,Delhi,28.692127,77.279589
+340,Mayapuri,Delhi Metro,Delhi,28.637174,77.129735
+341,Mayur Vihar - I (Blue Line),Delhi Metro,Delhi,28.604071,77.289582
+342,Mayur Vihar - I (Pink Line),Delhi Metro,Delhi,28.603655,77.290971
+343,Mayur Vihar Extension,Delhi Metro,Delhi,28.594487,77.294488
+344,Mewala Maharajpur,Delhi Metro,Delhi,28.448618,77.308067
+345,Millennium City Centre Gurugram,Delhi Metro,Delhi,28.459348,77.072662
+346,Model Town,Delhi Metro,Delhi,28.702715,77.193994
+347,Mohan Estate,Delhi Metro,Delhi,28.519716,77.294457
+348,Mohan Nagar,Delhi Metro,Delhi,28.678533,77.383899
+349,Moolchand,Delhi Metro,Delhi,28.564405,77.234256
+350,Moti Nagar,Delhi Metro,Delhi,28.657860,77.142431
+351,Mundka,Delhi Metro,Delhi,28.682371,77.030572
+352,Mundka Industrial Area,Delhi Metro,Delhi,28.683369,77.017115
+353,Munirka,Delhi Metro,Delhi,28.556898,77.175058
+354,N.H.P.C. Chowk,Delhi Metro,Delhi,28.457777,77.307365
+355,Najafgarh,Delhi Metro,Delhi,28.612453,76.986561
+356,Nanaksar - Sonia Vihar,Delhi Metro,Delhi,28.708695,77.242503
+357,Nangli,Delhi Metro,Delhi,28.617300,77.010441
+358,Nangloi,Delhi Metro,Delhi,28.682363,77.064727
+359,Nangloi Railway Station,Delhi Metro,Delhi,28.682160,77.056237
+360,Naraina Vihar,Delhi Metro,Delhi,28.624385,77.136446
+361,Nawada,Delhi Metro,Delhi,28.620277,77.045081
+362,Neelam Chowk Ajronda,Delhi Metro,Delhi,28.397488,77.312405
+363,Nehru Enclave,Delhi Metro,Delhi,28.546057,77.251506
+364,Nehru Place,Delhi Metro,Delhi,28.551416,77.251739
+365,Netaji Subhash Place,Delhi Metro,Delhi,28.696049,77.152484
+366,Netaji Subhash Place (Pink Line),Delhi Metro,Delhi,28.694713,77.154269
+367,New Ashok Nagar,Delhi Metro,Delhi,28.589131,77.301591
+368,New Delhi,Delhi Metro,Delhi,28.643481,77.222742
+369,New Delhi Airport Express Terminal,Delhi Metro,Delhi,28.642480,77.223114
+370,Nirman Vihar,Delhi Metro,Delhi,28.636535,77.286764
+371,Noida City Centre,Delhi Metro,Delhi,28.574811,77.356229
+372,Noida Electronic City,Delhi Metro,Delhi,28.628261,77.375070
+373,Noida Golf Course,Delhi Metro,Delhi,28.567450,77.346388
+374,Noida Sector 15,Delhi Metro,Delhi,28.584943,77.311708
+375,Noida Sector 16,Delhi Metro,Delhi,28.578127,77.317853
+376,Noida Sector 18,Delhi Metro,Delhi,28.570807,77.326160
+377,Noida Sector 34,Delhi Metro,Delhi,28.580251,77.363501
+378,Noida Sector 52,Delhi Metro,Delhi,28.586758,77.372788
+379,Noida Sector 59,Delhi Metro,Delhi,28.606527,77.372682
+380,Noida Sector 61,Delhi Metro,Delhi,28.597583,77.372270
+381,Noida Sector 62,Delhi Metro,Delhi,28.616985,77.373589
+382,North Pitampura - Prashant Vihar,Delhi Metro,Delhi,28.713082,77.138672
+383,Okhla Bird Sanctuary,Delhi Metro,Delhi,28.552942,77.321597
+384,Okhla NSIC,Delhi Metro,Delhi,28.554468,77.264813
+385,Okhla Vihar,Delhi Metro,Delhi,28.561301,77.291874
+386,Old Faridabad,Delhi Metro,Delhi,28.410796,77.311440
+387,Palam,Delhi Metro,Delhi,28.588922,77.083071
+388,Panchsheel Park,Delhi Metro,Delhi,28.542375,77.221094
+389,Pandit Shree Ram Sharma,Delhi Metro,Delhi,28.689225,76.951164
+390,Paschim Vihar East,Delhi Metro,Delhi,28.677358,77.112282
+391,Paschim Vihar West,Delhi Metro,Delhi,28.678606,77.102214
+392,Patel Chowk,Delhi Metro,Delhi,28.622968,77.214033
+393,Patel Nagar,Delhi Metro,Delhi,28.645012,77.169279
+394,Peeragarhi,Delhi Metro,Delhi,28.679730,77.092658
+395,Pratap Nagar,Delhi Metro,Delhi,28.666718,77.198897
+396,Preet Vihar,Delhi Metro,Delhi,28.641414,77.295286
+397,Pul Bangash,Delhi Metro,Delhi,28.666407,77.207416
+398,Punjabi Bagh,Delhi Metro,Delhi,28.672956,77.146121
+399,Punjabi Bagh West,Delhi Metro,Delhi,28.673407,77.139881
+400,Qutab Minar,Delhi Metro,Delhi,28.512951,77.186454
+401,R. K. Puram,Delhi Metro,Delhi,28.550383,77.185517
+402,Raj Bagh,Delhi Metro,Delhi,28.677089,77.346863
+403,Raja Nahar Singh,Delhi Metro,Delhi,28.340003,77.316451
+404,Rajdhani Park,Delhi Metro,Delhi,28.682270,77.043937
+405,Rajendra Nagar,Delhi Metro,Delhi,28.677610,77.358141
+406,Rajendra Place,Delhi Metro,Delhi,28.642497,77.178275
+407,Rajiv Chowk,Delhi Metro,Delhi,28.632774,77.219516
+408,Rajouri Garden (Blue Line),Delhi Metro,Delhi,28.649056,77.122732
+409,Rajouri Garden (Pink Line),Delhi Metro,Delhi,28.651188,77.124256
+410,Ramakrishna Ashram Marg,Delhi Metro,Delhi,28.639242,77.208581
+411,Ramesh Nagar,Delhi Metro,Delhi,28.652745,77.131650
+412,Rithala,Delhi Metro,Delhi,28.720769,77.107136
+413,Rohini East,Delhi Metro,Delhi,28.707573,77.126000
+414,"Rohini Sector 18, 19",Delhi Metro,Delhi,28.738359,77.139840
+415,Rohini West,Delhi Metro,Delhi,28.714957,77.115385
+416,Sadar Bazar Cantonment,Delhi Metro,Delhi,28.577118,77.111133
+417,Saket,Delhi Metro,Delhi,28.521208,77.202266
+418,Samaypur Badli,Delhi Metro,Delhi,28.744627,77.138282
+419,Sant Surdas (Sihi),Delhi Metro,Delhi,28.354650,77.316198
+420,Sarai,Delhi Metro,Delhi,28.477968,77.304890
+421,Sarai Kale Khan - Nizamuddin,Delhi Metro,Delhi,28.589064,77.257217
+422,Sarita Vihar,Delhi Metro,Delhi,28.528578,77.288296
+423,Sarojini Nagar,Delhi Metro,Delhi,28.575815,77.198080
+424,Satguru Ramsingh Marg,Delhi Metro,Delhi,28.662062,77.157566
+425,Sector 28,Delhi Metro,Delhi,28.438158,77.309035
+426,Seelampur,Delhi Metro,Delhi,28.669852,77.266792
+427,Seva Teerth,Delhi Metro,Delhi,28.609513,77.211794
+428,Shadipur,Delhi Metro,Delhi,28.651584,77.158256
+429,Shahdara,Delhi Metro,Delhi,28.673430,77.289886
+430,Shaheed Nagar,Delhi Metro,Delhi,28.676660,77.333916
+431,Shaheed Sthal,Delhi Metro,Delhi,28.670677,77.415381
+432,Shakurpur,Delhi Metro,Delhi,28.685793,77.149570
+433,Shalimar Bagh,Delhi Metro,Delhi,28.701960,77.165442
+434,Shankar Vihar,Delhi Metro,Delhi,28.560850,77.140259
+435,Shastri Nagar,Delhi Metro,Delhi,28.670088,77.181859
+436,Shastri Park,Delhi Metro,Delhi,28.668433,77.250529
+437,Shiv Vihar,Delhi Metro,Delhi,28.721429,77.289435
+438,Shivaji Park,Delhi Metro,Delhi,28.674990,77.130462
+439,Shivaji Stadium,Delhi Metro,Delhi,28.628897,77.211321
+440,Shree Ram Mandir Mayur Vihar,Delhi Metro,Delhi,28.605847,77.298648
+441,Shyam Park,Delhi Metro,Delhi,28.678208,77.370487
+442,Sikanderpur,Delhi Metro,Delhi,28.481270,77.093000
+443,Sir M. Vishweshwaraiah Moti Bagh,Delhi Metro,Delhi,28.578534,77.175731
+444,Soorghat,Delhi Metro,Delhi,28.710225,77.227471
+445,South Extension,Delhi Metro,Delhi,28.568565,77.220566
+446,Subhash Nagar,Delhi Metro,Delhi,28.640482,77.105225
+447,Sukhdev Vihar,Delhi Metro,Delhi,28.559800,77.274961
+448,Sultanpur,Delhi Metro,Delhi,28.499181,77.161377
+449,Supreme Court,Delhi Metro,Delhi,28.623473,77.242529
+450,Surajmal Stadium,Delhi Metro,Delhi,28.681849,77.074002
+451,Tagore Garden,Delhi Metro,Delhi,28.643746,77.112858
+452,Terminal 1 IGI Airport,Delhi Metro,Delhi,28.564864,77.122647
+453,Tikri Border,Delhi Metro,Delhi,28.687927,76.964072
+454,Tikri Kalan,Delhi Metro,Delhi,28.686839,76.977201
+455,Tilak Nagar,Delhi Metro,Delhi,28.636545,77.096472
+456,Tis Hazari,Delhi Metro,Delhi,28.667163,77.216631
+457,Trilokpuri Sanjay Lake,Delhi Metro,Delhi,28.613442,77.308846
+458,Tughlakabad,Delhi Metro,Delhi,28.502368,77.299213
+459,Udyog Nagar,Delhi Metro,Delhi,28.681068,77.080846
+460,Uttam Nagar East,Delhi Metro,Delhi,28.624849,77.065288
+461,Uttam Nagar West,Delhi Metro,Delhi,28.621757,77.055714
+462,Vaishali,Delhi Metro,Delhi,28.649745,77.339519
+463,Vasant Vihar,Delhi Metro,Delhi,28.557831,77.161092
+464,Vidhan Sabha,Delhi Metro,Delhi,28.686323,77.221728
+465,Vinobapuri,Delhi Metro,Delhi,28.565865,77.249273
+466,Vishwa Vidyalaya,Delhi Metro,Delhi,28.695077,77.214741
+467,Welcome,Delhi Metro,Delhi,28.671791,77.277839
+468,Welcome (Pink Line),Delhi Metro,Delhi,28.672377,77.276942
+469,Yamuna Bank,Delhi Metro,Delhi,28.623211,77.267911
+470,Yamuna Vihar,Delhi Metro,Delhi,28.702379,77.277306
+471,Yashobhoomi Dwarka Sector 25,Delhi Metro,Delhi,28.550829,77.045310
+472,Anand Vihar,Namo Bharat (RRTS),Delhi NCR,28.647467,77.316790
+473,Begumpul,Namo Bharat (RRTS),Delhi NCR,28.996737,77.705624
+474,Duhai,Namo Bharat (RRTS),Delhi NCR,28.726977,77.471453
+475,Duhai Depot Station,Namo Bharat (RRTS),Delhi NCR,28.742269,77.467663
+476,Ghaziabad,Namo Bharat (RRTS),Delhi NCR,28.672556,77.413732
+477,Guldhar,Namo Bharat (RRTS),Delhi NCR,28.699545,77.445751
+478,Meerut South,Namo Bharat (RRTS),Delhi NCR,28.904613,77.632790
+479,Modinagar North,Namo Bharat (RRTS),Delhi NCR,28.843488,77.583199
+480,Modinagar South,Namo Bharat (RRTS),Delhi NCR,28.817728,77.556740
+481,Modipuram,Namo Bharat (RRTS),Delhi NCR,29.072322,77.708914
+482,Murad Nagar,Namo Bharat (RRTS),Delhi NCR,28.770359,77.510706
+483,New Ashok Nagar,Namo Bharat (RRTS),Delhi NCR,28.591288,77.302479
+484,Sahibabad,Namo Bharat (RRTS),Delhi NCR,28.667654,77.368184
+485,Sarai Kale Khan,Namo Bharat (RRTS),Delhi NCR,28.589194,77.258069
+486,Shatabdi Nagar,Namo Bharat (RRTS),Delhi NCR,28.947747,77.673877
+487,Belvedere Towers,Rapid Metro Gurugram,Gurugram,28.491702,77.088132
+488,Cyber City,Rapid Metro Gurugram,Gurugram,28.498061,77.089160
+489,DLF Phase 1,Rapid Metro Gurugram,Gurugram,28.471426,77.093937
+490,DLF Phase 2,Rapid Metro Gurugram,Gurugram,28.487561,77.092989
+491,Moulsari Avenue Station,Rapid Metro Gurugram,Gurugram,28.500778,77.094631
+492,Phase 3 Station,Rapid Metro Gurugram,Gurugram,28.493568,77.093661
+493,Sector 42-43,Rapid Metro Gurugram,Gurugram,28.457423,77.096929
+494,Sector 53-54,Rapid Metro Gurugram,Gurugram,28.446379,77.100441
+495,Sector 54 Chowk,Rapid Metro Gurugram,Gurugram,28.432964,77.104810
+496,Sector 55–56,Rapid Metro Gurugram,Gurugram,28.423299,77.105089
+497,Sikanderpur,Rapid Metro Gurugram,Gurugram,28.480997,77.094437
+498,Ameerpet,Hyderabad Metro,Hyderabad,17.435418,78.444669
+499,Assembly,Hyderabad Metro,Hyderabad,17.398130,78.470827
+500,Balanagar,Hyderabad Metro,Hyderabad,17.476895,78.421860
+501,Begumpet,Hyderabad Metro,Hyderabad,17.437573,78.456932
+502,Bharat Nagar,Hyderabad Metro,Hyderabad,17.464239,78.429976
+503,Chaitanyapuri,Hyderabad Metro,Hyderabad,17.368285,78.535863
+504,Chikkadpally,Hyderabad Metro,Hyderabad,17.400363,78.494898
+505,Dilsukh Nagar,Hyderabad Metro,Hyderabad,17.368543,78.525718
+506,Durgam Cheruvu,Hyderabad Metro,Hyderabad,17.442909,78.387575
+507,ESI Hospital,Hyderabad Metro,Hyderabad,17.447372,78.438350
+508,Erragadda,Hyderabad Metro,Hyderabad,17.457396,78.433430
+509,Gandhi Bhavan,Hyderabad Metro,Hyderabad,17.386095,78.473105
+510,Gandhi Hospital,Hyderabad Metro,Hyderabad,17.425520,78.501900
+511,HITEC City,Hyderabad Metro,Hyderabad,17.449002,78.383137
+512,Habsiguda,Hyderabad Metro,Hyderabad,17.420179,78.540550
+513,Irrum Manzil,Hyderabad Metro,Hyderabad,17.420597,78.456075
+514,JBS,Hyderabad Metro,Hyderabad,17.448818,78.496482
+515,JNTU College,Hyderabad Metro,Hyderabad,17.498655,78.388866
+516,Jubilee Hills Checkpost,Hyderabad Metro,Hyderabad,17.428222,78.413694
+517,KPHB Colony,Hyderabad Metro,Hyderabad,17.493802,78.401764
+518,Khairatabad,Hyderabad Metro,Hyderabad,17.411564,78.460846
+519,Kukatpally,Hyderabad Metro,Hyderabad,17.485227,78.411541
+520,L. B. Nagar,Hyderabad Metro,Hyderabad,17.349827,78.547914
+521,Lakdi-ka-pul,Hyderabad Metro,Hyderabad,17.403934,78.465005
+522,Madhapur,Hyderabad Metro,Hyderabad,17.437260,78.400426
+523,Madhura Nagar,Hyderabad Metro,Hyderabad,17.436965,78.439099
+524,Mahatma Gandhi Bus Station (Green Line),Hyderabad Metro,Hyderabad,17.379603,78.485840
+525,Mahatma Gandhi Bus Station (Red Line),Hyderabad Metro,Hyderabad,17.379797,78.486196
+526,Malakpet,Hyderabad Metro,Hyderabad,17.377188,78.493903
+527,Mettuguda,Hyderabad Metro,Hyderabad,17.435524,78.519577
+528,Miyapur,Hyderabad Metro,Hyderabad,17.496538,78.373025
+529,Moosapet,Hyderabad Metro,Hyderabad,17.472135,78.425924
+530,Musarambagh,Hyderabad Metro,Hyderabad,17.371071,78.511946
+531,Musheerabad,Hyderabad Metro,Hyderabad,17.417876,78.499502
+532,NGRI,Hyderabad Metro,Hyderabad,17.414825,78.546334
+533,Nagole,Hyderabad Metro,Hyderabad,17.390772,78.558821
+534,Nampally,Hyderabad Metro,Hyderabad,17.392479,78.470161
+535,Narayanaguda,Hyderabad Metro,Hyderabad,17.394366,78.489957
+536,New Market,Hyderabad Metro,Hyderabad,17.373427,78.503178
+537,Osmania Medical College,Hyderabad Metro,Hyderabad,17.382308,78.481165
+538,Panjagutta,Hyderabad Metro,Hyderabad,17.428673,78.451104
+539,Parade Grounds (Blue Line),Hyderabad Metro,Hyderabad,17.443195,78.497470
+540,Parade Grounds (Green Line),Hyderabad Metro,Hyderabad,17.444485,78.497584
+541,Paradise,Hyderabad Metro,Hyderabad,17.443465,78.486245
+542,Peddamma Gudi,Hyderabad Metro,Hyderabad,17.430652,78.408374
+543,Prakash Nagar,Hyderabad Metro,Hyderabad,17.444886,78.465876
+544,RTC Cross Roads,Hyderabad Metro,Hyderabad,17.407032,78.496802
+545,Raidurg,Hyderabad Metro,Hyderabad,17.442182,78.377184
+546,Rasoolpura,Hyderabad Metro,Hyderabad,17.443615,78.476408
+547,Road No 5 Jubilee Hills,Hyderabad Metro,Hyderabad,17.430049,78.423207
+548,S. R. Nagar,Hyderabad Metro,Hyderabad,17.441706,78.441606
+549,Secunderabad East,Hyderabad Metro,Hyderabad,17.435718,78.505461
+550,Secunderabad West,Hyderabad Metro,Hyderabad,17.433807,78.499518
+551,Stadium,Hyderabad Metro,Hyderabad,17.407397,78.554250
+552,Sultan Bazar,Hyderabad Metro,Hyderabad,17.384445,78.484026
+553,Tarnaka,Hyderabad Metro,Hyderabad,17.428296,78.528442
+554,Uppal,Hyderabad Metro,Hyderabad,17.400061,78.560228
+555,Victoria Memorial,Hyderabad Metro,Hyderabad,17.361849,78.543929
+556,Yusufguda,Hyderabad Metro,Hyderabad,17.435112,78.427319
+557,Gandhi Nagar,Indore Metro,Indore,22.738985,75.797483
+558,Super Corridor 3,Indore Metro,Indore,22.771807,75.818935
+559,Super Corridor 4,Indore Metro,Indore,22.763104,75.811148
+560,Super Corridor 5,Indore Metro,Indore,22.754077,75.804247
+561,Super Corridor 6,Indore Metro,Indore,22.745333,75.800917
+562,Badi Chaupar,Jaipur Metro,Jaipur,26.922969,75.826775
+563,Chandpole,Jaipur Metro,Jaipur,26.926558,75.807914
+564,Choti Chaupar,Jaipur Metro,Jaipur,26.924666,75.818491
+565,Civil Lines,Jaipur Metro,Jaipur,26.909431,75.781151
+566,Manasarovar,Jaipur Metro,Jaipur,26.879439,75.750214
+567,New Aatish Market,Jaipur Metro,Jaipur,26.880155,75.764469
+568,Railway Station,Jaipur Metro,Jaipur,26.918090,75.790098
+569,Ram Nagar,Jaipur Metro,Jaipur,26.901764,75.774648
+570,Shyam Nagar,Jaipur Metro,Jaipur,26.896478,75.770630
+571,Sindhi Camp,Jaipur Metro,Jaipur,26.922572,75.799913
+572,Vivek Vihar,Jaipur Metro,Jaipur,26.888457,75.768409
+573,Bada Chauraha,Kanpur Metro,Kanpur,26.472690,80.352406
+574,Chunniganj,Kanpur Metro,Kanpur,26.477053,80.337079
+575,Geeta Nagar,Kanpur Metro,Kanpur,26.486993,80.292144
+576,Gurudev Chauraha,Kanpur Metro,Kanpur,26.491576,80.284372
+577,IIT Kanpur,Kanpur Metro,Kanpur,26.509208,80.248309
+578,Kalyanpur,Kanpur Metro,Kanpur,26.503731,80.252564
+579,Kanpur Central,Kanpur Metro,Kanpur,26.453887,80.351789
+580,LLR Hospital,Kanpur Metro,Kanpur,26.479267,80.311567
+581,Moti Jheel,Kanpur Metro,Kanpur,26.479127,80.317893
+582,Naveen Market,Kanpur Metro,Kanpur,26.474061,80.345448
+583,Nayaganj,Kanpur Metro,Kanpur,26.464165,80.359505
+584,Rawatpur,Kanpur Metro,Kanpur,26.482859,80.300082
+585,SPM Hospital,Kanpur Metro,Kanpur,26.498899,80.258899
+586,Vishwavidyalaya,Kanpur Metro,Kanpur,26.496444,80.267430
+587,Aluva,Kochi Metro,Kochi,10.110230,76.349357
+588,Ambattukavu,Kochi Metro,Kochi,10.079311,76.338850
+589,Changampuzha Park,Kochi Metro,Kochi,10.015195,76.302356
+590,Cochin University,Kochi Metro,Kochi,10.046705,76.318248
+591,Companypady,Kochi Metro,Kochi,10.087290,76.342760
+592,Edappally,Kochi Metro,Kochi,10.025257,76.308452
+593,Elamkulam,Kochi Metro,Kochi,9.967168,76.308443
+594,Ernakulam South,Kochi Metro,Kochi,9.968617,76.289569
+595,JLN Stadium,Kochi Metro,Kochi,10.000485,76.299239
+596,Kadavanthra,Kochi Metro,Kochi,9.966561,76.298198
+597,Kalamassery Town,Kochi Metro,Kochi,10.058594,76.321937
+598,Kaloor,Kochi Metro,Kochi,9.994376,76.291509
+599,M. G. Road,Kochi Metro,Kochi,9.983450,76.282352
+600,Maharaja's College,Kochi Metro,Kochi,9.973275,76.285087
+601,Muttom,Kochi Metro,Kochi,10.072756,76.333667
+602,Palarivattom,Kochi Metro,Kochi,10.006416,76.304799
+603,Pathadipalam,Kochi Metro,Kochi,10.036225,76.314420
+604,Petta,Kochi Metro,Kochi,9.952634,76.330105
+605,Pulinchodu,Kochi Metro,Kochi,10.095034,76.346556
+606,SN Junction,Kochi Metro,Kochi,9.954679,76.346038
+607,Thrippunithura Terminal,Kochi Metro,Kochi,9.950713,76.351939
+608,Thykoodam,Kochi Metro,Kochi,9.960012,76.323665
+609,Town Hall,Kochi Metro,Kochi,9.991398,76.288347
+610,Vadakkekotta,Kochi Metro,Kochi,9.952821,76.339544
+611,Vyttila,Kochi Metro,Kochi,9.967598,76.320471
+612,Baranagar,Kolkata Metro,Kolkata,22.653095,88.380680
+613,Barun Sengupta,Kolkata Metro,Kolkata,22.543806,88.399273
+614,Behala Bazar,Kolkata Metro,Kolkata,22.498801,88.317336
+615,Behala Chowrasta,Kolkata Metro,Kolkata,22.487412,88.313316
+616,Beleghata,Kolkata Metro,Kolkata,22.550704,88.403993
+617,Belgachia,Kolkata Metro,Kolkata,22.606021,88.386378
+618,Bengal Chemical,Kolkata Metro,Kolkata,22.579975,88.401360
+619,Central,Kolkata Metro,Kolkata,22.572468,88.358729
+620,Central Park,Kolkata Metro,Kolkata,22.590379,88.415640
+621,Chandni Chowk,Kolkata Metro,Kolkata,22.567007,88.354182
+622,City Centre,Kolkata Metro,Kolkata,22.586971,88.407929
+623,Dakshineshwar,Kolkata Metro,Kolkata,22.654033,88.363754
+624,Dum Dum,Kolkata Metro,Kolkata,22.620919,88.392840
+625,Dum Dum Cantonment,Kolkata Metro,Kolkata,22.637595,88.412164
+626,Esplanade (Line 1),Kolkata Metro,Kolkata,22.563645,88.351138
+627,Esplanade (Line 2),Kolkata Metro,Kolkata,22.564157,88.350246
+628,Girish Park,Kolkata Metro,Kolkata,22.587066,88.362919
+629,Gitanjali,Kolkata Metro,Kolkata,22.469392,88.370018
+630,Hemanta Mukhopadhyay,Kolkata Metro,Kolkata,22.514852,88.401432
+631,Howrah,Kolkata Metro,Kolkata,22.583342,88.340153
+632,Howrah Maidan,Kolkata Metro,Kolkata,22.583766,88.334029
+633,Jai Hind,Kolkata Metro,Kolkata,22.647303,88.437303
+634,Jatin Das Park,Kolkata Metro,Kolkata,22.524112,88.346468
+635,Jessore Road,Kolkata Metro,Kolkata,22.639264,88.429773
+636,Joka,Kolkata Metro,Kolkata,22.452387,88.301827
+637,Jyotirindra Nandi,Kolkata Metro,Kolkata,22.495624,88.398450
+638,Kalighat,Kolkata Metro,Kolkata,22.516928,88.345795
+639,Karunamoyee,Kolkata Metro,Kolkata,22.586284,88.421546
+640,Kavi Nazrul,Kolkata Metro,Kolkata,22.464186,88.380581
+641,Kavi Subhash (Blue Line),Kolkata Metro,Kolkata,22.472112,88.398003
+642,Kavi Subhash (Orange Line),Kolkata Metro,Kolkata,22.471018,88.398198
+643,Kavi Sukanta,Kolkata Metro,Kolkata,22.505300,88.400997
+644,Mahakaran,Kolkata Metro,Kolkata,22.572057,88.350517
+645,Mahanayak Uttam Kumar,Kolkata Metro,Kolkata,22.494779,88.344963
+646,Mahatma Gandhi Road,Kolkata Metro,Kolkata,22.580944,88.361327
+647,Maidan,Kolkata Metro,Kolkata,22.549542,88.348736
+648,Majerhat,Kolkata Metro,Kolkata,22.519071,88.323642
+649,Masterda Surya Sen,Kolkata Metro,Kolkata,22.473441,88.360847
+650,Netaji,Kolkata Metro,Kolkata,22.481003,88.346005
+651,Netaji Bhavan,Kolkata Metro,Kolkata,22.533236,88.345934
+652,Noapara (Blue Line),Kolkata Metro,Kolkata,22.639974,88.394083
+653,Noapara (Yellow Line),Kolkata Metro,Kolkata,22.639938,88.394247
+654,Park Street,Kolkata Metro,Kolkata,22.555128,88.350044
+655,Phoolbagan,Kolkata Metro,Kolkata,22.572058,88.390264
+656,Rabindra Sadan,Kolkata Metro,Kolkata,22.541608,88.347232
+657,Rabindra Sarobar,Kolkata Metro,Kolkata,22.507405,88.345455
+658,Ritwik Ghatak,Kolkata Metro,Kolkata,22.532996,88.396425
+659,Sakher bazar,Kolkata Metro,Kolkata,22.474894,88.309938
+660,Sakherbazar,Kolkata Metro,Kolkata,22.474897,88.309889
+661,Salt Lake Sector V,Kolkata Metro,Kolkata,22.580918,88.429034
+662,Salt Lake Stadium,Kolkata Metro,Kolkata,22.572970,88.403104
+663,Satyajit Roy,Kolkata Metro,Kolkata,22.484677,88.392648
+664,Sealdah,Kolkata Metro,Kolkata,22.566445,88.370037
+665,Shahid Khudiram,Kolkata Metro,Kolkata,22.465955,88.391683
+666,Shobhabazar Sutanuti,Kolkata Metro,Kolkata,22.595833,88.365069
+667,Shyambazar,Kolkata Metro,Kolkata,22.601418,88.372478
+668,Taratala,Kolkata Metro,Kolkata,22.507703,88.320330
+669,Thakurpukur,Kolkata Metro,Kolkata,22.464414,88.307508
+670,VIP Bazar,Kolkata Metro,Kolkata,22.524685,88.396241
+671,Alambagh,Lucknow Metro,Lucknow,26.814009,80.902515
+672,Alambagh Bus Station,Lucknow Metro,Lucknow,26.818472,80.907295
+673,Amausi,Lucknow Metro,Lucknow,26.771344,80.878686
+674,Badshah Nagar,Lucknow Metro,Lucknow,26.870703,80.961065
+675,Bhootnath Market,Lucknow Metro,Lucknow,26.872237,80.982304
+676,Charbagh Railway Station,Lucknow Metro,Lucknow,26.832401,80.923113
+677,Chaudhary Charan Singh International Airport,Lucknow Metro,Lucknow,26.766297,80.883591
+678,Durgapuri,Lucknow Metro,Lucknow,26.831999,80.915410
+679,Hazratganj,Lucknow Metro,Lucknow,26.850027,80.941598
+680,Hussainganj,Lucknow Metro,Lucknow,26.838429,80.934330
+681,IT College,Lucknow Metro,Lucknow,26.871029,80.945609
+682,Indira Nagar,Lucknow Metro,Lucknow,26.872734,80.990878
+683,KD Singh Babu Stadium,Lucknow Metro,Lucknow,26.853928,80.936825
+684,Krishna Nagar,Lucknow Metro,Lucknow,26.794392,80.891763
+685,Lekhraj Market,Lucknow Metro,Lucknow,26.870923,80.973903
+686,Mawaiya,Lucknow Metro,Lucknow,26.825307,80.909858
+687,Munshipulia,Lucknow Metro,Lucknow,26.887894,80.995873
+688,Sachivalaya,Lucknow Metro,Lucknow,26.841596,80.939908
+689,Singar Nagar,Lucknow Metro,Lucknow,26.803091,80.896431
+690,Transport Nagar,Lucknow Metro,Lucknow,26.777876,80.882645
+691,Vishwavidyalaya,Lucknow Metro,Lucknow,26.865500,80.939537
+692,Begumpul,Meerut Metro,Meerut,28.996738,77.705578
+693,Bhainsali,Meerut Metro,Meerut,28.988093,77.700320
+694,Brahmapuri,Meerut Metro,Meerut,28.960309,77.684819
+695,Daurli,Meerut Metro,Meerut,29.040738,77.706854
+696,MES Colony,Meerut Metro,Meerut,29.015963,77.704621
+697,Meerut Central,Meerut Metro,Meerut,28.972876,77.690605
+698,Meerut North,Meerut Metro,Meerut,29.053349,77.708018
+699,Meerut South,Meerut Metro,Meerut,28.904633,77.632765
+700,Modipuram,Meerut Metro,Meerut,29.072325,77.708860
+701,Partapur,Meerut Metro,Meerut,28.922025,77.650582
+702,Rithani,Meerut Metro,Meerut,28.932057,77.660564
+703,Shatabdi Nagar,Meerut Metro,Meerut,28.947751,77.673889
+704,Aarey,Mumbai Metro,Mumbai,19.169536,72.858813
+705,Aarey JVLR,Mumbai Metro,Mumbai,19.131063,72.884203
+706,Acharya Atre Chowk,Mumbai Metro,Mumbai,18.997816,72.817718
+707,Airport Road,Mumbai Metro,Mumbai,19.110121,72.874164
+708,Akurli,Mumbai Metro,Mumbai,19.198319,72.860624
+709,Anand Nagar,Mumbai Metro,Mumbai,19.257266,72.865996
+710,Andheri,Mumbai Metro,Mumbai,19.120478,72.848757
+711,Andheri (West),Mumbai Metro,Mumbai,19.129176,72.831446
+712,Asalpha,Mumbai Metro,Mumbai,19.096418,72.894869
+713,Azad Nagar,Mumbai Metro,Mumbai,19.126914,72.837644
+714,Bandra Colony,Mumbai Metro,Mumbai,19.069811,72.849435
+715,Bandra Kurla Complex (BKC),Mumbai Metro,Mumbai,19.060656,72.854638
+716,Bangur Nagar,Mumbai Metro,Mumbai,19.162309,72.834862
+717,Borivali (West),Mumbai Metro,Mumbai,19.231392,72.840862
+718,CSMIA Domestic,Mumbai Metro,Mumbai,19.093926,72.853566
+719,CSMIA International T2,Mumbai Metro,Mumbai,19.102301,72.874463
+720,Chakala - J.B. Nagar,Mumbai Metro,Mumbai,19.112048,72.867622
+721,Chembur,Mumbai Metro,Mumbai,19.054135,72.892818
+722,Chhatrapati Shivaji Maharaj Terminus,Mumbai Metro,Mumbai,18.940829,72.831873
+723,Churchgate,Mumbai Metro,Mumbai,18.931484,72.826947
+724,Cuffe Parade,Mumbai Metro,Mumbai,18.913560,72.820718
+725,D. N. Nagar,Mumbai Metro,Mumbai,19.128292,72.830193
+726,Dadar,Mumbai Metro,Mumbai,19.023603,72.839217
+727,Dahanukarwadi,Mumbai Metro,Mumbai,19.206207,72.834801
+728,Dahisar (East) [Line 2],Mumbai Metro,Mumbai,19.251569,72.867340
+729,Dahisar (East) [Line 7],Mumbai Metro,Mumbai,19.250629,72.866639
+730,Dahisar (East) [Line 9],Mumbai Metro,Mumbai,19.250967,72.867376
+731,Deonar,Mumbai Metro,Mumbai,19.044827,72.917525
+732,Devipada,Mumbai Metro,Mumbai,19.224338,72.864209
+733,Dharavi,Mumbai Metro,Mumbai,19.046258,72.849743
+734,Diamond Garden,Mumbai Metro,Mumbai,19.051744,72.901810
+735,Dindoshi,Mumbai Metro,Mumbai,19.179756,72.858297
+736,Eksar,Mumbai Metro,Mumbai,19.240423,72.843503
+737,Ghatkopar,Mumbai Metro,Mumbai,19.086285,72.908054
+738,Girgaon,Mumbai Metro,Mumbai,18.952093,72.822212
+739,Goregaon (East),Mumbai Metro,Mumbai,19.152416,72.856590
+740,Goregaon (West),Mumbai Metro,Mumbai,19.153026,72.835715
+741,Grant Road,Mumbai Metro,Mumbai,18.963213,72.818056
+742,Gundavali,Mumbai Metro,Mumbai,19.114514,72.855155
+743,Hutatma Chowk,Mumbai Metro,Mumbai,18.934174,72.832514
+744,Jagannath Shankar Sheth Metro,Mumbai Metro,Mumbai,18.969983,72.821191
+745,Jagruti Nagar,Mumbai Metro,Mumbai,19.092526,72.901938
+746,Jogeshwari (East),Mumbai Metro,Mumbai,19.142940,72.855181
+747,Kalbadevi,Mumbai Metro,Mumbai,18.946328,72.827202
+748,Kandivali (West),Mumbai Metro,Mumbai,19.213998,72.837311
+749,Kashigaon,Mumbai Metro,Mumbai,19.277661,72.880258
+750,Kurar,Mumbai Metro,Mumbai,19.187101,72.858516
+751,Lower Malad,Mumbai Metro,Mumbai,19.173101,72.836473
+752,Lower Oshiwara,Mumbai Metro,Mumbai,19.140723,72.831708
+753,MIDC - Andheri,Mumbai Metro,Mumbai,19.117358,72.873647
+754,Magathane,Mumbai Metro,Mumbai,19.217119,72.866775
+755,Mahalaxmi,Mumbai Metro,Mumbai,18.979457,72.825413
+756,Mahindra & Mahindra,Mumbai Metro,Mumbai,19.203773,72.863322
+757,Malad West,Mumbai Metro,Mumbai,19.185286,72.835854
+758,Mandale,Mumbai Metro,Mumbai,19.049565,72.938671
+759,Mandapeshwar - I.C. Colony,Mumbai Metro,Mumbai,19.249580,72.845738
+760,Mankhurd,Mumbai Metro,Mumbai,19.049190,72.931153
+761,Marol Naka (Line 1),Mumbai Metro,Mumbai,19.108156,72.879491
+762,Marol Naka (Line 3),Mumbai Metro,Mumbai,19.108770,72.878563
+763,Miragaon,Mumbai Metro,Mumbai,19.270998,72.880676
+764,Mogra,Mumbai Metro,Mumbai,19.128449,72.855443
+765,Oshiwara,Mumbai Metro,Mumbai,19.146036,72.833953
+766,Ovaripada,Mumbai Metro,Mumbai,19.242943,72.864173
+767,Pandurang Wadi,Mumbai Metro,Mumbai,19.260089,72.872636
+768,Rashtriya Udyan,Mumbai Metro,Mumbai,19.234616,72.863135
+769,Rushi Sankul,Mumbai Metro,Mumbai,19.256619,72.850638
+770,SEEPZ,Mumbai Metro,Mumbai,19.125758,72.873524
+771,Sahar Road,Mumbai Metro,Mumbai,19.102159,72.865164
+772,Saki Naka,Mumbai Metro,Mumbai,19.103531,72.887965
+773,Santacruz,Mumbai Metro,Mumbai,19.079174,72.847098
+774,Science Museum,Mumbai Metro,Mumbai,18.990885,72.821365
+775,Shimpoli,Mumbai Metro,Mumbai,19.222832,72.840941
+776,Shitala Devi Mandir,Mumbai Metro,Mumbai,19.038504,72.841956
+777,Shivaji Chowk (Chembur),Mumbai Metro,Mumbai,19.047935,72.906992
+778,Siddhivinayak Temple,Mumbai Metro,Mumbai,19.015882,72.830950
+779,Valnai-Meeth Chowky,Mumbai Metro,Mumbai,19.196823,72.833811
+780,Versova,Mumbai Metro,Mumbai,19.130256,72.821382
+781,Vidhan Bhavan,Mumbai Metro,Mumbai,18.924779,72.825495
+782,Western Express Highway (eastbound),Mumbai Metro,Mumbai,19.115564,72.856983
+783,Western Express Highway (westbound),Mumbai Metro,Mumbai,19.116164,72.855869
+784,Worli,Mumbai Metro,Mumbai,19.008607,72.819272
+785,Amar Mahal Junction Station,Mumbai Monorail,Mumbai,19.067405,72.899998
+786,Anik Nagar Bus Depot Station,Mumbai Monorail,Mumbai,19.045827,72.878634
+787,Bhandup Mahapalika Station,Mumbai Monorail,Mumbai,19.138742,72.930774
+788,Bhandup Station (W),Mumbai Monorail,Mumbai,19.146087,72.936059
+789,Cadbury Junction Station,Mumbai Monorail,Mumbai,19.206418,72.970449
+790,Dongripada Station,Mumbai Monorail,Mumbai,19.250590,72.973262
+791,Gaimukh Station,Mumbai Monorail,Mumbai,19.284435,72.946808
+792,Garodia Nagar Station,Mumbai Monorail,Mumbai,19.072575,72.902318
+793,Godrej Colony Station,Mumbai Monorail,Mumbai,19.102908,72.920355
+794,Gowniwada Station,Mumbai Monorail,Mumbai,19.276747,72.958227
+795,Kanjurmarg Station,Mumbai Monorail,Mumbai,19.125391,72.925252
+796,Kapurbawdi Station,Mumbai Monorail,Mumbai,19.224143,72.977424
+797,Kasarvadavli Station,Mumbai Monorail,Mumbai,19.267429,72.966646
+798,Lakshmi Nagar Station,Mumbai Monorail,Mumbai,19.088981,72.918440
+799,Mahapalika Bhavan Marg Station,Mumbai Monorail,Mumbai,19.201254,72.965064
+800,Majiwada Station,Mumbai Monorail,Mumbai,19.211558,72.975770
+801,Manpada Station,Mumbai Monorail,Mumbai,19.230762,72.976683
+802,Mulund Check Naka Station,Mumbai Monorail,Mumbai,19.183419,72.950840
+803,Mulund Fire Station,Mumbai Monorail,Mumbai,19.175677,72.942557
+804,Naval Housing Station,Mumbai Monorail,Mumbai,19.132887,72.927720
+805,Pant Nagar Station,Mumbai Monorail,Mumbai,19.082177,72.912686
+806,RTO Thane Station,Mumbai Monorail,Mumbai,19.192518,72.962751
+807,Shangrila Station,Mumbai Monorail,Mumbai,19.153753,72.937517
+808,Shreyas Cinema Station,Mumbai Monorail,Mumbai,19.097632,72.916204
+809,Siddhartha Colony EEH Station,Mumbai Monorail,Mumbai,19.056617,72.887518
+810,Sonapur Station,Mumbai Monorail,Mumbai,19.166200,72.938430
+811,Suman Nagar Station,Mumbai Monorail,Mumbai,19.053859,72.883622
+812,Surya Nagar Station,Mumbai Monorail,Mumbai,19.117657,72.926084
+813,Teen Hath Naka Station,Mumbai Monorail,Mumbai,19.187067,72.961578
+814,Tikujiniwadi Station,Mumbai Monorail,Mumbai,19.238360,72.975610
+815,Vijay Garden Station,Mumbai Monorail,Mumbai,19.258726,72.970134
+816,Vikhroli Station,Mumbai Monorail,Mumbai,19.109005,72.924577
+817,Wadala TT Station,Mumbai Monorail,Mumbai,19.038067,72.880259
+818,Agrasen Square,Nagpur Metro,Nagpur,21.151063,79.102926
+819,Airport,Nagpur Metro,Nagpur,21.086216,79.063787
+820,Airport South,Nagpur Metro,Nagpur,21.079054,79.060526
+821,Ajni Square,Nagpur Metro,Nagpur,21.118211,79.072108
+822,Ambazari Lake,Nagpur Metro,Nagpur,21.128692,79.045745
+823,Ambedkar Square,Nagpur Metro,Nagpur,21.148314,79.129494
+824,Automotive Square,Nagpur Metro,Nagpur,21.185819,79.119758
+825,Bansi Nagar,Nagpur Metro,Nagpur,21.116198,79.012604
+826,Chhatrapati Square,Nagpur Metro,Nagpur,21.109121,79.069664
+827,Chitaroli Square,Nagpur Metro,Nagpur,21.149654,79.110393
+828,Congress Nagar,Nagpur Metro,Nagpur,21.128199,79.082554
+829,Cotton Market,Nagpur Metro,Nagpur,21.145990,79.089773
+830,Dosar Vaisya Square,Nagpur Metro,Nagpur,21.152940,79.094901
+831,Gaddi Godam Square,Nagpur Metro,Nagpur,21.161629,79.083725
+832,Indora Square,Nagpur Metro,Nagpur,21.173667,79.100717
+833,Institute of Engineers,Nagpur Metro,Nagpur,21.138314,79.070093
+834,Jaiprakash Nagar,Nagpur Metro,Nagpur,21.103617,79.068175
+835,Jhasi Rani Square,Nagpur Metro,Nagpur,21.140716,79.077828
+836,Kadvi Square,Nagpur Metro,Nagpur,21.168640,79.092394
+837,Kasturchand Park,Nagpur Metro,Nagpur,21.154365,79.081476
+838,Khapri,Nagpur Metro,Nagpur,21.049346,79.047836
+839,LAD College,Nagpur Metro,Nagpur,21.132916,79.054798
+840,Lokmanya Nagar,Nagpur Metro,Nagpur,21.110804,79.001753
+841,Nagpur Railway Station,Nagpur Metro,Nagpur,21.151376,79.090436
+842,Nari Road,Nagpur Metro,Nagpur,21.179432,79.109820
+843,New Airport,Nagpur Metro,Nagpur,21.066038,79.055831
+844,Prajapati Nagar,Nagpur Metro,Nagpur,21.150205,79.148801
+845,Rachna Ring Road,Nagpur Metro,Nagpur,21.121521,79.029413
+846,Rahate Colony,Nagpur Metro,Nagpur,21.127666,79.075686
+847,Shankar Nagar Square,Nagpur Metro,Nagpur,21.136212,79.061644
+848,Sitabuldi (Aqua Line),Nagpur Metro,Nagpur,21.141555,79.082865
+849,Sitabuldi (Orange Line),Nagpur Metro,Nagpur,21.141785,79.082326
+850,Subhash Nagar,Nagpur Metro,Nagpur,21.123316,79.042053
+851,Telephone Exchange,Nagpur Metro,Nagpur,21.148821,79.118232
+852,Ujjwal Nagar,Nagpur Metro,Nagpur,21.096351,79.066319
+853,Vaishnodevi Square,Nagpur Metro,Nagpur,21.148017,79.136401
+854,Vasudev Nagar,Nagpur Metro,Nagpur,21.118784,79.019468
+855,Zero Mile,Nagpur Metro,Nagpur,21.146695,79.080634
+856,Belpada,Navi Mumbai Metro,Navi Mumbai,19.025280,73.054938
+857,CBD Belapur,Navi Mumbai Metro,Navi Mumbai,19.020596,73.040271
+858,Central Park,Navi Mumbai Metro,Navi Mumbai,19.053677,73.076006
+859,Kendriya Vihar,Navi Mumbai Metro,Navi Mumbai,19.037667,73.064089
+860,Khargar Village,Navi Mumbai Metro,Navi Mumbai,19.043212,73.074381
+861,Kharghar Village,Navi Mumbai Metro,Navi Mumbai,19.043227,73.074339
+862,Panchanand,Navi Mumbai Metro,Navi Mumbai,19.074620,73.090657
+863,Pendhar,Navi Mumbai Metro,Navi Mumbai,19.072210,73.097846
+864,Pethpada,Navi Mumbai Metro,Navi Mumbai,19.063872,73.077371
+865,RBI Colony,Navi Mumbai Metro,Navi Mumbai,19.022982,73.047943
+866,Sector 34,Navi Mumbai Metro,Navi Mumbai,19.073667,73.081865
+867,Utsav Chowk,Navi Mumbai Metro,Navi Mumbai,19.032599,73.058960
+868,Alpha 1,Noida Metro,Noida,28.471027,77.512724
+869,Delta 1,Noida Metro,Noida,28.478468,77.525710
+870,Depot Station,Noida Metro,Noida,28.489007,77.543997
+871,GNIDA Office,Noida Metro,Noida,28.484679,77.536497
+872,Knowledge Park II,Noida Metro,Noida,28.457052,77.500316
+873,NSEZ,Noida Metro,Noida,28.532413,77.394752
+874,Noida Sector 101,Noida Metro,Noida,28.556055,77.384944
+875,Noida Sector 137,Noida Metro,Noida,28.510774,77.403603
+876,Noida Sector 142,Noida Metro,Noida,28.498992,77.412857
+877,Noida Sector 143,Noida Metro,Noida,28.494261,77.422372
+878,Noida Sector 144,Noida Metro,Noida,28.486293,77.433068
+879,Noida Sector 145,Noida Metro,Noida,28.479003,77.442401
+880,Noida Sector 146,Noida Metro,Noida,28.468848,77.455170
+881,Noida Sector 147,Noida Metro,Noida,28.459318,77.466181
+882,Noida Sector 148,Noida Metro,Noida,28.448065,77.476597
+883,Noida Sector 51,Noida Metro,Noida,28.585721,77.375259
+884,Noida Sector 76,Noida Metro,Noida,28.565335,77.379657
+885,Noida Sector 81,Noida Metro,Noida,28.549299,77.389938
+886,Noida Sector 83,Noida Metro,Noida,28.522277,77.396437
+887,Pari Chowk,Noida Metro,Noida,28.463396,77.508352
+888,Rainbow Metro Station,Noida Metro,Noida,28.574354,77.378235
+889,Bhootnath,Patna Metro,Patna,25.585473,85.173575
+890,Khemnichak,Patna Metro,Patna,25.584661,85.163601
+891,Malahi Pakri,Patna Metro,Patna,25.593505,85.157119
+892,Patliputra Bus Terminal,Patna Metro,Patna,25.576321,85.189756
+893,Zero Mile,Patna Metro,Patna,25.585666,85.186751
+894,Anandnagar,Pune Metro,Pune,18.509571,73.814076
+895,Bopodi,Pune Metro,Pune,18.569654,73.838106
+896,Bund Garden,Pune Metro,Pune,18.540590,73.883436
+897,Chhatrapati Sambhaji Udyan,Pune Metro,Pune,18.520095,73.847392
+898,Dapodi,Pune Metro,Pune,18.583740,73.833775
+899,Deccan Gymkhana,Pune Metro,Pune,18.516447,73.844442
+900,District Court,Pune Metro,Pune,18.526790,73.856901
+901,District Court (Aqua Line),Pune Metro,Pune,18.526817,73.857818
+902,Garware College,Pune Metro,Pune,18.511989,73.838051
+903,Kalyani Nagar,Pune Metro,Pune,18.544457,73.905690
+904,Kasarwadi,Pune Metro,Pune,18.599621,73.827262
+905,Khadki,Pune Metro,Pune,18.562263,73.842085
+906,Mangalwar Peth,Pune Metro,Pune,18.530078,73.865056
+907,Nashik Phata,Pune Metro,Pune,18.609305,73.820097
+908,PCMC Bhavan,Pune Metro,Pune,18.629316,73.803288
+909,PMC Bhavan,Pune Metro,Pune,18.522717,73.853293
+910,Paud Phata,Pune Metro,Pune,18.508885,73.822143
+911,Phugewadi,Pune Metro,Pune,18.591106,73.831146
+912,Pune Railway Station,Pune Metro,Pune,18.529751,73.872597
+913,Ramwadi,Pune Metro,Pune,18.557035,73.908552
+914,Ruby Hall Clinic,Pune Metro,Pune,18.532721,73.877747
+915,SNDT College,Pune Metro,Pune,18.507357,73.828780
+916,Sant Tukaram Nagar,Pune Metro,Pune,18.614524,73.815744
+917,Shivaji Nagar,Pune Metro,Pune,18.532169,73.849664
+918,Swargate,Pune Metro,Pune,18.499740,73.857463
+919,Vanaz,Pune Metro,Pune,18.507193,73.805226
+920,Yerwada,Pune Metro,Pune,18.545301,73.886621
+921,कसबा पेठ,Pune Metro,Pune,18.521392,73.859620
+922,महात्मा फुले मंदाई,Pune Metro,Pune,18.512911,73.857016

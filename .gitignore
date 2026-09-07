@@ -1,7 +1,27 @@
+# Build
+build/
+bin/
+*.o
+*.a
+*.so
+*.dylib
+compile_commands.json
+
+# Generated traces / outputs
 out.json
 test_trace.json
 ui/trace.json
-bin/adaptive_map
-src/*.o
+*.trace.json
+
+# Large data fetched on demand (see scripts/)
+data/cities/
+data/benchmark/
+*.osm.pbf
+
+# Tooling
 __pycache__/
+.venv/
+.cache/
 .DS_Store
+web/engine/
+site/
