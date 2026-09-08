@@ -1,15 +1,17 @@
 {
   "name": "Mumbai",
   "bbox": [
-    18.92,
-    72.8,
-    19.06,
-    72.89
+    18.89,
+    72.77,
+    19.28,
+    73.02
   ],
+  "country": null,
+  "classes": "motorway|trunk|primary|secondary|tertiary|unclassified|residential|living_street|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link",
   "source": "OpenStreetMap via Overpass",
   "licence": "ODbL 1.0",
-  "nodes": 15597,
-  "edges": 33367,
-  "raw_osm_nodes": 46753,
-  "ways": 10843
+  "nodes": 79783,
+  "edges": 176200,
+  "raw_osm_nodes": 260172,
+  "ways": 52349
 }

@@ -1,0 +1,17 @@
+{
+  "name": "Chennai",
+  "bbox": [
+    12.9,
+    80.08,
+    13.28,
+    80.35
+  ],
+  "country": null,
+  "classes": "motorway|trunk|primary|secondary|tertiary|unclassified|residential|living_street|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link",
+  "source": "OpenStreetMap via Overpass",
+  "licence": "ODbL 1.0",
+  "nodes": 141934,
+  "edges": 345501,
+  "raw_osm_nodes": 319847,
+  "ways": 84274
+}

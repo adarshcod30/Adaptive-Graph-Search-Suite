@@ -1,15 +1,17 @@
 {
   "name": "Delhi",
   "bbox": [
-    28.56,
-    77.17,
-    28.68,
-    77.28
+    28.4,
+    76.83,
+    28.9,
+    77.36
   ],
+  "country": null,
+  "classes": "motorway|trunk|primary|secondary|tertiary|unclassified|residential|living_street|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link",
   "source": "OpenStreetMap via Overpass",
   "licence": "ODbL 1.0",
-  "nodes": 24781,
-  "edges": 61439,
-  "raw_osm_nodes": 73275,
-  "ways": 15708
+  "nodes": 253748,
+  "edges": 663719,
+  "raw_osm_nodes": 642228,
+  "ways": 145006
 }

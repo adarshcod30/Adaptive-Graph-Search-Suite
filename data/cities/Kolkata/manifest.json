@@ -1,15 +1,17 @@
 {
   "name": "Kolkata",
   "bbox": [
-    22.51,
-    88.32,
-    22.61,
-    88.4
+    22.44,
+    88.24,
+    22.68,
+    88.46
   ],
+  "country": null,
+  "classes": "motorway|trunk|primary|secondary|tertiary|unclassified|residential|living_street|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link",
   "source": "OpenStreetMap via Overpass",
   "licence": "ODbL 1.0",
-  "nodes": 17857,
-  "edges": 42673,
-  "raw_osm_nodes": 55890,
-  "ways": 11479
+  "nodes": 104085,
+  "edges": 254516,
+  "raw_osm_nodes": 385943,
+  "ways": 61156
 }

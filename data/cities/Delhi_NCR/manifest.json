@@ -1,0 +1,17 @@
+{
+  "name": "Delhi_NCR",
+  "bbox": [
+    28.2,
+    76.75,
+    28.95,
+    77.6
+  ],
+  "country": null,
+  "classes": "motorway|trunk|primary|secondary|tertiary|unclassified|residential|living_street|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link",
+  "source": "OpenStreetMap via Overpass",
+  "licence": "ODbL 1.0",
+  "nodes": 488431,
+  "edges": 1249462,
+  "raw_osm_nodes": 1484212,
+  "ways": 277483
+}

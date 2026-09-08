@@ -1,15 +1,17 @@
 {
   "name": "Bengaluru",
   "bbox": [
-    12.93,
-    77.56,
-    13.03,
-    77.66
+    12.83,
+    77.45,
+    13.15,
+    77.78
   ],
+  "country": null,
+  "classes": "motorway|trunk|primary|secondary|tertiary|unclassified|residential|living_street|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link",
   "source": "OpenStreetMap via Overpass",
   "licence": "ODbL 1.0",
-  "nodes": 33360,
-  "edges": 83087,
-  "raw_osm_nodes": 64493,
-  "ways": 20733
+  "nodes": 240237,
+  "edges": 581639,
+  "raw_osm_nodes": 475029,
+  "ways": 143166
 }

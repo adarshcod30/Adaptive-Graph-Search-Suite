@@ -1,15 +1,17 @@
 {
   "name": "Jaipur",
   "bbox": [
-    26.86,
-    75.75,
-    26.94,
-    75.85
+    26.72,
+    75.62,
+    27.05,
+    75.98
   ],
+  "country": null,
+  "classes": "motorway|trunk|primary|secondary|tertiary|unclassified|residential|living_street|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link",
   "source": "OpenStreetMap via Overpass",
   "licence": "ODbL 1.0",
-  "nodes": 19110,
-  "edges": 48721,
-  "raw_osm_nodes": 45116,
-  "ways": 11015
+  "nodes": 123456,
+  "edges": 316342,
+  "raw_osm_nodes": 339919,
+  "ways": 70002
 }
