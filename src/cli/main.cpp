@@ -2,6 +2,7 @@
 #include <chrono>
 #include <cmath>
 #include <cstring>
+#include <filesystem>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -13,7 +14,10 @@
 #include <vector>
 
 #include "agss/algorithm.hpp"
+#include "agss/alt.hpp"
 #include "agss/analysis.hpp"
+#include "agss/contraction_hierarchy.hpp"
+#include "agss/customizable_ch.hpp"
 #include "agss/directions.hpp"
 #include "agss/isochrone.hpp"
 #include "agss/json.hpp"
@@ -88,6 +92,7 @@ COMMANDS
   route       Run one algorithm and optionally emit a trace
   race        Run several algorithms on the same query and compare them
   bench       Time every algorithm across maps, with tracing disabled
+              (--preprocessing times CH, CCH and ALT index construction)
   verify      Differential correctness check across optimal algorithms
   analyze     Bridges, articulation points, SCC, MST, centrality, max-flow
   isochrone   Reachability bands from an origin
@@ -106,10 +111,10 @@ COMMON OPTIONS
   --quiet              Machine-readable output only
 
 EXAMPLES
-  agss route --graph data/maps/Delhi_NCR --alg astar --source 0 --target 150
-  agss race  --graph data/maps/Delhi_NCR --source 0 --target 150
-  agss verify --graph data/maps/Delhi_NCR --samples 200
-  agss analyze --graph data/maps/Bengaluru_Traffic --what bridges
+  agss route --graph data/cities/Jaipur --geo --alg astar --source 2746 --target 16278
+  agss race  --graph data/cities/Jaipur --geo --source 2746 --target 16278
+  agss verify --graph data/cities/Gorakhpur --geo --samples 40
+  agss analyze --graph data/cities/Gorakhpur --geo --what bridges
   agss transit --transit data/transit --list
 )";
 }
@@ -406,16 +411,85 @@ int cmd_verify(const Args& a) {
     return (mismatches == 0 && invalid == 0) ? 0 : 3;
 }
 
+/// Time the three preprocessing stages across networks. The README quotes
+/// these figures, so they need to be reproducible rather than measured once by
+/// hand: `agss bench --preprocessing --markdown` regenerates that table.
+int cmd_preprocessing(const Args& a, const std::vector<std::string>& dirs) {
+    const bool md = a.has("markdown");
+    if (md) {
+        std::cout << "| Network | Nodes | CH build | CCH build | CCH re-customize | ALT build |\n"
+                  << "|---|---|---|---|---|---|\n";
+    } else {
+        std::cout << "NETWORK                 NODES    CH BUILD   CCH BUILD  CCH RECUST"
+                     "    ALT BUILD\n"
+                  << std::string(78, '-') << "\n";
+    }
+
+    for (const auto& dir : dirs) {
+        agss::LoadOptions o;
+        o.space = a.has("geo") ? agss::CoordSpace::Geographic : agss::CoordSpace::Planar;
+        o.lenient = true;
+        auto loaded = agss::load_csv_dir(dir, o);
+        if (!loaded) {
+            std::cerr << "skipping " << dir << ": " << loaded.error().what() << "\n";
+            continue;
+        }
+        const auto& g = loaded.value().graph;
+        const std::string name = std::filesystem::path(dir).filename().string();
+
+        agss::ContractionHierarchy::BuildOptions chopts;
+        // The library default gives up after 20 s so a pathological graph
+        // cannot hang a browser tab. That default silently truncates the
+        // hierarchy on a large city, and a truncated build reports the budget
+        // rather than the real cost -- five different networks all "taking"
+        // 20-23 s is the giveaway. Benchmarking wants the true figure, so the
+        // budget is generous here and an abort is reported rather than hidden.
+        chopts.budget_ms = static_cast<double>(a.num("budget", 600000));
+        agss::ContractionHierarchy ch;
+        ch.build(g, chopts);
+        agss::CustomizableCH cch;
+        cch.build(g);
+        cch.customize();
+        const double recustomize = [&] {
+            cch.customize();
+            return cch.stats().customize_ms;
+        }();
+        agss::AltIndex alt;
+        alt.build(g);
+
+        auto ms = [](double v) {
+            std::ostringstream os;
+            os << std::fixed << std::setprecision(v < 10 ? 1 : 0) << v << " ms";
+            return os.str();
+        };
+        const std::string ch_ms = ms(ch.stats().build_ms) + (ch.stats().aborted ? " (cut)" : "");
+        if (md) {
+            std::cout << "| " << name << " | " << g.num_nodes() << " | " << ch_ms << " | "
+                      << ms(cch.stats().build_ms) << " | **" << ms(recustomize) << "** | "
+                      << ms(alt.stats().build_ms) << " |\n";
+        } else {
+            std::cout << std::left << std::setw(22) << name << std::right << std::setw(9)
+                      << g.num_nodes() << std::setw(14) << ch_ms << std::setw(12)
+                      << ms(cch.stats().build_ms) << std::setw(12) << ms(recustomize)
+                      << std::setw(13) << ms(alt.stats().build_ms) << "\n";
+        }
+        std::cout.flush();
+    }
+    return 0;
+}
+
 int cmd_bench(const Args& a) {
     std::vector<std::string> dirs;
     if (a.has("graph")) {
         dirs.push_back(a.str("graph"));
     } else {
         dirs.push_back("data/maps/Grid_Integer");
-        for (const auto& c : {"Mumbai", "Kolkata", "Jaipur", "Delhi", "Bengaluru"}) {
+        for (const auto& c : {"Gorakhpur", "Jaipur", "Chennai", "Delhi", "Bengaluru"}) {
             dirs.push_back(std::string("data/cities/") + c);
         }
     }
+    if (a.has("preprocessing")) return cmd_preprocessing(a, dirs);
+
     const long reps = a.num("reps", 5);
     std::vector<std::string> keys;
     if (a.has("algs")) {
@@ -786,11 +860,15 @@ int cmd_maps(const Args& a) {
     };
     const Entry entries[] = {
         {"data/networks/India_Highways", "India: highways", true},
+        {"data/networks/India_Railways", "India: railways", true},
         {"data/cities/Delhi", "Delhi", true},
+        {"data/cities/Delhi_NCR", "Delhi NCR", true},
         {"data/cities/Mumbai", "Mumbai", true},
         {"data/cities/Bengaluru", "Bengaluru", true},
         {"data/cities/Jaipur", "Jaipur", true},
         {"data/cities/Kolkata", "Kolkata", true},
+        {"data/cities/Chennai", "Chennai", true},
+        {"data/cities/Gorakhpur", "Gorakhpur", true},
         {"data/maps/Grid_Integer", "Grid (synthetic)", false},
     };
 
