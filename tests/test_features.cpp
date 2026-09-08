@@ -310,3 +310,21 @@ TEST("transit", "filter selects by city or system") {
     CHECK_EQ(transit::filter(net, "Other Metro").stations.size(), std::size_t{1});
     CHECK_EQ(transit::filter(net, "nowhere").stations.size(), std::size_t{0});
 }
+
+TEST("transit", "an exact system name does not bleed into a longer one") {
+    // The real dataset contains both "Mumbai Metro" and "Navi Mumbai Metro",
+    // and both "Delhi" and "Delhi NCR". Under a plain substring filter the
+    // shorter name silently swallowed the longer one, so every station count
+    // moved whenever a neighbouring city was imported.
+    transit::Network net;
+    net.stations.push_back({1, "A", "Mumbai Metro", "Mumbai", 19.0, 72.9});
+    net.stations.push_back({2, "B", "Mumbai Metro", "Mumbai", 19.1, 72.9});
+    net.stations.push_back({3, "C", "Navi Mumbai Metro", "Navi Mumbai", 19.0, 73.1});
+
+    CHECK_EQ(transit::filter(net, "Mumbai Metro").stations.size(), std::size_t{2});
+    CHECK_EQ(transit::filter(net, "Navi Mumbai Metro").stations.size(), std::size_t{1});
+    CHECK_EQ(transit::filter(net, "Mumbai").stations.size(), std::size_t{2});
+
+    // No exact match, so the substring fallback still helps a partial name.
+    CHECK_EQ(transit::filter(net, "meTRO").stations.size(), std::size_t{3});
+}

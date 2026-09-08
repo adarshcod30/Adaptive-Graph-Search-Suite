@@ -152,9 +152,22 @@ Network filter(const Network& net, const std::string& needle) {
     const std::string key = lower(needle);
     Network out;
     std::unordered_map<std::int64_t, bool> keep;
+
+    // Exact matches win over substring ones. A pure substring filter bleeds
+    // between systems that share a name -- "Mumbai Metro" also selected "Navi
+    // Mumbai Metro", and "Delhi" swept in the Delhi NCR RRTS -- so every count
+    // shifted whenever a new city was imported. With exact match taking
+    // priority, naming a system selects that system and nothing else, while a
+    // partial name typed at the CLI still falls back to substring.
+    const bool exact = std::any_of(net.stations.begin(), net.stations.end(), [&](const Station& s) {
+        return lower(s.system) == key || lower(s.city) == key;
+    });
+
     for (const auto& s : net.stations) {
-        if (lower(s.system).find(key) != std::string::npos ||
-            lower(s.city).find(key) != std::string::npos) {
+        const bool hit = exact ? (lower(s.system) == key || lower(s.city) == key)
+                               : (lower(s.system).find(key) != std::string::npos ||
+                                  lower(s.city).find(key) != std::string::npos);
+        if (hit) {
             keep[s.id] = true;
             out.stations.push_back(s);
         }
