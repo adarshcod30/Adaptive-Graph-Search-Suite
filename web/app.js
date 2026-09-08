@@ -13,29 +13,50 @@
 const DATA_ROOT = '../data';
 
 const CATALOG = [
-    { group: 'Road networks (OpenStreetMap)' },
-    { id: 'India_Highways', label: 'India: national highways', sub: '207,610 junctions \u2014 the whole country',
-      dir: 'networks/India_Highways', geo: true, heavy: true },
-    { id: 'Delhi',     label: 'Delhi',     sub: '24,781 junctions',  dir: 'cities/Delhi',     geo: true },
-    { id: 'Mumbai',    label: 'Mumbai',    sub: '15,597 junctions',  dir: 'cities/Mumbai',    geo: true },
-    { id: 'Bengaluru', label: 'Bengaluru', sub: '33,360 junctions',  dir: 'cities/Bengaluru', geo: true },
-    { id: 'Jaipur',    label: 'Jaipur',    sub: '19,110 junctions',  dir: 'cities/Jaipur',    geo: true },
-    { id: 'Kolkata',   label: 'Kolkata',   sub: '17,857 junctions',  dir: 'cities/Kolkata',   geo: true },
+    { group: 'Nationwide (OpenStreetMap)' },
+    { id: 'India_Highways', label: 'India: national highways', sub: '207,610 junctions — expressways and NH, whole country',
+      dir: 'networks/India_Highways', geo: true, mb: 12, heavy: true },
+    { id: 'India_Railways', label: 'India: railway network', sub: '69,944 track nodes, 8,857 named stations',
+      dir: 'networks/India_Railways', geo: true, mb: 5, heavy: true,
+      stationsFile: 'networks/India_Railways/stations.csv' },
 
-    { group: 'Rail networks (OpenStreetMap)' },
-    { id: 'rail:',              label: 'Indian Railways',  sub: '746 stations nationwide', rail: '' },
-    { id: 'transit:Delhi',      label: 'Delhi Metro',       sub: '257 stations', transit: 'Delhi' },
-    { id: 'transit:Bengaluru',  label: 'Namma Metro',       sub: '85 stations',  transit: 'Bengaluru' },
-    { id: 'transit:Mumbai',     label: 'Mumbai Metro',      sub: '114 stations', transit: 'Mumbai' },
-    { id: 'transit:Chennai',    label: 'Chennai Metro',     sub: '62 stations',  transit: 'Chennai' },
-    { id: 'transit:Kolkata',    label: 'Kolkata Metro',     sub: '59 stations',  transit: 'Kolkata' },
-    { id: 'transit:Hyderabad',  label: 'Hyderabad Metro',   sub: '59 stations',  transit: 'Hyderabad' },
-    { id: 'transit:Ahmedabad',  label: 'Ahmedabad Metro',   sub: '53 stations',  transit: 'Ahmedabad' },
-    { id: 'transit:Nagpur',     label: 'Nagpur Metro',      sub: '38 stations',  transit: 'Nagpur' },
-    { id: 'transit:Pune',       label: 'Pune Metro',        sub: '29 stations',  transit: 'Pune' },
-    { id: 'transit:Kochi',      label: 'Kochi Metro',       sub: '25 stations',  transit: 'Kochi' },
-    { id: 'transit:Lucknow',    label: 'Lucknow Metro',     sub: '21 stations',  transit: 'Lucknow' },
-    { id: 'transit:Jaipur',     label: 'Jaipur Metro',      sub: '11 stations',  transit: 'Jaipur' },
+    { group: 'City road networks (OpenStreetMap)' },
+    { id: 'Delhi_NCR', label: 'Delhi NCR', sub: '488,431 junctions — Delhi, Gurugram, Noida, Faridabad, Ghaziabad', dir: 'cities/Delhi_NCR', geo: true, mb: 38, heavy: true },
+    { id: 'Delhi',     label: 'Delhi',     sub: '253,748 junctions — full NCT including IGI Airport',               dir: 'cities/Delhi', geo: true, mb: 19, heavy: true },
+    { id: 'Bengaluru', label: 'Bengaluru', sub: '240,237 junctions — city and outer ring',                          dir: 'cities/Bengaluru', geo: true, mb: 17, heavy: true },
+    { id: 'Chennai',   label: 'Chennai',   sub: '141,934 junctions — city and suburbs',                             dir: 'cities/Chennai', geo: true, mb: 10 },
+    { id: 'Jaipur',    label: 'Jaipur',    sub: '123,456 junctions — walled city to outer suburbs',                 dir: 'cities/Jaipur', geo: true, mb: 9 },
+    { id: 'Kolkata',   label: 'Kolkata',   sub: '104,085 junctions — city and Howrah',                              dir: 'cities/Kolkata', geo: true, mb: 8 },
+    { id: 'Mumbai',    label: 'Mumbai',    sub: '79,783 junctions — island city and suburbs',                       dir: 'cities/Mumbai', geo: true, mb: 6 },
+    { id: 'Gorakhpur', label: 'Gorakhpur', sub: '31,830 junctions — whole city',                                    dir: 'cities/Gorakhpur', geo: true, mb: 3 },
+
+    { group: 'Metro systems (OpenStreetMap)' },
+    { id: 'transit:Delhi_Metro',          label: 'Delhi Metro',          sub: '257 stations',           transit: 'Delhi Metro' },
+    { id: 'transit:Namma_Metro',          label: 'Namma Metro',          sub: '85 stations, Bengaluru', transit: 'Namma Metro' },
+    { id: 'transit:Mumbai_Metro',         label: 'Mumbai Metro',         sub: '81 stations',            transit: 'Mumbai Metro' },
+    { id: 'transit:Chennai_Metro',        label: 'Chennai Metro',        sub: '62 stations',            transit: 'Chennai Metro' },
+    { id: 'transit:Hyderabad_Metro',      label: 'Hyderabad Metro',      sub: '59 stations',            transit: 'Hyderabad Metro' },
+    { id: 'transit:Kolkata_Metro',        label: 'Kolkata Metro',        sub: '59 stations',            transit: 'Kolkata Metro' },
+    { id: 'transit:Ahmedabad_Metro',      label: 'Ahmedabad Metro',      sub: '53 stations',            transit: 'Ahmedabad Metro' },
+    { id: 'transit:Nagpur_Metro',         label: 'Nagpur Metro',         sub: '38 stations',            transit: 'Nagpur Metro' },
+    { id: 'transit:Mumbai_Monorail',      label: 'Mumbai Monorail',      sub: '33 stations',            transit: 'Mumbai Monorail' },
+    { id: 'transit:Pune_Metro',           label: 'Pune Metro',           sub: '29 stations',            transit: 'Pune Metro' },
+    { id: 'transit:Kochi_Metro',          label: 'Kochi Metro',          sub: '25 stations',            transit: 'Kochi Metro' },
+    { id: 'transit:Lucknow_Metro',        label: 'Lucknow Metro',        sub: '21 stations',            transit: 'Lucknow Metro' },
+    { id: 'transit:Noida_Metro',          label: 'Noida Metro',          sub: '21 stations',            transit: 'Noida Metro' },
+    { id: 'transit:Namo_Bharat_RRTS',     label: 'Namo Bharat (RRTS)',   sub: '15 stations, Delhi NCR', transit: 'Namo Bharat (RRTS)' },
+    { id: 'transit:Kanpur_Metro',         label: 'Kanpur Metro',         sub: '14 stations',            transit: 'Kanpur Metro' },
+    { id: 'transit:Meerut_Metro',         label: 'Meerut Metro',         sub: '12 stations',            transit: 'Meerut Metro' },
+    { id: 'transit:Navi_Mumbai_Metro',    label: 'Navi Mumbai Metro',    sub: '12 stations',            transit: 'Navi Mumbai Metro' },
+    { id: 'transit:Jaipur_Metro',         label: 'Jaipur Metro',         sub: '11 stations',            transit: 'Jaipur Metro' },
+    { id: 'transit:Rapid_Metro_Gurugram', label: 'Rapid Metro Gurugram', sub: '11 stations',            transit: 'Rapid Metro Gurugram' },
+    { id: 'transit:Bhopal_Metro',         label: 'Bhopal Metro',         sub: '8 stations',             transit: 'Bhopal Metro' },
+    { id: 'transit:Agra_Metro',           label: 'Agra Metro',           sub: '6 stations',             transit: 'Agra Metro' },
+    { id: 'transit:Indore_Metro',         label: 'Indore Metro',         sub: '5 stations',             transit: 'Indore Metro' },
+    { id: 'transit:Patna_Metro',          label: 'Patna Metro',          sub: '5 stations',             transit: 'Patna Metro' },
+
+    { group: 'Long-distance rail services' },
+    { id: 'rail:', label: 'Named train routes', sub: '746 stations from 253 services', rail: '' },
 
     { group: 'Synthetic' },
     { id: 'Grid_Integer', label: 'Grid, integer weights', sub: '225 nodes \u2014 the only graph Dial\u2019s applies to',
@@ -57,6 +78,7 @@ let M = null;                 // the Emscripten module
 let graph = { nodeCount: 0, edgeCount: 0, ex: null, ey: null, eu: null, ev: null };
 let geographic = false;
 let stations = [];            // populated for transit graphs
+let nodeNames = null;         // node -> station name, for the railway graph
 let loadedTransitSet = null;  // 'metro' | 'rail' — which CSV pair is in the engine
 
 let events = [], eventIdx = 0, finalPath = [], stepSize = 1, timer = null;
@@ -674,7 +696,13 @@ async function loadSelected() {
                 `from distance, not timetables`;
             log(`${entry.label}: ${r.stationNodes} stations`);
         } else {
-            if (entry.heavy) log(`fetching ${entry.label} — a few MB, one moment…`);
+            // Say the real size. Delhi NCR is 38 MB of CSV; calling that
+            // "a few MB" makes a slow connection look like a hang.
+            if (entry.mb >= 8) {
+                log(`fetching ${entry.label} — ${entry.mb} MB of CSV, ` +
+                    `served compressed; this takes a moment…`);
+            }
+            nodeNames = null;
             const [nodes, edges] = await Promise.all([
                 fetchText(`${DATA_ROOT}/${entry.dir}/nodes.csv`),
                 fetchText(`${DATA_ROOT}/${entry.dir}/edges.csv`),
@@ -693,6 +721,26 @@ async function loadSelected() {
                     'so A* is not optimal on this graph', 'danger');
             }
             if (r.warningCount) log(`${r.warningCount} malformed row(s) skipped`, 'danger');
+
+            // The railway graph is a track network, so its stations are named
+            // nodes rather than a separate transit layer. Load the names so
+            // directions read "Gorakhpur Junction" instead of "node 25336".
+            if (entry.stationsFile) {
+                try {
+                    const csv = await fetchText(`${DATA_ROOT}/${entry.stationsFile}`);
+                    nodeNames = new Map();
+                    for (const line of csv.split('\n').slice(1)) {
+                        const cut = line.indexOf(',');
+                        if (cut < 0) continue;
+                        const id = Number(line.slice(0, cut));
+                        const name = line.slice(cut + 1).trim().replace(/^"|"$/g, '');
+                        if (Number.isFinite(id) && name) nodeNames.set(id, name);
+                    }
+                    log(`${nodeNames.size.toLocaleString()} named stations on the network`);
+                } catch (err) {
+                    log(`station names unavailable: ${err.message}`, 'danger');
+                }
+            }
             log(`${entry.label}: ${r.nodes.toLocaleString()} nodes, ${r.edges.toLocaleString()} edges`);
         }
 
@@ -1011,9 +1059,9 @@ function showDirections() {
         ? (d.totalDistance >= 1000 ? `${(d.totalDistance / 1000).toFixed(2)} km` : `${d.totalDistance.toFixed(0)} m`)
         : d.totalDistance.toFixed(1);
     const rows = d.steps.map((s, i) => {
-        const label = stations.length
-            ? (stations.find(x => x.node === s.at)?.name ?? `node ${s.at}`)
-            : `node ${s.at}`;
+        const label = nodeNames?.get(s.at)
+            ?? (stations.length ? stations.find(x => x.node === s.at)?.name : null)
+            ?? `node ${s.at}`;
         return `<tr><td>${i + 1}. ${s.maneuver}</td><td class="dim">${label}</td></tr>`;
     }).join('');
     $('results').innerHTML =
