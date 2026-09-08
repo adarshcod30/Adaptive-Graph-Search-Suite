@@ -89,16 +89,34 @@ TEST("cch", "one build serves many metrics") {
     }
 }
 
-TEST("cch", "customizing is much cheaper than building") {
-    const auto g = testing::random_graph(300, 600, 55);
+TEST("cch", "customizing never rebuilds") {
+    // The value of CCH is that a new metric costs a customization, not another
+    // contraction -- but that is a *structural* property, and asserting it as a
+    // timing comparison was wrong. On a 300-node graph build and customize are
+    // naturally within noise of each other (MSVC measured 5.77 ms against
+    // 5.59 ms and failed the build), and the asymmetry only appears at scale:
+    // Jaipur is 31 ms build against 10 ms per metric, India's highway network
+    // 101 ms against 35 ms. Those belong in a benchmark, not a unit test.
+    //
+    // What is testable here is that repeated customization leaves the built
+    // structure alone and keeps answering correctly.
+    const auto g = testing::random_graph(200, 380, 55);
     CustomizableCH cch;
     cch.build(g);
-    cch.customize();
     const double build_ms = cch.stats().build_ms;
-    const double custom_ms = cch.stats().customize_ms;
+    const auto chordal = cch.stats().chordal_edges;
     CHECK(build_ms > 0.0);
-    CHECK_MSG(custom_ms <= build_ms,
-              "customize " << custom_ms << " ms exceeded build " << build_ms << " ms");
+    CHECK(chordal > 0);
+
+    for (int round = 0; round < 4; ++round) {
+        cch.customize();
+        CHECK(cch.ready());
+        // Build statistics must be untouched: a rebuild would change them.
+        CHECK_MSG(cch.stats().build_ms == build_ms, "build ran again during customization");
+        CHECK_EQ(cch.stats().chordal_edges, chordal);
+        CHECK(cch.stats().customize_ms >= 0.0);
+    }
+    expect_matches(g, cch, 60, 404, "after repeated customization");
 }
 
 TEST("cch", "handles a time-dependent metric") {
