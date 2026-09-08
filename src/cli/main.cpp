@@ -785,6 +785,7 @@ int cmd_maps(const Args& a) {
         bool geo;
     };
     const Entry entries[] = {
+        {"data/networks/India_Highways", "India: highways", true},
         {"data/cities/Delhi", "Delhi", true},
         {"data/cities/Mumbai", "Mumbai", true},
         {"data/cities/Bengaluru", "Bengaluru", true},

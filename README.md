@@ -2,16 +2,18 @@
 
 **A C++20 pathfinding and network-analysis engine for real Indian road and metro networks.**
 
-Ten routing algorithms, six network-analysis algorithms, multi-modal road + metro
-routing across every operational metro system in India, and a browser visualiser —
-all built on a cache-friendly CSR graph that handles real city-scale data.
+Twelve routing algorithms including **Contraction Hierarchies**, **Customizable
+CH** and **ALT landmarks**; six network-analysis algorithms; time-dependent
+routing; multi-modal road, metro and railway networks across India; Python
+bindings; and a browser visualiser that draws it all over a real map.
 
 **[Try it in your browser →](https://adarshcod30.github.io/Adaptive-Graph-Search-Suite/)**
 The C++ engine is compiled to WebAssembly and runs entirely in the page: no
 server, no install, nothing uploaded.
 
-`graph-algorithms` · `pathfinding` · `cpp20` · `dijkstra` · `astar` · `openstreetmap`
-· `route-planning` · `transit` · `india` · `betweenness-centrality` · `visualization`
+`graph-algorithms` · `pathfinding` · `cpp20` · `dijkstra` · `astar` ·
+`contraction-hierarchies` · `route-planning` · `openstreetmap` · `transit` ·
+`india` · `webassembly` · `pybind11` · `time-dependent-routing` · `visualization`
 
 ---
 
@@ -26,7 +28,9 @@ server, no install, nothing uploaded.
 - [Getting started](#getting-started)
 - [Usage](#usage)
 - [Benchmarks](#benchmarks)
-- [Contraction Hierarchies](#contraction-hierarchies)
+- [Speedup techniques](#speedup-techniques) — CH, Customizable CH, ALT
+- [Time-dependent routing](#time-dependent-routing)
+- [Python bindings](#python-bindings)
 - [Correctness](#correctness)
 - [Project structure](#project-structure)
 - [Testing](#testing)
@@ -40,48 +44,86 @@ server, no install, nothing uploaded.
 
 ## Why this exists
 
-Most pathfinding visualisers animate a textbook algorithm on a toy grid. This one
-runs production-shaped algorithms on **real OpenStreetMap road networks** — 47,828
-junctions for central Delhi alone — and answers questions about them that a
-shortest-path query cannot:
+Most pathfinding visualisers animate a textbook algorithm on a toy grid. This
+one runs the algorithms production routing engines actually use, on **real
+OpenStreetMap networks** — 207,610 junctions for India's highway system, 33,360
+for Bengaluru — and answers questions about them that a shortest-path query
+cannot:
 
 | Question | Answered by |
 |---|---|
 | What is the fastest route from A to B? | Dijkstra / A\* / bidirectional search |
+| Can that be 400× cheaper to compute? | Contraction Hierarchies |
+| What if the traffic changes every hour? | Customizable CH re-costs in milliseconds |
+| How fast without spending a second on preprocessing? | ALT landmarks |
+| How much longer is the same trip at 18:00? | Time-dependent routing |
 | Give me three alternatives. | Yen's K-shortest paths |
 | Which single road closure severs a neighbourhood? | Tarjan bridges + articulation points |
 | Which intersections carry the most through-traffic? | Brandes betweenness centrality |
 | Where can I get to in 20 minutes? | Isochrone bands + convex hull |
 | How much traffic can move from A to B per hour? | Dinic max-flow / min-cut |
 | What if this bridge shuts today? | Edge-closure masks, re-run any algorithm |
-| Should I drive or take the metro? | Multi-modal road + rail routing |
+| Should I drive, take the metro, or the train? | Multi-modal road + rail routing |
+
+Everything is verified rather than asserted: the speedup techniques are checked
+against Dijkstra on every query, and the benchmark numbers in this README were
+measured by the commands shown next to them.
 
 ## Key features
 
+### Routing
+
 | Feature | Detail |
 |---|---|
-| **12 routing algorithms** | BFS, DFS, Dijkstra, A\*, Greedy, Bellman-Ford, Floyd-Warshall, Johnson, Bidirectional Dijkstra, Dial's bucket queue, **ALT**, **Contraction Hierarchies** |
-| **Speedup techniques** | Contraction Hierarchies, Customizable CH, and ALT landmarks — **44× faster, 460× fewer nodes** on India's national highway network |
-| **Time-dependent routing** | Edge costs vary through the day; a 2× rush-hour penalty you can watch, re-costed in milliseconds via CCH |
-| **Python bindings** | `pip install .` — the whole engine from Python, with NumPy coordinate arrays |
-| **6 analysis algorithms** | Bridges & articulation points, strongly connected components, minimum spanning tree, betweenness centrality, max-flow/min-cut, K-shortest paths |
-| **India's highway network** | 207,610 junctions, 279,666 edges — every expressway and national highway in the country |
-| **Five real cities** | Delhi, Mumbai, Bengaluru, Jaipur, Kolkata — 111k junctions of real OpenStreetMap road network |
-| **All Indian metros** | 922 stations, 23 systems, 22 cities — Delhi, Mumbai, Namma, Chennai, Kolkata, Hyderabad and more |
-| **Indian Railways** | 746 stations, 2,062 links from 253 long-distance train routes |
-| **Multi-modal routing** | Road and rail combined into one time-weighted graph; plain Dijkstra then solves it |
+| **12 routing algorithms** | BFS, DFS, Dijkstra, A\*, Greedy best-first, Bellman-Ford, Floyd-Warshall, Johnson, Bidirectional Dijkstra, Dial's bucket queue, ALT, Contraction Hierarchies |
+| **Contraction Hierarchies** | What production routing engines use — **44× faster, 460× fewer nodes** than Dijkstra on India's national highway network |
+| **Customizable CH** | Metric-independent build, then **35 ms to re-cost** a 207k-node network instead of 1,138 ms to rebuild it |
+| **ALT landmarks** | A\* with exact landmark distances instead of geometry — 10× fewer nodes than Dijkstra, and works with no coordinates at all |
+| **Time-dependent routing** | Edge costs vary through the day; a measured **2.02× rush-hour penalty**, FIFO-safe so Dijkstra stays valid |
+| **K-shortest paths** | Yen's algorithm — the "show me 3 alternate routes" feature |
+| **Multi-modal** | Road and rail folded into one time-weighted graph; plain Dijkstra then solves it |
+
+### Analysis
+
+| Feature | Detail |
+|---|---|
+| **Bridges & articulation points** | Tarjan, iterative — which single road closure severs a neighbourhood |
+| **Betweenness centrality** | Brandes, exact or sampled — which intersections carry through-traffic |
+| **Strongly connected components** | Tarjan — where one-way systems trap traffic |
+| **Minimum spanning tree** | Kruskal with union-find |
+| **Max-flow / min-cut** | Dinic's — how much can actually move from A to B |
 | **Isochrones** | Reachability bands with convex-hull service areas |
 | **What-if closures** | Shut any road, re-run any algorithm, see the detour |
 | **Turn-by-turn directions** | True bearings, merged straight runs, human-readable steps |
-| **Algorithm race mode** | Every algorithm on the same query, side by side, with optimality verdicts |
-| **Benchmark harness** | Median-of-N timing with tracing disabled; emits a Markdown table for CI |
-| **Differential verification** | Optimal algorithms cross-check each other on random queries |
-| **CSR graph core** | Flat-array adjacency with contiguous neighbour scans |
-| **Delta traces** | Θ(V + E) event stream instead of Θ(V²) frame snapshots |
-| **Geodesy done right** | Haversine and equirectangular metrics; admissible A\* on lat/lon |
-| **k-d tree** | O(log V) nearest-node snapping for coordinate queries |
-| **Runs in the browser** | The whole engine compiled to WebAssembly, 350 KB, no backend |
-| **Real map basemap** | Web Mercator tiles under the graph — watch a search expand over actual streets |
+
+### Data
+
+| Network | Size | Source |
+|---|---|---|
+| **India: national highways** | 207,610 junctions, 279,666 edges | OpenStreetMap |
+| **Delhi** | 24,781 junctions | OpenStreetMap |
+| **Bengaluru** | 33,360 junctions | OpenStreetMap |
+| **Jaipur** | 19,110 junctions | OpenStreetMap |
+| **Kolkata** | 17,857 junctions | OpenStreetMap |
+| **Mumbai** | 15,597 junctions | OpenStreetMap |
+| **12 metro systems** | 922 stations across 22 cities | OpenStreetMap |
+| **Indian Railways** | 746 stations, 2,062 links, 253 routes | OpenStreetMap |
+
+All committed. The demo runs from a clone with no network access.
+
+### Engineering
+
+| Feature | Detail |
+|---|---|
+| **CSR graph core** | Flat-array adjacency; contiguous neighbour scans instead of pointer chasing |
+| **Delta traces** | Θ(V + E) event stream instead of Θ(V²) frame snapshots — 209× smaller at 19.6k nodes |
+| **Geodesy done right** | Haversine metric; A\* admissibility checked as an invariant and enforced in CI |
+| **k-d tree** | O(log V) nearest-node snapping for map clicks |
+| **Runs in the browser** | The whole engine as 403 KB of WebAssembly, no backend |
+| **Real map basemap** | Web Mercator tiles under the graph — dark, light, street, satellite, terrain |
+| **Python bindings** | `pip install .` — the engine from Python, with NumPy coordinate arrays |
+| **Race mode** | Every algorithm on one query, side by side, with optimality verdicts |
+| **Differential verification** | Optimal algorithms cross-check each other; no golden files |
 
 ## Tech stack
 
@@ -89,11 +131,12 @@ shortest-path query cannot:
 |---|---|
 | Engine | C++20 — `std::span`, structured bindings, CTAD; no third-party runtime dependencies |
 | Build | CMake 3.16+ (primary), plain Makefile (fallback, no CMake needed) |
-| Tests | Custom 120-line header harness; 60 cases, 4,119 assertions |
-| CI | GitHub Actions — gcc/clang/MSVC on Linux, macOS, Windows; ASan + UBSan; differential correctness; data reproducibility |
+| Tests | Custom 138-line header harness; **101 C++ cases, 257,010 assertions**, plus 13 Python cases |
+| CI | GitHub Actions, 8 jobs — gcc/clang/MSVC on Linux, macOS and Windows; ASan + UBSan; differential correctness; data reproducibility; WASM smoke test; Python bindings; clang-format |
 | Data | OpenStreetMap via Overpass API; Python 3.9+ import scripts (stdlib only) |
-| Browser | Emscripten → WebAssembly; string-in/string-out JSON boundary |
-| Basemap | Custom Web Mercator tile layer on the same canvas; CARTO / OpenStreetMap raster tiles |
+| Browser | Emscripten → WebAssembly; JSON for results, packed binary for geometry |
+| Basemap | Custom Web Mercator tile layer on the same canvas; OpenStreetMap, Esri and OpenTopoMap raster tiles |
+| Python | pybind11 through scikit-build-core; NumPy for coordinate arrays |
 | UI | Vanilla JS, HTML5 Canvas, CSS glassmorphism — no framework, no bundler |
 | Dev server | Python `http.server`, stdlib only (optional; the WASM build needs none) |
 
@@ -105,13 +148,13 @@ shortest-path query cannot:
 flowchart TB
     subgraph Data["Data acquisition (Python, offline)"]
         OSM[("OpenStreetMap<br/>Overpass API")]
-        FC["fetch_city.py<br/>drivable road networks"]
-        FM["fetch_metros.py<br/>all Indian metro systems"]
-        GM["generate_maps.py<br/>seeded synthetic maps"]
+        FC["fetch_city.py<br/>city roads + national highways"]
+        FT["fetch_transit.py<br/>metros and railways"]
+        GM["generate_maps.py<br/>one seeded synthetic grid"]
         OSM --> FC
-        OSM --> FM
+        OSM --> FT
         FC --> CSV[("nodes.csv / edges.csv<br/>stations.csv / links.csv")]
-        FM --> CSV
+        FT --> CSV
         GM --> CSV
     end
 
@@ -122,41 +165,63 @@ flowchart TB
         KD["KdTree<br/>spatial index"]
         REG["Registry<br/>algorithm lookup by name"]
 
-        subgraph Algos["Algorithms"]
-            R["Routing<br/>10 implementations"]
-            AN["Analysis<br/>bridges, SCC, MST,<br/>centrality, flow"]
-            FT["Features<br/>isochrones, K-shortest,<br/>directions, transit"]
+        subgraph Search["Routing"]
+            BASIC["BFS, DFS, Dijkstra, A*,<br/>Greedy, Bellman-Ford,<br/>Floyd-Warshall, Johnson,<br/>Bidirectional, Dial"]
+            SPEED["Speedup indices<br/>CH · CCH · ALT"]
+            YEN["Yen K-shortest"]
+        end
+
+        subgraph Study["Analysis & features"]
+            AN["bridges · SCC · MST<br/>centrality · max-flow"]
+            FT2["isochrones · directions<br/>closures · transit"]
+            TD["TimeDependentModel<br/>congestion profiles"]
         end
 
         TR["Trace<br/>delta event stream"]
         LD --> GB --> G
         G --> KD
-        G --> Algos
-        REG --> Algos
-        Algos --> TR
+        G --> Search
+        G --> Study
+        TD --> SPEED
+        REG --> BASIC
+        REG --> SPEED
+        Search --> TR
+        Study --> TR
     end
 
     subgraph Front["Interfaces"]
-        CLI["agss CLI<br/>route / race / bench / verify /<br/>analyze / isochrone / kpaths / transit"]
-        SRV["server.py<br/>dev bridge"]
-        UI["Canvas UI<br/>pan, zoom, playback"]
+        CLI["agss CLI<br/>route · race · bench · verify<br/>analyze · isochrone · kpaths · transit"]
+        PY["agss Python module<br/>pybind11"]
+        WASM["WebAssembly engine<br/>403 KB"]
+        UI["Browser app<br/>map basemap · playback · panels"]
     end
 
     CSV --> LD
-    Algos --> CLI
+    Search --> CLI
+    Search --> PY
+    Search --> WASM
     TR --> CLI
-    CLI --> SRV --> UI
+    TR --> WASM
+    WASM --> UI
 ```
 
 **In plain language.** Python scripts pull real data from OpenStreetMap once and
-write plain CSV. The C++ core loads that CSV through a validating parser — an edge
+write plain CSV. The C++ core loads it through a validating parser — an edge
 pointing at a node that was never declared is rejected here rather than causing
 trouble three layers down. The builder sorts edges into Compressed Sparse Row
-layout, giving every algorithm a contiguous array to scan instead of a hash map to
-chase pointers through. Algorithms register themselves by name at start-up, so the
-CLI, the race mode and the benchmark harness all share one lookup table instead of
-each keeping its own `if`/`else` chain. As a search runs it optionally appends
-small events to a trace; the browser replays those events to animate the search.
+layout, giving every algorithm a contiguous array to scan instead of a hash map
+to chase pointers through.
+
+Above that sit three kinds of consumer. Plain algorithms register themselves by
+name, so the CLI, race mode and benchmark harness share one lookup table. The
+speedup techniques (CH, CCH, ALT) are *indices*: they preprocess a graph once
+and answer many queries against it, which is why they carry their own types
+rather than hiding behind the same interface. And the time-dependent model is a
+metric rather than an algorithm — it produces edge weights that CCH can be
+re-customized against in milliseconds.
+
+The same core compiles three ways: a native CLI, a Python extension module, and
+WebAssembly for the browser.
 
 ## Request flow
 
@@ -188,24 +253,41 @@ sequenceDiagram
 
 ```mermaid
 flowchart LR
-    A["Overpass query<br/>route=subway | light_rail | monorail<br/>across India"] --> B["120 route relations<br/>1,800 member nodes"]
-    B --> C["Extract ordered<br/>station sequences"]
-    C --> D["Merge duplicate platforms<br/>same name within 400 m"]
-    D --> E["922 stations<br/>1,900 links<br/>23 systems"]
-    E --> F["stations.csv<br/>links.csv"]
+    subgraph Roads["Road networks"]
+        A1["Overpass:<br/>highway=motorway|trunk|…"] --> A2["188,839 ways<br/>2,853,629 raw nodes"]
+        A2 --> A3["Keep junctions only;<br/>collapse interior geometry<br/>into edge length"]
+        A3 --> A4["207,610 nodes<br/>93% collapsed"]
+    end
+    subgraph Rail["Rail networks"]
+        B1["Overpass:<br/>route=subway|train|…"] --> B2["373 route relations"]
+        B2 --> B3["Extract ordered<br/>station sequences"]
+        B3 --> B4["Merge duplicate platforms<br/>by name and distance"]
+        B4 --> B5["922 metro + 746 rail<br/>stations"]
+    end
 ```
 
-**Why the merge step matters.** OpenStreetMap models each platform and each
-direction of travel as a separate node, so a major interchange such as Rajiv Chowk
-arrives as four or more disconnected stations. Left alone the network fragments and
-line changes become impossible. Folding same-named nodes within 400 m into one
-canonical station collapsed **873 duplicates** and is what makes interchange
-routing work.
+**Two reductions do the heavy lifting.** On roads, only nodes where ways meet
+become graph nodes — the geometry between junctions folds into the edge length,
+which removes 93% of raw OSM nodes without changing a single route.
 
-Travel times are estimated from great-circle distance and a per-mode average speed,
-because OSM carries no timetables. They are indicative, not schedule-accurate.
+On rail, OpenStreetMap models each platform and each direction as its own node,
+so a major interchange arrives as four or more disconnected stations. Left
+alone the network fragments and line changes become impossible. Folding
+same-named nodes within a radius collapsed **873 duplicates** on the metros and
+**650** on the railways, and is what makes interchange routing work at all. The
+radius differs by mode on purpose: metro platforms sit within a few hundred
+metres, while a main-line terminus like Howrah Junction spans over a kilometre.
 
----
+Coordinates are rounded *before* any distance is derived from them, so every
+weight is computed from exactly the numbers the file stores. Doing it the other
+way round left ~18k Jaipur edges up to 13 cm shorter than the straight line
+between their stored endpoints — enough to make the A\* heuristic an
+over-estimate and cost it its optimality guarantee.
+
+Travel times on rail are estimated from great-circle distance and a per-mode
+average speed, because OSM carries no timetables. They are indicative, not
+schedule-accurate: New Delhi to Jaipur comes out at 4.8 hours against a real
+4.5, and Mumbai to Pune at 3.6 against 3.5.
 
 ## Getting started
 
@@ -219,9 +301,24 @@ because OSM carries no timetables. They are indicative, not schedule-accurate.
 
 ```bash
 git clone https://github.com/adarshcod30/Adaptive-Graph-Search-Suite.git
-cd Adaptive-Graph-Search-Suite
-make -j
-./bin/agss race --graph data/cities/Jaipur --geo --source 0 --target 150
+```
+
+```bash
+cd Adaptive-Graph-Search-Suite && make -j && ./bin/agss maps
+```
+
+```
+NETWORK                  NODES      EDGES  SOURCE
+--------------------------------------------------------
+India: highways         207610     279666  OpenStreetMap
+Delhi                    24781      61439  OpenStreetMap
+Mumbai                   15597      33367  OpenStreetMap
+Bengaluru                33360      83087  OpenStreetMap
+Jaipur                   19110      48721  OpenStreetMap
+Kolkata                  17857      42673  OpenStreetMap
+Grid (synthetic)           225        840  generated
+metro networks             922       1900  OpenStreetMap
+Indian Railways            746       2062  OpenStreetMap
 ```
 
 With CMake instead:
@@ -236,12 +333,23 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -j
 make -j && python3 server.py
 ```
 
-Then open <http://127.0.0.1:9000/>.
+Then open <http://127.0.0.1:9000/>. Or build the WebAssembly version, which
+needs no server at all — see [Running it in the browser](#running-it-in-the-browser).
 
-### Fetch real city data
+### Install the Python module
+
+```bash
+pip install .
+```
+
+### Refresh the data
 
 ```bash
 python3 scripts/fetch_city.py --city bengaluru
+```
+
+```bash
+python3 scripts/fetch_city.py --highways IN --out-root data/networks
 ```
 
 ```bash
@@ -257,49 +365,67 @@ python3 scripts/fetch_transit.py --kinds rail
 ## Usage
 
 Every command takes `--graph <dir>`, and `--geo` when the coordinates are lat/lon
-(all OSM imports are).
+— which every OpenStreetMap import is.
 
 ### Route
 
 ```bash
-./bin/agss route --graph data/cities/Jaipur --geo --alg astar --source 3000 --target 15000 --directions
-```
-
-### Contraction Hierarchies
-
-```bash
-./bin/agss race --graph data/cities/Delhi --geo --source 3000 --target 22000 --algs dijkstra,astar,bidijkstra,ch
+./bin/agss route --graph data/cities/Jaipur --geo --alg astar --source 2746 --target 16278 --directions
 ```
 
 ### Race every algorithm on one query
 
 ```bash
-./bin/agss race --graph data/cities/Delhi --geo --source 0 --target 40000
+./bin/agss race --graph data/networks/India_Highways --geo --source 30678 --target 175037 --algs dijkstra,astar,alt,ch
 ```
 
 ```
 ALG                   MS   EXPANDED    RELAXED   HOPS          COST  OPTIMAL
 ----------------------------------------------------------------------------
-astar             1.9846      18999      47854    287     22017.900  optimal
-bellmanford      36.1405        160   13986758    287     22017.900  optimal
-bfs               0.6792      40992     105068    149     26252.030  suboptimal
-bidijkstra        2.6908      36099      93749    287     22017.900  optimal
-dfs               0.3595      26070      69939   9217    599711.880  suboptimal
-dial              0.0000          0          0      -             -  declined
-dijkstra          2.4639      43818     113050    287     22017.900  optimal
-floydwarshall     0.0000          0          0      -             -  declined
-greedy            0.0273        250        537    239     24556.200  suboptimal
-johnson           2.9055      43818     113050    287     22017.900  optimal
+dijkstra          8.1136     179346     243626   2614   2432977.352  optimal
+astar             7.1010      83555     116103   2614   2432977.352  optimal
+alt               1.9760      14598      20439   2614   2432977.352  optimal
+ch                0.3129        194       2327   2614   2432977.352  optimal
 
-reference optimal cost: 22017.900
-  dial (skipped: needs integer edge weights)
-  floydwarshall (skipped: graph exceeds 5000 nodes)
+reference optimal cost: 2432977.352
 ```
 
-An algorithm that **declines** is reported separately from one that searched and
-found nothing. Dial's bucket queue is only defined for integer weights, and
-Floyd-Warshall's V² matrices do not fit at this scale — both say so rather than
-returning a rounded or truncated answer.
+A 2,433 km route across India. Every technique returns the identical cost; only
+the amount of graph they touch differs.
+
+Run it without `--algs` to include everything. An algorithm that **declines** is
+reported separately from one that searched and found nothing — Dial's bucket
+queue is only defined for integer weights, and Floyd-Warshall's V² matrices do
+not fit at scale, so both say so rather than returning a rounded or truncated
+answer.
+
+### Alternative routes
+
+```bash
+./bin/agss kpaths --graph data/cities/Jaipur --geo --source 2746 --target 16278 --k 3
+```
+
+```
+K SHORTEST ROUTES  (2.2257 ms)
+  route 1: cost 1748.130  (38 hops, +0.0% vs best)
+  route 2: cost 1748.260  (36 hops, +0.0% vs best)
+  route 3: cost 1751.922  (39 hops, +0.2% vs best)
+```
+
+### Isochrones
+
+```bash
+./bin/agss isochrone --graph data/cities/Jaipur --geo --source 2746 --cutoffs 1000,3000,6000
+```
+
+```
+ISOCHRONES from node 2746  (1.6195 ms)
+CUTOFF           REACHABLE     SHARE    HULL PTS
+------------------------------------------------
+1000.0                 659      3.4%          16
+3000.0                3532     18.5%          15
+6000.0               12601     65.9%          26
+```
 
 ### Analyse the network
 
@@ -309,25 +435,13 @@ returning a rounded or truncated answer.
 
 `--what` accepts `bridges`, `scc`, `mst`, `centrality`, `flow`, or `all`.
 
-### Isochrones
-
-```bash
-./bin/agss isochrone --graph data/cities/Delhi --geo --source 0 --cutoffs 1000,3000,5000 --out bands.json
-```
-
-### Alternative routes
-
-```bash
-./bin/agss kpaths --graph data/cities/Jaipur --geo --source 0 --target 150 --k 3
-```
-
 ### Close a road and re-route
 
 ```bash
-./bin/agss route --graph data/cities/Jaipur --geo --alg dijkstra --source 0 --target 150 --close 12:47
+./bin/agss route --graph data/cities/Jaipur --geo --alg dijkstra --source 2746 --target 16278 --close 4102:4103
 ```
 
-### Metro and multi-modal
+### Metro, railways and multi-modal
 
 ```bash
 ./bin/agss transit --transit data/railways --source "New Delhi" --target "Howrah Junction"
@@ -338,8 +452,10 @@ returning a rounded or truncated answer.
 ```
 
 ```bash
-./bin/agss transit --transit data/transit --city Delhi --graph data/cities/Delhi_Central --source "Rajiv Chowk" --target "Akshardham"
+./bin/agss transit --transit data/transit --city Delhi --graph data/cities/Delhi --source "Rajiv Chowk" --target "Akshardham"
 ```
+
+The third form folds the road network in, so a journey can walk, drive and ride.
 
 ### Benchmark and verify
 
@@ -351,31 +467,82 @@ returning a rounded or truncated answer.
 ./bin/agss verify --graph data/cities/Jaipur --geo --samples 200
 ```
 
+`verify` is the differential harness: it makes every algorithm that claims
+optimality answer the same random queries and reports any disagreement.
+
 ---
 
 ## Benchmarks
 
-Central Delhi, imported from OpenStreetMap: **47,828 junction nodes, 123,288
-directed edges**. Median of 5 runs, Apple M-series, `-O2`, tracing disabled.
+All figures below are measured, not estimated. Apple M-series, `-O2`, tracing
+disabled, median of repeated runs.
+
+### The whole country
+
+India's expressway and national-highway network: **207,610 nodes, 279,666
+edges**. 57 random long-distance queries, average per query:
+
+| Algorithm | Preprocessing | Per query | Nodes expanded | vs Dijkstra |
+|---|---|---|---|---|
+| Dijkstra | — | 3.94 ms | 91,556 | — |
+| **ALT** (12 landmarks) | 232 ms | 0.87 ms | 8,970 | 4.5× faster, 10× fewer |
+| **Customizable CH** | 101 ms + 35 ms / metric | 0.13 ms | 249 | 31× faster, 368× fewer |
+| **Contraction Hierarchies** | 1,138 ms | 0.089 ms | 198 | **44× faster, 460× fewer** |
+
+**Zero mismatches.** All three speedup techniques are exact — they return the
+same route Dijkstra does, on every query.
+
+### One city
+
+Central Delhi: **24,781 junctions, 123,288 edges**, from a single query:
 
 | Algorithm | Median ms | Nodes expanded | Cost (m) | Optimal |
 |---|---|---|---|---|
 | Greedy best-first | 0.006 | 161 | 15,746 | no |
-| DFS | 0.223 | 17,774 | 659,160 | no |
 | BFS | 0.289 | 22,225 | 15,232 | no |
-| **A\*** | **0.295** | **3,547** | **13,820** | **yes** |
+| **A\*** | 0.295 | 3,547 | 13,820 | yes |
+| **ALT** | 0.349 | 887 | 13,820 | yes |
 | Dijkstra | 1.108 | 20,312 | 13,820 | yes |
 | Johnson | 1.330 | 20,312 | 13,820 | yes |
 | Bidirectional Dijkstra | 1.744 | 23,243 | 13,820 | yes |
+| **Contraction Hierarchies** | 0.044 | 150 | 13,820 | yes |
 | Bellman-Ford | 34.558 | 160 | 13,820 | yes |
 
-A\* expands **5.7× fewer nodes than Dijkstra** and runs **3.8× faster** while
-returning the identical optimal cost — the payoff from a correct geographic
-heuristic. Dial and Floyd-Warshall decline on this graph (non-integer weights,
-and V² memory respectively) rather than answering approximately.
+Dial and Floyd-Warshall decline on this graph — non-integer weights and V²
+memory respectively — rather than answering approximately.
 
-Analysis on the same graph: bridges and articulation points in **9.6 ms**
+Analysis on the same network: bridges and articulation points in **9.6 ms**
 (6,753 bridges found), strongly connected components in **1.1 ms**.
+
+### Rush hour
+
+Bengaluru, the same trip departing at each hour:
+
+| Departure | Duration | |
+|---|---|---|
+| 00:00 | 13.6 min | ▇▇▇▇▇▇ |
+| 07:00 | 21.8 min | ▇▇▇▇▇▇▇▇▇▇ |
+| 08:00 | 26.1 min | ▇▇▇▇▇▇▇▇▇▇▇▇▇ |
+| 12:00 | 19.2 min | ▇▇▇▇▇▇▇▇▇ |
+| 18:00 | 27.5 min | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ |
+| 22:00 | 15.1 min | ▇▇▇▇▇▇▇ |
+
+**A 2.02× penalty** between the quietest and busiest departure.
+
+### Preprocessing cost by network
+
+| Network | Nodes | CH build | CCH build | CCH re-customize | ALT build |
+|---|---|---|---|---|---|
+| Mumbai | 15,597 | 339 ms | — | — | — |
+| Jaipur | 19,110 | 814 ms | 31 ms | **10 ms** | 27 ms |
+| Delhi | 24,781 | 1,113 ms | — | — | — |
+| Bengaluru | 33,360 | 1,498 ms | — | — | — |
+| India highways | 207,610 | 1,138 ms | 101 ms | **35 ms** | 232 ms |
+
+CH's build cost is not monotone in graph size — it depends on how road-like the
+network is. The national highway skeleton is *more* hierarchical than a dense
+city grid, so contracting 207k highway nodes is cheaper than 33k Bengaluru
+ones.
 
 ### Trace size
 
@@ -606,8 +773,9 @@ again reads as an algorithm problem.
 
 ```
 .
-├── CMakeLists.txt              Primary build
+├── CMakeLists.txt              Primary build; also drives the WASM and Python targets
 ├── Makefile                    Fallback build; make test / sanitize / bench / verify
+├── pyproject.toml              Python packaging (scikit-build-core + pybind11)
 ├── include/agss/               Public headers
 │   ├── graph.hpp               CSR graph
 │   ├── graph_builder.hpp       Validating builder
@@ -616,32 +784,42 @@ again reads as an algorithm problem.
 │   ├── geo.hpp                 Haversine, bearings, turn angles
 │   ├── algorithm.hpp           Interface, registry, closure masks
 │   ├── trace.hpp               Delta event stream
+│   ├── contraction_hierarchy.hpp   CH
+│   ├── customizable_ch.hpp     CCH: metric-independent build + fast customization
+│   ├── alt.hpp                 ALT landmarks
+│   ├── time_dependent.hpp      Congestion profiles, earliest arrival, day scans
 │   ├── analysis.hpp            Bridges, SCC, MST, centrality, flow
 │   ├── isochrone.hpp           Reachability bands, convex hull
 │   ├── kshortest.hpp           Yen's algorithm
 │   ├── directions.hpp          Turn-by-turn
-│   ├── transit.hpp             Metro networks, multi-modal
+│   ├── transit.hpp             Metro and rail networks, multi-modal
 │   └── kdtree.hpp              Spatial index
 ├── src/
-│   ├── algorithms/             uninformed, weighted, global, kshortest
+│   ├── algorithms/             uninformed, weighted, global, kshortest,
+│   │                           contraction_hierarchy, customizable_ch, alt,
+│   │                           time_dependent
 │   ├── analysis/               connectivity, centrality, spanning, flow
 │   ├── transit/                multimodal
+│   ├── wasm/bindings.cpp       Emscripten entry points
 │   └── cli/main.cpp            Subcommand CLI
-├── tests/                      60 cases across 6 files
+├── python/
+│   ├── bindings.cpp            pybind11 module
+│   ├── agss/__init__.py        Package surface
+│   └── tests/                  13 binding tests
+├── tests/                      101 C++ cases across 9 files
 ├── scripts/
-│   ├── fetch_city.py           OSM road networks, 10 city presets or any bbox
-│   ├── fetch_transit.py        Metro systems (--kinds metro) and railways (--kinds rail)
+│   ├── fetch_city.py           City roads and national highways from OSM
+│   ├── fetch_transit.py        Metros (--kinds metro) and railways (--kinds rail)
 │   └── generate_maps.py        The one seeded synthetic grid
-├── python/                     pybind11 bindings and their tests
 ├── data/
 │   ├── networks/               India's national highway network (207k nodes)
-│   ├── cities/                 5 real OSM road networks (committed)
-│   ├── transit/                922 metro stations, 23 systems
+│   ├── cities/                 5 real OSM road networks
+│   ├── transit/                922 metro stations, 12 systems
 │   ├── railways/               746 Indian Railways stations
-│   └── maps/                   one synthetic grid — the only integer-weight graph
+│   └── maps/                   One synthetic grid — the only integer-weight graph
 ├── web/                        Browser app (WebAssembly)
 │   ├── index.html              Shell
-│   ├── app.js                  Mercator projection, tile layer, trace replay, rendering
+│   ├── app.js                  Mercator projection, tile layer, trace replay, panels
 │   └── engine/                 Generated .wasm + glue (gitignored)
 ├── ui/                         Legacy server-backed visualiser
 └── server.py                   Development bridge (optional)
@@ -653,22 +831,55 @@ again reads as an algorithm problem.
 make test
 ```
 
+**101 C++ cases, 257,010 assertions**, in about 11 seconds.
+
 ```bash
 make sanitize
 ```
 
-```bash
-make verify
-```
+Rebuilds the whole suite under AddressSanitizer and UndefinedBehaviorSanitizer.
 
 ```bash
 node tests/wasm_smoke.mjs
 ```
 
-`make sanitize` rebuilds under AddressSanitizer and UndefinedBehaviorSanitizer and
-runs the whole suite; the same job runs in CI on every push. The WASM smoke test
-exercises every exported entry point and asserts the browser engine agrees with
-the native one, so a broken WebAssembly build cannot reach the published demo.
+34 checks against the WebAssembly build, asserting the browser engine agrees
+with the native one — so a broken WASM build cannot reach the published demo.
+
+```bash
+pytest python/tests
+```
+
+13 cases covering the binding layer specifically: ownership, argument
+conversion and lifetime. A preprocessed index holds a raw pointer to its graph,
+and letting Python collect the graph first would be a use-after-free that no
+C++ test can see.
+
+```bash
+make verify
+```
+
+The differential harness on real data.
+
+### What the tests actually assert
+
+The suite is built around properties rather than golden files:
+
+- every algorithm claiming optimality returns the identical cost;
+- every returned path is a real edge sequence from source to target;
+- BFS is hop-minimal on unit-weight graphs, and suboptimal algorithms are never
+  *cheaper* than the optimum;
+- CH, CCH and ALT all match Dijkstra exactly, and their unpacked paths are real
+  edge sequences in the *original* graph — which is what proves shortcuts
+  expanded correctly;
+- ALT's lower bound never exceeds the true distance;
+- the time-dependent model is FIFO both per edge and end-to-end along a route;
+- CCH re-customization never rebuilds and keeps answering correctly;
+- a delta trace replays into exactly the path the search returned;
+- every generated graph keeps the straight-line heuristic admissible.
+
+Two of these were written *after* the property they check caught a real bug —
+Dial's silent rounding and ALT's degenerate landmark selection.
 
 ## Running it in the browser
 
@@ -714,9 +925,19 @@ Some details that matter in practice:
 Planar synthetic graphs have no real-world coordinates, so no basemap applies
 and the selector says so.
 
-Tiles come from CARTO and OpenStreetMap; attribution is displayed on the map,
-as both providers require. The demo is deliberately light on tile traffic — at
-most 8 requests in flight and a bounded cache.
+Five basemaps, all from providers that need no API key: **Street map**
+(OpenStreetMap), **Satellite** and **Light** (Esri), **Terrain**
+(OpenTopoMap), and **Dark** — which is the light style inverted on the canvas,
+since no key-free provider ships a dark raster.
+
+CARTO used to fill the dark slot until they began stamping *"API KEY REQUIRED"*
+across every unauthenticated tile. It arrives as HTTP 200 with a perfectly
+valid PNG, so nothing errors anywhere — the watermark simply appears on the
+map, which is a good reminder that a 200 is not the same as a correct response.
+
+Attribution is displayed on the map, as every provider requires. The demo is
+deliberately light on tile traffic — at most 8 requests in flight and a bounded
+cache.
 
 ### Why WebAssembly replaced the Python bridge rather than fixing it
 
@@ -740,7 +961,7 @@ fixed in it too, but nothing in the published demo depends on it.
 | | Native | WebAssembly |
 |---|---|---|
 | A\* on 47,828-node Delhi | 0.29 ms | ~2 ms |
-| Engine size | 326 KB binary | 350 KB `.wasm` + 63 KB glue |
+| Engine size | 340 KB binary | 403 KB `.wasm` + 64 KB glue |
 | Install steps | clone, toolchain, build | open a link |
 
 One caveat the UI states honestly: browsers clamp `performance.now()` to about
@@ -752,29 +973,48 @@ zero, and **Race all** times a batch of runs to amortise the clamp away.
 ## Deployment
 
 This is a local-first tool: a static binary plus CSV data, with an optional
-development server for the browser UI.
+development server and a browser build that needs neither.
 
 | Environment | How |
 |---|---|
 | Local CLI | `make -j` → `./bin/agss` |
+| Python | `pip install .` → `import agss` |
 | Local UI | `python3 server.py` → <http://127.0.0.1:9000/> |
-| Live demo | GitHub Pages, rebuilt from source on every push to `main` — the WASM smoke test gates publication |
-| CI | GitHub Actions on push and PR — build matrix, sanitizers, differential correctness, data-reproducibility check, WASM smoke test, benchmark table published to the job summary |
-| Library | `cmake --install` exports `agss_core` plus headers for `find_package`/`FetchContent` |
+| Live demo | GitHub Pages, rebuilt from source on every push to `main`; the WASM smoke test gates publication |
+| CI | GitHub Actions, 8 jobs on push and PR |
+| Library | `cmake --install` exports `agss_core` plus headers for `find_package` / `FetchContent` |
+
+The CI jobs are: a build matrix across gcc, clang and MSVC on Linux, macOS and
+Windows; AddressSanitizer + UndefinedBehaviorSanitizer; differential
+correctness across every bundled network; a data-reproducibility check; the
+WebAssembly build and smoke test; the Python bindings; clang-format pinned to a
+fixed version; and a benchmark table published to the job summary.
 
 `server.py` binds to loopback and is a development tool, not a hardened public
 service.
 
 ## Roadmap
 
-- [x] WebAssembly build so the visualiser is a link, not a clone
+Done:
+
+- [x] CSR core, delta traces and differential verification
+- [x] Real OpenStreetMap road, metro and railway data
+- [x] WebAssembly build, so the visualiser is a link rather than a clone
+- [x] Real map basemap under the graph
 - [x] Contraction Hierarchies
-- [x] ALT landmarks and Customizable CH
+- [x] Customizable CH and ALT landmarks
 - [x] Time-dependent routing
 - [x] Python bindings
-- [ ] More cities, with larger extracts as release assets
+- [x] India's national highway network
+
+Next:
+
+- [ ] Nested-dissection ordering for CCH, in place of minimum degree
+- [ ] Stall-on-demand in the CH query, worth a further 20-30% on long routes
+- [ ] Parallel CH preprocessing
 - [ ] Jump Point Search for grid maps
 - [ ] Louvain community detection for neighbourhood boundaries
+- [ ] More cities, with larger extracts as release assets
 
 ## Contributing
 
@@ -793,10 +1033,12 @@ contributors, available under the [Open Database Licence
 (ODbL) 1.0](https://opendatacommons.org/licenses/odbl/). Any redistribution of the
 data or of works derived from it must preserve that attribution and licence.
 
-Basemap tiles are served by [CARTO](https://carto.com/basemaps/) and the
-[OpenStreetMap tile servers](https://operations.osmfoundation.org/policies/tiles/),
-© OpenStreetMap contributors © CARTO. Attribution is shown in the map view. If
-you fork this and expect real traffic, point the tile URLs at your own provider
+Basemap tiles are served by the
+[OpenStreetMap tile servers](https://operations.osmfoundation.org/policies/tiles/)
+(© OpenStreetMap contributors), [Esri](https://www.esri.com/) (Imagery © Esri,
+Maxar, Earthstar Geographics) and [OpenTopoMap](https://opentopomap.org/)
+(style © OpenTopoMap, CC-BY-SA). Attribution is shown in the map view. If you
+fork this and expect real traffic, point the tile URLs at your own provider
 rather than leaning on theirs.
 
 ## Contact
