@@ -1,19 +1,107 @@
+<div align="center">
+
 # Adaptive Graph Search Suite
 
-**A C++20 pathfinding and network-analysis engine for real Indian road and metro networks.**
+**A C++20 routing engine for real Indian road, metro and railway networks.**
+
+[![CI](https://github.com/adarshcod30/Adaptive-Graph-Search-Suite/actions/workflows/ci.yml/badge.svg)](https://github.com/adarshcod30/Adaptive-Graph-Search-Suite/actions/workflows/ci.yml)
+[![Pages](https://github.com/adarshcod30/Adaptive-Graph-Search-Suite/actions/workflows/pages.yml/badge.svg)](https://github.com/adarshcod30/Adaptive-Graph-Search-Suite/actions/workflows/pages.yml)
+[![Licence: MIT](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENSE)
+[![C++20](https://img.shields.io/badge/C%2B%2B-20-00599C.svg?logo=c%2B%2B&logoColor=white)](https://en.cppreference.com/w/cpp/20)
+[![WebAssembly](https://img.shields.io/badge/WebAssembly-654FF0.svg?logo=webassembly&logoColor=white)](https://webassembly.org/)
+[![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
+[![Data: OpenStreetMap](https://img.shields.io/badge/data-OpenStreetMap-7EBC6F.svg?logo=openstreetmap&logoColor=white)](https://www.openstreetmap.org/)
+
+### [▶ Try the live demo](https://adarshcod30.github.io/Adaptive-Graph-Search-Suite/)
+
+</div>
 
 Twelve routing algorithms including **Contraction Hierarchies**, **Customizable
 CH** and **ALT landmarks**; six network-analysis algorithms; time-dependent
-routing; multi-modal road, metro and railway networks across India; Python
-bindings; and a browser visualiser that draws it all over a real map.
+routing; road, metro and railway networks across India; Python bindings; and a
+browser visualiser that draws it all over a real map.
 
-**[Try it in your browser →](https://adarshcod30.github.io/Adaptive-Graph-Search-Suite/)**
-The C++ engine is compiled to WebAssembly and runs entirely in the page: no
-server, no install, nothing uploaded.
+The engine compiles to WebAssembly and runs entirely in the page — no server,
+no install, nothing uploaded.
 
 `graph-algorithms` · `pathfinding` · `cpp20` · `dijkstra` · `astar` ·
 `contraction-hierarchies` · `route-planning` · `openstreetmap` · `transit` ·
 `india` · `webassembly` · `pybind11` · `time-dependent-routing` · `visualization`
+
+---
+
+## What it looks like
+
+<div align="center">
+
+**Dijkstra's wavefront crawling real Chennai streets.**
+Orange is settled, magenta is the frontier, green is the route.
+
+<img src="docs/screenshots/dijkstra-wavefront.png" alt="Dijkstra expanding in a circular wavefront across the Chennai road network on a dark basemap" width="880">
+
+</div>
+
+### Why Contraction Hierarchies matter
+
+The same 2,108 km query from Bengaluru to Delhi, on India's national highway
+network. Both return **the identical route**. The difference is how much of the
+country each one had to look at.
+
+<table>
+<tr>
+<td width="50%" align="center"><b>Dijkstra</b><br><sub>145,527 nodes settled</sub></td>
+<td width="50%" align="center"><b>Contraction Hierarchies</b><br><sub>259 nodes settled — <b>562× fewer</b></sub></td>
+</tr>
+<tr>
+<td><img src="docs/screenshots/dijkstra-india.png" alt="Dijkstra settling almost the entire Indian highway network, shown in orange across the whole country" width="100%"></td>
+<td><img src="docs/screenshots/contraction-hierarchies.png" alt="Contraction Hierarchies settling only a faint scattering of nodes for the same route" width="100%"></td>
+</tr>
+</table>
+
+### The networks
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**India: national highways** — 207,610 junctions. The road network draws the
+outline of the country.
+
+<img src="docs/screenshots/india-highways.png" alt="India's national highway network rendered over a dark basemap" width="100%">
+
+</td>
+<td width="50%" valign="top">
+
+**India: railways** — 69,944 track nodes and 8,857 named stations. A\* routing
+New Delhi to Chennai Egmore, 2,615 km.
+
+<img src="docs/screenshots/india-railways.png" alt="The Indian railway network with a long-distance route highlighted in green" width="100%">
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+
+**Delhi, the whole NCT** — 253,748 junctions. Dijkstra leaving Indira Gandhi
+International Airport for Anand Vihar, 28.4 km east: 171,202 nodes settled in
+34.9 ms. The airport, the outer ring and the Yamuna crossings are all in the
+extract.
+
+<img src="docs/screenshots/delhi-full-network.png" alt="The full Delhi road network in blue with Dijkstra's orange wavefront expanding from the airport toward east Delhi" width="100%">
+
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+
+**Delhi Metro over satellite imagery** — Rajiv Chowk to Millennium City Centre
+Gurugram: 21 stops, 49.5 minutes, matching the real journey.
+
+<img src="docs/screenshots/delhi-metro.jpg" alt="The Delhi Metro network drawn over satellite imagery with a routed journey in green" width="100%">
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -46,8 +134,9 @@ server, no install, nothing uploaded.
 
 Most pathfinding visualisers animate a textbook algorithm on a toy grid. This
 one runs the algorithms production routing engines actually use, on **real
-OpenStreetMap networks** — 207,610 junctions for India's highway system, 33,360
-for Bengaluru — and answers questions about them that a shortest-path query
+OpenStreetMap networks** — 488,431 junctions across Delhi NCR, 253,748 for
+Delhi alone, 207,610 for India's highway system — and answers questions about
+them that a shortest-path query
 cannot:
 
 | Question | Answered by |
@@ -77,7 +166,7 @@ measured by the commands shown next to them.
 |---|---|
 | **12 routing algorithms** | BFS, DFS, Dijkstra, A\*, Greedy best-first, Bellman-Ford, Floyd-Warshall, Johnson, Bidirectional Dijkstra, Dial's bucket queue, ALT, Contraction Hierarchies |
 | **Contraction Hierarchies** | What production routing engines use — **44× faster, 460× fewer nodes** than Dijkstra on India's national highway network |
-| **Customizable CH** | Metric-independent build, then **35 ms to re-cost** a 207k-node network instead of 1,138 ms to rebuild it |
+| **Customizable CH** | Metric-independent build, then **38 ms to re-cost** a 207k-node network instead of 1,222 ms to rebuild it |
 | **ALT landmarks** | A\* with exact landmark distances instead of geometry — 10× fewer nodes than Dijkstra, and works with no coordinates at all |
 | **Time-dependent routing** | Edge costs vary through the day; a measured **2.02× rush-hour penalty**, FIFO-safe so Dijkstra stays valid |
 | **K-shortest paths** | Yen's algorithm — the "show me 3 alternate routes" feature |
@@ -100,16 +189,22 @@ measured by the commands shown next to them.
 
 | Network | Size | Source |
 |---|---|---|
+| **Delhi NCR** | 488,431 junctions, 1,249,462 edges | OpenStreetMap |
+| **Delhi** (full NCT) | 253,748 junctions, 663,719 edges | OpenStreetMap |
+| **Bengaluru** | 240,237 junctions, 581,639 edges | OpenStreetMap |
 | **India: national highways** | 207,610 junctions, 279,666 edges | OpenStreetMap |
-| **Delhi** | 24,781 junctions | OpenStreetMap |
-| **Bengaluru** | 33,360 junctions | OpenStreetMap |
-| **Jaipur** | 19,110 junctions | OpenStreetMap |
-| **Kolkata** | 17,857 junctions | OpenStreetMap |
-| **Mumbai** | 15,597 junctions | OpenStreetMap |
-| **12 metro systems** | 922 stations across 22 cities | OpenStreetMap |
-| **Indian Railways** | 746 stations, 2,062 links, 253 routes | OpenStreetMap |
+| **Chennai** | 141,934 junctions, 345,501 edges | OpenStreetMap |
+| **Jaipur** | 123,456 junctions, 316,342 edges | OpenStreetMap |
+| **Kolkata** | 104,085 junctions, 254,516 edges | OpenStreetMap |
+| **Mumbai** | 79,783 junctions, 176,200 edges | OpenStreetMap |
+| **India: railways** | 69,944 track nodes, 145,958 edges, 8,857 named stations | OpenStreetMap |
+| **Gorakhpur** | 31,830 junctions, 77,071 edges | OpenStreetMap |
+| **23 metro & RRTS systems** | 922 stations across 22 cities | OpenStreetMap |
+| **Named train routes** | 746 stations, 2,062 links, 253 services | OpenStreetMap |
+| **Grid** (synthetic) | 225 nodes — the only integer-weight graph | generated |
 
-All committed. The demo runs from a clone with no network access.
+Roughly 1.74 million junctions and 4.09 million directed edges in total, 122 MB
+on disk. All committed. The demo runs from a clone with no network access.
 
 ### Engineering
 
@@ -254,40 +349,69 @@ sequenceDiagram
 ```mermaid
 flowchart LR
     subgraph Roads["Road networks"]
-        A1["Overpass:<br/>highway=motorway|trunk|…"] --> A2["188,839 ways<br/>2,853,629 raw nodes"]
+        A1["Overpass:<br/>highway=motorway|trunk|…"] --> A2["Tile large areas<br/>and merge by element id"]
         A2 --> A3["Keep junctions only;<br/>collapse interior geometry<br/>into edge length"]
-        A3 --> A4["207,610 nodes<br/>93% collapsed"]
+        A3 --> A4["Whole-city and<br/>nationwide graphs"]
     end
     subgraph Rail["Rail networks"]
-        B1["Overpass:<br/>route=subway|train|…"] --> B2["373 route relations"]
-        B2 --> B3["Extract ordered<br/>station sequences"]
-        B3 --> B4["Merge duplicate platforms<br/>by name and distance"]
-        B4 --> B5["922 metro + 746 rail<br/>stations"]
+        B1["Overpass:<br/>railway=rail + station|halt"] --> B2["Pin a track node<br/>beside every station"]
+        B2 --> B3["Collapse to junctions<br/>and stations"]
+        B3 --> B4["69,944 nodes<br/>8,857 named stations"]
+    end
+    subgraph Metro["Metro systems"]
+        C1["Overpass:<br/>route=subway|light_rail"] --> C2["Extract ordered<br/>station sequences"]
+        C2 --> C3["Merge duplicate platforms<br/>by name and distance"]
+        C3 --> C4["922 stations,<br/>12 systems"]
     end
 ```
 
-**Two reductions do the heavy lifting.** On roads, only nodes where ways meet
-become graph nodes — the geometry between junctions folds into the edge length,
-which removes 93% of raw OSM nodes without changing a single route.
+**Junction collapsing.** Only nodes where ways meet become graph nodes; the
+geometry between junctions folds into the edge length. That removes 56–93% of
+raw OSM nodes without changing a single route.
 
-On rail, OpenStreetMap models each platform and each direction as its own node,
-so a major interchange arrives as four or more disconnected stations. Left
-alone the network fragments and line changes become impossible. Folding
-same-named nodes within a radius collapsed **873 duplicates** on the metros and
-**650** on the railways, and is what makes interchange routing work at all. The
-radius differs by mode on purpose: metro platforms sit within a few hundred
-metres, while a main-line terminus like Howrah Junction spans over a kilometre.
+**Tiling.** A whole-region box like Delhi NCR is 279,000 ways, and Overpass
+simply refuses it. Areas past a threshold are split into a grid, fetched
+separately and merged by element id. Ways straddling a tile edge come back in
+several tiles, which merging makes harmless, and `node(w)` fetches each way's
+full geometry regardless of which tile requested it — so nothing is clipped at
+a seam. Requests also rotate across public mirrors, because a run pulling
+several whole-city extracts will exhaust one instance's slot allowance and
+start receiving XML errors in place of JSON.
 
-Coordinates are rounded *before* any distance is derived from them, so every
-weight is computed from exactly the numbers the file stores. Doing it the other
-way round left ~18k Jaipur edges up to 13 cm shorter than the straight line
-between their stored endpoints — enough to make the A\* heuristic an
-over-estimate and cost it its optimality guarantee.
+**Station pinning, on rail.** Keeping only junctions strands any station
+sitting mid-way along a long straight run: it has no graph node anywhere near
+it, and 7,709 of 10,210 stations ended up unplaced on the first attempt.
+Pinning the nearest *track* node for each station into the kept set gives every
+station somewhere to attach, and takes placement to 8,857.
 
-Travel times on rail are estimated from great-circle distance and a per-mode
-average speed, because OSM carries no timetables. They are indicative, not
-schedule-accurate: New Delhi to Jaipur comes out at 4.8 hours against a real
-4.5, and Mumbai to Pune at 3.6 against 3.5.
+**Platform merging, on metro.** OpenStreetMap models each platform and each
+direction as its own node, so a major interchange arrives as four or more
+disconnected stations. Left alone the network fragments and line changes become
+impossible. Folding same-named nodes within a radius collapsed **873
+duplicates**, and is what makes interchange routing work at all. The radius
+differs by mode on purpose: metro platforms sit within a few hundred metres,
+while a main-line terminus like Howrah Junction spans over a kilometre.
+
+**Self-consistent coordinates.** Coordinates are rounded *before* any distance
+is derived from them, so every weight is computed from exactly the numbers the
+file stores. Doing it the other way round left ~18k Jaipur edges up to 13 cm
+shorter than the straight line between their stored endpoints — enough to make
+the A\* heuristic an over-estimate and cost it its optimality guarantee.
+
+### How good is the data?
+
+Routing on real track geometry reproduces published rail distances closely:
+
+| Route | Computed | Actual | Error |
+|---|---|---|---|
+| New Delhi → Howrah Junction | 1,444 km | 1,451 km | 0.5% |
+| New Delhi → Mumbai Central | 1,387 km | 1,384 km | 0.2% |
+| Jaipur Junction → New Delhi | 310 km | 308 km | 0.6% |
+| Howrah Junction → Gorakhpur Junction | 776 km | 783 km | 0.9% |
+
+Metro journey times are estimated from distance and an average speed, since OSM
+carries no timetables — Rajiv Chowk to Millennium City Centre comes out at
+49.5 minutes against a real ~50.
 
 ## Getting started
 
@@ -311,11 +435,15 @@ cd Adaptive-Graph-Search-Suite && make -j && ./bin/agss maps
 NETWORK                  NODES      EDGES  SOURCE
 --------------------------------------------------------
 India: highways         207610     279666  OpenStreetMap
-Delhi                    24781      61439  OpenStreetMap
-Mumbai                   15597      33367  OpenStreetMap
-Bengaluru                33360      83087  OpenStreetMap
-Jaipur                   19110      48721  OpenStreetMap
-Kolkata                  17857      42673  OpenStreetMap
+India: railways          69944     145958  OpenStreetMap
+Delhi                   253748     663719  OpenStreetMap
+Delhi NCR               488431    1249462  OpenStreetMap
+Mumbai                   79783     176200  OpenStreetMap
+Bengaluru               240237     581639  OpenStreetMap
+Jaipur                  123456     316342  OpenStreetMap
+Kolkata                 104085     254516  OpenStreetMap
+Chennai                 141934     345501  OpenStreetMap
+Gorakhpur                31830      77071  OpenStreetMap
 Grid (synthetic)           225        840  generated
 metro networks             922       1900  OpenStreetMap
 Indian Railways            746       2062  OpenStreetMap
@@ -358,6 +486,10 @@ python3 scripts/fetch_transit.py --kinds metro
 
 ```bash
 python3 scripts/fetch_transit.py --kinds rail
+```
+
+```bash
+python3 scripts/fetch_railway_network.py
 ```
 
 ---
@@ -480,69 +612,123 @@ disabled, median of repeated runs.
 ### The whole country
 
 India's expressway and national-highway network: **207,610 nodes, 279,666
-edges**. 57 random long-distance queries, average per query:
+edges**. 57 random long-distance queries, average per query, native build:
 
 | Algorithm | Preprocessing | Per query | Nodes expanded | vs Dijkstra |
 |---|---|---|---|---|
 | Dijkstra | — | 3.94 ms | 91,556 | — |
-| **ALT** (12 landmarks) | 232 ms | 0.87 ms | 8,970 | 4.5× faster, 10× fewer |
-| **Customizable CH** | 101 ms + 35 ms / metric | 0.13 ms | 249 | 31× faster, 368× fewer |
-| **Contraction Hierarchies** | 1,138 ms | 0.089 ms | 198 | **44× faster, 460× fewer** |
+| **ALT** (12 landmarks) | 249 ms | 0.87 ms | 8,970 | 4.5× faster, 10× fewer |
+| **Customizable CH** | 111 ms + 38 ms / metric | 0.13 ms | 249 | 31× faster, 368× fewer |
+| **Contraction Hierarchies** | 1,222 ms | 0.089 ms | 198 | **44× faster, 460× fewer** |
 
 **Zero mismatches.** All three speedup techniques are exact — they return the
 same route Dijkstra does, on every query.
 
 ### One city
 
-Central Delhi: **24,781 junctions, 123,288 edges**, from a single query:
+Delhi, the whole NCT out to the airport and beyond: **253,748 junctions,
+663,719 edges**. One query, five repetitions, median reported —
+`agss bench --markdown --geo --graph data/cities/Delhi`.
 
 | Algorithm | Median ms | Nodes expanded | Cost (m) | Optimal |
 |---|---|---|---|---|
-| Greedy best-first | 0.006 | 161 | 15,746 | no |
-| BFS | 0.289 | 22,225 | 15,232 | no |
-| **A\*** | 0.295 | 3,547 | 13,820 | yes |
-| **ALT** | 0.349 | 887 | 13,820 | yes |
-| Dijkstra | 1.108 | 20,312 | 13,820 | yes |
-| Johnson | 1.330 | 20,312 | 13,820 | yes |
-| Bidirectional Dijkstra | 1.744 | 23,243 | 13,820 | yes |
-| **Contraction Hierarchies** | 0.044 | 150 | 13,820 | yes |
-| Bellman-Ford | 34.558 | 160 | 13,820 | yes |
+| Greedy best-first | 0.022 | 374 | 25,076 | no |
+| DFS | 0.026 | 3,499 | 180,082 | no |
+| **ALT** | 0.313 | 3,218 | 19,198 | yes |
+| **Contraction Hierarchies** | 0.359 | 2,019 | 19,198 | yes |
+| BFS | 1.068 | 65,838 | 21,764 | no |
+| **A\*** | 1.567 | 15,311 | 19,198 | yes |
+| Dijkstra | 4.723 | 72,189 | 19,198 | yes |
+| Johnson | 5.770 | 72,189 | 19,198 | yes |
+| Bidirectional Dijkstra | 6.012 | 59,778 | 19,198 | yes |
+| Bellman-Ford | 660.167 | 88,052,145 | 19,198 | yes |
+
+Every optimal algorithm returns 19,198 m. The three suboptimal ones are honest
+about it: greedy best-first is 215× faster than Dijkstra for a route 31% longer,
+which is the trade it exists to make.
+
+The CH figure here is deliberately unflattering. `bench` builds with the
+library's default 20-second budget, and Delhi needs 233 seconds to contract
+fully, so this is a *truncated* hierarchy — what twenty seconds of
+preprocessing buys you. It still expands 36× fewer nodes than Dijkstra and
+answers 13× faster. On India's highway network, where contraction completes in
+1.2 seconds, the same comparison is 460× fewer nodes and 44× faster.
 
 Dial and Floyd-Warshall decline on this graph — non-integer weights and V²
 memory respectively — rather than answering approximately.
 
-Analysis on the same network: bridges and articulation points in **9.6 ms**
-(6,753 bridges found), strongly connected components in **1.1 ms**.
+Analysis on the same network: **43,189 bridges** and 38,589 articulation points
+in **52.6 ms**; 856 strongly connected components, the largest holding 252,147
+of the 253,748 nodes, in **5.9 ms**.
 
 ### Rush hour
 
-Bengaluru, the same trip departing at each hour:
+Bengaluru, a 16.4 km cross-city trip departing at each hour, routed on the
+time-dependent metric:
 
 | Departure | Duration | |
 |---|---|---|
-| 00:00 | 13.6 min | ▇▇▇▇▇▇ |
-| 07:00 | 21.8 min | ▇▇▇▇▇▇▇▇▇▇ |
-| 08:00 | 26.1 min | ▇▇▇▇▇▇▇▇▇▇▇▇▇ |
-| 12:00 | 19.2 min | ▇▇▇▇▇▇▇▇▇ |
-| 18:00 | 27.5 min | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ |
-| 22:00 | 15.1 min | ▇▇▇▇▇▇▇ |
+| 00:00 | 24.6 min | ▇▇▇▇▇▇▇▇▇▇▇▇ |
+| 05:00 | 27.7 min | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇ |
+| 07:00 | 41.3 min | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ |
+| **08:00** | **48.2 min** | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ |
+| 13:00 | 34.2 min | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ |
+| 17:00 | 48.0 min | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ |
+| **18:00** | **49.5 min** | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ |
+| 21:00 | 32.6 min | ▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇▇ |
+| 23:00 | 25.9 min | ▇▇▇▇▇▇▇▇▇▇▇▇▇ |
 
-**A 2.02× penalty** between the quietest and busiest departure.
+**A 2.01× penalty** between the quietest and busiest departure, with the two
+peaks falling either side of the working day rather than at a single midpoint.
+The curve is generated, not observed — hourly congestion profiles are assigned
+by road class — but it is FIFO by construction, so leaving later can never
+arrive earlier, and the earliest-arrival search stays label-setting.
+
+Re-costing the whole network for a different hour takes **172 ms** on this
+graph (see the CCH row below), which is what makes scanning all 24 departures
+interactive.
 
 ### Preprocessing cost by network
 
+Measured with `agss bench --preprocessing --markdown --geo --graph <dir>`, so
+these are reproducible rather than quoted from memory.
+
 | Network | Nodes | CH build | CCH build | CCH re-customize | ALT build |
 |---|---|---|---|---|---|
-| Mumbai | 15,597 | 339 ms | — | — | — |
-| Jaipur | 19,110 | 814 ms | 31 ms | **10 ms** | 27 ms |
-| Delhi | 24,781 | 1,113 ms | — | — | — |
-| Bengaluru | 33,360 | 1,498 ms | — | — | — |
-| India highways | 207,610 | 1,138 ms | 101 ms | **35 ms** | 232 ms |
+| Gorakhpur | 31,830 | 0.9 s | 22 ms | **7.6 ms** | 45 ms |
+| India: railways | 69,944 | 0.3 s | 25 ms | **4.2 ms** | 72 ms |
+| Mumbai | 79,783 | 1.9 s | 68 ms | **26 ms** | 120 ms |
+| Kolkata | 104,085 | 27 s | 196 ms | **66 ms** | 172 ms |
+| Jaipur | 123,456 | 45 s | 204 ms | **85 ms** | 263 ms |
+| Chennai | 141,934 | 37 s | 203 ms | **78 ms** | 249 ms |
+| India: highways | 207,610 | **1.2 s** | 111 ms | **38 ms** | 249 ms |
+| Bengaluru | 240,237 | 444 s | 552 ms | **172 ms** | 480 ms |
+| Delhi | 253,748 | 233 s | 616 ms | **279 ms** | 518 ms |
 
-CH's build cost is not monotone in graph size — it depends on how road-like the
-network is. The national highway skeleton is *more* hierarchical than a dense
-city grid, so contracting 207k highway nodes is cheaper than 33k Bengaluru
-ones.
+Two things stand out.
+
+**CH's build cost is not a function of graph size.** India's highway network is
+207,610 nodes and contracts in 1.2 seconds. Bengaluru is 240,237 nodes —
+16% larger — and takes 444 seconds, nearly 400 times longer. Contraction
+Hierarchies exploit low *highway dimension*: the number of vertices needed to
+cover all shortest paths at a given scale. A national highway skeleton has a
+tiny one by construction, so most nodes contract without adding a shortcut. A
+dense city grid where thousands of residential streets substitute for one
+another has a large one, so contracting any node forces many shortcuts, which
+makes every later contraction worse. The cost compounds.
+
+**That is the entire argument for Customizable CH.** CCH skips witness search
+and builds a metric-independent chordal structure instead, so the same
+Bengaluru network is ready in 552 ms rather than 444 seconds — an 800× cheaper
+build — and re-costing it for a new traffic metric takes 172 ms. CH pays its
+cost once and cannot re-cost at all without rebuilding.
+
+Because a full contraction can run for minutes, the library defaults to a
+20-second budget (`BuildOptions::budget_ms`) so a pathological graph cannot
+hang a browser tab. An exhausted budget leaves the hierarchy *correct* —
+uncontracted nodes sit at the top level and queries search them normally — just
+less selective. The benchmark above raises that budget with `--budget` to
+measure the true figure, and marks any build that still hits it.
 
 ### Trace size
 
@@ -570,9 +756,9 @@ random long-distance queries:
 | | Preprocessing | Per query | Nodes expanded | vs Dijkstra |
 |---|---|---|---|---|
 | Dijkstra | — | 3.94 ms | 91,556 | — |
-| **ALT** (12 landmarks) | 232 ms | 0.87 ms | 8,970 | 4.5× faster, 10× fewer |
-| **Customizable CH** | 101 ms + 35 ms per metric | 0.13 ms | 249 | 31× faster, 368× fewer |
-| **Contraction Hierarchies** | 1,138 ms | 0.089 ms | 198 | **44× faster, 460× fewer** |
+| **ALT** (12 landmarks) | 249 ms | 0.87 ms | 8,970 | 4.5× faster, 10× fewer |
+| **Customizable CH** | 111 ms + 38 ms per metric | 0.13 ms | 249 | 31× faster, 368× fewer |
+| **Contraction Hierarchies** | 1,222 ms | 0.089 ms | 198 | **44× faster, 460× fewer** |
 
 **Zero mismatches.** All three are exact: they return the same route Dijkstra
 does, verified on every query.
@@ -628,17 +814,38 @@ one, and a query becomes a bidirectional search that only ever moves *upward*.
 Road networks have very low highway dimension — long trips funnel onto a few
 arterials — so both searches climb to a shared core almost immediately.
 
-Per city, 300 random queries each:
+Per network, 300 random source/target pairs from a fixed seed, measured
+through the WebAssembly build — the same engine the browser demo runs:
 
-| City | Nodes | Build | Dijkstra | CH | Speedup |
+| Network | Nodes | CH build | Dijkstra | CH | Speedup |
 |---|---|---|---|---|---|
-| Mumbai | 15,597 | 339 ms | 0.372 ms / 7,178 nodes | 0.017 ms / 142 nodes | **21× faster, 50× fewer** |
-| Delhi | 24,781 | 1,113 ms | 0.719 ms / 12,429 nodes | 0.029 ms / 213 nodes | **25× faster, 58× fewer** |
-| Bengaluru | 33,360 | 1,498 ms | 0.993 ms / 17,367 nodes | 0.035 ms / 240 nodes | **28× faster, 72× fewer** |
+| Gorakhpur | 31,830 | 1.0 s | 0.777 ms / 15,793 nodes | 0.032 ms / 193 nodes | **24× faster, 82× fewer** |
+| India: railways | 69,944 | 0.3 s | 1.291 ms / 30,325 nodes | 0.037 ms / 84 nodes | **35× faster, 361× fewer** |
+| Mumbai | 79,783 | 2.4 s | 2.131 ms / 39,747 nodes | 0.060 ms / 239 nodes | **36× faster, 167× fewer** |
+| Kolkata | 104,085 | 41.9 s | 2.481 ms / 47,677 nodes | 0.126 ms / 446 nodes | **20× faster, 107× fewer** |
+| Chennai | 141,934 | 58.2 s | 3.621 ms / 67,526 nodes | 0.149 ms / 450 nodes | **24× faster, 150× fewer** |
+| **India: highways** | 207,610 | **1.5 s** | 4.576 ms / 97,509 nodes | 0.117 ms / 200 nodes | **39× faster, 486× fewer** |
 
-**Zero cost mismatches across 1,142 queries.** CH is a preprocessing technique,
+**Zero cost mismatches across 1,712 queries.** CH is a preprocessing technique,
 not an approximation — a missed witness costs an unnecessary shortcut, never a
 different answer.
+
+The pattern from the preprocessing table repeats here. India's highway network
+is the largest row and also the cheapest to build and the most effective to
+query: 1.5 seconds of contraction buys a 486× reduction in search. Kolkata is
+half the size, takes 28× longer to contract, and yields a fifth of the pruning,
+because a uniform city grid gives the hierarchy far less to exploit.
+
+Build times here run about 1.5× the native figures in the preprocessing table —
+41.9 s against 27 s for Kolkata — which is the usual WebAssembly overhead on
+allocation-heavy work. Query times carry the same penalty, so the *ratios* are
+what transfer; the absolute numbers are what a browser visitor actually gets.
+
+Networks omitted from this table are the ones where a full contraction runs for
+minutes: Delhi (233 s natively), Bengaluru (444 s) and Delhi NCR. They work,
+and the browser falls back to a budgeted partial hierarchy for them, but timing
+a 300-query sweep behind a build that long says more about the machine than the
+algorithm.
 
 Three things worth knowing about the implementation:
 
@@ -703,7 +910,7 @@ pip install .
 import agss
 
 g = agss.load("data/cities/Jaipur", geographic=True)
-print(g)                                   # <agss.Graph 19110 nodes, 48721 edges>
+print(g)                                   # <agss.Graph 123456 nodes, 316342 edges>
 
 r = g.route("astar", 2746, 16278)
 print(r.cost, len(r.path), r.nodes_expanded)
@@ -806,16 +1013,18 @@ again reads as an algorithm problem.
 │   ├── bindings.cpp            pybind11 module
 │   ├── agss/__init__.py        Package surface
 │   └── tests/                  13 binding tests
-├── tests/                      101 C++ cases across 9 files
+├── tests/                      102 C++ cases across 10 files
 ├── scripts/
-│   ├── fetch_city.py           City roads and national highways from OSM
-│   ├── fetch_transit.py        Metros (--kinds metro) and railways (--kinds rail)
+│   ├── fetch_city.py           City roads and national highways; tiles large areas
+│   ├── fetch_railway_network.py  Railway track topology and stations
+│   ├── fetch_transit.py        Metros (--kinds metro) and named train services
 │   └── generate_maps.py        The one seeded synthetic grid
+├── docs/screenshots/           Demo captures used by this README
 ├── data/
-│   ├── networks/               India's national highway network (207k nodes)
-│   ├── cities/                 5 real OSM road networks
-│   ├── transit/                922 metro stations, 12 systems
-│   ├── railways/               746 Indian Railways stations
+│   ├── networks/               India: highways (207k nodes), railways (70k nodes)
+│   ├── cities/                 9 real OSM road networks, 32k-488k junctions
+│   ├── transit/                922 metro stations, 23 systems
+│   ├── railways/               746 stations on 253 named train services
 │   └── maps/                   One synthetic grid — the only integer-weight graph
 ├── web/                        Browser app (WebAssembly)
 │   ├── index.html              Shell
@@ -831,7 +1040,7 @@ again reads as an algorithm problem.
 make test
 ```
 
-**101 C++ cases, 257,010 assertions**, in about 11 seconds.
+**102 C++ cases, 257,014 assertions**, in about 11 seconds.
 
 ```bash
 make sanitize
