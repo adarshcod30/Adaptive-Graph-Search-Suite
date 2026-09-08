@@ -371,14 +371,23 @@ int cmd_verify(const Args& a) {
     std::mt19937_64 rng(static_cast<std::uint64_t>(a.num("seed", 12345)));
     std::uniform_int_distribution<agss::NodeId> pick(0, g.num_nodes() - 1);
 
+    // Built once, not once per sample. CH and ALT cache their index on the
+    // instance and reuse it while the graph is the same one, so constructing
+    // inside the loop threw that away and re-contracted the entire graph for
+    // every query -- turning the run into O(samples x build) instead of
+    // O(build + samples x query). It cost about a second per sample on a
+    // 32k-node city locally and ran CI past twenty minutes.
+    std::vector<std::pair<std::string, std::unique_ptr<agss::Algorithm>>> algs;
+    algs.reserve(optimal.size());
+    for (const auto& k : optimal) algs.emplace_back(k, agss::Registry::instance().create(k));
+
     long checked = 0, mismatches = 0, invalid = 0;
     for (long i = 0; i < samples; ++i) {
         const auto s = pick(rng);
         const auto t = pick(rng);
         double ref = -1.0;
         std::string ref_alg;
-        for (const auto& k : optimal) {
-            auto alg = agss::Registry::instance().create(k);
+        for (const auto& [k, alg] : algs) {
             const auto res = alg->run(g, s, t, {});
             if (!res.success) continue;
 

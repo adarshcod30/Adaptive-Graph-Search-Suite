@@ -56,10 +56,10 @@ jobs:
   correctness:
     name: Differential correctness
     runs-on: ubuntu-latest
-    # This job has no business running long. Left unbounded it once held CI
-    # open for over half an hour on a hosted runner while finishing in
-    # seconds locally, so cap it rather than discover that again.
-    timeout-minutes: 20
+    # Left unbounded this job once held CI open for over half an hour. The
+    # cause was verify rebuilding the CH index per sample; with that fixed the
+    # whole sweep takes seconds, and the cap keeps a regression visible.
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
@@ -69,32 +69,24 @@ jobs:
           fail=0
           # data/maps/ holds a single synthetic grid now, so looping over it
           # alone left every real network unverified while this job stayed
-          # green. Coverage is split by what each network tests well rather
-          # than running everything everywhere, which took over half an hour.
-          #
-          # The 225-node grid is the only place the superlinear algorithms are
-          # affordable, so it carries full coverage -- Johnson, Bellman-Ford,
-          # Floyd-Warshall and Dial, which needs integer weights and declines
-          # anywhere else. The real networks are where structural cases live
-          # (one-way traps, stranded components, heuristic admissibility), and
-          # the fast optimal algorithms cross-check each other there. Only the
-          # expensive intersection, big graph times superlinear algorithm, is
-          # dropped.
-          for spec in "data/maps/Grid_Integer:40::" \
-                      "data/cities/Gorakhpur:5:--geo:johnson,bellmanford" \
-                      "data/networks/India_Railways:4:--geo:johnson,bellmanford" ; do
+          # green. Mutual agreement between optimal algorithms is the oracle,
+          # so what matters is covering different kinds of graph: the integer
+          # grid (the only one Dial applies to), a whole real city with every
+          # algorithm including Johnson and Bellman-Ford, the sparse national
+          # rail topology, and a coastal city whose network is genuinely
+          # disconnected in places. Johnson and Bellman-Ford are skipped on
+          # the two larger networks, where they cost far more than they add.
+          for spec in "data/maps/Grid_Integer:80::" \
+                      "data/cities/Gorakhpur:60:--geo:" \
+                      "data/networks/India_Railways:40:--geo:johnson,bellmanford" \
+                      "data/cities/Mumbai:30:--geo:johnson,bellmanford" ; do
             map=${spec%%:*}; rest=${spec#*:}
             n=${rest%%:*}; rest=${rest#*:}
             geo=${rest%%:*}; skip=${rest#*:}
             args=""
             [ -n "$skip" ] && args="--skip $skip"
             echo "== $map $geo $args (samples $n)"
-            # Timed per network: this job has twice run orders of magnitude
-            # slower here than locally, and the log needs to say which command
-            # is responsible rather than leaving it to guesswork.
-            start=$(date +%s)
             out=$(./build/bin/agss verify --graph "$map" $geo $args --samples "$n")
-            echo "   took $(( $(date +%s) - start ))s"
             echo "$out"
             # A warning here means the map violates heuristic admissibility,
             # which makes A* legitimately suboptimal -- a data bug, not a
