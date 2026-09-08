@@ -1,0 +1,10 @@
+{
+  "name": "India_Railways",
+  "country": "IN",
+  "source": "OpenStreetMap via Overpass",
+  "licence": "ODbL 1.0",
+  "track_ways": 56130,
+  "nodes": 69944,
+  "edges": 145958,
+  "stations": 8862
+}

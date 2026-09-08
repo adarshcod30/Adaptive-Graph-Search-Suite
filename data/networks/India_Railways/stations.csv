@@ -1,0 +1,8863 @@
+node,name
+2,Rankuva
+33,Chinchwad
+37,Mordad Tanda
+38,Mohadi Pragane Laling
+42,Hirapur
+44,Nalla Sopara
+61,Chawapail
+68,Nilaje
+78,Malad
+90,Chepauk
+91,Greenways Road
+92,Kotturpuram
+93,Kasturiba Nagar
+94,Indira Nagar
+95,Taramani
+99,Krantivira Sangolli Rayanna (Bengaluru)
+115,Lighthouse Metro
+122,Kodambakkam
+123,Saidapet
+128,Maralahalli
+131,Somanayakkanpatti
+132,Tiruvalangadu
+135,Kadambattur
+138,Thirumullaivoyal
+139,Ambattur
+144,Tiruvanmiyur
+160,Kalipahari
+161,Raniganj
+163,Khana Junction
+169,Baiyappanahalli
+194,Maraimalai Nagar Kamarajar
+195,Kilambakkam
+196,Chengalpatttu Junction
+206,Nasirpur
+208,Tondiarpet
+210,Ponneri
+215,Shahad
+225,Ulhasnagar
+240,Vadgaon
+242,Hindu College
+244,Pattabiram E Depot
+296,Hill Grove
+310,Kateri
+316,Lovedale
+317,Attippattu
+326,Banaras (Manduadih)
+344,Karaimadai
+364,Somanur
+376,Ingur
+387,Anangur
+419,Tirupattur
+421,Jolarpettai Junction
+439,Tiruvalam
+442,Marudalam
+453,Lakdi-ka-pul
+478,Kannur South
+480,Chirakkal
+485,Chamarajapuram
+491,Birapatti
+492,Babatpur
+498,Kashi
+549,Gaddi Godam Square
+561,Town Hall
+596,Agra Cantonment
+607,Chandera
+616,Kumbala
+647,Angamali (Kaladi)
+648,Chovvara
+652,Ambattukavu
+654,Koratti Angadi
+663,Sonma Pranpur halt
+665,Tikkotti
+666,Vellarakkad
+677,Huppuguda
+694,Kottayam
+721,Mettuguda
+723,Secunderabad East
+730,Belagula
+734,Nasrala
+735,Ashram
+742,Mansarovar Park
+746,Safilguda
+755,Agarpara
+756,Titagarh
+761,Shyamnagar
+763,Kankinara
+764,Naihati Junction
+768,Kanchrapara Workshop Gate
+770,Chakdaha
+776,Bansh Baria
+780,Tribeni
+782,Kuntighat
+787,Pundooah
+790,Magra
+796,Nasibpur
+800,Maliya Halt
+801,Uttarpara
+807,Gobra
+821,Kazipara
+822,Bahira Kalibari
+843,Suriawan
+847,Trilochan Mahadeo
+865,Prayagraj Junction
+874,Daraganj
+899,Manauri
+916,Koelwar
+921,Banahi
+924,Parsa Bazar
+943,Meenambakkam
+944,Saint Thomas Mount
+946,கிண்டி
+960,"Regional Transport Office,Meenambakkam"
+976,Tiruparankundram
+978,Vadapalanji
+990,Palia
+997,Dakchya
+998,Barlai
+1009,Haranyakheri
+1016,Patalpani Waterfall
+1037,Phanda
+1059,Raibha
+1066,Chhatrapati Shivaji Maharaj Terminus
+1092,Allahabad City
+1102,Prayagraj Sangam
+1107,Bais Godam
+1111,Kanauta
+1119,Mandawariya
+1123,Chomun Samod
+1125,Isarda
+1128,Sikroda Mina
+1138,Tarana Road
+1143,Khajuri
+1145,Panihar
+1147,Rayser Jagir
+1167,Piprai Gaon
+1174,Alindra Road
+1181,Ranu Pipri
+1182,Bhoj Padra
+1183,Bhilupur
+1203,Karchiya
+1215,Itola
+1216,Bhetasi
+1218,Davol
+1224,Villiyanur
+1225,Puducherry
+1232,Nenpur
+1240,Medra
+1243,Sahijpur
+1249,Sarkhej
+1250,Sanathal
+1251,Moraiya
+1261,Chandlodiya 'B'
+1263,Gora Ghuma
+1277,Sillakkudi
+1283,Polur
+1287,AEC
+1317,Munroe Thuruttu
+1328,Papinayaknahalli
+1333,Chromepet
+1334,Pallavaram
+1354,Nungambakkam
+1361,Walayar
+1363,CBD Belapur
+1375,Surajpur
+1386,Taksal
+1399,Gumman
+1412,Koti
+1415,Jabli
+1424,Annanur
+1431,Dagru
+1434,Ferozeshah
+1435,Maheshari Sandhuan
+1438,Fatehgarh Sahib
+1439,Noganwan
+1442,Mianpur
+1459,Tarakeswar
+1462,RBI Colony
+1464,Alwal
+1480,Sengottai
+1486,Aryankavu
+1489,Vellore Cantonment
+1500,Sion
+1506,Dhelana
+1507,Mandiyal Kalan
+1508,Manaklao
+1509,Mahamandir
+1512,Kolayat
+1514,Darbari
+1522,Umed
+1523,Banar
+1524,Bhagat Ki Kothi
+1529,Kavas
+1530,Tamlor
+1532,Palani
+1534,Gachhipura
+1535,Kuchaman City
+1536,Gudha
+1537,Sambhar Lake
+1560,Kuwanthal
+1563,Khara Kameri
+1572,Ranapratap Nagar
+1579,Rakhi
+1602,Morthala
+1623,Mahesana Junction
+1627,Ghumasan
+1654,Prantij
+1658,Ettapur Road
+1659,Pukkiravari
+1660,Mukhasa Parur
+1689,Mandi Dabwali
+1697,Hadyal
+1698,Payli
+1699,Bamanwali
+1700,Lunkaransar
+1706,Khileriyan
+1707,Dulrasar
+1714,Ranolishishu
+1716,Parvatsar Mela
+1731,Singarpur
+1735,Vadakara railway station
+1766,Toppur
+1769,Semmandappatti
+1772,Noyal
+1773,Sithalavai
+1774,Mahadanapuram
+1775,Muttasaranallur
+1782,Tiruchchirappalli Junction
+1789,Sholavandan
+1792,Tinai Ghat
+1811,Settigunta
+1836,Surat Railway Station
+1844,Chalthan
+1845,Bagumra
+1858,Vyara
+1864,Hebbal
+1865,Lottegollahalli
+1866,Kempegowda International Airport Halt
+1879,Yesvantpur Junction
+1904,Aravali Road
+1913,Chiplun
+1976,Madurai East
+1986,Mumbai Central
+1991,Grant Road
+1995,Charni Road
+1996,Girgaon
+1997,Kalbadevi
+2065,Aiyanapuram
+2092,Gurudev Chauraha
+2094,Geeta Nagar
+2096,Rawatpur
+2097,Kalianpur
+2098,IIT Kanpur
+2100,Mandhana Junction
+2130,Bhaupur
+2157,Lucknow Charbagh
+2158,Daliganj
+2159,Lucknow City
+2193,Bhaktinagar
+2197,Kothariya
+2198,Ribada
+2201,Partapur
+2202,Mohiuddinpur
+2218,Ranchi
+2252,Govindpur
+2267,Kotana
+2268,Rikhabdev Road
+2272,Adhinpur
+2310,Panikhaiti
+2329,Mohiuddinnagar
+2331,Gram Kharika
+2339,Laksar Junction
+2345,Khanalampura West
+2350,Chodiala
+2356,Bhasha Shahid
+2365,Bhagtanwala
+2379,Kalyanpur
+2433,Nergundi Junction
+2443,Kapilas Road Junction
+2457,Sonik
+2462,Nandikoor
+2496,Mirjan
+2502,Harwada
+2508,Loliem
+2536,Achirne
+2540,Kharepatan Road
+2589,Tanur
+2592,Parappanangadi
+2603,Kuttippuram
+2606,Pallippuram
+2607,Pattambi
+2617,Karakkad
+2628,Barabambo
+2637,Budaun
+2642,Ramapuram Railway Station
+2644,Chittoor
+2652,Panapakam
+2653,Mungilipattu
+2654,Nekurseni
+2657,Sabira
+2658,Korai
+2667,Bhubaneswar
+2669,Narasimhapur
+2675,Poodoor
+2689,Ramaraju Palli
+2702,Raiwala Junction
+2714,Kottaiyur
+2719,Chettinad
+2720,Tirumayam
+2724,Pudukkotai
+2728,Chandagiri Koppal
+2730,Mandya
+2739,Parali
+2751,Mahim Junction
+2760,King's Circle
+2766,Vikhroli
+2776,Mahalaxmi
+2777,Mahalaxmi
+2787,Water Pipe
+2788,Jumma Patti
+2794,Thane
+2819,Dadar
+2822,Prabhadevi
+2832,Virpur
+2833,Gomta
+2842,Chitravad
+2847,Kottikkulam
+2848,Miryalaguda
+2850,Baghajatin
+2851,Ballygunge Junction
+2852,Bevinahalu
+2854,Talaiyuthu
+2855,Gangaikondan
+2863,Tavargatti
+2865,Kashanatti
+2867,Navalur
+2869,Unkal
+2872,Amargol
+2878,Saunshi
+2882,Desur
+2883,Gokak Road
+2884,Ghataprabha
+2894,Shenoli
+2898,Shirvade
+2907,Hitnal
+2911,Kanginhal
+2917,Hebsur
+2918,Sisvinhalli
+2922,Yaragoppa
+2928,Kadlimatti
+2929,Jadarama Kunti
+2930,Sitimani
+2931,Kudala Sangama
+2934,Benal
+2937,Kudgi
+2938,Jumnal
+2940,Doddasiddavanhalli
+2942,Balenahalli
+2975,Hooghly Ghat
+2976,Hooghly
+2985,New Alipore
+2989,Serampore
+2992,Belur
+2993,Hind Motor
+2994,Konnagar
+2995,Rishra
+2996,Singur
+3003,Samudhravalli
+3004,Amila
+3008,Arjunahalli
+3009,Akkihebbalu
+3010,Sravanur
+3011,Mandagere
+3026,Jammu Tawi
+3037,Sangar
+3041,Khadki
+3053,Vyasarpadi Jeeva
+3054,Perambur
+3055,Anupalem
+3059,Vajirabad
+3075,Malavi
+3077,Bopodi
+3079,Isivi
+3082,Chiksugur
+3083,Lingeri
+3091,Tin Mile Hat
+3095,Nijbari
+3108,Srirampura
+3110,Malleswaram
+3111,Mantri Square Sampige Road
+3118,Bale
+3124,Sulerjavalge
+3125,Nagansur
+3128,Kurgunta
+3141,Anandtandavpur
+3146,Tiruchchuli
+3149,Tirunelveli Town
+3150,Kanniyakumari
+3151,Ratanpura
+3155,Tuticorin
+3159,Aduturai
+3161,Bodinayakkanur
+3162,Usilampatti
+3163,Tirunageswaram
+3165,Kollengode
+3166,Oddanchatram
+3168,Muthalamada
+3171,Akkaraipatti
+3174,Kinathukadavu
+3184,Pudi
+3189,Ichchiputtur
+3190,Venkatagiri
+3197,Bitragunta
+3198,Chinnakotte
+3199,Dalasanur
+3203,Bageshapura
+3204,Narimogaru
+3218,Bhadravati
+3223,Shivamogga - SME
+3240,Cheranmahadevi
+3241,Koyilvenni
+3242,Mannargudi
+3243,Ammapet
+3244,Cheppad Halt Station
+3264,Kolanukonda
+3272,Kesavaram
+3273,Godavari
+3274,Velpuru
+3279,Kalagapura
+3280,Kamalnagar
+3287,Bommaipalli
+3294,Mahbubnagar Town
+3309,Kakiriguma
+3312,Singaram
+3316,Netranahalli
+3317,Angadipuram Raiway Station
+3321,Vallapuzha
+3325,Sokali
+3327,Devaliya
+3329,Surendranagar Gate
+3333,Daladi
+3343,Golakganj Junction
+3345,New Mal Junction
+3356,Falakata
+3364,Rangiya Junction
+3365,Barahu
+3366,Nailalung railway station
+3375,Simaluguri Junction
+3377,Seleng Hat
+3378,Sarupathar
+3379,Dibrugarh Town
+3380,Sapekhati
+3381,Naojan
+3383,Furkating Junction
+3384,New Tinsukia Junction
+3386,Jirania
+3388,Murkongselek
+3391,Jogendranagar
+3392,Pulakurthi
+3396,Kirihrapur
+3407,Bhitaura
+3411,Kanth
+3416,Mahrani Pachhim
+3418,Bahadurpur
+3422,Dhaneta
+3423,Moradabad Junction
+3424,Algawan
+3425,Anjhi Shahabad
+3429,Reoti
+3430,Goldinganj
+3449,Lelligumma
+3463,Vanchanagiri
+3470,Raghunathpur
+3471,Bagadia
+3473,Badabandha
+3474,Gorakhnath
+3483,Vavadi Khurd
+3484,Tuwa
+3488,Tisi
+3489,Bhadbhunja
+3490,Lakodra
+3497,Jabri
+3509,Na Nadi
+3514,Kathunangal
+3516,Sohal
+3523,Jogighopa
+3524,Mariani Junction
+3527,Damodar
+3530,Garh Dhrubeswar
+3531,Andal Junction
+3532,Burnpur
+3535,Kulti
+3537,Chhota Ambana
+3539,Akaipur
+3545,Husainiwala
+3550,Dhubri
+3558,Paldhi
+3571,sringavruksham
+3582,Barwa Sagar
+3584,Orchha
+3586,Rora
+3588,Nivari
+3595,Rangapuram
+3601,Tummanamgutta
+3602,Piler Town
+3608,Dhengli Pimpalgaon
+3610,Pergaon
+3625,Murud
+3627,Karepur
+3630,Pangaon
+3633,Kuslamb
+3634,Neoli
+3635,Murti
+3638,Barsitakli
+3639,Bolda
+3643,Jaulka
+3649,Daund Junction
+3655,Nimbhora
+3658,Kovvada
+3659,Kotipalli
+3660,Ramachandrapuram
+3662,Kunduru
+3663,Jaggayyapeta Town
+3672,Bhairoganj
+3675,Khadda
+3676,Babupur
+3679,Maikalganj
+3680,Bilpur
+3682,Maghar
+3685,Maskanwa
+3688,Govindnagar
+3689,Jarwal Road
+3691,Valmikinagar Road
+3693,Siswa Bazar
+3694,Baruachak
+3697,Kutchehari
+3699,Gonda Junction
+3700,Harinagar
+3701,Babhnan
+3703,Bagaha
+3705,Bettiah
+3706,Majhowalia
+3709,S Narayan Chhapia
+3710,Rampur Junction
+3711,Ghughuli
+3712,Colonelganj
+3715,Nagaria Sadat
+3716,Domingarh
+3718,Pipraich
+3723,Balurghat
+3731,Dangari
+3733,Hansara
+3736,Barsali
+3737,Katrasgarh
+3743,Muhammadpur
+3745,Darbhanga Junction
+3746,Tarsarai
+3747,Mahrail
+3748,Angar Ghat
+3750,Sathajagat
+3751,Bajpatti
+3754,Belari Halt
+3758,Sathajagat
+3759,Nirmali
+3765,Ranipatra
+3766,Salmari
+3769,Meenapur
+3771,Katihar Junction
+3779,Purniya Junction
+3780,Kumedpur Junction
+3786,Gunjaria
+3787,Taiabpur
+3803,Sabaur
+3813,Bhagalpur Junction
+3814,Ekchari
+3820,Thana Bihpur Junction
+3831,Uren
+3834,Mokameh Junction
+3842,Ratanpur
+3844,Pawai Brohmasthan Halt
+3845,Dasharathpur
+3846,Vishnupur Bathua Halt
+3852,Kamarganj
+3854,Ballia
+3859,Phephna Junction
+3865,Yusufpur
+3866,Sham Kauria
+3868,Chaf
+3869,Gopalganj
+3873,Kath Kuiyan
+3875,Paterhi
+3876,Maniram
+3877,Nakaha Jungle
+3878,Marhaura
+3880,Padrauna
+3883,Ratan Sarai
+3886,Sasa Musa
+3887,Ghosi
+3890,Brij Kishor Halt
+3892,Nagsar Halt
+3893,Masrakh Junction
+3897,Rawat Ganj
+3899,Lehra
+3943,Rajur
+3949,Valha
+3984,Kalol Junction
+3989,Tintoda
+4007,Tikri
+4011,Sohawal
+4014,Perundurai
+4016,Janghai Junction
+4017,Bhupia Mau
+4019,Gaura
+4025,Malipur railway station
+4029,Bachhrawan
+4034,Lachhmanpur Station
+4035,Amethi
+4036,Makkhanpur
+4037,Bitroi
+4040,Fatehpur
+4042,Kaimganj
+4044,Gangagarh Halt
+4045,Kurasti Kalan
+4052,Sahawar
+4054,Kachhla Bridge
+4057,Tindauli
+4060,Madhonganj
+4061,Garkha
+4062,Mallanwan
+4063,Badhari Kalan
+4064,Gumthal
+4065,Mendu
+4070,Rajghat Narora
+4072,Chandausi Junction
+4073,Jargaon
+4075,Mathura Cantonment
+4089,Pichkurir Dhal
+4091,Noadar Dhal
+4094,Bhimgara Junction
+4101,Niphad
+4102,Kanhegaon
+4107,Taklimiya
+4109,Nimblak
+4110,Telo
+4111,Sonardih
+4112,Radhagaon
+4121,Bandhdih
+4122,Bhojudih Junction
+4126,Bhaga
+4127,Bhowrah
+4132,Santaldih
+4135,Sijua
+4139,Pradhankhunta Junction
+4140,Sindri Town
+4143,Jarangdih
+4144,Chandrapura Junction
+4145,Chainpur
+4146,Dumri Bihar
+4150,Barkipona
+4151,Ramgarh
+4152,Arigada
+4155,Gola Road
+4157,Barachak
+4165,Salanpur
+4167,Barabanki Junction
+4179,Balod
+4194,Manpur Junction
+4195,Baidyanathdham
+4197,Deepnagar Halt
+4199,Tilaiya Junction Railway Station
+4200,Nalanda
+4201,Waris Aleganj
+4202,Rajgir
+4204,Jhajha
+4205,Paraiya
+4206,Silao
+4209,Nawadah
+4211,Bakhtiyarpur Junction
+4213,Pawapuri Road
+4214,Kharuara Halt
+4215,Bihar Sharif Junction
+4216,Khagaria
+4218,Fungo Halt
+4225,Gangarampur
+4226,Radhikapur
+4227,Raghogarh
+4245,Trikaripur
+4261,Karjara
+4263,Mandar Hill
+4267,Bahadursinghwala
+4269,Kotli Kalan
+4270,Sadda Singh Wala
+4272,Malsian Shahkot
+4273,Husainpur
+4277,Dudwindi
+4283,Genoli Road
+4287,Sigoli Shyam
+4288,Kothia
+4289,Barundini
+4290,Parsoli
+4292,Manihari
+4293,Pollachi Junction
+4304,Kodumudi
+4309,Helem
+4313,Khoirabari
+4316,Lilabari
+4318,New Misamari
+4319,Udalguri
+4320,Bindukuri
+4323,Bongaigaon
+4324,New Alipurduar
+4325,Alipur Duar Junction
+4326,Baneshwar
+4329,Raja Bhat Khawa
+4331,Mujnai
+4334,Changrabandha
+4335,Haldibari
+4337,Sivok
+4340,Karimganj Junction
+4341,Badarpur Junction
+4343,Dullabcherra
+4345,Churaibari
+4350,Golaghat Railway Station
+4352,Barua Bamungaon
+4356,Rowta Bagan
+4357,Langting
+4361,Silghat Town
+4362,Mairabari
+4366,Raha
+4367,Senchoa Junction
+4368,Haibargaon
+4369,Batadrawa Road
+4371,Desang
+4372,Moranhat
+4373,Dibrugarh
+4374,Tuli
+4386,Baghoi Kusa
+4388,Chunar Junction
+4391,Mirzapur Railway Station
+4405,Ismailpur
+4408,Anugraha Narayan Road
+4416,Magnesite Junction
+4431,Kuwarchintawa
+4433,Jiwdhara
+4446,Sahibabad Junction
+4475,Hamirpur Road
+4478,Yamuna South Bank
+4537,Shajapur
+4548,Salhana
+4551,Ganeshganj
+4554,Khachrod
+4558,Pipariya Kalan
+4559,Chhataini
+4561,Damoy
+4563,Khanna Banjari
+4574,Krishnashilla
+4582,Midghat
+4591,Choka
+4592,Okhla
+4608,Delhi Safdarjang
+4609,Chanakyapuri
+4612,Parasia
+4614,Mindala
+4615,Khirsadoh
+4617,Kirmiti Mendha
+4618,Gangiwara
+4619,Bramhapuri
+4628,Pendra Road
+4633,Jaithari
+4635,Nigaura
+4636,Udalkachar
+4638,Bijuri
+4641,Kotma
+4642,New Delhi
+4644,Shivaji Bridge
+4669,Tilak Bridge
+4670,Karonji
+4671,Tiger Hill
+4672,Bishrampur
+4673,Katora
+4674,Darritola Junction
+4681,Lathidad
+4697,Tis Hazari
+4709,Pratap Nagar
+4715,Shastri Park
+4722,Pul Bangash
+4747,Lal Quila
+4752,Subzimandi
+4791,Chandni Chowk
+4830,Netaji Subhash Place (Pink Line)
+4857,Patel Nagar
+4858,Kirti Nagar (Blue Line)
+4859,Satguru Ramsingh Marg
+4864,Dayabasti
+4866,Ashok Park Main
+4877,Kirti Nagar
+4878,Naraina Vihar
+4892,Delhi Sarai Rohilla
+4894,Delhi Kishanganj
+4921,Vadiya Devli
+4922,Kanad
+4924,Palitana
+4928,Dungar
+4931,Damnagar
+4936,Adarsh Nagar
+4946,Jetalvad
+4955,Mambalam
+4957,Ghanauli
+4959,Bhurjiha Baragn
+4961,Hargaon
+4962,Dudhwa
+4963,Phardhan
+4964,Kadipur Sani Halt
+4965,Mala
+4966,Dohna
+4967,Kathgodam
+4968,Bhojipura
+4972,Haldwani Railway Station
+4985,Haiderpur Badli Mor
+4998,"Rohini Sector 18, 19"
+5000,Samaypur Badli
+5001,Badli
+5007,Lakshmanpur Halt
+5019,Saharsa Junction
+5023,Izatnagar Junction
+5026,Sherganj
+5029,Harapatti
+5033,Nim-ka-Khera
+5036,Mandalgarh
+5039,Bassi Berisal
+5041,Jodhpuriya
+5047,Thambavati Nagri
+5056,Hindaun City
+5059,Fateh Singh Pura
+5062,Dumariya
+5064,Shri Mahaveer Ji
+5067,New Delhi Airport Express Terminal
+5070,Sewar
+5072,Jaicholi
+5074,Salabad
+5075,Pingora
+5084,Khandip
+5085,Pilioda
+5089,Chhoti Odai
+5094,Doomdooma
+5105,Dolavli
+5144,Mosur
+5145,Azhwarkurichi
+5146,Kallidaikurichi
+5150,Kottarakara
+5151,Sivaganga
+5153,Tiruvannamalai
+5167,Kolaghat
+5168,Haldia
+5169,Teni
+5170,Tada
+5177,Chidambaram
+5178,Neyveli
+5180,Sullurupeta
+5181,Arambakkam
+5182,Kundara
+5183,Sholinghur
+5184,Arni Road
+5185,Peralam Junction
+5186,Nagappattinam Beach
+5187,Vithisvarankol
+5189,Ayyampet
+5210,Jutogh
+5227,Taradevi
+5235,Guindy
+5236,Palavanthangal
+5237,Tirusulam
+5249,Shoghi railway station
+5255,Cuddalore Port Junction
+5256,Tiruppadirippuliyur
+5266,Kathleeghat
+5312,Kandaghat
+5327,Salogra
+5332,Solan Brewery
+5347,Solan
+5358,Barog
+5367,Kumarhatti
+5384,Dharampur Himachal
+5397,Sonwara
+5431,Hafizpur
+5442,Ahraura Road
+5446,Kheta Sarai
+5448,Jaunpur City
+5465,Mihrawan
+5477,Harpalganj
+5503,Bakhsha
+5506,Nima Gopalpur
+5533,Sri Krishna Nagar
+5562,Sathiaon
+5571,Muhammadabad
+5577,Paligarh
+5585,Khurahat
+5589,Azamgarh
+5594,Duliajan
+5595,Hirakud
+5598,Gopalpur Balikuda
+5601,Kathajori
+5619,Puri
+5626,Ramanathapuram
+5654,Sason
+5657,Sankaval
+5659,Rairakhol
+5662,Sambalpur City
+5665,Lapanga
+5671,Porbandar
+5673,Bhayavadar
+5679,Hatia
+5680,Bano
+5682,Tati
+5685,Mahabuang
+5686,Kanaroan
+5692,Rana Bordi
+5695,Masor Road
+5696,Vishvamitri Jn. (NG)
+5701,Udhna Junction
+5752,Bharwari
+5755,Illoo
+5756,Kotshila Junction
+5757,Muri Junction
+5760,Begun Kudar
+5769,Patranga
+5771,Daryabad
+5777,Fatehgarh
+5789,Chanpatia
+5791,Bapudham Motihari
+5792,Motihari Court
+5794,Melnariyappanur
+5805,Motipur
+5812,Nariyar
+5824,Prinsep Ghat
+5827,Baranagar Road
+5832,Dum Dum Cantonment
+5835,Riga
+5840,Bairagnia
+5841,Dhang
+5843,Kundwa Chainpur
+5846,Ghorasahan
+5851,Chauradano
+5853,Adapur
+5857,Begdewadi
+5858,Khari
+5866,Sangaldan
+5869,Sumber
+5873,Udhampur
+5907,Bajalta
+5941,Jogiara
+5942,Janakpur Road
+5944,Ghogardiha
+5945,Rajanagar
+5948,Pandaul
+5951,Purnia Court
+5954,Barhara
+5958,Khajauli
+5959,Sendurai
+5960,Pennadam
+5961,Ottakovil
+5962,Ichchangadu
+5965,Kovilpatti
+5966,Sivakasi
+5967,Sankarankovil
+5968,Aruppukkottai
+5969,Pambakovil Shandy
+5970,Sattur
+5973,Tiruppuvanam
+5977,Haliyuru
+5978,Kotturu
+5983,Ram Dayalu Nagar
+6002,Pennathur
+6006,Kalangani
+6007,Rasipuram
+6010,Badlapur
+6013,High Court
+6020,Kizhapuliyur
+6023,Bommidi
+6042,Sanjhauli Halt
+6043,Nonar Halt
+6044,Shaheed Baba Parav Halt
+6046,Hasan Bazar
+6047,Piro
+6049,Bikramganj
+6050,Ghusia Halt
+6056,Garhani
+6057,Charpokhari Halt
+6059,Udwant Nagar Halt
+6063,Semraon
+6067,Ankorha
+6068,Panisagar
+6083,Tirumani
+6091,Hathidah Junction Upper Station
+6096,Potheri
+6097,Noorsarai
+6098,Ambapendarpur Halt
+6099,Rahui Road
+6102,Sohsarai
+6105,Wena
+6109,Sadisopur
+6110,Patel Halt
+6120,Kudalnagar
+6121,Raghunathpur Railway Station
+6144,Molakalmuru
+6147,Melakkonnakkulam
+6156,Kamshet
+6174,Bagdogra
+6175,Hamiltonganj
+6176,Hasimara
+6184,Bhotpatti
+6189,New Baneswar
+6190,Alipur Duar Court
+6191,Galgalia
+6195,Chalsa
+6199,Krishnai
+6200,Pancharatna
+6201,Mohanbari
+6204,Nagaon
+6205,Ledo
+6206,Rupai
+6209,Urappakkam
+6210,Sukna
+6216,Hiller Shahabad
+6258,Kattangulathur
+6268,Saiyedpur Bhitri
+6276,Thawe Junction
+6280,Kaptanganj
+6284,Sandal Soap Factory
+6288,Gandhi Park Halt
+6397,Virsad
+6402,Kalitalavadi
+6403,Nar Town
+6415,Kashipura
+6432,Demai
+6438,Bhankoda
+6441,Pakhruli
+6443,Siruvattur
+6444,Rauzagaon
+6446,Hathras City
+6450,Aligarh Junction
+6452,Gauriganj
+6454,Jais
+6458,Gursahaiganj
+6459,Kannauj
+6460,Bhongaon
+6461,Sikandra Rao
+6472,Unchahar Junction
+6488,Barauni Junction
+6490,Taal Junction
+6491,Teghra
+6493,Rampur Dumra
+6497,Garhara
+6499,Barauni Flag
+6502,New Barauni Junction
+6505,Peddadinne
+6518,Ballari Cantonment
+6519,Obalapuram
+6524,Hadiyaya
+6529,Lehra Muhabhat
+6532,Ghunas
+6537,Bhuchu Mandi
+6544,Sekha
+6548,Abhanpur Junction
+6557,Bithoor
+6560,Bishnathganj
+6569,Dumra
+6580,Lakhpuri
+6581,Bhujvad
+6583,Murtajapur Town
+6585,Rasulabad
+6586,Sirsaul
+6591,Chicholi
+6593,Dongri Buzurg
+6594,Mitewani
+6595,Sukli
+6601,Azimganj Junction
+6603,Manigram
+6607,Poradanga Halt
+6610,Lalbag Court Road
+6613,Lalgola
+6618,Morgram
+6619,Kamarkundu
+6635,Gondia Junction
+6638,Nagradham P.H.
+6641,Nagbhir (NG)
+6645,Sindewahi
+6646,Babupeth
+6652,Kotgaon
+6653,Mangli
+6654,Balharshah
+6655,Mul Marora
+6660,Rajoli
+6664,Baiyyappanahalli Junction
+6670,Benniganahalli
+6675,Sovabazar Ahiritola
+6679,Bindki Road
+6680,Layalpur Khalsa College
+6685,Kodaikkanal Road
+6686,Mani Mau
+6688,Aroul
+6691,Bilhaur
+6699,Barrajpur
+6700,Utripura
+6705,Takia
+6710,Bhadri
+6711,Ram Chaura Road
+6714,Suraimanpur
+6716,Sahatwar
+6717,Bhadaura
+6718,Dildarnagar Junction
+6719,Bansdih Road
+6721,Korukkupet
+6737,Panruti
+6739,Tamkuhi Road
+6740,Dudahi
+6743,Gauri Bazar
+6744,Chilhia
+6745,Naugarh
+6747,Eden Gardens
+6748,BBD Bagh
+6750,Pachperwa
+6754,Payagpur
+6755,Bisheshwarganj
+6759,Howrah Junction
+6774,Kallal
+6779,Munabao
+6785,Paintepur
+6789,Jharekapur
+6790,Oel
+6796,Draksharama
+6797,Gorintada
+6800,Ongole
+6801,Tirukkovilur
+6803,Hardoi
+6804,Ramkot
+6805,Baghauli
+6807,Hempur
+6809,Misrikh Tirath
+6811,Saint Thomas Mount
+6820,Rasuriya
+6826,Deoranian
+6829,Richha Road
+6830,Baheri
+6831,Kichha
+6836,Khiria Khurd
+6838,Tirumangalam
+6839,Dabtara
+6840,Asafpur
+6841,Makrandpur
+6842,Purua Khera
+6847,Sirsi Mukhdampur
+6848,Raja Ka Sahaspur Junction
+6849,Sambhal
+6855,Bahjoi
+6856,Babrala
+6860,Kalupur Railway Station
+6861,Bilaspur Road
+6864,Kemri
+6867,Rudrapur City Railway Station
+6868,Swamimalai
+6869,Tiruvidaimarudur
+6870,Kuthalam
+6871,Kizhvelur
+6879,Bikaner Junction
+6882,Chandpur
+6883,Mandi Dhanaura
+6884,Sherpur
+6885,Bijnor
+6886,Khari Jhalu
+6887,Haldaur
+6888,Murshadpur
+6891,Nagina
+6893,Balawali
+6894,Basi Kiratpur
+6897,Chandok
+6902,Jawaharnagar
+6908,Kumarghat
+6912,Mungiakami
+6916,Kurraiya
+6920,Gola Gokarannath
+6932,Gujran Balwa
+6933,Ailam
+6934,Hind
+6935,Harhar Fatehpur
+6936,Asara
+6937,Kandrawali
+6938,Bhudpur
+6939,Baoli
+6944,Borvihir
+6945,Shirud
+6946,Jamdha
+6955,Padanura
+6956,Gandhipuram
+6973,Bandra
+6995,Churchgate
+6996,Marine Lines
+7013,Tiruchchirappalli Palakarai
+7016,Tiruchchirapalli Fort
+7018,Tiruchchirappalli Town
+7019,Rameswaram
+7025,Lusa
+7027,Saktesgarh
+7039,Paras Pani
+7041,Mahuariya
+7048,Wyndhamganj
+7055,Muirpur Road
+7064,Jogidih
+7074,Gurmura
+7084,Churk
+7085,Sonbhadra
+7088,Manigachi
+7090,Bijuli
+7092,Kakarghatti
+7093,Vindhyachal Railroad Station
+7094,Karchana
+7097,Khairahi
+7101,Madhosingh
+7105,Mariahu
+7115,Ahimanpur
+7116,Almau
+7139,Mahoba Junction
+7148,Achhalda
+7149,Shamsabad
+7150,Nibkarori
+7151,Pakhna
+7152,Jasoda
+7154,Harsingpur Goba
+7155,Ugarpur
+7159,Farrukhabad Junction
+7160,Shukarullahpur
+7161,Mota
+7163,Kamalganj
+7165,Daryaogonj
+7166,Kampil Road
+7168,Rati Ka Nagla
+7169,Narthar
+7172,Rudain
+7173,Bhatasa
+7175,Madhubani
+7178,Shivwala Tehu
+7182,Harduaganj
+7183,Sunamai Halt
+7191,Park Circus
+7192,Sanjay Gram
+7198,Mukuria Junction
+7211,Dalimgaon
+7221,Motichur
+7223,Dhandera
+7224,Chandsara Halt
+7225,Kharkhauda
+7228,Nurnagar
+7229,Kaili
+7248,Manani
+7262,Narangi
+7268,Kotalpukur
+7269,New Farakka Junction
+7288,Karaundhana
+7289,Muradpur
+7290,Dohrighat
+7299,Lohardaga
+7309,Barkichampi
+7320,Akashi
+7335,Hazaribagh Road
+7340,Sonwarsa Halt
+7341,Baghi Ghauspur
+7342,Kashi Chak
+7343,Dergaon Halt
+7344,Kusumha Bihar
+7346,Sirari
+7348,Adarsh Manpur
+7350,Eksari Halt
+7355,Akbarnagar
+7356,Maheshi
+7357,Sultanganj
+7358,Karanpurato
+7384,Dilli Dewan Ganj
+7389,Labha
+7393,Pranpur Road
+7395,Kuretha
+7398,Nayatola Railway Station
+7399,Dalan
+7400,Rautara
+7402,Kishanganj
+7419,Rangapani
+7432,New Jalpaiguri Junction
+7503,Tindharia
+7513,Nurpura
+7515,Dholpur Junction
+7517,Gher
+7528,Garhi Sandra
+7531,Tulsigam
+7532,Muval Tank
+7535,Wejpur
+7538,Wasanapura
+7541,Desar Road
+7545,Bhavnagar Terminus
+7552,Gunda Bihar
+7555,Jhimri
+7556,Haslang P.H.
+7562,Latemda
+7568,Tiraldih
+7570,Suisa
+7571,Torang
+7578,Kita
+7585,Bhurkunda
+7588,Pathardih Bazar
+7593,Purulia Junction
+7596,Barabhum
+7597,Urma Railway Station
+7599,Haludpukur
+7610,Birarajpur
+7612,Kandra Jn
+7613,Kuarmunda
+7616,Bisra
+7621,Bhalulata
+7645,Bikna
+7647,Matigara Station
+7648,Rainagar
+7649,Betur
+7651,Beliatore
+7652,Sudamdih
+7653,Rajabera
+7666,Midnapore
+7671,Madhukunda Railway Station
+7679,Salboni
+7680,Chandrakona Road
+7686,Dokra Halt
+7697,Jamadoba
+7698,Rakhitpur
+7699,Sindri Block Hut
+7700,Sindri Marshalling Yard
+7707,Karkend
+7708,Tata Sijua Halt
+7711,Loyabad
+7712,Bansjora
+7714,Angarpathra Halt
+7715,Budora
+7716,Jamuni
+7717,Phulwartanr
+7718,Tentulla
+7719,Tundu
+7720,Jamuniatand
+7721,Khario P.H.
+7722,Kharkhari
+7723,Garh Jaipur
+7724,Gourinathdham
+7725,Tulin
+7727,Kustaur
+7728,Chas Road
+7731,Barlanga
+7733,Sondimra
+7734,Harubera
+7751,Ukhra
+7758,Jamuria
+7759,Rupnarayanpur
+7760,Jaynagar
+7761,Basugaon
+7765,Doiwala
+7768,Ambikapur
+7773,Birsinghpur
+7774,Burhar
+7775,Mudaria
+7776,Shahdol
+7794,Umaria
+7800,Manendragarh
+7803,Rewa
+7806,Garwa
+7809,Boddavara
+7830,Gorapur
+7836,Dhakuria
+7841,Titlagarh Junction
+7843,Mandir Hasaud
+7844,Mahasamund
+7845,Kantabanji
+7848,Lakhna
+7850,Nawapara Road
+7875,Sanka
+7884,Hathua
+7886,Amlori Sarsar
+7896,Mandla Fort
+7897,Bamhani Banjar
+7903,Phulwaria
+7906,Bathua Bazar
+7908,Sipaya
+7918,Jiradei
+7924,Siwan Kachari
+7925,Karchhue
+7926,Sidhwalia
+7927,Manjhagarh
+7948,Maharajganj
+7957,Sarhari Halt
+7965,Kotdwara
+7967,Birsola
+7969,Kanhad Gaon
+7973,Rusera Ghat
+7974,Narhan
+7975,Bhagwanpur Desu
+7976,Muktapur
+7977,Bihariganj
+7978,Nainpur Junction
+7980,Samnapur
+7981,Magardharra Ph
+7985,Nagarwara
+7990,Charghat Pipari
+7994,Sankheda Bahadurpur
+7996,Jabugam
+8016,Punkunnam
+8017,Murliganj
+8021,Deenapatti
+8027,Baijnathpur
+8028,Budhma Station
+8033,Methai
+8039,Dauram Madhepura
+8041,Araria Court
+8043,Arariya
+8048,Anandpur Sahib
+8053,Bhanupali
+8057,Nangal Dam
+8065,Nangal Township
+8072,Raimahatpur
+8077,Matunga Road
+8088,Chinnadagudi Hundi
+8092,Mankhurd
+8093,Mandale
+8096,Govandi
+8098,Chembur
+8099,Chembur
+8103,Kurla
+8111,Balegundi
+8112,"D.A.V. College, Jalandhar"
+8131,Khojewala
+8132,Baba Sodhal Nagar
+8152,Suchipind
+8166,Bolinna Doaba
+8174,Dhogri
+8186,Alal
+8189,Lakhabawal
+8191,Nakodar Junction
+8192,Shankar
+8193,Thabalke
+8201,Kakrala
+8204,Nabha
+8205,Kalhemajra
+8210,Sundarpur Barah Kalan
+8219,Dokwa
+8227,Sadulpur Junction
+8234,Suratpura Junction
+8238,Paharsar
+8259,Basudebpur
+8260,Pathsala
+8261,Sorbhog
+8268,Sanko Para Halt
+8286,Balwantpura Chelasi
+8300,Talpur Halt
+8308,Shribar
+8312,Kamranga
+8320,Mundalaram
+8321,Kachnara Road
+8327,Sirsuphal
+8332,Ettimadai
+8333,Madukkarai
+8344,Chakand Railway Station
+8354,Dhuva
+8358,Pipliya Road
+8361,Binnaguri
+8370,Bareilly Cantt. Junction (Chanehti)
+8371,Kasganj Junction
+8372,Ramganga
+8381,Bareilly City
+8386,Clutter Buck Ganj
+8396,Kathghar
+8409,Malda Court
+8424,Karaikkudi Junction
+8436,Koolipalayam
+8438,Dhemaji
+8440,Kaniuru
+8444,Mallarpur
+8446,Tejnarayanpur
+8455,Kovilpalaiyam
+8456,Chettipalaiyam
+8457,Anamalai Road
+8458,Minatchipuram
+8461,Ramkanali Junction
+8467,Binauri
+8468,Lalsot
+8470,Deedwana
+8472,Nangal Rajawatan
+8538,Devpura
+8546,Sawai Madhopur 'D' cabin
+8547,Titte
+8550,Chhapra Gramin Junction
+8555,Bhandana
+8570,Maksi Junction
+8575,Thalangai
+8609,Saoner Junction
+8610,Seoni
+8613,Patansaongi
+8626,Kheduli
+8627,Raiganj
+8629,Dharmanagar
+8631,Ramnagar
+8632,Pirumadara
+8640,Mettupalayam
+8642,Ujhani
+8643,Meralgram
+8651,Urwan
+8660,Dhanwar
+8669,Garhmuktesar Bridge
+8679,Sunam Udham Singh Wala
+8681,Tharwai
+8682,Bobbili Junction
+8683,Salur
+8685,Rompalle
+8687,Hotgi Junction
+8690,Jadoli Ka Bas
+8694,Gazika
+8695,Bargarh Road
+8696,Etah
+8700,Barpali
+8707,Kendujhargarh
+8708,Naranpur
+8713,Hojai
+8714,Khowang
+8715,New Sisibargaon
+8716,Tangni
+8721,Boxirhat
+8726,Obra Dam
+8727,Sonbhadra
+8729,Harmuti Junction
+8731,Gevra Road
+8763,Saragbundia
+8785,Arakkonam Junction
+8795,Sikroda
+8802,Thara
+8808,Gummidipundi
+8813,Koth Gangad
+8814,Godhaneshwar
+8815,Dholka
+8817,Saljida
+8818,Charadu
+8819,Vasai Dabhla
+8820,Gerita Kolvada
+8821,Gawada Malosan
+8823,Mahadevpura
+8824,Sur Road
+8826,Kadiyadra
+8827,Pardi
+8835,Hoshiarpur
+8842,Moti Khawdi
+8843,Una
+8848,Loliya
+8858,Karaikal
+8860,Kariganuru
+8863,Majerhat
+8864,Majherhat
+8869,Than
+8878,Faridabad
+8894,Dekargaon
+8896,Nandagaon
+8898,Hallikhed
+8899,Bharur
+8902,Patsul
+8903,Ratnapur
+8905,Amalakhurd
+8906,Jirwan
+8910,Velachha
+8911,Limbara
+8914,Asarma
+8915,Simodara
+8916,Kosadi
+8926,Zankhvav
+8945,Diamond Harbour
+8951,Diphu
+8952,Kalyani Shilpanchal
+8963,Kalyani Simanta
+8972,Mandor
+8975,Karjana
+8976,Karjanagram
+8978,Balgona
+8979,Nigan
+8980,Kaichar
+8981,Bankapasi
+8982,Shrikhanda
+8983,Shripat Shrikhanda
+8986,Khandala
+9031,Diara
+9035,Raxaul
+9039,Baraigram Junction
+9040,Puranpur
+9041,Hasnabad
+9043,Basirhat
+9044,Dhatrigram
+9045,Nandai Gram
+9048,Samudra Garh
+9051,Kalinagar
+9053,Karnasubarna
+9068,Chandrapur
+9069,Annigeri
+9070,Indrabil
+9132,Patasahi
+9135,Kendposi
+9144,Rakshi
+9147,Rangra
+9176,Mulund
+9181,Bhadroli
+9194,Ram Mandir
+9197,Hirisave
+9265,Gole
+9266,Kariyappattinam
+9270,Vedaranniyam
+9272,Topputurai
+9274,Tillaivilagam
+9275,Bebejia
+9276,Rupahigaon
+9277,Modran
+9279,Dumka
+9284,Nawadih Halt
+9290,Birahalli
+9291,Annechakanahali
+9292,Neyvilakku
+9293,Kuruvappulam
+9294,Agastiyampalli
+9299,Chandannagar
+9300,Jagaddal
+9301,Mankundu
+9307,Khandi
+9312,Padalam
+9317,Naharlagun
+9324,Koderma Town
+9329,Gobarwahi
+9330,Tirodi
+9335,Vandalur
+9339,Begu Sarai
+9340,Garhpura
+9341,Hasanpur Road
+9342,Salauna
+9343,Harnagar
+9344,Biraul
+9345,Kantakosh
+9407,Sathin Road
+9411,Karmali
+9417,Bhawi
+9418,Silari
+9419,Mandapam Camp
+9420,Uchippuli
+9425,Hampapura
+9427,Guwahati
+9450,Papanasam
+9460,Azara
+9464,Tambaram Sanatorium
+9465,Lotarva
+9474,Rajim
+9479,Talaivasal
+9482,Khamargachhi
+9487,Ambika Kalna
+9488,Baghnapara
+9489,Biggabas Ramsara
+9491,Mududi
+9493,Kundgol
+9518,Barbil
+9521,Sarla Junction
+9524,Panoli
+9527,Nawada Railway Station
+9529,Didwana
+9534,Katangi
+9535,Tumsar Town
+9538,Waraseoni
+9539,Lakhanwara
+9541,Saongi
+9544,Bangaon Junction
+9546,Petrapole
+9547,Banpur
+9548,Gurha Kemla
+9553,Nangal Degrota
+9581,Chabua
+9588,Rewari Junction
+9606,Anajmandi Rewari
+9627,Dhana Ladanpur
+9642,Pakki
+9645,Qabarwala
+9651,Bhukarka
+9710,Dobh Bhali
+9722,Sirsala
+9733,Bulandshahr
+9734,Khurja City
+9735,Khurja Juction
+9737,Nathnagar
+9749,Thiruthuraiyur
+9752,Serndanur
+9755,Vallivedu
+9762,Barasat Junction
+9763,Belgharia
+9764,Seoraphuli Jn
+9765,Baidyabati
+9766,Bhadreshwar
+9768,Arambag
+9769,Krishnanagar City Junction
+9773,Kalinarayanpur Junction
+9774,Habibpur
+9780,Bishnupriya
+9781,Bhandartikuri
+9782,Purbasthali
+9783,Mertala Phaleya
+9784,Lakshimipur
+9785,Belerhat
+9786,Patuli
+9787,Agradwip
+9788,Dainhat
+9792,Nayudupeta
+9794,Melpattambakkam
+9799,Kurumbur
+9806,Sonbarsa Kacheri
+9807,Panchgachia
+9808,Supaul
+9809,Garh Baruari
+9810,Tharbitia
+9811,Raghopur
+9814,Narpatganj
+9818,Panjwara Road
+9819,Telia
+9822,Murahara
+9824,Barahat Junction
+9825,Punsia
+9826,Dhauni
+9827,Bela
+9828,Tikani
+9829,Kharik
+9830,Dhamara Ghat
+9835,Koparia
+9838,Danre Halt
+9842,Katoriya
+9844,Kakwara Halt
+9855,Sadipur
+9857,Baghi Bardiha
+9858,Jamui
+9862,Kajra
+9863,Bariarpur
+9865,Rajgarh
+9868,Sainthia Junction
+9871,Lohna Road
+9874,Asanpur Kupha
+9877,Naya Nagar
+9878,Vidyapatidham
+9879,Sandila
+9892,Shahpur Patori
+9893,Mehnar Road
+9894,Sahadai Buzurg
+9895,Desari
+9901,Kharpokhra
+9903,Campierganj
+9907,Bhadrachalam Road
+9925,Rangpara North Junction
+9941,Sirsa
+9951,Bajekan
+9954,Khairoke
+9963,Sukhchain
+9965,Revur Ramapuram
+9976,Ramannapet
+9988,Parli-Vaijnath
+9995,Nowbagh
+9999,Pattukkottai
+10015,Ankaikila
+10042,Chhindwara Junction
+10044,Ramsar
+10045,Bolagarh Town
+10046,Karanja Town
+10047,Pohe
+10048,Bhadsivni
+10056,Nizchatia
+10057,Dhalai Beel
+10060,Kumbhawas Mundhalia Dabri
+10062,Tangla
+10065,Tufanganj
+10067,Nampally
+10074,Lakdi-ka-pul
+10077,Akkurti
+10101,Udyog Nagar
+10103,Surajmal Stadium
+10105,Ghosrana
+10107,Adderi
+10110,Shri Ramgarh
+10112,Ballabgarh
+10123,Tughlakabad
+10125,Mohan Estate
+10131,Harkesh Nagar Okhla
+10137,Ranthambhor
+10139,Mokholi
+10143,Malarna
+10144,Nimoda
+10145,Narayanpur Tatwara
+10151,Mandpiya
+10157,Palayankottai
+10166,Bhimal
+10169,Netawal
+10171,Lachipura
+10184,Champajharan
+10187,Lahoal
+10188,Pratapgarh Junction
+10189,Misrauli
+10190,Thakurganj
+10191,Borawar
+10193,Budalur
+10194,Nannilam
+10196,Thiruthuraipundi Junction
+10206,Nathdwara
+10209,Udaipur
+10212,Sekerkote
+10224,Jharsuguda Road
+10226,Sondad
+10227,Kumbakonam
+10228,Manali
+10230,Mangudi
+10231,Keeranur
+10236,Bakaspur
+10238,Govindpur Road
+10239,Karra
+10248,Bejnal
+10251,Kanor
+10252,Kheroda
+10257,Bolpur Shantiniketan
+10259,Prantik
+10261,Aranghata
+10277,Piali
+10278,Banmankhi Junction
+10279,Namkhana
+10283,Kashinagar
+10284,Madhabnagar
+10286,Nishchintapur
+10288,Uttar Radhanagar
+10290,Gazole
+10292,Janakinagar
+10299,Rajmahal
+10305,Gnandas Kandra
+10332,Gunji
+10340,Caranzol
+10354,Jorai
+10363,Kamakhyaguri
+10366,Samuktala Road
+10376,Neoranadi
+10377,Baradighi
+10380,Domohani
+10401,Ambala City
+10459,Naruana Jodhpur Ramana
+10463,Dehradun
+10485,Viravalli
+10494,Vallampadugai
+10495,Mettur
+10498,Banspani
+10506,Piplai
+10509,Son Nagar Junction
+10514,Khuntla
+10517,Vastrapur
+10529,Gur Market
+10534,Melmaruvattur
+10535,Acharapakkam
+10541,Kizha Ambur
+10543,Ambasamudram
+10544,Bahawalbas
+10547,Faqarsar
+10554,Sudsar
+10567,Kallakkudi Palanganatham
+10569,Mathur
+10572,Viluppuram Junction
+10577,Mundiyampakkam
+10597,MASANIWALA
+10602,Prithvirajpur
+10628,Nyoli Kalan
+10632,Paranur
+10636,Tambaram
+10640,Mohanpura
+10641,Jorkian
+10642,Ramsinghpur
+10643,Bikaner East
+10644,Bari Sird
+10647,Basni
+10650,Dijar
+10670,Asranada
+10671,Kheri Salwa
+10675,Deshnok
+10678,Palana
+10680,Jalsu
+10681,Govindi Marwar
+10682,Nawa City
+10685,Loha
+10716,Hansi
+10717,Mayar
+10722,Aurang Nagar
+10723,Baniya Sanda Dhora
+10724,Bhimarlai
+10725,Parlu
+10728,Tilwara
+10729,Utarlai
+10730,Jasai
+10731,Bhachhbar
+10734,Mokalsar
+10735,Bhagwanpura
+10736,Bhimana
+10737,Khimel
+10738,Kothar
+10765,Rani
+10775,Soniyana Mewar
+10776,Dolaji Ka Khera
+10789,Lambiya
+10790,Dhuwala
+10791,Singawal
+10811,Bhupalsagar
+10812,Debari
+10813,Jai Samand Road
+10814,Khemli
+10815,Kundalgarh
+10818,Surkhanda Ka Khera
+10824,Vallabhnagar
+10832,Shyampura
+10844,Upramal
+10851,Srinagar
+10860,Dadhdevi
+10861,Thalera
+10883,Chaksu
+10884,Chauth-ka-Barwara
+10889,Channani
+10890,Shitala Road
+10895,Sanganer
+10896,Siras
+10897,Bhajera
+10910,Deeg
+10912,Bhaton-Ki-Gali
+10970,Lakhan Majra
+11019,Kullanchavadi
+11067,Alur
+11091,Mal Bazaar
+11130,Yadadri (Raigir)
+11162,Harebetta
+11170,Songadh
+11210,Yedamangala
+11215,Kalladaka
+11219,Neralakatte
+11236,Lake Gardens
+11262,Tirunellikaval
+11263,Bhuda
+11277,Pindrai
+11284,Bhawanipatna
+11307,Lalpur Umri
+11308,Gangapur City
+11309,Nelamangala
+11311,Dalgaon
+11312,Jhaua
+11316,Haldi Road
+11321,Parsa
+11322,Lakshmikantapur
+11323,Baharu
+11324,Deula
+11334,Bhoma
+11338,Jurtara
+11339,Palari
+11340,Khairee
+11341,Keolari
+11350,Khatlabana
+11358,Sulah Himachal Pradesh
+11370,Buglanwali
+11371,Palur
+11375,Andanapettai
+11376,Koradacheri
+11377,Manjattidal
+11378,Saliyamangalam
+11379,Solagampatti
+11380,Adiyakkamangalam
+11381,Sahibpur Kamal Junction
+11383,Mahwal
+11384,Harpur Nag Halt
+11385,Pipra
+11388,Bardi Halt
+11389,Sausar
+11393,Umra Nala
+11395,Korutla
+11396,Poduru
+11423,Warudkhed
+11425,Lasina
+11426,Sangvi
+11427,Kapustalni
+11428,Pathrot
+11450,Majri Khadan
+11456,Jagdevwala
+11459,Mahimba
+11461,Madanapur
+11466,New Pandarpawani
+11474,Lamta
+11480,Shakti Nagar
+11488,Sikta
+11500,Venpura
+11506,Sorta
+11507,Kharaghoda
+11508,Dhamtari
+11509,Fateh Singhwala
+11510,Krishna Chandrapur
+11511,Jamsole
+11512,Baripada
+11515,Kuchai
+11516,Buramara
+11517,Bangriposi
+11518,Rajalukan
+11520,Maijapur
+11529,Anpara
+11542,Shahgarh
+11543,Shudnipur
+11544,Sehramau
+11545,Sikandarpur
+11584,Bargawan
+11587,Gondwali
+11589,Barauli
+11590,Kankret
+11592,Dobhi
+11593,Kirakat
+11597,Veer
+11601,Rasra
+11608,Ghoti
+11609,Dighori Buzurg
+11610,Lakholi
+11613,Salchapra
+11617,Arunachal Junction
+11621,New Haflong
+11630,Barhi
+11631,Hazaribag Town
+11632,Karota Patri Halt
+11633,Dharhara
+11635,Raghunathbari
+11638,Ambajora Shikaripara
+11640,Kurwa
+11641,Jama
+11643,Basukinath Railway Station
+11644,Darjeeling
+11648,Salemgarhmasani
+11651,Bokajan
+11656,Pavurchutram
+11658,Tirunelveli Junction
+11665,Venkatanarasimha Rajuvaripeta
+11666,Ekambarakuppam
+11668,Taduku
+11671,Khaga
+11672,Karbigwan
+11675,Naugachhia
+11676,Narayanpur
+11677,Katareah
+11678,Pasraha
+11689,Badla Ghat
+11690,Sarsi
+11698,Lalkuan Junction
+11701,Bazpur
+11703,Matheran
+11707,Timtala
+11778,Badnera Junction
+11792,Chitoda
+11807,Dahegaon
+11815,Wardha Junction
+11821,Kaotha
+11831,Sevagram
+11849,Tuljapur
+11853,Sindi
+11857,Borkhedi
+11867,Buti Bori
+11871,Khapri
+11873,New Airport
+11881,Ujjwal Nagar
+11882,Ajni
+11883,Congress Nagar
+11898,Sitabuldi
+11907,नागपुर रेल्वे स्टेशन
+11908,Nagpur Junction railway station
+11928,Itwari Junction
+11944,Kalamna
+11966,Thodiyappulam
+11968,Kanive Halli
+11991,Akola Junction
+11992,Akola
+12000,Bhusaval Junction
+12007,Ulundurpet
+12008,Kulikarai
+12010,Ayandur
+12012,Biaspind
+12017,Bodwad
+12028,Varangaon
+12036,Vaiyampatti
+12037,Perugamani
+12045,Gangraul
+12046,Chola
+12048,Patli
+12076,Sealdah
+12083,Mayiladuthurai Junction
+12086,Gohpur
+12095,Khamgaon
+12112,Paras
+12119,Jalamb Junction
+12153,Biswa Bridge
+12162,Malkapur
+12179,Bisugir Sharif
+12190,Bichia
+12221,Bidhannagar Road
+12258,Challakere
+12270,Allahabad Chheoki Junction
+12333,Sant Road
+12343,Dadpur
+12345,Shivanarayanpur
+12354,Hilsa
+12355,Oro Jagdishpur
+12359,Jethian
+12363,Katari
+12365,Islampur
+12366,Aungari Dham
+12367,Ekangarsarai
+12369,Lohanda
+12371,Diyawan
+12373,Singriawan
+12374,Daniyawan Bazar Halt
+12377,Khairadih Halt
+12379,Wellington
+12383,Khairah
+12385,Rajapatti
+12386,Alehpur Halt
+12387,Katalpur Halt
+12388,Dighwa Dubauli
+12390,Natesar
+12391,Karnauti Halt
+12397,Siuri
+12398,Goghat
+12400,Maynapur
+12403,Gangatikuri
+12407,Bazarsau
+12409,Mazbat
+12410,Forbesganj Junction
+12412,Satar Halt
+12413,Kusiargaon
+12415,Gogipothia Halt
+12423,Bathnaha
+12426,Jogbani
+12428,Kirtyanand Nagar
+12433,Kanpur Bridge Left Bank
+12438,Bhigwan
+12440,Karagola Road
+12443,Bakhri
+12444,Semapur
+12452,Assembly
+12457,Malanpur
+12460,Nonera
+12461,Rayatpura
+12465,Soni
+12466,Itehar
+12473,Rayaru
+12474,Nurabad
+12487,Sikroda Kwanri
+12507,Sandalpur
+12575,Burhpura
+12599,Basai
+12621,Lalitpur Junction
+12646,Sealdah
+12668,Jakhalaun
+12688,Karonda
+12695,Mohasa
+12706,Dhaura
+12717,Railway Junction Station  (East Entrance)
+12728,Mahadevkhedi
+12739,Attur
+12780,Gulabhganj
+12820,Salamatpur
+12839,Sukhi Sewaniya
+12844,Pachawan
+12855,Baktal
+12860,Bakanian Bhaunri
+12867,Parbati
+12872,Bercha
+12873,Kisoni
+12883,Kalapipal
+12888,Chakrod
+12896,Akodia
+12904,Mohammad Khera
+12912,Ajit Kheri
+12915,Ranayal Jasmia
+12920,Donta
+12937,Pir Umrod
+12947,Binjana
+12948,Jagannath Shankar Sheth Metro
+12950,Sandhurst Road
+12962,Dewas Junction
+12964,Undasa Madhapur
+13008,Naikheri
+13012,Aslaoda
+13020,Palsora Makrawan
+13025,Unhel
+13034,Piploda Bagla
+13059,Byculla
+13067,Morwani
+13068,Dr. Radhakrishna Nagar
+13075,Bangrod
+13080,Runkhera
+13091,Raoti
+13101,Bildi
+13106,Bhairongarh
+13114,Nahargarh
+13121,Thandla Road
+13126,Bajrangarh
+13144,Panch Piplia
+13154,Amargarh
+13163,Namli
+13178,Jaora
+13191,Dhodhar
+13207,Piplia
+13210,Malhargarh
+13217,Balauda Takun
+13218,Fatehabad Chandrawatiganj Junction
+13224,Osra
+13227,Pir Jhalar
+13242,Rohal Khurd
+13243,Mahidpur Road
+13245,Luni Richha
+13252,Vikramgarh Alot
+13254,Thuria
+13268,Shamgarh
+13272,Garot
+13305,Chaurakheri
+13308,Dharnoda
+13312,Mahugarha
+13323,Taravata
+13337,Lukwasa
+13341,Rayshree
+13344,Parakheda
+13347,Mohana
+13351,Renhat
+13362,Naogaon
+13364,Sheopur Kalan
+13367,Datarda Kalan
+13376,Girdharpur
+13379,Durgapuri
+13384,Khojeepura
+13387,Seroni Road
+13390,Tarrakalan
+13393,Ikdori
+13396,Sillipur
+13401,Birpur
+13404,Kaimarakalan
+13405,Bijaipur Road
+13410,Rampahari
+13414,Pipalwali Chowk
+13421,Khajuraho
+13458,Hinautaramban
+13468,Sagma
+13470,Hati
+13481,Khutaha
+13483,Chitahra
+13488,Majhagawan
+13497,Amdara
+13508,Maihar
+13517,Lagargawan
+13520,Jukehi
+13521,Pakaria Road
+13522,Ghunwara Railway Station
+13543,Katni Junction
+13550,Patwara
+13579,Aslana
+13580,Dangidahar
+13583,Golapatti
+13587,Sagoni
+13595,Ghatera
+13623,Salaia
+13624,Bandakpur
+13637,Bakhleta
+13638,Majhgawan Phatak
+13639,Rithi
+13645,Patohan
+13646,Hardua
+13662,Lidhora Khurd
+13673,Isarwara
+13706,Duvri Kalan
+13714,Beohari
+13733,Kanchanpur Road
+13743,Gajara Bahara
+13751,Niwas Road
+13785,Vilayatkalan Road
+13818,Mauhari
+13836,Chhada
+13849,Dhurwasin
+13850,Harrad
+13853,Baihatola
+13862,Amlai
+13869,Singhpur
+13877,Badhwabara
+13880,Ghunghuti
+13895,Karkeli
+13905,Lorha
+13914,Rupaund
+13919,Jhalwara
+13931,Dundi
+13938,Kareli
+13942,Narsinghpur
+13959,Shridham
+13970,Madan Mahal
+13976,Gadarwara
+14016,Bagratawa
+14107,Barkhera
+14150,Chhidgaon
+14171,Dulariya
+14182,Dagarkhedi
+14214,Harda
+14216,Charkhera
+14224,Surgaon Banjari
+14234,Barud
+14239,Mathela
+14253,Bargaon Gujar
+14268,Kohdad
+14273,Bagmar
+14282,Chandni
+14291,Nepanagar
+14300,Sagphata
+14316,Burhanpur
+14337,Asirgarh Road
+14346,Ajanti
+14347,Sirran
+14348,Attar
+14356,Kala-Akhar
+14364,Kiratgarh
+14381,Barbatpur
+14386,Magardoh
+14405,Maramjhiri
+14423,Dharakhoh
+14424,Ghoradongri
+14425,Betul
+14433,Hatanpur
+14434,Multai
+14435,Gudankhapa
+14440,Darimeta
+14441,Teegaon
+14442,Lalawadi
+14446,Barelipar
+14453,Nawegaon
+14454,Markadhana
+14458,Bardhana
+14476,Sumaoli
+14477,Champion
+14480,Sarangpur
+14485,Pachor Road
+14486,Karanwas
+14487,Sinduriya Kachari
+14489,Pench
+14493,Ramri
+14494,Kumbhraj
+14507,Siroliya
+14512,Chauhani
+14524,Morak
+14579,Kapren
+14580,Ghata-Ka-Varana
+14581,Laban
+14584,Lakheri
+14601,Dhindhora Hukmi Kheda
+14611,Ranikund Rarah
+14635,Jatwara
+14636,Gandhi Nagar Jaipur
+14656,Arniya
+14664,Aulenda
+14688,Hirnoda
+14690,Dhinda
+14695,AsaIpur Jobner
+14700,Bobas
+14702,Sheo Singh Pura
+14705,Dhanakya
+14716,Kanakpura
+14725,Gahlota
+14726,Sali
+14734,Naraina
+14737,Saradhna
+14753,Jawali
+14755,Somesar
+14768,Guriya
+14772,Maval
+14795,Swarupganj
+14802,Pindwara
+14803,Keshavganj
+14807,Jawai Bandh
+14811,Jharwasaa
+14816,Nasirabad
+14819,Hatundi
+14825,Bandanwara
+14839,Bhilwara
+14845,Mandal
+14853,Raila Road
+14860,Bundi
+14861,Banasthali Niwai
+14862,Bidiyad
+14885,Fateh Nagar
+14894,Kapasan
+14897,Pandoli
+14899,Thamla Mogana
+14901,Dungarpur
+14914,Padla
+14918,Udaipur City
+14933,Jodhpur
+14943,Pipar Road Junction
+14953,Merta Road Junction
+14966,Janiyana
+14969,Balotra
+14980,Ajit
+14990,Dundara
+14993,Baytu
+14996,Dudia
+15004,Kuswa
+15005,Sonai
+15009,Nigohan
+15010,Lucknow Amausi Airport
+15016,Manak Nagar
+15031,Alambagh West Cabin
+15043,Durgapuri
+15044,Lucknow Junction
+15045,Charbagh Railway Station
+15048,Malhaur
+15081,Egmore
+15096,Pingleswar
+15097,Tajpur
+15098,Shivpura
+15121,Aishbagh
+15138,IT College
+15142,Kilpauk
+15143,Nehru Park
+15147,Mohibullapur
+15163,Gokulpur Saboli
+15167,Alamnagar
+15178,சின்னமலை
+15179,Dilawarnagar
+15180,Kakori
+15181,Rahimabad
+15182,Bakshi Ka Talab
+15183,Itaunja
+15185,Kodambakkam Metro
+15187,Barabanki Junction
+15188,Jugaur
+15212,Rasauli
+15213,Safedabad
+15214,Bakkas
+15215,Anupganj
+15223,Utrahtia
+15249,Pune Junction
+15282,Ghorpuri
+15309,Ataria
+15310,Barai Jalalpur
+15311,Khairabad Awadh
+15312,Manwa
+15323,Kamlapur
+15327,Sidhauli
+15328,Suraincha
+15344,District Court (Aqua Line)
+15345,District Court (Pink Line)
+15348,Shivajinagar
+15349,Shivajinagar
+15350,Shivaji Nagar
+15355,Range Hills
+15375,Amausi
+15380,Malihabad
+15388,Bindaura
+15416,Burhwal Junction
+15432,Tahsil Fatehpur
+15440,Rafinagar
+15441,Sundhiamau
+15452,Puratchi Thalaivar Dr. M. G. Ramachandran Central
+15470,Kanhan Junction
+15478,Kamalpur
+15479,Wair
+15484,Tala
+15488,Binaiki
+15491,Bhimrana
+15492,Sardarshahr
+15507,Sherekan
+15512,Margherita
+15571,Kamarbandha Ali
+15573,Thasra
+15577,Chaparmukh Junction
+15580,Thakurkuchi
+15588,Safdarganj
+15591,Kailsa
+15592,Belthara Road
+15593,Turtipar
+15594,Lushala
+15595,Deoria Sadar
+15598,Nishangara
+15601,Dehare
+15603,Dipa Halt
+15604,Barpathar
+15606,Chhuchhapura Junction
+15607,Jojwa
+15611,Jalal Khali
+15613,Bethuadahari
+15616,Baruipur Junction
+15617,Patdi
+15618,Garia
+15620,Subhas Gram
+15621,Mallikpur
+15622,Bhalukmara
+15623,Cinnamara
+15624,Rowriah Sdg
+15625,Kendukona
+15630,Tagdi
+15631,Shalimar
+15636,Latipura
+15637,Palej
+15638,Namti
+15639,Bhojo
+15640,Longpatia
+15641,MohKhuti
+15642,Mahutgaon
+15643,Mezenga
+15644,Moran
+15645,Nazira
+15646,Sepon
+15649,Naharkatiya
+15650,Namrup
+15654,Chalisgaon Junction
+15673,Chadotar
+15711,Chhapi
+15712,Umardashi
+15724,Dhinoj
+15727,Selavi
+15728,Manund
+15732,Ranuj Junction
+15733,Unjha
+15734,Dhanpura
+15735,Dethli
+15742,Brahmanvada
+15743,Randala
+15751,Kadarpur
+15761,Varetha
+15768,Katosan Road Junction
+15773,Bhatariya
+15775,Dhrangadhra Junction
+15803,Dhanala
+15819,Sansarpur
+15822,Niwar
+15849,Makansar
+15858,Lakhamanchi
+15878,Ujalvav
+15885,Chuda
+15894,Bajud
+15922,Nandpur Bhatauli
+15953,Bharmar
+15954,Balle Da Pir Larth
+15974,Rajkot Junction
+16008,Khorana
+16013,Jam Wanthali
+16048,Kuranga
+16049,Baradiya
+16050,Viramdad
+16056,Khambhaliya
+16108,Jashapar
+16130,Gop Jam
+16137,Lalpur Jam
+16139,Labour Hut
+16143,Dobeta
+16144,Barmala
+16155,Olinda
+16156,Nella
+16168,Supedi
+16187,Katkola
+16192,Paneli Moti
+16220,Semla
+16276,Keshod
+16293,Bandhnath
+16321,Satadhar
+16339,Hadmadiya
+16340,Sandhanidhar
+16348,Jamwala
+16350,Gir Hadmatiya
+16357,Jambur
+16391,Charodia
+16392,halt
+16395,Vijpadi Road
+16398,Gadhakda
+16415,Liliya Mota
+16418,Panchtalavda Road
+16423,Amritvel
+16424,Mota Jadra
+16440,Dhandhuka
+16443,Rayaka
+16449,Isand
+16450,Jhulasan
+16451,Dangarwa
+16460,Unava Vasan
+16461,Lodra
+16470,Haridwar
+16476,Hapa Road
+16491,Od
+16498,Usra
+16502,Rentiya
+16512,Dhamarda
+16519,Jekot
+16523,Kansudhi
+16525,Chanchelav
+16531,Piplod
+16532,Limkheda
+16544,Kharsaliya
+16553,Godhra Junction
+16575,Bakrol
+16585,Vasad Junction
+16587,Adas Road
+16590,Vadod
+16595,Utarsanda
+16604,Nadiad Junction
+16607,Mahemadavad Kheda Road
+16612,Kanij
+16613,Barejadi Nandej
+16624,Sabarmati
+16627,Kali Road
+16630,Chandkheda Road
+16634,Saij Sertha Road
+16635,Sanand
+16636,Vasan Iyava
+16638,Chharodi
+16643,Sabarmati Junction
+16645,Chandlodiya
+16657,Maroli
+16678,Gothangam
+16681,Kim
+16682,Hathuran
+16688,Ankleshwar Junction
+16700,Kashipura Sarar
+16712,Makarpura
+16744,Dungri
+16765,Amalsad
+16768,Hansapore
+16770,Navsari
+16779,Bordi Road
+16792,Dadhal Inam
+16819,Chikhli Road
+16823,Dholikuva
+16840,Krishna Mohan
+16848,Shasan Road
+16849,Dhapdhapi
+16850,Surjyapur
+16851,Sorupeta
+16852,Kokrajhar
+16883,Srirampur Assam
+16906,Udairampur
+16907,Kulpi
+16908,Karanjali
+16910,Nischintapur Market
+16917,Ghograpar
+16924,Kalikapur
+16925,Champahati
+16926,Betberia Ghola
+16927,Ghutiari Sharif
+16928,Munda Gopal Ashram
+16929,Mahmudabad Avadh
+16955,New Katni Junction
+16966,Langcholiet railway station
+17018,Shendri
+17022,Mahisgaon
+17027,Parikha
+17031,Gandhismriti
+17034,Pushkar
+17035,Budha Pushkar
+17040,Durganagar
+17041,Birati
+17042,Bisharpara Kodalia
+17043,New Barrackpore
+17044,Madhyamgram
+17045,Hridaypur
+17046,Shri Makrinath Nagar
+17051,Chalvada
+17052,Pansar
+17053,Rafaleshwar
+17056,Pilwai Road
+17057,Vambori
+17058,Juriagaon
+17063,Lunsu
+17073,Bedetti
+17074,Brahmajan
+17075,Tanijan Halt
+17076,Badmal
+17139,Koraput Junction
+17190,New Bongaigaon Junction
+17191,Sinthal
+17195,Baori Thikria
+17197,Phariha
+17198,Khorason Road
+17203,Dugdol
+17255,Narketpalli
+17261,Korahia
+17317,Komagata Maru Budge Budge
+17318,Nangi
+17319,Akra
+17321,Brace Bridge
+17323,Santoshpur
+17327,Galsi
+17334,Talit
+17337,Dapodi
+17338,Kasarwadi
+17339,Nashik Phata
+17340,Sant Tukaram Nagar
+17341,Pimpri
+17344,Chinchwad
+17347,Akurdi
+17348,Bhuli
+17357,Kamnara
+17358,Khetia
+17367,Chintadaripet
+17369,அரசினர் தோட்டம்
+17372,Velachery
+17376,Thirumayilai Metro
+17377,Mundakakanni Amman Koil
+17380,Adambakkam
+17384,Sevvapet Road
+17385,Tiruninravur
+17397,Kopar
+17408,Lower Parel
+17414,Wimco Nagar
+17420,Ponpadi
+17422,Tokkuttu
+17425,Kandambakkam
+17436,Barakar
+17438,Kumardubi
+17439,Thapar Nagar
+17440,Nimiaghat
+17446,Pipradih
+17453,Chichaki
+17456,Bansinala Halt
+17457,Tankuppa
+17458,Shaheed Ishwar Chowdhary Halt
+17467,Kastha
+17476,Begumpet
+17477,Begumpet
+17478,Begumpet
+17490,Devthana
+17493,Hadgaon Road
+17512,Bandel Junction
+17526,Chennai Chetpet
+17527,Chennai Egmore
+17540,Argul
+17541,Chatrapur
+17542,Dhaulimuhan
+17543,Gangadharpur
+17544,Golabai
+17546,Mukteswar
+17547,Nirakarpur
+17548,Rambha
+17549,Tapang
+17552,Brahmapur
+17562,Jagannathapur
+17575,Ganjam
+17578,Humma
+17579,Burudi B.H.
+17590,Khallikot
+17591,Kalijai
+17600,Chilka
+17605,Balugaon
+17643,Sarkantra
+17671,Auvaneeswaram
+17674,Unawa Aithor
+17675,Jotana
+17694,Nabadwip Dham
+17696,Solari B.H.
+17697,Kuhuri B.H.
+17701,Kalupara Ghat
+17702,Hagari
+17763,Visapur
+17785,Malthan
+17788,Boribial
+17805,Bhalwani
+17812,Kem
+17814,Chinkhill
+17823,Thair
+17824,Dhoki
+17825,Palsap
+17826,Kalamb Road
+17827,Ausa Road
+17834,Bhatangali
+17839,Wadwal Nagnath
+17840,Janwal
+17847,Vadgaon Nila
+17850,Pokharni Narsimha
+17851,Sangannapur
+17853,Devalgaon Avchar
+17854,Manwat Road
+17859,Kodi
+17860,Dingaon
+17878,Karanjgaon
+17905,Achegaon
+17916,Wadoda
+17919,Kumgaon Burti
+17927,Shri Kshetra Nagjhari
+17949,Katepurna
+17967,Mana
+17971,Mandura
+17976,Kuram
+17981,Takli
+17989,Yeola
+17996,Makum
+18010,Mandal Ghat
+18025,Kolaigram
+18030,Dhupguri Railway Station
+18044,Samsi
+18049,Bhaluka Road
+18063,Harishchandrapur
+18081,Adina
+18097,Kumarganj
+18122,Old Malda Junction
+18125,Chamagram
+18133,Jamirghata
+18148,Tildanga
+18156,Jatkanhar
+18157,Paniajob
+18162,Dongargarh
+18163,Bortalao
+18168,Darekasa
+18175,Salekasa
+18178,Dhanoli
+18187,Amgaon
+18200,Gudma
+18217,Bakal
+18222,Musra
+18244,Parmalkasa
+18251,Murhipar
+18263,Rasmara
+18288,Mandhar
+18303,Silyari
+18312,Baikunth
+18314,Hathbandh
+18358,Chakarbhata
+18371,Sitapur Cantonment
+18375,Sitapur City Junction
+18415,Bilaspur Junction
+18444,Kapan
+18469,Daghora
+18519,Ib
+18529,Brajarajnagar
+18531,Belpahar
+18542,Brundamal
+18564,Rengali
+18586,Saintala
+18603,Loisingha
+18607,Khaliapali
+18630,Turekala Road
+18632,Harishanker Rd
+18635,Khariar Road
+18638,Komakhan railway station
+18640,Bagbahra
+18645,Bhimkhoj
+18662,Khara
+18686,Umaria Isra
+18689,Ghatparsia Halt
+18690,Salwa
+18707,Chacher
+18715,Tharsa
+18718,Koka
+18726,Tumsar Road Junction
+18731,Mundikota
+18736,Tirora
+18737,Kachewani
+18738,Gangajhari
+18743,Kamptee
+18746,Panpali
+18747,Bagdihi
+18748,Dharuadihi
+18749,Tangarmunda
+18754,Garposh
+18755,Sogra
+18756,Sonakhan
+18760,Rajgangpur
+18766,Kansbahal
+18770,Kalunga
+18784,Nuagaon
+18789,Orga
+18790,Parbatonia
+18805,Jaraikela
+18829,Derowan
+18832,Mahadevsal
+18837,Tunia
+18839,Lotapahar
+18860,Adityapur
+18895,Ghatsila
+18934,Khatkura
+18936,Chakulia
+18944,Dalbhumgarh
+18949,Chirugoda
+18961,Khemasuli
+18967,Sardiha
+18976,Banstola
+18986,Jakpur
+18991,Shyam Chak
+18992,Madpur
+18999,Bhogpur
+19012,Kolaghat
+19015,Deulti
+19016,Bagnan
+19022,Kulgachia
+19023,Fuleswar
+19026,Bauria
+19031,Birshibpur
+19036,Sankrail
+19050,Pimpar Khed
+19053,Naydongri
+19054,Rohini
+19055,Vaghli
+19056,Kajgaon
+19057,Nagardevla
+19061,Galan
+19062,Pardhade
+19079,Panjhan
+19082,Nandgaon
+19084,Summit
+19090,Hisvahal
+19100,Ugaon
+19104,Lasalgaon
+19112,Devlali
+19120,Kherwadi
+19131,Padli
+19137,Asvali
+19153,Khadavli
+19156,Vasind
+19157,Asangaon
+19160,Atgaon
+19162,Khardi
+19177,Bhone
+19181,Padse
+19187,Nardana
+19190,Hol
+19199,Khatgaon
+19202,Sonshelu
+19205,Khandbara
+19212,Bhadwad
+19217,Dondaicha
+19224,Duskheda
+19230,Raver
+19235,Waghoda
+19237,Kekatumar
+19242,Shivni Shivapur
+19244,Marsul
+19245,Chondi
+19246,Junona
+19251,Malsailu
+19252,Kannargoan Naka
+19254,Penganga
+19258,Pingli
+19264,Godhani
+19265,Kalmeshwar
+19266,Bharatwada
+19267,Kohli
+19268,Sonkhamb
+19278,Metpanjra
+19298,Khongsara
+19305,Bhanwar Tonk
+19310,Balpur Halt
+19311,Kothari Road
+19312,Madwarani
+19321,Korba
+19348,Rajghat
+19352,Lakshannath Road
+19353,Angua
+19354,Dantan
+19355,Belda
+19356,Bhakrabad
+19361,Nuagaon Mayurbhanj Road
+19362,Basta
+19363,Amarda Road
+19371,Balasore
+19375,Tikirapal
+19376,Haldipada
+19378,Bahanaga Bazar
+19380,Ranital
+19381,Markona
+19382,Baudpur
+19388,Jajpur Keonjhar Road Junction
+19389,Baitarni Road
+19394,Dulakhapatna
+19398,Manjuri Road
+19413,Tangiriapal
+19438,Nilakantheswar
+19450,Nayagarh
+19451,Jaroli
+19454,Murga Mahadev Road
+19455,Noamundi
+19461,PadapaharJunction
+19482,Singhpokharia
+19492,Barithengarh
+19513,Charbatia
+19514,Bada Padagaon
+19515,Joranda Road
+19516,Shyama Charanpur
+19523,Dandimal
+19524,Sadashibapur
+19527,Mahadia
+19540,Nayabhagirathipur
+19545,Meramandali
+19559,Talcher Thermal
+19560,Kerejanga
+19562,Boinda
+19563,Handapa
+19565,Bamur
+19573,Norla Road
+19578,Rupra Road
+19579,Kandel Road
+19580,Kesinga
+19585,Lanjigarh Road Jn
+19587,Bissamcuttack
+19588,Sansartali
+19589,Muniguda
+19590,Doikallu
+19593,Gumada
+19594,Kuneru
+19595,Jimidipeta
+19596,Ladda
+19603,Singapur Road Junction
+19623,Gotlam
+19624,Garudubilli
+19625,Bondapalli
+19628,Gajapatinagaram
+19629,Maradam Halt
+19632,Komatipalli
+19633,Donkinavalasa
+19638,Sitanagaram
+19641,Narsipuram Halt
+19642,Parvatipuram
+19643,Parvatipuram Town
+19652,Ichchapuram
+19677,Summadevi
+19699,Harishchandrapuram
+19708,Kotabommali
+19717,Dindu Gopalapuram
+19736,Routhpuram
+19769,Gujjangivalasa
+19778,Sigadam
+19811,Vizianagaram Junction
+19828,Shivalingapuram
+19835,Tyada
+19848,Chimidipalli
+19879,Karakavalsa
+19881,Shimiliguda
+19882,Araku Valley
+19937,Kottavalasa Junction
+19960,Bheja
+19966,Machkunda Road
+19970,Paliba
+19977,Tuni
+19986,Narsipatnam Road
+19999,Anakapalle
+20011,Pithapuram
+20025,Peddabrahmadevam
+20031,Anaparti
+20032,BaIabhadrapuram
+20033,Rajahmundry
+20035,Tadepalligudem
+20038,Prattiapadu
+20054,Chagallu
+20063,Pasivedala
+20070,Bhimadolu
+20071,Badampudi
+20078,Vatlur
+20082,Eluru
+20112,Gunadala
+20121,Zampani
+20131,Cheruvu Madhavaram
+20133,Gangineni
+20142,Bonakalu
+20179,Garla
+20212,Hasanparthi Road
+20258,Repalliwada
+20267,Ralapet
+20278,Sirpur Kagaznagar
+20287,Vempalli
+20296,Wirur
+20302,Mukutban
+20305,Gondwana Visapur
+20313,Kayar
+20317,Vivekanand Nagar
+20324,Choti Padoli
+20327,Bhandak
+20335,Majri Junction
+20350,Chikni Road
+20355,Nagri
+20360,Yenor
+20365,Hinganghat
+20369,Wagholi
+20370,Bhugaon
+20371,Sonegaon
+20372,Dum Dum
+20377,Brahmanpalli
+20381,Masaipet
+20390,Wadiaram
+20395,Mirzapalli
+20401,Akanapet
+20403,Bhiknur
+20405,Tippapur
+20409,Talmadla
+20426,Sirnapalli
+20431,Indalvai
+20435,Dichpalli
+20440,Nizamabad Junction
+20443,Jankampet
+20446,Fakhrabad
+20453,Basar
+20456,Dharmabad
+20459,Samrala
+20460,Chikna
+20462,Karkheli
+20469,Bolsa
+20479,Shelgaon
+20484,Sivungaon
+20505,Pedakurapadu
+20514,Damarcherla
+20515,Kondrapol
+20523,Tsunduru
+20535,Morampudi
+20558,Jandrapeta
+20570,Bapatla
+20586,Nidubrolu
+20628,Singarayakonda
+20687,Padugupadu
+20703,Vedayapalem
+20731,Nandiyampakkam
+20732,Minjur
+20733,Anuppambattu
+20742,Kavaraippettai
+20744,Elavur
+20759,Akkampeta
+20787,Polireddipalem
+20789,Doravarichatram
+20803,Pedapariya
+20808,Odur
+20837,Manubolu
+20844,Kommarapudi
+20871,Narasaraopet
+20876,Pendekallu Junction
+20887,Dhone Junction
+20908,Chelama
+20914,Nandipalli
+20931,Krishnammakona
+20934,Tarlupadu
+20954,Vinukonda
+20963,Santamagulur
+20966,Munumaka
+20968,Tuggali
+20975,Imampuram
+20978,Venkatampalle
+20991,Nakkanadoddi
+20996,Pathakothacheruvu
+21009,Jakkalacheruvu
+21013,Vanganur
+21047,Yerragudipad
+21050,Kalamalla
+21055,Muddanuru
+21064,Kadapa Junction
+21081,Ontimitta
+21082,Bhakarapeta
+21087,Kanamalopalle
+21097,Reddipalli
+21121,Mamanduru
+21169,Vepagunta
+21173,Sri Venkataperumal Rajupuram
+21185,Nancherla
+21186,Nemkallu
+21191,Molagavalli
+21192,Nagarur
+21193,Adoni
+21196,Kosgi
+21198,Marichethal
+21204,Malkhaid Road
+21209,Sedam
+21235,Rukmapur
+21238,Mailaram
+21280,HITEC City
+21294,Sanjeevaiah Park
+21298,Gate Vanampalli
+21301,Sadashivapet Road
+21306,Zahirabad
+21307,Halbarga
+21308,Ambika Rohina
+21309,Chakur
+21317,Martur
+21318,Hirenanduru
+21319,Boroti
+21321,Mohol
+21322,Malikpeth
+21350,Kadavai
+21356,Guneru Bamori
+21357,Rahatwas
+21358,Maban
+21367,Gongle
+21374,Wadegaon
+21375,Arjuni
+21378,Khurda Road Junction
+21403,Loni
+21430,Manjari Budruk
+21433,Hadapsar Railway Station
+21443,Bansapahar
+21445,Manikpur Junction
+21457,Bargarh
+21468,Jasra
+21469,Itwadundiala
+21470,Barah Maufi
+21471,Subedarganj
+21473,Bidanpur
+21474,Sirathu
+21475,Sath Naraini
+21484,Chakeri
+21493,Rasulpur Gogumau
+21508,Garhnokha
+21519,Karahdih
+21526,Dekpura Halt
+21571,Elamanur
+21583,Birang Khera
+21584,Sangat
+21585,Gurusar Sahnewala
+21588,Khui Khera
+21589,Jandwala
+21592,Chak Pakhewala
+21595,Ajit Gill Matta
+21601,Kot Kapura Junction
+21604,Theh Qalandar
+21607,Ladhuka
+21612,Giani Zail Singh Sandhwan
+21617,Pipli Pakhi Kalan
+21634,Moga
+21637,Ajitwal
+21638,Chaukiman
+21641,Bhanohad Punjab
+21642,Badowal
+21644,Model Gram
+21655,Ladhowal
+21661,Bhattian
+21664,Sindhar
+21665,Kang Khurd
+21666,Goraya
+21671,Giddarpindi
+21674,Mauli Block Hut
+21678,Sultanpur Lodi
+21683,Kartarpur
+21684,Hamira
+21693,Ramidi
+21716,Dhilwan
+21740,Butari
+21752,Jandiala
+21755,Manawala
+21799,Batala Junction
+21810,Jakolari
+21825,Sujanpur
+21828,Madhopur Punjab
+21913,Block Hut Basantar
+21955,Ghiala
+21956,Kandrori
+21967,Musahibpur
+21968,Chak Kalan
+21974,Khuda Kurala
+21975,Garna Sahib
+21988,Unchi Bassi
+21993,Ghaunspur
+22008,Kedgaon
+22028,Khutbav
+22047,Yavat
+22062,Uruli
+22078,Machrowal
+22079,Bhogpur Sirwal
+22084,Sanaura
+22085,Cholang
+22090,Tanda Urmar
+22096,Kala Bakra
+22111,Sadhoogarh
+22115,Shambhu
+22124,Sarai Banjara
+22131,Kalanour
+22136,Jagadhri Workshop
+22146,Tandwal
+22154,Bakayanwala
+22175,Ambewadi
+22183,D.A.V. College
+22187,Noh-Bachhamabi
+22209,Kanale
+22213,Roranwala
+22214,Bahmni Wala
+22215,Chargwan
+22216,Jhabelwali
+22217,Kohar Singh Wala
+22220,Jhok Tahal Singh
+22223,Ratangarh Kanakwal
+22228,Pathrala
+22229,Bagwali
+22246,Bahman Diwana
+22247,Raman
+22248,Bangi Nihal Singh
+22263,Wander Jatana
+22266,Arabaghatta
+22269,Panoh
+22284,Faridnagar
+22289,Jethuke
+22310,Ding
+22311,Suchan Kotli
+22314,Mahuwala
+22317,Alapakkam
+22357,New Kaithal
+22362,Solu Majra
+22365,Lowjee
+22377,Gurthuri
+22404,Bhaini Khurd
+22466,Jyotisar
+22484,Kurukshetra Junction
+22542,Panipat Junction
+22600,Tantpur
+22602,Bangarmau
+22612,Diwana
+22618,Asan
+22624,Banbasa
+22625,Tanakpur
+22674,Lalit Khera
+22693,Isapur Khera
+22705,Parao Mahna
+22714,Rabrah
+22720,Darshannagar
+22725,Sarsadh
+22738,Ganaur
+22745,Bhodwal Majri
+22762,Samalkha
+22770,Barwasni
+22777,Bishalgarh
+22778,Goreswar
+22779,Khandikar
+22780,Harisinga
+22791,Loharu Junction
+22800,Aluabari Road Junction (Islampur)
+22801,Tupadih
+22810,Khurhand
+22813,New Madanpur
+22814,Jitpur
+22815,Jamua
+22819,Hansdiha
+22823,Kushalpura
+22825,Sainiwas
+22827,Ghalkalan
+22830,Parvezpur
+22841,Surajpur Road
+22848,Dewalgaon
+22865,Kadalundi
+22874,Bhansi
+22878,Kamalur
+22966,Bade Arapur
+23026,Pimplachaure
+23042,Gollapally
+23081,Ismaila Haryana
+23093,Sattenapalli
+23098,Iqbalpur
+23099,Raisi
+23104,Phulpur
+23108,Laiburwa Halt
+23110,Paradol
+23140,Danea
+23163,Mael
+23188,Chhapar
+23198,Hendegir
+23241,Mahuamilan
+23252,Kole
+23253,Richughuta
+23290,Demu
+23292,Latehar
+23307,Bendi
+23308,Kumandih
+23318,Hehegara Halt
+23323,Chhipadohar
+23325,Barwadih Junction
+23333,Kechki
+23342,Chianki
+23349,Daltonganj
+23353,Kajri
+23365,Lalgarh Bihar Halt Railway Station
+23399,Sigsigi
+23401,Karkatta
+23412,Untari Road
+23415,Satbahini
+23429,Muhammadganj
+23434,Kosiara
+23437,Haidarnagar
+23452,Japla
+23485,Gidhaur
+23486,Chaura BH
+23493,Kunder Halt
+23498,Bashuachak Halt
+23499,Bhalui
+23500,Balahapur
+23505,Gohari Gram
+23506,Bansipur
+23507,Lakhochak Halt
+23508,Mahesh Leta Halt
+23513,Telwa Bazar Halt
+23514,Simultala
+23519,Narganjo Halt
+23520,Rajla Halt
+23537,Tulsitanr
+23551,Lahabon
+23558,Kumrabad Rohini
+23563,Sankarpur
+23564,Jamtara
+23567,Kaseetar Halt
+23568,Vidyasagar
+23570,Madankata Railway Station
+23573,Joramow Railway Station
+23582,Mathurapur railway station
+23589,Chittranjan
+23598,Maheshmunda Junction
+23605,Krishna Ballabh Sahay Halt
+23608,Jagadishpur
+23611,Jhilmil
+23617,Shaheed Nagar
+23618,Raj Bagh
+23621,Sarmatanr
+23624,Hirodih
+23627,Larabad Block Hut
+23628,Koderma Junction
+23634,Gujhandi
+23649,Dilwa
+23664,Nathganj
+23665,Baskatwa B. H. Railway Station
+23668,Gurpa
+23698,Rajendra Nagar
+23699,Chaudhribandh
+23709,Keshwari
+23713,Chaube
+23714,Dasra Halt BH
+23744,Chegro
+23751,Nichitpur
+23752,Matari
+23761,Mugma
+23765,Dhule
+23768,Barapalasi
+23769,Nonihat Bhaturia
+23772,Kumradol
+23788,Nagla Tula
+23793,Prasannayanapalli
+23803,Dhanora(Deccan)
+23809,Lingti
+23839,Vendra
+23840,Channi
+23849,Palasdhari Station
+23865,Taropa
+23880,Garhi Manikpur
+23881,Kundaharnamganj
+23882,Barh
+23883,Barhiya
+23884,Gautamsthan
+23885,Gouchhari
+23886,Jangipur Road
+23888,Sonuabari
+23889,Thekeraguri
+23890,Laimekuri
+23891,Simen Chapori
+23904,Ernakulam D Cabin
+23922,Bhuyar
+23923,Kuhi
+23929,Bhiwapur
+23941,Bhandewadi Halt
+23944,Tempa
+23945,Gogamukh
+23958,Dabhoda
+23965,Ashtegaon
+23966,Pusla
+23967,Benoda
+23968,Hiwarkhed
+23969,Mowad
+23970,Morshi
+23971,Pala
+23972,Kilanwali Punjab
+23973,Hampapattana
+23976,Saidapur
+23980,Chegunta
+23981,Krishna Junction
+23989,Gangavaram
+23990,Lankalakoderu
+23993,Virapur
+23998,Hanumapura
+24009,Ladkhed
+24060,Vilegaon
+24063,Talaku
+24064,Alampur Road
+24084,Khekra
+24111,Uppalavai
+24134,Koilakuntla
+24153,Mustafabad
+24161,Jutturu
+24187,Thangundi
+24197,Maheji
+24219,Ganj Dundwara
+24229,Dadgaon
+24232,Sham Chaurasi
+24233,Salkaroad
+24234,Jawalamukhi Road
+24240,Barhan
+24261,Bedag
+24264,Bamani
+24265,Padsali
+24292,Bimbari
+24293,Jambhali
+24300,Therban
+24333,Dhapewara
+24353,Mathnashipur
+24381,Majheran Himachal
+24389,Kumthakhurd
+24431,Rishikesh
+24433,Labpur
+24466,Ranjani
+24468,Partur
+24469,Pushpattur
+24480,Tunga Bhadra Dam
+24501,Wimco Nagar Depot
+24539,Shohratgarh
+24541,Mahtha Bazar
+24547,Virul
+24561,Khandrai
+24564,Butane
+24582,Dhamtan Sahib
+24646,Cansaulim
+24648,Suravali
+24659,Kamepalli
+24679,Hiwarkhed
+24682,Wan Road
+24687,Dhulghat
+24689,Dabka
+24690,Vyasanakere
+24706,Konagavalli
+24707,Bhadan
+24710,Bhadrauli
+24715,Thiruvananthapuram North
+24718,Bamhni
+24720,Sonada
+24723,Kurseong
+24749,Shivani
+24757,Konanur
+24760,Mekra Mamarkhabad Halt
+24761,Digha
+24762,Ramnagar
+24770,Harnaut
+24783,Baramula
+24843,Dhulipalla
+24858,Gandhi Smrak Road
+24869,Kalka
+24883,Beria Daulat
+24961,Pipla
+24962,Patansaongi Town Halt
+24980,Gatra
+24989,Dakaniya Talav
+25029,Kota Junction
+25042,Summer Hill
+25053,Avuladatla
+25055,Kalyanadurga
+25058,Nageshwadi
+25071,Tyakal
+25087,Khadur Sahib
+25088,Gurusar Sutlani
+25089,Rafiganj
+25099,Bhatar
+25106,Dev Road Halt
+25112,Kathalpukhari
+25115,Madanpur
+25118,Saheed Matangini
+25121,Bhayandar
+25126,Dahisar
+25128,Mira Road
+25160,Borivali
+25173,Tamluk
+25208,Khushal Nagar
+25255,Jnanabharati
+25256,Pattanagere
+25261,Jnanabharathi
+25262,Udumalaippettai
+25264,Gaya Junction
+25286,Mangampet Road
+25292,Masangaon
+25293,Chirailla Pauthu
+25298,Hilara
+25305,Phiding
+25312,Durga Chak Town
+25313,Palasner
+25316,Shilpaprabesh
+25320,Neyamatpur Halt
+25321,Bela
+25322,Ner Halt
+25323,Wanabar Halt
+25336,Gorakhpur Junction
+25347,Gorakhpur Cantonment
+25355,Pura Halt
+25356,Kothana Halt
+25357,Kanchrapara
+25390,Shravanabelagola
+25412,Daniyawan Junction
+25413,Shimoga Bidare
+25414,Gurhanwa
+25428,Chinchpokli
+25429,Dadar
+25442,Bengaluru East
+25443,Ore
+25446,Wanparti Road
+25447,Kalyani Ghoshpara
+25450,Bally Ghat
+25457,Bhelwa
+25458,Chailaha Halt
+25510,Tiruvennainallur Road
+25537,Kaldhari
+25553,Jorhat Town
+25563,Ballari Cantonment
+25566,Ballari Junction
+25567,Haddinagundu
+25612,Jeonara
+25626,Dhatura Alipur
+25627,Jamgaon
+25628,Rampuri
+25660,West Hill
+25661,Gangatola
+25662,Khairranji
+25666,Agaram Sibbandi
+25677,Matabhanga
+25699,Betgara
+25750,Amoni
+25751,Jakhalabandha
+25752,Samaguri
+25755,Amronga
+25770,Bahadur Chariali
+25771,Bogapani
+25772,Powai
+25789,Jakhal Junction
+25822,Sadar Bazar
+25841,Thrissur Railway Station - West Entry
+25858,Ramrajatala
+25859,Chengail
+25860,Mahisadal
+25861,Basulya Sutahata
+25863,Anand Vihar (Blue Line)
+25864,Anand Vihar
+25883,Satish Samanta
+25897,Silaiman
+25935,Asaoti
+25940,Palwal
+25958,Garhi Harsaru Junction
+25960,Sultanpur Kaliawas
+25973,Chhandar
+25974,Patrasayer
+26000,Canning
+26012,Bonidanga
+26021,Renigunta Junction
+26030,Palsit
+26041,Gangpur
+26048,Barddhaman Junction
+26057,Sitarampur
+26084,Asansol Junction
+26103,Howrah
+26112,Howrah Goods
+26124,Padmapukur
+26143,Raja Ki Mandi
+26145,Sirkazhi
+26148,Bilwai
+26157,Khanja
+26207,Kanjiya
+26231,Pinjrapol
+26255,Siduli
+26262,Challavaripalli
+26263,Komali
+26301,Pali Marwar
+26315,Jhapater Dhal
+26317,Ishan Chandi Halt
+26318,Paraj
+26325,Mankar
+26378,Itarsi Junction
+26382,Kotla
+26387,Darasuram
+26409,Secunderabad West
+26415,Arts College
+26416,Sitaphalmandi
+26432,Pagidipalli
+26434,Jamuniatanr Halt
+26438,Borgaon
+26439,Chanchai
+26446,Khairatabad
+26447,Necklace Road
+26508,Damru Ghutu
+26559,Bhandaridah
+26656,Etmadpur
+26660,Lalru
+26667,Chatouli
+26686,Mankameshwar Mandir
+26693,Yamuna Bridge
+26698,Agra City
+26711,Bilochpura
+26712,Kelavli
+26714,Alnavar Junction
+26743,Ghoraghata
+26751,Sibaichandi
+26752,Gurap
+26753,Jhapandanga
+26754,Jaugram
+26762,Majhergram
+26763,Mirzapur Bankipur
+26766,Khasa
+26767,Sangrana Sahib
+26784,Punthottam
+26811,Bankim Nagar
+26812,Pancheberia
+26813,Dhamua
+26814,Nagore
+26816,Nagappattinam Junction
+26817,Velippalaiyam
+26836,Bahilpurwa
+26838,Lohta
+26858,Kottekad
+26859,Kanjikode
+26860,Lakkiti
+26861,Palappuram
+26864,Mannanur
+26865,Bharathappuzha
+26868,Vallathol Nagar
+26869,Mullurcarai
+26871,Wadakancheri
+26890,Ollur
+26895,Pudukad
+26896,Liluah
+26911,Dankuni
+26922,Chitta
+26925,Nellayi
+26944,Pulinchodu
+26945,Companypady
+26946,Muttom
+26947,Kalamassery
+26948,Kalamassery Town
+26949,Ernakulam Town
+26950,Ernakulam Junction
+26975,Kaikala
+26978,Ganj Khawaja
+26985,Bahir Khanda
+26992,Velankanni
+27044,Deen Dayal Upadhyaya Junction
+27053,Ghora Ras Ghona
+27075,Noapara
+27080,Baranagar
+27096,Patipukur
+27101,Kolkata
+27112,Dashnagar
+27114,Tikiapara
+27126,Santragachi Junction
+27155,Aithal
+27156,Pathri
+27157,Ikkar
+27162,Barhni
+27175,Nimcha
+27187,Dum Dum Cantonment
+27202,Rabindra Sarobar
+27226,Bhatsar
+27237,Varakalpattu
+27275,Beliaghata Road
+27277,Karea Kadambagachhi
+27290,Gobardanga Railway Station
+27291,Chandpara
+27301,Sonaili
+27324,Gullaguda
+27347,Dandkhora
+27348,Gorphar
+27349,Bishanpur Halt
+27358,Dhachna
+27362,Kachna
+27363,Jhitkia
+27376,Kamarkundu
+27384,Baruipara
+27385,Garh Banaili
+27391,Balarambati
+27393,Palla Road Station
+27397,Bathna Krittibas
+27399,Kasba
+27400,Jalalgarh
+27412,Heggere
+27413,Khambel
+27414,Manshahi
+27419,Tenua Dumaria Halt
+27420,Lalganj Pakri
+27421,Sarai
+27423,Bhagwanpur
+27426,Bennipatti Pirapur
+27427,Goraul
+27428,Kurhani
+27467,Maniyan
+27468,Sajha Halt
+27469,Milangarh
+27470,Malahar
+27474,Madhupur Junction
+27476,Chicholi Buzurg
+27479,Giridih
+27480,Malancha
+27481,Rampur Bazar
+27482,Mallickpur Hat
+27487,Ramtek
+27490,Amdi Halt
+27495,Ambaturai
+27507,Ganganiyan
+27511,Khariapipra Halt
+27515,Kakinada Port
+27526,Gopalapatnam
+27547,Simhachalam North
+27588,Kovvur
+27592,Buniadpur
+27593,Daulatpur Hat
+27594,Deotala
+27595,Mahanagar
+27597,Sripur Halt
+27602,Ammapali
+27612,Bharpura Pahleza Ghat Junction
+27629,Retang
+27653,Sakaldiha
+27656,Chausa
+27657,Pawani Kumarpur Halt
+27660,Nimkana
+27663,Banbihari Gwalipur
+27665,Badakhandeita
+27672,Sarvodaya Halt
+27673,Kauriya Halt
+27674,Karisath
+27675,Jagjeevan Halt
+27676,Jamira Halt
+27677,Kulharia
+27683,Sujalpur
+27739,Thakurli
+27741,Hazi Md Mohsin Halt
+27799,Nahur
+27805,Wadala Bridge
+27807,Acharya Atre Nagar
+27819,Mumbai CSMT
+27825,Budagumpa
+27829,Jabbalagudda
+27831,Chikkabenakal
+27832,Bagula
+27835,Lalgopalganj Railway Station
+27848,Jalalpur Dhai
+27856,Parbhani Junction
+27868,Gudum
+27876,Marauda
+27906,Toranagallu Junction
+27919,Sonalium
+27920,Dudhsagar
+27928,Igatpuri
+27931,Palasdhari
+27941,Lonavala
+27949,Mahalam
+27950,Tallisaida Sahu
+27963,Amravati
+27968,Narkher
+27971,Sirpur Town
+27975,Surendranagar Junction
+27984,Unguturu
+27999,Kalas
+28050,Sambalpur Road
+28085,Panskura Junction
+28088,Narayan Pakuria Murail
+28093,Balichak
+28102,Walajabad
+28128,Nallacheruvu East
+28129,Kanhaipur Halt
+28130,Anipur
+28132,Seydunganallur
+28133,Aunta Halt
+28158,Bharoli Junction
+28160,Pathankot Junction (NG)
+28185,Kusunda Junction
+28199,Mahuda Junction
+28207,Dugda
+28210,Chas Road
+28220,Ramgovindsingh Mahuli Halt
+28232,Dumri Halt
+28255,Bhatapara
+28281,Uska Bazar
+28283,Bijwasan
+28299,Keutguda Junction
+28317,Partabpura
+28321,Mesra
+28325,Jhanjhitoli Halt
+28334,Bamanhat
+28337,Abutara Halt
+28341,New Gitaldaha
+28342,Falimari
+28346,Dina Nagar
+28389,Adirampattinam
+28397,Krishnarajapuram
+28399,Hailakandi
+28404,Dinhata
+28405,Dinhata College Halt
+28406,Bhetaguri
+28407,Dewanhat
+28414,Jasidih Junction
+28432,Patna Sahib
+28436,Kawar
+28458,Govindpuri
+28469,Kanpur Anwarganj
+28488,Bhimsen Junction
+28491,Unnao Junction
+28511,Singhabad
+28514,Ahiran
+28515,Khidirpur
+28565,Mawai
+28587,Kengeri
+28590,Mysore Road
+28591,Deepanjali Nagar
+28610,Palahalli
+28619,Pandavapura
+28623,Byadarahalli
+28633,Nawadih
+28640,Borhat
+28648,Alewahi
+28669,Hempur Ismail
+28678,Khar Road
+28684,Tejpurwa Halt
+28685,Dholi
+28711,Palachauri
+28714,Iklehra
+28753,Tirumalairayanpattinam
+28771,Danauli Phulwaria
+28772,Lakho Railway St.
+28784,Junagadh Junction
+28841,Udhagamandalam
+28893,Karad
+28907,Nallattipalaiyam
+28928,Uttukuli
+28950,Tiruppur
+28960,Karna
+29022,Vanjipalaiyam
+29027,Miranpur Katra
+29049,Pokhrayan
+29055,Baba Laxman Daspuri
+29067,Singanallur
+29084,Khodiyar Junction
+29087,Patiali
+29090,Irugur Junction
+29101,Samhon
+29113,Chitalda
+29114,Kevedi
+29115,Umarpada
+29122,Peelamedu
+29148,Coimbatore North
+29167,Mahrawal
+29194,Maivadi Road
+29200,Madathukulam
+29223,Mettur Dam
+29232,Erode Diesel Loco Shed Track: Double Electric-Line
+29244,Vadippatti
+29274,Puliyamangalam
+29278,Egattur
+29281,Vemulapadu
+29283,Thirumayilai
+29285,Erode Junction
+29321,Mavelipalaiyam
+29342,Sankari Durg
+29428,Valadi
+29446,Shanki
+29447,Biratoli
+29453,Nature Cure Hospital
+29513,Risama
+29584,Ghatnandur
+29604,Omalur Junction
+29635,Tolasampatti
+29657,Vanchi Maniyachchi Junction
+29677,Bacheli
+29704,Gidam
+29714,Dabpal
+29715,Kawargaon
+29744,Kaklur
+29780,Dilmili
+29787,Ukhali
+29801,Tokapal
+29853,Jagdalpur
+29870,Nakti Semara
+29911,Kotapar Road
+29928,Charamula Kusumi
+29952,Khadapa
+29968,Dabhou
+30000,Jarati
+30046,Tinnappatti
+30064,Karuppur
+30141,Lokur
+30235,Buddireddippatti
+30284,Jeonathpur
+30306,Shiu Sagar Road
+30317,Gaipura
+30322,Manda Road
+30327,Pahara
+30334,Bhalej
+30335,Umreth
+30336,Thonganur
+30348,Morappur
+30355,Dasampatti
+30356,Kunnattur
+30357,Samalpatti
+30381,Kagankarai
+30440,Vaniyambadi
+30455,Railway Station
+30471,Kettandapatti
+30506,Molakarampatti
+30537,Muttampatti
+30608,Pamban
+30613,Mandapam
+30614,Khunkhuna
+30615,Talodhi Road
+30619,Valantaravai
+30637,Sattirakkudi
+30669,Sivarakottai
+30684,Sikkal
+30698,Nidamangalam Junction
+30712,Thanjavur Junction
+30730,Jonekarang
+30756,Silapathar
+30763,Moridhal
+30780,Sripani
+30820,Vaitarna
+30825,Kelve Road
+30846,Panitola
+30848,Tinsukia Junction
+30867,Kenchanalu
+30872,Talap
+30874,Tollygunge
+30916,Kandwal
+30935,Kadethan
+30946,Adichunchanagiri
+30974,Barial Himachal
+30998,Guler
+31029,Tripal
+31073,Bhivpuri Road
+31104,Titwa
+31105,Khopoli
+31123,Vithalwadi
+31215,Shahi
+31228,Laluri Khera
+31250,Dibnapur
+31257,Bijauria
+31263,Murthiha
+31286,Tanda Halt
+31296,Akelahanspur
+31303,Mailani Junction
+31319,Garra
+31320,Kaydi Halt
+31325,Mulakala Cheruvu
+31326,Akshaywat Rai Nagar
+31327,Chandauli Majhwar
+31328,Saidraja
+31333,Baijnath Mandir
+31372,Chauntra Bahetren
+31377,Mahpur
+31393,Kuakhera
+31400,Bothiya
+31422,Kachhla Halt
+31435,Sheikhupur
+31436,Bamiana
+31458,Ghatpuri
+31547,Behtagokul
+31558,Dalelnagar
+31569,Umar Tali
+31573,Balamau Junction
+31639,Masit
+31655,Sethal
+31673,Pitambarpur
+31695,Tisua
+31726,Banthra
+31740,Roza Junction
+31773,Shahjahanpur
+31777,Mighauna
+31789,Shahbaznagar
+31798,Bisalpur
+31819,Pauta
+31822,Pratabpur
+31827,Bhopatpur
+31839,Areli
+31844,Dhakia Tiwari
+31848,Nigohi
+31851,Vazeerpur
+31859,Zindpura
+31865,Chak Safaura Halt
+31870,Bahalda Road
+31873,Majhola Pakarya
+31874,Nyoriya Husenpur
+31875,Bharopatti Station
+31881,Prasadpur
+31897,Dudhiya Khurd
+31903,Rajnarainpur
+31910,Mala
+31925,Manjhra Purab
+31926,Kakraha Rest House
+31927,Raibojha
+31933,Nanpara Junction
+31955,Shankarpur
+31978,Chowka Ghat
+31987,Ghaghara Ghat
+32007,Sarju
+32032,Kasturi
+32046,Kathola
+32047,Gonda Kachahri
+32060,Khuldil Road
+32066,Subhagpur
+32071,Agori Khas
+32086,Ahirauli
+32092,Jhamat
+32095,Lokvidyapith Nagar
+32099,Bridgemanganj
+32106,Razaganj
+32122,Masodha
+32123,Amolwa
+32132,Dharminiya
+32147,Masnadih
+32150,Ramgarhwa
+32164,Barharganj
+32173,Gurli Ramgarhwa
+32179,Awasani
+32180,Chhitauni
+32206,Sona Arjunpur
+32207,Silawar
+32208,Nanaksar
+32228,Boparai
+32231,Gharyala
+32232,Chennai International Airport
+32233,Teliamura
+32235,Kayasthagram
+32240,Firozpur City Junction
+32244,Gubbi
+32254,Karasangal
+32260,Sakariya
+32297,Simri Bakhtiyarpur
+32347,Karukhirharnagar Halt
+32375,Parminiya
+32443,Narpatganj railway station
+32468,Panjipara
+32485,Pothia
+32492,Tauheed
+32497,Gaisal
+32549,Dhulabari
+32566,Dhumdangi
+32576,Mangurjan
+32612,Chattar Hat
+32664,Jalpaiguri
+32675,Bagrakot
+32689,Gulma
+32703,Chapaguri
+32768,Nagrakata
+32773,Damdim
+32819,Vadlamannadu
+32827,Bamangram
+32833,Bangalbaree
+32843,Kaliyaganj
+32855,Barsoi Junction
+32871,Rawatpur
+32895,Dalkhola
+32897,Sudhani
+32902,Telta
+32928,Hatwar
+32936,Joravasan
+32937,Parakanahatti
+32954,Surja Kama
+32955,Kanki
+32974,Babhabgaon Halt
+32979,Khurial
+32982,Kamalpur Halt
+32983,Bhawanipur Bihar
+32984,Azamnagar Road
+33023,Eklakhi
+33041,Kalyani Main
+33065,Raikabagh Palace Junction
+33070,Ratangarh Junction
+33083,Villiyambakkam
+33087,Singaperumal Koil
+33096,Tindivanam
+33118,Mulanturutti
+33123,Kadakavur
+33134,Kallayi
+33150,Jokatte
+33167,Nalhati Junction
+33176,Bataspur
+33187,Perani
+33253,Chhapra Kacheri
+33265,Majnupur Nawada
+33268,Bachwara Junction
+33273,Munger
+33275,Krishnapur
+33297,Rukni Junction
+33335,Joychandi Pahar
+33350,Jonha
+33368,Chirmiri
+33377,Amlo
+33403,Phusro
+33409,Barbenda
+33418,Pundhag
+33442,Meja Road
+33450,Bermo
+33470,Pahleja
+33476,Dehri on Sone
+33478,Karwandia
+33505,Patra
+33525,Hathras Junction
+33527,Hathras Qila
+33532,Maripat
+33556,Boraki
+33561,Dankaur
+33577,Danwar
+33592,Kulwa
+33600,Seelampur
+33605,Welcome (Pink Line)
+33606,Welcome (Red Line)
+33611,Naya Ghaziabad
+33615,Guldhar
+33649,Shikohabad
+33660,Kiul Junction
+33682,Vishrambag
+33707,Tozhuppedu
+33708,Pakkam
+33724,Guntakal West
+33809,Phesar
+33815,Kusumbhi
+33816,Geratpur
+33826,Ahmedabad Junction
+33849,Kalmitar
+33855,Anuppur Junction
+33866,Masagram Junction
+33870,Ranaghat Junction
+33897,Virar
+33916,Yelahanka Junction
+33929,DARAGANJ STATION
+33934,Undi
+33943,Kannamangalam
+33948,Sedarampattu
+33957,Madimangalam
+33962,Hajigarh
+33974,Dhaniakhali Halt
+33977,Belmuri
+33978,Porabazar
+33979,Chandanpur
+33980,Janai Road
+33983,Begampur
+33985,Sodpur
+33988,Khardaha
+33990,Rishra Railway Station
+34007,Chuchura
+34010,Palta
+34032,Adisaptagram
+34036,Bevara
+34044,Nallapadu
+34053,Halisahar
+34055,Memari
+34064,Bainchigram
+34065,Debipur
+34066,Bagila
+34081,Piler
+34099,Chanderiya Junction
+34135,Otivakkam
+34145,Ichhapur
+34152,Taraon
+34153,Nazareth
+34170,Ambur
+34201,Melattur
+34207,Melpatti
+34213,Pachchakuppam
+34217,Gudiyattam
+34254,Kavanur
+34258,Virinchipuram
+34273,Mukundarayapuram
+34286,Sevur
+34302,Mellacheruvu
+34316,Tiruttani
+34318,Chitteri
+34327,Anavardikhanpettai
+34335,Mahendravadi
+34376,Kaniyambadi
+34377,Onnupuram
+34391,Vinnamangalam
+34397,Ray
+34401,Valathoor
+34408,Gumia
+34427,Kandanur Puduvayal
+34463,Arantangi
+34475,Ayingudi
+34523,Kumaramangalam
+34529,Gooty Junction
+34534,Ankai
+34542,Pallevada
+34543,Kuri
+34561,Shilhauri Halt
+34563,Bahuara Halt
+34579,Pattabiram Military Siding
+34615,Kalanwali
+34616,Jodhka
+34641,Jamnagar
+34660,Jatpipli
+34663,Sadla
+34689,Sundaraperumal Kovil
+34690,Narasinganpet
+34708,Mutupet
+34730,Pandi
+34759,Panangudi
+34760,Devakottai Road
+34766,Manamadurai Junction
+34776,Karaikkurichchi
+34777,Melappalaiyam
+34780,Pettai
+34781,Parangipettai
+34785,Pasupatikovil
+34786,Adichchanur
+34787,Andampallam
+34788,Tandarai
+34792,Chinnababu Samudram
+34807,Arumuganeri
+34808,Mavur Road
+34809,Ammanur
+34812,Peravurani
+34833,Kudikadu
+34900,Mallividu
+34907,Kantakpalle
+34946,Karunguzhi
+34971,Olakur
+34997,Chandanattop
+34998,Kundara East
+34999,Ezhukone
+35027,Nedimolyanur
+35030,Mailam
+35039,Ponmalai (Golden Rock)
+35042,Srirangam
+35043,Pichchandar Kovil
+35044,Lalgudi
+35052,Kattur
+35057,Kallagam
+35061,Mandaveli
+35070,Vellur
+35075,Talanallur
+35079,Pavunur
+35082,Parikkal
+35101,Sengulam
+35131,Tiruvottiyur
+35138,Illavalengal
+35145,Kailasapuram
+35159,Tattapparai
+35172,Punggudi
+35175,Manaparai
+35177,Kolatur
+35179,Samudram
+35182,Chettiyapatti
+35185,Kalpattichatram
+35189,Ayyalur
+35190,Vadamadurai
+35191,Tamaraipadi
+35198,Sudiyur
+35201,Paramakkudi
+35222,Samayanallur
+35261,Dindigul Junction
+35290,Vellodu
+35299,Perungudi
+35376,Ennore
+35392,Kathivakkam
+35393,Thiruvottriyur
+35397,V.O.C. Nagar
+35417,Guduvancheri
+35418,Perungalattur
+35421,Karupatti
+35440,Kalligudi
+35441,Virudhunagar Junction
+35442,Sankaralingapuram
+35443,Srivilliputtur
+35444,Rajapalaiyam
+35448,Tenkasi Junction
+35450,Punalur
+35457,Bhisa Halt
+35458,Garha
+35459,Pabbapuram
+35460,Ganganapalli
+35465,Kuttakudi
+35466,Chinna Salem
+35468,Peddanayakkanpalaiyam
+35469,Minnampalli
+35470,Ayodhyapattanam
+35471,Salem East
+35480,Salem Town
+35481,Salem Market
+35483,Tulukapati
+35491,Kosad
+35493,Viravanallur
+35497,Kila Kadaiyam
+35500,Thathankulam
+35501,Srivaikuntam
+35513,Chatrappatti
+35514,Gomangalam
+35515,Pudunagaram
+35520,Rajagambiram
+35558,Vadhvana
+35568,Vellanur
+35571,Narthamalai
+35574,Sewri
+35576,Cotton Green
+35578,Dockyard Road
+35589,Wansjaliya Junction
+35636,Samdari Junction
+35639,Tuti Melur
+35640,Milavittan
+35641,Markapur Road
+35650,Garjee
+35654,Alakkudi
+35665,Zangalapalli
+35667,Jhawar
+35681,Palakollu
+35704,Dihakho
+35723,Sanawad
+35751,Atul
+35768,Vedchha
+35831,Karmad
+35862,Sayan
+35872,Nossam
+35876,Chavaj
+35879,Nabipur
+35918,Vadaj
+35945,Kharbhav
+35967,Namanasamudram
+35974,Vishwamitri Junction
+35975,Kodumunda
+35979,Perashshannur
+35980,Tirunnavaya
+35984,Vallikunnu
+35991,Ferok
+35998,Elattur
+36005,Payyoli
+36007,Nadapuram road
+36011,Jagannath Temple Gate
+36018,Etakkot
+36024,Pappinisseri
+36030,Baripur Mandala
+36031,Kayavarohan
+36054,Bekal Fort
+36082,Kalanad
+36096,Cherukuvada
+36099,Doddampatti
+36100,Paradgaon
+36106,Satuna
+36108,Ashti
+36125,Vangaon
+36126,Saphale
+36156,Sivapur
+36157,Chikjajur Junction
+36167,Birur Junction
+36172,Kyatanakeri Road
+36185,Titwala
+36193,Tondamanpatti
+36196,Kalva
+36201,Mumbra
+36264,Paddhari
+36322,Kashipur Junction
+36328,Got
+36339,Mundka
+36351,Narhat Halt
+36399,Bathinda Junction
+36405,Suratgarh Junction
+36419,Patas
+36438,Basharatganj
+36447,Mangrolia
+36448,Kaher
+36449,Dosvada
+36450,Ukai Songhad
+36451,Lakkadkot
+36452,Kolde
+36453,Dhekvad
+36456,Sindkheda
+36457,Betawad
+36458,Bhortex
+36459,Amalner
+36460,Takarkhede
+36461,Chavalkhede
+36557,Seohara
+36558,Dhampur
+36559,Habibwala
+36560,Bundki
+36561,Fazalpur
+36562,Muzzampur Narayan Junction
+36566,Najibabad Junction
+36568,Landaura
+36572,Roorkee
+36573,Baliakheri
+36574,Murad Nagar
+36578,Meerut South
+36590,Bala road
+36599,Lakhtar
+36615,Rahmatnagar
+36616,Haidergarh
+36617,Akbarganj
+36618,Musafir Khana
+36619,Shivnagar
+36620,Bandhua Kalan
+36623,Maa Ahorwa Bhawani Dham railway station
+36633,Sultanpur Junction
+36636,Sabli Road
+36644,Khareshwar Road
+36648,Kanakot
+36650,Sindhawadar
+36652,Lunseriya
+36654,Ramparda
+36655,Muli road
+36662,Digsar
+36663,Chamaraj
+36673,Simbhauli
+36674,Kuchesar Road
+36677,Babugarh
+36699,Monacherra
+36703,Ditokcherra
+36705,Capper Quarry
+36707,Kille
+36712,Pandaravadai
+36743,Tiruverumbur
+36755,Devangonthi
+36756,Whitefield (Kadugodi)
+36757,Hoodi
+36758,Kamasamudram
+36760,Bisanattam
+36761,Mulanur
+36783,Dhekiajuli Road
+36784,Misamari Halt
+36818,Apta
+36833,Sajerpar
+36854,Gumanihat
+36886,Thiruvananthapuram Pettah
+36895,Kappil
+36898,Eravipuram
+36904,Thiruvalla
+36911,Mavelikkara
+36917,Thrippunithura Terminal
+36935,Banni Koppa
+36938,Bhanapur
+36943,Navalgund Road
+36945,Kondikoppa
+36968,Ghanpur
+36969,Raghunathpalli
+36970,Jangaon
+36984,Ambarnath
+36991,Ghorawadi
+36996,Baitalpur
+36997,Chauri Chaura
+37003,Badnapur
+37015,Magra Hat
+37016,Bahirpuya Halt
+37017,Sangrampur
+37018,Netra
+37019,Basuldanga
+37024,Jaynagar Majilpur
+37025,Mathurapur Road
+37026,Madhabpur
+37027,Gocharan
+37028,Hogla
+37029,Dakshin Barasat‎
+37038,Jadavpur
+37039,Kavi Subhash (Blue Line)
+37039,New Garia
+37046,Gourdaha Halt
+37048,Bidyadharpur
+37056,Matania Anantapur
+37057,Madhyampur
+37058,Taki Road
+37059,Bhyabla Halt
+37060,Champapukur
+37061,Lebutala
+37065,Sanhati Halt
+37066,Guma
+37069,Bhagwangola
+37070,Jiaganj
+37071,Plassey
+37072,Berhampore Court
+37081,Taherpur
+37082,Jhingura
+37084,Dagmagpur
+37091,Jigna
+37096,Lakhpat Nagar
+37097,Parsa Tiwari
+37098,Basti
+37099,Khalilabad
+37112,Bihat Halt
+37113,Lakhminia
+37116,Mansi Junction
+37117,Mahes Khunt
+37118,Katareah
+37127,Masudan
+37131,Ghogha
+37190,Pirpainti
+37199,Gumani
+37208,Nagarnabi
+37210,Rajgram
+37211,Banshlai Bridge
+37214,Guskara
+37223,Pakur
+37229,Rampurhat Junction
+37266,Zamania
+37267,Dheena
+37268,Tulsi Ashram Railway Station
+37271,Bihiya
+37272,Sikariya Railway Station
+37274,Dumraon
+37276,Gahmar
+37277,Karahia Halt
+37308,Barda
+37325,Jahangirabad Rj
+37373,Chanol
+37381,Jalia Devani
+37391,Silanibari
+37397,Alia Bada
+37407,Hapa
+37422,Kanalus Junction
+37424,Sir Gurudas Banerjee Halt
+37443,Kattar Singh Wala
+37445,Birohe
+37447,Bheerpur
+37469,Sinhan
+37476,Bhatel
+37481,Meghpur Titodi
+37482,Bhopalka
+37484,Bhatiya
+37489,Okha Madhi
+37491,Gorinja
+37495,Varvala
+37502,Palghar
+37513,Tatibahar
+37514,Dubia
+37518,Lodhipur Bishanpur
+37522,Pilkhua
+37544,Nizbargang
+37573,Badulipar
+37583,Kharahat
+37585,Varediya
+37594,Gossaigaon Hat
+37634,Nalikul
+37641,Maradanga
+37650,Howrah Maidan
+37654,Bhattanagar
+37656,Baginadi
+37663,Margutti
+37667,Kamalapura
+37668,Nawadgi
+37669,Mahagaon
+37672,Kurukotta
+37681,Nakachari
+37691,Khurda Town
+37702,Behula
+37704,Guptipara
+37716,Gopinathpur
+37717,Shyamsundar
+37718,Seharabazar
+37745,Majhdia
+37748,Harish Nagar Halt
+37789,Jaklair
+37790,Tarak Nagar
+37805,Narendrapur
+37815,Patam Halt
+37852,Madurantakam
+37854,Bariwala
+37863,Mayurhat
+37866,Vikravandi
+37882,Shahdara
+37889,Yadalapur
+37890,Sri Bala Brahmeshwara Jogulamba
+37892,Pandu Mewas
+37894,Kollidam
+37898,Valluru
+37922,Banka Ghat
+37934,Gulzarbagh Railway Station
+37945,Teka Bigha Halt
+37948,Manjhauligram H
+37949,Khusropur
+37950,Hardas Bigha
+37953,Rajendra Pul
+37955,Chakia Thermal Halt
+37964,Hathidah Junction
+37972,Luckeesarai Junction
+37975,Mankatha
+37976,Dhurant Jwas Halt
+38003,Sabdalpur Junction
+38014,Shri Krishna Janam Asthan
+38015,Dhandarikalan
+38055,Nilambazar
+38066,Falaknuma Terminal (u/c)
+38068,Dabirpura
+38097,Ara Junction
+38115,Reddipalayam
+38116,Palayasivaram
+38117,Nathapettai
+38118,Kanchipuram East
+38121,Kanchipuram
+38124,Tirumalpur
+38129,Venkatesapuram
+38130,Mambalappattu
+38131,Turinjapuram
+38133,Ottankadu
+38136,Muzaffarpur Junction
+38149,Kurinjipadi
+38150,Uttangalmangalam
+38152,Vriddhachalam Junction
+38156,Virbhadra
+38160,Alattambadi
+38161,Valaramanikkam
+38166,Tirumanthikunam
+38169,Thiruvarur Junction
+38176,Vriddhachalam Town
+38178,Ariyalur
+38180,Pullampadi
+38181,Uttamar Kovil
+38202,Kadayanallur
+38208,New Aryankavu
+38210,Edapalayam
+38213,Kalthuruthy
+38217,Tenmalai
+38218,Ottakkal
+38229,Kilikollur
+38238,Nalli
+38246,Naraikkinar
+38253,Ravanasamudram
+38265,Podanur Junction
+38270,Tiruppachetti
+38285,Padi
+38286,Anna Nagar West
+38292,Manavur
+38293,Thiruvalangadu
+38294,Walaja Road Junction
+38295,Kaparpura
+38297,Danishpet
+38299,Neykkarapatti
+38300,Virapandy Road
+38301,Magudanchavadi
+38302,Cauvery
+38314,Totiyapalayam
+38315,Vijayamangalam
+38316,Sulur Road
+38317,Coimbatore North
+38322,Mankara
+38323,Ottappalam
+38325,Chhintanwala
+38326,Shoranur Junction
+38340,Mukkali
+38341,Dharmadam
+38344,Kannur
+38346,Valapattanam
+38347,Kannapuram
+38348,Payangadi
+38349,Elimala
+38351,Kasaragod
+38352,Uppala
+38353,Manjeshwar
+38354,Ullal
+38358,Mangaluru Central
+38364,Dhablan
+38365,Bommasamudram
+38366,Peyanapalli
+38367,Siddampalli
+38368,Putalapattu
+38369,Kariha
+38370,Pakala Junction
+38371,Chandragiri
+38376,Jaspalon
+38377,Tirupati West
+38379,Tirupati
+38380,Tiruchanur
+38381,Tiruchanur
+38382,Dhindsa
+38383,Saidanwala
+38384,Dharmapuri
+38385,Mecheri Road
+38392,Karuvalli
+38394,Palakkodu
+38395,Marandahalli
+38396,Rayakkottai
+38397,Periyanaga Thunai
+38398,Kelamangalam
+38399,Hosur
+38400,Anekal Road
+38415,Mallur
+38420,Namakkal
+38432,Mohanur
+38433,Vangal
+38436,Karur Junction
+38439,Chavadipalaiyam
+38440,Pasur
+38441,Kolanalli
+38442,Pugalur
+38443,Murthipalayam
+38445,Mayanoor
+38448,Lalapet
+38457,Kulithalai
+38458,Marudur
+38460,Pettaivaytalai
+38461,Jiyapuram
+38462,Velliyanai
+38463,Palayam.I
+38464,Vembur
+38465,Eriodu
+38467,Runneymede
+38468,Coonoor
+38472,Aruvankadu
+38476,Vadanamkurushshi
+38477,Kulukkallur
+38478,Cherukara
+38480,Pattikkad
+38481,Melattur
+38482,Tuvvur
+38483,Vaniyambalam
+38489,Daula
+38492,Mulagunnathukavu
+38493,Kairon
+38495,Malmori
+38506,Chalakudi
+38507,Divine Nagar (Muringoor)
+38508,Karukkutty
+38509,Bhalojala
+38510,Aluva
+38513,Cochin University
+38514,Idappalli
+38515,Satnaur Badesron
+38525,Tripunittura
+38529,Mattancheri
+38530,Cochin Harbour Terminus
+38531,Amalanagar
+38532,Guruvayur
+38535,Tirunettur
+38536,Kumbalam
+38539,Aroor
+38540,Ezhupunna
+38541,Vayalar
+38542,Cherthala
+38543,Tiruvizha
+38544,Mararikulam
+38545,Kalavur
+38546,Tumboli
+38557,Thakazhi
+38561,Kayamkulam Junction
+38569,Chottanikkara Road
+38573,Piravam Road
+38580,Vaikam Road
+38586,Kuruppanthara
+38594,Chingavanam
+38595,Changanasseri
+38606,Sasthamkotta
+38608,Perinad
+38609,Mayyanad
+38610,Edavai
+38611,Akathumuri
+38614,Chirayinkeezh
+38615,Murukkampuzha
+38616,Kaniyapuram
+38617,Kazhakuttam
+38626,Nemom
+38627,Balaramapuram
+38628,Neyyattinkara
+38629,Amaravila
+38630,Dhanuvachapuram
+38631,Parassala
+38632,Kuzhiturai West
+38633,Kuzhiturai
+38634,Palliyadi
+38635,Eraniel
+38636,Viranialur
+38637,Nagercoil Town
+38643,Suchindram
+38646,N. Panakudi
+38651,Valliyur
+38652,Nanguneri
+38669,Padil
+38673,Butewala
+38695,Nagari
+38708,Kaulseri
+38709,Rajomajra
+38727,Balapalle
+38730,Koduru
+38732,Anantarajupet
+38733,Obulavaripalli Junction
+38736,Pullampet
+38737,Razampet
+38738,Hastavaramu
+38739,Nandalur
+38741,Mantapapalle
+38743,Krishnapuram
+38744,Gangayapalle
+38745,Kamalapuram
+38746,Yerraguntla
+38755,Mangapatnam
+38761,Kondapuram
+38763,Regadipalli
+38764,Gumtali
+38767,Rayalcheruvu
+38787,Timmanacherla
+38791,Guntakal Junction
+38800,Aspari
+38801,Kuppagal
+38802,Iranagallu
+38803,Mantralayam Road
+38804,Matmari
+38806,Chachaura Binaganj
+38807,Raichur
+38816,Yermaras
+38817,Chikkasuguru
+38825,Yadgir
+38833,Shampurahalli
+38834,Nalwar
+38835,Halakatta
+38848,Pagidirai
+38852,Chandrabanda
+38853,Panduranga Swamy Road
+38854,PJP Road
+38857,Gadwal
+38859,Devarkadre
+38867,Patchur
+38868,Kuppam
+38869,Gudupulli
+38871,Varadapura
+38872,Bangarpet Junction
+38875,Byatrayanahalli
+38879,Malur
+38884,Whitefield
+38886,Jandoke
+38887,Krishnarajapura
+38889,Bangalore Cantonment
+38892,"Nadaprabhu Kempegowda Station, Majestic"
+38908,Kallar
+38909,BEML Nagar
+38910,Coromandel
+38911,Oorgaum
+38912,Marikuppam
+38925,Rajanukunte
+38930,Dodballapur
+38933,Thondebhavi
+38934,Someshwara
+38936,Gauribidanur
+38941,Hindupur
+38943,Chakarlapalli
+38944,Makkajipalli
+38945,Nagasamudram
+38957,Anantapur
+38961,Garladinne
+38971,Kalluru Junction
+38981,Gulapalyamu
+38982,Hanuman Circle
+38984,Pamidi
+38987,Turkapalli
+38988,Gooty Fort Railway Station
+38994,Devanahalli
+38995,Hunasenahalli
+38997,Hudukula
+38998,Basampalle
+38999,Kothacheruvu
+39000,Sri Satya Sai Prashanthi Nilayam Railway Station
+39001,Narayanapuram
+39002,Chinnekuntapalle
+39004,Mudigubba
+39007,Malakavemula
+39008,Kalasamudram
+39009,Kadiri
+39010,Nallacheruvu
+39011,Tanakallu
+39014,Kurabalakota
+39017,Madanapalle Road
+39018,Vayalpad
+39019,Kalikiri
+39021,Pulicherla
+39022,Damalcheruvu
+39025,Kodigehalli
+39026,Pantharapalya - Nayandahalli
+39028,Nayandahalli
+39031,Kengeri
+39033,Nidur
+39034,Challaghatta
+39035,Hejjala
+39038,Bidadi
+39039,Ketohalli
+39040,Ramanagaram
+39042,Channapatna
+39043,Nidaghatta
+39045,Maddur
+39048,Hanakere
+39057,Yeliyur
+39062,Shrirangapattana
+39063,Naganahalli
+39068,Temburu
+39073,Ashokapuram
+39074,Kadakola
+39075,Tandavapura
+39076,Sujatapuram
+39077,Nanjangud Town
+39081,Kavalande
+39082,Badanaguppe
+39083,Mariyalaganavadi
+39084,Chamarajanagar
+39085,Tilhar
+39090,Krishnarajasagara
+39091,Kallur Yedahalli
+39092,Sagarakatte
+39094,Krishnaraja Nagar
+39095,Hosa Agrahara
+39096,Hole Narsipur
+39098,Mavinakere
+39104,Derol
+39105,Koravangala
+39110,Dudda
+39111,Habhanghatta
+39116,Arsikere Junction
+39123,Balupete
+39124,Donigal
+39126,Kadagaravalli
+39130,Yedekumeri
+39147,Shrivagilu
+39152,Bajakere
+39153,Kodimbala
+39154,Kabaka Puttur
+39161,Bantawal
+39166,Soladevanahalli
+39172,Chikka Banavara
+39173,Muddalinganahalli
+39174,Nidvanda
+39175,Hirehalli
+39179,Gollahalli
+39180,Bhairanayakanahalli
+39181,Doddabele
+39182,Dobaspet
+39186,Kyatsandra
+39190,Tumakuru
+39202,Mallasandra
+39205,Nittur
+39207,Sampige Road
+39212,Ammasandra
+39219,Kardi
+39224,Tiptur
+39230,Honnavalli Road
+39238,Banavar
+39239,Devanur
+39243,Ballekere
+39247,Kadur Junction
+39248,Silaut
+39249,Siho
+39251,Narayanpur Anant
+39257,Nagavangala
+39260,Ajjampura
+39261,Dubaha
+39266,Hosadurga Road
+39276,Gatora
+39293,Ramagiri
+39294,Holalkere
+39296,Nulenuru
+39301,Chikkandavadi
+39304,Sasalu
+39305,Mayakonda
+39306,Kodaganuru
+39308,Tolahunse
+39310,Amaravathi Colony Junction
+39315,Harihar
+39318,Ranebennuru
+39319,Byadgi
+39322,Kargi Road
+39323,Belgahna
+39327,Hubballi South
+39343,Kendri
+39356,Kyarakoppa
+39357,Mugad
+39358,Kambarganvi
+39366,Nagargali
+39370,Devarayi
+39373,Shivathan
+39377,Londa Junction
+39381,Khanapur
+39401,ldalhond
+39408,Karpurigram
+39413,Bhatiel
+39414,Belagavi
+39415,Sambre
+39416,Sulebhavi
+39417,Suldhal
+39418,Pachhapur
+39419,Bagewadi
+39420,Chikodi Road
+39421,Raybag
+39422,Chinchli
+39423,Kudachi
+39424,Ugar Khurd
+39425,Shedbal
+39447,Mangalagiri
+39488,Miraj Junction
+39496,Solur
+39497,Tippasandra
+39498,Kunigal
+39500,Siddapura
+39501,Yediyur
+39509,Shantigrama
+39511,Rayadurg Junction
+39513,Kadiridevarapalli
+39522,Bisale Halli
+39524,Sakharayapatna
+39536,Tarikere Junction
+39537,Bellenahalli
+39538,Masarahalli
+39540,Shimoga Town
+39542,Harnahalli
+39543,Kumsi
+39544,Arasalu
+39545,Anandapuram
+39546,Sagar Jambagaru
+39547,Talaguppa
+39549,Amritapura
+39550,Bettadanagenahalli
+39551,Chitradurga
+39552,Somaguddu
+39553,Bommagundanakere
+39554,Kusugal
+39561,Gadag Junction
+39567,Sompur Road
+39568,Harlapur
+39574,Titabar
+39575,Lataguri
+39576,Bhitiharwa Ashram
+39588,Kuthur
+39592,New Changrabandha
+39604,Hosapete Junction
+39607,Madarihat
+39614,Arvi
+39615,Khubagaon
+39616,Pachegaon
+39619,Dhanori
+39639,Pargothan
+39640,Rohna Town
+39641,Bayaluvaddigeri
+39642,Gadiganuru
+39648,Kaladehi
+39649,Devri P.H.
+39650,Sukrimangela
+39654,Gwarighat
+39655,Ghunsore
+39656,Nidhani
+39657,Bargi
+39660,Shikara
+39662,Chiraidongri
+39667,Daroji
+39668,Kudatini
+39677,Kutrukhamar PH
+39679,Ghusia Kalan Halt
+39680,Chilkahar
+39681,Dhanari
+39682,Chaunrah
+39683,Agrer
+39684,Deypur P.H.
+39685,Nizsariha Halt
+39686,Pali
+39687,T sakibanda
+39688,Bantanahal
+39689,Hombala
+39692,Kiratpur
+39693,Saifai
+39698,Somanakatti
+39702,Guledgudda Road
+39703,Navanagar
+39704,Bagalkot
+39706,Chikka-Shellikeri
+39711,Saghar Sultanpur Halt
+39713,Barkagaon Halt
+39714,Bishunpur Mahuari Halt
+39715,Panchdeori Halt
+39721,Almatti
+39722,Wandal
+39723,Angadgeri
+39724,Basavana Bagewadi Road
+39725,Mulvad
+39726,Ibrahimpur
+39727,Vijayapura
+39732,Minchnal
+39737,Nimbal
+39738,Chorgi
+39739,Indi Road
+39740,Lachyan
+39742,Tadwal
+39743,Aherwadi
+39750,Solapur
+39753,Sulikeri
+39754,Hire Shellikeri
+39759,Vyasa Colony Junction
+39762,Mariyammanahalli
+39763,Hagari Bommanahalli
+39765,Bennihalli
+39766,Harapanahalli
+39767,Teligi
+39768,Ramgad
+39769,Yeshwanthnagar
+39770,Swamihalli
+39773,Bannihatti
+39777,Ranjitpura
+39779,Somalapuram
+39780,Shingatgere
+39791,Castle Rock
+39793,Kulem
+39794,Kalem
+39796,Sanvordem Curchorem
+39798,Chandar Goa
+39811,Majorda Junction
+39815,Dabolim
+39825,Garopara
+39826,Kalchini
+39835,Basbari
+39836,Moterjhar
+39837,Peppeganj
+39838,Venkatachalam Junction
+39839,Nellore South
+39840,Nellore
+39841,Kodavaluru
+39842,Alluru Road
+39843,Tettu
+39844,Ulavapadu
+39845,Tanguturu
+39846,Surareddipalem
+39849,Bihara
+39853,Damchara
+39868,Bandarkhal
+39899,Mualkhang
+39924,Pencharthal
+39927,Nalkata
+39929,Manu
+39930,SK Para
+39932,Bishramganj
+39934,Shantirbazar Railway Station
+39937,Jolaibari
+39941,Belonia
+39944,Ammanabrolu
+39945,Uppugunduru
+39946,Chinna Ganjam
+39947,Kadavakuduru
+39948,Kottapandillapalli
+39949,Ipurupalem
+39950,Appikatla
+39951,Machavaram
+39952,Modukuru
+39953,Valliveru
+39954,Kolakur
+39955,Duggirala
+39956,Peddavadlapudi
+39957,Krishna Canal Junction
+39963,New Harangajao
+39970,Jatinga Lampur
+39975,Mahur
+39980,Migrendisa
+39981,Gannavaram
+39982,Pedda Avutapale
+39983,Telaprolu
+39984,Nuzvid
+39985,Powerpet
+39986,Denduluru
+39987,Pulla
+39988,Kaikaram
+39989,Chebrol
+39990,Navabpalem
+39991,Marampalli
+39992,Nidadavolu Junction
+39993,Brahmanagudem
+39994,Bikkavolu
+39995,Gudaparti
+40001,Mupa
+40006,Maibang
+40009,Sukritipur
+40011,Shasan Halt
+40012,Imli
+40013,Olapur
+40014,Samalkot Junction
+40015,Sarpavaram
+40016,Chandrampalem
+40017,Gollaprolu
+40018,Mallavaram
+40019,Durgada Gate
+40020,Ravikampadu
+40021,Annavaram
+40022,Timmapuram
+40023,Hamsavaram
+40024,Gullipadu
+40025,Regupalem
+40026,Elamanchili
+40027,Narasingapalli
+40028,Bayyavaram
+40029,Kasimkota
+40030,Thadi
+40031,Duvvada
+40032,Yogendra Dham Halt
+40033,Bangain
+40034,Ganga Dham
+40036,Trilokpur
+40038,Gokhula
+40039,Marajdwa
+40040,Purushottampur Halt
+40041,Kangali Halt
+40042,Basantpur Halt
+40056,Pondugula
+40057,Visakhapatnam
+40058,Kondagunta
+40059,Vendodu
+40060,Nidigallu
+40061,Sri Kalahasti
+40062,Rachagunneri
+40065,Chinnaravuru
+40066,Vemuru
+40067,Bhattiprolu
+40068,Pallikona
+40069,Repalle
+40071,Sangam Jagarlamudi
+40072,Namburu
+40077,Ambalgram
+40079,Pachandi
+40080,Kurmadanga Halt
+40081,Daskalgram
+40084,Gopalpurgram
+40085,Kopai
+40088,Kirnahar
+40089,Chowhatta
+40090,Takipur Halt
+40099,Bandarupalli
+40100,Mandapadu
+40101,Siripuram
+40102,Bellamkonda
+40104,Piduguralla
+40105,Tummalacheruvu
+40106,Nadikudi Junction
+40107,Rentachintala
+40108,Macherla
+40110,Vemuluripadu
+40111,Phirangipuram
+40112,Satulur
+40113,Kurichedu
+40114,Cumbum
+40115,Jaggambhotla Krishnapuram
+40116,Somidevipalle
+40117,Gudimetta
+40118,Giddalur
+40119,Hundur Halt
+40122,Kuju
+40123,Mandu
+40124,Charhi
+40125,Bes
+40126,Kistamasettipalli
+40127,Diguvametta
+40128,Gazulapalle
+40130,Rajsunakhala
+40136,Hunsi Hadgil
+40137,Panyam
+40138,Bugganpalle Cement Nagar
+40139,Betamcherla
+40140,Malkapuram
+40141,Banaganapalli
+40142,Sanjamala
+40143,Taradgaon
+40152,Adarki
+40155,Rahimatpur
+40178,Jammalamadugu
+40179,Proddatur
+40180,Madhura Nagar
+40182,Nidamanuru
+40183,Uppaluru
+40184,Tenneru
+40185,Tarigoppula
+40186,Indupalli
+40187,Dosapadu
+40188,Gudivada Junction
+40189,Moturu
+40190,Pasalapudi
+40191,Putlacheruvu
+40192,Mandavalli
+40193,Kaikaluru
+40194,Akividu
+40195,Bhimavaram Town
+40200,Bhimavaram Junction
+40205,Lakshminarayanapuram
+40206,Aravalli
+40207,Attili
+40208,Relangi
+40209,Tanuku
+40210,Satyavada
+40211,Gudlavalleru
+40212,Pennada Agraharam
+40213,Veeravasaram
+40215,Kakinada Town Junction
+40216,Aratlakatta
+40217,Karapa
+40218,Vakada
+40219,Velangi
+40220,Narasapurapupeta
+40226,New Loni
+40231,Matlabpur
+40233,Dausni
+40264,Mansurpur
+40266,Rohana Kalan
+40273,Panevadi
+40296,Vidyavihar
+40300,Dativali
+40306,Odha
+40307,Kasbe Sukene
+40312,Badhada
+40313,Pachora Junction
+40321,Savda
+40323,Chhanera
+40324,Pagdhal
+40325,Banapura
+40326,Dharamkundi
+40327,Sahjanwa
+40345,Dewanganj
+40352,Sorai
+40359,Pabai
+40367,Raukheri
+40370,Bareth
+40396,Gurla Junction
+40397,Keshorai Patan
+40399,Gurla W
+40400,Remount Road
+40402,Birlanagar
+40406,Mania
+40407,Bhandai Junction
+40414,Deen Dayal Dham
+40417,Mathura Junction
+40424,Hodal
+40429,Sholaka
+40458,Mamidipalli
+40459,Armur
+40483,Thiruvananthapuram Central
+40490,Panvel
+40492,Hazrat Nizamuddin Junction
+40493,Pragati Maidan
+40515,Phulera Junction
+40531,Ghagghar
+40543,Bhivandi Road
+40544,Bhoras Budrukh
+40545,Rajmane
+40563,Varkhedi
+40564,Pimpalgaon
+40565,Shendurni
+40566,Pahur
+40567,Bhagdara
+40568,Jamner
+40569,Mordar
+40570,Takal
+40571,Gurhi
+40572,Thukaithad
+40573,Adgaon Buzurg
+40574,Akot
+40578,Ugwe
+40579,Washim
+40581,Hingoli Deccan
+40582,Basmat
+40583,Khaigaon
+40584,Bir
+40585,Kesla
+40586,Taku
+40587,Pola-Patthar
+40588,Duhai
+40591,Chichonda
+40592,Pandhurna
+40593,Kalambha
+40594,Katol
+40599,Hirdamali
+40606,Hirdagarh
+40607,Junnordeo
+40608,Bordhai
+40622,Majri Nangal
+40626,Gaur
+40657,Timba Road
+40661,Damoh
+40665,Gadchandur
+40667,Pandar Pawani
+40671,Nowrozabad
+40672,Lakhakhera
+40673,Cotton Market
+40685,Churki
+40694,Ragaul
+40696,Ujiyarpur
+40698,Nazir Ganj
+40702,Basarhia Halt
+40710,Nagpur Road
+40713,Sheoprasadnager
+40715,Katni Murwara
+40716,Katni South
+40718,Bhatpura
+40719,Orr
+40720,Ashok Nagar
+40723,Guna Junction
+40727,Vijaipur
+40745,Semai
+40746,Orwara
+40749,Patratu
+40771,Munderwa
+40772,Jagatbela
+40773,Chureb
+40775,Dantia
+40778,Subansiri
+40779,Chital
+40780,Rukhai Halt
+40781,Tapona
+40782,Virarakkiyam
+40783,Ingorala
+40784,Katili
+40785,Timmachipuram
+40786,Rampur Halt Railway Station
+40787,Govindgarh Khokhar
+40789,Jaliya
+40791,Kharak
+40793,Farangipete
+40794,Deokali
+40796,Jhadupudi
+40797,Atrauli Road
+40798,Vishwavidyalaya
+40800,Ling
+40803,Ashapurna Devi
+40805,Kachnara
+40810,Magarpur
+40811,Mokar
+40812,Vadali Luter Road
+40815,Biyavra Rajgarh
+40834,Shivpuri
+40835,Tikamgarh
+40836,Maharaja Chhatrasal Station Chhatarpur
+40837,Basari
+40838,Duriyaganj
+40840,Harpalpur
+40841,Ghutai
+40843,Kulpahar
+40845,Baripura
+40846,Khairar Junction
+40848,Atarra
+40849,Badausa
+40850,Bharatkup
+40851,Shivrampur
+40852,Chitrakut Dham Karwi
+40855,Chithari
+40856,Raghouli
+40857,Singhpur Dumra
+40858,Ichauli
+40859,Ingohta
+40860,Bharwa Sumerpur
+40861,Dapsaura
+40862,Dohru
+40863,Ghatampur
+40864,Patara
+40865,Nawabganj Gonda
+40866,Katra
+40871,Sirhi Itara
+40872,Parichha
+40878,Ata
+40879,Kalpi
+40880,Lalpur
+40881,Jora Alapur
+40882,Bhulanpur
+40883,Sanichara
+40884,Bhind
+40885,Phoop
+40891,Khalilpur
+40893,Pataudi Road
+40904,Bari
+40905,Mohari Junction
+40907,Ranapura
+40908,Sirmuttra
+40909,Baseri
+40910,Shamshabad Town
+40911,Bah
+40912,Jaitpur Kalan
+40913,Fatehabad
+40914,Shahbad Muhammadpur
+40915,Palam
+40953,Potul
+40954,Daulatabad
+40955,Mukundawadi
+40956,Chikalthana
+40958,Khari Amrapur
+40967,Dudhaunda
+40970,Ugrasenpur
+40971,Mau Aimma Station
+40976,Sini Junction
+40985,Dandupur
+40986,Banda
+41001,Mirkhal
+41006,Hazur Sahib Nanded
+41007,Maltekd
+41010,Umri
+41011,Navipet
+41014,Shrinivasa Nagar
+41015,Parkham
+41016,Manoharabad
+41017,Dabilpur
+41023,Cavalry Barracks
+41025,Ammuguda
+41026,Ramakistapuram Gate
+41030,Lalaguda Gate
+41033,Sukhovi
+41046,Bhokar
+41047,Jawalgaon (Deccan)
+41048,Himayatnagar
+41049,Tinich
+41050,Kinwat
+41052,Ambari(Deccan)
+41053,Kosai
+41055,Talmadugu
+41056,Umram
+41057,Adilabad
+41059,Pimpalkutti
+41061,Kamalajari
+41066,Dharashiv
+41068,Shakar Nagar
+41069,Masani
+41070,Vrindavan
+41071,Lajpat Nagar
+41072,Sewa Nagar
+41073,Lodhi Colony
+41074,Vivekanand Puri
+41075,Dewa
+41076,Shakurbasti
+41077,Mangolpuri
+41078,Nangloi
+41079,Nangloi
+41080,Ghevra
+41081,Bahadurgarh
+41088,Rohad Nagar
+41089,Sampla
+41090,Kharawar
+41091,Asthal Bohar Junction
+41092,Samar Gopalpur
+41093,Karainthi
+41094,Kila Zafargarh
+41095,Julana
+41096,Jai Jai Wanti
+41097,Kinana
+41098,Bishanpura Haryana
+41099,Jind Junction
+41100,Barsola
+41101,Uchana
+41102,Ghaso
+41103,Narwana Junction
+41104,Dharodi
+41105,Kalwan
+41106,Tohana
+41107,Himmatpura
+41108,Kahangarh
+41109,Bareta
+41110,Budhlada
+41111,Mansa
+41112,Goneana
+41113,Chandbhan
+41114,Gangsar Jaito
+41115,Romana Albael Singh
+41116,Faridkot
+41117,Golehwala
+41118,Kasu Begu
+41124,Makrauli
+41125,Jasia
+41126,Rukhi
+41127,Bhainswan
+41128,Mundlana
+41129,Dhurana
+41130,Israna
+41131,Naultha
+41132,Binjhol Halt
+41133,Lahli
+41134,Kalanaur Kalan
+41137,Bamla
+41138,Jind City
+41140,Siwaha
+41149,Pilu Khera
+41150,Budhakhera
+41151,Sila Kheri Halt
+41152,Safidon
+41153,Karsindhu
+41154,Nara
+41155,Madlauda
+41156,Khukrana
+41157,Bhambewa
+41158,Churaman Nagri
+41171,Kalayat
+41172,Sajuma
+41173,Qutabpur
+41174,Kaithal
+41175,Geong
+41176,Tik
+41177,Pehowa Road
+41178,Pabnawa Jasmohinder
+41179,Pindarsi
+41180,Thanesar City
+41181,Kudni
+41182,Jamalpur Shaikhan
+41183,Pirthala Lalauda
+41184,Gajuwala
+41185,Uklana
+41186,Daulatpur Haryana
+41187,Barwala
+41188,Bugana
+41189,Dhansu
+41190,Raipur Haryana
+41191,Hisar Junction
+41192,Giddarbaha
+41193,Malout
+41195,Kotha Pakki
+41196,Hindumalkot
+41197,Orki
+41198,Fatuhi
+41200,Sriganganagar Junction
+41211,Fazilka Junction
+41218,Balangir Road
+41219,Chandikhole Road
+41231,Brahmani
+41237,Limbodra
+41246,Dhaban
+41247,Sangaria
+41248,Nawan
+41249,Hanumangarh Junction
+41250,Dabli Rathan
+41251,Chhatna
+41252,New Giridih
+41283,Chengannur
+41284,Pili Bangan
+41285,Amarpura Rathan
+41286,Rangmahal
+41288,Biradhwal
+41289,Rajiyasar
+41290,Arjansar
+41292,Malkisar
+41293,Nathwana
+41294,Dulmera
+41295,Dhirera
+41296,Kanasar
+41297,Lalgarh Junction
+41309,Berore
+41327,Achhnera Junction
+41329,Bayana Junction
+41365,Mandhali
+41368,Hanumangarh Town
+41369,Tibi
+41370,Talwara Jhil
+41371,Khinaniyan
+41372,Nohar
+41373,Diplana
+41374,Gogameri
+41375,Tahsil Bhadra
+41376,Kalana
+41377,Anupshahr
+41378,Sidmukh
+41379,Hansiawas
+41380,Narwasi
+41383,Sardargarh
+41384,Sarupsar Junction
+41388,Raghunathgarh
+41389,Kalyankot
+41390,Shri Vijainagar
+41391,Jaitsar
+41392,Gajsinghpur
+41393,Shri Karanpur
+41394,Kesri Singhpur
+41398,Hathikali
+41403,Banwali
+41404,Sadulshahar
+41405,Budh Singhwala
+41406,Dholipal
+41407,Hirnawali
+41408,Nal
+41409,Gajner
+41410,Diyatra Road
+41411,Nokhra
+41412,Khidrat
+41413,Sird
+41414,Bap
+41415,Malar
+41418,Muktsar
+41419,Jalalabad
+41422,Wadrengdisa
+41423,Kalachand
+41424,Dibolong
+41429,Daotuhaja
+41431,Chandranathpur
+41435,Ratabari
+41436,Phakhoagram
+41437,Eraligul
+41439,Katlicherra
+41440,Manipur Bagan
+41441,Jamira
+41442,Ramnathpur
+41443,Mohammadpur
+41466,Delhi Azadpur
+41467,Khera Kalan
+41468,Holambi Kalan
+41469,Narela
+41470,Barota
+41471,Harana Kalan
+41479,Sonipat Junction
+41481,Sandal Kalan
+41482,Rajlu Garhi
+41483,Babarpur
+41484,Kohand
+41485,Gharaunda
+41486,Karnal
+41487,Nilokheri
+41488,Dhoda Kheri
+41489,Dhirpur
+41490,Dhola Mazra
+41491,Shahabad Markanda
+41492,Mohri
+41493,Dhulkot
+41499,Dapper
+41501,Chandigarh Railway Station
+41504,Chandi Mandir
+41508,Sahibzada Ajitsingh Nagar (Mohali)
+41509,Kharar
+41511,Morinda Junction
+41515,New Morinda Junction
+41516,Khamanon
+41517,Lal kalan
+41521,Sanehwal
+41522,Shimla
+41530,Paluvayi
+41531,Vivek Vihar
+41532,Modi Nagar
+41535,Daurala
+41536,Pudgam Ganeshpura
+41537,Saharanpur Junction
+41538,Sarsawa
+41539,Yamunanagar Jagadhri
+41540,Darazpur
+41541,Barara
+41542,Kesri
+41543,Dukheri
+41548,Rajpura Junction
+41554,Sirhind Juntion
+41555,Mandi Gobindgarh
+41556,Khanna
+41557,Doraha
+41560,Ludhiana Junction
+41561,Kherli
+41563,Phillaur Junction
+41565,Phagwara Junction
+41566,Jalandhar Cantonment Junction
+41567,Suranussi
+41568,Baba Bakala Raiya
+41569,Arkha
+41570,Attari
+41571,Behta Hazipur
+41572,Noli
+41573,Nusratabad Kharkhari
+41574,Gotra
+41575,Fakharpur
+41576,Sanehra Halt
+41577,Ahera Halt
+41578,Baghpat Road
+41579,Sujra
+41580,Alawalpur Idrispur
+41581,Barka
+41582,Baraut
+41583,Qasimpur Kheri
+41584,Kandhla
+41586,Thana Bhawan Town
+41587,Nanauta
+41588,Rampur Maniharn
+41589,Bhankla
+41590,"DMW, Patiala"
+41591,Patiala
+41601,Chautara
+41604,Bassi Pathanam
+41605,Kurali
+41606,Bhoyani
+41629,Rupnagar
+41630,Naya Nangal
+41631,Kanoh
+41632,Una Himachal
+41633,Churaru Takarla
+41634,Amb Andaura
+41642,Kila Raipur
+41643,Ahmedgarh
+41644,Malerkotla
+41645,Sangrur
+41646,Chajli
+41654,Lehra Gaga
+41661,Jagraon
+41662,Talwandi
+41663,Bahram
+41664,Malupota
+41665,Banga
+41667,Nawanshahr Daoba Junction
+41668,Alachor
+41669,Garhshankar
+41670,Saila Khurd
+41671,Mahngarwal Doaba
+41672,Jaijon Doaba
+41673,Khurdpur
+41674,Jamsher Khas
+41675,Kapurthala
+41676,Makhu
+41681,Alawalpur
+41682,Dasuya
+41683,Mukerian
+41684,Mirthal
+41689,Pathankot Junction
+41690,Dalhousie Road
+41691,Nurpur Road
+41692,Talara
+41693,Jawanwala Shahr
+41694,Harsar Dehri
+41695,Meghrajpura
+41696,Nagrota Suriyan
+41698,Sultanabad
+41711,Koparlahar
+41712,Kangra
+41713,Kangra Mandir
+41714,Samloti
+41715,Nagrota
+41716,Chamunda Marg
+41717,Paror
+41718,Palampur Himachal
+41719,Patti Rajpura
+41720,Panchrukhi
+41721,Baijnath Paprola
+41724,Ahju
+41725,Joginder Nagar
+41726,Govindwal Sahib
+41727,Vain Puin
+41729,Tarn Taran Junction
+41732,Patti
+41733,Khem Karan
+41734,Verka Junction
+41736,Jaintipura
+41737,Dhariwal
+41738,Gurdaspur
+41739,Parmanand
+41740,Ghatwad
+41741,Sarna
+41742,Majitha
+41743,Kotla Gujran
+41744,Fatehgarh Churian
+41745,Hardorawal
+41746,Ramdas
+41747,Rattar Chattar
+41748,Dera Baba Nanak
+41760,Chhan Arorian
+41761,Chak Dayala
+41762,Vijaypur Jammu
+41763,Bari Brahman
+41767,Manwal
+41771,Ramnagar (J&K)
+41775,Sadura
+41776,Anantnag
+41777,Bijbiara
+41778,Panzgom
+41779,Srinagar Railway Station
+41780,Badgam station
+41781,Mazhom
+41782,Hamre
+41783,Sopur
+41784,Palam Vihar
+41785,Basai Dhankot
+41786,Tajnagar
+41787,Jataula Jauri Sampka
+41788,Inchhapuri
+41789,Nangal Mundi
+41790,Dahina Zainabad
+41791,Kanina Khas
+41792,Mahendragarh
+41793,Zerpur Pali
+41794,Nanwan
+41795,Satnali
+41796,Rampura Beri
+41797,Gugulwa Kirtan
+41798,Harpalu
+41799,Kandhran
+41800,Aslu
+41801,Depalsar
+41802,Juharpura
+41803,Randheja
+41804,Parhihara
+41805,Talchhapar
+41806,Sujangarh
+41807,Ladnun
+41808,Jaswantgarh
+41809,Balsamand
+41810,Sanvrad
+41811,Marwar Balia
+41812,Pirwa
+41813,Choti Khatu
+41814,Khatu
+41815,Kiroda
+41825,Degana Junction
+41827,Ren
+41833,Jogi Magra
+41835,Kharia Khangarh
+41838,Jajiwal
+41841,Salawas
+41842,Luni Junction
+41843,Satlana
+41844,Miyon Ka Bara
+41845,Jethantri
+41848,Khed Temple
+41851,Khadeen
+41852,Gagariya
+41855,Jaisindar
+41857,Tarsai
+41860,Daund Junction Chord Line
+41861,Saneh Road
+41862,Rajaldesar
+41863,Parsneu
+41864,Sital Nagar
+41865,Bigga
+41866,Shri Dungargarh
+41867,Banisar
+41868,Napasar
+41869,Gadhwala
+41870,Udramsar
+41871,Surpura
+41872,Nokha
+41873,Chilo
+41874,Shri Balaji
+41875,Alai
+41876,Badwasi
+41877,Marwar Mundwa
+41878,Khajwana
+41879,Deswal
+41880,Marwar Chapri
+41881,Nosaria
+41882,Golsar
+41883,Melusar
+41884,Udasar
+41908,Kairla
+41909,Rohat
+41910,Bomadra
+41911,Farrukhnagar
+41912,Gokulgarh
+41913,Palhawas
+41914,Machhrauli
+41915,Jhajjar Junction
+41916,Dighal
+41917,Karnawas New Grain Market
+41918,Bharawas
+41919,Bawal
+41920,Ajaraka
+41921,Khanpur Ahir
+41922,Harsauli
+41923,Khairthal
+41924,Ghatla
+41925,Parisal
+41926,Jatusana
+41927,Nangal Pathani
+41928,Kosli
+41929,Sudharana
+41930,Mohanbari
+41931,Jharli
+41932,Patuwas Mahrana
+41933,Charkhi Dadri
+41953,Fatehgarh Haryana
+41970,Manheru
+41972,Bawani Khera
+41973,Jita Kheri
+41980,Satrod
+41981,Jakhod Khera
+41982,Mandi Adampur
+41985,Baragudha
+41986,Charaud
+41987,Naloi Barwa
+41988,Siwani
+41989,Jhunpa
+41990,Laseri
+41995,Kathuwas
+41996,Narnaul
+41998,Dabla
+41999,Jhilo
+42000,Maonda
+42001,Nim Ka Thana
+42002,Bhagega
+42003,Kanwat
+42004,Khachera
+42005,Shri Madhopur
+42006,Ringas Junction
+42007,Badhal
+42008,Pachar Malikpura
+42009,Sanodiya
+42010,Khandel
+42011,Peeplee Ka Bas
+42024,Bangurgram
+42026,Ras
+42046,Shri Amirgadh
+42047,Iqbal Gadh
+42048,Dharewada
+42049,Siddhpur
+42050,Kamli
+42066,Naya Kharadia
+42067,Thathana Mithri
+42072,Parbatsar City
+42090,Thudiyalur
+42097,Periyanaikanpalaiyam
+42129,Parmanandpur Junction
+42150,Chilbila Junction
+42167,Gosaingram
+42170,Mankapur Junction
+42182,Jaunpur Junction
+42206,Himmatnagar Junction
+42209,Banihal
+42225,Adarshnagar
+42226,Rajosi
+42227,Bijainagar
+42228,Gulabpura
+42229,Rupaheli
+42230,Bhojaras
+42231,Sareri
+42232,Hamirgarh
+42233,Gangarar
+42234,Det
+42237,Ordi
+42240,Shambhupura
+42241,Gambhiri Road
+42252,Nimbahera
+42253,Jawad Road
+42255,Bisalwas Kalan
+42256,Harkia Khal
+42257,Matyakheri
+42259,Nimach
+42260,Jamuniya Kalan
+42268,Mandsor
+42269,Sindpan
+42270,Dalauda
+42272,Nityanand Dham
+42275,Dhosawas
+42308,Nauganwan
+42309,Pritam Nagar
+42310,Runija
+42311,Sundarabad
+42313,Gautampura Road
+42321,Ajnod
+42326,Indore Junction
+42330,Saifee Nagar
+42333,Lokmanya Nagar
+42335,Tihi
+42337,Kalakund
+42338,Choral
+42339,Mukhtiara Balwada
+42340,Barwaha
+42341,Kotlakheri
+42368,Ghosunda
+42391,Chintapapru
+42392,Mavli Junction
+42418,Gurujala
+42426,Alamanda
+42431,Raigadh Road
+42432,Shri Bhavnath
+42433,Bechhiwara
+42434,Jagabor
+42435,Lusadiya
+42436,Viravada
+42437,Talod
+42438,Kherol
+42439,Jaliya Math
+42440,Naroda
+42441,Sardargram
+42442,Asarva
+42443,Kankaria East
+42444,Idar
+42445,Jadar
+42446,Vadali
+42447,Khed Brahma
+42448,Chintaman Ganesh
+42450,Ujjain Junction
+42453,Marwar Ranawas
+42456,Phulad
+42462,Goram Ghat
+42463,Khamil Ghat
+42466,Devgarh Madriya
+42467,Bhindar
+42468,Charbhuja Road
+42469,Lawa Sardargarh
+42470,Kuanriya
+42471,Kankroli
+42472,Bari Sadri
+42473,Disa
+42475,Somatne
+42490,Mothala
+42492,Visnagar
+42493,Gunja
+42494,Vadnagar
+42495,Kheralu
+42496,Panchot
+42497,Sankhari
+42498,Chittaurgarh Junction
+42499,Adraj Moti
+42501,Makakhad
+42502,Vijapur
+42503,Langhnaj
+42506,Devsana
+42507,Bechraji
+42508,Bilara
+42509,Marwar Mathaniya
+42510,Tivari
+42511,Osiyan
+42512,Bhikamkor
+42513,Harlaya
+42514,Marwar Lohwat
+42515,Shaitan Singh Nagar
+42516,Marwar Bithri
+42517,Ramdevra
+42519,Odhaniya Chacha
+42520,Shri Bhadriya Lathi
+42521,Jetha Chandan
+42528,Samastipur Junction
+42533,Bamsin
+42534,Balwara
+42535,Bishengarh
+42536,Jalor
+42537,Jagannathji Road
+42538,Marwar Bagra
+42539,Bakra Road
+42540,Bheempura
+42541,Ladermer
+42542,Marwar Bhinmal
+42543,Marwar Kori
+42544,Malwara
+42545,Raniwara
+42546,Marwar Ratanpur
+42547,Jari
+42548,Dhanera
+42549,Ramsan
+42550,Jenal
+42552,Sherpur Dhipura
+42555,Dalsingh Sarai
+42572,Kasu
+42585,Nidi
+42589,Roha
+42590,Khed
+42593,Indapur
+42594,Sape Wamane
+42595,Karanjadi
+42596,Vinhere
+42597,Diwankhavati
+42598,Anjani
+42599,Kamathe
+42600,Sawarda
+42601,Sangameshwar
+42602,Ukshi
+42603,Bhoke
+42604,Ratnagiri
+42607,Nivasar
+42608,Adavali
+42609,Veravali
+42616,Vilavade
+42625,Rajapur Road
+42632,Nandgaon Road
+42633,Kankavali
+42634,Zarap
+42635,Madure
+42638,Pernem
+42639,Thivim
+42647,Balli
+42651,Asnoti
+42652,Ankola
+42653,Gokarna Road
+42654,Kumta
+42655,Honnavar
+42658,Manki
+42661,Murdeshwar
+42662,Bhatkal
+42663,Bijoor
+42664,Senapura
+42665,Kundapura
+42666,Barkur
+42667,Innanje
+42668,Padubidri
+42669,Surathkal
+42670,Thokur
+42673,Chikhale
+42674,Mohope
+42675,Chowk
+42676,Karjat
+42680,Vangani
+42681,Neral NG
+42682,Neral Junction
+42693,Dehu Road
+42708,Jalesar Road
+42713,Sasni
+42717,Mundhewadi
+42720,Pakni
+42721,Akalkot Road
+42724,Dudhani
+42725,Kulali
+42730,Maladgaon
+42731,Shirsai
+42732,Katphal
+42733,Kashti
+42734,Shrigonda Road
+42735,Belvandi
+42736,Ranjangaon Road
+42737,Sarola
+42738,Akolner
+42739,Vilad
+42740,Rahuri
+42741,Padhegaon
+42742,Nipani Vadgaon
+42743,Chitali
+42744,Sanvatsar
+42748,Laul
+42749,Modlimb
+42750,Babhulgaon
+42751,Pandharpur
+42752,Wasud
+42753,Javale
+42754,Masoba Dongargaon
+42755,Jath Road
+42756,Gulvanchi
+42757,Dhalgaon
+42758,Langarpeth
+42759,Kawathe Mahankal
+42760,Agran Dhulgaon
+42761,Sulgare
+42762,Belanki
+42763,Arag
+42764,Bolwad
+42765,Yedshi
+42768,Harangul
+42769,Latur Railway Station
+42775,Ambale
+42776,Rajevadi
+42777,Jejuri
+42778,Daundaj
+42779,Nira
+42781,Lonand
+42783,Wathar
+42784,Palsi
+42785,Jarandeswar
+42786,Satara
+42787,Targaon
+42788,Masur
+42789,Kirloskarvadi
+42790,Amnapur
+42791,Bhilawadi
+42794,Nandre
+42795,Madhavnagar
+42796,Sangli
+42799,Jayasingpur
+42800,Hatkanangale
+42801,Rukadi
+42802,Valivade
+42803,Shri Chatrapati Shahu Maharaj Terminus
+42805,Chittapura
+42806,Nawandgi
+42807,Mantatti
+42808,Dharur
+42809,Godamgura
+42812,Chitgidda
+42813,Ravalpalli Kalan
+42814,Shankarpalli
+42819,Borabanda
+42827,Sanat Nagar
+42829,Bharath Nagar
+42830,Khairatabad
+42831,Hyderabad Deccan Nampally
+42832,Ippuguda
+42833,Nashkal
+42834,Moula Ali
+42835,Ghatkesar
+42836,Bibinagar
+42837,Bhongir
+42838,Aler
+42839,Pindial
+42840,Marpalli
+42842,Matalkunta
+42843,Udgir
+42844,Bhalki
+42851,Gangakher
+42855,Humanabad
+42856,Hallikhed K.
+42858,Taj Sultanpur
+42861,Bhaskarapara
+42864,Vadal
+42908,Padriganj
+42916,Kacheguda
+42919,Malakpet
+42941,Manyamkonda
+42942,Kotakadra
+42943,Dokur
+42944,Kaukuntla
+42945,Kurumurthi
+42946,Konnur
+42947,Ajjakollu
+42948,Sriramnagar
+42949,Arepalli
+42950,Itikyala
+42951,Manopad
+42952,Kurnool City
+42962,Dupadu
+42963,Ulindakonda
+42964,Veldurti
+42965,Malliyala
+42966,Linganenidoddi
+42967,Edduladoddi
+42968,Maddikera
+42970,Nagireddipalli
+42971,Valigonda
+42972,Chityala
+42973,Srirampuram
+42974,Nalgonda
+42975,Tipparthi
+42976,Vishnupuram
+42979,Kolhadi
+42980,Khamkhed
+42981,Nandura
+42990,Malkhed
+42992,Warud
+42993,Seloo Road
+42995,Banosa
+42996,Anjangaon
+42997,Achalpur
+42998,Karanja
+42999,Somthan
+43000,Bhandegaon
+43001,Darwha Motibag
+43002,Yavatmal 1
+43003,New Amravati
+43005,Walgaon
+43007,Chandur Bazar
+43008,Warud Orange City
+43009,Pulgaon Jn. (NG)
+43010,Rohna
+43011,Warora
+43012,Tadali Junction
+43052,Manikgarh Junction
+43053,Wihirgaon
+43054,Makudi
+43055,Asifabad Road
+43057,Rechni Road
+43058,Bellampalli
+43060,Mandamari
+43061,Ravindrakhani
+43071,Peddampet
+43077,Kottapalli
+43078,Kolanoor
+43079,Odela
+43080,Potkapalli
+43081,Jammikunta
+43082,Uppal
+43083,Komatipalli
+43084,Kazipet Town
+43085,Chintalpalli
+43086,Yelgur
+43087,Intakanne
+43088,Tadlapusapalli
+43089,Gundratimadugu
+43090,Dornakal Junction
+43091,Pocharam
+43092,Gate Karepalli
+43093,Papatapalli
+43094,Mallemadugu
+43095,Khammam
+43096,Pandillapalli
+43097,Chintakani
+43098,Nagalawancha
+43100,Madhira
+43101,Tondalagopavaram
+43102,Errupalem
+43103,Kondapalli
+43104,Rayanapadu
+43105,Rajura
+43109,Karimnagar
+43111,Gangadhara
+43112,Nukapalli Mallial
+43113,Lingampet Jagityal
+43114,Anksapur
+43115,Metpalli
+43116,Mortad
+43118,Karepalli
+43119,Chimalpahad
+43120,Tadikalapudi
+43121,Bethampudi
+43123,Gajulagudem
+43124,Pandurangapuram
+43125,Aswapuram
+43128,Makkapeta
+43136,Nuagaon
+43147,Gurra
+43148,Sontalai
+43149,Sohagpur
+43150,Pipariya
+43151,Bankhedi
+43152,Junheta
+43153,Baragaon
+43155,Ghatpindrai
+43158,Belkhera
+43159,Karakbel
+43160,Bikrampur
+43161,Bhitoni
+43162,Bheraghat
+43169,Kachhpura
+43170,Deori
+43171,Gosalpur
+43172,Sihora Road
+43173,Sleemanabad Road
+43174,Madhavnagar Road
+43175,Unchhera
+43176,Satna Junction
+43177,Tikaria
+43178,Markundi
+43185,Kataiya Dandi
+43186,Majhiari
+43187,Shankargarh
+43188,Madaraha
+43189,Iradatganj
+43191,Kapri Kheda
+43198,Lodhikheda Railway Station
+43201,Ramakona
+43206,Guntakoduru
+43219,Grant Road
+43225,Nujella
+43233,Naigaon
+43235,Umroli
+43236,Boisar
+43237,Dahanu Road
+43241,Gholvad
+43242,Bhilad
+43244,Udvada
+43248,Bhestan
+43249,Utran
+43251,Kosamba Junction
+43254,Bharuch Junction
+43275,Chhayapuri
+43276,Pilol
+43277,Samlaya Junction
+43278,Champaner Road
+43279,Mangal Mahudi
+43280,Dahod
+43281,Bordi
+43282,Anas
+43283,Meghnagar
+43284,Bamnia
+43285,Ratlam Junction
+43304,Talavli
+43305,Chowmahala
+43306,Nathukheri
+43307,Suwasra
+43308,Hanspura
+43309,Kurlasi
+43310,Bhawani Mandi
+43311,Dhuankheri
+43312,Jhalawar Road
+43313,Ramganj Mandi Junction
+43319,Kanwalpura
+43320,Dara
+43323,Ravtha Road
+43327,Dhani Kasar
+43328,Alniya
+43330,Indragarh Sumerganj Mandi
+43331,Amli
+43332,Rawanjna Dungar
+43333,Kushtala
+43336,Dhaurmui Jaghina
+43338,Dungarda
+43339,Waghai
+43340,Madhi
+43341,Kikakui Road
+43342,Baradwar
+43346,Mota Miya Mangrol
+43347,Vankal
+43348,Jhagadiya
+43349,Rajpardi
+43354,Pakhajan
+43356,Vagara
+43358,Jambusar Junction
+43359,Ganpatpura
+43360,Nada
+43361,Choranda Junction
+43363,Sadhli
+43364,Sinor
+43365,Malsar
+43368,Nareshwar Road
+43370,Atladara
+43371,Padra
+43381,Kundhela
+43383,Thuwavi
+43384,Amalpur
+43387,Bodeli
+43390,Chhota Udepur
+43391,Padaliya Road
+43401,Gudipudi
+43403,Savli
+43408,Ballupur
+43412,Virochannagar
+43416,Katuda
+43417,Kahiliya
+43418,Shisho
+43419,Barabhati
+43420,Dahapara Dham
+43422,Barwala Road
+43423,Shujalpur
+43424,Sehore
+43425,Vikram Nagar
+43427,Mangliyagaon
+43429,Julmi
+43432,Chandresal
+43433,Bhonra
+43434,Antah
+43435,Bijora
+43438,Baran
+43440,Chhajawa
+43441,Piplod Road
+43442,Atru
+43444,Salpura
+43465,Kesholi
+43466,Chhabra Gugor
+43467,Bhulon
+43468,Motipura Chauki
+43469,Ruthiyai Junction
+43471,Khudiram Bose Pusa
+43472,Palsana
+43474,Dahar-Ka-Balaji
+43475,Nindhar Benar
+43476,Loharwara
+43477,Govindgarh Malikpur
+43478,Chhota Gudha
+43480,Goriyan
+43482,Jerthi Dadhia
+43483,Nua
+43484,Jhunjhunun
+43485,Nawalgarh
+43486,Dundlod Mukandgarh
+43487,Chirawa
+43488,Surajgarh
+43489,Bhavdhari
+43490,Ratan Shahr
+43497,Lachhmangarh Sikar
+43502,Bhatpar Rani
+43503,Mairwa
+43509,Manderdisa
+43518,Manwala Kot Bhaktu
+43528,Bansi Paharpur
+43529,Bandh Baretha
+43532,Mirhakur
+43533,Fatehpur Sikri
+43540,Ikran
+43541,Paprera
+43542,Nadbai
+43543,Mandawar Mahwa Road
+43544,Karanpura
+43545,Biwai
+43551,Baniyana
+43557,Bindayaka
+43566,Araniya Kalan Salempura
+43572,Bajva
+43575,Ranoli
+43576,Nandesari
+43577,Anand Junction
+43579,Kanjari Boriyavi Junction
+43583,Maninagar
+43588,Jakhvada
+43608,Wankaner Junction
+43615,Bileshwar
+43622,Sikka
+43629,Okha
+43630,Kolvada
+43631,Jhund Junction
+43632,Haripur
+43636,Sukhpur
+43650,Gandhi Halt
+43654,Bhanvad
+43656,Ranavav
+43657,Iringal
+43663,Anklav
+43664,Borsad
+43665,Vallabh Vidynagar
+43666,Karamsad
+43667,Agas
+43669,Tarapur
+43670,Dakor
+43680,Sevaliya
+43689,Vadtal Swaminarayan
+43690,Sojitra
+43692,Kathlal
+43693,Dasalwada Antroli Road
+43694,Kapadvanj
+43698,Arnej
+43699,Bhimnath
+43701,Botad Junction
+43702,Rajsitapur
+43705,Ranpur
+43706,Joravar Nagar
+43707,Wadhwan City
+43708,Limbdi
+43709,Dhola Junction
+43710,Sihor Junction
+43711,Vartej
+43714,Lunidhar
+43715,Kunkavav
+43716,Vavdi
+43717,Jetpur
+43718,Upleta
+43730,Jam Jodhpur
+43731,Balwa
+43732,Meriyana
+43733,Savarkundla
+43738,Rajula Junction
+43741,Rajula City
+43751,Sasan Gir
+43752,Prachi Road Junction
+43755,Kodinar
+43777,Khakhrala Road
+43783,Dahinsara Junction
+43787,Morbi
+43789,Gondal
+43790,Navagadh
+43792,Jetalsar Junction
+43798,Shapur Junction
+43799,Maliya Hatina
+43800,Bhanduri
+43801,Chorwad Road
+43806,Jira Road
+43817,Mourigram
+43820,Andul
+43827,Nalpur
+43833,Nandaigajan
+43835,Khirai
+43841,Narayangarh
+43848,Benapur
+43893,Girimaidan
+43969,Kalaikunda
+43982,Nimpura
+44008,Jaleswar
+44009,Rupsa Junction
+44020,Sora
+44026,Kenduapada
+44067,Bhadrak Junction
+44082,Sukinda Road Junction
+44086,Jenapur
+44087,New Garh Madhopur
+44088,Salegaon
+44097,Haridaspur
+44100,Dhanmandal
+44101,Byree
+44102,Sri Jhadeswar
+44103,Kendrapara Road
+44107,Barang Junction
+44109,Bhubaneswar New
+44110,Patia
+44111,Mancheswar
+44116,Lingaraj Temple Road
+44117,Vani Vihar
+44139,Chatrapur Court
+44160,Golanthra
+44161,Surla Road
+44162,Sompeta
+44163,Baruva
+44164,Palasa
+44165,Pundi
+44166,Naupada Junction
+44167,Tilaru
+44168,Urlam
+44169,Srikakulam Road
+44170,Dusi
+44171,Ponduru
+44172,Batuva
+44173,Chipurupalle
+44174,Garividi
+44175,Nellimarla
+44187,Korukonda
+44213,Banka Nayabaz
+44229,Kona
+44230,Dansi
+44231,Jhaluarbar
+44232,Makardaha
+44233,Domjur Road
+44234,Domjur
+44235,Dakshinbar
+44236,Bargachia
+44237,Pantihal
+44238,Munsirhat
+44239,Mahendralalnagar
+44240,Maju
+44241,Jalasi
+44242,Harishdapur
+44266,Keshabpur
+44276,Bandar
+44279,Kanthi
+44280,Sitalpur
+44281,Badalpur
+44284,Nandakumar
+44285,Laban Satyagrah Smarak
+44286,Henria
+44287,Jugpura
+44288,Jogal
+44289,Betnoti
+44290,Tikra
+44292,Bhanjpur
+44311,Baghuapal
+44312,Tomka Jn.
+44321,Machapur Junction
+44325,Radhakishorepur Junction
+44343,Rajathgarh Junction
+44350,Shaheed Suraj Narayan Singh Halt
+44351,Chandeshwarsthan
+44352,Tamuria
+44367,Jhanjharpur Bazar
+44376,Ugna
+44416,Pandiyapuram
+44437,Kamtaul Station
+44482,Katwa Junction
+44491,Ahmadpur Junction
+44509,Amghata
+44514,Pendurthi
+44518,Rewral
+44519,Runni Saidpur Railway Station
+44520,Sulhani
+44534,Bagwada
+44537,Hathigadh
+44538,Lathi
+44597,Robertson
+44618,Budhapank
+44652,Marripalem
+44655,Belanagar
+44674,Haiaghat
+44676,Palpara
+44677,Simurali
+44678,Payradanga Rail Station
+44679,Bhayna
+44681,Lotana
+44684,Karambeli
+44685,Salichauka Road
+44700,Dakshin Durgapur
+44701,Jangalmahal Bhadutala
+44705,Cossye Halt
+44711,Arunnagar
+44712,Ghantikal Nidhipur Railway Station
+44713,Naraja Marthapur
+44716,Talcher Road Junction
+44717,Angul
+44728,Cuttack Junction
+44730,Mattagajapur
+44731,Kandarpur
+44736,Matokhar
+44768,Rahama
+44769,Gopinathjew Banikunda
+44770,Paradeep
+44772,Haripurgram
+44774,Motari
+44784,Sakhigopal
+44804,Bichhupali
+44807,Balangir Junction
+44808,Tekkali
+44809,Ganguvada
+44810,Patapatnam
+44811,Parlakhemundi
+44812,Sitapuram
+44813,Haddubhangi
+44814,Kashinagar
+44815,Lihuri
+44816,Bansadhara
+44817,Palasingi
+44819,Gunupur
+44820,Limbgaon
+44821,Wanegaon
+44823,Mugat
+44828,Bodhadi Bujrug
+44832,Shrungavarapukota
+44835,Beawar
+44844,Thalwara
+44852,Borra Guhalu
+44853,Araku
+44854,Darliput
+44855,Padua
+44857,Gokulpur
+44866,Birbans
+44869,Tinkheda
+44871,Suku
+44872,Manabar
+44873,Maligura
+44874,Chatariput
+44875,Jeypore
+44876,Dhanapur
+44880,Amagura
+44889,Kumhar Maranga
+44895,Gamharia Jn.
+44904,Silak Jhori
+44907,Kumhar Sodra
+44909,Kirandul
+44912,Dumuriput
+44913,Damanjodi
+44914,Baiguda
+44920,Tikiri
+44932,Rauli
+44953,Sikarpai
+44954,Salgajhari
+44956,Asanboni
+44958,Jhargram
+44966,Mahali Marup
+44968,Pandrasali
+45013,Ketti
+45023,Perunguzhi
+45029,Sahebtala
+45033,Chowrigacha
+45123,Chintpurni Marg
+45155,Daulatpur Chowk
+45183,Jhanjharpur Junction
+45191,Khutauna
+45198,Laukaha Bazar
+45247,Vachaspati Nagar
+45421,Bagribari
+45453,Bilasipara
+45490,Gauripur
+45496,Alamganj
+45570,Panbari
+45585,Digaru
+45613,Tetelia
+45651,Sukhpur Roha
+45695,Khemana
+45696,Wayad
+45697,Mothala
+45698,Kothara
+45700,Adesar
+45701,Bhachau
+45702,Samakhyali Junction
+45721,Adipur Junction
+45723,Bhuj
+45732,Bhabhar
+45763,Naliya Cantt
+45765,Garmadi
+45767,Piplee
+45768,Santalpur
+45769,Varahi
+45770,Vaghpura
+45771,Chhansara
+45776,Naliya
+45777,Dhrub
+45778,Vondh
+45799,Bhimasar
+45834,Vasai Third Road
+45876,Shivalakha
+45877,Chitrod
+45901,Dhanakwada
+45902,Jasali
+45922,Madhapar Road
+45923,Sukhpur
+45924,Kukma
+45925,Sapda
+45926,Anjar
+45928,Wadharva
+45930,Ratnal
+45933,Deshalpar
+45935,Modpur
+45958,New Guwahati
+45980,Piprala
+45981,Lakhpat
+45982,Bhildi Junction
+45983,Patan
+45991,Kamakhya Junction
+46019,Thakurnagar
+46023,Mirza
+46049,Chaygaon
+46068,Kanimahuli
+46069,Rakha Mines
+46108,Bamunigaon
+46118,Boko
+46119,Kishanpur
+46127,Singra
+46144,Dhupdhara
+46156,Dudhnai
+46163,Goalpara Town
+46164,Bondamunda
+46165,Bamra
+46194,Ballalpur
+46246,Sardarnagar
+46272,Jamga
+46276,Kusmhi
+46288,Kirodimal Nagar
+46290,Bhupdeopur
+46304,Sakti
+46305,Jetha
+46319,Jairamnagar
+46348,Dr. Ambedkar Nagar
+46383,Nagamalai West
+46414,Dagori
+46420,Ratlam New
+46435,Nipania
+46443,Tilda-Neora
+46444,Gypsum
+46465,Urkura
+46488,WRS Colony
+46489,Saraswati Nagar
+46490,Kumhari
+46498,Ramkola
+46499,Khat
+46500,Malakpet
+46503,Sidhirsai
+46505,Aunlajori Junction
+46506,Rairangpur
+46507,Kuldiha
+46508,Chhanua
+46509,Gorumahisani
+46523,Tupkadih
+46597,Bokra
+46600,Mandasa Road
+46607,Puntamba Junction
+46612,Ahmadnagar
+46618,Pembarti
+46660,Railway Station
+46707,Rau
+46712,Gothaj
+46718,Bodarwar
+46719,Chamrua
+46745,Mokhasa Kalavapudi
+46750,Balumath
+46769,Valtoha
+46808,Dudhwakhara
+46809,Rangtong
+46832,Deojhar
+46851,Vavaniya
+46854,Lavanpur
+46856,Thaiyat Hamira
+46880,Gond Umari
+46888,Gir Gadhara
+46893,Garha
+46903,Banchari
+46908,Kosi Kalan
+46926,Valadar
+46927,Kitham
+46930,Farah
+46939,Veli
+46940,Tiruchendur
+46942,Kachchanavilai
+46944,Kayalpattinam
+46959,Chemancheri
+46967,Bichpuri
+46990,Dasna
+46996,Abhaipur
+47006,Panchalam
+47018,Srinivasapura
+47085,Munirabad
+47087,Ginigera
+47091,Viramgam Junction
+47108,Sheodaspura Padampura
+47111,Bharatgarh
+47119,Reay Road
+47122,Andheri
+47124,Vile Parle
+47126,Santa Cruz
+47134,Krishnapatnam
+47146,Cherlopalli
+47188,Vellikallu
+47199,Vasai Road
+47203,Churchgate
+47226,Rapuru
+47232,Adurupalli
+47237,Kotegangoor
+47238,Irinjalakuda
+47239,Ochira
+47259,Bapanapalli
+47266,Kasumuru
+47284,Venkatachalam Road Junction
+47313,Nidiguntapalem
+47315,Kozhikode
+47359,Sant Gadge Maharaj Chowk
+47378,Kandivali
+47396,Berawanya
+47402,Subhash Nagar
+47411,Jalgaon Junction
+47413,Nashik Road
+47433,Diva Junction
+47435,Bhopal Junction
+47448,Kanjiramattam
+47452,Dhigawara
+47510,Shobhasan
+47527,Dakshineshwar
+47534,Champapur Halt
+47535,Mor
+47543,Ambli Road
+47544,Anakhol
+47545,Karan Nagar
+47546,Kadi
+47555,Kishangarh Balawas
+47562,Pali
+47584,Bhanwsa
+47588,Sakhun
+47617,Tilonia
+47620,Kishangarh
+47625,Madar Junction
+47640,Ladpura
+47651,Gegal Akhri
+47667,Mindha
+47690,Renwal
+47697,Bheslana
+47710,Karjoda
+47740,Kailahat
+47753,Andheri L1
+47811,Cheekategalapalem
+47822,Savalyapuram Junction
+47834,Unchdih
+47840,Waria
+47841,Durgapur
+47842,Panagarh
+47844,Bhartana
+47872,Ancheli
+47878,Churu Junction
+47881,Bissau
+47882,Fatehpur Shekhawati
+47884,Mahansar
+47885,Ramgarh Shekhawati
+47886,Kayamsar
+47887,Sikar Railway Station
+47895,Baghai Road
+47908,Saidabad
+47925,Raja Talab
+47926,Hardattpur
+47929,Baherwa Halt
+47932,Ramnathpur
+47953,Koranahalli
+47957,Raghavapuram
+47985,Anand Nagar Junction
+47999,Harchandpur
+48012,Kankaha
+48022,Mohanlalganj
+48027,Bighapur
+48028,Dalmau Junction
+48030,Daryapur Junction
+48065,Tapri Junction
+48095,Pandu Pindara Junction
+48097,Meerut Cantonment
+48099,Bhiwani Junction
+48100,Rohtak Junction
+48101,Gohana Junction
+48102,Shahganj Junction
+48139,Hajipur Junction
+48149,Sakri Junction
+48153,Sitamarhi
+48156,Umeshnagar
+48168,Kharaundh
+48169,Kansar Nawadah
+48170,Kathautia
+48171,Katkamsandi
+48173,Shivpur
+48206,Mungara Badshahpur
+48216,Chaukhandi
+48218,Ayodhya Cantt
+48221,Kanpur Central
+48231,Sarnath
+48232,Varanasi City
+48241,Naini Junction
+48249,Aunrihar Junction
+48251,Sidhauna Rampur
+48254,Rajawari
+48258,Bhatni Junction
+48269,Lokmanya Tilak Terminus
+48278,Kachhwa Road
+48279,Katka
+48296,Ghazipur City
+48323,Manmad Junction
+48328,Kotala
+48329,Juni Chavand
+48335,Kachujor
+48336,Panchra
+48358,Mahishidahari
+48362,Sonpur Junction
+48384,Taldi
+48385,Matla Halt
+48387,Dubrajpur
+48389,Bhasila
+48390,Harua Road
+48393,Bilhar Ghat
+48400,Barrackpore
+48406,Murshidabad Junction
+48437,Yedapalli
+48451,Yakutpura
+48460,Mudkhed Junction
+48461,Lingampalli
+48462,Hafeezpet
+48463,Fateh Nagar
+48472,Wadi Junction
+48483,Kazipet Junction
+48484,Vijayawada Junction
+48498,Ambadala
+48508,Hirangaon
+48512,Ashti
+48541,ITO
+48544,Pilibhit Junction
+48545,Akbarpur Junction
+48548,Ayodhya Dham Junction
+48551,Khalispur
+48556,Pindra Road Railway Station
+48559,Shivpur Railway Station
+48564,Zafarabad Junction
+48573,Narkatyaganj
+48579,Supreme Court
+48582,Mandi House
+48612,Mangalampeta
+48632,Sagardighi
+48633,Barala
+48635,Takipur
+48649,Ramagundam
+48654,Talgaria
+48660,Peddapalli Junction
+48674,Nacharam
+48732,Sankhapur
+48735,Vadalur
+48736,Nellikuppam
+48765,Bhabua Road
+48766,Muthani
+48767,Durgauti
+48788,Karamnasi
+48849,Wani
+48856,Pusauli
+48865,Kudra
+48891,Linganabandi
+48909,Paimar
+48914,Bandhua
+48924,Guraru
+48949,Dhanbad Junction
+48950,Rajpipla
+48951,Saktigarh
+48971,Madhu Sudanpur
+48987,Ajmer Junction
+48988,Aambliyasan Junction
+48994,Palanpur Junction
+48997,Delhi Cantonment
+48999,Pedakakani
+49000,Motumari
+49004,Jaipur Junction
+49005,Gurgaon
+49007,Sri Santh Sevalal Maharaj
+49164,Solapurwadi
+49181,Falaknuma
+49196,Garhmau
+49202,Chirgaon
+49269,Chikkamagaluru
+49285,Magarwara
+49286,Piparsand
+49287,Harauni
+49292,Rasulpur
+49293,Nimo
+49361,Simlagarh
+49362,Bainchi
+49363,Vejandla
+49415,Khanyan
+49445,Talandu
+49452,Angalakuduru
+49475,New Guntur
+49507,Poreyahat
+49517,Godda
+49520,Dhamdhamia
+49521,Gankar
+49548,Adari Road
+49550,Rundhi
+49554,Dhat
+49556,Beas Junction
+49570,Hathras Road
+49571,Nabagram
+49575,Sahari
+49589,Mangaluru Junction
+49590,Tarsod
+49592,Bhusandpur
+49593,Kaipadar Road
+49595,Kharagpur Junction
+49596,Radhamohanpur
+49603,Panpana
+49605,Sitampet
+49621,Kollam Junction
+49631,Aung
+49633,Kanwar
+49635,Faizullapur
+49669,Chigicherla
+49677,Raipur Junction
+49686,Simhachalam
+49710,Lakkavarapukota
+49749,Mallappa Gate
+49752,Khadarpet
+49760,Uluberia
+49771,Kadiyam
+49775,Kendrapara
+49779,Ratnagiri Road
+49782,Lalitgiri
+49783,Bajipara
+49784,Marshaghai Road
+49789,Nuagaon
+49790,Kalaghar
+49803,Jaynagar (Nepal Railways)
+49806,Kheri Town
+49807,Kaman Road
+49810,Juichandra
+49811,Parel
+49812,Matunga
+49821,Dadri
+49832,Godbhaga
+49838,Kanjur Marg
+49846,Attabira
+49854,Deobahal
+49856,Dombivli
+49857,Ghatkopar
+49895,Goregaon
+49898,Jogeshwari (Western Line)
+49901,Tilak Nagar
+49902,Seawoods
+49903,Kharghar
+49904,Mansarovar
+49905,Guru Tegh Bahadur Nagar
+49906,Khandeshwar
+49907,Chuna Bhatti
+49908,CBD Belapur
+49922,Kusumkasa
+49931,Muribahal
+49958,Turekala Road
+49971,Rahenbata
+50030,Chataud
+50035,Sirry
+50057,Sankra
+50067,Sarsonpuri
+50073,Kurud
+50076,Manikchowree
+50095,Gevarai
+50097,Bamourgaon
+50112,Salaia
+50120,Rema
+50132,Jalpaiguri Road
+50171,Arang Mahanadi
+50180,Dhondi
+50233,Dungripali
+50244,Ghatigaon
+50246,Konch
+50247,Kurmahat
+50250,Ghormara
+50253,Barmasia
+50258,Harinsing
+50259,Pinargaria
+50260,Chiluvur
+50261,Perecherla
+50267,Bero
+50278,Indas
+50285,Gangadhara
+50286,Waris Ganj Halt
+50290,Kukarvada
+50291,Gojhariya
+50292,Thakurtota
+50293,Dimapur
+50298,Haripal
+50310,Raninagar Jalpaiguri Junction
+50320,Alapadu
+50339,Manikpura
+50349,Chakmakrand
+50350,Patiala Cantt.
+50353,Hugrajuli Halt
+50354,Sandai
+50356,Mahmudpur Saraiyan
+50359,Bhagsar
+50360,Lakhewali
+50361,Chak Banwala
+50366,Bazida Jatan
+50367,Taraori
+50398,Medapadu
+50399,Penumarru
+50400,Vadarlapadu
+50407,Latteri
+50408,Ukilerhat
+50413,Ambari Falakata
+50440,Dhamalgaon Junction
+50441,Tarabari
+50459,Jethi
+50466,Sanjali
+50467,Kudsad
+50490,Baikunthpur Rd
+50494,Nagar
+50501,Sachin
+50506,Umbergaon Road
+50516,Paman
+50517,Atrampur
+50518,Bhadaiyan
+50519,Khundaur Station
+50520,Khajurhat Railway Station
+50524,Binaur
+50526,Tilaunchi
+50553,Moth
+50554,Nandkhas
+50576,Balrai
+50577,Bolai
+50578,Charkhari Road
+50583,Mundha Pande
+50584,Dalpatpur
+50585,Chak Kali Lait Halt
+50586,Amroha
+50587,Kafurpur
+50590,Koiripur
+50591,Bairi
+50592,Mani
+50593,Bhad Bhada Ghat
+50594,Kali Sindh
+50595,Raparla
+50606,Belakoba
+50607,Pattan
+50608,Garbeta
+50609,Gokulnagar Joypur
+50610,Birshamunda Halt
+50611,Bibhuti Bhushan Halt
+50612,Ashoknagar Road
+50613,Bira
+50614,Sondalia
+50615,Kankra Mirzanagar
+50616,Malatipur
+50635,Ghanshyamgadh Road
+50637,Kurawan
+50638,Karengi
+50639,Reoti Bahora Khera
+50640,Aonla
+50651,Jhantipahari
+50655,Bheduasol
+50657,Ramsagar
+50665,Tamna railway station
+50666,Kantadih railway station
+50672,Raigarh
+50683,Honaganahalli
+50708,Mangaliyawas
+50710,Lamana
+50712,Kharwa
+50718,Bar
+50719,Bhinwaliya
+50732,Falna
+50734,Biroliya
+50740,Mori Bera
+50742,Nana
+50746,Bagri Nagar
+50749,Chandawal
+50755,Haripur
+50762,Dhanauri
+50903,Wazerganj
+50905,Samrala
+50908,Mohitnagar
+50912,Sirjam
+50915,Makrera
+50916,Kishan Manpura
+50917,Rajagoda
+50918,Duan
+50931,Agsauli
+50933,Metyal Sahar
+50935,Banikpur Halt
+51002,Piplaj
+51008,Sojat Road
+51014,Bhesana
+51019,Dhareshwar
+51027,Marwar Junction
+51038,Pirtala
+51039,Subarnamrigi
+51040,Cossimbazar
+51041,New Balarampur Halt
+51042,Sargachhi
+51043,Bhabta
+51044,Beldanga
+51045,Rejinagar
+51046,Sirajnagar Halt
+51047,Pagla Chandi
+51048,Sonadanga
+51049,Bethuadahari Railway Station
+51050,Muragatcha
+51051,Dhubulia
+51052,Bahadurpur
+51054,Guagachha Halt
+51058,Vellayil
+51076,Dhoraji
+51077,Rajendra Nagar Terminal (Patna)
+51085,Bhenswadi
+51088,Vejalka
+51114,Bhesana Mankanaj
+51124,Piludra
+51134,Amarpur Jorasi
+51135,Nizampur
+51178,Patna Junction
+51179,Verna
+51183,Deorakot
+51187,Vidisha
+51192,Dhutra
+51196,Durgapura
+51204,Alwar Junction
+51205,Rupbas
+51206,Bharatpur Junction
+51209,Kakapor
+51210,New Maynaguri
+51215,Kotarlia
+51220,Ichchangadu
+51244,Kanas Road
+51268,Hinotia Pipalkhera
+51271,Shahdora Gaon
+51275,Ratikheda
+51281,Pagara
+51288,Kashia Bari
+51289,Nandanpur Kerar Para Halt
+51306,Ghagwal
+51310,Lohian Khas Junction
+51349,Niyazipur
+51350,Makhdumpur Gaya
+51351,Chhotaki Masaudhi Halt
+51353,Nadwan
+51354,Punpun
+51372,Harpar Bochaha
+51373,Fateha
+51383,Jenapur Road
+51385,Birpurusottampur
+51411,Jiadhal
+51425,Janakadeipur
+51432,Sawantwadi Road
+51438,Sindhudurg
+51444,Vaibhavwadi Road
+51461,St fatak
+51462,Parsendi
+51466,Sanjan
+51472,Vasadva
+51473,Hadmatiya
+51478,Mataundh
+51479,Kabrai
+51483,Mau Ranipur
+51484,Ranipur Road
+51485,Teharka
+51488,Helak
+51489,Kaurara
+51522,Badodar
+51523,Gaigaon
+51524,Tiruttangal
+51525,Digod
+51561,Mangra
+51562,Rajhura
+51563,Tolra
+51568,Brindabanpur
+51575,Tariasujan
+51580,Rameshwar Nagar
+51581,Kumarbagh
+51582,Prajapati
+51583,Sathi
+51594,Savalgi
+51595,Torniya
+51602,Mau Junction
+51603,Chhata Aschaura
+51604,Sagarpali
+51606,Dhondha Dih
+51610,Fatehpur Atwa
+51612,Khurmabad
+51616,Bithauli
+51625,Laheriasarai
+51630,Rambhaddarpur
+51662,Charlapalli
+51682,Malkajgiri
+51690,Saota
+51709,Mullanpur
+51739,Kharwa Chanda
+51826,Gayabari
+51828,Mahanadi
+51829,Bhandarkund
+51831,Sikarpur Halt
+51832,Linga
+51834,Bisapur Kalan Halt
+51835,Kukrakhapa
+51836,Ghadela Halt
+51837,Devi Halt
+51910,Cheriyanad
+51911,Bilkha
+51951,Punarakh
+51955,Lemuabad
+51977,Chhatral
+52008,Sarthua
+52012,Fazalchak
+52013,Sonipur Rupal
+52054,Dongargaon
+52057,Phaphund
+52058,Kanchausi
+52090,Matana Buzurg
+52145,New Tundla
+52156,Nolbari
+52192,Agra Fort
+52197,Chhalesar
+52203,Tundla Junction
+52204,Panki
+52205,Rura
+52232,Etawah Junction
+52233,Firozabad
+52244,Morena
+52249,Gwalior Junction
+52271,Khajraha
+52277,Talbahat
+52278,Agasod
+52307,Senji Panambakkam
+52311,Bhan Kari
+52314,Mandwa
+52315,Kolvagram
+52320,Bandikui Junction
+52323,Bhuteshwar
+52331,Govardhan
+52340,Jhareda
+52347,Brij Nagar
+52350,Bedham
+52352,Ramgarh
+52359,Ootwar
+52375,Veraval Junction
+52387,Bassi
+52391,Banskho
+52399,Getor Jagatpura
+52404,Baswa
+52419,Malakhera
+52422,Mahwa
+52423,Gulana
+52424,Surer
+52436,Gurudas Nagar
+52437,Nemilicherry
+52438,Krantivira Sangolli Rayanna Railway Station
+52460,Mitawali
+52464,Pilkhani
+52480,Karmahat
+52482,Digwar Halt
+52483,Ranchi Road
+52485,Jogeswar Bihar
+52504,Pothahi
+52505,Taregna
+52506,Teneri Halt
+52507,Nadaul
+52509,Karona
+52511,Jehanabad
+52515,Jehanabad Court
+52516,Mai
+52517,Mira Bigha
+52518,Tehta
+52539,Vaso
+52542,Pij
+52559,Chhandrauli
+52561,Pirduleshah
+52582,Raghuraj Singh
+52623,Maitha
+52627,Achuara Halt
+52630,Athmal Gola
+52631,Jai Prakash Mahuli
+52656,Khumtai
+52657,Motiganj
+52660,Narasapur
+52663,Barakalan
+52668,Rudauli
+52695,Amin
+52698,Bathinda Cantt.
+52699,Jhir
+52701,Sogariya
+52738,SPM Hospital
+52773,Rajnagar K
+52774,Ajgain
+52813,Sureli
+52833,Mahudha
+52834,Punnapra
+52850,Bhavnagar Para
+52901,Shegaon
+52905,Vina
+52906,Kaniwara
+52922,Makarwadi
+52931,Faridabad New Town
+52937,Dukhnawaran
+52952,Manu Bazar
+53003,Jakhaura
+53049,Sambalpur Junction
+53065,Khanudih
+53087,Ettumanoor
+53109,Bhaner Minawada Road
+53132,Kalgurki
+53151,Udaipura
+53167,Usmanpur
+53183,Sabalgarh
+53195,Shankrul
+53196,Sahaspur Road
+53197,Bovaichandi
+53204,Dhagaria
+53205,Dhansimla
+53206,Hamirhati PH
+53209,Sonamukhi
+53211,Kumrul
+53212,Srirampur P.H.
+53214,Belboni
+53215,Nobanda
+53247,Magardaha
+53252,Barnagar
+53291,Moriya
+53299,Chheharta
+53305,Kohir Deccan
+53308,Nimar Kheri
+53349,Milak
+53357,Bogri Road
+53362,Bamhrauli
+53370,Manuguru
+53384,Guntur Junction
+53388,Khodiyar Mandir
+53389,LLR Hospital
+53393,Dhodramohar
+53404,Simraha
+53413,Bharatkund
+53451,Ramchandrapur P.H.
+53466,Junagarh Road
+53517,Bhilai Power House
+53523,Bhilai Nagar
+53524,Bhilai
+53528,Bhilai D Cabin
+53529,Devbaloda Charoda
+53530,Sarona
+53533,Kurebhar railway station
+53554,Yadvendra nagar
+53569,Udi More Junction
+53570,Nilambur Road
+53588,Ratona
+53603,Antagarh
+53645,Keoti
+53678,Bhanupratappur
+53764,Gandhinagar Capital
+53765,Dalli Rajhara
+53793,Bhainsbod
+53823,Latabor
+53832,Sikosa
+53848,Gundardehi
+53903,Singhaul Halt
+53936,Mahipur
+53938,Harauli Fatehpur
+53939,Vaishali
+53976,Nayagarh Town
+53999,Dashapalla
+54108,Kumaranalloor
+54235,Dharamtul
+54272,Jharsuguda Junction
+54273,Vatva
+54372,Pantnagar
+54460,Babhan Jotia
+54463,Satberia Halt
+54476,Gopalnagar
+54477,Gangnapur
+54478,Naba Raynagar
+54479,Harrawala
+54480,Gularbhoj
+54485,Rupamau
+54487,Bani
+54491,Talakhajuri
+54494,Rae Bareli Junction
+54501,Antu
+54506,Yadudih
+54507,Fursatganj
+54514,Virol
+54516,Uslapur
+54520,Ghutku
+54525,Bhalua
+54527,Karauta
+54528,Salim Pur Bihar
+54586,Saragaon Road
+54591,Saragaon Deori
+54600,Adihalli
+54603,Sree Sharada Nagar
+54613,Gede
+54660,Karatagi
+54666,Pathauli
+54676,Parsa Khera
+54709,Banasandra
+54742,Machhlandapur
+54752,Chandiposh
+54753,Gaganaposh
+54756,Barsuan
+54760,Karampada
+54767,Bimlagarh Junction
+54816,Talcher
+54817,Sunakhani
+54833,Lathikata
+54835,Dumetra
+54839,Rajendra Nagar
+54853,Patal Pani
+54887,Abada
+54897,Moti Sadhli
+54939,Punyavat
+54956,Tejgadh
+54959,Garudeshwar
+54989,Chandod
+54999,Kevadiya
+55000,Tokisud
+55002,Bhawanipur Kalan
+55005,Tilakwada
+55030,Ten Talav
+55046,Saniyad
+55047,Moti Koral
+55055,Bachar
+55078,Padma
+55081,Ambari Richhavi
+55124,Pavi
+55125,Suskal
+55138,Dabhoi Junction
+55177,Kelanpur
+55192,Bhaili
+55197,Kural
+55198,Jambusar Road
+55199,Anakhi
+55200,Mobha Road
+55209,Pratapnagar
+55225,Juna Rajuvadia
+55233,Amleta
+55324,Avidha
+55352,Umalla
+55378,Gummandev
+55388,Boridra
+55398,New Gummandev
+55425,Ankleshwar Udyog Nagar
+55441,Kala Amba
+55442,Unai and Vansda Road
+55447,Anaval
+55465,Kevdi Road
+55520,Nagal
+55521,Talheri Buzurg
+55529,Muzaffarnagar
+55534,Baman Heri
+55547,Gandevi
+55561,Bilimora Junction
+55580,Jwalapur
+55596,Currey Road
+55606,Ispat Nagar
+55608,Umra
+55613,Zawar
+55614,Semari
+55615,Shalashah Thana
+55638,Dangoaposi
+55641,Gua
+55642,Bara Jamda
+55678,Macharya
+55683,Tovalai
+55684,Nagercoil Junction
+55744,Pipar City
+55758,Kadambur
+55795,Kumarapuram
+55835,Ahalyapur
+55837,Kiriburu
+55839,Meghahatuburu
+55845,Bolani Khadan
+55876,Talaburu
+55881,Māluka
+55886,Chaibasa
+55895,Jhinkpani
+55902,Rajkharsawan Junction
+55915,Sonua
+55921,Goilkera
+55926,Posoita
+55927,Ghaghra
+55944,Manoharpur
+55965,Chandil Junction
+55968,Kunki
+55973,Nunkhar
+55977,Nimdih
+55984,Biramdih
+55991,Bangurkela
+56005,Chakradharpur
+56055,Manikui
+56081,Bakarkudi
+56141,Sidhwar
+56150,Baramati
+56155,Jhalda
+56192,Bingaon
+56194,Lodhma
+56198,Balasiring
+56203,Argora
+56204,Tatisilwai Junction
+56209,Achalgank Railway Station
+56210,Nandurbar
+56211,Chaupale
+56222,Sher
+56230,Parsa Kerwan Halt
+56231,Agauthar Halt
+56234,Kurduvadi Junction
+56235,Ganagapur Road
+56253,Shahabad
+56268,Gunrajpur Dhama Halt
+56269,Tandur
+56277,Kauriaa Jungle
+56278,Wadsa
+56283,Terha Halt
+56284,Bankata
+56287,Semra
+56298,Muradi
+56319,Pandabeswar
+56321,Kajoragram
+56338,Harichandanpur
+56354,Chinpai
+56377,Sagadapata
+56380,Daitari
+56385,Stuartpuram
+56439,Goaldih
+56445,Porjanpur
+56446,Basantapur
+56466,Mahawan Khor
+56479,Pipalsana
+56516,Nakardei
+56544,Baba Raghuni Halt Dwarika
+56554,Jamkundia
+56576,Silli
+56584,Omkareshwar Road
+56585,Gautamdhara
+56588,Gangaghat
+56589,Pilighat
+56592,Boridand Junction
+56623,Samni Junction
+56626,Dahej
+56632,Washimbe
+56634,Rahon
+56636,Jinti Road
+56637,Parewadi
+56638,Sanha Halt
+56639,Dhamora
+56647,Malkera Junction
+56653,Murarpur
+56654,Chedhabanni Halt
+56671,Haipo Jadonang
+56677,Thingu
+56698,Kollikhutaha
+56706,Gonu Dham Halt
+56707,Hatpuraini Railway station
+56734,DHANBAD JUNCTION
+56771,Kumaripur
+56772,Aliganj
+56777,Mahiyarpur
+56818,Raghubans Nagar
+56820,Jassowal
+56823,Aurahi
+56885,Hendlaso Bhokta Bagicha
+56930,Tori Junction
+56932,Sukhasan Kothi
+56933,Sukhsena
+56934,Barhara Kothi
+56944,Roshanpur
+57000,Valappadi Gate
+57003,Jalpur
+57007,Baad
+57029,Somra Bazar
+57034,Irgaon
+57035,Nagjua
+57042,Narkopi
+57046,Tangarbansali
+57050,Dadhapara
+57071,Piska
+57072,Itki
+57093,Namkon
+57097,Light House
+57098,Thiruvallikeni
+57117,Belha
+57126,Bodagram
+57135,Barkisalaiya
+57140,Nabinagar Road
+57147,Kajrat Nawadih
+57153,Kokpara
+57154,Dumurdaha
+57167,Paharpur
+57229,Chetar
+57239,Goshainganj
+57242,Pangri
+57244,Balagarh
+57246,Kamalpurgram
+57255,McCluskieganj
+57293,Agthori
+57301,Jagi Road
+57305,Mamdapur
+57319,Ramachandrapuram TS
+57356,Khanapur Junction
+57398,Nagalapalli
+57403,Duriatanr Halt
+57407,Ellenabad
+57413,Barayla Chaurasi
+57414,Dignagar
+57455,Ramna
+57517,Nagar Untari
+57557,Duddhinagar
+57558,Jharokhas
+57560,Udiyan Khedi
+57610,Renukoot
+57616,Karuvatta
+57617,Kaduturutty
+57622,Phulbasia
+57632,Bukru
+57669,Vellore Town
+57713,Shamli
+57716,Mohana
+57724,Galudih
+57732,Bihta
+57764,Chharra
+57765,Guir Saranga
+57778,Chandisar
+57786,Banpas
+57791,Gidhni
+57802,Unjalur
+57805,Tatanagar
+57806,Loknath
+57808,Yerpedu
+57894,Sohansra
+57905,Dibai
+57906,Nautanwa
+57977,Nirol
+57983,Komarpur
+58020,Nabagram Kankurhati Halt
+58055,Bhatisuda
+58093,Takkolam
+58095,Daud Khan
+58158,Mirza Cheuki Railway Station
+58196,Mohanpur
+58198,Punpun Ghat Halt
+58211,Neora
+58216,Chunbhati
+58293,Kalian Chak
+58341,Batasi
+58382,Sibsagar Town
+58395,Sakrigali
+58398,Tinpahar Junction
+58408,Murli Halt
+58412,Taljhari
+58426,Deoghar Junction
+58429,Harlatanr
+58443,Kakni
+58460,Chandan
+58465,Dhanpatdih
+58467,Jirighat
+58470,Lehra Khana
+58472,Habaipur
+58479,Patharkhola
+58482,Ambassa
+58486,New Domohani
+58489,Gumto
+58495,Algapur
+58497,Lanka
+58501,Lakswa
+58502,Bhalukpong
+58505,Salbari
+58507,Rangjuli
+58508,Dhalpukhuri
+58511,Bairabi
+58518,Bordoloni
+58522,Laopani
+58523,Telem
+58528,Lamsakhang
+58538,Numaligarh
+58548,Lepetkata
+58552,Patiladaha
+58560,Lalabazar
+58566,Kamrup Khetri
+58570,North Lakhimpur
+58572,Banka
+58573,Wimco Nagar
+58574,Sant Hirdaram Nagar Railway Station
+58586,Gandhidham Junction
+58603,Lumding Junction
+58607,Bar Langfer S railway station
+58608,Jamunamukh
+58609,Lahing
+58610,New Silchar
+58611,Daldali
+58612,Moabund
+58613,Kampur railway station
+58614,Panchgram
+58616,New Karimganj Junction
+58630,Ratabari
+58640,Charduar
+58641,Balipara
+58642,Dahgaon
+58646,Dikom
+58647,Chalkhoa
+58648,Burj Mohar
+58651,Mahabubabad
+58681,Auwa
+58799,Murarai
+58800,Chatra
+58820,Andipatti
+58864,Bagri Sajjanpur
+58881,Kungalagunta
+58897,Rompicherla
+58925,Velpuru
+59072,Amarpura
+59083,Sendra
+59142,Daurai
+59156,Patharkandi
+59157,Kalkalighat
+59162,Sitaramapuram
+59180,Shewbabudih
+59259,Tilbhita
+59260,Barharwa Junction
+59299,Khatauli
+59301,Sakhoti Tanda
+59355,Baral
+59357,Chhaprawat Halt
+59360,Gulaothi
+59376,Icbn
+59392,Malda Town
+59394,Gour Malda
+59404,Abhayapuri
+59440,Dwarapudi
+59442,Rani Gaidinliu station
+59443,Jiribam
+59445,Vangaichungpao
+59446,Khongsang
+59551,Dhansiripar
+59557,Dhansiri
+59559,Khotkhoti
+59561,Mahesra
+59562,Gajraula Junction
+59581,Nemalipuri
+59714,Soron Shukar Kshetra
+59742,Maharajpur
+59765,Sahibganj
+59781,Karamtola
+59782,Lakshmipur Bhorang
+59793,Yog Nagari Rishikesh
+59804,Bikramshila
+59805,Kahalgaon
+59811,Balrampur
+59814,Intiyathok
+59846,Jharkhandi
+59914,Gainjahwa
+59923,Tulsipur
+59924,Kauwapur
+59925,Gainsari Junction
+59927,Puzhudivakkam
+59952,Palia Kalan
+59956,Belrayan
+59957,Tikunia
+59958,Khairatiya Bandh Road
+59961,Gaighat Halt
+59962,Mihinpurwa
+59963,Bahraich
+59968,Chilwariya
+59973,Bhira Kheri
+60001,Kattalli
+60024,Kultham Abdulla Shah
+60027,Khabra Kalan
+60049,Khatīma
+60052,Siajuli
+60071,Puraini
+60086,Naksalbari
+60099,Adhikari
+60100,Phaphamau Junction
+60105,Lalganj
+60118,Gopiganj / Gyanpur Road
+60127,Handia Khas
+60130,Jangiganj
+60131,Bhiti
+60149,Bakudi
+60157,Viduraswattha
+60163,Pangara Shinde
+60166,Malasa
+60218,Kund
+60231,Chitrasani
+60257,Banas
+60267,Murtajapur (NG)
+60409,Sonarpur Junction
+60415,Rohira Ghallughara
+60435,Barnala
+60442,Gill
+60462,Batala Sugar Mills
+60463,Vadala Granthin
+60466,Kalubathan
+60467,Washermanpet
+60471,Washermanpet
+60517,Bablad
+60528,Gauri Sriram
+60529,Padiya Nagla
+60530,Shahzad Nagar
+60531,Kartauli
+60532,Chakarpur
+60542,Bankeyganj
+60543,Todarpur
+60606,Pakra
+60607,Kurkura
+60608,Pokla
+60627,Aujari
+60628,Sarpeswar
+60631,Pandori
+60639,Akaltara
+60660,Tarur
+60683,Champa Junction
+60694,Jalna
+60701,Janjgir Naila
+60704,Urga
+60717,Hemagir
+60726,Jharadih
+60734,Kharsia
+60789,Miangram
+60797,Kavali
+60825,Lalitgram
+60829,Saraigarh
+60830,Malihati Talibpur Road
+60836,Ganj Basoda
+60856,Shri Ghasinagar
+60866,Shd Ramphal Balhara (Bahu Akbarpur)
+60896,Duhai
+60898,Maganoor
+60903,Kalhar
+60905,Prajapati Nagar
+60912,Gangavathi Railway station
+60916,Sayama
+60917,Khambhat
+60920,Lakhimpur
+60921,Bahelia Buzurg
+60922,Ramva
+60923,Malwan
+60924,Athsarai
+60926,Petlad Junction
+60931,Bhadran
+60932,Bochasan Junction
+60938,Kathana
+60939,Nischintapur
+60941,Yawarpura
+60942,Panposh
+60944,Biramitrapur
+60954,Jakhapura Junction
+60962,Phulia
+60964,Shantipur Junction
+60968,Latur Road
+60972,Badkulla
+60982,Gadadharpur
+60987,Barsi Town
+61004,Dhavlas
+61010,Vakav
+61011,Madha
+61014,Wadsinge
+61026,Kurwai Kethora
+61027,Salem Junction
+61029,Sanchi
+61033,Varnama
+61045,Sumer
+61066,Deshapran
+61085,Mandi Bamora
+61148,Kansrao Railway Station
+61159,Kiraoli
+61163,Aralaguppe
+61180,Ashapura Gomat
+61185,Merta City
+61230,Murtajapur
+61244,Naya Raipur
+61265,Meham
+61276,Pipavav
+61277,Lekoda
+61278,Lakshmibai Nagar
+61279,Vadakannikapuram
+61288,Paniahwa
+61297,Sagauli Junction
+61326,Jogeshwari (Harbour Line)
+61372,Dausa
+61374,Sasaram Junction
+61390,Tadipatri
+61392,Koregaon
+61406,Barra Bazar
+61424,Bajrangpura
+61427,Kesariya Road
+61447,Kesamudram
+61455,Jhartarbha railway station
+61509,Bhagavathipuram
+61510,Edamann
+61516,Maranchi Halt
+61521,Bela Tal
+61545,Nilgiri Road
+61549,Khantapara
+61558,Manchili
+61561,Ambagaon
+61600,Shelu
+61736,Huskuru
+61739,Lakadiya
+61793,Pathrad
+61799,Phulaguri
+61810,Gadra Road
+61812,Nagaur
+61842,Kada Bari Halt
+61863,Chitrapur
+61876,Kakdwip
+61877,Nazarbag
+61886,Powerkheda
+61887,Manguli Chowdwar
+61892,Ghoom
+61896,Tung
+61913,Dornahalli
+61924,Aralvaymozhi
+61928,Marwasgram
+61929,Ghaziabad Junction
+61936,Rahiyol
+61937,Bayad
+61942,Chanda Fort
+61952,Hanumanahalli
+61980,Birambad
+62038,Unchaulia
+62057,Basuchak
+62059,Takari
+62065,Bhimalgondi
+62073,Bidar
+62075,New Rewari WDFC
+62086,Malethu Kanak
+62091,Sainagar Shirdi
+62092,Makrana Junction
+62119,Gotan
+62150,Umdanagar
+62151,Budvel
+62159,NPA Shivaram Pally
+62192,Amritsar Junction
+62197,Khaltipur
+62222,Rai Singh Nagar
+62245,Siliguri Town
+62275,Miyagam Karjan Junction (NG)
+62276,Nekkonda
+62277,Badampahar
+62298,Barkakana Junction
+62339,Hassan Junction
+62395,Belur Math
+62401,Sindhanur
+62423,Ranjanpada
+62424,Nhava Sheva
+62425,Dronagiri
+62426,Uran City
+62430,Bardoli
+62437,Kharkhara
+62449,Dhasa Junction
+62454,Parsoda
+62458,Nagarsol
+62491,Mandan Mishra Halt
+62513,Reddigudem
+62523,Kalsur
+62524,Savanur
+62525,Karajgi
+62534,Devaragudda
+62535,Chalgeri
+62545,Shujaatpur
+62553,Mundra Airport Road
+62588,Makalidurga
+62589,Oddarahalli
+62597,Shindawane
+62607,Phursungi
+62615,Sasvad Road
+62640,Alandi
+62728,Bartara
+62732,Jung Bahadurgnj
+62739,Jahanikhera
+62746,Neri
+62756,Habra
+62783,Gangwara
+62796,Behrajor
+62796,Behrajor
+62833,Changsari
+62845,Baihata
+62869,Qadian
+62877,Karavadi
+62884,Laundh
+62896,Manjhwe
+62899,Jamuawan
+62904,Taticherla
+62937,Kursela
+62949,DRM Office
+62968,Kharaiadih
+63079,Devarapalli
+63082,Tham
+63086,Niyol
+63102,Sihapar Halt
+63103,Kopaganj
+63116,Indara Junction
+63121,Haldharpur
+63128,Gaunaha
+63135,Chamua
+63187,Ghataro
+63196,Ghoswar Junction
+63197,Ghoswar Junction
+63197,Ghoswar Junction
+63204,Paru Khas
+63279,Saraiya Junction
+63323,Vetapalem
+63324,Chirala
+63336,Birju Bigha
+63346,Gawaspur
+63396,Fatuha Junction
+63397,Budhdevchak Y Nagar
+63430,Oodlabari
+63439,Anjana Farm
+63452,Carron
+63453,Banarhat
+63459,Maranayakanahalli
+63494,Barmer
+63524,New Cooch Behar Junction
+63528,Alipurduar
+63531,Balganur
+63532,Dhing Bazar
+63533,Lakhmapur
+63534,Jakanur
+63538,Mallapur
+63574,Talakal
+63599,New Alipurduar
+63599,New Alipurduar
+63608,Hulkoti
+63625,Mayanaguri Road
+63654,Ghoksadanga
+63668,Sonepur
+63690,Phalodi Junction
+63700,Anupgarh
+63705,Lanela
+63710,Sanu
+63730,Kusmahi
+63749,Tarighat
+63756,Khalari
+63763,Bokaro Thermal
+63783,Durga Chak
+63791,Donakonda
+63792,Nayar Hat
+63810,Amta
+63812,Sapat Gram
+63816,Fakiragram Junction
+63844,Tipkai
+63854,Salakati
+63860,Dangtal
+63881,Chhulha
+63934,Katangi Khurd
+63963,Delhi Junction
+63991,Phaltan
+63992,Surawadi
+63998,Salpa
+64036,Kandari
+64038,Chak Sikandar
+64057,Ambkeshwar
+64060,Kannjara
+64062,Nandapur
+64064,Gajwel
+64087,Malatipatpur
+64107,Bamangachi
+64146,Nandyal
+64170,Narayandoh
+64173,Wangapalli
+64187,Tolewahi
+64193,Delang
+64208,Hindol Road
+64223,Ghelda
+64226,Jamsar
+64236,Mahajan
+64242,Kapali Road
+64256,Kanaji
+64276,Kamareddi
+64436,Canacona
+64445,Tingrai
+64446,Digboi
+64447,Bargolai
+64450,Chakra Road
+64451,Dullahapur
+64458,Rani Kamalapati Railway Station
+64468,Dharmavaram Junction
+64472,Penukonda Junction
+64492,Rangepalli
+64511,MP Nagar
+64514,Bina Junction
+64515,Timmapur
+64524,Shadnagar
+64525,Kottur
+64530,HBL Nagar
+64538,Niz Chatia
+64549,Chakiting
+64560,Amguri Junction
+64563,Meleng
+64577,Mahipal Road
+64579,Mahipal
+64581,Naopara Mahishasur
+64582,Sonthaliya
+64591,Tenya
+64599,Kazipara Halt
+64619,Dhulian Ganga
+64624,Safrai
+64631,Nimtita
+64644,Sujnipara Junction
+64657,Khagraghat Road
+64674,Jirat
+64681,BHEL
+64682,Telapur
+64685,Jamai Osmania
+64686,Vidyanagar
+64687,Medchal
+64688,Gowdavalli
+64689,Gundla Pochampally
+64690,Bolarum
+64691,Bolarum Bazaar
+64692,Dayanand Nagar
+64693,Bhudevi Nagar
+64703,Ammuguda
+64709,Neredmet
+64720,Ferozguda
+64721,Suchitra Centre
+64736,Daklongia
+64740,Naid Gaam Railway Station
+64759,Ajhai
+64766,Balanagar
+64771,Burgula
+64780,Rangaliting
+64789,Masjid
+64795,Sawai Madhopur Junction
+64796,Valsad
+64797,Vapi
+64805,Parasnath
+64806,Kudal
+64812,Alappuzha
+64816,Karwar
+64823,Jhankad Sarala Road
+64828,Mithapur
+64830,Jamuguri
+64838,Sadanapura
+64844,Gundlakamma Junction
+64862,Potlapadu
+64869,Sarojini Nagar
+64876,Sachiwalaya
+64882,Jajau
+64886,Mustabada
+64893,Gumgaon
+64895,Bally
+64900,Bholldih
+64901,Phulwari Sharif
+64902,Danapur
+64907,Sardar Patel Marg
+64908,Brar Square
+64909,Delhi Cantt
+64910,Delhi Inderpuri
+64915,Vadodara Junction
+64917,Digha Bridge Halt
+64980,Banta Raghunathgarh
+64985,Bhandu Motidau
+65003,Abu Road
+65027,Sarotra Road
+65068,Angar
+65071,Vikarabad Junction
+65073,Kalaburagi Junction
+65087,Gaudgaon
+65098,Jeur
+65099,Pophlaj
+65102,Kivarli
+65113,Ambivli
+65118,Bhandup
+65205,Rajchandrapur
+65206,Bally Halt
+65219,Jamalpur Junction
+65273,Badarpur Ghat
+65313,Phaphund
+65320,Talegaon
+65321,Talegaon Railway Station
+65324,Malavli
+65326,Kanhe
+65327,Jhinjhak
+65328,Dijaobra
+65334,Rani Kamlapati
+65350,Bareilly Junction
+65351,Anand Vihar
+65352,Anand Vihar Terminal
+65369,Salempur Junction
+65373,Lar Road
+65383,Sadat
+65388,Sewapuri
+65393,Kapsethi
+65395,Parsipur
+65396,Mondh
+65397,Sarai Kansrai
+65405,Sarai Chandi
+65409,Prayag Junction
+65415,Dabhaura
+65416,Jaitwar
+65417,Talvadiya Junction
+65431,Barhaj Bazar
+65434,Satraon
+65435,Deoraha Baba Road
+65439,Pipri Dih
+65450,Dewariya Kurmha Naresh Halt
+65467,Bhadohi
+65483,Khirkiya
+65484,Jabalpur
+65485,Dapodi
+65514,Jarauda Nara
+65521,Ambala Cantonment Junction
+65523,Deoband
+65524,Delhi Shahdara Junction
+65533,Bokaro Steel City
+65536,Chopan
+65540,Netaji SC Bose Junction Gomoh
+65544,Dhenkanal
+65549,Rourkela Junction
+65550,Anara
+65553,Adra Junction
+65554,Bankura Jn.
+65555,Hijli
+65565,Garhwa Road
+65572,Manjhi
+65581,Bakulha
+65584,Asaudah
+65586,Barpeta Road
+65589,Agartala
+65594,Kathua
+65595,Pathankot Cantonment
+65599,Durg Junction
+65600,Rajnandgaon
+65620,Jalandhar City Junction
+65636,Thrissur;Canara Bank
+65643,Indraprastha
+65650,Chandra Nagar Halt
+65682,Atraura Halt
+65707,Bohani
+65725,Chargola
+65726,Timarni
+65730,Guramkhedi
+65738,Yenugonda
+65746,Diviti Palli
+65786,Rangareddy Guda
+65787,Rajapur
+65788,Jadcherla
+65789,Jakhanian
+65807,Faridaha Halt
+65829,Palakkad Junction
+65844,Billi Junction
+65847,Salai Banwa
+65848,Lohgara
+65858,Kuchman Railway Station
+65861,Hortoki
+65951,Kawnpui
+65963,Katakhal Junction
+66004,Soniyana
+66108,Bahora Chandil Halt
+66127,Darauli
+66131,Usia Khas
+66167,Mawaiya
+66265,Maishashan
+66267,Longai
+66268,Maishashan
+66268,Maishashan
+66278,Sabroom
+66335,Pawakhali
+66377,Bhanga
+66378,Rupasibari
+66402,Orai
+66403,Ait Junction
+66408,Sarsoki
+66423,Secunderabad Junction
+66426,Karumattur
+66469,Sarahula
+66475,Kanaibazar
+66519,Dailwara
+66538,Sri Venkateswarapalem
+66542,Talamanchi
+66555,Jalsu Nanak
+66558,Besroli
+66562,Jiron
+66568,Ramalpur
+66597,Biswan
+66601,Sarayan
+66626,Bara
+66632,Vijay Sota
+66648,Joba
+66668,Kaima
+66677,Karaila Road Junction
+66691,Mahroi
+66700,Phaphrakund
+66703,Majhaoli
+66727,Sumreri
+66733,Makronia
+66738,Ratangaon
+66740,Nariaoli
+66753,Khurai
+66757,Bina Malkhedi
+66762,Baghora
+66773,Jeruakhera
+66779,Chilikidara
+66780,Khatkarkalan Jhandaji
+66819,Chakraj Mal
+66823,Kaithalkuchi
+66825,Nalbari
+66831,Tihu
+66850,Kathaltali Halt
+66860,Tilbhum
+66861,Chandkhira Bagn
+66885,Debagram
+66886,Azimganj City
+66887,Birnagar
+66947,Bhadli
+66958,Saheri
+67048,Kailaras
+67064,Nigatpur
+67071,Dhing Halt
+67108,Narasambudhi
+67134,Ekdil
+67135,Jaswantnagar
+67149,Iranagaram
+67179,Dugga
+67193,Basindahar
+67211,Haur
+67235,Dhari Junction
+67237,Vagdiya
+67240,Amarsar
+67247,Wankaner City
+67250,Sarangpur Road
+67255,Lorwada
+67257,Chanasma
+67258,Surbari
+67259,Bhutakiya Bhimasar
+67260,Maliya Miyana Junction
+67264,Navlakhi
+67272,Shankarpur Bhadaura
+67279,Sikkampatti
+67284,Bavla
+67287,Sri Kalyanpura
+67302,Sonasan
+67303,Angadi
+67311,Karari
+67313,Virangana Lakshmibai Jhansi Junction
+67360,Dalapatisamudram
+67370,Nandol Dahegam
+67371,Valavanur
+67374,District Court (Purple Line)
+67389,Sarbahara
+67401,Khodri
+67407,Harri
+67411,Chandia Road
+67420,Alwar Tirunagari
+67443,Therubali
+67446,Salar
+67553,Jhalarapatan
+67556,Jhalawar City
+67592,Peddasana
+67631,Sivadevunichikkala
+67679,Heelalige
+67726,Navade Road
+67727,Kalamboli
+67728,Taloje Panchanand
+67737,S. Uppalapadu
+67758,Aman Lodge
+67877,Belandur Road
+67889,Pen
+67890,Hamarapur
+67891,Jite
+67892,Rasayani
+67897,കാഞ്ഞങ്ങാട്
+67898,Nileshwar
+67899,Cheruvattur
+67900,Thalassery
+67901,Mahé
+67902,Quilandi
+67903,Tirur
+67904,Turavur
+67905,Ambalappuzha
+67906,Haripad
+67907,Karunagapalli railway station
+67908,Paravur
+67909,Varkala Sivagiri
+67910,B.G Nagar
+67911,Channarayapatna
+67912,Sakleshpur
+67913,Dharwad
+67914,Hubballi
+67915,Haveri
+67916,Davanagere
+67930,Kolar
+67931,Jannagatta
+67932,Gottihalli
+67933,Dodnatta
+67934,Chintamani
+67935,Sidlagatta
+67936,Gidnahalli
+67937,Chikballapur
+67938,Nandi
+67939,Venkatagirikote
+67940,Avatihalli
+67941,Doddajala
+67942,Betta Halasuru
+67943,Channasandra
+67944,Banaswadi
+67946,Sir M Visvesvaraya Terminal
+68068,Carmelaram
+68076,Badshah Nagar
+68099,Dhamangaon
+68100,Shirsoli
+68122,Kavi Subhash
+68139,Lingamguntla
+68148,Banni Mahamman Patti
+68198,Saundal
+68200,Siwan Junction
+68201,Patliputra
+68218,Sairang
+68221,Machilipatnam
+68222,Chilakalapudi
+68230,Pedana
+68240,Kavutaram
+68254,Ramavarappadu
+68265,Ventrapragada
+68296,Vellavacheruvu
+68318,Siliguri Junction
+68336,Parsabad
+68338,James Street
+68339,Tetulmari
+68342,Chhapra Junction
+68467,Kalambani Budruk
+68569,Mookambika Road Byndoor
+68711,Fatehpur Makrandpur
+68717,Amanwadi
+68719,Lohagad
+68720,Karimuddin Pur
+68722,Ajaibpur
+68732,Ghazipur Ghat
+68738,Nandganj
+68741,Ankuspur
+68765,Tajpur Dehma
+68766,Chit Baragaon
+68771,Buxar
+68773,Baruna
+68776,Twining Ganj
+68795,Mandrak
+68809,Gurudijhatia
+68814,Chandur
+68815,Pulgaon Junction
+68825,Semarkhedi
+68832,Sank
+68840,Banmor
+68841,Nishatpura
+68858,Hoshangabad
+68865,Misrod
+68867,Mandideep
+68876,Bijrotha
+68877,Datia
+68882,Daulta
+68883,Hetampur
+68884,Dholpur Junction
+68893,Sithouli
+68901,Antri
+68902,Sonagir
+68910,Anant Paith
+68915,Dabra
+68916,Kotra
+68917,Chirula
+68919,Bijauli
+68920,Babina
+68940,Malugur
+68950,Adhartal
+68952,Modipuram
+68955,Sarai Kale Khan - Nizamuddin
+68956,Sivadi
+68959,Mhasavad
+68980,Warangal
+68994,Amla Juncion
+68996,Jaulkhera
+69015,Ruby Hall Clinic
+69237,Kolad
+69266,Mangaon
+69310,Goregaon Road
+69322,Udupi
+69329,Mandawli Chandra Vihar
+69334,Chandanagar
+69340,Meerut City Junction
+69341,Umbermali
+69344,Thansit
+69347,Kasara
+69369,Chennai Park Town
+69390,Jaisalmer
+69394,Ateli
+69501,Thana Bhawan
+69560,Teknewas
+69561,Kopa Samhota
+69562,Daudpur
+69563,Ekma
+69564,Mahendranath Halt
+69565,Chainwa
+69566,Duraundha Junction
+69567,Pachrukhi
+69568,Dumri Juara
+69569,Baragopal
+69570,Panchpatia Deoria
+69571,Awatar Nagar
+69572,Amika Bhawani Halt
+69573,Dighwara
+69579,Sitalpur
+69583,Nayagaon
+69612,Mehsi Junction
+69620,Sanosara
+69625,Meenambakkam
+69636,Chennai Park
+69645,Miyagam Karjan Junction
+69672,Piprahan
+69702,Pavagada
+69715,Hapur Junction
+69725,Tiruvallur
+69727,Putlur
+69728,Veppampattu
+69729,Pattabiram
+69730,Avadi
+69731,Pattaravakkam
+69732,Korattur
+69733,Perambur Loco Works
+69734,Perambur Carriage Works
+69763,Puttur
+69787,Rayagada
+69806,Surat
+69809,Badhkal Mor
+69822,Jatdumri Junction
+69833,Sheikpura
+69838,Lakshmipur Road
+69839,Kartoli Punjab
+69849,Khijadiya Junction
+69854,Chalala
+69856,Visavadar Junction
+69861,Talala Junction
+69869,Bishnupur
+69870,Kalyan Junction
+69877,Panhai
+69891,Girwar
+69919,Didarganj Road
+69923,Delvada
+69932,Kansiya Nes
+69933,Monglajhora Halt
+69935,Savni
+69936,Bhader
+69940,Mahuva Junction
