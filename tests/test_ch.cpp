@@ -9,6 +9,12 @@
 
 using namespace agss;
 
+// Graph sizes here are chosen to exercise code paths, not to demonstrate
+// scale. CH preprocessing is superlinear on dense random graphs -- deliberately
+// so, since it exploits structure road networks have and random graphs do not
+// -- and under AddressSanitizer a 400-node random graph alone ran for minutes.
+// The performance claims are measured separately and live in the README.
+
 namespace {
 
 /// Every CH answer must match Dijkstra in cost, and the returned path must be
@@ -46,7 +52,7 @@ void expect_matches_dijkstra(const Graph& g, const ContractionHierarchy& ch, int
 }  // namespace
 
 TEST("ch", "matches Dijkstra on a grid") {
-    const auto g = testing::unit_grid(24, 24);
+    const auto g = testing::unit_grid(16, 16);
     ContractionHierarchy ch;
     ch.build(g);
     CHECK(ch.ready());
@@ -54,14 +60,14 @@ TEST("ch", "matches Dijkstra on a grid") {
 }
 
 TEST("ch", "matches Dijkstra on a random weighted graph") {
-    const auto g = testing::random_graph(400, 900, 1234);
+    const auto g = testing::random_graph(180, 320, 1234);
     ContractionHierarchy ch;
     ch.build(g);
     expect_matches_dijkstra(g, ch, 250, 22, "random");
 }
 
 TEST("ch", "matches Dijkstra on a geographic graph") {
-    const auto g = testing::random_graph(350, 800, 4321, CoordSpace::Geographic);
+    const auto g = testing::random_graph(160, 300, 4321, CoordSpace::Geographic);
     ContractionHierarchy ch;
     ch.build(g);
     expect_matches_dijkstra(g, ch, 200, 33, "geographic");
@@ -144,7 +150,7 @@ TEST("ch", "parallel and self edges do not multiply through contraction") {
 
 TEST("ch", "expands far less of the graph than Dijkstra") {
     // The whole point: preprocessing buys a much smaller search.
-    const auto g = testing::unit_grid(45, 45);
+    const auto g = testing::unit_grid(26, 26);
     ContractionHierarchy ch;
     ch.build(g);
     auto dij = Registry::instance().create("dijkstra");
@@ -165,7 +171,7 @@ TEST("ch", "expands far less of the graph than Dijkstra") {
 }
 
 TEST("ch", "preprocessing reports sane statistics") {
-    const auto g = testing::random_graph(300, 700, 777);
+    const auto g = testing::random_graph(150, 260, 777);
     ContractionHierarchy ch;
     ch.build(g);
     const auto& st = ch.stats();
@@ -185,7 +191,7 @@ TEST("ch", "preprocessing reports sane statistics") {
 }
 
 TEST("ch", "tighter witness bounds add shortcuts but never change answers") {
-    const auto g = testing::random_graph(250, 550, 8888);
+    const auto g = testing::random_graph(130, 220, 8888);
     ContractionHierarchy weak, strong;
     ContractionHierarchy::BuildOptions tight;
     tight.witness_hop_limit = 1;
@@ -205,7 +211,7 @@ TEST("ch", "stays compact on road-like graphs") {
     // A grid stands in for a road network here; on a dense random graph the
     // shortcuts genuinely compound (measured above 9x), which is a property of
     // the input, not a defect in the implementation.
-    const auto grid = testing::unit_grid(40, 40);
+    const auto grid = testing::unit_grid(28, 28);
     ContractionHierarchy ch;
     ch.build(grid);
     CHECK_MSG(ch.stats().edge_growth < 3.0, "grid edge growth " << ch.stats().edge_growth);
@@ -216,7 +222,7 @@ TEST("ch", "an exhausted preprocessing budget still answers correctly") {
     // Bailing out must degrade effectiveness, never correctness: uncontracted
     // nodes keep a level above every contracted one, so the upward search
     // still reaches them.
-    const auto g = testing::random_graph(300, 700, 246);
+    const auto g = testing::random_graph(200, 420, 246);
     ContractionHierarchy::BuildOptions tiny;
     tiny.budget_ms = 1.0;
     ContractionHierarchy ch;

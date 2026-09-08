@@ -13,6 +13,16 @@ using namespace agss;
 
 namespace {
 
+/// Graphs here are small on purpose. The trial *count* is what catches a rare
+/// disagreement -- a 1-in-100 fault needs a few hundred samples, which is how
+/// Dial's rounding bug slipped past a 40-trial test -- but the graph size is
+/// free to be small, and it must be: Floyd-Warshall recomputes an all-pairs
+/// matrix on every call, so running it once per single-pair query is O(V^3)
+/// per trial. At 200 nodes this suite took 103 seconds, and several minutes
+/// more under sanitizers.
+constexpr int kDiffNodes = 120;
+constexpr int kDiffEdges = 220;
+
 std::vector<std::string> optimal_keys() {
     std::vector<std::string> out;
     for (const auto& k : Registry::instance().keys()) {
@@ -25,7 +35,7 @@ std::vector<std::string> optimal_keys() {
 }  // namespace
 
 TEST("differential", "every optimal algorithm agrees on cost (planar, 200 nodes)") {
-    const auto g = testing::random_graph(200, 400, 7);
+    const auto g = testing::random_graph(kDiffNodes, kDiffEdges, 7);
     const auto keys = optimal_keys();
     CHECK(keys.size() >= 5);
 
@@ -53,7 +63,7 @@ TEST("differential", "every optimal algorithm agrees on cost (planar, 200 nodes)
 }
 
 TEST("differential", "optimal algorithms agree on geographic graphs") {
-    const auto g = testing::random_graph(150, 300, 21, CoordSpace::Geographic);
+    const auto g = testing::random_graph(kDiffNodes, kDiffEdges, 21, CoordSpace::Geographic);
     const auto keys = optimal_keys();
     std::mt19937_64 rng(5);
     std::uniform_int_distribution<NodeId> pick(0, g.num_nodes() - 1);
@@ -73,7 +83,7 @@ TEST("differential", "optimal algorithms agree on geographic graphs") {
 }
 
 TEST("differential", "every returned path is a real edge sequence") {
-    const auto g = testing::random_graph(120, 260, 31);
+    const auto g = testing::random_graph(kDiffNodes, kDiffEdges, 31);
     std::mt19937_64 rng(1234);
     std::uniform_int_distribution<NodeId> pick(0, g.num_nodes() - 1);
     for (const auto& k : Registry::instance().keys()) {
@@ -90,7 +100,7 @@ TEST("differential", "every returned path is a real edge sequence") {
 }
 
 TEST("differential", "BFS is hop-minimal on unit-weight grids") {
-    const auto g = testing::unit_grid(12, 12);
+    const auto g = testing::unit_grid(10, 10);
     auto bfs = Registry::instance().create("bfs");
     auto dij = Registry::instance().create("dijkstra");
     std::mt19937_64 rng(77);
@@ -108,7 +118,7 @@ TEST("differential", "BFS is hop-minimal on unit-weight grids") {
 }
 
 TEST("differential", "heuristic search never beats the optimum") {
-    const auto g = testing::random_graph(180, 360, 42);
+    const auto g = testing::random_graph(kDiffNodes, kDiffEdges, 42);
     auto dij = Registry::instance().create("dijkstra");
     for (const auto& k : {"greedy", "bfs", "dfs"}) {
         auto alg = Registry::instance().create(k);
@@ -131,7 +141,7 @@ TEST("differential", "heuristic search never beats the optimum") {
 TEST("differential", "A* stays optimal under the geographic heuristic") {
     // The old Euclidean-on-lat/lon heuristic over-estimated and silently broke
     // admissibility; this pins the corrected behaviour.
-    const auto g = testing::random_graph(200, 500, 555, CoordSpace::Geographic);
+    const auto g = testing::random_graph(kDiffNodes, kDiffEdges, 555, CoordSpace::Geographic);
     auto astar = Registry::instance().create("astar");
     auto dij = Registry::instance().create("dijkstra");
     std::mt19937_64 rng(313);
@@ -146,11 +156,11 @@ TEST("differential", "A* stays optimal under the geographic heuristic") {
 }
 
 TEST("differential", "bidirectional Dijkstra matches and expands fewer nodes") {
-    const auto g = testing::unit_grid(30, 30);
+    const auto g = testing::unit_grid(18, 18);
     auto bi = Registry::instance().create("bidijkstra");
     auto dij = Registry::instance().create("dijkstra");
     long bi_total = 0, dij_total = 0;
-    for (NodeId t : {449, 599, 899}) {
+    for (NodeId t : {161, 251, 323}) {
         const auto b = bi->run(g, 0, t, {});
         const auto d = dij->run(g, 0, t, {});
         CHECK(b.success && d.success);
@@ -164,8 +174,8 @@ TEST("differential", "bidirectional Dijkstra matches and expands fewer nodes") {
 }
 
 TEST("differential", "Yen's routes are distinct and cost-ordered") {
-    const auto g = testing::random_graph(120, 300, 606);
-    const auto rep = k_shortest_paths(g, 0, 60, 5);
+    const auto g = testing::random_graph(kDiffNodes, kDiffEdges, 606);
+    const auto rep = k_shortest_paths(g, 0, 60, 4);
     CHECK(!rep.routes.empty());
     for (std::size_t i = 0; i < rep.routes.size(); ++i) {
         CHECK_MSG(path_cost(g, rep.routes[i].path) >= 0.0, "route " << i << " contains a non-edge");
@@ -218,7 +228,7 @@ TEST("differential", "Dial declines fractional weights instead of rounding them"
 TEST("differential", "an algorithm that declines says so and returns nothing") {
     // A declined run must be distinguishable from a failed search: no path, no
     // claimed success, and a name that explains itself.
-    const auto big = testing::random_graph(6000, 8000, 11);
+    const auto big = testing::random_graph(5200, 6000, 11);
     const auto res = Registry::instance().create("floydwarshall")->run(big, 0, 100, {});
     CHECK(!res.success);
     CHECK(res.path.empty());

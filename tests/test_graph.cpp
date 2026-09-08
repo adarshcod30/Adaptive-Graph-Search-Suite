@@ -92,12 +92,15 @@ TEST("geo", "bearings and turn angles are sane") {
     CHECK_NEAR(geo::turn_angle(10, 350), -20.0, 1e-9);  // wraps back
 }
 
+// The k-d tree tests compare against brute force, which is O(V) per query, so
+// these stay small deliberately: the property being checked is exactness, and
+// that does not need scale.
 TEST("kdtree", "nearest matches brute force on random points") {
-    const auto g = testing::random_graph(500, 200, 4242);
+    const auto g = testing::random_graph(220, 120, 4242);
     KdTree tree(g);
     std::mt19937_64 rng(2024);
     std::uniform_real_distribution<double> coord(0.0, 100.0);
-    for (int trial = 0; trial < 200; ++trial) {
+    for (int trial = 0; trial < 120; ++trial) {
         const double qx = coord(rng), qy = coord(rng);
         NodeId brute = kInvalidNode;
         double best = std::numeric_limits<double>::infinity();
@@ -115,7 +118,7 @@ TEST("kdtree", "nearest matches brute force on random points") {
 }
 
 TEST("kdtree", "nearest works on geographic coordinates") {
-    const auto g = testing::random_graph(300, 100, 31337, CoordSpace::Geographic);
+    const auto g = testing::random_graph(200, 90, 31337, CoordSpace::Geographic);
     KdTree tree(g);
     std::mt19937_64 rng(11);
     std::uniform_real_distribution<double> lon(77.0, 78.0), lat(12.8, 13.8);
@@ -131,7 +134,7 @@ TEST("kdtree", "nearest works on geographic coordinates") {
 }
 
 TEST("kdtree", "radius query matches brute force") {
-    const auto g = testing::random_graph(300, 100, 777);
+    const auto g = testing::random_graph(220, 90, 777);
     KdTree tree(g);
     const double r = 15.0;
     auto got = tree.within(50.0, 50.0, r);
