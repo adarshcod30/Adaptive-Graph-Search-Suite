@@ -65,17 +65,27 @@ jobs:
           fail=0
           # data/maps/ holds a single synthetic grid now, so looping over it
           # alone left every real network unverified while this job stayed
-          # green. Differential bugs are size-independent, and a full verify
-          # is superlinear, so cover one network of each character instead of
-          # all nine: the integer grid (the only graph Dial applies to), a
-          # real road network, and the sparse long-distance rail topology.
-          for spec in "data/maps/Grid_Integer:" \
-                      "data/cities/Gorakhpur:--geo" \
-                      "data/networks/India_Railways:--geo" ; do
-            map=${spec%%:*}
-            geo=${spec#*:}
-            echo "== $map $geo"
-            out=$(./build/bin/agss verify --graph "$map" $geo --samples 25)
+          # green. Coverage is split by what each network tests well rather
+          # than running everything everywhere, which took over half an hour.
+          #
+          # The 225-node grid is the only place the superlinear algorithms are
+          # affordable, so it carries full coverage -- Johnson, Bellman-Ford,
+          # Floyd-Warshall and Dial, which needs integer weights and declines
+          # anywhere else. The real networks are where structural cases live
+          # (one-way traps, stranded components, heuristic admissibility), and
+          # the fast optimal algorithms cross-check each other there. Only the
+          # expensive intersection, big graph times superlinear algorithm, is
+          # dropped.
+          for spec in "data/maps/Grid_Integer:60::" \
+                      "data/cities/Gorakhpur:15:--geo:johnson,bellmanford" \
+                      "data/networks/India_Railways:10:--geo:johnson,bellmanford" ; do
+            map=${spec%%:*}; rest=${spec#*:}
+            n=${rest%%:*}; rest=${rest#*:}
+            geo=${rest%%:*}; skip=${rest#*:}
+            args=""
+            [ -n "$skip" ] && args="--skip $skip"
+            echo "== $map $geo $args (samples $n)"
+            out=$(./build/bin/agss verify --graph "$map" $geo $args --samples "$n")
             echo "$out"
             # A warning here means the map violates heuristic admissibility,
             # which makes A* legitimately suboptimal -- a data bug, not a
