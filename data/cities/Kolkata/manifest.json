@@ -1,0 +1,15 @@
+{
+  "name": "Kolkata",
+  "bbox": [
+    22.51,
+    88.32,
+    22.61,
+    88.4
+  ],
+  "source": "OpenStreetMap via Overpass",
+  "licence": "ODbL 1.0",
+  "nodes": 17857,
+  "edges": 42673,
+  "raw_osm_nodes": 55890,
+  "ways": 11479
+}

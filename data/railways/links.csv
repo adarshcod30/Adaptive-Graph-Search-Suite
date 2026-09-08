@@ -1,0 +1,2063 @@
+from,to,line,seconds
+1,227,Train Rajdhani Express 12957: Ahmedabad → New Delhi,6863.7
+1,517,Unnamed Line,3561.2
+2,68,Train Rajdhani Express 22812: New Delhi → Bhubaneswar (via Adra),3661.7
+2,503,Train Rajdhani Express 22811: Bhubaneswar → New Delhi (via Adra),4865.1
+3,23,Train Rajdhani Express 20501: Agartala → Anand Vihar Terminal,4403.3
+4,625,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,219.8
+5,204,Shatabdi Express 12002: New Delhi → Rani Kamlapati,3740.8
+5,270,Train Rajdhani Express 22222: Hazrat Nizamuddin → Mumbai CSMT,7670.2
+5,270,Train Rajdhani Express 22692: Hazrat Nizamuddin → Bengaluru,7670.2
+5,281,Train Rajdhani Express 22221: Mumbai CSMT → Hazrat Nizamuddin,12567.7
+5,281,Train Rajdhani Express 22691: Bengaluru → Hazrat Nizamuddin,12567.7
+5,293,Dakshin Superfast Express: Delhi => Hyderabad,78201.6
+5,454,Shatabdi Express 12001: Rani Kamlapati → New Delhi,3419.2
+6,743,Agra Fort - Lucknow Junction InterCity Semifast Express,166.5
+7,206,Trans-Harbour Line (Vashi => Thane),181.2
+7,206,Trans-Harbour Line: Panvel => Thane,181.2
+7,561,Trans-Harbour Line (Thane => Vashi),175.0
+7,561,Trans-Harbour Line: Thane => Panvel,175.0
+8,227,Unnamed Line,14052.1
+8,301,Train Rajdhani Express 12957: Ahmedabad → New Delhi,9010.9
+9,48,Varanasi - Gonda Intercity Express,3757.3
+9,719,Gonda - Varanasi Intercity Express,9378.1
+10,157,Pune Suburban Railway: Lonavala → Pune,220.0
+10,190,Pune Suburban Railway: Pune → Lonavala,341.8
+11,223,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,3896.7
+11,383,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,5246.8
+11,449,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,910.3
+12,355,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,198.6
+13,241,Shatabdi Express 12003: Lucknow → New Delhi,7627.3
+13,697,Shatabdi Express 12004: New Delhi → Lucknow,5561.2
+14,161,Train Rajdhani Express 12454: New Delhi → Ranchi (via Chopan),11439.3
+14,188,Train Rajdhani Express 12306: New Delhi → Howrah (via Patna),9419.4
+14,188,Train Rajdhani Express 12302: New Delhi → Howrah (via Gaya),9418.1
+14,188,Train Rajdhani Express 20408: New Delhi → Ranchi (via Japla),9418.1
+14,188,Train Rajdhani Express 22824: New Delhi → Bhubaneswar (via Tatanagar),9419.6
+14,188,Train Rajdhani Express 22812: New Delhi → Bhubaneswar (via Adra),9419.6
+14,188,Train Rajdhani Express 20818: New Delhi → Bhubaneswar (via Sambalpur City),9419.6
+14,343,Varanasi - Kanpur line,13359.9
+14,343,Train Rajdhani Express 12301: Howrah → New Delhi (via Gaya),13328.2
+14,343,Train Rajdhani Express 22811: Bhubaneswar → New Delhi (via Adra),13329.4
+14,343,Train Rajdhani Express 22823: Bhubaneswar → New Delhi (via Tatanagar),13329.4
+14,343,Train Rajdhani Express 20817: Bhubaneswar → New Delhi (via Sambalpur City),13329.4
+14,343,Train Rajdhani Express 12453: Ranchi → New Delhi (via Chopan),13328.5
+14,343,Train Rajdhani Express 12305: Howrah → New Delhi (via Patna),13328.2
+14,343,Train Rajdhani Express 20407: Ranchi → New Delhi (via Japla),13328.5
+14,487,Train Express 15018: Gorakhpur → Mumbai LTT,472.3
+14,555,Train Express 15017: Mumbai LTT → Gorakhpur,321.4
+15,683,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,3458.7
+16,117,Hyderabad MMTS: Lingampalli → Medchal,100.7
+16,117,Hyderabad MMTS: Secunderabad → Medchal,100.7
+16,117,Hyderabad MMTS: Hyderabad → Medchal,100.7
+16,128,Hyderabad MMTS: Medchal → Secunderabad,86.5
+16,128,Hyderabad MMTS: Medchal → Hyderabad,86.5
+16,128,Hyderabad MMTS: Medchal → Lingampalli,86.5
+17,267,Double Decker Express 12985: Jaipur → Delhi Sarai Rohilla,7913.4
+18,426,Passenger 51973: Mathura → Jaipur,794.1
+18,513,Passenger 51974: Jaipur → Mathura,938.3
+19,183,Double Decker Express 12986: Delhi Sarai Rohilla → Jaipur,5680.7
+20,73,Train Express 14522: Ambala Cantonment → Delhi,1766.2
+20,133,Kalka Shatabdi Express: New Delhi -> Kalka,2911.7
+20,398,Kalka Shatabdi Express: Kalka -> New Delhi,2951.2
+21,11,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,844.3
+22,52,Central Line: Mumbai CSMT → Khopoli (Fast),537.9
+22,702,Central Line: Khopoli → Mumbai CSMT (Fast),171.7
+23,3,Train Rajdhani Express 20502: Anand Vihar Terminal → Agartala,4403.3
+23,199,Train Rajdhani Express 20501: Agartala → Anand Vihar Terminal,4171.9
+24,679,Chennai Central - Thiruvallur suburban line,115.1
+24,691,Saptagiri Express: MAS -> TPTY,4230.0
+25,623,Central Line: Kasara → Mumbai CSMT (Fast),220.3
+25,694,Central Line: Mumbai CSMT → Kasara (Fast),324.1
+26,231,Kamrup Express,4659.3
+27,46,Train Sonpur Junction Chhapra Junction DEMU 75269: Sonpur Junction → Chhapra Junction,140.3
+27,208,Train Chhapra Junction Sonpur Junction DEMU 75270: Chhapra Junction → Sonpur,255.2
+28,110,Hyderabad MMTS: Ghatkesar → Lingampalli,167.4
+28,128,Hyderabad MMTS: Lingampalli → Medchal,94.9
+28,128,Hyderabad MMTS: Secunderabad → Medchal,94.9
+28,128,Hyderabad MMTS: Hyderabad → Medchal,94.9
+28,501,Hyderabad MMTS: Lingampalli → Ghatkesar,131.0
+28,571,Hyderabad MMTS: Medchal → Secunderabad,79.1
+28,571,Hyderabad MMTS: Medchal → Hyderabad,79.1
+28,571,Hyderabad MMTS: Medchal → Lingampalli,79.1
+29,241,Double Decker Express 12584: Anand Vihar → Lucknow,794.8
+29,343,Train Rajdhani Express 20502: Anand Vihar Terminal → Agartala,27781.1
+30,266,Train Vande Bharat Express 22232: SMVT Bengaluru → Kalaburagi,4284.0
+30,397,Train Vande Bharat Express 20704: Yesvantpur → Kacheguda,9776.1
+31,130,Train Rajdhani Express 20818: New Delhi → Bhubaneswar (via Sambalpur City),9409.1
+31,503,Train Rajdhani Express 20817: Bhubaneswar → New Delhi (via Sambalpur City),4321.3
+32,64,Western Line (fast): Virar => Churchgate,518.2
+32,119,Western Line (fast): Churchgate => Virar,874.7
+32,322,Harbour Line: Mumbai CSMT → Goregaon,175.9
+32,323,Western Line (slow): Churchgate => Virar,135.4
+32,733,Harbour Line: Goregaon → Mumbai CSMT,155.9
+32,733,Western Line (Slow): Virar => Churchgate,155.9
+33,288,Train MEMU 66585: Yesvantpur → Hosur,877.9
+34,203,Train Rajdhani Express 20818: New Delhi → Bhubaneswar (via Sambalpur City),3936.2
+34,601,Train Rajdhani Express 20817: Bhubaneswar → New Delhi (via Sambalpur City),9533.7
+35,44,Chennai Central - Thiruvallur suburban line,200.5
+36,321,Diva -> Roha MEMU,611.4
+38,63,Passenger 51974: Jaipur → Mathura,416.6
+38,384,Passenger 51973: Mathura → Jaipur,386.6
+39,307,Hyderabad MMTS: Secunderabad → Falaknuma,58.5
+39,307,Hyderabad MMTS: Ramchandrapuram → Falaknuma,58.5
+39,307,Hyderabad MMTS: Lingampalli → Falaknuma,58.5
+39,307,Hyderabad MMTS: Lingampalli → Umdanagar,58.5
+39,644,Hyderabad MMTS: Umdanagar → Lingampalli,74.0
+39,644,Hyderabad MMTS: Falaknuma → Secunderabad,74.0
+39,644,Hyderabad MMTS: Falaknuma → Ramachandrapuram,74.0
+39,644,Hyderabad MMTS: Falaknuma → Hyderabad,74.0
+39,644,Hyderabad MMTS: Falaknuma → Lingampalli,74.0
+40,42,Central Line: Mumbai CSMT → Kasara (Fast),531.6
+40,723,Central Line: Kasara → Mumbai CSMT (Fast),404.0
+41,198,Train Rajdhani Express 12301: Howrah → New Delhi (via Gaya),4078.2
+41,198,Shabd Bhedi Superfast Express: => Ghazipur,4078.2
+41,289,Train Rajdhani Express 12302: New Delhi → Howrah (via Gaya),13399.3
+42,40,Central Line: Kasara → Mumbai CSMT (Fast),532.7
+42,676,Central Line: Mumbai CSMT → Kasara (Fast),415.5
+43,592,Train Express 15017: Mumbai LTT → Gorakhpur,1349.7
+43,718,Train Express 15018: Gorakhpur → Mumbai LTT,2096.3
+44,285,Chennai Central - Thiruvallur suburban line,211.0
+45,726,Train MEMU 66591: KSR Bengaluru → Kolar,221.4
+46,27,Train Chhapra Junction Sonpur Junction DEMU 75270: Chhapra Junction → Sonpur,140.3
+46,521,Train Sonpur Junction Chhapra Junction DEMU 75269: Sonpur Junction → Chhapra Junction,148.5
+48,9,Gonda - Varanasi Intercity Express,3757.3
+48,443,Varanasi - Gonda Intercity Express,2011.1
+49,394,Daily Express 16512: Kannur → KSR Bengaluru,2201.1
+50,570,Hyderabad MMTS: Falaknuma → Ramachandrapuram,60.2
+50,669,Hyderabad MMTS: Ramchandrapuram → Falaknuma,219.6
+51,269,Train Rajdhani Express 20501: Agartala → Anand Vihar Terminal,12034.1
+51,506,Train Rajdhani Express 20502: Anand Vihar Terminal → Agartala,1188.9
+52,22,Central Line: Khopoli → Mumbai CSMT (Fast),537.6
+52,716,Central Line: Mumbai CSMT → Khopoli (Fast),745.0
+53,248,Train Patliputra Lucknow Junction Express 15033: Patliputra → Lucknow Junction,7589.0
+54,91,Ranaghat Jn-Lalgola Passenger (UnReserved),1497.6
+54,91,Sealdah - Lalgola MEMU Passenger,1497.6
+54,330,Lalgola - Sealdah MEMU Passenger,2012.7
+55,533,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,184.9
+56,135,Train MEMU 66591: KSR Bengaluru → Kolar,188.1
+57,95,Train Rajdhani Express 22824: New Delhi → Bhubaneswar (via Tatanagar),4452.8
+57,95,Train Rajdhani Express 22812: New Delhi → Bhubaneswar (via Adra),4452.8
+57,284,Train Rajdhani Express 22811: Bhubaneswar → New Delhi (via Adra),7188.4
+57,284,Train Rajdhani Express 22823: Bhubaneswar → New Delhi (via Tatanagar),7188.4
+58,482,Train Rajdhani Express 22691: Bengaluru → Hazrat Nizamuddin,10602.9
+58,482,Train Duronto Express 12285: Secunderabad → Hazrat Nizamuddin,10602.9
+59,125,Nerul–Uran line: Uran → CBD Belapur,366.8
+59,373,Nerul–Uran line (Nerul -> Uran),144.3
+59,373,Nerul–Uran line: CBD Belapur → Uran,144.3
+59,616,Nerul–Uran line (Uran->Nerul),374.0
+60,182,Train 33357: Barasat Junction => Dattapukur,277.4
+61,297,Train Express 15017: Mumbai LTT → Gorakhpur,2377.5
+61,685,Train Express 15018: Gorakhpur → Mumbai LTT,2003.3
+62,87,Train MEMU 66585: Yesvantpur → Hosur,818.5
+63,38,Passenger 51973: Mathura → Jaipur,416.5
+63,263,Passenger 51974: Jaipur → Mathura,500.1
+64,32,Western Line (fast): Churchgate => Virar,518.6
+64,171,Western Line (fast): Virar => Churchgate,287.6
+64,369,Harbour Line: Mumbai CSMT → Goregaon,114.7
+64,369,Western Line (slow): Churchgate => Virar,115.4
+64,425,Harbour Line: Goregaon → Mumbai CSMT,121.0
+64,425,Western Line (Slow): Virar => Churchgate,121.2
+66,56,Train MEMU 66591: KSR Bengaluru → Kolar,413.0
+66,288,Train Vande Bharat Express 20641: Bengaluru Cantonment → Coimbatore,2790.9
+66,392,Train Vande Bharat Express 20672: Bengaluru Cantonment → Madurai,575.3
+67,66,Train MEMU 66591: KSR Bengaluru → Kolar,268.6
+67,392,Train Vande Bharat Express 26651: KSR Bengaluru → Ernakulam Junction,856.0
+67,478,Chennai - Mysuru Shatabdi Express,8937.0
+67,557,Mysuru - Chennai Shatabdi Express,21118.1
+67,651,Train Rajdhani Express 22691: Bengaluru → Hazrat Nizamuddin,9581.1
+67,746,Train Vande Bharat Express 20661: KSR Bengaluru → Dharwad,387.0
+67,746,Train Vande Bharat Express 26752: KSR Bengaluru → Belagavi,387.0
+68,2,Train Rajdhani Express 22811: Bhubaneswar → New Delhi (via Adra),3659.5
+68,284,Train Rajdhani Express 22812: New Delhi → Bhubaneswar (via Adra),7452.8
+69,55,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,92.5
+70,314,Passenger 51974: Jaipur → Mathura,360.9
+70,319,Passenger 51973: Mathura → Jaipur,379.5
+71,326,Daily Express 16512: Kannur → KSR Bengaluru,1594.9
+72,219,Train Sonpur Junction Chhapra Junction DEMU 75269: Sonpur Junction → Chhapra Junction,294.8
+72,521,Train Chhapra Junction Sonpur Junction DEMU 75270: Chhapra Junction → Sonpur,203.1
+73,20,Train Express 14521: Delhi → Ambala Cantonment,1766.3
+73,300,Train Express 14522: Ambala Cantonment → Delhi,1534.2
+74,60,Train 33357: Barasat Junction => Dattapukur,271.1
+75,221,Shabd Bhedi Superfast Express: => Ghazipur,4501.5
+75,289,Train Rajdhani Express 12306: New Delhi → Howrah (via Patna),6366.0
+75,420,Train Rajdhani Express 12305: Howrah → New Delhi (via Patna),12147.4
+76,416,Double Decker Express 12584: Anand Vihar → Lucknow,16123.4
+76,466,Double Decker Express 12583: Lucknow → Anand Vihar,6004.2
+76,573,Lucknow Mail: Lucknow Junction -> New Delhi,4450.7
+76,624,Lucknow Mail: New Delhi -> Lucknow Junction,4983.5
+77,505,Train Rajdhani Express 20501: Agartala → Anand Vihar Terminal,18089.8
+77,576,Train Rajdhani Express 20502: Anand Vihar Terminal → Agartala,4627.6
+78,382,Hazarduari Express: Lalgola => Krishnanagar,1276.8
+78,486,Sealdah - Lalgola MEMU Passenger,1070.1
+78,574,Hazarduari Express: Krishnanagar => Lalgola,3622.4
+78,615,Lalgola - Sealdah MEMU Passenger,1538.8
+79,738,Chennai Central - Thiruvallur suburban line,113.5
+80,319,Passenger 51974: Jaipur → Mathura,491.0
+80,337,Passenger 51973: Mathura → Jaipur,660.2
+81,263,Passenger 51973: Mathura → Jaipur,392.8
+81,658,Passenger 51974: Jaipur → Mathura,418.7
+83,121,Passenger 51973: Mathura → Jaipur,852.7
+83,187,Passenger 51974: Jaipur → Mathura,861.4
+84,190,Pune Suburban Railway: Lonavala → Pune,253.4
+84,245,Pune Suburban Railway: Pune → Lonavala,180.4
+85,293,Train SuperFast Express 12701: Mumbai CSMT → Hyderabad,369.8
+85,495,Hyderabad MMTS: Hyderabad → Lingampalli,72.3
+85,495,Hyderabad MMTS: Umdanagar → Lingampalli,72.3
+85,495,Hyderabad MMTS: Falaknuma → Ramachandrapuram,72.3
+85,495,Hyderabad MMTS: Falaknuma → Lingampalli,72.3
+85,495,Hyderabad MMTS: Medchal → Lingampalli,72.3
+85,495,Hyderabad MMTS: Secunderabad → Lingampalli,72.3
+85,498,Hyderabad MMTS: Lingampalli → Hyderabad,118.3
+85,603,Hyderabad MMTS: Ramchandrapuram → Falaknuma,141.9
+85,603,Hyderabad MMTS: Lingampalli → Falaknuma,141.9
+85,603,Hyderabad MMTS: Lingampalli → Medchal,141.9
+85,603,Hyderabad MMTS: Lingampalli → Umdanagar,141.9
+85,603,Hyderabad MMTS: Lingampalli → Secunderabad,141.9
+85,731,Train SuperFast Express 12702: Hyderabad → Mumbai CSMT,4262.0
+87,127,Train MEMU 66585: Yesvantpur → Hosur,248.6
+88,90,Bhagirathi Express,1258.0
+88,90,Hazarduari Express: Krishnanagar => Lalgola,1257.9
+88,90,Kolkata Berhampore Court Dhanya Dhaanya Express,1258.0
+88,93,Ranaghat Jn-Lalgola Passenger (UnReserved),429.1
+88,93,Sealdah - Lalgola MEMU Passenger,429.1
+88,552,Berhampore Court Kolkata Dhanya Dhaanya Express,1279.9
+88,552,Hazarduari Express: Lalgola => Krishnanagar,1279.8
+88,552,Lalgola - Sealdah MEMU Passenger,1279.9
+89,295,Train Express 15018: Gorakhpur → Mumbai LTT,1915.7
+89,404,Train Express 15017: Mumbai LTT → Gorakhpur,893.1
+90,88,Berhampore Court Kolkata Dhanya Dhaanya Express,1258.0
+90,88,Hazarduari Express: Lalgola => Krishnanagar,1257.9
+90,93,Lalgola - Sealdah MEMU Passenger,835.8
+90,476,Bhagirathi Express,711.3
+90,476,Hazarduari Express: Krishnanagar => Lalgola,711.4
+90,476,Ranaghat Jn-Lalgola Passenger (UnReserved),711.3
+90,476,Sealdah - Lalgola MEMU Passenger,711.3
+91,54,Lalgola - Sealdah MEMU Passenger,1497.6
+91,186,Bhagirathi Express,836.1
+91,186,Ranaghat Jn-Lalgola Passenger (UnReserved),836.1
+91,186,Sealdah - Lalgola MEMU Passenger,836.1
+91,391,Hazarduari Express: Lalgola => Krishnanagar,1953.8
+91,486,Berhampore Court Kolkata Dhanya Dhaanya Express,5798.8
+91,552,Hazarduari Express: Krishnanagar => Lalgola,1520.1
+91,552,Kolkata Berhampore Court Dhanya Dhaanya Express,1520.1
+92,212,Train MEMU 66591: KSR Bengaluru → Kolar,307.8
+93,88,Lalgola - Sealdah MEMU Passenger,429.1
+93,90,Ranaghat Jn-Lalgola Passenger (UnReserved),835.8
+93,90,Sealdah - Lalgola MEMU Passenger,835.8
+94,464,Train Express 15018: Gorakhpur → Mumbai LTT,578.7
+94,532,Train Express 15017: Mumbai LTT → Gorakhpur,601.2
+95,57,Train Rajdhani Express 22811: Bhubaneswar → New Delhi (via Adra),4453.0
+95,57,Train Rajdhani Express 22823: Bhubaneswar → New Delhi (via Tatanagar),4453.0
+95,168,Train Rajdhani Express 22824: New Delhi → Bhubaneswar (via Tatanagar),6798.9
+95,303,Train Rajdhani Express 22812: New Delhi → Bhubaneswar (via Adra),3102.3
+96,308,Train Rajdhani Express 20501: Agartala → Anand Vihar Terminal,3518.1
+96,433,Train Rajdhani Express 20502: Anand Vihar Terminal → Agartala,8577.1
+97,320,Hazarduari Express: Lalgola => Krishnanagar,759.5
+97,320,Lalgola - Sealdah MEMU Passenger,759.1
+97,402,Hazarduari Express: Krishnanagar => Lalgola,779.2
+97,402,Ranaghat Jn-Lalgola Passenger (UnReserved),779.2
+97,402,Sealdah - Lalgola MEMU Passenger,779.2
+98,183,Passenger 51973: Mathura → Jaipur,747.7
+98,384,Passenger 51974: Jaipur → Mathura,481.0
+99,341,Central Line: Kalyan Junction → Mumbai CSMT (Slow),136.3
+99,484,Central Line: Mumbai CSMT → Kalyan Junction (Slow),114.4
+100,118,Hyderabad MMTS: Hyderabad → Lingampalli,160.5
+100,118,Hyderabad MMTS: Umdanagar → Lingampalli,160.5
+100,118,Hyderabad MMTS: Falaknuma → Ramachandrapuram,160.5
+100,118,Hyderabad MMTS: Falaknuma → Lingampalli,160.5
+100,118,Hyderabad MMTS: Medchal → Lingampalli,160.5
+100,118,Hyderabad MMTS: Secunderabad → Lingampalli,160.5
+100,118,Hyderabad MMTS: Ghatkesar → Lingampalli,160.5
+100,228,Hyderabad MMTS: Lingampalli → Hyderabad,168.3
+100,228,Hyderabad MMTS: Ramchandrapuram → Falaknuma,168.3
+100,228,Hyderabad MMTS: Lingampalli → Falaknuma,168.3
+100,228,Hyderabad MMTS: Lingampalli → Medchal,168.3
+100,228,Hyderabad MMTS: Lingampalli → Umdanagar,168.3
+100,228,Hyderabad MMTS: Lingampalli → Secunderabad,168.3
+100,229,Hyderabad MMTS: Lingampalli → Ghatkesar,242.3
+101,241,Train 12903 Golden Temple Mail: Bandra Terminus → Amritsar,11340.4
+102,656,Train Rajdhani Express 12954: Hazrat Nizamuddin → Mumbai Central,4157.2
+102,713,Train Rajdhani Express 12953: Mumbai Central → Hazrat Nizamuddin,5034.2
+103,195,Train Express 15017: Mumbai LTT → Gorakhpur,1483.9
+103,600,Train Express 15018: Gorakhpur → Mumbai LTT,671.2
+104,462,Western Line (fast): Virar => Churchgate,239.6
+104,462,Western Line (Slow): Virar => Churchgate,239.7
+104,485,Western Line (fast): Churchgate => Virar,332.4
+104,485,Western Line (slow): Churchgate => Virar,331.6
+105,370,Vasai Road-Diva Line (main): Diva =>Vasai Road,525.9
+105,385,Vasai Road-Diva Line (main): Vasai Road => Diva,503.6
+106,346,Central Line: Mumbai CSMT → Khopoli (Fast),477.8
+106,500,Central Line: Khopoli → Mumbai CSMT (Fast),463.9
+107,640,Kamrup Express,2290.5
+108,114,Shatabdi Express 12001: Rani Kamlapati → New Delhi,9175.9
+108,297,Train Rajdhani Express 22692: Hazrat Nizamuddin → Bengaluru,5887.2
+108,306,Train Rajdhani Express 22222: Hazrat Nizamuddin → Mumbai CSMT,22627.8
+108,482,Train Rajdhani Express 12442: New Delhi → Bilaspur,20985.6
+108,577,Shatabdi Express 12002: New Delhi → Rani Kamlapati,423.2
+108,735,Train Rajdhani Express 22221: Mumbai CSMT → Hazrat Nizamuddin,19291.0
+108,735,Train Rajdhani Express 22691: Bengaluru → Hazrat Nizamuddin,19291.0
+108,735,Train Rajdhani Express 12441: Bilaspur → New Delhi,19291.0
+109,168,Train Rajdhani Express 22811: Bhubaneswar → New Delhi (via Adra),1654.9
+109,168,Train Rajdhani Express 22823: Bhubaneswar → New Delhi (via Tatanagar),1654.9
+109,168,Train Rajdhani Express 20817: Bhubaneswar → New Delhi (via Sambalpur City),1654.9
+110,28,Hyderabad MMTS: Lingampalli → Ghatkesar,167.7
+110,654,Hyderabad MMTS: Ghatkesar → Lingampalli,224.9
+111,306,Train Express 15018: Gorakhpur → Mumbai LTT,1692.7
+111,306,Howrah-Mumbai Mail,1692.6
+111,583,Train Express 15017: Mumbai LTT → Gorakhpur,2375.2
+112,454,Passenger 51974: Jaipur → Mathura,157.9
+112,465,Passenger 51973: Mathura → Jaipur,611.2
+113,564,Train Rajdhani Express 12441: Bilaspur → New Delhi,7551.7
+114,108,Shatabdi Express 12002: New Delhi → Rani Kamlapati,9175.2
+114,403,Shatabdi Express 12001: Rani Kamlapati → New Delhi,4406.9
+115,380,Train Rajdhani Express 20839: Ranchi → New Delhi (via Bokaro Steel City),7420.7
+115,475,Train Rajdhani Express 22824: New Delhi → Bhubaneswar (via Tatanagar),2748.5
+115,503,Train Rajdhani Express 22823: Bhubaneswar → New Delhi (via Tatanagar),1783.1
+115,575,Train Rajdhani Express 20840: New Delhi → Ranchi (via Bokaro Steel City),6018.6
+116,117,Hyderabad MMTS: Medchal → Secunderabad,125.0
+116,117,Hyderabad MMTS: Medchal → Hyderabad,125.0
+116,117,Hyderabad MMTS: Medchal → Lingampalli,125.0
+116,264,Hyderabad MMTS: Lingampalli → Medchal,351.2
+116,264,Hyderabad MMTS: Secunderabad → Medchal,351.2
+116,264,Hyderabad MMTS: Hyderabad → Medchal,351.2
+117,16,Hyderabad MMTS: Medchal → Secunderabad,100.8
+117,16,Hyderabad MMTS: Medchal → Hyderabad,100.8
+117,16,Hyderabad MMTS: Medchal → Lingampalli,100.8
+117,116,Hyderabad MMTS: Lingampalli → Medchal,125.2
+117,116,Hyderabad MMTS: Secunderabad → Medchal,125.2
+117,116,Hyderabad MMTS: Hyderabad → Medchal,125.2
+118,100,Hyderabad MMTS: Lingampalli → Hyderabad,160.5
+118,100,Hyderabad MMTS: Ramchandrapuram → Falaknuma,160.5
+118,100,Hyderabad MMTS: Lingampalli → Falaknuma,160.5
+118,100,Hyderabad MMTS: Lingampalli → Medchal,160.5
+118,100,Hyderabad MMTS: Lingampalli → Umdanagar,160.5
+118,100,Hyderabad MMTS: Lingampalli → Secunderabad,160.5
+118,100,Hyderabad MMTS: Lingampalli → Ghatkesar,160.5
+118,286,Hyderabad MMTS: Hyderabad → Lingampalli,192.4
+118,286,Hyderabad MMTS: Umdanagar → Lingampalli,192.4
+118,286,Hyderabad MMTS: Falaknuma → Ramachandrapuram,192.4
+118,286,Hyderabad MMTS: Falaknuma → Lingampalli,192.4
+118,286,Hyderabad MMTS: Medchal → Lingampalli,192.4
+118,286,Hyderabad MMTS: Secunderabad → Lingampalli,192.4
+118,286,Hyderabad MMTS: Ghatkesar → Lingampalli,192.4
+119,32,Western Line (fast): Virar => Churchgate,874.6
+119,65,12908 Maharashtra Sampark Kranti Superfast Express,1346.7
+119,175,Western Line (fast): Churchgate => Virar,170.0
+119,175,Western Line (slow): Churchgate => Virar,169.7
+119,338,Western Line (Slow): Virar => Churchgate,195.4
+119,471,Train Rajdhani Express 12952: New Delhi → Mumbai Central,2084.3
+119,471,Train Rajdhani Express 12954: Hazrat Nizamuddin → Mumbai Central,2084.4
+119,656,Train Rajdhani Express 12951: Mumbai Central → New Delhi,15815.4
+119,656,Train 12903 Golden Temple Mail: Bandra Terminus → Amritsar,15815.4
+119,656,12907 Maharashtra Sampark Kranti Superfast Express,15815.4
+119,717,Train Rajdhani Express 12953: Mumbai Central → Hazrat Nizamuddin,9163.8
+120,635,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,254.6
+121,83,Passenger 51974: Jaipur → Mathura,852.7
+121,317,Passenger 51973: Mathura → Jaipur,480.6
+122,479,Hyderabad MMTS: Umdanagar → Lingampalli,138.9
+122,704,Hyderabad MMTS: Lingampalli → Umdanagar,445.9
+123,499,Train Express 15017: Mumbai LTT → Gorakhpur,1782.8
+123,583,Train Express 15018: Gorakhpur → Mumbai LTT,1478.2
+124,156,Central Line: Mumbai CSMT → Kalyan Junction (Slow),86.8
+124,172,Central Line: Mumbai CSMT → Kalyan Junction (Fast),334.5
+124,172,Central Line: Mumbai CSMT → Kasara (Fast),334.5
+124,172,Central Line: Mumbai CSMT → Khopoli (Fast),334.5
+124,470,Central Line: Kalyan Junction → Mumbai CSMT (Fast),287.9
+124,470,Central Line: Khopoli → Mumbai CSMT (Fast),287.9
+124,470,Central Line: Kasara → Mumbai CSMT (Fast),287.9
+124,602,Central Line: Kalyan Junction → Mumbai CSMT (Slow),128.2
+125,59,Nerul–Uran line: CBD Belapur → Uran,367.1
+125,372,Harbour Line: Mumbai CSMT → Panvel,162.3
+125,372,Trans-Harbour Line: Thane => Panvel,162.3
+125,616,Harbour Line: Panvel → Mumbai CSMT,152.8
+125,616,Trans-Harbour Line: Panvel => Thane,152.8
+126,333,Train Rajdhani Express 22221: Mumbai CSMT → Hazrat Nizamuddin,3204.5
+127,283,Train MEMU 66585: Yesvantpur → Hosur,754.6
+128,16,Hyderabad MMTS: Lingampalli → Medchal,86.6
+128,16,Hyderabad MMTS: Secunderabad → Medchal,86.6
+128,16,Hyderabad MMTS: Hyderabad → Medchal,86.6
+128,28,Hyderabad MMTS: Medchal → Secunderabad,94.8
+128,28,Hyderabad MMTS: Medchal → Hyderabad,94.8
+128,28,Hyderabad MMTS: Medchal → Lingampalli,94.8
+129,330,Sealdah - Lalgola MEMU Passenger,1082.7
+129,334,Lalgola - Sealdah MEMU Passenger,989.5
+130,31,Train Rajdhani Express 20817: Bhubaneswar → New Delhi (via Sambalpur City),9409.0
+130,318,Howrah-Mumbai Mail,13585.5
+130,588,Train Rajdhani Express 20818: New Delhi → Bhubaneswar (via Sambalpur City),6708.5
+131,445,Howrah-Mumbai Mail,4539.0
+131,491,Train Express 15018: Gorakhpur → Mumbai LTT,2826.6
+131,514,Train Express 15017: Mumbai LTT → Gorakhpur,3095.1
+132,271,Hyderabad MMTS: Lingampalli → Hyderabad,229.5
+132,271,Hyderabad MMTS: Ramchandrapuram → Falaknuma,229.5
+132,271,Hyderabad MMTS: Lingampalli → Falaknuma,229.5
+132,271,Hyderabad MMTS: Lingampalli → Medchal,229.5
+132,271,Hyderabad MMTS: Lingampalli → Umdanagar,229.5
+132,271,Hyderabad MMTS: Lingampalli → Secunderabad,229.5
+132,271,Hyderabad MMTS: Lingampalli → Ghatkesar,229.5
+132,407,Hyderabad MMTS: Hyderabad → Lingampalli,133.3
+132,407,Hyderabad MMTS: Umdanagar → Lingampalli,133.3
+132,407,Hyderabad MMTS: Falaknuma → Ramachandrapuram,133.3
+132,407,Hyderabad MMTS: Falaknuma → Lingampalli,133.3
+132,407,Hyderabad MMTS: Medchal → Lingampalli,133.3
+132,407,Hyderabad MMTS: Secunderabad → Lingampalli,133.3
+132,407,Hyderabad MMTS: Ghatkesar → Lingampalli,133.3
+133,20,Kalka Shatabdi Express: Kalka -> New Delhi,2911.7
+133,331,Kalka Shatabdi Express: New Delhi -> Kalka,1332.3
+134,633,Daily Express 16512: Kannur → KSR Bengaluru,585.0
+135,745,Train MEMU 66591: KSR Bengaluru → Kolar,922.7
+136,239,Hyderabad MMTS: Lingampalli → Ghatkesar,553.1
+136,501,Hyderabad MMTS: Ghatkesar → Lingampalli,554.5
+137,258,Western Line (fast): Churchgate => Virar,87.5
+137,258,Western Line (slow): Churchgate => Virar,84.2
+137,451,Western Line (fast): Virar => Churchgate,58.9
+137,451,Western Line (Slow): Virar => Churchgate,58.5
+138,620,Train Express 15018: Gorakhpur → Mumbai LTT,484.5
+139,195,Train Express 15018: Gorakhpur → Mumbai LTT,1772.6
+139,251,Train Express 15017: Mumbai LTT → Gorakhpur,1733.8
+140,684,Harbour Line: Mumbai CSMT → Panvel,86.0
+140,684,Harbour Line: Panvel → Mumbai CSMT,88.6
+142,146,Chennai Beach - Tambaram suburban line,108.8
+142,158,Chennai MRTS: Chennai Beach → Saint Thomas Mount,204.2
+143,79,Chennai Central - Thiruvallur suburban line,144.8
+144,512,Chennai Beach - Tambaram suburban line,100.9
+145,144,Chennai Beach - Tambaram suburban line,153.8
+146,147,Chennai Beach - Tambaram suburban line,78.5
+147,145,Chennai Beach - Tambaram suburban line,92.6
+148,158,Chennai MRTS: Saint Thomas Mount → Chennai Beach,112.2
+148,680,Chennai MRTS: Chennai Beach → Saint Thomas Mount,61.5
+149,698,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,682.1
+150,511,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,361.5
+151,376,Train Express 15017: Mumbai LTT → Gorakhpur,1970.8
+151,662,Train Express 15018: Gorakhpur → Mumbai LTT,1969.6
+152,153,Train Chhapra Junction Sonpur Junction DEMU 75270: Chhapra Junction → Sonpur,152.4
+152,208,Train Patliputra Lucknow Junction Express 15033: Patliputra → Lucknow Junction,2039.1
+152,208,Train Sonpur Junction Chhapra Junction DEMU 75269: Sonpur Junction → Chhapra Junction,2037.9
+153,152,Train Sonpur Junction Chhapra Junction DEMU 75269: Sonpur Junction → Chhapra Junction,152.5
+153,247,Train Chhapra Junction Sonpur Junction DEMU 75270: Chhapra Junction → Sonpur,635.6
+153,364,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,614.0
+154,246,Train MEMU 66591: KSR Bengaluru → Kolar,605.5
+155,740,Bilimora-Waghai Narrow Gauge,3193.6
+156,124,Central Line: Kalyan Junction → Mumbai CSMT (Slow),84.7
+156,167,Central Line: Mumbai CSMT → Kalyan Junction (Slow),49.8
+157,10,Pune Suburban Railway: Pune → Lonavala,219.4
+157,550,Pune Suburban Railway: Lonavala → Pune,153.5
+158,142,Chennai MRTS: Saint Thomas Mount → Chennai Beach,209.7
+158,148,Chennai MRTS: Chennai Beach → Saint Thomas Mount,102.3
+159,213,Train MEMU 66591: KSR Bengaluru → Kolar,705.8
+160,618,Train SuperFast Express 12701: Mumbai CSMT → Hyderabad,1565.9
+160,739,Train SuperFast Express 12702: Hyderabad → Mumbai CSMT,927.5
+161,14,Train Rajdhani Express 12453: Ranchi → New Delhi (via Chopan),11459.4
+161,586,Train Rajdhani Express 12454: New Delhi → Ranchi (via Chopan),2484.6
+162,664,Chennai Beach - Tambaram suburban line,126.4
+163,268,Harbour Line: Panvel → Mumbai CSMT,116.4
+163,396,Harbour Line: Mumbai CSMT → Panvel,130.3
+164,451,Western Line (fast): Churchgate => Virar,102.9
+164,451,Western Line (slow): Churchgate => Virar,102.3
+165,516,Train Vande Bharat Express 26651: KSR Bengaluru → Ernakulam Junction,3016.3
+166,584,Harbour Line: Panvel → Mumbai CSMT,73.0
+166,584,Harbour Line: Goregaon → Mumbai CSMT,73.0
+166,621,Harbour Line: Mumbai CSMT → Panvel,130.0
+166,621,Harbour Line: Mumbai CSMT → Goregaon,130.0
+167,156,Central Line: Kalyan Junction → Mumbai CSMT (Slow),51.9
+167,528,Central Line: Mumbai CSMT → Kalyan Junction (Slow),132.3
+168,95,Train Rajdhani Express 22823: Bhubaneswar → New Delhi (via Tatanagar),6799.5
+168,109,Train Rajdhani Express 22824: New Delhi → Bhubaneswar (via Tatanagar),1656.2
+168,109,Train Rajdhani Express 22812: New Delhi → Bhubaneswar (via Adra),1656.2
+168,109,Train Rajdhani Express 20818: New Delhi → Bhubaneswar (via Sambalpur City),1655.7
+168,203,Train Rajdhani Express 20817: Bhubaneswar → New Delhi (via Sambalpur City),2878.2
+168,303,Train Rajdhani Express 22811: Bhubaneswar → New Delhi (via Adra),4196.7
+169,441,Train Express 15018: Gorakhpur → Mumbai LTT,1572.7
+169,626,Train Express 15017: Mumbai LTT → Gorakhpur,2308.0
+170,431,Hyderabad MMTS: Umdanagar → Lingampalli,84.4
+170,431,Hyderabad MMTS: Falaknuma → Secunderabad,84.4
+170,431,Hyderabad MMTS: Falaknuma → Ramachandrapuram,84.4
+170,431,Hyderabad MMTS: Falaknuma → Hyderabad,84.4
+170,431,Hyderabad MMTS: Falaknuma → Lingampalli,84.4
+170,742,Hyderabad MMTS: Secunderabad → Falaknuma,52.1
+170,742,Hyderabad MMTS: Ramchandrapuram → Falaknuma,52.1
+170,742,Hyderabad MMTS: Lingampalli → Falaknuma,52.1
+170,742,Hyderabad MMTS: Lingampalli → Umdanagar,52.1
+171,425,Western Line (slow): Churchgate => Virar,175.8
+171,472,Western Line (fast): Virar => Churchgate,425.9
+171,554,Western Line (Slow): Virar => Churchgate,107.3
+172,124,Central Line: Kalyan Junction → Mumbai CSMT (Fast),334.4
+172,124,Central Line: Khopoli → Mumbai CSMT (Fast),334.4
+172,124,Central Line: Kasara → Mumbai CSMT (Fast),334.4
+172,126,20705 Mumbai CSMT Vande Bharat Express,577.6
+172,396,Central Line: Mumbai CSMT → Kalyan Junction (Fast),469.3
+172,396,Central Line: Mumbai CSMT → Kasara (Fast),469.3
+172,396,Central Line: Mumbai CSMT → Khopoli (Fast),469.3
+172,455,Central Line: Mumbai CSMT → Kalyan Junction (Slow),97.6
+172,470,Train SuperFast Express 12702: Hyderabad → Mumbai CSMT,613.5
+172,470,Train SuperFast Express 12128: Pune → Mumbai CSMT,613.6
+172,528,Central Line: Kalyan Junction → Mumbai CSMT (Slow),74.4
+172,675,Train SuperFast Express 12127: Mumbai CSMT → Pune,1683.4
+173,64,Western Line (fast): Churchgate => Virar,287.1
+174,333,Train 11021 Chalukya Express: Dadar → Tirunelveli,2769.1
+175,119,Western Line (fast): Virar => Churchgate,170.1
+175,119,Western Line (Slow): Virar => Churchgate,169.8
+175,462,Western Line (fast): Churchgate => Virar,257.0
+175,462,Western Line (slow): Churchgate => Virar,257.0
+176,581,Train 12903 Golden Temple Mail: Bandra Terminus → Amritsar,7081.1
+177,253,Train MEMU 66591: KSR Bengaluru → Kolar,346.4
+178,235,Train Rajdhani Express 12453: Ranchi → New Delhi (via Chopan),1999.1
+178,235,Train Rajdhani Express 20407: Ranchi → New Delhi (via Japla),1999.1
+178,409,Train Rajdhani Express 20408: New Delhi → Ranchi (via Japla),6596.4
+178,409,Train Rajdhani Express 12454: New Delhi → Ranchi (via Chopan),6596.4
+179,352,Pune Suburban Railway: Pune → Lonavala,228.7
+179,363,Pune Suburban Railway: Lonavala → Pune,150.4
+180,639,"Darjeeling Himalayan Railway, ""Toy Train""",2919.2
+181,210,Vasai Road-Diva Line (branch): Dativali => Diva,123.1
+181,210,Panvel -> Diva MEMU,123.1
+181,510,Diva -> Panvel MEMU,297.2
+181,510,Diva -> Roha MEMU,297.2
+183,17,Double Decker Express 12985: Jaipur → Delhi Sarai Rohilla,5679.6
+183,98,Passenger 51974: Jaipur → Mathura,747.6
+183,234,Double Decker Express 12986: Delhi Sarai Rohilla → Jaipur,3797.9
+183,314,Passenger 51973: Mathura → Jaipur,846.1
+184,279,Train Vande Bharat Express 20661: KSR Bengaluru → Dharwad,4722.6
+184,279,Train Vande Bharat Express 26752: KSR Bengaluru → Belagavi,4722.6
+185,435,Hyderabad MMTS: Medchal → Secunderabad,62.9
+185,435,Hyderabad MMTS: Medchal → Hyderabad,62.9
+185,435,Hyderabad MMTS: Medchal → Lingampalli,62.9
+185,593,Hyderabad MMTS: Lingampalli → Medchal,47.1
+185,593,Hyderabad MMTS: Secunderabad → Medchal,47.1
+185,593,Hyderabad MMTS: Hyderabad → Medchal,47.1
+186,91,Lalgola - Sealdah MEMU Passenger,836.1
+186,515,Ranaghat Jn-Lalgola Passenger (UnReserved),346.4
+186,515,Sealdah - Lalgola MEMU Passenger,346.4
+186,552,Bhagirathi Express,734.7
+187,83,Passenger 51973: Mathura → Jaipur,861.4
+187,724,Passenger 51974: Jaipur → Mathura,448.0
+188,14,Train Rajdhani Express 12301: Howrah → New Delhi (via Gaya),9447.9
+188,14,Train Rajdhani Express 22811: Bhubaneswar → New Delhi (via Adra),9447.7
+188,14,Train Rajdhani Express 22823: Bhubaneswar → New Delhi (via Tatanagar),9447.7
+188,14,Train Rajdhani Express 20817: Bhubaneswar → New Delhi (via Sambalpur City),9447.7
+188,14,Train Rajdhani Express 12305: Howrah → New Delhi (via Patna),9447.9
+188,14,Train Rajdhani Express 20407: Ranchi → New Delhi (via Japla),9447.9
+188,189,Train Rajdhani Express 20840: New Delhi → Ranchi (via Bokaro Steel City),8249.0
+188,198,Duronto Express: New Delhi -> Sealdah,26862.6
+188,235,Train Rajdhani Express 20408: New Delhi → Ranchi (via Japla),10170.3
+188,236,Train Rajdhani Express 12302: New Delhi → Howrah (via Gaya),14145.1
+188,236,Train Rajdhani Express 22824: New Delhi → Bhubaneswar (via Tatanagar),14143.4
+188,236,Train Rajdhani Express 22812: New Delhi → Bhubaneswar (via Adra),14143.4
+188,236,Train Rajdhani Express 20818: New Delhi → Bhubaneswar (via Sambalpur City),14143.4
+188,343,Duronto Express: Sealdah -> New Delhi,22034.0
+188,343,Train Rajdhani Express 20839: Ranchi → New Delhi (via Bokaro Steel City),22037.1
+188,343,Train Rajdhani Express 20501: Agartala → Anand Vihar Terminal,22035.2
+188,536,Train Rajdhani Express 12306: New Delhi → Howrah (via Patna),14805.0
+188,536,Train Rajdhani Express 20502: Anand Vihar Terminal → Agartala,14805.2
+188,719,Shabd Bhedi Superfast Express: => Ghazipur,1042.3
+189,188,Train Rajdhani Express 20839: Ranchi → New Delhi (via Bokaro Steel City),8243.1
+189,236,Train Rajdhani Express 20840: New Delhi → Ranchi (via Bokaro Steel City),5977.8
+190,10,Pune Suburban Railway: Lonavala → Pune,341.7
+190,84,Pune Suburban Railway: Pune → Lonavala,253.2
+191,267,Unnamed Line,1230.4
+191,267,Double Decker Express 12986: Delhi Sarai Rohilla → Jaipur,1230.4
+191,504,Train Rajdhani Express 12957: Ahmedabad → New Delhi,767.9
+191,610,Double Decker Express 12985: Jaipur → Delhi Sarai Rohilla,637.3
+192,193,Train Express 14521: Delhi → Ambala Cantonment,461.9
+193,192,Train Express 14522: Ambala Cantonment → Delhi,461.6
+193,241,Train Express 14521: Delhi → Ambala Cantonment,964.4
+194,477,Train Express 14522: Ambala Cantonment → Delhi,1703.4
+194,594,Train Express 14521: Delhi → Ambala Cantonment,2426.3
+195,103,Train Express 15018: Gorakhpur → Mumbai LTT,1483.5
+195,139,Train Express 15017: Mumbai LTT → Gorakhpur,1772.4
+195,646,Train Patliputra Lucknow Junction Express 15033: Patliputra → Lucknow Junction,4767.9
+196,45,Train MEMU 66591: KSR Bengaluru → Kolar,442.9
+197,548,Mehsi - Ghaorasahan rail line,1144.8
+198,41,Train Rajdhani Express 12302: New Delhi → Howrah (via Gaya),4077.5
+198,188,Duronto Express: Sealdah -> New Delhi,26862.6
+198,236,Shabd Bhedi Superfast Express: => Ghazipur,13202.3
+198,503,Train Gangadamodar Express 13329: Dhanbad Junction → Patna Junction,2127.6
+198,526,Train Rajdhani Express 12301: Howrah → New Delhi (via Gaya),3268.1
+198,615,Duronto Express: New Delhi -> Sealdah,17309.8
+199,23,Train Rajdhani Express 20502: Anand Vihar Terminal → Agartala,4171.9
+199,51,Train Rajdhani Express 20501: Agartala → Anand Vihar Terminal,4861.7
+200,599,Train Vande Bharat Express 20641: Bengaluru Cantonment → Coimbatore,3660.7
+201,30,Train Vande Bharat Express 20704: Yesvantpur → Kacheguda,2281.1
+201,651,Train Rajdhani Express 22692: Hazrat Nizamuddin → Bengaluru,2142.8
+202,86,Train Vande Bharat Express 26752: KSR Bengaluru → Belagavi,4999.5
+203,34,Train Rajdhani Express 20817: Bhubaneswar → New Delhi (via Sambalpur City),3934.8
+203,168,Train Rajdhani Express 20818: New Delhi → Bhubaneswar (via Sambalpur City),2879.0
+204,5,Shatabdi Express 12001: Rani Kamlapati → New Delhi,3741.2
+204,467,Shatabdi Express 12002: New Delhi → Rani Kamlapati,1714.7
+205,507,Kamrup Express,2820.1
+206,7,Trans-Harbour Line (Thane => Vashi),181.2
+206,7,Trans-Harbour Line: Thane => Panvel,181.2
+206,675,Trans-Harbour Line (Vashi => Thane),144.2
+206,675,Trans-Harbour Line: Panvel => Thane,144.2
+207,695,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,377.3
+208,535,Train Patliputra Lucknow Junction Express 15033: Patliputra → Lucknow Junction,1085.7
+208,645,Train Chhapra Junction Sonpur Junction DEMU 75270: Chhapra Junction → Sonpur,303.6
+209,421,Train Vande Bharat Express 20672: Bengaluru Cantonment → Madurai,3606.9
+210,181,Vasai Road-Diva Line (branch): Diva => Dativali,123.3
+210,181,Diva -> Panvel MEMU,123.9
+210,181,Diva -> Roha MEMU,123.9
+210,385,Vasai Road-Diva Line (main): Diva =>Vasai Road,333.7
+210,385,Central Line: Mumbai CSMT → Kalyan Junction (Slow),318.4
+210,473,Central Line: Kalyan Junction → Mumbai CSMT (Slow),142.2
+211,584,Harbour Line: Mumbai CSMT → Panvel,87.8
+211,584,Harbour Line: Mumbai CSMT → Goregaon,87.8
+211,602,Harbour Line: Panvel → Mumbai CSMT,57.0
+211,602,Harbour Line: Goregaon → Mumbai CSMT,57.0
+212,361,Train MEMU 66591: KSR Bengaluru → Kolar,364.3
+213,652,Train MEMU 66591: KSR Bengaluru → Kolar,657.9
+214,360,Central Line: Khopoli → Mumbai CSMT (Fast),88.0
+214,414,Central Line: Mumbai CSMT → Khopoli (Fast),232.2
+215,333,Central Line: Mumbai CSMT → Kalyan Junction (Fast),358.6
+215,333,Central Line: Mumbai CSMT → Kasara (Fast),371.2
+215,333,Central Line: Mumbai CSMT → Khopoli (Fast),358.3
+215,385,Central Line: Kalyan Junction → Mumbai CSMT (Slow),90.3
+215,673,Central Line: Mumbai CSMT → Kalyan Junction (Slow),110.8
+215,675,Central Line: Kalyan Junction → Mumbai CSMT (Fast),873.2
+215,675,Central Line: Khopoli → Mumbai CSMT (Fast),873.2
+215,675,Central Line: Kasara → Mumbai CSMT (Fast),873.2
+216,508,Nerul–Uran line (Uran->Nerul),223.8
+216,508,Nerul–Uran line: Uran → CBD Belapur,223.8
+216,707,Nerul–Uran line (Nerul -> Uran),95.1
+216,707,Nerul–Uran line: CBD Belapur → Uran,95.1
+218,304,Train Express 15018: Gorakhpur → Mumbai LTT,610.4
+218,457,Train Express 15017: Mumbai LTT → Gorakhpur,1508.4
+219,72,Train Chhapra Junction Sonpur Junction DEMU 75270: Chhapra Junction → Sonpur,295.0
+219,247,Train Sonpur Junction Chhapra Junction DEMU 75269: Sonpur Junction → Chhapra Junction,322.5
+220,564,Train Rajdhani Express 12442: New Delhi → Bilaspur,2560.1
+220,568,Train Rajdhani Express 12441: Bilaspur → New Delhi,2052.5
+221,41,Shabd Bhedi Superfast Express: => Ghazipur,2963.4
+222,152,Train Patliputra Lucknow Junction Express 15033: Patliputra → Lucknow Junction,1972.7
+223,11,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,3896.7
+223,15,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,1222.1
+223,683,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,4411.2
+224,688,Train Vande Bharat Express 26651: KSR Bengaluru → Ernakulam Junction,3502.9
+224,688,Train Vande Bharat Express 20641: Bengaluru Cantonment → Coimbatore,3502.9
+225,547,Shatabdi Express 12004: New Delhi → Lucknow,4008.1
+225,589,Agra Fort - Lucknow Junction InterCity Semifast Express,6787.5
+225,629,Lucknow Junction - Agra Fort InterCity Semifast Express,3980.5
+225,697,Shatabdi Express 12003: Lucknow → New Delhi,6543.7
+226,292,Hyderabad MMTS: Umdanagar → Lingampalli,91.2
+226,292,Hyderabad MMTS: Falaknuma → Secunderabad,91.2
+226,292,Hyderabad MMTS: Falaknuma → Ramachandrapuram,91.2
+226,292,Hyderabad MMTS: Falaknuma → Hyderabad,91.2
+226,292,Hyderabad MMTS: Falaknuma → Lingampalli,91.2
+226,479,Hyderabad MMTS: Lingampalli → Umdanagar,302.9
+227,1,Unnamed Line,6863.8
+227,8,Train Rajdhani Express 12957: Ahmedabad → New Delhi,14050.1
+228,100,Hyderabad MMTS: Hyderabad → Lingampalli,167.9
+228,100,Hyderabad MMTS: Umdanagar → Lingampalli,167.9
+228,100,Hyderabad MMTS: Falaknuma → Ramachandrapuram,167.9
+228,100,Hyderabad MMTS: Falaknuma → Lingampalli,167.9
+228,100,Hyderabad MMTS: Medchal → Lingampalli,167.9
+228,100,Hyderabad MMTS: Secunderabad → Lingampalli,167.9
+228,495,Hyderabad MMTS: Lingampalli → Hyderabad,90.5
+228,495,Hyderabad MMTS: Ramchandrapuram → Falaknuma,90.5
+228,495,Hyderabad MMTS: Lingampalli → Falaknuma,90.5
+228,495,Hyderabad MMTS: Lingampalli → Medchal,90.5
+228,495,Hyderabad MMTS: Lingampalli → Umdanagar,90.5
+228,495,Hyderabad MMTS: Lingampalli → Secunderabad,90.5
+229,100,Hyderabad MMTS: Ghatkesar → Lingampalli,242.7
+229,654,Hyderabad MMTS: Lingampalli → Ghatkesar,217.0
+230,629,Agra Fort - Lucknow Junction InterCity Semifast Express,1421.8
+230,697,Lucknow Junction - Agra Fort InterCity Semifast Express,1193.0
+231,217,Kamrup Express,11778.6
+232,345,Train Express 15017: Mumbai LTT → Gorakhpur,2031.7
+232,551,Train Express 15018: Gorakhpur → Mumbai LTT,3434.0
+233,328,Train SuperFast Express 12701: Mumbai CSMT → Hyderabad,1810.5
+233,648,Train SuperFast Express 12702: Hyderabad → Mumbai CSMT,5914.4
+234,183,Double Decker Express 12985: Jaipur → Delhi Sarai Rohilla,3797.8
+234,237,Passenger 51974: Jaipur → Mathura,372.6
+234,301,Passenger 51973: Mathura → Jaipur,392.1
+234,301,Double Decker Express 12986: Delhi Sarai Rohilla → Jaipur,392.6
+235,178,Train Rajdhani Express 20408: New Delhi → Ranchi (via Japla),1999.1
+235,178,Train Rajdhani Express 12454: New Delhi → Ranchi (via Chopan),1999.1
+235,188,Train Rajdhani Express 20407: Ranchi → New Delhi (via Japla),10163.6
+235,586,Train Rajdhani Express 12453: Ranchi → New Delhi (via Chopan),6168.4
+236,188,Train Rajdhani Express 12301: Howrah → New Delhi (via Gaya),14141.8
+236,188,Shabd Bhedi Superfast Express: => Ghazipur,14141.8
+236,188,Train Rajdhani Express 22811: Bhubaneswar → New Delhi (via Adra),14142.0
+236,188,Train Rajdhani Express 22823: Bhubaneswar → New Delhi (via Tatanagar),14142.0
+236,188,Train Rajdhani Express 20817: Bhubaneswar → New Delhi (via Sambalpur City),14142.0
+236,189,Train Rajdhani Express 20839: Ranchi → New Delhi (via Bokaro Steel City),5980.4
+236,380,Train Rajdhani Express 20840: New Delhi → Ranchi (via Bokaro Steel City),4852.6
+236,380,Train Rajdhani Express 22824: New Delhi → Bhubaneswar (via Tatanagar),4852.6
+236,380,Train Rajdhani Express 22812: New Delhi → Bhubaneswar (via Adra),4852.6
+236,380,Train Rajdhani Express 20818: New Delhi → Bhubaneswar (via Sambalpur City),4852.6
+236,380,Train Gangadamodar Express 13330: Patna Junction → Dhanbad Junction,4854.5
+236,380,Train Gangadamodar Express 13329: Dhanbad Junction → Patna Junction,4854.5
+236,526,Train Rajdhani Express 12302: New Delhi → Howrah (via Gaya),9992.6
+237,234,Passenger 51973: Mathura → Jaipur,366.7
+237,375,Passenger 51974: Jaipur → Mathura,425.1
+238,386,Trans-Harbour Line (Thane => Vashi),109.9
+238,386,Trans-Harbour Line: Thane => Panvel,109.9
+238,561,Trans-Harbour Line (Vashi => Thane),167.3
+238,561,Trans-Harbour Line: Panvel => Thane,167.3
+239,136,Hyderabad MMTS: Ghatkesar → Lingampalli,553.0
+240,396,Central Line: Kalyan Junction → Mumbai CSMT (Fast),273.5
+240,396,Central Line: Khopoli → Mumbai CSMT (Fast),273.5
+240,396,Central Line: Kasara → Mumbai CSMT (Fast),273.5
+240,675,Central Line: Mumbai CSMT → Kalyan Junction (Fast),954.1
+240,675,Central Line: Mumbai CSMT → Kasara (Fast),954.1
+240,675,Central Line: Mumbai CSMT → Khopoli (Fast),954.1
+240,729,Central Line: Kalyan Junction → Mumbai CSMT (Slow),94.9
+240,732,Central Line: Mumbai CSMT → Kalyan Junction (Slow),258.2
+241,13,Shatabdi Express 12004: New Delhi → Lucknow,7627.9
+241,29,Double Decker Express 12583: Lucknow → Anand Vihar,793.9
+241,193,Train Express 14522: Ambala Cantonment → Delhi,962.9
+241,461,Train 12903 Golden Temple Mail: Bandra Terminus → Amritsar,3112.2
+241,463,Train Express 14521: Delhi → Ambala Cantonment,1729.2
+241,466,Double Decker Express 12584: Anand Vihar → Lucknow,9494.0
+241,504,Shatabdi Express 12003: Lucknow → New Delhi,1460.0
+241,504,Train 64433: Ghaziabad-New Delhi Local,1455.6
+241,504,Train 64415: Ghaziabad-New Delhi Local,1455.6
+241,504,Train 64441: Ghaziabad-New Delhi Local,1455.6
+241,504,Train 64431: Ghaziabad-New Delhi Local,1455.6
+241,504,Train 64429: Ghaziabad-New Delhi Local,1455.6
+241,504,Train 64425: Ghaziabad-New Delhi Local,1455.6
+241,504,Train 64423: Ghaziabad-New Delhi Local,1455.6
+242,274,Lucknow Mail: New Delhi -> Lucknow Junction,2556.9
+242,504,Lucknow Mail: Lucknow Junction -> New Delhi,1452.3
+244,180,"Darjeeling Himalayan Railway, ""Toy Train""",247.4
+245,84,Pune Suburban Railway: Lonavala → Pune,180.0
+245,660,Pune Suburban Railway: Pune → Lonavala,224.5
+246,636,Train MEMU 66591: KSR Bengaluru → Kolar,464.3
+247,153,Train Sonpur Junction Chhapra Junction DEMU 75269: Sonpur Junction → Chhapra Junction,635.1
+247,219,Train Chhapra Junction Sonpur Junction DEMU 75270: Chhapra Junction → Sonpur,322.5
+248,251,Train Patliputra Lucknow Junction Express 15033: Patliputra → Lucknow Junction,10505.0
+248,443,Gonda - Varanasi Intercity Express,2015.3
+249,482,Train Rajdhani Express 12441: Bilaspur → New Delhi,8586.9
+249,568,Train Rajdhani Express 12442: New Delhi → Bilaspur,6933.3
+250,677,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,318.2
+251,139,Train Express 15018: Gorakhpur → Mumbai LTT,1734.3
+251,195,Train Patliputra Lucknow Junction Express 15033: Patliputra → Lucknow Junction,3499.4
+252,429,Western Line (slow): Churchgate => Virar,175.7
+252,569,Harbour Line: Goregaon → Mumbai CSMT,108.0
+252,569,Western Line (Slow): Virar => Churchgate,107.9
+253,312,Train MEMU 66591: KSR Bengaluru → Kolar,174.5
+254,140,Harbour Line: Panvel → Mumbai CSMT,125.2
+254,444,Harbour Line: Mumbai CSMT → Panvel,133.5
+255,562,Passenger 51974: Jaipur → Mathura,450.0
+255,724,Passenger 51973: Mathura → Jaipur,610.4
+256,299,Passenger 51973: Mathura → Jaipur,830.5
+256,317,Passenger 51974: Jaipur → Mathura,386.1
+257,264,Hyderabad MMTS: Medchal → Secunderabad,368.8
+257,264,Hyderabad MMTS: Medchal → Hyderabad,368.8
+257,264,Hyderabad MMTS: Medchal → Lingampalli,368.8
+257,458,Hyderabad MMTS: Lingampalli → Medchal,250.6
+257,458,Hyderabad MMTS: Secunderabad → Medchal,250.6
+257,458,Hyderabad MMTS: Hyderabad → Medchal,250.6
+258,137,Western Line (fast): Virar => Churchgate,85.8
+258,137,Western Line (Slow): Virar => Churchgate,91.0
+258,472,Western Line (fast): Churchgate => Virar,66.8
+258,472,Western Line (slow): Churchgate => Virar,62.9
+259,389,Chennai MRTS: Chennai Beach → Saint Thomas Mount,61.8
+259,437,Chennai MRTS: Saint Thomas Mount → Chennai Beach,87.1
+260,557,Charminar Express: Hyderabad => Chennai,9148.2
+260,730,Charminar Express: Chennai => Hyderabad,19879.2
+261,708,Tambaram - Chengelpet suburban line,209.6
+262,596,Chennai Beach - Tambaram suburban line,149.4
+263,63,Passenger 51973: Mathura → Jaipur,500.1
+263,81,Passenger 51974: Jaipur → Mathura,392.8
+264,116,Hyderabad MMTS: Medchal → Secunderabad,351.4
+264,116,Hyderabad MMTS: Medchal → Hyderabad,351.4
+264,116,Hyderabad MMTS: Medchal → Lingampalli,351.4
+264,257,Hyderabad MMTS: Lingampalli → Medchal,368.8
+264,257,Hyderabad MMTS: Secunderabad → Medchal,368.8
+264,257,Hyderabad MMTS: Hyderabad → Medchal,368.8
+265,453,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,260.5
+266,201,Train Rajdhani Express 22692: Hazrat Nizamuddin → Bengaluru,6566.8
+266,447,Train Vande Bharat Express 22232: SMVT Bengaluru → Kalaburagi,6182.6
+266,563,Train Rajdhani Express 22691: Bengaluru → Hazrat Nizamuddin,8150.8
+267,19,Double Decker Express 12986: Delhi Sarai Rohilla → Jaipur,7913.0
+267,191,Double Decker Express 12985: Jaipur → Delhi Sarai Rohilla,1230.5
+267,191,Train Rajdhani Express 12957: Ahmedabad → New Delhi,1230.5
+267,301,Unnamed Line,15254.5
+268,163,Harbour Line: Mumbai CSMT → Panvel,115.8
+268,711,Harbour Line: Panvel → Mumbai CSMT,180.0
+269,287,Train Rajdhani Express 20502: Anand Vihar Terminal → Agartala,8046.6
+269,576,Train Rajdhani Express 20501: Agartala → Anand Vihar Terminal,2347.7
+270,5,Train Rajdhani Express 22221: Mumbai CSMT → Hazrat Nizamuddin,7669.7
+270,5,Train Rajdhani Express 22691: Bengaluru → Hazrat Nizamuddin,7669.7
+270,467,Shatabdi Express 12001: Rani Kamlapati → New Delhi,2619.7
+270,504,Train Rajdhani Express 12441: Bilaspur → New Delhi,20577.6
+270,735,Shatabdi Express 12002: New Delhi → Rani Kamlapati,6717.6
+270,735,Train Rajdhani Express 22222: Hazrat Nizamuddin → Mumbai CSMT,6717.2
+270,735,Train Rajdhani Express 22692: Hazrat Nizamuddin → Bengaluru,6717.2
+270,735,Train Rajdhani Express 12442: New Delhi → Bilaspur,6717.6
+271,132,Hyderabad MMTS: Hyderabad → Lingampalli,229.5
+271,132,Hyderabad MMTS: Umdanagar → Lingampalli,229.5
+271,132,Hyderabad MMTS: Falaknuma → Ramachandrapuram,229.5
+271,132,Hyderabad MMTS: Falaknuma → Lingampalli,229.5
+271,132,Hyderabad MMTS: Medchal → Lingampalli,229.5
+271,132,Hyderabad MMTS: Secunderabad → Lingampalli,229.5
+271,132,Hyderabad MMTS: Ghatkesar → Lingampalli,229.5
+271,286,Hyderabad MMTS: Lingampalli → Hyderabad,198.5
+271,286,Hyderabad MMTS: Ramchandrapuram → Falaknuma,198.5
+271,286,Hyderabad MMTS: Lingampalli → Falaknuma,198.5
+271,286,Hyderabad MMTS: Lingampalli → Medchal,198.5
+271,286,Hyderabad MMTS: Lingampalli → Umdanagar,198.5
+271,286,Hyderabad MMTS: Lingampalli → Secunderabad,198.5
+271,286,Hyderabad MMTS: Lingampalli → Ghatkesar,198.5
+272,505,Train 55752: Haldibari => New Jalpaiguri Passenger,3689.8
+272,505,Train 55750: Haldibari => New Jalpaiguri Passenger,3689.8
+272,638,Train 75722: Haldibari => Siliguri Junction DEMU,4077.7
+273,541,Diva -> Roha MEMU,392.1
+274,242,Lucknow Mail: Lucknow Junction -> New Delhi,2556.9
+274,573,Lucknow Mail: New Delhi -> Lucknow Junction,8731.4
+275,376,Train Express 15018: Gorakhpur → Mumbai LTT,2268.5
+275,685,Train Express 15017: Mumbai LTT → Gorakhpur,996.0
+276,416,Lucknow Mail: New Delhi -> Lucknow Junction,7150.0
+276,624,Lucknow Mail: Lucknow Junction -> New Delhi,4304.6
+277,21,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,1176.8
+278,134,Daily Express 16512: Kannur → KSR Bengaluru,2330.7
+279,290,Train Vande Bharat Express 20661: KSR Bengaluru → Dharwad,4884.0
+279,290,Train Vande Bharat Express 26752: KSR Bengaluru → Belagavi,4884.0
+280,198,Train Gangadamodar Express 13330: Patna Junction → Dhanbad Junction,4985.5
+280,531,Train Gangadamodar Express 13329: Dhanbad Junction → Patna Junction,1545.1
+281,5,Train Rajdhani Express 22222: Hazrat Nizamuddin → Mumbai CSMT,12568.3
+281,5,Train Rajdhani Express 22692: Hazrat Nizamuddin → Bengaluru,12568.3
+281,388,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,28641.6
+281,388,Train Rajdhani Express 22414: Hazrat Nizamuddin → Madgaon,28642.0
+281,388,12908 Maharashtra Sampark Kranti Superfast Express,28640.9
+281,408,Delhi Ring Railway,270.0
+281,454,Dakshin Superfast Express: Delhi => Hyderabad,9367.7
+281,454,Train Rajdhani Express 12954: Hazrat Nizamuddin → Mumbai Central,9347.5
+281,735,Train Duronto Express 12286: Hazrat Nizamuddin → Secunderabad,26798.0
+282,62,Train MEMU 66585: Yesvantpur → Hosur,439.2
+283,33,Train MEMU 66585: Yesvantpur → Hosur,717.6
+284,57,Train Rajdhani Express 22824: New Delhi → Bhubaneswar (via Tatanagar),7190.1
+284,57,Train Rajdhani Express 22812: New Delhi → Bhubaneswar (via Adra),7190.1
+284,68,Train Rajdhani Express 22811: Bhubaneswar → New Delhi (via Adra),7453.5
+284,667,Train Rajdhani Express 22823: Bhubaneswar → New Delhi (via Tatanagar),9003.3
+285,537,Chennai Central - Thiruvallur suburban line,73.5
+286,118,Hyderabad MMTS: Lingampalli → Hyderabad,191.8
+286,118,Hyderabad MMTS: Ramchandrapuram → Falaknuma,191.8
+286,118,Hyderabad MMTS: Lingampalli → Falaknuma,191.8
+286,118,Hyderabad MMTS: Lingampalli → Medchal,191.8
+286,118,Hyderabad MMTS: Lingampalli → Umdanagar,191.8
+286,118,Hyderabad MMTS: Lingampalli → Secunderabad,191.8
+286,118,Hyderabad MMTS: Lingampalli → Ghatkesar,191.8
+286,271,Hyderabad MMTS: Hyderabad → Lingampalli,197.5
+286,271,Hyderabad MMTS: Umdanagar → Lingampalli,197.5
+286,271,Hyderabad MMTS: Falaknuma → Ramachandrapuram,197.5
+286,271,Hyderabad MMTS: Falaknuma → Lingampalli,197.5
+286,271,Hyderabad MMTS: Medchal → Lingampalli,197.5
+286,271,Hyderabad MMTS: Secunderabad → Lingampalli,197.5
+286,271,Hyderabad MMTS: Ghatkesar → Lingampalli,197.5
+287,51,Train Rajdhani Express 20502: Anand Vihar Terminal → Agartala,9336.1
+288,200,Train Vande Bharat Express 20641: Bengaluru Cantonment → Coimbatore,5391.2
+289,41,Train Rajdhani Express 12301: Howrah → New Delhi (via Gaya),13399.8
+289,75,Train Rajdhani Express 12305: Howrah → New Delhi (via Patna),6359.9
+289,667,Howrah-Mumbai Mail,15865.2
+289,730,Coromandel Express: Howrah => Chennai,75738.6
+290,202,Train Vande Bharat Express 20661: KSR Bengaluru → Dharwad,1353.4
+290,202,Train Vande Bharat Express 26752: KSR Bengaluru → Belagavi,1353.4
+291,159,Train MEMU 66591: KSR Bengaluru → Kolar,840.2
+292,226,Hyderabad MMTS: Secunderabad → Falaknuma,91.1
+292,226,Hyderabad MMTS: Ramchandrapuram → Falaknuma,91.1
+292,226,Hyderabad MMTS: Lingampalli → Falaknuma,91.1
+292,226,Hyderabad MMTS: Lingampalli → Umdanagar,91.1
+292,742,Hyderabad MMTS: Umdanagar → Lingampalli,163.3
+292,742,Hyderabad MMTS: Falaknuma → Secunderabad,163.3
+292,742,Hyderabad MMTS: Falaknuma → Ramachandrapuram,163.3
+292,742,Hyderabad MMTS: Falaknuma → Hyderabad,163.3
+292,742,Hyderabad MMTS: Falaknuma → Lingampalli,163.3
+293,85,Train SuperFast Express 12702: Hyderabad → Mumbai CSMT,369.8
+293,359,Charminar Express: Hyderabad => Chennai,9216.3
+293,400,Hyderabad MMTS: Hyderabad → Lingampalli,99.4
+293,400,Hyderabad MMTS: Hyderabad → Medchal,99.4
+294,333,Train Express 15018: Gorakhpur → Mumbai LTT,4913.6
+294,494,Train Express 15017: Mumbai LTT → Gorakhpur,2920.3
+295,89,Train Express 15017: Mumbai LTT → Gorakhpur,1915.3
+295,457,Train Express 15018: Gorakhpur → Mumbai LTT,554.0
+296,353,Chennai MRTS: Saint Thomas Mount → Chennai Beach,72.1
+296,693,Chennai MRTS: Chennai Beach → Saint Thomas Mount,57.6
+297,61,Train Express 15018: Gorakhpur → Mumbai LTT,2377.4
+297,108,Train Rajdhani Express 22691: Bengaluru → Hazrat Nizamuddin,5886.9
+297,482,Train Rajdhani Express 22692: Hazrat Nizamuddin → Bengaluru,15227.4
+297,647,Train Express 15017: Mumbai LTT → Gorakhpur,3232.4
+298,634,Train Express 15018: Gorakhpur → Mumbai LTT,3586.4
+298,637,Train Express 15017: Mumbai LTT → Gorakhpur,2682.5
+299,256,Passenger 51974: Jaipur → Mathura,830.5
+299,572,Passenger 51973: Mathura → Jaipur,575.6
+300,73,Train Express 14521: Delhi → Ambala Cantonment,1534.2
+300,744,Train Express 14522: Ambala Cantonment → Delhi,340.1
+301,8,Unnamed Line,9006.8
+301,234,Double Decker Express 12985: Jaipur → Delhi Sarai Rohilla,386.3
+301,234,Passenger 51974: Jaipur → Mathura,384.9
+301,267,Train Rajdhani Express 12957: Ahmedabad → New Delhi,15253.1
+302,441,Train Express 15017: Mumbai LTT → Gorakhpur,3075.7
+302,612,Train Express 15018: Gorakhpur → Mumbai LTT,1413.9
+303,95,Train Rajdhani Express 22811: Bhubaneswar → New Delhi (via Adra),3101.8
+303,168,Train Rajdhani Express 22812: New Delhi → Bhubaneswar (via Adra),4195.0
+304,218,Train Express 15017: Mumbai LTT → Gorakhpur,610.4
+304,592,Train Express 15018: Gorakhpur → Mumbai LTT,694.6
+305,54,Ranaghat Jn-Lalgola Passenger (UnReserved),820.0
+306,108,Train Rajdhani Express 22221: Mumbai CSMT → Hazrat Nizamuddin,22627.2
+306,111,Train Express 15017: Mumbai LTT → Gorakhpur,1692.6
+306,131,Howrah-Mumbai Mail,6117.5
+306,494,Train Rajdhani Express 22222: Hazrat Nizamuddin → Mumbai CSMT,15476.6
+306,514,Train Express 15018: Gorakhpur → Mumbai LTT,3214.1
+307,39,Hyderabad MMTS: Umdanagar → Lingampalli,58.5
+307,39,Hyderabad MMTS: Falaknuma → Secunderabad,58.5
+307,39,Hyderabad MMTS: Falaknuma → Ramachandrapuram,58.5
+307,39,Hyderabad MMTS: Falaknuma → Hyderabad,58.5
+307,39,Hyderabad MMTS: Falaknuma → Lingampalli,58.5
+307,728,Hyderabad MMTS: Secunderabad → Falaknuma,94.7
+307,728,Hyderabad MMTS: Ramchandrapuram → Falaknuma,94.7
+307,728,Hyderabad MMTS: Lingampalli → Falaknuma,94.7
+307,728,Hyderabad MMTS: Lingampalli → Umdanagar,94.7
+308,96,Train Rajdhani Express 20502: Anand Vihar Terminal → Agartala,3518.1
+308,536,Train Rajdhani Express 20501: Agartala → Anand Vihar Terminal,10057.8
+309,603,Hyderabad MMTS: Umdanagar → Lingampalli,82.6
+309,603,Hyderabad MMTS: Falaknuma → Ramachandrapuram,82.6
+309,603,Hyderabad MMTS: Falaknuma → Hyderabad,82.6
+309,603,Hyderabad MMTS: Falaknuma → Lingampalli,82.6
+309,603,Hyderabad MMTS: Medchal → Hyderabad,82.6
+309,603,Hyderabad MMTS: Medchal → Lingampalli,82.6
+309,603,Hyderabad MMTS: Secunderabad → Lingampalli,82.6
+309,603,Hyderabad MMTS: Secunderabad → Hyderabad,82.6
+310,356,Train Rajdhani Express 12426: Jammu Tawi → New Delhi,5149.1
+311,609,Train Express 15017: Mumbai LTT → Gorakhpur,383.2
+311,701,Train Express 15018: Gorakhpur → Mumbai LTT,1011.1
+312,381,Train MEMU 66591: KSR Bengaluru → Kolar,719.2
+313,420,Train Rajdhani Express 12306: New Delhi → Howrah (via Patna),1953.1
+313,536,Train Rajdhani Express 12305: Howrah → New Delhi (via Patna),13961.0
+314,70,Passenger 51973: Mathura → Jaipur,360.9
+314,183,Passenger 51974: Jaipur → Mathura,845.9
+315,47,Varanasi-Jaunpur-Ayodhya-Barabanki railway line,9011.7
+316,236,Train Gangadamodar Express 13330: Patna Junction → Dhanbad Junction,3369.9
+316,672,Train Gangadamodar Express 13329: Dhanbad Junction → Patna Junction,14974.4
+317,121,Passenger 51974: Jaipur → Mathura,480.6
+317,256,Passenger 51973: Mathura → Jaipur,386.1
+318,111,Howrah-Mumbai Mail,61614.7
+318,588,Train Rajdhani Express 20817: Bhubaneswar → New Delhi (via Sambalpur City),6903.0
+318,601,Train Rajdhani Express 20818: New Delhi → Bhubaneswar (via Sambalpur City),3087.9
+319,70,Passenger 51974: Jaipur → Mathura,379.5
+319,80,Passenger 51973: Mathura → Jaipur,491.0
+320,97,Hazarduari Express: Krishnanagar => Lalgola,759.1
+320,97,Ranaghat Jn-Lalgola Passenger (UnReserved),759.1
+320,97,Sealdah - Lalgola MEMU Passenger,759.1
+320,402,Bhagirathi Express,1423.4
+320,476,Hazarduari Express: Lalgola => Krishnanagar,540.2
+320,476,Lalgola - Sealdah MEMU Passenger,540.3
+321,273,Diva -> Roha MEMU,294.6
+322,32,Harbour Line: Goregaon → Mumbai CSMT,175.9
+322,569,Harbour Line: Mumbai CSMT → Goregaon,81.8
+323,32,Western Line (Slow): Virar => Churchgate,135.5
+323,569,Western Line (slow): Churchgate => Virar,122.5
+324,335,Vasai Road-Diva Line (main): Vasai Road => Diva,402.1
+324,721,Vasai Road-Diva Line (main): Diva =>Vasai Road,350.7
+325,502,Harbour Line: Mumbai CSMT → Panvel,178.8
+325,502,Trans-Harbour Line: Thane => Panvel,178.9
+325,604,Harbour Line: Panvel → Mumbai CSMT,102.3
+325,699,Trans-Harbour Line: Panvel => Thane,162.2
+326,653,Daily Express 16512: Kannur → KSR Bengaluru,2769.6
+327,431,Hyderabad MMTS: Secunderabad → Falaknuma,123.0
+327,431,Hyderabad MMTS: Ramchandrapuram → Falaknuma,123.0
+327,431,Hyderabad MMTS: Lingampalli → Falaknuma,123.0
+327,431,Hyderabad MMTS: Lingampalli → Umdanagar,123.0
+327,728,Hyderabad MMTS: Umdanagar → Lingampalli,124.1
+327,728,Hyderabad MMTS: Falaknuma → Secunderabad,124.1
+327,728,Hyderabad MMTS: Falaknuma → Ramachandrapuram,124.1
+327,728,Hyderabad MMTS: Falaknuma → Hyderabad,124.1
+327,728,Hyderabad MMTS: Falaknuma → Lingampalli,124.1
+328,233,Train SuperFast Express 12702: Hyderabad → Mumbai CSMT,1810.4
+328,622,Train SuperFast Express 12701: Mumbai CSMT → Hyderabad,1790.6
+329,496,Panvel -> Diva MEMU,172.3
+329,524,Diva -> Panvel MEMU,360.0
+329,524,Diva -> Roha MEMU,360.0
+330,54,Sealdah - Lalgola MEMU Passenger,2012.7
+330,129,Lalgola - Sealdah MEMU Passenger,1082.7
+330,305,Ranaghat Jn-Lalgola Passenger (UnReserved),1194.6
+331,133,Kalka Shatabdi Express: Kalka -> New Delhi,1332.3
+332,473,Central Line: Mumbai CSMT → Kalyan Junction (Slow),206.4
+332,675,Central Line: Kalyan Junction → Mumbai CSMT (Slow),173.6
+333,126,Train Rajdhani Express 22222: Hazrat Nizamuddin → Mumbai CSMT,3203.8
+333,172,Train SuperFast Express 12702: Hyderabad → Mumbai CSMT,2783.0
+333,215,Central Line: Kalyan Junction → Mumbai CSMT (Fast),358.5
+333,215,Central Line: Khopoli → Mumbai CSMT (Fast),358.3
+333,215,Central Line: Kasara → Mumbai CSMT (Fast),371.1
+333,294,Train Express 15017: Mumbai LTT → Gorakhpur,4915.0
+333,346,Train SuperFast Express 12701: Mumbai CSMT → Hyderabad,2960.1
+333,346,Train 11021 Chalukya Express: Dadar → Tirunelveli,2961.5
+333,494,Train Rajdhani Express 22221: Mumbai CSMT → Hazrat Nizamuddin,7830.1
+333,623,Central Line: Mumbai CSMT → Kasara (Fast),209.5
+333,673,Central Line: Kalyan Junction → Mumbai CSMT (Slow),253.0
+333,675,Train Express 15018: Gorakhpur → Mumbai LTT,1230.3
+333,675,20705 Mumbai CSMT Vande Bharat Express,1230.3
+333,737,Central Line: Mumbai CSMT → Khopoli (Fast),146.2
+334,129,Sealdah - Lalgola MEMU Passenger,989.5
+334,486,Lalgola - Sealdah MEMU Passenger,752.6
+335,324,Vasai Road-Diva Line (main): Diva =>Vasai Road,402.0
+335,370,Vasai Road-Diva Line (main): Vasai Road => Diva,579.1
+336,340,Pune Suburban Railway: Lonavala → Pune,317.6
+336,432,Pune Suburban Railway: Pune → Lonavala,576.9
+337,80,Passenger 51974: Jaipur → Mathura,660.0
+337,375,Passenger 51973: Mathura → Jaipur,461.5
+338,119,Western Line (slow): Churchgate => Virar,195.4
+338,429,Western Line (Slow): Virar => Churchgate,141.3
+339,351,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,1569.9
+339,351,Daily Express 16512: Kannur → KSR Bengaluru,1569.9
+340,336,Pune Suburban Railway: Pune → Lonavala,317.5
+340,712,Pune Suburban Railway: Lonavala → Pune,358.6
+341,99,Central Line: Mumbai CSMT → Kalyan Junction (Slow),136.5
+341,732,Central Line: Kalyan Junction → Mumbai CSMT (Slow),134.6
+342,351,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,5778.2
+342,390,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,5970.1
+342,539,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,1462.0
+342,540,Daily Express 16512: Kannur → KSR Bengaluru,2209.3
+343,14,Train Rajdhani Express 12306: New Delhi → Howrah (via Patna),13351.2
+343,14,Train Rajdhani Express 12302: New Delhi → Howrah (via Gaya),13352.4
+343,14,Train Rajdhani Express 20408: New Delhi → Ranchi (via Japla),13351.2
+343,14,Train Rajdhani Express 12454: New Delhi → Ranchi (via Chopan),13351.2
+343,14,Train Rajdhani Express 22824: New Delhi → Bhubaneswar (via Tatanagar),13352.1
+343,14,Train Rajdhani Express 22812: New Delhi → Bhubaneswar (via Adra),13352.1
+343,14,Train Rajdhani Express 20818: New Delhi → Bhubaneswar (via Sambalpur City),13352.1
+343,29,Train Rajdhani Express 20501: Agartala → Anand Vihar Terminal,27781.9
+343,188,Duronto Express: New Delhi -> Sealdah,22034.0
+343,188,Train Rajdhani Express 20840: New Delhi → Ranchi (via Bokaro Steel City),22032.9
+343,188,Train Rajdhani Express 20502: Anand Vihar Terminal → Agartala,22034.6
+343,416,Shatabdi Express 12004: New Delhi → Lucknow,5071.1
+343,504,Duronto Express: Sealdah -> New Delhi,28265.4
+343,504,Train Rajdhani Express 12301: Howrah → New Delhi (via Gaya),28276.8
+343,504,Train Rajdhani Express 22811: Bhubaneswar → New Delhi (via Adra),28271.4
+343,504,Train Rajdhani Express 20839: Ranchi → New Delhi (via Bokaro Steel City),28269.5
+343,504,Train Rajdhani Express 22823: Bhubaneswar → New Delhi (via Tatanagar),28270.4
+343,504,Train Rajdhani Express 20817: Bhubaneswar → New Delhi (via Sambalpur City),28271.4
+343,504,Train Rajdhani Express 12453: Ranchi → New Delhi (via Chopan),28269.8
+343,504,Train Rajdhani Express 12305: Howrah → New Delhi (via Patna),28276.8
+343,504,Train Rajdhani Express 20407: Ranchi → New Delhi (via Japla),28269.8
+343,523,Lucknow Junction - Agra Fort InterCity Semifast Express,800.8
+343,547,Shatabdi Express 12003: Lucknow → New Delhi,5875.7
+343,705,Agra Fort - Lucknow Junction InterCity Semifast Express,1230.5
+344,532,Train Express 15018: Gorakhpur → Mumbai LTT,593.0
+344,620,Train Express 15017: Mumbai LTT → Gorakhpur,373.2
+345,232,Train Express 15018: Gorakhpur → Mumbai LTT,2031.5
+345,493,Train Express 15017: Mumbai LTT → Gorakhpur,1096.1
+346,106,Central Line: Khopoli → Mumbai CSMT (Fast),477.7
+346,411,Train SuperFast Express 12701: Mumbai CSMT → Hyderabad,1461.9
+346,411,Train Duronto Express 12219: Mumbai LTT → Secunderabad,1461.9
+346,518,Central Line: Mumbai CSMT → Khopoli (Fast),225.2
+346,556,Train 11021 Chalukya Express: Dadar → Tirunelveli,5179.1
+347,358,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,978.5
+348,686,Train Vande Bharat Express 20672: Bengaluru Cantonment → Madurai,4909.2
+349,419,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,3938.1
+349,700,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,12721.5
+350,703,Central Line: Kasara → Mumbai CSMT (Fast),411.1
+351,342,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,5777.9
+351,438,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,3112.7
+351,439,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,3171.2
+351,439,Daily Express 16512: Kannur → KSR Bengaluru,3171.2
+352,179,Pune Suburban Railway: Lonavala → Pune,228.9
+352,550,Pune Suburban Railway: Pune → Lonavala,186.7
+353,296,Chennai MRTS: Chennai Beach → Saint Thomas Mount,70.4
+353,389,Chennai MRTS: Saint Thomas Mount → Chennai Beach,66.4
+354,481,Diva -> Roha MEMU,933.0
+355,207,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,362.7
+356,310,Train Rajdhani Express 12425: New Delhi → Jammu Tawi,5148.8
+356,534,Train Rajdhani Express 12426: Jammu Tawi → New Delhi,1247.9
+357,428,Train Express 15017: Mumbai LTT → Gorakhpur,4294.5
+357,637,Train Express 15018: Gorakhpur → Mumbai LTT,3626.3
+358,277,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,849.8
+359,58,Train Rajdhani Express 22691: Bengaluru → Hazrat Nizamuddin,15048.7
+359,293,Charminar Express: Chennai => Hyderabad,9214.3
+359,617,Train Rajdhani Express 22692: Hazrat Nizamuddin → Bengaluru,8822.0
+359,730,Charminar Express: Hyderabad => Chennai,14399.1
+360,214,Central Line: Mumbai CSMT → Khopoli (Fast),88.0
+360,518,Central Line: Khopoli → Mumbai CSMT (Fast),306.8
+361,196,Train MEMU 66591: KSR Bengaluru → Kolar,372.4
+362,694,Central Line: Kasara → Mumbai CSMT (Fast),498.8
+362,723,Central Line: Mumbai CSMT → Kasara (Fast),540.0
+363,179,Pune Suburban Railway: Pune → Lonavala,150.6
+363,631,Pune Suburban Railway: Lonavala → Pune,265.6
+364,670,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,265.2
+365,400,Hyderabad MMTS: Lingampalli → Hyderabad,77.8
+365,400,Hyderabad MMTS: Falaknuma → Hyderabad,77.8
+365,400,Hyderabad MMTS: Medchal → Hyderabad,77.8
+365,400,Hyderabad MMTS: Secunderabad → Hyderabad,77.8
+365,498,Hyderabad MMTS: Hyderabad → Lingampalli,82.1
+365,498,Hyderabad MMTS: Hyderabad → Medchal,82.1
+366,333,Train SuperFast Express 12702: Hyderabad → Mumbai CSMT,4270.7
+366,410,Train Duronto Express 12220: Secunderabad → Mumbai LTT,4459.6
+367,446,Harbour Line: Panvel → Mumbai CSMT,132.8
+367,446,Trans-Harbour Line: Panvel => Thane,132.8
+367,524,Harbour Line: Mumbai CSMT → Panvel,240.1
+368,499,Train Express 15018: Gorakhpur → Mumbai LTT,2892.2
+368,662,Train Express 15017: Mumbai LTT → Gorakhpur,1075.4
+369,64,Harbour Line: Goregaon → Mumbai CSMT,114.1
+369,64,Western Line (Slow): Virar => Churchgate,114.7
+369,605,Harbour Line: Mumbai CSMT → Goregaon,119.3
+369,606,Western Line (slow): Churchgate => Virar,101.0
+370,105,Vasai Road-Diva Line (main): Vasai Road => Diva,525.9
+370,335,Vasai Road-Diva Line (main): Diva =>Vasai Road,579.2
+371,42,Central Line: Kasara → Mumbai CSMT (Fast),789.1
+371,703,Central Line: Mumbai CSMT → Kasara (Fast),440.5
+372,125,Harbour Line: Panvel → Mumbai CSMT,161.8
+372,125,Trans-Harbour Line: Panvel => Thane,161.8
+372,446,Harbour Line: Mumbai CSMT → Panvel,179.2
+372,446,Trans-Harbour Line: Thane => Panvel,179.2
+373,59,Nerul–Uran line (Uran->Nerul),144.5
+373,59,Nerul–Uran line: Uran → CBD Belapur,144.5
+373,578,Nerul–Uran line (Nerul -> Uran),405.8
+373,578,Nerul–Uran line: CBD Belapur → Uran,405.8
+374,477,Train Express 14521: Delhi → Ambala Cantonment,1574.7
+374,597,Train Express 14522: Ambala Cantonment → Delhi,663.5
+375,237,Passenger 51973: Mathura → Jaipur,425.2
+375,337,Passenger 51974: Jaipur → Mathura,461.6
+376,151,Train Express 15018: Gorakhpur → Mumbai LTT,1970.8
+376,275,Train Express 15017: Mumbai LTT → Gorakhpur,2268.6
+377,414,Central Line: Khopoli → Mumbai CSMT (Fast),179.5
+378,425,Harbour Line: Mumbai CSMT → Goregaon,105.4
+378,711,Harbour Line: Goregaon → Mumbai CSMT,128.7
+379,436,Chennai Beach - Tambaram suburban line,109.0
+380,115,Train Rajdhani Express 20840: New Delhi → Ranchi (via Bokaro Steel City),7420.2
+380,236,Train Rajdhani Express 22811: Bhubaneswar → New Delhi (via Adra),4851.5
+380,236,Train Rajdhani Express 20839: Ranchi → New Delhi (via Bokaro Steel City),4851.3
+380,236,Train Rajdhani Express 22823: Bhubaneswar → New Delhi (via Tatanagar),4851.5
+380,236,Train Rajdhani Express 20817: Bhubaneswar → New Delhi (via Sambalpur City),4851.5
+380,316,Train Gangadamodar Express 13329: Dhanbad Junction → Patna Junction,7433.6
+380,503,Train Rajdhani Express 22824: New Delhi → Bhubaneswar (via Tatanagar),6401.9
+380,503,Train Rajdhani Express 22812: New Delhi → Bhubaneswar (via Adra),6401.9
+380,503,Train Rajdhani Express 20818: New Delhi → Bhubaneswar (via Sambalpur City),6401.9
+380,526,Train Gangadamodar Express 13330: Patna Junction → Dhanbad Junction,5154.2
+382,75,Shabd Bhedi Superfast Express: => Ghazipur,6420.0
+382,78,Hazarduari Express: Krishnanagar => Lalgola,1276.7
+383,11,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,5246.5
+383,347,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,1487.1
+383,681,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,4253.7
+384,38,Passenger 51974: Jaipur → Mathura,386.4
+384,98,Passenger 51973: Mathura → Jaipur,481.0
+385,105,Vasai Road-Diva Line (main): Diva =>Vasai Road,503.2
+385,210,Vasai Road-Diva Line (main): Vasai Road => Diva,334.4
+385,210,Central Line: Kalyan Junction → Mumbai CSMT (Slow),318.4
+385,215,Central Line: Mumbai CSMT → Kalyan Junction (Slow),90.1
+386,238,Trans-Harbour Line (Vashi => Thane),109.7
+386,238,Trans-Harbour Line: Panvel => Thane,109.7
+386,699,Trans-Harbour Line (Thane => Vashi),222.4
+386,699,Trans-Harbour Line: Thane => Panvel,222.6
+387,538,Chennai Central - Thiruvallur suburban line,136.5
+388,281,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,28642.6
+388,281,Train Rajdhani Express 22413: Madgaon → Hazrat Nizamuddin,28641.8
+388,281,12907 Maharashtra Sampark Kranti Superfast Express,28642.2
+388,480,Train Rajdhani Express 12952: New Delhi → Mumbai Central,14552.2
+388,504,Train Rajdhani Express 12951: Mumbai Central → New Delhi,28960.7
+388,581,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,16244.9
+388,581,Train Rajdhani Express 12954: Hazrat Nizamuddin → Mumbai Central,16244.9
+388,581,Train Rajdhani Express 22414: Hazrat Nizamuddin → Madgaon,16244.9
+388,581,12908 Maharashtra Sampark Kranti Superfast Express,16244.9
+388,613,Train Rajdhani Express 12953: Mumbai Central → Hazrat Nizamuddin,7216.2
+388,613,Train 12903 Golden Temple Mail: Bandra Terminus → Amritsar,7216.2
+389,259,Chennai MRTS: Saint Thomas Mount → Chennai Beach,64.0
+389,353,Chennai MRTS: Chennai Beach → Saint Thomas Mount,67.7
+390,342,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,5970.8
+390,560,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,1746.1
+390,632,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,5481.0
+391,91,Hazarduari Express: Krishnanagar => Lalgola,1953.6
+391,574,Hazarduari Express: Lalgola => Krishnanagar,1796.9
+392,599,Train Vande Bharat Express 26651: KSR Bengaluru → Ernakulam Junction,11178.6
+392,599,Train Vande Bharat Express 20672: Bengaluru Cantonment → Madurai,11178.6
+393,582,Train Rajdhani Express 22413: Madgaon → Hazrat Nizamuddin,8260.3
+393,682,Train Rajdhani Express 22414: Hazrat Nizamuddin → Madgaon,3456.6
+394,746,Daily Express 16512: Kannur → KSR Bengaluru,4210.8
+395,556,Train SuperFast Express 12702: Hyderabad → Mumbai CSMT,12235.8
+395,648,Train SuperFast Express 12701: Mumbai CSMT → Hyderabad,4976.0
+396,140,Harbour Line: Mumbai CSMT → Panvel,168.5
+396,163,Harbour Line: Panvel → Mumbai CSMT,129.7
+396,172,Central Line: Kalyan Junction → Mumbai CSMT (Fast),469.2
+396,172,Central Line: Khopoli → Mumbai CSMT (Fast),469.2
+396,172,Central Line: Kasara → Mumbai CSMT (Fast),469.2
+396,240,Central Line: Mumbai CSMT → Kalyan Junction (Fast),273.7
+396,240,Central Line: Mumbai CSMT → Kasara (Fast),273.7
+396,240,Central Line: Mumbai CSMT → Khopoli (Fast),273.7
+396,642,Central Line: Kalyan Junction → Mumbai CSMT (Slow),181.6
+396,729,Central Line: Mumbai CSMT → Kalyan Junction (Slow),179.1
+397,423,Train Vande Bharat Express 20704: Yesvantpur → Kacheguda,7399.5
+398,20,Kalka Shatabdi Express: New Delhi -> Kalka,2951.2
+398,522,Kalka Shatabdi Express: Kalka -> New Delhi,4701.4
+399,689,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,1051.8
+400,293,Hyderabad MMTS: Lingampalli → Hyderabad,99.5
+400,293,Hyderabad MMTS: Falaknuma → Hyderabad,99.5
+400,293,Hyderabad MMTS: Medchal → Hyderabad,99.5
+400,293,Hyderabad MMTS: Secunderabad → Hyderabad,98.5
+400,365,Hyderabad MMTS: Hyderabad → Lingampalli,77.9
+400,365,Hyderabad MMTS: Hyderabad → Medchal,77.9
+401,435,Hyderabad MMTS: Lingampalli → Medchal,69.1
+401,435,Hyderabad MMTS: Secunderabad → Medchal,69.1
+401,435,Hyderabad MMTS: Hyderabad → Medchal,69.1
+401,617,Hyderabad MMTS: Medchal → Hyderabad,179.3
+401,617,Hyderabad MMTS: Medchal → Lingampalli,179.3
+402,97,Hazarduari Express: Lalgola => Krishnanagar,779.1
+402,97,Lalgola - Sealdah MEMU Passenger,779.2
+403,114,Shatabdi Express 12002: New Delhi → Rani Kamlapati,4407.5
+403,735,Shatabdi Express 12001: Rani Kamlapati → New Delhi,6158.4
+404,89,Train Express 15018: Gorakhpur → Mumbai LTT,893.3
+404,600,Train Express 15017: Mumbai LTT → Gorakhpur,679.6
+405,445,Train Express 15017: Mumbai LTT → Gorakhpur,1768.6
+405,494,Train Express 15018: Gorakhpur → Mumbai LTT,3325.5
+406,474,Chennai MRTS: Chennai Beach → Saint Thomas Mount,63.1
+406,680,Chennai MRTS: Saint Thomas Mount → Chennai Beach,85.5
+407,132,Hyderabad MMTS: Lingampalli → Hyderabad,133.2
+407,132,Hyderabad MMTS: Ramchandrapuram → Falaknuma,133.3
+407,132,Hyderabad MMTS: Lingampalli → Falaknuma,133.2
+407,132,Hyderabad MMTS: Lingampalli → Medchal,133.2
+407,132,Hyderabad MMTS: Lingampalli → Umdanagar,133.2
+407,132,Hyderabad MMTS: Lingampalli → Secunderabad,133.2
+407,132,Hyderabad MMTS: Lingampalli → Ghatkesar,133.2
+407,669,Hyderabad MMTS: Falaknuma → Ramachandrapuram,250.2
+408,611,Delhi Ring Railway,144.4
+409,178,Train Rajdhani Express 12453: Ranchi → New Delhi (via Chopan),6596.6
+409,178,Train Rajdhani Express 20407: Ranchi → New Delhi (via Japla),6596.6
+409,575,Train Rajdhani Express 20408: New Delhi → Ranchi (via Japla),4686.7
+409,575,Train Rajdhani Express 12454: New Delhi → Ranchi (via Chopan),4686.7
+410,346,Train Duronto Express 12219: Mumbai LTT → Secunderabad,3493.9
+410,675,Train Express 15017: Mumbai LTT → Gorakhpur,1145.9
+411,366,Train SuperFast Express 12702: Hyderabad → Mumbai CSMT,242.8
+411,366,Train Duronto Express 12220: Secunderabad → Mumbai LTT,242.8
+411,432,Pune Suburban Railway: Lonavala → Pune,541.9
+411,556,Train SuperFast Express 12701: Mumbai CSMT → Hyderabad,3929.6
+411,556,Train Duronto Express 12219: Mumbai LTT → Secunderabad,3929.6
+411,631,Train SuperFast Express 12127: Mumbai CSMT → Pune,3775.4
+412,282,Train MEMU 66585: Yesvantpur → Hosur,180.5
+413,422,Western Line (Slow): Virar => Churchgate,116.4
+413,554,Western Line (slow): Churchgate => Virar,104.0
+414,214,Central Line: Khopoli → Mumbai CSMT (Fast),232.2
+414,377,Central Line: Mumbai CSMT → Khopoli (Fast),179.2
+415,434,Barabanki-Lucknow Line,851.3
+416,53,Train Patliputra Lucknow Junction Express 15033: Patliputra → Lucknow Junction,409.5
+416,76,Double Decker Express 12583: Lucknow → Anand Vihar,16124.1
+416,276,Lucknow Mail: Lucknow Junction -> New Delhi,7150.0
+416,343,Shatabdi Express 12003: Lucknow → New Delhi,5071.1
+416,705,Lucknow Junction - Agra Fort InterCity Semifast Express,3842.4
+417,504,Train Rajdhani Express 12426: Jammu Tawi → New Delhi,20513.8
+417,534,Train Rajdhani Express 12425: New Delhi → Jammu Tawi,10867.4
+418,298,Train Express 15017: Mumbai LTT → Gorakhpur,235.1
+419,349,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,3937.7
+419,582,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,14657.0
+419,682,Train Rajdhani Express 22413: Madgaon → Hazrat Nizamuddin,2984.4
+420,75,Train Rajdhani Express 12306: New Delhi → Howrah (via Patna),12142.2
+420,313,Train Rajdhani Express 12305: Howrah → New Delhi (via Patna),1953.6
+422,413,Western Line (slow): Churchgate => Virar,116.1
+422,472,Western Line (Slow): Virar => Churchgate,99.6
+423,327,Train Vande Bharat Express 20704: Yesvantpur → Kacheguda,6347.7
+424,517,Train Rajdhani Express 12957: Ahmedabad → New Delhi,4596.1
+424,590,Unnamed Line,4440.4
+425,64,Harbour Line: Mumbai CSMT → Goregaon,121.0
+425,64,Western Line (slow): Churchgate => Virar,121.1
+425,378,Harbour Line: Goregaon → Mumbai CSMT,104.8
+425,456,Western Line (Slow): Virar => Churchgate,100.9
+426,18,Passenger 51974: Jaipur → Mathura,794.1
+426,430,Passenger 51973: Mathura → Jaipur,573.3
+427,674,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,611.6
+428,357,Train Express 15018: Gorakhpur → Mumbai LTT,4293.8
+428,612,Train Express 15017: Mumbai LTT → Gorakhpur,2531.0
+429,252,Western Line (Slow): Virar => Churchgate,175.7
+429,338,Western Line (slow): Churchgate => Virar,141.4
+430,426,Passenger 51974: Jaipur → Mathura,573.3
+430,567,Passenger 51973: Mathura → Jaipur,1189.8
+431,170,Hyderabad MMTS: Secunderabad → Falaknuma,84.2
+431,170,Hyderabad MMTS: Ramchandrapuram → Falaknuma,84.2
+431,170,Hyderabad MMTS: Lingampalli → Falaknuma,84.2
+431,170,Hyderabad MMTS: Lingampalli → Umdanagar,84.2
+431,327,Hyderabad MMTS: Umdanagar → Lingampalli,123.2
+431,327,Hyderabad MMTS: Falaknuma → Secunderabad,123.2
+431,327,Hyderabad MMTS: Falaknuma → Ramachandrapuram,123.2
+431,327,Hyderabad MMTS: Falaknuma → Hyderabad,123.2
+431,327,Hyderabad MMTS: Falaknuma → Lingampalli,123.2
+432,336,Pune Suburban Railway: Lonavala → Pune,576.7
+432,411,Pune Suburban Railway: Pune → Lonavala,542.1
+433,96,Train Rajdhani Express 20501: Agartala → Anand Vihar Terminal,8578.4
+433,505,Train Rajdhani Express 20502: Anand Vihar Terminal → Agartala,13523.5
+435,185,Hyderabad MMTS: Lingampalli → Medchal,62.9
+435,185,Hyderabad MMTS: Secunderabad → Medchal,62.9
+435,185,Hyderabad MMTS: Hyderabad → Medchal,62.9
+435,401,Hyderabad MMTS: Medchal → Secunderabad,69.6
+435,401,Hyderabad MMTS: Medchal → Hyderabad,69.6
+435,401,Hyderabad MMTS: Medchal → Lingampalli,69.6
+436,595,Chennai Beach - Tambaram suburban line,120.5
+437,259,Chennai MRTS: Chennai Beach → Saint Thomas Mount,90.1
+437,678,Chennai MRTS: Saint Thomas Mount → Chennai Beach,73.6
+438,71,Daily Express 16512: Kannur → KSR Bengaluru,1208.0
+438,351,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,3112.7
+438,700,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,3867.9
+439,438,Daily Express 16512: Kannur → KSR Bengaluru,282.9
+440,657,Train 19058 Mangaluru Junction Surat Express,1191.5
+441,169,Train Express 15017: Mumbai LTT → Gorakhpur,1572.7
+441,302,Train Express 15018: Gorakhpur → Mumbai LTT,3075.0
+442,250,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,574.2
+443,48,Gonda - Varanasi Intercity Express,2011.1
+443,248,Varanasi - Gonda Intercity Express,2015.3
+444,254,Harbour Line: Panvel → Mumbai CSMT,133.5
+444,722,Harbour Line: Mumbai CSMT → Panvel,521.2
+445,405,Train Express 15018: Gorakhpur → Mumbai LTT,1768.3
+445,491,Train Express 15017: Mumbai LTT → Gorakhpur,1729.1
+445,494,Howrah-Mumbai Mail,5090.6
+445,494,20705 Mumbai CSMT Vande Bharat Express,5090.4
+446,367,Harbour Line: Mumbai CSMT → Panvel,132.1
+446,367,Trans-Harbour Line: Thane => Panvel,132.1
+446,372,Harbour Line: Panvel → Mumbai CSMT,177.9
+446,372,Trans-Harbour Line: Panvel => Thane,177.9
+447,563,Train Vande Bharat Express 22232: SMVT Bengaluru → Kalaburagi,2014.8
+448,553,Tambaram - Chengelpet suburban line,233.8
+449,149,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,748.4
+450,671,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,187.9
+451,137,Western Line (fast): Churchgate => Virar,58.8
+451,137,Western Line (slow): Churchgate => Virar,68.4
+451,164,Western Line (fast): Virar => Churchgate,103.0
+451,164,Western Line (Slow): Virar => Churchgate,102.4
+452,470,Harbour Line: Panvel → Mumbai CSMT,92.6
+452,470,Harbour Line: Goregaon → Mumbai CSMT,92.6
+452,470,Central Line: Kalyan Junction → Mumbai CSMT (Slow),92.3
+452,602,Harbour Line: Mumbai CSMT → Panvel,73.2
+452,602,Harbour Line: Mumbai CSMT → Goregaon,73.2
+452,602,Central Line: Mumbai CSMT → Kalyan Junction (Slow),80.5
+453,565,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,641.4
+454,5,Shatabdi Express 12002: New Delhi → Rani Kamlapati,3405.5
+454,5,Dakshin Superfast Express: Delhi => Hyderabad,3405.5
+454,112,Passenger 51973: Mathura → Jaipur,157.9
+454,281,Train Rajdhani Express 12953: Mumbai Central → Hazrat Nizamuddin,9332.2
+454,504,Shatabdi Express 12001: Rani Kamlapati → New Delhi,9830.0
+454,613,Train Rajdhani Express 12954: Hazrat Nizamuddin → Mumbai Central,15012.3
+455,172,Central Line: Kalyan Junction → Mumbai CSMT (Slow),97.7
+455,642,Central Line: Mumbai CSMT → Kalyan Junction (Slow),190.9
+456,171,Western Line (Slow): Virar => Churchgate,79.2
+457,218,Train Express 15018: Gorakhpur → Mumbai LTT,1508.5
+457,295,Train Express 15017: Mumbai LTT → Gorakhpur,554.5
+458,257,Hyderabad MMTS: Medchal → Secunderabad,250.4
+458,257,Hyderabad MMTS: Medchal → Hyderabad,250.4
+458,257,Hyderabad MMTS: Medchal → Lingampalli,250.4
+459,690,Chennai Beach - Tambaram suburban line,82.4
+460,461,Train Express 14522: Ambala Cantonment → Delhi,325.7
+460,597,Train Express 14521: Delhi → Ambala Cantonment,1426.3
+460,597,Train 12903 Golden Temple Mail: Bandra Terminus → Amritsar,1426.3
+461,460,Train Express 14521: Delhi → Ambala Cantonment,325.7
+461,460,Train 12903 Golden Temple Mail: Bandra Terminus → Amritsar,325.7
+461,463,Train Express 14522: Ambala Cantonment → Delhi,1386.1
+462,104,Western Line (fast): Churchgate => Virar,239.6
+462,104,Western Line (slow): Churchgate => Virar,239.8
+462,175,Western Line (fast): Virar => Churchgate,257.0
+462,175,Western Line (Slow): Virar => Churchgate,257.0
+463,241,Train Express 14522: Ambala Cantonment → Delhi,1731.8
+463,461,Train Express 14521: Delhi → Ambala Cantonment,1385.8
+464,94,Train Express 15017: Mumbai LTT → Gorakhpur,578.8
+464,659,Train Express 15018: Gorakhpur → Mumbai LTT,524.6
+465,112,Passenger 51974: Jaipur → Mathura,611.2
+465,562,Passenger 51973: Mathura → Jaipur,485.3
+466,76,Double Decker Express 12584: Anand Vihar → Lucknow,6003.6
+466,241,Double Decker Express 12583: Lucknow → Anand Vihar,9491.9
+467,204,Shatabdi Express 12001: Rani Kamlapati → New Delhi,1714.9
+467,270,Shatabdi Express 12002: New Delhi → Rani Kamlapati,2621.7
+468,700,Train 19058 Mangaluru Junction Surat Express,2156.2
+469,484,Central Line: Kalyan Junction → Mumbai CSMT (Slow),162.6
+469,675,Central Line: Mumbai CSMT → Kalyan Junction (Slow),181.1
+470,124,Central Line: Mumbai CSMT → Kalyan Junction (Fast),288.0
+470,124,Central Line: Mumbai CSMT → Kasara (Fast),288.0
+470,124,Central Line: Mumbai CSMT → Khopoli (Fast),288.0
+470,172,Train SuperFast Express 12127: Mumbai CSMT → Pune,614.1
+470,333,Train SuperFast Express 12701: Mumbai CSMT → Hyderabad,3238.8
+470,411,Train SuperFast Express 12128: Pune → Mumbai CSMT,4601.2
+470,452,Harbour Line: Mumbai CSMT → Panvel,92.6
+470,452,Harbour Line: Mumbai CSMT → Goregaon,92.6
+470,452,Central Line: Mumbai CSMT → Kalyan Junction (Slow),92.4
+471,119,Train Rajdhani Express 12951: Mumbai Central → New Delhi,2084.3
+471,119,Train Rajdhani Express 12953: Mumbai Central → Hazrat Nizamuddin,2084.4
+472,173,Western Line (fast): Churchgate => Virar,426.3
+472,258,Western Line (fast): Virar => Churchgate,68.5
+472,258,Western Line (Slow): Virar => Churchgate,63.3
+472,422,Western Line (slow): Churchgate => Virar,100.4
+473,210,Central Line: Mumbai CSMT → Kalyan Junction (Slow),140.6
+473,332,Central Line: Kalyan Junction → Mumbai CSMT (Slow),204.9
+474,406,Chennai MRTS: Saint Thomas Mount → Chennai Beach,63.8
+474,678,Chennai MRTS: Chennai Beach → Saint Thomas Mount,48.0
+475,115,Train Rajdhani Express 22823: Bhubaneswar → New Delhi (via Tatanagar),2748.0
+475,667,Train Rajdhani Express 22824: New Delhi → Bhubaneswar (via Tatanagar),5464.4
+476,90,Hazarduari Express: Lalgola => Krishnanagar,711.6
+476,90,Lalgola - Sealdah MEMU Passenger,711.3
+476,320,Bhagirathi Express,540.3
+476,320,Hazarduari Express: Krishnanagar => Lalgola,540.3
+476,320,Ranaghat Jn-Lalgola Passenger (UnReserved),540.3
+476,320,Sealdah - Lalgola MEMU Passenger,540.3
+477,194,Train Express 14521: Delhi → Ambala Cantonment,1703.3
+477,374,Train Express 14522: Ambala Cantonment → Delhi,1574.9
+477,594,Train 12903 Golden Temple Mail: Bandra Terminus → Amritsar,4103.5
+478,67,Mysuru - Chennai Shatabdi Express,8937.0
+479,122,Hyderabad MMTS: Lingampalli → Umdanagar,138.5
+479,226,Hyderabad MMTS: Umdanagar → Lingampalli,302.8
+480,388,Train Rajdhani Express 12951: Mumbai Central → New Delhi,14550.3
+480,388,Train 12903 Golden Temple Mail: Bandra Terminus → Amritsar,14550.3
+480,581,Train Rajdhani Express 12952: New Delhi → Mumbai Central,2816.2
+481,509,Diva -> Roha MEMU,587.4
+482,108,Train Rajdhani Express 12441: Bilaspur → New Delhi,20985.3
+482,249,Train Rajdhani Express 12442: New Delhi → Bilaspur,8586.1
+482,297,Train Rajdhani Express 22691: Bengaluru → Hazrat Nizamuddin,15227.7
+482,359,Train Rajdhani Express 22692: Hazrat Nizamuddin → Bengaluru,25621.0
+482,577,Train Duronto Express 12285: Secunderabad → Hazrat Nizamuddin,20566.2
+483,490,Kamrup Express,748.8
+484,99,Central Line: Kalyan Junction → Mumbai CSMT (Slow),114.6
+484,469,Central Line: Mumbai CSMT → Kalyan Junction (Slow),162.6
+485,104,Western Line (fast): Virar => Churchgate,332.6
+485,104,Western Line (Slow): Virar => Churchgate,331.9
+485,721,Western Line (fast): Churchgate => Virar,266.7
+485,721,Western Line (slow): Churchgate => Virar,266.9
+486,78,Lalgola - Sealdah MEMU Passenger,1070.1
+486,91,Kolkata Berhampore Court Dhanya Dhaanya Express,5798.8
+486,334,Sealdah - Lalgola MEMU Passenger,752.6
+487,14,Train Express 15017: Mumbai LTT → Gorakhpur,470.2
+487,626,Train Express 15018: Gorakhpur → Mumbai LTT,2466.2
+488,721,Western Line (fast): Virar => Churchgate,301.9
+488,721,Western Line (Slow): Virar => Churchgate,302.2
+488,736,Western Line (fast): Churchgate => Virar,294.1
+488,736,Western Line (slow): Churchgate => Virar,294.1
+489,348,Train Vande Bharat Express 20672: Bengaluru Cantonment → Madurai,2205.4
+490,107,Kamrup Express,2271.4
+491,131,Train Express 15017: Mumbai LTT → Gorakhpur,2826.6
+491,445,Train Express 15018: Gorakhpur → Mumbai LTT,1729.2
+492,154,Train MEMU 66591: KSR Bengaluru → Kolar,435.5
+493,345,Train Express 15018: Gorakhpur → Mumbai LTT,1095.9
+493,634,Train Express 15017: Mumbai LTT → Gorakhpur,2120.0
+494,294,Train Express 15018: Gorakhpur → Mumbai LTT,2923.1
+494,306,Train Rajdhani Express 22221: Mumbai CSMT → Hazrat Nizamuddin,15477.7
+494,333,Train Rajdhani Express 22222: Hazrat Nizamuddin → Mumbai CSMT,7831.4
+494,333,20705 Mumbai CSMT Vande Bharat Express,7831.4
+494,405,Train Express 15017: Mumbai LTT → Gorakhpur,3326.4
+495,85,Hyderabad MMTS: Lingampalli → Hyderabad,71.9
+495,85,Hyderabad MMTS: Ramchandrapuram → Falaknuma,71.9
+495,85,Hyderabad MMTS: Lingampalli → Falaknuma,71.9
+495,85,Hyderabad MMTS: Lingampalli → Medchal,71.9
+495,85,Hyderabad MMTS: Lingampalli → Umdanagar,71.9
+495,85,Hyderabad MMTS: Lingampalli → Secunderabad,71.9
+495,228,Hyderabad MMTS: Hyderabad → Lingampalli,90.6
+495,228,Hyderabad MMTS: Umdanagar → Lingampalli,90.6
+495,228,Hyderabad MMTS: Falaknuma → Ramachandrapuram,90.6
+495,228,Hyderabad MMTS: Falaknuma → Lingampalli,90.6
+495,228,Hyderabad MMTS: Medchal → Lingampalli,90.6
+495,228,Hyderabad MMTS: Secunderabad → Lingampalli,90.6
+496,329,Diva -> Panvel MEMU,172.5
+496,329,Diva -> Roha MEMU,172.5
+496,661,Panvel -> Diva MEMU,228.8
+497,529,Train Chhapra Junction Sonpur Junction DEMU 75270: Chhapra Junction → Sonpur,309.8
+497,645,Train Sonpur Junction Chhapra Junction DEMU 75269: Sonpur Junction → Chhapra Junction,449.3
+498,85,Hyderabad MMTS: Hyderabad → Lingampalli,118.0
+498,365,Hyderabad MMTS: Lingampalli → Hyderabad,82.1
+498,365,Hyderabad MMTS: Falaknuma → Hyderabad,82.1
+498,365,Hyderabad MMTS: Medchal → Hyderabad,82.1
+498,365,Hyderabad MMTS: Secunderabad → Hyderabad,82.1
+498,603,Hyderabad MMTS: Hyderabad → Medchal,138.4
+499,123,Train Express 15018: Gorakhpur → Mumbai LTT,1783.3
+499,368,Train Express 15017: Mumbai LTT → Gorakhpur,2892.0
+500,106,Central Line: Mumbai CSMT → Khopoli (Fast),464.1
+500,627,Central Line: Khopoli → Mumbai CSMT (Fast),291.3
+501,28,Hyderabad MMTS: Ghatkesar → Lingampalli,131.1
+501,136,Hyderabad MMTS: Lingampalli → Ghatkesar,554.1
+502,325,Harbour Line: Panvel → Mumbai CSMT,178.6
+502,325,Trans-Harbour Line: Panvel => Thane,178.9
+502,616,Harbour Line: Mumbai CSMT → Panvel,93.1
+502,616,Trans-Harbour Line: Thane => Panvel,92.8
+502,616,Nerul–Uran line (Nerul -> Uran),94.7
+503,2,Train Rajdhani Express 22812: New Delhi → Bhubaneswar (via Adra),4862.8
+503,31,Train Rajdhani Express 20818: New Delhi → Bhubaneswar (via Sambalpur City),4321.5
+503,115,Train Rajdhani Express 22824: New Delhi → Bhubaneswar (via Tatanagar),1783.1
+503,380,Train Rajdhani Express 22811: Bhubaneswar → New Delhi (via Adra),6402.0
+503,380,Train Rajdhani Express 22823: Bhubaneswar → New Delhi (via Tatanagar),6402.0
+503,380,Train Rajdhani Express 20817: Bhubaneswar → New Delhi (via Sambalpur City),6402.0
+503,526,Train Gangadamodar Express 13329: Dhanbad Junction → Patna Junction,1249.5
+503,672,Train Gangadamodar Express 13330: Patna Junction → Dhanbad Junction,1467.7
+504,191,Unnamed Line,767.5
+504,241,Shatabdi Express 12004: New Delhi → Lucknow,1458.0
+504,241,Train 64432: New Delhi-Ghaziabad Local,1457.1
+504,241,Train 64534: Panipat Ghaziabad MEMU,1457.1
+504,242,Lucknow Mail: New Delhi -> Lucknow Junction,1452.3
+504,270,Train Rajdhani Express 12442: New Delhi → Bilaspur,20578.4
+504,281,Delhi Ring Railway,490.3
+504,343,Duronto Express: New Delhi -> Sealdah,28265.4
+504,343,Train Rajdhani Express 12306: New Delhi → Howrah (via Patna),28271.9
+504,343,Train Rajdhani Express 12302: New Delhi → Howrah (via Gaya),28270.7
+504,343,Train Rajdhani Express 20840: New Delhi → Ranchi (via Bokaro Steel City),28269.3
+504,343,Train Rajdhani Express 20408: New Delhi → Ranchi (via Japla),28269.3
+504,343,Train Rajdhani Express 12454: New Delhi → Ranchi (via Chopan),28269.3
+504,343,Train Rajdhani Express 22824: New Delhi → Bhubaneswar (via Tatanagar),28269.9
+504,343,Train Rajdhani Express 22812: New Delhi → Bhubaneswar (via Adra),28269.9
+504,343,Train Rajdhani Express 20818: New Delhi → Bhubaneswar (via Sambalpur City),28269.9
+504,388,Train Rajdhani Express 12952: New Delhi → Mumbai Central,28961.2
+504,417,Train Rajdhani Express 12425: New Delhi → Jammu Tawi,20513.8
+504,454,Shatabdi Express 12002: New Delhi → Rani Kamlapati,9850.1
+504,522,Kalka Shatabdi Express: New Delhi -> Kalka,6252.4
+505,77,Train Rajdhani Express 20502: Anand Vihar Terminal → Agartala,18090.5
+505,272,Train 55751: New Jalpaiguri => Haldibari Passenger,3689.8
+505,272,Train 55749: New Jalpaiguri => Haldibari Passenger,3689.8
+505,433,Train Rajdhani Express 20501: Agartala → Anand Vihar Terminal,13520.3
+506,199,Train Rajdhani Express 20502: Anand Vihar Terminal → Agartala,4122.2
+507,483,Kamrup Express,1523.9
+508,216,Nerul–Uran line (Nerul -> Uran),223.5
+508,216,Nerul–Uran line: CBD Belapur → Uran,223.5
+508,578,Nerul–Uran line (Uran->Nerul),227.3
+508,578,Nerul–Uran line: Uran → CBD Belapur,227.3
+509,587,Diva -> Roha MEMU,250.0
+510,181,Panvel -> Diva MEMU,296.9
+510,661,Diva -> Panvel MEMU,617.9
+510,661,Diva -> Roha MEMU,617.9
+511,339,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,650.5
+511,339,Daily Express 16512: Kannur → KSR Bengaluru,650.5
+512,379,Chennai Beach - Tambaram suburban line,113.9
+513,18,Passenger 51973: Mathura → Jaipur,938.3
+513,572,Passenger 51974: Jaipur → Mathura,683.6
+514,131,Train Express 15018: Gorakhpur → Mumbai LTT,3095.2
+514,306,Train Express 15017: Mumbai LTT → Gorakhpur,3214.4
+515,186,Lalgola - Sealdah MEMU Passenger,346.4
+515,552,Ranaghat Jn-Lalgola Passenger (UnReserved),398.8
+515,552,Sealdah - Lalgola MEMU Passenger,398.8
+516,683,Train Vande Bharat Express 26651: KSR Bengaluru → Ernakulam Junction,4084.8
+517,1,Train Rajdhani Express 12957: Ahmedabad → New Delhi,3561.5
+517,424,Unnamed Line,4596.0
+518,346,Central Line: Khopoli → Mumbai CSMT (Fast),225.2
+518,360,Central Line: Mumbai CSMT → Khopoli (Fast),306.8
+519,459,Chennai Beach - Tambaram suburban line,101.9
+520,162,Chennai Beach - Tambaram suburban line,165.2
+521,46,Train Chhapra Junction Sonpur Junction DEMU 75270: Chhapra Junction → Sonpur,148.5
+521,72,Train Sonpur Junction Chhapra Junction DEMU 75269: Sonpur Junction → Chhapra Junction,203.2
+522,398,Kalka Shatabdi Express: New Delhi -> Kalka,4701.4
+522,504,Kalka Shatabdi Express: Kalka -> New Delhi,6252.4
+523,343,Agra Fort - Lucknow Junction InterCity Semifast Express,800.6
+523,589,Lucknow Junction - Agra Fort InterCity Semifast Express,2382.1
+524,329,Panvel -> Diva MEMU,360.6
+524,367,Harbour Line: Panvel → Mumbai CSMT,239.5
+524,367,Trans-Harbour Line: Panvel => Thane,239.9
+524,582,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,16001.1
+524,582,Train Rajdhani Express 22414: Hazrat Nizamuddin → Madgaon,16001.1
+524,649,Diva -> Roha MEMU,355.1
+524,721,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,3824.8
+524,721,Train Rajdhani Express 22413: Madgaon → Hazrat Nizamuddin,3824.8
+524,721,Train 19058 Mangaluru Junction Surat Express,3797.8
+525,641,Tambaram - Chengelpet suburban line,286.3
+526,198,Train Rajdhani Express 12302: New Delhi → Howrah (via Gaya),3267.9
+526,236,Train Rajdhani Express 12301: Howrah → New Delhi (via Gaya),9991.3
+526,280,Train Gangadamodar Express 13329: Dhanbad Junction → Patna Junction,1834.3
+526,503,Train Gangadamodar Express 13330: Patna Junction → Dhanbad Junction,1249.8
+527,383,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,815.2
+528,167,Central Line: Kalyan Junction → Mumbai CSMT (Slow),131.7
+528,172,Central Line: Mumbai CSMT → Kalyan Junction (Slow),74.5
+529,497,Train Sonpur Junction Chhapra Junction DEMU 75269: Sonpur Junction → Chhapra Junction,309.0
+529,650,Train Chhapra Junction Sonpur Junction DEMU 75270: Chhapra Junction → Sonpur,432.0
+530,265,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,135.4
+531,236,Train Gangadamodar Express 13329: Dhanbad Junction → Patna Junction,6687.0
+531,280,Train Gangadamodar Express 13330: Patna Junction → Dhanbad Junction,1542.6
+532,94,Train Express 15018: Gorakhpur → Mumbai LTT,601.4
+532,344,Train Express 15017: Mumbai LTT → Gorakhpur,592.9
+533,630,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,368.5
+534,356,Train Rajdhani Express 12425: New Delhi → Jammu Tawi,1248.3
+534,417,Train Rajdhani Express 12426: Jammu Tawi → New Delhi,10868.1
+536,188,Train Rajdhani Express 20501: Agartala → Anand Vihar Terminal,14804.9
+536,188,Train Rajdhani Express 12305: Howrah → New Delhi (via Patna),14804.1
+536,308,Train Rajdhani Express 20502: Anand Vihar Terminal → Agartala,10059.0
+536,313,Train Rajdhani Express 12306: New Delhi → Howrah (via Patna),13963.9
+536,316,Train Gangadamodar Express 13330: Patna Junction → Dhanbad Junction,3206.9
+537,727,Chennai Central - Thiruvallur suburban line,520.1
+538,24,Chennai Central - Thiruvallur suburban line,110.7
+539,540,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,751.2
+540,150,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,1036.3
+540,511,Daily Express 16512: Kannur → KSR Bengaluru,1396.4
+541,354,Diva -> Roha MEMU,753.9
+542,543,Chennai Central - Thiruvallur suburban line,45.0
+543,544,Chennai Central - Thiruvallur suburban line,102.7
+544,734,Chennai Central - Thiruvallur suburban line,124.7
+545,666,Chennai MRTS: Saint Thomas Mount → Chennai Beach,74.2
+545,725,Chennai MRTS: Chennai Beach → Saint Thomas Mount,118.7
+546,555,Train Express 15018: Gorakhpur → Mumbai LTT,462.3
+546,608,Train Express 15017: Mumbai LTT → Gorakhpur,822.6
+547,225,Shatabdi Express 12003: Lucknow → New Delhi,4008.2
+547,343,Shatabdi Express 12004: New Delhi → Lucknow,5875.4
+549,608,Train Express 15018: Gorakhpur → Mumbai LTT,804.6
+549,701,Train Express 15017: Mumbai LTT → Gorakhpur,592.5
+550,157,Pune Suburban Railway: Pune → Lonavala,153.6
+550,352,Pune Suburban Railway: Lonavala → Pune,186.8
+551,232,Train Express 15017: Mumbai LTT → Gorakhpur,3433.9
+551,647,Train Express 15018: Gorakhpur → Mumbai LTT,1277.8
+552,88,Bhagirathi Express,1279.9
+552,88,Hazarduari Express: Krishnanagar => Lalgola,1279.8
+552,88,Kolkata Berhampore Court Dhanya Dhaanya Express,1279.9
+552,88,Ranaghat Jn-Lalgola Passenger (UnReserved),1279.9
+552,88,Sealdah - Lalgola MEMU Passenger,1279.9
+552,91,Berhampore Court Kolkata Dhanya Dhaanya Express,1520.1
+552,91,Hazarduari Express: Lalgola => Krishnanagar,1520.1
+552,515,Lalgola - Sealdah MEMU Passenger,398.8
+553,261,Tambaram - Chengelpet suburban line,254.1
+554,171,Western Line (slow): Churchgate => Virar,107.5
+554,413,Western Line (Slow): Virar => Churchgate,103.8
+555,14,Train Express 15018: Gorakhpur → Mumbai LTT,322.1
+555,546,Train Express 15017: Mumbai LTT → Gorakhpur,462.3
+556,395,Train SuperFast Express 12701: Mumbai CSMT → Hyderabad,12246.8
+556,411,Train SuperFast Express 12702: Hyderabad → Mumbai CSMT,3940.5
+556,411,Train Duronto Express 12220: Secunderabad → Mumbai LTT,3935.4
+556,631,Pune Suburban Railway: Pune → Lonavala,163.3
+556,631,Train SuperFast Express 12128: Pune → Mumbai CSMT,163.4
+556,648,Train Duronto Express 12219: Mumbai LTT → Secunderabad,16847.1
+557,24,Saptagiri Express: MAS -> TPTY,1000.8
+557,67,Chennai - Mysuru Shatabdi Express,21112.4
+557,260,Charminar Express: Chennai => Hyderabad,9148.4
+557,730,Coromandel Express: Chennai => Howrah,27603.7
+558,692,Chennai Central - Thiruvallur suburban line,203.0
+559,596,Chennai MRTS: Chennai Beach → Saint Thomas Mount,153.7
+559,725,Chennai MRTS: Saint Thomas Mount → Chennai Beach,135.3
+560,710,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,1442.4
+561,7,Trans-Harbour Line (Vashi => Thane),175.2
+561,7,Trans-Harbour Line: Panvel => Thane,175.2
+561,238,Trans-Harbour Line (Thane => Vashi),167.2
+561,238,Trans-Harbour Line: Thane => Panvel,167.2
+562,255,Passenger 51973: Mathura → Jaipur,449.8
+562,465,Passenger 51974: Jaipur → Mathura,485.3
+563,266,Train Rajdhani Express 22692: Hazrat Nizamuddin → Bengaluru,8150.6
+563,618,Train Rajdhani Express 22691: Bengaluru → Hazrat Nizamuddin,7914.1
+563,741,Train Vande Bharat Express 22232: SMVT Bengaluru → Kalaburagi,4690.9
+564,113,Train Rajdhani Express 12442: New Delhi → Bilaspur,7552.1
+564,220,Train Rajdhani Express 12441: Bilaspur → New Delhi,2563.1
+565,12,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,272.1
+566,82,Sitamarhi - Mehsi train line,667.3
+567,430,Passenger 51974: Jaipur → Mathura,1189.8
+567,658,Passenger 51973: Mathura → Jaipur,415.7
+568,220,Train Rajdhani Express 12442: New Delhi → Bilaspur,2052.8
+568,249,Train Rajdhani Express 12441: Bilaspur → New Delhi,6932.8
+569,252,Harbour Line: Mumbai CSMT → Goregaon,108.0
+569,252,Western Line (slow): Churchgate => Virar,107.9
+569,322,Harbour Line: Goregaon → Mumbai CSMT,82.0
+569,323,Western Line (Slow): Virar => Churchgate,122.6
+570,50,Hyderabad MMTS: Ramchandrapuram → Falaknuma,60.2
+571,28,Hyderabad MMTS: Lingampalli → Medchal,79.2
+571,28,Hyderabad MMTS: Secunderabad → Medchal,79.2
+571,28,Hyderabad MMTS: Hyderabad → Medchal,79.2
+571,593,Hyderabad MMTS: Medchal → Secunderabad,121.4
+571,593,Hyderabad MMTS: Medchal → Hyderabad,121.4
+571,593,Hyderabad MMTS: Medchal → Lingampalli,121.4
+572,299,Passenger 51974: Jaipur → Mathura,575.6
+572,513,Passenger 51973: Mathura → Jaipur,683.6
+573,76,Lucknow Mail: New Delhi -> Lucknow Junction,4450.7
+573,274,Lucknow Mail: Lucknow Junction -> New Delhi,8731.4
+574,78,Hazarduari Express: Lalgola => Krishnanagar,3621.7
+574,391,Hazarduari Express: Krishnanagar => Lalgola,1796.5
+575,115,Train Rajdhani Express 20839: Ranchi → New Delhi (via Bokaro Steel City),6017.9
+575,409,Train Rajdhani Express 12453: Ranchi → New Delhi (via Chopan),4686.6
+575,409,Train Rajdhani Express 20407: Ranchi → New Delhi (via Japla),4686.6
+576,77,Train Rajdhani Express 20501: Agartala → Anand Vihar Terminal,4627.8
+576,269,Train Rajdhani Express 20502: Anand Vihar Terminal → Agartala,2347.7
+577,108,Shatabdi Express 12001: Rani Kamlapati → New Delhi,423.8
+577,482,Train Duronto Express 12286: Hazrat Nizamuddin → Secunderabad,20564.8
+577,735,Train Duronto Express 12285: Secunderabad → Hazrat Nizamuddin,19554.5
+578,373,Nerul–Uran line (Uran->Nerul),405.3
+578,373,Nerul–Uran line: Uran → CBD Belapur,405.3
+578,508,Nerul–Uran line (Nerul -> Uran),227.6
+578,508,Nerul–Uran line: CBD Belapur → Uran,227.6
+579,36,Diva -> Roha MEMU,241.9
+580,442,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,608.3
+581,388,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,16244.2
+581,388,Train Rajdhani Express 12953: Mumbai Central → Hazrat Nizamuddin,16244.2
+581,388,Train Rajdhani Express 22413: Madgaon → Hazrat Nizamuddin,16244.2
+581,388,12907 Maharashtra Sampark Kranti Superfast Express,16244.2
+581,480,Train Rajdhani Express 12951: Mumbai Central → New Delhi,2818.4
+581,480,Train 12903 Golden Temple Mail: Bandra Terminus → Amritsar,2818.4
+581,713,Train Rajdhani Express 12952: New Delhi → Mumbai Central,16060.0
+581,713,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,16060.0
+581,713,Train Rajdhani Express 12954: Hazrat Nizamuddin → Mumbai Central,16060.0
+581,713,Train Rajdhani Express 22414: Hazrat Nizamuddin → Madgaon,16060.3
+581,713,12908 Maharashtra Sampark Kranti Superfast Express,16060.0
+582,393,Train Rajdhani Express 22414: Hazrat Nizamuddin → Madgaon,8259.8
+582,419,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,14657.0
+582,524,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,15998.9
+582,524,Train Rajdhani Express 22413: Madgaon → Hazrat Nizamuddin,15998.9
+583,111,Train Express 15018: Gorakhpur → Mumbai LTT,2375.7
+583,123,Train Express 15017: Mumbai LTT → Gorakhpur,1478.2
+584,166,Harbour Line: Mumbai CSMT → Panvel,73.0
+584,166,Harbour Line: Mumbai CSMT → Goregaon,73.0
+584,211,Harbour Line: Panvel → Mumbai CSMT,88.0
+584,211,Harbour Line: Goregaon → Mumbai CSMT,88.0
+586,161,Train Rajdhani Express 12453: Ranchi → New Delhi (via Chopan),2484.6
+586,235,Train Rajdhani Express 12454: New Delhi → Ranchi (via Chopan),6168.8
+588,130,Train Rajdhani Express 20817: Bhubaneswar → New Delhi (via Sambalpur City),6707.9
+588,318,Train Rajdhani Express 20818: New Delhi → Bhubaneswar (via Sambalpur City),6907.6
+589,225,Lucknow Junction - Agra Fort InterCity Semifast Express,6788.2
+589,523,Agra Fort - Lucknow Junction InterCity Semifast Express,2382.1
+590,424,Train Rajdhani Express 12957: Ahmedabad → New Delhi,4440.6
+592,43,Train Express 15018: Gorakhpur → Mumbai LTT,1350.4
+592,304,Train Express 15017: Mumbai LTT → Gorakhpur,694.5
+593,185,Hyderabad MMTS: Medchal → Secunderabad,47.4
+593,185,Hyderabad MMTS: Medchal → Hyderabad,47.4
+593,185,Hyderabad MMTS: Medchal → Lingampalli,47.4
+593,571,Hyderabad MMTS: Lingampalli → Medchal,121.1
+593,571,Hyderabad MMTS: Secunderabad → Medchal,121.1
+593,571,Hyderabad MMTS: Hyderabad → Medchal,121.1
+594,194,Train Express 14522: Ambala Cantonment → Delhi,2426.5
+594,744,Train Express 14521: Delhi → Ambala Cantonment,2164.7
+594,744,Train 12903 Golden Temple Mail: Bandra Terminus → Amritsar,2164.9
+595,262,Chennai Beach - Tambaram suburban line,148.3
+596,519,Chennai Beach - Tambaram suburban line,103.3
+596,559,Chennai MRTS: Saint Thomas Mount → Chennai Beach,153.1
+597,374,Train Express 14521: Delhi → Ambala Cantonment,663.4
+597,460,Train Express 14522: Ambala Cantonment → Delhi,1426.4
+597,477,Train 12903 Golden Temple Mail: Bandra Terminus → Amritsar,2213.6
+598,278,Daily Express 16512: Kannur → KSR Bengaluru,2678.6
+599,224,Train Vande Bharat Express 26651: KSR Bengaluru → Ernakulam Junction,4090.5
+599,224,Train Vande Bharat Express 20641: Bengaluru Cantonment → Coimbatore,4090.5
+599,489,Train Vande Bharat Express 20672: Bengaluru Cantonment → Madurai,3593.8
+600,103,Train Express 15017: Mumbai LTT → Gorakhpur,673.7
+600,404,Train Express 15018: Gorakhpur → Mumbai LTT,679.6
+601,34,Train Rajdhani Express 20818: New Delhi → Bhubaneswar (via Sambalpur City),9532.3
+601,318,Train Rajdhani Express 20817: Bhubaneswar → New Delhi (via Sambalpur City),3092.2
+602,124,Central Line: Mumbai CSMT → Kalyan Junction (Slow),128.1
+602,211,Harbour Line: Mumbai CSMT → Panvel,57.1
+602,211,Harbour Line: Mumbai CSMT → Goregaon,57.1
+602,452,Harbour Line: Panvel → Mumbai CSMT,72.9
+602,452,Harbour Line: Goregaon → Mumbai CSMT,72.9
+602,452,Central Line: Kalyan Junction → Mumbai CSMT (Slow),80.6
+603,85,Hyderabad MMTS: Umdanagar → Lingampalli,141.9
+603,85,Hyderabad MMTS: Falaknuma → Ramachandrapuram,141.9
+603,85,Hyderabad MMTS: Falaknuma → Lingampalli,141.9
+603,85,Hyderabad MMTS: Medchal → Lingampalli,141.9
+603,85,Hyderabad MMTS: Secunderabad → Lingampalli,141.9
+603,401,Hyderabad MMTS: Lingampalli → Medchal,372.3
+603,401,Hyderabad MMTS: Hyderabad → Medchal,372.3
+603,498,Hyderabad MMTS: Falaknuma → Hyderabad,137.8
+603,498,Hyderabad MMTS: Medchal → Hyderabad,137.8
+603,498,Hyderabad MMTS: Secunderabad → Hyderabad,137.8
+603,617,Hyderabad MMTS: Lingampalli → Secunderabad,203.8
+603,644,Hyderabad MMTS: Ramchandrapuram → Falaknuma,337.1
+603,644,Hyderabad MMTS: Lingampalli → Falaknuma,337.1
+603,644,Hyderabad MMTS: Lingampalli → Umdanagar,337.1
+604,325,Harbour Line: Mumbai CSMT → Panvel,103.7
+604,699,Trans-Harbour Line (Vashi => Thane),100.1
+604,722,Trans-Harbour Line (Thane => Vashi),83.4
+604,722,Harbour Line: Panvel → Mumbai CSMT,82.8
+605,369,Harbour Line: Goregaon → Mumbai CSMT,119.5
+605,733,Harbour Line: Mumbai CSMT → Goregaon,130.7
+606,369,Western Line (Slow): Virar => Churchgate,101.2
+606,733,Western Line (slow): Churchgate => Virar,148.2
+608,546,Train Express 15018: Gorakhpur → Mumbai LTT,822.5
+608,549,Train Express 15017: Mumbai LTT → Gorakhpur,804.7
+609,311,Train Express 15018: Gorakhpur → Mumbai LTT,383.2
+609,659,Train Express 15017: Mumbai LTT → Gorakhpur,718.5
+610,191,Double Decker Express 12986: Delhi Sarai Rohilla → Jaipur,637.1
+611,591,Delhi Ring Railway,631.7
+612,302,Train Express 15017: Mumbai LTT → Gorakhpur,1413.9
+612,428,Train Express 15018: Gorakhpur → Mumbai LTT,2531.1
+613,101,Train 12903 Golden Temple Mail: Bandra Terminus → Amritsar,12672.9
+613,388,Train Rajdhani Express 12954: Hazrat Nizamuddin → Mumbai Central,7215.3
+613,454,Train Rajdhani Express 12953: Mumbai Central → Hazrat Nizamuddin,15026.0
+614,524,Train 19058 Mangaluru Junction Surat Express,13034.6
+615,78,Sealdah - Lalgola MEMU Passenger,1538.8
+615,91,Bhagirathi Express,8346.5
+615,198,Duronto Express: Sealdah -> New Delhi,17309.8
+616,59,Nerul–Uran line (Nerul -> Uran),375.3
+616,125,Harbour Line: Mumbai CSMT → Panvel,150.6
+616,125,Trans-Harbour Line: Thane => Panvel,150.6
+616,502,Nerul–Uran line (Uran->Nerul),95.5
+616,502,Harbour Line: Panvel → Mumbai CSMT,94.0
+616,502,Trans-Harbour Line: Panvel => Thane,93.6
+617,309,Hyderabad MMTS: Umdanagar → Lingampalli,123.1
+617,309,Hyderabad MMTS: Falaknuma → Hyderabad,123.1
+617,309,Hyderabad MMTS: Falaknuma → Lingampalli,123.1
+617,309,Hyderabad MMTS: Medchal → Hyderabad,123.1
+617,309,Hyderabad MMTS: Medchal → Lingampalli,123.1
+617,618,Train Rajdhani Express 22692: Hazrat Nizamuddin → Bengaluru,9518.1
+617,739,Train Duronto Express 12220: Secunderabad → Mumbai LTT,11940.8
+618,160,Train SuperFast Express 12702: Hyderabad → Mumbai CSMT,1565.1
+618,359,Train Rajdhani Express 22691: Bengaluru → Hazrat Nizamuddin,18125.8
+618,563,Train Rajdhani Express 22692: Hazrat Nizamuddin → Bengaluru,7912.8
+618,665,Train SuperFast Express 12701: Mumbai CSMT → Hyderabad,2353.1
+619,558,Chennai Central - Thiruvallur suburban line,223.2
+620,344,Train Express 15018: Gorakhpur → Mumbai LTT,373.2
+620,719,Train Express 15017: Mumbai LTT → Gorakhpur,1578.7
+621,166,Harbour Line: Panvel → Mumbai CSMT,130.0
+621,166,Harbour Line: Goregaon → Mumbai CSMT,130.0
+621,711,Harbour Line: Mumbai CSMT → Panvel,142.9
+621,711,Harbour Line: Mumbai CSMT → Goregaon,143.1
+622,328,Train SuperFast Express 12702: Hyderabad → Mumbai CSMT,1788.7
+622,739,Train SuperFast Express 12701: Mumbai CSMT → Hyderabad,665.8
+623,25,Central Line: Mumbai CSMT → Kasara (Fast),220.4
+623,333,Central Line: Kasara → Mumbai CSMT (Fast),209.7
+624,76,Lucknow Mail: Lucknow Junction -> New Delhi,4983.5
+624,276,Lucknow Mail: New Delhi -> Lucknow Junction,4304.6
+625,530,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,159.5
+626,169,Train Express 15018: Gorakhpur → Mumbai LTT,2307.9
+626,487,Train Express 15017: Mumbai LTT → Gorakhpur,2465.3
+627,500,Central Line: Mumbai CSMT → Khopoli (Fast),291.3
+627,716,Central Line: Khopoli → Mumbai CSMT (Fast),276.1
+628,580,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,335.0
+629,225,Agra Fort - Lucknow Junction InterCity Semifast Express,3983.9
+629,230,Lucknow Junction - Agra Fort InterCity Semifast Express,1425.3
+630,668,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,141.3
+631,363,Pune Suburban Railway: Pune → Lonavala,265.5
+631,556,Pune Suburban Railway: Lonavala → Pune,162.4
+631,556,Train SuperFast Express 12127: Mumbai CSMT → Pune,162.5
+631,675,Train SuperFast Express 12128: Pune → Mumbai CSMT,8440.1
+632,390,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,5479.4
+632,399,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,1997.4
+632,683,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,2010.1
+633,49,Daily Express 16512: Kannur → KSR Bengaluru,2224.0
+634,418,Train Express 15017: Mumbai LTT → Gorakhpur,3354.2
+634,493,Train Express 15018: Gorakhpur → Mumbai LTT,2120.2
+635,628,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,407.6
+636,291,Train MEMU 66591: KSR Bengaluru → Kolar,645.0
+637,298,Train Express 15018: Gorakhpur → Mumbai LTT,2680.7
+637,357,Train Express 15017: Mumbai LTT → Gorakhpur,3625.2
+638,272,Train 75721: Siliguri Junction => Haldibari DEMU,4077.7
+640,26,Kamrup Express,1853.5
+641,448,Tambaram - Chengelpet suburban line,315.2
+642,396,Central Line: Mumbai CSMT → Kalyan Junction (Slow),182.5
+642,455,Central Line: Kalyan Junction → Mumbai CSMT (Slow),190.9
+643,745,Train Vande Bharat Express 22232: SMVT Bengaluru → Kalaburagi,918.0
+644,39,Hyderabad MMTS: Secunderabad → Falaknuma,74.4
+644,39,Hyderabad MMTS: Ramchandrapuram → Falaknuma,74.4
+644,39,Hyderabad MMTS: Lingampalli → Falaknuma,74.4
+644,39,Hyderabad MMTS: Lingampalli → Umdanagar,74.4
+644,309,Hyderabad MMTS: Falaknuma → Ramachandrapuram,254.7
+644,617,Hyderabad MMTS: Umdanagar → Lingampalli,134.6
+644,617,Hyderabad MMTS: Falaknuma → Hyderabad,134.6
+644,617,Hyderabad MMTS: Falaknuma → Lingampalli,134.6
+645,27,Train Sonpur Junction Chhapra Junction DEMU 75269: Sonpur Junction → Chhapra Junction,498.8
+645,497,Train Chhapra Junction Sonpur Junction DEMU 75270: Chhapra Junction → Sonpur,450.0
+646,222,Train Patliputra Lucknow Junction Express 15033: Patliputra → Lucknow Junction,2335.9
+647,297,Train Express 15018: Gorakhpur → Mumbai LTT,3232.4
+647,551,Train Express 15017: Mumbai LTT → Gorakhpur,1277.7
+648,233,Train SuperFast Express 12701: Mumbai CSMT → Hyderabad,5913.2
+648,395,Train SuperFast Express 12702: Hyderabad → Mumbai CSMT,4975.3
+648,556,Train Duronto Express 12220: Secunderabad → Mumbai LTT,16842.1
+648,739,Train Duronto Express 12219: Mumbai LTT → Secunderabad,9715.8
+649,579,Diva -> Roha MEMU,468.0
+650,529,Train Sonpur Junction Chhapra Junction DEMU 75269: Sonpur Junction → Chhapra Junction,432.4
+651,67,Train Rajdhani Express 22692: Hazrat Nizamuddin → Bengaluru,9581.1
+651,266,Train Rajdhani Express 22691: Bengaluru → Hazrat Nizamuddin,8653.2
+652,177,Train MEMU 66591: KSR Bengaluru → Kolar,556.9
+653,598,Daily Express 16512: Kannur → KSR Bengaluru,2428.4
+654,110,Hyderabad MMTS: Lingampalli → Ghatkesar,225.6
+654,229,Hyderabad MMTS: Ghatkesar → Lingampalli,217.2
+655,415,Varanasi-Sultanpur-Lucknow Line,9343.3
+656,102,Train Rajdhani Express 12953: Mumbai Central → Hazrat Nizamuddin,4157.1
+656,119,Train Rajdhani Express 12952: New Delhi → Mumbai Central,15815.7
+656,119,12908 Maharashtra Sampark Kranti Superfast Express,15815.7
+656,713,Train Rajdhani Express 12951: Mumbai Central → New Delhi,9190.9
+656,713,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,9190.9
+656,713,Train Rajdhani Express 22413: Madgaon → Hazrat Nizamuddin,9190.9
+656,713,Train 12903 Golden Temple Mail: Bandra Terminus → Amritsar,9190.9
+656,713,12907 Maharashtra Sampark Kranti Superfast Express,9190.9
+656,714,Train Rajdhani Express 12954: Hazrat Nizamuddin → Mumbai Central,4825.4
+656,721,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,14578.5
+656,721,Train Rajdhani Express 22414: Hazrat Nizamuddin → Madgaon,14578.5
+657,468,Train 19058 Mangaluru Junction Surat Express,612.6
+658,81,Passenger 51973: Mathura → Jaipur,418.7
+658,567,Passenger 51974: Jaipur → Mathura,415.7
+659,464,Train Express 15017: Mumbai LTT → Gorakhpur,524.5
+659,609,Train Express 15018: Gorakhpur → Mumbai LTT,718.8
+660,245,Pune Suburban Railway: Lonavala → Pune,224.8
+660,712,Pune Suburban Railway: Pune → Lonavala,273.9
+661,496,Diva -> Panvel MEMU,228.7
+661,496,Diva -> Roha MEMU,228.7
+661,510,Panvel -> Diva MEMU,617.9
+662,151,Train Express 15017: Mumbai LTT → Gorakhpur,1970.1
+662,368,Train Express 15018: Gorakhpur → Mumbai LTT,1074.8
+664,663,Chennai Beach - Tambaram suburban line,138.4
+665,618,Train SuperFast Express 12702: Hyderabad → Mumbai CSMT,2353.1
+665,731,Train SuperFast Express 12701: Mumbai CSMT → Hyderabad,2582.0
+666,545,Chennai MRTS: Chennai Beach → Saint Thomas Mount,73.9
+666,693,Chennai MRTS: Saint Thomas Mount → Chennai Beach,122.8
+667,130,Howrah-Mumbai Mail,4299.7
+667,284,Train Rajdhani Express 22824: New Delhi → Bhubaneswar (via Tatanagar),9003.5
+667,475,Train Rajdhani Express 22823: Bhubaneswar → New Delhi (via Tatanagar),5464.7
+668,450,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,318.5
+669,50,Hyderabad MMTS: Falaknuma → Ramachandrapuram,219.6
+669,407,Hyderabad MMTS: Ramchandrapuram → Falaknuma,250.0
+670,69,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,509.9
+671,4,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,136.6
+672,531,Train Gangadamodar Express 13330: Patna Junction → Dhanbad Junction,5919.5
+672,536,Train Gangadamodar Express 13329: Dhanbad Junction → Patna Junction,16772.1
+673,215,Central Line: Kalyan Junction → Mumbai CSMT (Slow),110.3
+673,333,Central Line: Mumbai CSMT → Kalyan Junction (Slow),252.9
+674,342,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,1362.0
+675,172,Train SuperFast Express 12128: Pune → Mumbai CSMT,1682.7
+675,172,20705 Mumbai CSMT Vande Bharat Express,1682.7
+675,206,Trans-Harbour Line (Thane => Vashi),144.7
+675,206,Trans-Harbour Line: Thane => Panvel,144.7
+675,215,Central Line: Mumbai CSMT → Kalyan Junction (Fast),873.1
+675,215,Central Line: Mumbai CSMT → Kasara (Fast),873.1
+675,215,Central Line: Mumbai CSMT → Khopoli (Fast),873.1
+675,240,Central Line: Kalyan Junction → Mumbai CSMT (Fast),953.6
+675,240,Central Line: Khopoli → Mumbai CSMT (Fast),953.6
+675,240,Central Line: Kasara → Mumbai CSMT (Fast),953.6
+675,332,Central Line: Mumbai CSMT → Kalyan Junction (Slow),173.3
+675,333,Train Express 15017: Mumbai LTT → Gorakhpur,1230.3
+675,410,Train Express 15018: Gorakhpur → Mumbai LTT,1145.2
+675,411,Train SuperFast Express 12127: Mumbai CSMT → Pune,4790.9
+675,469,Central Line: Kalyan Junction → Mumbai CSMT (Slow),180.5
+676,371,Central Line: Mumbai CSMT → Kasara (Fast),397.5
+676,371,Central Line: Kasara → Mumbai CSMT (Fast),397.4
+678,437,Chennai MRTS: Chennai Beach → Saint Thomas Mount,79.8
+678,474,Chennai MRTS: Saint Thomas Mount → Chennai Beach,51.5
+679,35,Chennai Central - Thiruvallur suburban line,80.9
+680,148,Chennai MRTS: Saint Thomas Mount → Chennai Beach,49.0
+680,406,Chennai MRTS: Chennai Beach → Saint Thomas Mount,86.1
+681,383,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,4254.2
+681,720,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,2713.5
+682,393,Train Rajdhani Express 22413: Madgaon → Hazrat Nizamuddin,3456.9
+682,419,Train Rajdhani Express 22414: Hazrat Nizamuddin → Madgaon,2982.8
+683,223,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,4411.0
+683,223,Train Vande Bharat Express 26651: KSR Bengaluru → Ernakulam Junction,4410.9
+683,632,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,2010.5
+683,632,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,2010.5
+684,254,Harbour Line: Mumbai CSMT → Panvel,209.8
+684,396,Harbour Line: Panvel → Mumbai CSMT,82.0
+685,61,Train Express 15017: Mumbai LTT → Gorakhpur,2003.2
+685,275,Train Express 15018: Gorakhpur → Mumbai LTT,995.6
+686,209,Train Vande Bharat Express 20672: Bengaluru Cantonment → Madurai,6550.8
+687,37,Chengalpattu - Arakkonam suburban line,1007.0
+688,165,Train Vande Bharat Express 26651: KSR Bengaluru → Ernakulam Junction,3060.7
+688,165,Train Vande Bharat Express 20641: Bengaluru Cantonment → Coimbatore,3060.7
+689,390,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,2844.7
+690,520,Chennai Beach - Tambaram suburban line,143.1
+691,585,Saptagiri Express: MAS -> TPTY,3764.0
+693,296,Chennai MRTS: Saint Thomas Mount → Chennai Beach,56.8
+693,666,Chennai MRTS: Chennai Beach → Saint Thomas Mount,115.8
+694,25,Central Line: Kasara → Mumbai CSMT (Fast),324.8
+694,362,Central Line: Mumbai CSMT → Kasara (Fast),500.3
+695,120,Train Passenger 55110 Chhapra Kacheri → Thawe Junction,138.8
+696,184,Train Vande Bharat Express 20661: KSR Bengaluru → Dharwad,12918.3
+696,184,Train Vande Bharat Express 26752: KSR Bengaluru → Belagavi,12918.3
+697,13,Shatabdi Express 12003: Lucknow → New Delhi,5561.6
+697,225,Shatabdi Express 12004: New Delhi → Lucknow,6543.8
+697,230,Agra Fort - Lucknow Junction InterCity Semifast Express,1193.0
+697,743,Lucknow Junction - Agra Fort InterCity Semifast Express,1385.5
+698,223,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,1569.5
+699,325,Trans-Harbour Line: Thane => Panvel,162.3
+699,386,Trans-Harbour Line (Vashi => Thane),222.3
+699,386,Trans-Harbour Line: Panvel => Thane,222.5
+699,604,Trans-Harbour Line (Thane => Vashi),101.6
+700,349,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,12706.0
+700,438,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,3851.8
+700,614,Train 19058 Mangaluru Junction Surat Express,33964.4
+701,311,Train Express 15017: Mumbai LTT → Gorakhpur,1011.5
+701,549,Train Express 15018: Gorakhpur → Mumbai LTT,592.5
+702,22,Central Line: Mumbai CSMT → Khopoli (Fast),171.6
+702,737,Central Line: Khopoli → Mumbai CSMT (Fast),141.6
+703,350,Central Line: Mumbai CSMT → Kasara (Fast),411.2
+703,676,Central Line: Kasara → Mumbai CSMT (Fast),821.3
+704,122,Hyderabad MMTS: Umdanagar → Lingampalli,445.8
+705,343,Lucknow Junction - Agra Fort InterCity Semifast Express,1230.6
+705,416,Agra Fort - Lucknow Junction InterCity Semifast Express,3842.3
+706,216,Nerul–Uran line (Uran->Nerul),94.5
+706,216,Nerul–Uran line: Uran → CBD Belapur,94.5
+708,715,Tambaram - Chengelpet suburban line,218.6
+709,607,Gevra Road Champa Railway Route,441.7
+710,427,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,902.5
+711,268,Harbour Line: Mumbai CSMT → Panvel,180.1
+711,378,Harbour Line: Mumbai CSMT → Goregaon,127.4
+711,621,Harbour Line: Panvel → Mumbai CSMT,142.5
+711,621,Harbour Line: Goregaon → Mumbai CSMT,142.6
+712,340,Pune Suburban Railway: Pune → Lonavala,358.5
+712,660,Pune Suburban Railway: Lonavala → Pune,274.2
+713,102,Train Rajdhani Express 12954: Hazrat Nizamuddin → Mumbai Central,5034.1
+713,176,Train 12903 Golden Temple Mail: Bandra Terminus → Amritsar,9000.6
+713,581,Train Rajdhani Express 12951: Mumbai Central → New Delhi,16059.2
+713,581,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,16059.2
+713,581,Train Rajdhani Express 12953: Mumbai Central → Hazrat Nizamuddin,16059.2
+713,581,Train Rajdhani Express 22413: Madgaon → Hazrat Nizamuddin,16059.2
+713,581,12907 Maharashtra Sampark Kranti Superfast Express,16059.2
+713,656,Train Rajdhani Express 12952: New Delhi → Mumbai Central,9190.9
+713,656,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,9193.5
+713,656,Train Rajdhani Express 22414: Hazrat Nizamuddin → Madgaon,9190.8
+713,656,12908 Maharashtra Sampark Kranti Superfast Express,9190.9
+714,656,Train Rajdhani Express 12953: Mumbai Central → Hazrat Nizamuddin,4825.2
+714,717,Train Rajdhani Express 12954: Hazrat Nizamuddin → Mumbai Central,1894.0
+715,141,Tambaram - Chengelpet suburban line,1780.8
+716,52,Central Line: Khopoli → Mumbai CSMT (Fast),745.2
+716,627,Central Line: Mumbai CSMT → Khopoli (Fast),276.8
+717,119,Train Rajdhani Express 12954: Hazrat Nizamuddin → Mumbai Central,9164.0
+717,714,Train Rajdhani Express 12953: Mumbai Central → Hazrat Nizamuddin,1893.9
+718,43,Train Express 15017: Mumbai LTT → Gorakhpur,2096.2
+718,243,Shabd Bhedi Superfast Express: => Ghazipur,4465.9
+718,719,Train Express 15018: Gorakhpur → Mumbai LTT,213.3
+719,9,Varanasi - Gonda Intercity Express,9380.1
+719,14,Varanasi - Kanpur line,8396.8
+719,14,Varanasi-Allahabad line,8396.8
+719,138,Train Express 15018: Gorakhpur → Mumbai LTT,1097.1
+719,315,Varanasi-Jaunpur-Ayodhya-Barabanki railway line,4046.4
+719,655,Varanasi-Sultanpur-Lucknow Line,10003.8
+719,718,Train Express 15017: Mumbai LTT → Gorakhpur,214.6
+719,718,Shabd Bhedi Superfast Express: => Ghazipur,213.7
+720,527,Daily Express 16604: Thiruvananthapuram Central → Mangaluru Central,731.5
+721,324,Vasai Road-Diva Line (main): Vasai Road => Diva,350.0
+721,485,Western Line (fast): Virar => Churchgate,266.6
+721,485,Western Line (Slow): Virar => Churchgate,266.8
+721,488,Western Line (fast): Churchgate => Virar,301.9
+721,488,Western Line (slow): Churchgate => Virar,302.2
+721,524,Rajdhani Express 12432: Hazrat Nizamuddin → Thiruvananthapuram Central,3824.2
+721,524,Train Rajdhani Express 22414: Hazrat Nizamuddin → Madgaon,3824.2
+721,656,Rajdhani Express 12431: Thiruvananthapuram Central → Hazrat Nizamuddin,14578.8
+721,656,Train Rajdhani Express 22413: Madgaon → Hazrat Nizamuddin,14578.8
+722,444,Harbour Line: Panvel → Mumbai CSMT,521.3
+722,604,Harbour Line: Mumbai CSMT → Panvel,83.1
+722,604,Trans-Harbour Line (Vashi => Thane),83.5
+723,40,Central Line: Mumbai CSMT → Kasara (Fast),403.4
+723,362,Central Line: Kasara → Mumbai CSMT (Fast),540.9
+724,187,Passenger 51973: Mathura → Jaipur,448.0
+724,255,Passenger 51974: Jaipur → Mathura,610.3
+725,545,Chennai MRTS: Saint Thomas Mount → Chennai Beach,118.3
+725,559,Chennai MRTS: Chennai Beach → Saint Thomas Mount,135.6
+726,492,Train MEMU 66591: KSR Bengaluru → Kolar,436.0
+727,619,Chennai Central - Thiruvallur suburban line,253.8
+728,307,Hyderabad MMTS: Umdanagar → Lingampalli,94.5
+728,307,Hyderabad MMTS: Falaknuma → Secunderabad,94.5
+728,307,Hyderabad MMTS: Falaknuma → Ramachandrapuram,94.5
+728,307,Hyderabad MMTS: Falaknuma → Hyderabad,94.5
+728,307,Hyderabad MMTS: Falaknuma → Lingampalli,94.5
+728,327,Hyderabad MMTS: Secunderabad → Falaknuma,124.1
+728,327,Hyderabad MMTS: Ramchandrapuram → Falaknuma,124.1
+728,327,Hyderabad MMTS: Lingampalli → Falaknuma,124.1
+728,327,Hyderabad MMTS: Lingampalli → Umdanagar,124.1
+729,240,Central Line: Mumbai CSMT → Kalyan Junction (Slow),95.2
+729,396,Central Line: Kalyan Junction → Mumbai CSMT (Slow),179.4
+730,260,Charminar Express: Hyderabad => Chennai,19878.6
+730,289,Coromandel Express: Chennai => Howrah,75741.0
+730,359,Charminar Express: Chennai => Hyderabad,14392.6
+730,557,Coromandel Express: Howrah => Chennai,27603.7
+731,85,Train SuperFast Express 12701: Mumbai CSMT → Hyderabad,4263.1
+731,665,Train SuperFast Express 12702: Hyderabad → Mumbai CSMT,2583.2
+732,240,Central Line: Kalyan Junction → Mumbai CSMT (Slow),258.5
+732,341,Central Line: Mumbai CSMT → Kalyan Junction (Slow),134.8
+733,32,Harbour Line: Mumbai CSMT → Goregaon,155.0
+733,32,Western Line (slow): Churchgate => Virar,155.9
+733,605,Harbour Line: Goregaon → Mumbai CSMT,129.7
+733,606,Western Line (Slow): Virar => Churchgate,147.9
+734,387,Chennai Central - Thiruvallur suburban line,204.1
+735,108,Train Rajdhani Express 22222: Hazrat Nizamuddin → Mumbai CSMT,19291.7
+735,108,Train Rajdhani Express 22692: Hazrat Nizamuddin → Bengaluru,19291.7
+735,108,Train Rajdhani Express 12442: New Delhi → Bilaspur,19292.1
+735,270,Train Rajdhani Express 22221: Mumbai CSMT → Hazrat Nizamuddin,6717.5
+735,270,Train Rajdhani Express 22691: Bengaluru → Hazrat Nizamuddin,6717.5
+735,270,Train Rajdhani Express 12441: Bilaspur → New Delhi,6717.5
+735,270,Shatabdi Express 12001: Rani Kamlapati → New Delhi,6718.5
+735,281,Train Duronto Express 12285: Secunderabad → Hazrat Nizamuddin,26797.6
+735,403,Shatabdi Express 12002: New Delhi → Rani Kamlapati,6159.1
+735,577,Train Duronto Express 12286: Hazrat Nizamuddin → Secunderabad,19552.2
+736,488,Western Line (fast): Virar => Churchgate,294.0
+736,488,Western Line (Slow): Virar => Churchgate,294.1
+737,333,Central Line: Khopoli → Mumbai CSMT (Fast),144.9
+737,702,Central Line: Mumbai CSMT → Khopoli (Fast),141.6
+738,542,Chennai Central - Thiruvallur suburban line,109.9
+739,160,Train SuperFast Express 12701: Mumbai CSMT → Hyderabad,927.2
+739,622,Train SuperFast Express 12702: Hyderabad → Mumbai CSMT,666.3
+739,648,Train Duronto Express 12220: Secunderabad → Mumbai LTT,9714.7
+741,328,Train Vande Bharat Express 22232: SMVT Bengaluru → Kalaburagi,5123.5
+742,170,Hyderabad MMTS: Umdanagar → Lingampalli,51.9
+742,170,Hyderabad MMTS: Falaknuma → Secunderabad,51.9
+742,170,Hyderabad MMTS: Falaknuma → Ramachandrapuram,51.9
+742,170,Hyderabad MMTS: Falaknuma → Hyderabad,51.9
+742,170,Hyderabad MMTS: Falaknuma → Lingampalli,51.9
+742,292,Hyderabad MMTS: Secunderabad → Falaknuma,163.5
+742,292,Hyderabad MMTS: Ramchandrapuram → Falaknuma,163.5
+742,292,Hyderabad MMTS: Lingampalli → Falaknuma,163.5
+742,292,Hyderabad MMTS: Lingampalli → Umdanagar,163.5
+743,6,Lucknow Junction - Agra Fort InterCity Semifast Express,166.5
+743,697,Agra Fort - Lucknow Junction InterCity Semifast Express,1386.8
+744,20,Train 12903 Golden Temple Mail: Bandra Terminus → Amritsar,3624.0
+744,300,Train Express 14521: Delhi → Ambala Cantonment,340.0
+744,594,Train Express 14522: Ambala Cantonment → Delhi,2164.9
+745,30,Train Vande Bharat Express 22232: SMVT Bengaluru → Kalaburagi,12658.4
+745,92,Train MEMU 66591: KSR Bengaluru → Kolar,506.0
+746,201,Train Vande Bharat Express 20704: Yesvantpur → Kacheguda,11291.5
+746,412,Train MEMU 66585: Yesvantpur → Hosur,181.0
+746,696,Train Vande Bharat Express 20661: KSR Bengaluru → Dharwad,4279.2
+746,696,Train Vande Bharat Express 26752: KSR Bengaluru → Belagavi,4279.2

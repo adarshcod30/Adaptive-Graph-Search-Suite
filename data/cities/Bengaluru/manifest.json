@@ -1,0 +1,15 @@
+{
+  "name": "Bengaluru",
+  "bbox": [
+    12.93,
+    77.56,
+    13.03,
+    77.66
+  ],
+  "source": "OpenStreetMap via Overpass",
+  "licence": "ODbL 1.0",
+  "nodes": 33360,
+  "edges": 83087,
+  "raw_osm_nodes": 64493,
+  "ways": 20733
+}

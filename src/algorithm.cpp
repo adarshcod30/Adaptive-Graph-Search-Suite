@@ -28,6 +28,7 @@ Registry& Registry::instance() {
         register_uninformed(reg);
         register_weighted(reg);
         register_global(reg);
+        register_contraction(reg);
         return reg;
     }();
     return r;

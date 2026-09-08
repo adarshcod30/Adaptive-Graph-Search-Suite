@@ -12,7 +12,8 @@
 <div id="app">
   <aside id="panel">
     <h1>Adaptive Graph Search Suite</h1>
-    <div class="sub">C++ engine compiled to WebAssembly. Everything runs in this tab &mdash; no server.</div>
+    <div class="sub">C++ engine compiled to WebAssembly. Everything runs in this tab &mdash; no server,
+      nothing uploaded.</div>
 
     <div class="group">
       <label for="mapSel">Network</label>
@@ -23,9 +24,11 @@
     <div class="group">
       <label for="baseSel">Basemap</label>
       <select id="baseSel">
-        <option value="dark">Dark map</option>
-        <option value="light">Light map</option>
-        <option value="osm">OpenStreetMap</option>
+        <option value="dark">Dark</option>
+        <option value="gray">Light</option>
+        <option value="osm">Street map</option>
+        <option value="satellite">Satellite</option>
+        <option value="terrain">Terrain</option>
         <option value="none">No map (graph only)</option>
       </select>
       <div class="hint" id="baseInfo">Real map tiles under the graph. Geographic networks only.</div>
@@ -38,12 +41,13 @@
     </div>
 
     <div class="group">
-      <label>Endpoints <span style="text-transform:none;letter-spacing:0">(click the map to set)</span></label>
+      <label>Endpoints</label>
       <div class="row">
         <input id="srcIn" type="number" min="0" value="0" aria-label="source node">
         <input id="dstIn" type="number" min="0" value="1" aria-label="target node">
       </div>
-      <div class="hint">Left click sets the source, right click sets the target.</div>
+      <div class="hint"><b>Left click</b> the map sets the source, <b>right click</b> sets the target.
+        Scroll to zoom, drag to pan.</div>
     </div>
 
     <div class="group">
@@ -80,8 +84,19 @@
 
     <div class="group">
       <label>What-if</label>
-      <button id="closeBtn">Close the road on the current route</button>
-      <div class="hint" id="closeInfo">Shuts the busiest edge of the last route and re-runs.</div>
+      <button id="closeBtn">Close a road on the current route</button>
+      <div class="hint">Shuts an edge of the last route and re-routes around it.</div>
+    </div>
+
+    <div class="group accent">
+      <label>Contraction Hierarchies</label>
+      <button id="chBtn">Preprocess (build hierarchy)</button>
+      <button id="chRaceBtn" style="margin-top:8px" disabled>Compare against Dijkstra</button>
+      <div class="hint" id="chInfo">Not preprocessed for this network yet.</div>
+      <div class="hint">
+        The technique production routing engines use. Contract nodes in order of
+        importance, adding shortcuts, then search only upward through the hierarchy.
+      </div>
     </div>
 
     <div id="results"></div>

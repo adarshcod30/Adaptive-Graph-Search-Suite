@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
-"""Build the bundled transit dataset from OpenStreetMap.
+"""Build a transit dataset from OpenStreetMap.
 
-Queries Overpass for every rapid-transit route relation in India (metro,
-monorail and light rail), extracts ordered station sequences per line, and
-writes data/transit/{stations,links}.csv.
+Queries Overpass for route relations in India, extracts ordered station
+sequences per line, and writes {stations,links}.csv.
+
+Two profiles:
+  --kinds metro  (default)  subway, light rail and monorail -> data/transit
+  --kinds rail              long-distance trains            -> data/railways
 
 Travel time between adjacent stations is estimated from the great-circle
 distance and a per-system average speed, because OSM does not carry timetables.
@@ -30,25 +33,42 @@ OVERPASS = "https://overpass-api.de/api/interpreter"
 
 # Rapid transit only. Suburban rail (Mumbai Local, Chennai MRTS) is excluded
 # because OSM models it inconsistently across states.
-QUERY = """
-[out:json][timeout:600];
+KIND_ROUTES = {
+    "metro": ["subway", "light_rail", "monorail"],
+    "rail": ["train"],
+}
+
+
+def build_query(routes: list[str]) -> str:
+    clauses = "\n".join(
+        f'  relation(area.in)["type"="route"]["route"="{r}"];' for r in routes)
+    return f"""
+[out:json][timeout:900];
 area["ISO3166-1"="IN"][admin_level=2]->.in;
 (
-  relation(area.in)["type"="route"]["route"="subway"];
-  relation(area.in)["type"="route"]["route"="light_rail"];
-  relation(area.in)["type"="route"]["route"="monorail"];
+{clauses}
 );
 out body;
 node(r)->.stops;
 .stops out body;
 """
 
-# Average including dwell time, metres/second.
-SPEED_MPS = {"subway": 9.5, "light_rail": 8.0, "monorail": 8.0}
+
+# Average including dwell time, metres/second. Long-distance trains cover
+# ground far faster than metros even after station stops.
+SPEED_MPS = {"subway": 9.5, "light_rail": 8.0, "monorail": 8.0, "train": 13.9}
 EARTH_R = 6371008.8
 
 # Two nodes with the same name inside this radius are the same station.
 MERGE_RADIUS_M = 400.0
+
+# Main-line termini are physically large -- New Delhi and Howrah Junction each
+# span well over half a kilometre of platforms, and OSM tags several nodes
+# across them. A radius sized for a metro platform pair left "New Delhi" as
+# three separate stations, so trains could not actually change there.
+# Two distinct main-line stations sharing an exact name inside a kilometre
+# effectively does not happen, so the wider radius is safe.
+RAIL_MERGE_RADIUS_M = 1000.0
 
 
 def normalize_name(name: str) -> str:
@@ -97,7 +117,9 @@ SYSTEM_ALIASES = {
 }
 
 
-def system_name(tags: dict) -> str:
+def system_name(tags: dict, kind: str = "metro") -> str:
+    if kind == "rail":
+        return "Indian Railways"
     for key in ("network", "operator"):
         if tags.get(key):
             raw = tags[key].strip()
@@ -105,7 +127,12 @@ def system_name(tags: dict) -> str:
     return "Unknown Network"
 
 
-def city_of(tags: dict) -> str:
+def city_of(tags: dict, kind: str = "metro") -> str:
+    if kind == "rail":
+        # Route relations tag `network` with the train's own name -- "Rajdhani
+        # Express", "Passenger" -- which is a service, not a place, and made
+        # the city column meaningless. A national network has one grouping.
+        return "Indian Railways"
     for key in ("network", "operator"):
         raw = (tags.get(key) or "").strip()
         if raw in SYSTEM_ALIASES and SYSTEM_ALIASES[raw][1]:
@@ -123,17 +150,21 @@ def city_of(tags: dict) -> str:
 
 def main() -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", default="data/transit")
+    ap.add_argument("--kinds", choices=sorted(KIND_ROUTES), default="metro")
+    ap.add_argument("--out", default=None)
     ap.add_argument("--cache", help="read a previously saved Overpass JSON instead of querying")
     ap.add_argument("--save-raw", help="write the raw Overpass response here")
     args = ap.parse_args()
+    routes = KIND_ROUTES[args.kinds]
+    out_dir = args.out or ("data/railways" if args.kinds == "rail" else "data/transit")
+    args.out = out_dir
 
     if args.cache:
         with open(args.cache) as fh:
             payload = json.load(fh)
     else:
-        print("querying Overpass for Indian rapid transit routes ...", file=sys.stderr)
-        payload = fetch(QUERY)
+        print(f"querying Overpass for Indian {args.kinds} routes ...", file=sys.stderr)
+        payload = fetch(build_query(routes))
         if args.save_raw:
             with open(args.save_raw, "w") as fh:
                 json.dump(payload, fh)
@@ -151,8 +182,8 @@ def main() -> int:
         tags = rel.get("tags", {})
         route = tags.get("route", "subway")
         line = tags.get("name") or tags.get("ref") or "Unnamed Line"
-        system = system_name(tags)
-        city = city_of(tags)
+        system = system_name(tags, args.kinds)
+        city = city_of(tags, args.kinds)
         speed = SPEED_MPS.get(route, 9.0)
 
         ordered = []
@@ -203,6 +234,7 @@ def main() -> int:
     # stations with no edge between them. Left alone that fragments the graph
     # and makes line changes impossible, so fold nodes that share a name and
     # sit within MERGE_RADIUS_M of each other into one canonical station.
+    merge_radius = RAIL_MERGE_RADIUS_M if args.kinds == "rail" else MERGE_RADIUS_M
     canonical: dict[int, int] = {}
     groups: dict[tuple[str, str], list[int]] = {}
     for nid, st in stations.items():
@@ -216,7 +248,7 @@ def main() -> int:
             placed = False
             for cl in clusters:
                 head = stations[cl[0]]
-                if haversine(st["lat"], st["lon"], head["lat"], head["lon"]) <= MERGE_RADIUS_M:
+                if haversine(st["lat"], st["lon"], head["lat"], head["lon"]) <= merge_radius:
                     cl.append(nid)
                     placed = True
                     break

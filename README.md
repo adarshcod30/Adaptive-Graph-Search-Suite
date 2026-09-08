@@ -26,6 +26,7 @@ server, no install, nothing uploaded.
 - [Getting started](#getting-started)
 - [Usage](#usage)
 - [Benchmarks](#benchmarks)
+- [Contraction Hierarchies](#contraction-hierarchies)
 - [Correctness](#correctness)
 - [Project structure](#project-structure)
 - [Testing](#testing)
@@ -59,10 +60,12 @@ shortest-path query cannot:
 
 | Feature | Detail |
 |---|---|
-| **10 routing algorithms** | BFS, DFS, Dijkstra, A\*, Greedy best-first, Bellman-Ford, Floyd-Warshall, Johnson, Bidirectional Dijkstra, Dial's bucket queue |
+| **11 routing algorithms** | BFS, DFS, Dijkstra, A\*, Greedy best-first, Bellman-Ford, Floyd-Warshall, Johnson, Bidirectional Dijkstra, Dial's bucket queue, **Contraction Hierarchies** |
+| **Contraction Hierarchies** | The technique production routing engines use — 21–28× faster queries, 47–72× fewer nodes expanded, verified identical to Dijkstra |
 | **6 analysis algorithms** | Bridges & articulation points, strongly connected components, minimum spanning tree, betweenness centrality, max-flow/min-cut, K-shortest paths |
-| **Real road data** | OpenStreetMap importer for 10 preset Indian cities, or any bounding box |
-| **All Indian metros** | 922 stations, 23 systems, 22 cities — Delhi, Mumbai, Namma, Chennai, Kolkata, Hyderabad and more, imported live from OSM |
+| **Five real cities** | Delhi, Mumbai, Bengaluru, Jaipur, Kolkata — 111k junctions of real OpenStreetMap road network, committed and ready to run |
+| **All Indian metros** | 922 stations, 23 systems, 22 cities — Delhi, Mumbai, Namma, Chennai, Kolkata, Hyderabad and more |
+| **Indian Railways** | 746 stations, 2,062 links from 253 long-distance train routes |
 | **Multi-modal routing** | Road and rail combined into one time-weighted graph; plain Dijkstra then solves it |
 | **Isochrones** | Reachability bands with convex-hull service areas |
 | **What-if closures** | Shut any road, re-run any algorithm, see the detour |
@@ -215,7 +218,7 @@ because OSM carries no timetables. They are indicative, not schedule-accurate.
 git clone https://github.com/adarshcod30/Adaptive-Graph-Search-Suite.git
 cd Adaptive-Graph-Search-Suite
 make -j
-./bin/agss race --graph data/maps/Delhi_NCR --source 0 --target 150
+./bin/agss race --graph data/cities/Jaipur --geo --source 0 --target 150
 ```
 
 With CMake instead:
@@ -239,7 +242,11 @@ python3 scripts/fetch_city.py --city bengaluru
 ```
 
 ```bash
-python3 scripts/fetch_metros.py
+python3 scripts/fetch_transit.py --kinds metro
+```
+
+```bash
+python3 scripts/fetch_transit.py --kinds rail
 ```
 
 ---
@@ -252,13 +259,19 @@ Every command takes `--graph <dir>`, and `--geo` when the coordinates are lat/lo
 ### Route
 
 ```bash
-./bin/agss route --graph data/cities/Delhi_Central --geo --alg astar --source 0 --target 40000 --directions
+./bin/agss route --graph data/cities/Jaipur --geo --alg astar --source 3000 --target 15000 --directions
+```
+
+### Contraction Hierarchies
+
+```bash
+./bin/agss race --graph data/cities/Delhi --geo --source 3000 --target 22000 --algs dijkstra,astar,bidijkstra,ch
 ```
 
 ### Race every algorithm on one query
 
 ```bash
-./bin/agss race --graph data/cities/Delhi_Central --geo --source 0 --target 40000
+./bin/agss race --graph data/cities/Delhi --geo --source 0 --target 40000
 ```
 
 ```
@@ -288,7 +301,7 @@ returning a rounded or truncated answer.
 ### Analyse the network
 
 ```bash
-./bin/agss analyze --graph data/cities/Delhi_Central --geo --what bridges
+./bin/agss analyze --graph data/cities/Delhi --geo --what bridges
 ```
 
 `--what` accepts `bridges`, `scc`, `mst`, `centrality`, `flow`, or `all`.
@@ -296,25 +309,25 @@ returning a rounded or truncated answer.
 ### Isochrones
 
 ```bash
-./bin/agss isochrone --graph data/cities/Delhi_Central --geo --source 0 --cutoffs 1000,3000,5000 --out bands.json
+./bin/agss isochrone --graph data/cities/Delhi --geo --source 0 --cutoffs 1000,3000,5000 --out bands.json
 ```
 
 ### Alternative routes
 
 ```bash
-./bin/agss kpaths --graph data/maps/Delhi_NCR --source 0 --target 150 --k 3
+./bin/agss kpaths --graph data/cities/Jaipur --geo --source 0 --target 150 --k 3
 ```
 
 ### Close a road and re-route
 
 ```bash
-./bin/agss route --graph data/maps/Delhi_NCR --alg dijkstra --source 0 --target 150 --close 12:47
+./bin/agss route --graph data/cities/Jaipur --geo --alg dijkstra --source 0 --target 150 --close 12:47
 ```
 
 ### Metro and multi-modal
 
 ```bash
-./bin/agss transit --transit data/transit --list
+./bin/agss transit --transit data/railways --source "New Delhi" --target "Howrah Junction"
 ```
 
 ```bash
@@ -332,7 +345,7 @@ returning a rounded or truncated answer.
 ```
 
 ```bash
-./bin/agss verify --graph data/maps/Delhi_NCR --samples 200
+./bin/agss verify --graph data/cities/Jaipur --geo --samples 200
 ```
 
 ---
@@ -377,13 +390,56 @@ one is Θ(V + E).
 
 ---
 
+## Contraction Hierarchies
+
+The headline algorithm, and the one production routing engines actually use.
+
+Nodes are contracted one at a time in increasing order of importance. Removing
+a node means adding shortcut edges between its neighbours wherever the path
+through it was the only shortest one. Once every node is contracted, each edge
+and shortcut is oriented from the less important endpoint to the more important
+one, and a query becomes a bidirectional search that only ever moves *upward*.
+Road networks have very low highway dimension — long trips funnel onto a few
+arterials — so both searches climb to a shared core almost immediately.
+
+Measured on the committed extracts, 300 random queries each:
+
+| City | Nodes | Build | Dijkstra | CH | Speedup |
+|---|---|---|---|---|---|
+| Mumbai | 15,597 | 339 ms | 0.372 ms / 7,178 nodes | 0.017 ms / 142 nodes | **21× faster, 50× fewer** |
+| Jaipur | 19,110 | 814 ms | 0.526 ms / 9,719 nodes | 0.025 ms / 206 nodes | **21× faster, 47× fewer** |
+| Delhi | 24,781 | 1,113 ms | 0.719 ms / 12,429 nodes | 0.029 ms / 213 nodes | **25× faster, 58× fewer** |
+| Bengaluru | 33,360 | 1,498 ms | 0.993 ms / 17,367 nodes | 0.035 ms / 240 nodes | **28× faster, 72× fewer** |
+
+**Zero cost mismatches across 1,142 queries.** CH is a preprocessing technique,
+not an approximation — a missed witness costs an unnecessary shortcut, never a
+different answer.
+
+Three things worth knowing about the implementation:
+
+- **A cheaper witness search is a false economy.** Halving the search bound to
+  save preprocessing time made it *three times slower*: every witness missed
+  becomes a shortcut, and those shortcuts make every later contraction more
+  expensive. The real win was mechanical — hoisting a hash-map allocation out
+  of the innermost loop cut Delhi's build from 2,004 ms to 1,096 ms.
+- **CH suits road networks, not arbitrary graphs.** Arc growth is 2.1–2.3× on
+  real cities and above 9× on a dense random graph, which is a property of the
+  input, not a defect. Preprocessing carries a time budget so a pathological
+  graph cannot hang a browser tab.
+- **An exhausted budget stays correct.** Uncontracted nodes form a core that
+  never had its shortcuts computed; ranking it above the contracted nodes is
+  not enough, because an up-only search can traverse a core arc in one
+  direction only. Core arcs are given to *both* searches, which turns the core
+  back into an ordinary bidirectional Dijkstra. Answers stay exact; only speed
+  degrades.
+
 ## Correctness
 
 Four algorithms guarantee optimality by construction, so **they are each other's
 oracle** — no golden files, no hand-computed expected answers:
 
 ```bash
-./bin/agss verify --graph data/maps/Delhi_NCR --samples 200
+./bin/agss verify --graph data/cities/Jaipur --geo --samples 200
 ```
 
 The test suite asserts, over randomly generated graphs, that:
@@ -448,13 +504,14 @@ again reads as an algorithm problem.
 │   └── cli/main.cpp            Subcommand CLI
 ├── tests/                      60 cases across 6 files
 ├── scripts/
-│   ├── fetch_city.py           OSM road networks
-│   ├── fetch_metros.py         All Indian metro systems
-│   └── generate_maps.py        Seeded synthetic maps
+│   ├── fetch_city.py           OSM road networks, 10 city presets or any bbox
+│   ├── fetch_transit.py        Metro systems (--kinds metro) and railways (--kinds rail)
+│   └── generate_maps.py        The one seeded synthetic grid
 ├── data/
-│   ├── maps/                   5 synthetic maps (committed, reproducible)
-│   ├── transit/                922 stations, 1,900 links (committed)
-│   └── cities/                 OSM imports (gitignored, fetched on demand)
+│   ├── cities/                 5 real OSM road networks (committed)
+│   ├── transit/                922 metro stations, 23 systems
+│   ├── railways/               746 Indian Railways stations
+│   └── maps/                   one synthetic grid — the only integer-weight graph
 ├── web/                        Browser app (WebAssembly)
 │   ├── index.html              Shell
 │   ├── app.js                  Mercator projection, tile layer, trace replay, rendering
@@ -584,9 +641,10 @@ service.
 ## Roadmap
 
 - [x] WebAssembly build so the visualiser is a link, not a clone
-- [ ] Contraction Hierarchies and ALT landmark preprocessing
+- [x] Contraction Hierarchies
+- [ ] ALT landmark preprocessing and Customizable CH
 - [ ] Time-dependent edge weights (rush-hour routing)
-- [ ] 50-city demo tier, with benchmark-tier extracts as release assets
+- [ ] More cities, with larger extracts as release assets
 - [ ] Python bindings via pybind11
 - [ ] Jump Point Search for grid maps
 - [ ] Louvain community detection for neighbourhood boundaries

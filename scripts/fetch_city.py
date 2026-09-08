@@ -26,6 +26,11 @@ import subprocess
 import sys
 
 EARTH_R = 6371008.8
+
+# ~11 cm at the equator: far finer than any road geometry, and small enough
+# that the files stay compact.
+COORD_DP = 6
+WEIGHT_DP = 3
 OVERPASS = "https://overpass-api.de/api/interpreter"
 
 DRIVABLE = ("motorway|trunk|primary|secondary|tertiary|unclassified|residential|"
@@ -34,16 +39,16 @@ DRIVABLE = ("motorway|trunk|primary|secondary|tertiary|unclassified|residential|
 # south, west, north, east. Kept deliberately modest so a fetch finishes in
 # seconds; widen for a full-city extract.
 CITIES = {
-    "delhi":      (28.55, 77.15, 28.70, 77.30, "Delhi_Central"),
-    "mumbai":     (18.92, 72.80, 19.10, 72.90, "Mumbai_South"),
-    "bengaluru":  (12.93, 77.56, 13.02, 77.68, "Bengaluru_Central"),
-    "chennai":    (13.02, 80.20, 13.12, 80.29, "Chennai_Central"),
-    "kolkata":    (22.52, 88.32, 22.61, 88.40, "Kolkata_Central"),
-    "hyderabad":  (17.38, 78.42, 17.47, 78.52, "Hyderabad_Central"),
-    "pune":       (18.48, 73.82, 18.57, 73.92, "Pune_Central"),
-    "ahmedabad":  (23.00, 72.55, 23.09, 72.63, "Ahmedabad_Central"),
-    "jaipur":     (26.87, 75.76, 26.94, 75.85, "Jaipur_Central"),
-    "kochi":      (9.93, 76.26, 10.02, 76.34, "Kochi_Central"),
+    "delhi":      (28.56, 77.17, 28.68, 77.28, "Delhi"),
+    "mumbai":     (18.92, 72.80, 19.06, 72.89, "Mumbai"),
+    "bengaluru":  (12.93, 77.56, 13.03, 77.66, "Bengaluru"),
+    "jaipur":     (26.86, 75.75, 26.94, 75.85, "Jaipur"),
+    "kolkata":    (22.51, 88.32, 22.61, 88.40, "Kolkata"),
+    "chennai":    (13.02, 80.20, 13.12, 80.29, "Chennai"),
+    "hyderabad":  (17.38, 78.42, 17.47, 78.52, "Hyderabad"),
+    "pune":       (18.48, 73.82, 18.57, 73.92, "Pune"),
+    "ahmedabad":  (23.00, 72.55, 23.09, 72.63, "Ahmedabad"),
+    "kochi":      (9.93, 76.26, 10.02, 76.34, "Kochi"),
 }
 
 
@@ -110,7 +115,14 @@ def main() -> int:
             json.dump(payload, open(args.save_raw, "w"))
 
     elements = payload.get("elements", [])
-    coords = {e["id"]: (e["lat"], e["lon"]) for e in elements if e.get("type") == "node"}
+    # Round coordinates *before* deriving any distance, so the file is
+    # self-consistent: every weight is computed from exactly the numbers the
+    # CSV stores. Writing full-precision weights next to rounded coordinates
+    # left ~18k Jaipur edges up to 13 cm shorter than the straight line between
+    # their stored endpoints, which is enough to make the A* heuristic an
+    # over-estimate and cost it the optimality guarantee.
+    coords = {e["id"]: (round(e["lat"], COORD_DP), round(e["lon"], COORD_DP))
+              for e in elements if e.get("type") == "node"}
     ways = [e for e in elements if e.get("type") == "way"]
     print(f"  {len(ways)} ways, {len(coords)} raw nodes", file=sys.stderr)
     if not ways:
@@ -169,13 +181,13 @@ def main() -> int:
         wr.writerow(["id", "lon", "lat"])   # geographic order: x=lon, y=lat
         for osm in kept:
             lat, lon = coords[osm]
-            wr.writerow([remap[osm], f"{lon:.7f}", f"{lat:.7f}"])
+            wr.writerow([remap[osm], format(lon, f".{COORD_DP}f"), format(lat, f".{COORD_DP}f")])
 
     with open(f"{out_dir}/edges.csv", "w", newline="") as fh:
         wr = csv.writer(fh)
         wr.writerow(["u", "v", "metres"])
         for (a, b), d in sorted(edges.items(), key=lambda kv: (remap[kv[0][0]], remap[kv[0][1]])):
-            wr.writerow([remap[a], remap[b], f"{d:.3f}"])
+            wr.writerow([remap[a], remap[b], format(d, f".{WEIGHT_DP}f")])
 
     with open(f"{out_dir}/manifest.json", "w") as fh:
         json.dump({"name": name, "bbox": list(bbox), "source": "OpenStreetMap via Overpass",

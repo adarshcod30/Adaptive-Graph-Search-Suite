@@ -13,8 +13,8 @@ test_trace.json
 ui/trace.json
 *.trace.json
 
-# Large data fetched on demand (see scripts/)
-data/cities/
+# City extracts are committed now, so the demo works from a clone with no
+# network access. Only bulk source data stays out.
 data/benchmark/
 *.osm.pbf
 

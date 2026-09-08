@@ -1,0 +1,15 @@
+{
+  "name": "Delhi",
+  "bbox": [
+    28.56,
+    77.17,
+    28.68,
+    77.28
+  ],
+  "source": "OpenStreetMap via Overpass",
+  "licence": "ODbL 1.0",
+  "nodes": 24781,
+  "edges": 61439,
+  "raw_osm_nodes": 73275,
+  "ways": 15708
+}

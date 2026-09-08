@@ -34,25 +34,23 @@ jobs:
       - name: Verify the module before publishing it
         run: node tests/wasm_smoke.mjs
 
-      - name: Fetch a real city road network
-        # The OSM extract is not committed (a few MB), so the published demo
-        # pulls a fresh one at deploy time. A failure here is not fatal: the
-        # page still ships every synthetic map and all 23 metro systems.
-        continue-on-error: true
-        run: python3 scripts/fetch_city.py --city delhi
+      # City extracts, metro and railway data are all committed, so the deploy
+      # is self-contained and cannot be broken by an Overpass outage.
 
       - name: Assemble the site
         run: |
           mkdir -p site
           cp -r web/* site/
           mkdir -p site/data
-          cp -r data/maps site/data/
-          cp -r data/transit site/data/
-          if [ -d data/cities ]; then cp -r data/cities site/data/; fi
-          # The page loads data via ../data/..., which resolves above web/;
-          # on Pages the site root is the page's own directory, so rewrite
-          # those references to a sibling path.
-          sed -i "s|'../data/|'data/|g" site/app.js
+          cp -r data/maps data/transit data/railways data/cities site/data/
+          # In the repo the page sits in web/ with data one level up. On Pages
+          # they are siblings, so retarget the single constant that says where
+          # data lives, and fail loudly if that line ever moves.
+          grep -q "const DATA_ROOT = '../data';" site/app.js || {
+            echo "::error::DATA_ROOT line not found in app.js; the Pages rewrite is stale"
+            exit 1
+          }
+          sed -i "s|const DATA_ROOT = '../data';|const DATA_ROOT = 'data';|" site/app.js
           du -sh site
 
       - uses: actions/configure-pages@v5

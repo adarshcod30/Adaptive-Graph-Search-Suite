@@ -25,6 +25,7 @@
 
 #include "agss/algorithm.hpp"
 #include "agss/analysis.hpp"
+#include "agss/contraction_hierarchy.hpp"
 #include "agss/directions.hpp"
 #include "agss/graph_builder.hpp"
 #include "agss/isochrone.hpp"
@@ -43,6 +44,11 @@ struct Session {
     std::unique_ptr<agss::KdTree> index;
     std::string name;
     bool loaded = false;
+
+    /// Prepared once per graph and reused: the whole point of CH is that
+    /// preprocessing amortises across queries.
+    agss::ContractionHierarchy ch;
+    const agss::Graph* ch_prepared_for = nullptr;
 
     agss::transit::Network network;
     agss::transit::MultiModal multimodal;
@@ -90,6 +96,7 @@ char* agss_load_graph(const char* name, const char* nodes_csv, const char* edges
                       int geographic, int lenient) {
     auto& s = session();
     s.multimodal_ready = false;
+    s.ch_prepared_for = nullptr;  // the hierarchy belongs to the old graph
 
     // load_csv reads paths, so mirror its parsing over in-memory text by
     // writing to the Emscripten in-memory filesystem -- no host disk involved.
@@ -202,6 +209,68 @@ char* agss_route(const char* alg_key, int source, int target, int want_trace, co
 }
 
 /// Geometry, sent once per graph so route calls stay small.
+/// Preprocess the active graph for Contraction Hierarchies.
+///
+/// Exposed separately from the query so the page can show the cost honestly:
+/// CH trades a one-off build against every later query being nearly free, and
+/// hiding the build behind the first search would misrepresent that bargain.
+EMSCRIPTEN_KEEPALIVE
+char* agss_ch_build(double budget_ms) {
+    auto& s = session();
+    if (!s.loaded) return error_json("no graph loaded");
+    const auto& g = active_graph();
+
+    agss::ContractionHierarchy::BuildOptions opts;
+    if (budget_ms > 0) opts.budget_ms = budget_ms;
+    s.ch.build(g, opts);
+    s.ch_prepared_for = &g;
+
+    const auto& st = s.ch.stats();
+    std::ostringstream os;
+    os << "{\"ok\":true,\"buildMs\":" << agss::json::number(st.build_ms)
+       << ",\"shortcuts\":" << st.shortcuts << ",\"originalEdges\":" << st.original_edges
+       << ",\"edgeGrowth\":" << agss::json::number(st.edge_growth)
+       << ",\"witnessSearches\":" << st.witness_searches
+       << ",\"aborted\":" << (st.aborted ? "true" : "false") << "}";
+    return to_js(os.str());
+}
+
+EMSCRIPTEN_KEEPALIVE
+char* agss_ch_ready() {
+    auto& s = session();
+    const bool ok = s.loaded && s.ch.ready() && s.ch_prepared_for == &active_graph();
+    std::ostringstream os;
+    os << "{\"ok\":true,\"ready\":" << (ok ? "true" : "false") << "}";
+    return to_js(os.str());
+}
+
+/// Query the prepared hierarchy. Refuses rather than silently rebuilding, so
+/// the page can prompt for the build and show what it cost.
+EMSCRIPTEN_KEEPALIVE
+char* agss_ch_query(int source, int target, int want_trace) {
+    auto& s = session();
+    if (!s.loaded) return error_json("no graph loaded");
+    const auto& g = active_graph();
+    if (!s.ch.ready() || s.ch_prepared_for != &g) {
+        return error_json("this graph has not been preprocessed yet");
+    }
+
+    agss::Trace trace;
+    agss::SearchOptions opts;
+    if (want_trace) {
+        trace.reserve(4096);
+        opts.trace = &trace;
+    }
+    const auto res = s.ch.query(source, target, opts);
+
+    std::ostringstream os;
+    agss::json::TraceDocument doc;
+    doc.result = &res;
+    doc.trace = want_trace ? &trace : nullptr;
+    agss::json::write_trace(os, doc);
+    return to_js(os.str());
+}
+
 EMSCRIPTEN_KEEPALIVE
 char* agss_graph_json() {
     auto& s = session();
@@ -566,6 +635,7 @@ EMSCRIPTEN_KEEPALIVE
 char* agss_use_road_graph() {
     auto& s = session();
     s.multimodal_ready = false;
+    s.ch_prepared_for = nullptr;  // the hierarchy belongs to the old graph
     std::ostringstream os;
     os << "{\"ok\":true,\"nodes\":" << s.graph.num_nodes() << ",\"edges\":" << s.graph.num_edges()
        << "}";

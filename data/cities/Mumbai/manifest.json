@@ -1,0 +1,15 @@
+{
+  "name": "Mumbai",
+  "bbox": [
+    18.92,
+    72.8,
+    19.06,
+    72.89
+  ],
+  "source": "OpenStreetMap via Overpass",
+  "licence": "ODbL 1.0",
+  "nodes": 15597,
+  "edges": 33367,
+  "raw_osm_nodes": 46753,
+  "ways": 10843
+}

@@ -111,5 +111,6 @@ double path_cost(const Graph& g, const std::vector<NodeId>& path);
 void register_uninformed(Registry& r);
 void register_weighted(Registry& r);
 void register_global(Registry& r);
+void register_contraction(Registry& r);
 
 }  // namespace agss

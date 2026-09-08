@@ -27,6 +27,7 @@ add_library(agss_core
     src/algorithms/weighted.cpp
     src/algorithms/global.cpp
     src/algorithms/kshortest.cpp
+    src/algorithms/contraction_hierarchy.cpp
     src/analysis/connectivity.cpp
     src/analysis/centrality.cpp
     src/analysis/spanning.cpp
@@ -67,6 +68,7 @@ if(AGSS_BUILD_TESTS)
         tests/test_differential.cpp
         tests/test_analysis.cpp
         tests/test_features.cpp
+        tests/test_ch.cpp
     )
     target_link_libraries(agss_tests PRIVATE agss_core)
     target_include_directories(agss_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/third_party)
@@ -95,7 +97,7 @@ if(EMSCRIPTEN)
         "-sINITIAL_MEMORY=64MB"
         "-sSTACK_SIZE=8MB"                 # iterative algorithms still recurse in Dinic
         "-sEXPORTED_RUNTIME_METHODS=['ccall','cwrap','UTF8ToString','stringToNewUTF8']"
-        "-sEXPORTED_FUNCTIONS=['_malloc','_free','_agss_free','_agss_load_graph','_agss_algorithms','_agss_route','_agss_graph_json','_agss_race','_agss_bench','_agss_analyze','_agss_isochrone','_agss_kpaths','_agss_directions','_agss_nearest','_agss_load_transit','_agss_build_transit','_agss_use_road_graph']"
+        "-sEXPORTED_FUNCTIONS=['_malloc','_free','_agss_free','_agss_load_graph','_agss_algorithms','_agss_route','_agss_graph_json','_agss_race','_agss_bench','_agss_ch_build','_agss_ch_ready','_agss_ch_query','_agss_analyze','_agss_isochrone','_agss_kpaths','_agss_directions','_agss_nearest','_agss_load_transit','_agss_build_transit','_agss_use_road_graph']"
         "-sFILESYSTEM=1"                   # in-memory only; nothing touches a host disk
         "--closure=0"
         "-O3")

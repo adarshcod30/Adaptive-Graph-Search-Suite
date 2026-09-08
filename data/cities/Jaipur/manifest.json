@@ -1,0 +1,15 @@
+{
+  "name": "Jaipur",
+  "bbox": [
+    26.86,
+    75.75,
+    26.94,
+    75.85
+  ],
+  "source": "OpenStreetMap via Overpass",
+  "licence": "ODbL 1.0",
+  "nodes": 19110,
+  "edges": 48721,
+  "raw_osm_nodes": 45116,
+  "ways": 11015
+}

@@ -147,3 +147,19 @@ td.dim { color: var(--muted); }
     pointer-events: none;
     z-index: 5;
 }
+
+/* The CH panel is the headline feature, so it gets a quiet accent rather than
+   sitting in the same visual weight as every other control group. */
+.group.accent {
+    border: 1px solid rgba(78, 168, 255, 0.28);
+    background: rgba(78, 168, 255, 0.06);
+    border-radius: 10px;
+    padding: 12px;
+}
+.group.accent > label { color: var(--accent); }
+
+optgroup { color: var(--muted); font-style: normal; font-size: 11px; }
+optgroup option { color: var(--text); font-size: 13px; }
+
+/* Long station and place names should not stretch the sidebar. */
+#panel select { text-overflow: ellipsis; }

@@ -8,20 +8,31 @@
  */
 'use strict';
 
+// Repo layout serves the page from web/ with data one level up; the Pages
+// build flattens them into siblings and rewrites just this line.
+const DATA_ROOT = '../data';
+
 const CATALOG = [
-    { id: 'Small_Campus',      label: 'Small Campus (25 nodes)',            dir: '../data/maps/Small_Campus',      geo: false },
-    { id: 'Mumbai_Pune_Expy',  label: 'Mumbai-Pune Expressway (50)',        dir: '../data/maps/Mumbai_Pune_Expy',  geo: false },
-    { id: 'Indian_Grid',       label: 'Indian Grid (225, integer weights)', dir: '../data/maps/Indian_Grid',       geo: false },
-    { id: 'Delhi_NCR',         label: 'Delhi NCR synthetic (200)',          dir: '../data/maps/Delhi_NCR',         geo: false },
-    { id: 'Bengaluru_Traffic', label: 'Bengaluru Traffic synthetic (400)',  dir: '../data/maps/Bengaluru_Traffic', geo: false },
-    { id: 'Delhi_Central',     label: 'Delhi roads, real OSM (47,828)',     dir: '../data/cities/Delhi_Central',   geo: true, heavy: true },
-    { id: 'transit:Delhi',     label: 'Delhi Metro (rail only)',            transit: 'Delhi' },
-    { id: 'transit:Bengaluru', label: 'Namma Metro, Bengaluru (rail only)', transit: 'Bengaluru' },
-    { id: 'transit:Mumbai',    label: 'Mumbai Metro + Monorail (rail)',     transit: 'Mumbai' },
-    { id: 'transit:Chennai',   label: 'Chennai Metro (rail only)',          transit: 'Chennai' },
-    { id: 'transit:Kolkata',   label: 'Kolkata Metro (rail only)',          transit: 'Kolkata' },
-    { id: 'transit:Hyderabad', label: 'Hyderabad Metro (rail only)',        transit: 'Hyderabad' },
-    { id: 'transit:',          label: 'Every Indian metro (922 stations)',  transit: '' },
+    { group: 'Road networks (OpenStreetMap)' },
+    { id: 'Delhi',     label: 'Delhi',     sub: '24,781 junctions',  dir: 'cities/Delhi',     geo: true },
+    { id: 'Mumbai',    label: 'Mumbai',    sub: '15,597 junctions',  dir: 'cities/Mumbai',    geo: true },
+    { id: 'Bengaluru', label: 'Bengaluru', sub: '33,360 junctions',  dir: 'cities/Bengaluru', geo: true },
+    { id: 'Jaipur',    label: 'Jaipur',    sub: '19,110 junctions',  dir: 'cities/Jaipur',    geo: true },
+    { id: 'Kolkata',   label: 'Kolkata',   sub: '17,857 junctions',  dir: 'cities/Kolkata',   geo: true },
+
+    { group: 'Rail networks (OpenStreetMap)' },
+    { id: 'rail:',              label: 'Indian Railways',  sub: '746 stations nationwide', rail: '' },
+    { id: 'transit:',           label: 'All Indian metros', sub: '922 stations, 23 systems', transit: '' },
+    { id: 'transit:Delhi',      label: 'Delhi Metro',       sub: '257 stations', transit: 'Delhi' },
+    { id: 'transit:Bengaluru',  label: 'Namma Metro',       sub: '85 stations',  transit: 'Bengaluru' },
+    { id: 'transit:Mumbai',     label: 'Mumbai Metro',      sub: '114 stations', transit: 'Mumbai' },
+    { id: 'transit:Chennai',    label: 'Chennai Metro',     sub: '62 stations',  transit: 'Chennai' },
+    { id: 'transit:Kolkata',    label: 'Kolkata Metro',     sub: '59 stations',  transit: 'Kolkata' },
+    { id: 'transit:Hyderabad',  label: 'Hyderabad Metro',   sub: '59 stations',  transit: 'Hyderabad' },
+
+    { group: 'Synthetic' },
+    { id: 'Grid_Integer', label: 'Grid, integer weights', sub: '225 nodes — the only graph Dial\u2019s applies to',
+      dir: 'maps/Grid_Integer', geo: false },
 ];
 
 const OP_DISCOVER = 0, OP_EXPAND = 1, OP_RELAX = 2;
@@ -33,10 +44,11 @@ let M = null;                 // the Emscripten module
 let graph = { nodes: [], edges: [], coordSpace: 'planar' };
 let geographic = false;
 let stations = [];            // populated for transit graphs
-let transitLoaded = false;
+let loadedTransitSet = null;  // 'metro' | 'rail' — which CSV pair is in the engine
 
 let events = [], eventIdx = 0, finalPath = [], stepSize = 1, timer = null;
 let closedEdges = new Set();
+let chReady = false;
 let heat = null;              // per-node score overlay (centrality)
 let isoBands = null;
 let markedNodes = new Set();  // bridge endpoints etc.
@@ -160,28 +172,46 @@ const ny = i => ty(world.y[i]);
    by two libraries agreeing. It also keeps the page dependency-free, which is
    the whole reason it can be a single static file. */
 
+const OSM_ATTR = '© OpenStreetMap contributors';
+const ESRI_ATTR = 'Imagery © Esri, Maxar, Earthstar Geographics';
+
 const BASEMAPS = {
     none: null,
     dark: {
-        label: 'Dark map',
-        url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-        subdomains: ['a', 'b', 'c', 'd'],
-        maxZoom: 20,
-        attribution: '© OpenStreetMap contributors © CARTO',
+        label: 'Dark',
+        // No key-free provider ships a dark raster style, so a light one is
+        // inverted on the canvas instead. CARTO's dark_all used to fill this
+        // slot until they began stamping "API KEY REQUIRED" across every
+        // unauthenticated tile -- served as HTTP 200 with a valid PNG, so
+        // nothing errored and the watermark simply appeared on the map.
+        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+        maxZoom: 16,
+        filter: 'invert(1) hue-rotate(180deg) brightness(0.78) contrast(1.05) saturate(0.7)',
+        attribution: 'Tiles © Esri — ' + OSM_ATTR,
     },
-    light: {
-        label: 'Light map',
-        url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
-        subdomains: ['a', 'b', 'c', 'd'],
-        maxZoom: 20,
-        attribution: '© OpenStreetMap contributors © CARTO',
+    gray: {
+        label: 'Light',
+        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+        maxZoom: 16,
+        attribution: 'Tiles © Esri — ' + OSM_ATTR,
     },
     osm: {
-        label: 'OpenStreetMap',
+        label: 'Street map',
         url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-        subdomains: null,
         maxZoom: 19,
-        attribution: '© OpenStreetMap contributors',
+        attribution: OSM_ATTR,
+    },
+    satellite: {
+        label: 'Satellite',
+        url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+        maxZoom: 19,
+        attribution: ESRI_ATTR,
+    },
+    terrain: {
+        label: 'Terrain',
+        url: 'https://a.tile.opentopomap.org/{z}/{x}/{y}.png',
+        maxZoom: 17,
+        attribution: OSM_ATTR + ', SRTM — style © OpenTopoMap (CC-BY-SA)',
     },
 };
 
@@ -192,11 +222,9 @@ const MAX_IN_FLIGHT = 8;         // stay polite to the tile servers
 const TILE_PX = 256;
 
 function tileUrl(spec, z, x, y) {
-    const retina = (window.devicePixelRatio || 1) > 1.5 && spec.subdomains ? '@2x' : '';
-    return spec.url
-        .replace('{s}', spec.subdomains
-            ? spec.subdomains[(x + y) % spec.subdomains.length] : '')
-        .replace('{z}', z).replace('{x}', x).replace('{y}', y).replace('{r}', retina);
+    // Esri orders its path {z}/{y}/{x}; the placeholders in each spec already
+    // encode that, so a plain substitution covers both conventions.
+    return spec.url.replace('{z}', z).replace('{x}', x).replace('{y}', y);
 }
 
 function getTile(spec, z, x, y) {
@@ -247,6 +275,7 @@ function drawBasemap() {
 
     ctx.save();
     ctx.imageSmoothingEnabled = true;
+    if (spec.filter) ctx.filter = spec.filter;
     for (let ty_ = y0; ty_ < y1; ty_++) {
         if (ty_ < 0 || ty_ >= n) continue;
         for (let tx_ = x0; tx_ < x1; tx_++) {
@@ -576,40 +605,48 @@ async function fetchText(url) {
     return res.text();
 }
 
-async function ensureTransit() {
-    if (transitLoaded) return;
+/// The engine holds one transit dataset at a time, so switching between the
+/// metro and rail networks reloads it rather than trying to merge two very
+/// different things into one graph.
+async function ensureTransit(which) {
+    if (loadedTransitSet === which) return;
+    const dir = which === 'rail' ? 'railways' : 'transit';
     const [st, lk] = await Promise.all([
-        fetchText('../data/transit/stations.csv'),
-        fetchText('../data/transit/links.csv'),
+        fetchText(`${DATA_ROOT}/${dir}/stations.csv`),
+        fetchText(`${DATA_ROOT}/${dir}/links.csv`),
     ]);
     const r = call('agss_load_transit', ['string', 'string'], [st, lk]);
     if (!r.ok) throw new Error(r.error);
-    transitLoaded = true;
-    log(`transit data: ${r.stations} stations across ${r.systems.length} systems`);
+    loadedTransitSet = which;
+    log(`${which === 'rail' ? 'railway' : 'metro'} data: ${r.stations} stations, ` +
+        `${r.systems.length} system(s)`);
 }
 
 async function loadSelected() {
-    const entry = CATALOG.find(c => c.id === $('mapSel').value);
+    const entry = CATALOG.find(c => c.id && c.id === $('mapSel').value);
     if (!entry) return;
     clearOverlays();
     pause();
 
     try {
-        if (entry.transit !== undefined) {
-            await ensureTransit();
-            const r = call('agss_build_transit', ['string', 'number'], [entry.transit, 0]);
+        if (entry.transit !== undefined || entry.rail !== undefined) {
+            const isRail = entry.rail !== undefined;
+            await ensureTransit(isRail ? 'rail' : 'metro');
+            const filter = isRail ? entry.rail : entry.transit;
+            const r = call('agss_build_transit', ['string', 'number'], [filter, 0]);
             if (!r.ok) throw new Error(r.error);
             stations = r.stations;
             geographic = true;
             loadGeometry();
             $('mapInfo').textContent =
-                `${r.stationNodes} stations, ${r.edges} edges — travel times estimated from distance`;
+                `${r.stationNodes} stations, ${r.edges} edges — journey times estimated ` +
+                `from distance, not timetables`;
             log(`${entry.label}: ${r.stationNodes} stations`);
         } else {
             if (entry.heavy) log(`fetching ${entry.label} — a few MB, one moment…`);
             const [nodes, edges] = await Promise.all([
-                fetchText(`${entry.dir}/nodes.csv`),
-                fetchText(`${entry.dir}/edges.csv`),
+                fetchText(`${DATA_ROOT}/${entry.dir}/nodes.csv`),
+                fetchText(`${DATA_ROOT}/${entry.dir}/edges.csv`),
             ]);
             const r = call('agss_load_graph',
                 ['string', 'string', 'string', 'number', 'number'],
@@ -632,8 +669,7 @@ async function loadSelected() {
         $('baseInfo').textContent = geographic
             ? 'Real map tiles under the graph. Scroll to zoom, drag to pan.'
             : 'This network has no real-world coordinates, so no basemap applies.';
-        $('srcIn').value = 0;
-        $('dstIn').value = Math.min(graph.nodes.length - 1, Math.floor(graph.nodes.length * 0.7));
+        pickDefaultEndpoints();
         $('srcIn').max = $('dstIn').max = graph.nodes.length - 1;
         // Fit on the next frame: the ResizeObserver may still be catching up
         // with the canvas, and fitting against stale dimensions is what put
@@ -656,6 +692,44 @@ function loadGeometry() {
     for (const n of graph.nodes) byId[n.id] = n;
     graph.nodes = byId;
     projectAll();
+}
+
+/// Choose endpoints that are actually connected.
+///
+/// Defaulting to node 0 looks harmless and is not: a real OSM extract has a
+/// few hundred stranded nodes at the clipping boundary, and Delhi's node 0 is
+/// one of them -- so the first thing a visitor saw was "no route". Picking two
+/// nodes from the largest strongly connected component means the default query
+/// always works, on every network.
+function pickDefaultEndpoints() {
+    const n = graph.nodes.length;
+    if (!n) return;
+    const fallbackA = 0, fallbackB = Math.floor(n * 0.7);
+    try {
+        const scc = call('agss_analyze', ['string', 'number', 'number', 'number'],
+            ['scc', 0, 0, 0]);
+        if (!scc.ok) throw new Error(scc.error);
+
+        const sizes = new Map();
+        for (const c of scc.componentOf) sizes.set(c, (sizes.get(c) || 0) + 1);
+        let biggest = -1, best = -1;
+        for (const [c, size] of sizes) if (size > best) { best = size; biggest = c; }
+
+        const members = [];
+        for (let i = 0; i < scc.componentOf.length; i++) {
+            if (scc.componentOf[i] === biggest) members.push(i);
+        }
+        if (members.length < 2) throw new Error('no usable component');
+
+        // Spread the pair out so the default query is a real journey rather
+        // than two adjacent junctions.
+        $('srcIn').value = members[Math.floor(members.length * 0.15)];
+        $('dstIn').value = members[Math.floor(members.length * 0.85)];
+    } catch (err) {
+        $('srcIn').value = fallbackA;
+        $('dstIn').value = fallbackB;
+        log(`could not pick connected endpoints (${err.message}); using defaults`, 'danger');
+    }
 }
 
 function clearOverlays() {
@@ -691,6 +765,87 @@ function setMetrics(m, eventCount) {
     $('mRel').textContent = m.edgesRelaxed.toLocaleString();
     $('mCost').textContent = m.success ? m.pathCost.toFixed(2) : '—';
     $('mEvents').textContent = eventCount.toLocaleString();
+}
+
+/// Preprocess for Contraction Hierarchies, reporting what it cost.
+///
+/// Kept as an explicit step rather than hidden inside the first query: CH
+/// trades a one-off build for near-free queries, and burying the build would
+/// misrepresent exactly the bargain the feature exists to demonstrate.
+async function buildCH() {
+    if (!graph.nodes.length) return;
+    const btn = $('chBtn');
+    btn.disabled = true;
+    btn.textContent = 'Preprocessing\u2026';
+    $('chInfo').textContent = 'Contracting nodes and inserting shortcuts\u2026';
+    // Yield so the button text paints before the engine blocks the thread.
+    await new Promise(r => setTimeout(r, 30));
+
+    const r = call('agss_ch_build', ['number'], [20000]);
+    btn.disabled = false;
+    btn.textContent = 'Rebuild hierarchy';
+    if (!r.ok) { log(r.error, 'danger'); return; }
+
+    chReady = true;
+    $('chInfo').innerHTML =
+        `Built in <b>${r.buildMs.toFixed(0)} ms</b> \u2014 ${r.shortcuts.toLocaleString()} shortcuts ` +
+        `on ${r.originalEdges.toLocaleString()} edges (${r.edgeGrowth.toFixed(2)}\u00d7 arcs)` +
+        (r.aborted ? '<br><b>Budget exhausted</b>: answers stay exact, queries just less fast.' : '');
+    log(`CH: ${r.buildMs.toFixed(0)} ms, ${r.shortcuts.toLocaleString()} shortcuts, ` +
+        `${r.edgeGrowth.toFixed(2)}x arc growth`);
+    $('chRaceBtn').disabled = false;
+}
+
+/// Run the same query through CH and Dijkstra and report the difference.
+function raceCH() {
+    if (!chReady) { log('preprocess first', 'danger'); return; }
+    pause();
+    const s = srcNode(), t = dstNode();
+
+    const chRes = call('agss_ch_query', ['number', 'number', 'number'], [s, t, 1]);
+    if (chRes.ok === false) { log(chRes.error, 'danger'); return; }
+    const dj = call('agss_route', ['string', 'number', 'number', 'number', 'string'],
+        ['dijkstra', s, t, 0, '']);
+
+    if (!chRes.metadata.success || !dj.metadata.success) {
+        log('no route between those nodes', 'danger');
+        return;
+    }
+    const reps = graph.nodes.length > 20000 ? 20 : 100;
+    const djBench = call('agss_bench', ['string', 'number', 'number', 'number'],
+        ['dijkstra', s, t, reps]);
+
+    const agree = Math.abs(chRes.metadata.pathCost - dj.metadata.pathCost) < 1e-6;
+    const nodeRatio = dj.metadata.nodesExpanded / Math.max(1, chRes.metadata.nodesExpanded);
+    $('results').innerHTML =
+        `<table><tr><th></th><th>expanded</th><th>cost</th></tr>` +
+        `<tr><td>Dijkstra</td><td>${dj.metadata.nodesExpanded.toLocaleString()}</td>` +
+        `<td>${dj.metadata.pathCost.toFixed(2)}</td></tr>` +
+        `<tr><td>CH</td><td>${chRes.metadata.nodesExpanded.toLocaleString()}</td>` +
+        `<td>${chRes.metadata.pathCost.toFixed(2)}</td></tr>` +
+        `<tr><td><b>ratio</b></td><td class="good"><b>${nodeRatio.toFixed(0)}\u00d7 fewer</b></td>` +
+        `<td class="${agree ? 'good' : 'bad'}">${agree ? 'identical' : 'MISMATCH'}</td></tr>` +
+        `</table><div class="hint">Dijkstra averages ${djBench.amortisedMs.toFixed(4)} ms ` +
+        `over ${reps} runs. CH searches the hierarchy instead of the map.</div>`;
+
+    events = chRes.events || [];
+    finalPath = chRes.path || [];
+    resetState();
+    stepSize = Math.max(1, Math.ceil(events.length / 200));
+    setMetrics(chRes.metadata, events.length);
+    log(`CH expanded ${chRes.metadata.nodesExpanded} nodes vs Dijkstra's ` +
+        `${dj.metadata.nodesExpanded} \u2014 ${nodeRatio.toFixed(0)}x fewer, same cost`);
+    play();
+}
+
+function invalidateCH() {
+    chReady = false;
+    const info = $('chInfo');
+    if (info) info.textContent = 'Not preprocessed for this network yet.';
+    const race = $('chRaceBtn');
+    if (race) race.disabled = true;
+    const build = $('chBtn');
+    if (build) build.textContent = 'Preprocess (build hierarchy)';
 }
 
 function runSearch(showDirs = true) {
@@ -953,8 +1108,19 @@ window.addEventListener('resize', resize);
     $('algSel').onchange = showAlgInfo;
     showAlgInfo();
 
-    $('mapSel').innerHTML = CATALOG.map(c => `<option value="${c.id}">${c.label}</option>`).join('');
-    $('mapSel').value = 'Delhi_NCR';
+    let html = '', open = false;
+    for (const c of CATALOG) {
+        if (c.group) {
+            if (open) html += '</optgroup>';
+            html += `<optgroup label="${c.group}">`;
+            open = true;
+        } else {
+            html += `<option value="${c.id}">${c.label} — ${c.sub}</option>`;
+        }
+    }
+    if (open) html += '</optgroup>';
+    $('mapSel').innerHTML = html;
+    $('mapSel').value = 'Jaipur';
     $('mapSel').onchange = loadSelected;
     $('baseSel').onchange = () => setBasemap($('baseSel').value);
 
@@ -968,6 +1134,8 @@ window.addEventListener('resize', resize);
     $('isoBtn').onclick = isochrone;
     $('kpathBtn').onclick = kpaths;
     $('closeBtn').onclick = closeWorstRoad;
+    $('chBtn').onclick = buildCH;
+    $('chRaceBtn').onclick = raceCH;
     $('clearBtn').onclick = () => { clearOverlays(); draw(); };
     $('speed').oninput = () => { if (timer) { pause(); play(); } };
 

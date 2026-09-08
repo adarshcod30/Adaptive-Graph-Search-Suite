@@ -133,13 +133,12 @@ def main() -> int:
 
     # Re-seed before each map so adding or reordering maps cannot change the
     # ones that came before it.
+    # Only one synthetic map still ships. The others were random graphs named
+    # after real places, which became actively misleading once genuine OSM
+    # extracts existed. This one earns its place: its weights are integers, and
+    # that is the sole condition under which Dial's bucket queue applies.
     specs = [
-        ("Mumbai_Pune_Expy", lambda d: generate_connected_graph(50, 40, d, "Mumbai Pune Expy")),
-        ("Delhi_NCR", lambda d: generate_connected_graph(200, 300, d, "Delhi NCR")),
-        ("Bengaluru_Traffic",
-         lambda d: generate_connected_graph(400, 800, d, "Bengaluru Traffic")),
-        ("Indian_Grid", lambda d: generate_grid_map(15, 15, d, "Indian Grid")),
-        ("Small_Campus", lambda d: generate_grid_map(5, 5, d, "Small Campus")),
+        ("Grid_Integer", lambda d: generate_grid_map(15, 15, d, "Grid (integer weights)")),
     ]
     for i, (name, build) in enumerate(specs):
         random.seed(args.seed + i)

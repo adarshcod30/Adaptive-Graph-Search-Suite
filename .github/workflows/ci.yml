@@ -60,10 +60,10 @@ jobs:
       - uses: actions/checkout@v4
       - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
       - run: cmake --build build --parallel
-      - name: Every optimal algorithm must agree on every map
+      - name: Every optimal algorithm must agree on every network
         run: |
           fail=0
-          for map in data/maps/*/; do
+          for map in data/maps/*/ ; do
             echo "== $map"
             out=$(./build/bin/agss verify --graph "$map" --samples 150)
             echo "$out"
@@ -76,6 +76,21 @@ jobs:
             fi
             if ! echo "$out" | grep -q "0 cost mismatches, 0 invalid paths"; then
               echo "::error::$map produced disagreements between optimal algorithms"
+              fail=1
+            fi
+          done
+          # Real OSM extracts are the ones that actually matter; --geo selects
+          # the great-circle metric they are measured in.
+          for city in data/cities/*/ ; do
+            echo "== $city"
+            out=$(./build/bin/agss verify --graph "$city" --geo --samples 40)
+            echo "$out"
+            if echo "$out" | grep -q "WARNING"; then
+              echo "::error::$city breaks the straight-line heuristic invariant"
+              fail=1
+            fi
+            if ! echo "$out" | grep -q "0 cost mismatches, 0 invalid paths"; then
+              echo "::error::$city produced disagreements between optimal algorithms"
               fail=1
             fi
           done

@@ -1,0 +1,747 @@
+id,name,system,city,lat,lon
+1,Abu Road,Indian Railways,Indian Railways,24.481131,72.785438
+2,Adra Junction,Indian Railways,Indian Railways,23.495795,86.674401
+3,Agartala,Indian Railways,Indian Railways,23.792859,91.278568
+4,Agauthar Halt,Indian Railways,Indian Railways,26.008522,84.844046
+5,Agra Cantonment Junction,Indian Railways,Indian Railways,27.158942,77.990230
+6,Agra Fort,Indian Railways,Indian Railways,27.183059,78.018711
+7,Airoli,Indian Railways,Indian Railways,19.158569,72.999402
+8,Ajmer Junction,Indian Railways,Indian Railways,26.457381,74.637587
+9,Akbarpur Junction,Indian Railways,Indian Railways,26.429202,82.540022
+10,Akurdi,Indian Railways,Indian Railways,18.648514,73.764493
+11,Alappuzha,Indian Railways,Indian Railways,9.484070,76.322344
+12,Alehpur Halt,Indian Railways,Indian Railways,26.209465,84.788986
+13,Aligarh Junction,Indian Railways,Indian Railways,27.888778,78.074684
+14,Allahabad Junction,Indian Railways,Indian Railways,25.445763,81.829703
+15,Aluva,Indian Railways,Indian Railways,10.108623,76.356590
+16,Alwal,Indian Railways,Indian Railways,17.505154,78.514523
+17,Alwar Junction 1,Indian Railways,Indian Railways,27.561587,76.621628
+18,Alwar Junction 2,Indian Railways,Indian Railways,27.561542,76.621732
+19,Alwar Junction 3,Indian Railways,Indian Railways,27.561535,76.621886
+20,Ambala Cantonment Junction,Indian Railways,Indian Railways,30.338325,76.828367
+21,Ambalappuzha,Indian Railways,Indian Railways,9.386398,76.362898
+22,Ambarnath,Indian Railways,Indian Railways,19.210111,73.184547
+23,Ambassa,Indian Railways,Indian Railways,23.931118,91.861163
+24,Ambattur,Indian Railways,Indian Railways,13.114306,80.151596
+25,Ambivli,Indian Railways,Indian Railways,19.268272,73.172114
+26,Amguri Junction,Indian Railways,Indian Railways,26.812939,94.524155
+27,Amika Bhawani Halt,Indian Railways,Indian Railways,25.751916,84.969500
+28,Ammuguda,Indian Railways,Indian Railways,17.487523,78.525374
+29,Anand Vihar Terminal,Indian Railways,Indian Railways,28.649209,77.315081
+30,Anantapur,Indian Railways,Indian Railways,14.686397,77.594859
+31,Anara,Indian Railways,Indian Railways,23.481738,86.560711
+32,Andheri,Indian Railways,Indian Railways,19.119313,72.846692
+33,Anekal Road,Indian Railways,Indian Railways,12.723487,77.710690
+34,Angul,Indian Railways,Indian Railways,20.860509,85.101951
+35,Annanur,Indian Railways,Indian Railways,13.116401,80.127198
+36,Apta,Indian Railways,Indian Railways,18.863836,73.152909
+37,Arakkonam Junction,Indian Railways,Indian Railways,13.082339,79.668525
+38,Arniya,Indian Railways,Indian Railways,27.010642,76.518089
+39,Arts College,Indian Railways,Indian Railways,17.418730,78.520024
+40,Asangaon,Indian Railways,Indian Railways,19.439890,73.308047
+41,Asansol Junction,Indian Railways,Indian Railways,23.691153,86.975752
+42,Atgaon,Indian Railways,Indian Railways,19.503650,73.328152
+43,Aunrihar Junction,Indian Railways,Indian Railways,25.545279,83.187289
+44,Avadi,Indian Railways,Indian Railways,13.118138,80.101521
+45,Avatihalli,Indian Railways,Indian Railways,13.298891,77.726540
+46,Awatar Nagar,Indian Railways,Indian Railways,25.764952,84.956480
+47,Ayodhya Cantt,Indian Railways,Indian Railways,26.768611,82.134757
+48,Ayodhya Junction,Indian Railways,Indian Railways,26.788223,82.201318
+49,B.G Nagar,Indian Railways,Indian Railways,12.968599,76.733083
+50,BHEL,Indian Railways,Indian Railways,17.502184,78.282121
+51,Badarpur Junction,Indian Railways,Indian Railways,24.865702,92.556658
+52,Badlapur,Indian Railways,Indian Railways,19.166799,73.238982
+53,Badshahnagar,Indian Railways,Indian Railways,26.868837,80.961368
+54,Bahadurpur,Indian Railways,Indian Railways,23.438834,88.464062
+55,Bahuara Halt,Indian Railways,Indian Railways,25.899113,84.785530
+56,Baiyyappanahalli Junction,Indian Railways,Indian Railways,12.991152,77.651825
+57,Baleshwar,Indian Railways,Indian Railways,21.501111,86.920246
+58,Balharshah,Indian Railways,Indian Railways,19.849341,79.347758
+59,Baman-Dongri,Indian Railways,Indian Railways,18.975173,73.024410
+60,Bamangachi,Indian Railways,Indian Railways,22.749056,88.509946
+61,Banapura,Indian Railways,Indian Railways,22.470386,77.481251
+62,Banaswadi,Indian Railways,Indian Railways,13.005961,77.628310
+63,Bandikui Junction,Indian Railways,Indian Railways,27.039650,76.566627
+64,Bandra,Indian Railways,Indian Railways,19.054748,72.840719
+65,Bandra Terminus,Indian Railways,Indian Railways,19.060545,72.840909
+66,Bangalore Cantonment,Indian Railways,Indian Railways,12.992949,77.600591
+67,Bangalore City Junction,Indian Railways,Indian Railways,12.978373,77.568149
+68,Bankura Junction,Indian Railways,Indian Railways,23.224047,87.075432
+69,Banni Mahamman Patti,Indian Railways,Indian Railways,25.889971,84.777651
+70,Banskho,Indian Railways,Indian Railways,26.857466,76.168423
+71,Bantawal,Indian Railways,Indian Railways,12.878060,75.033944
+72,Baragopal,Indian Railways,Indian Railways,25.765268,84.908272
+73,Barara,Indian Railways,Indian Railways,30.212751,77.038449
+74,Barasat Junction,Indian Railways,Indian Railways,22.724750,88.484333
+75,Barddhaman Junction,Indian Railways,Indian Railways,23.249675,87.870064
+76,Bareilly Junction,Indian Railways,Indian Railways,28.338120,79.410446
+77,Barpeta Road,Indian Railways,Indian Railways,26.502323,90.964182
+78,Barrackpore,Indian Railways,Indian Railways,22.760335,88.371096
+79,Basin Bridge Junction,Indian Railways,Indian Railways,13.102460,80.271119
+80,Bassi,Indian Railways,Indian Railways,26.841282,76.047907
+81,Baswa,Indian Railways,Indian Railways,27.150337,76.575566
+82,Bathna Halt,Indian Railways,Indian Railways,26.341768,85.121241
+83,Bedham,Indian Railways,Indian Railways,27.453938,77.208888
+84,Begdewadi,Indian Railways,Indian Railways,18.700671,73.708779
+85,Begumpet,Indian Railways,Indian Railways,17.438613,78.458064
+86,Belagavi,Indian Railways,Indian Railways,15.848806,74.509184
+87,Belandur Road,Indian Railways,Indian Railways,12.938434,77.707191
+88,Beldanga,Indian Railways,Indian Railways,23.933331,88.243074
+89,Belthara Road,Indian Railways,Indian Railways,26.120753,83.841334
+90,Berhampore Court,Indian Railways,Indian Railways,24.089417,88.263979
+91,Bethuadahari,Indian Railways,Indian Railways,23.611265,88.384530
+92,Betta Halasuru,Indian Railways,Indian Railways,13.166163,77.604294
+93,Bhabta,Indian Railways,Indian Railways,23.986949,88.241624
+94,Bhadohi,Indian Railways,Indian Railways,25.394971,82.558716
+95,Bhadrak Junction,Indian Railways,Indian Railways,21.091131,86.516138
+96,Bhagalpur Junction,Indian Railways,Indian Railways,25.241287,86.972681
+97,Bhagwangola,Indian Railways,Indian Railways,24.335028,88.307511
+98,Bhan Kari,Indian Railways,Indian Railways,26.962172,76.409237
+99,Bhandup,Indian Railways,Indian Railways,19.142967,72.937910
+100,Bharath Nagar,Indian Railways,Indian Railways,17.462118,78.428662
+101,Bharatpur Junction,Indian Railways,Indian Railways,27.236955,77.488412
+102,Bharuch Junction,Indian Railways,Indian Railways,21.703413,72.999652
+103,Bhatni Junction,Indian Railways,Indian Railways,26.381429,83.933397
+104,Bhayandar,Indian Railways,Indian Railways,19.311086,72.852686
+105,Bhivandi Road,Indian Railways,Indian Railways,19.268579,73.046230
+106,Bhivpuri Road,Indian Railways,Indian Railways,18.970550,73.331434
+107,Bhojo,Indian Railways,Indian Railways,27.063512,95.032324
+108,Bhopal Junction,Indian Railways,Indian Railways,23.268251,77.413806
+109,Bhubaneshwar,Indian Railways,Indian Railways,20.265600,85.843278
+110,Bhudevi Nagar,Indian Railways,Indian Railways,17.492966,78.502168
+111,Bhusaval Junction,Indian Railways,Indian Railways,21.047419,75.787422
+112,Bhuteshwar,Indian Railways,Indian Railways,27.501710,77.667538
+113,Bilaspur Junction,Indian Railways,Indian Railways,22.056614,82.170098
+114,Bina Junction,Indian Railways,Indian Railways,24.171999,78.185272
+115,Bokaro Steel City,Indian Railways,Indian Railways,23.657851,86.084298
+116,Bolarum,Indian Railways,Indian Railways,17.533323,78.515387
+117,Bolarum Bazaar,Indian Railways,Indian Railways,17.517693,78.515755
+118,Borabanda,Indian Railways,Indian Railways,17.459221,78.407848
+119,Borivali,Indian Railways,Indian Railways,19.228248,72.856662
+120,Brij Kishor Halt,Indian Railways,Indian Railways,26.313740,84.694610
+121,Brij Nagar,Indian Railways,Indian Railways,27.439411,77.089895
+122,Budvel,Indian Railways,Indian Railways,17.309643,78.425057
+123,Burhanpur,Indian Railways,Indian Railways,21.336119,76.200928
+124,Byculla,Indian Railways,Indian Railways,18.976552,72.832786
+125,CBD Belapur,Indian Railways,Indian Railways,19.018982,73.039136
+126,CSMT,Indian Railways,Indian Railways,18.945181,72.837865
+127,Carmelaram,Indian Railways,Indian Railways,12.907380,77.705944
+128,Cavalry Barracks,Indian Railways,Indian Railways,17.495194,78.518952
+129,Chakdaha,Indian Railways,Indian Railways,23.078719,88.529800
+130,Chakradharpur,Indian Railways,Indian Railways,22.678182,85.627076
+131,Chalisgaon Junction,Indian Railways,Indian Railways,20.464049,74.999354
+132,Chandanagar,Indian Railways,Indian Railways,17.487502,78.333399
+133,Chandigarh Railway Station,Indian Railways,Indian Railways,30.702162,76.821453
+134,Channarayapatna,Indian Railways,Indian Railways,12.892458,76.393886
+135,Channasandra,Indian Railways,Indian Railways,13.011841,77.663291
+136,Charlapalli,Indian Railways,Indian Railways,17.458187,78.606240
+137,Charni Road,Indian Railways,Indian Railways,18.952262,72.817691
+138,Chaukhandi,Indian Railways,Indian Railways,25.339614,82.835115
+139,Chauri Chaura,Indian Railways,Indian Railways,26.645012,83.587310
+140,Chembur,Indian Railways,Indian Railways,19.062539,72.901342
+141,Chengalpattu Junction,Indian Railways,Indian Railways,12.693409,79.981048
+142,Chennai Beach,Indian Railways,Indian Railways,13.092781,80.292389
+143,Chennai Central,Indian Railways,Indian Railways,13.084535,80.273717
+144,Chennai Chetpet,Indian Railways,Indian Railways,13.074116,80.242221
+145,Chennai Egmore,Indian Railways,Indian Railways,13.078658,80.261417
+146,Chennai Fort,Indian Railways,Indian Railways,13.083452,80.282718
+147,Chennai Park,Indian Railways,Indian Railways,13.080619,80.273142
+148,Chepauk,Indian Railways,Indian Railways,13.062050,80.280604
+149,Cherthala,Indian Railways,Indian Railways,9.691011,76.325669
+150,Cheruvattur,Indian Railways,Indian Railways,12.214579,75.154576
+151,Chhanera,Indian Railways,Indian Railways,21.963641,76.707278
+152,Chhapra Junction,Indian Railways,Indian Railways,25.787294,84.725010
+153,Chhapra Kacheri,Indian Railways,Indian Railways,25.785986,84.746129
+154,Chikballapur,Indian Railways,Indian Railways,13.427422,77.732307
+155,Chikhli Road,Indian Railways,Indian Railways,20.806318,73.074862
+156,Chinchpokli,Indian Railways,Indian Railways,18.987270,72.832792
+157,Chinchwad,Indian Railways,Indian Railways,18.639521,73.791882
+158,Chintadaripet,Indian Railways,Indian Railways,13.073746,80.273872
+159,Chintamani,Indian Railways,Indian Railways,13.411148,78.054020
+160,Chittapura,Indian Railways,Indian Railways,17.119574,77.090553
+161,Chopan,Indian Railways,Indian Railways,24.513559,83.026389
+162,Chromepet,Indian Railways,Indian Railways,12.950879,80.140413
+163,Chuna Bhatti,Indian Railways,Indian Railways,19.051832,72.869006
+164,Churchgate,Indian Railways,Indian Railways,18.934420,72.827379
+165,Coimbatore Junction,Indian Railways,Indian Railways,10.997574,76.966620
+166,Cotton Green,Indian Railways,Indian Railways,18.986504,72.843238
+167,Currey Road,Indian Railways,Indian Railways,18.993632,72.832851
+168,Cuttack Junction,Indian Railways,Indian Railways,20.465365,85.900978
+169,Dabhaura,Indian Railways,Indian Railways,25.117932,81.302572
+170,Dabirpura,Indian Railways,Indian Railways,17.366132,78.490492
+171,Dadar,Indian Railways,Indian Railways,19.018965,72.842867
+172,Dadar (Central),Indian Railways,Indian Railways,19.017306,72.843001
+173,Dadar (Western),Indian Railways,Indian Railways,19.018902,72.842952
+174,Dadar Terminus,Indian Railways,Indian Railways,19.018626,72.844465
+175,Dahisar,Indian Railways,Indian Railways,19.249326,72.859417
+176,Dahod,Indian Railways,Indian Railways,22.844207,74.253083
+177,Dalasanur,Indian Railways,Indian Railways,13.268875,78.170055
+178,Daltonganj,Indian Railways,Indian Railways,24.034004,84.074329
+179,Dapodi,Indian Railways,Indian Railways,18.581448,73.832687
+180,Darjeeling,Indian Railways,Indian Railways,27.038115,88.263061
+181,Dativali,Indian Railways,Indian Railways,19.187106,73.059181
+182,Dattapukur,Indian Railways,Indian Railways,22.769006,88.540700
+183,Dausa,Indian Railways,Indian Railways,26.900409,76.330554
+184,Davanagere,Indian Railways,Indian Railways,14.468265,75.919614
+185,Dayanand Nagar,Indian Railways,Indian Railways,17.456048,78.531564
+186,Debagram,Indian Railways,Indian Railways,23.688553,88.307722
+187,Deeg,Indian Railways,Indian Railways,27.486979,77.324403
+188,Deen Dayal Upadhyaya Junction,Indian Railways,Indian Railways,25.278942,83.119960
+189,Dehri on Sone,Indian Railways,Indian Railways,24.915196,84.184943
+190,Dehu Road,Indian Railways,Indian Railways,18.680325,73.734395
+191,Delhi Cantonment,Indian Railways,Indian Railways,28.612381,77.115779
+192,Delhi Junction,Indian Railways,Indian Railways,28.661817,77.227906
+193,Delhi Shahdara Junction,Indian Railways,Indian Railways,28.672966,77.292456
+194,Deoband,Indian Railways,Indian Railways,29.679542,77.670706
+195,Deoria Sadar,Indian Railways,Indian Railways,26.508196,83.782186
+196,Devanahalli,Indian Railways,Indian Railways,13.247551,77.705243
+197,Dhaka,Indian Railways,Indian Railways,26.676008,85.177646
+198,Dhanbad Junction,Indian Railways,Indian Railways,23.791236,86.429655
+199,Dharmanagar,Indian Railways,Indian Railways,24.369922,92.170024
+200,Dharmapuri,Indian Railways,Indian Railways,12.126385,78.154144
+201,Dharmavaram Junction,Indian Railways,Indian Railways,14.426279,77.715730
+202,Dharwad,Indian Railways,Indian Railways,15.442129,75.001984
+203,Dhenkanal,Indian Railways,Indian Railways,20.677131,85.590178
+204,Dholpur Junction,Indian Railways,Indian Railways,26.697393,77.905814
+205,Dibrugarh,Indian Railways,Indian Railways,27.464878,94.937118
+206,Digha Gaon,Indian Railways,Indian Railways,19.180723,72.994408
+207,Dighwa Dubauli,Indian Railways,Indian Railways,26.266286,84.743087
+208,Dighwara,Indian Railways,Indian Railways,25.744175,85.003878
+209,Dindigul Junction,Indian Railways,Indian Railways,10.352901,77.984684
+210,Diva Junction,Indian Railways,Indian Railways,19.188711,73.042502
+211,Dockyard Road,Indian Railways,Indian Railways,18.966439,72.844267
+212,Doddajala,Indian Railways,Indian Railways,13.180606,77.640928
+213,Dodnatta,Indian Railways,Indian Railways,13.374427,78.136490
+214,Dolavli,Indian Railways,Indian Railways,18.834345,73.320036
+215,Dombivli,Indian Railways,Indian Railways,19.217925,73.086506
+216,Dronagiri,Indian Railways,Indian Railways,18.881322,72.964639
+217,Duliajan,Indian Railways,Indian Railways,27.367209,95.306584
+218,Dullahapur,Indian Railways,Indian Railways,25.800019,83.423286
+219,Dumri Juara,Indian Railways,Indian Railways,25.749288,84.871380
+220,Durg,Indian Railways,Indian Railways,21.200263,81.291654
+221,Durgapur,Indian Railways,Indian Railways,23.494779,87.318528
+222,Ekma,Indian Railways,Indian Railways,25.966479,84.536722
+223,Ernakulam Junction,Indian Railways,Indian Railways,9.970221,76.291130
+224,Erode,Indian Railways,Indian Railways,11.327963,77.726053
+225,Etawah Junction,Indian Railways,Indian Railways,26.787221,79.020943
+226,Falaknuma,Indian Railways,Indian Railways,17.332643,78.474932
+227,Falna,Indian Railways,Indian Railways,25.236043,73.234876
+228,Fateh Nagar,Indian Railways,Indian Railways,17.456851,78.449981
+229,Ferozguda,Indian Railways,Indian Railways,17.464892,78.460306
+230,Firozabad,Indian Railways,Indian Railways,27.147483,78.386885
+231,Furkating Junction,Indian Railways,Indian Railways,26.464719,94.001834
+232,Gadarwara,Indian Railways,Indian Railways,22.900183,78.792808
+233,Ganagapur Road,Indian Railways,Indian Railways,17.340641,76.589614
+234,Gandhi Nagar Jaipur,Indian Railways,Indian Railways,26.873032,75.799150
+235,Garhwa Road,Indian Railways,Indian Railways,24.214733,83.885227
+236,Gaya Junction,Indian Railways,Indian Railways,24.803399,84.999250
+237,Getor Jagatpura,Indian Railways,Indian Railways,26.836999,75.831576
+238,Ghansoli,Indian Railways,Indian Railways,19.116388,73.006989
+239,Ghatkesar,Indian Railways,Indian Railways,17.453257,78.678525
+240,Ghatkopar,Indian Railways,Indian Railways,19.085630,72.908024
+241,Ghaziabad,Indian Railways,Indian Railways,28.653377,77.427842
+242,Ghaziabad Junction,Indian Railways,Indian Railways,28.652856,77.428244
+243,Ghazipur City,Indian Railways,Indian Railways,25.583780,83.568021
+244,Ghoom,Indian Railways,Indian Railways,27.008363,88.253574
+245,Ghorawadi,Indian Railways,Indian Railways,18.720219,73.696969
+246,Gidnahalli,Indian Railways,Indian Railways,13.414153,77.808913
+247,Goldinganj,Indian Railways,Indian Railways,25.754002,84.826926
+248,Gonda Junction,Indian Railways,Indian Railways,27.154796,81.976806
+249,Gondia Junction,Indian Railways,Indian Railways,21.461767,80.191991
+250,Gopalganj,Indian Railways,Indian Railways,26.453762,84.435263
+251,Gorakhpur Junction,Indian Railways,Indian Railways,26.760348,83.381981
+252,Goregaon,Indian Railways,Indian Railways,19.164859,72.849347
+253,Gottihalli,Indian Railways,Indian Railways,13.234694,78.142732
+254,Govandi,Indian Railways,Indian Railways,19.054910,72.915780
+255,Govardhan,Indian Railways,Indian Railways,27.520666,77.461662
+256,Govindgarh,Indian Railways,Indian Railways,27.499118,76.988208
+257,Gowdavalli,Indian Railways,Indian Railways,17.610700,78.468193
+258,Grant Road,Indian Railways,Indian Railways,18.963014,72.815931
+259,Greenways Road,Indian Railways,Indian Railways,13.020684,80.252031
+260,Gudur Junction,Indian Railways,Indian Railways,14.147920,79.845292
+261,Guduvancheri,Indian Railways,Indian Railways,12.845230,80.057650
+262,Guindy,Indian Railways,Indian Railways,13.008423,80.212615
+263,Gulana,Indian Railways,Indian Railways,27.102143,76.564974
+264,Gundla Pochampally,Indian Railways,Indian Railways,17.568661,78.488048
+265,Gunrajpur Dhama Halt,Indian Railways,Indian Railways,26.069444,84.821019
+266,Guntakal Junction,Indian Railways,Indian Railways,15.174701,77.367188
+267,Gurgaon,Indian Railways,Indian Railways,28.489183,77.010940
+268,Guru Tegh Bahadur Nagar,Indian Railways,Indian Railways,19.038001,72.864352
+269,Guwahati,Indian Railways,Indian Railways,26.182285,91.750183
+270,Gwalior Junction,Indian Railways,Indian Railways,26.215593,78.181707
+271,Hafeezpet,Indian Railways,Indian Railways,17.482583,78.363035
+272,Haldibari,Indian Railways,Indian Railways,26.335282,88.782474
+273,Hamarapur,Indian Railways,Indian Railways,18.783899,73.079395
+274,Hapur Junction,Indian Railways,Indian Railways,28.739539,77.778971
+275,Harda,Indian Railways,Indian Railways,22.338946,77.101793
+276,Hardoi,Indian Railways,Indian Railways,27.400085,80.147500
+277,Haripad,Indian Railways,Indian Railways,9.277726,76.463377
+278,Hassan Junction,Indian Railways,Indian Railways,13.003231,76.117385
+279,Haveri,Indian Railways,Indian Railways,14.794821,75.411316
+280,Hazaribagh Road,Indian Railways,Indian Railways,24.174371,85.891941
+281,Hazrat Nizamuddin Junction,Indian Railways,Indian Railways,28.588987,77.254088
+282,Hebbal,Indian Railways,Indian Railways,13.042432,77.586186
+283,Heelalige,Indian Railways,Indian Railways,12.813188,77.711211
+284,Hijli,Indian Railways,Indian Railways,22.319940,87.319451
+285,Hindu College,Indian Railways,Indian Railways,13.118550,80.074446
+286,Hitech City,Indian Railways,Indian Railways,17.469708,78.385197
+287,Hojai,Indian Railways,Indian Railways,26.001873,92.852035
+288,Hosur,Indian Railways,Indian Railways,12.717679,77.823039
+289,Howrah Junction,Indian Railways,Indian Railways,22.582251,88.341837
+290,Hubballi,Indian Railways,Indian Railways,15.350576,75.149553
+291,Hunasenahalli,Indian Railways,Indian Railways,13.400093,77.946648
+292,Huppuguda,Indian Railways,Indian Railways,17.341371,78.482606
+293,Hyderabad Deccan Nampally,Indian Railways,Indian Railways,17.393246,78.467508
+294,Igatpuri,Indian Railways,Indian Railways,19.694485,73.562881
+295,Indara Junction,Indian Railways,Indian Railways,25.987420,83.619951
+296,Indira Nagar,Indian Railways,Indian Railways,12.996608,80.249542
+297,Itarsi Junction,Indian Railways,Indian Railways,22.607734,77.766649
+298,Jabalpur,Indian Railways,Indian Railways,23.165309,79.951043
+299,Jadoli Ka Bas,Indian Railways,Indian Railways,27.539535,76.880382
+300,Jagadhri Workshop,Indian Railways,Indian Railways,30.135764,77.241632
+301,Jaipur Junction,Indian Railways,Indian Railways,26.920379,75.786514
+302,Jaitwar,Indian Railways,Indian Railways,24.740739,80.863521
+303,Jajpur Keonjhar Road Junction,Indian Railways,Indian Railways,20.943217,86.132137
+304,Jakhanian,Indian Railways,Indian Railways,25.740871,83.369759
+305,Jalal Khali,Indian Railways,Indian Railways,23.347148,88.514017
+306,Jalgaon Junction,Indian Railways,Indian Railways,21.018267,75.562892
+307,Jamai Osmania,Indian Railways,Indian Railways,17.411603,78.518296
+308,Jamalpur Junction,Indian Railways,Indian Railways,25.315373,86.493275
+309,James Street,Indian Railways,Indian Railways,17.432883,78.486824
+310,Jammu Tawi,Indian Railways,Indian Railways,32.705922,74.880181
+311,Janghai Junction,Indian Railways,Indian Railways,25.550666,82.309507
+312,Jannagatta,Indian Railways,Indian Railways,13.213684,78.136694
+313,Jasidih Junction,Indian Railways,Indian Railways,24.514989,86.644114
+314,Jatwara,Indian Railways,Indian Railways,26.869368,76.217201
+315,Jaunpur Junction,Indian Railways,Indian Railways,25.762298,82.699397
+316,Jehanabad,Indian Railways,Indian Railways,25.224477,84.989911
+317,Jhareda,Indian Railways,Indian Railways,27.474982,77.035331
+318,Jharsuguda Junction,Indian Railways,Indian Railways,21.862352,84.017922
+319,Jhir,Indian Railways,Indian Railways,26.852483,76.115542
+320,Jiaganj,Indian Railways,Indian Railways,24.244263,88.277053
+321,Jite,Indian Railways,Indian Railways,18.820075,73.086694
+322,Jogeshwari (Harbour Line),Indian Railways,Indian Railways,19.141154,72.849421
+323,Jogeshwari (Western Line),Indian Railways,Indian Railways,19.136120,72.848853
+324,Juichandra,Indian Railways,Indian Railways,19.360488,72.872129
+325,Juinagar,Indian Railways,Indian Railways,19.055894,73.018374
+326,Kabaka Puttur,Indian Railways,Indian Railways,12.768754,75.204952
+327,Kacheguda,Indian Railways,Indian Railways,17.390249,78.500457
+328,Kalaburagi Junction,Indian Railways,Indian Railways,17.314670,76.825125
+329,Kalamboli,Indian Railways,Indian Railways,19.035263,73.114533
+330,Kalinarayanpur Junction,Indian Railways,Indian Railways,23.208055,88.573187
+331,Kalka,Indian Railways,Indian Railways,30.839229,76.931565
+332,Kalva,Indian Railways,Indian Railways,19.195353,72.996778
+333,Kalyan Junction,Indian Railways,Indian Railways,19.235294,73.130725
+334,Kalyani Main,Indian Railways,Indian Railways,22.969159,88.467418
+335,Kaman Road,Indian Railways,Indian Railways,19.336444,72.918905
+336,Kamshet,Indian Railways,Indian Railways,18.766936,73.552432
+337,Kanauta,Indian Railways,Indian Railways,26.841989,75.955433
+338,Kandivali,Indian Railways,Indian Railways,19.204240,72.851858
+339,Kanhangad,Indian Railways,Indian Railways,12.320099,75.084744
+340,Kanhe,Indian Railways,Indian Railways,18.762096,73.594046
+341,Kanjur Marg,Indian Railways,Indian Railways,19.128618,72.928158
+342,Kannur,Indian Railways,Indian Railways,11.872299,75.367357
+343,Kanpur Central,Indian Railways,Indian Railways,26.454408,80.351192
+344,Kapsethi,Indian Railways,Indian Railways,25.357622,82.718184
+345,Kareli,Indian Railways,Indian Railways,22.931954,79.066363
+346,Karjat,Indian Railways,Indian Railways,18.911710,73.320748
+347,Karunagapalli,Indian Railways,Indian Railways,9.065248,76.544756
+348,Karur Junction,Indian Railways,Indian Railways,10.965869,78.086222
+349,Karwar,Indian Railways,Indian Railways,14.820515,74.182741
+350,Kasara,Indian Railways,Indian Railways,19.648201,73.473335
+351,Kasaragod,Indian Railways,Indian Railways,12.491795,74.987425
+352,Kasarwadi,Indian Railways,Indian Railways,18.607794,73.820939
+353,Kasturiba Nagar,Indian Railways,Indian Railways,13.005340,80.247756
+354,Kasu,Indian Railways,Indian Railways,18.641373,73.079542
+355,Katalpur Halt,Indian Railways,Indian Railways,26.229746,84.773014
+356,Kathua,Indian Railways,Indian Railways,32.398276,75.550915
+357,Katni Junction,Indian Railways,Indian Railways,23.833656,80.401030
+358,Kayamkulam Junction,Indian Railways,Indian Railways,9.183503,76.513080
+359,Kazipet Junction,Indian Railways,Indian Railways,17.974485,79.511392
+360,Kelavli,Indian Railways,Indian Railways,18.845283,73.318793
+361,Kempegowda International Airport Halt,Indian Railways,Indian Railways,13.210670,77.676053
+362,Khadavli,Indian Railways,Indian Railways,19.356913,73.219368
+363,Khadki,Indian Railways,Indian Railways,18.564065,73.840293
+364,Khairah,Indian Railways,Indian Railways,25.861449,84.760667
+365,Khairatabad,Indian Railways,Indian Railways,17.414356,78.461039
+366,Khandala,Indian Railways,Indian Railways,18.754689,73.377375
+367,Khandeshwar,Indian Railways,Indian Railways,19.007355,73.095239
+368,Khandwa Junction,Indian Railways,Indian Railways,21.823221,76.353685
+369,Khar Road,Indian Railways,Indian Railways,19.069072,72.840037
+370,Kharbhav,Indian Railways,Indian Railways,19.298223,72.984061
+371,Khardi,Indian Railways,Indian Railways,19.580416,73.394058
+372,Kharghar,Indian Railways,Indian Railways,19.025937,73.059238
+373,Kharkopar,Indian Railways,Indian Railways,18.959942,73.014164
+374,Khatauli,Indian Railways,Indian Railways,29.273886,77.737157
+375,Khatipura,Indian Railways,Indian Railways,26.835975,75.891126
+376,Khirkiya,Indian Railways,Indian Railways,22.165909,76.859044
+377,Khopoli,Indian Railways,Indian Railways,18.788903,73.345449
+378,King's Circle,Indian Railways,Indian Railways,19.032063,72.857449
+379,Kodambakkam,Indian Railways,Indian Railways,13.051292,80.230644
+380,Koderma Junction,Indian Railways,Indian Railways,24.434560,85.529027
+381,Kolar,Indian Railways,Indian Railways,13.123860,78.132754
+382,Kolkata Chitpur,Indian Railways,Indian Railways,22.601249,88.384191
+383,Kollam Junction,Indian Railways,Indian Railways,8.886224,76.595531
+384,Kolvagram,Indian Railways,Indian Railways,26.989781,76.469176
+385,Kopar,Indian Railways,Indian Railways,19.212196,73.077789
+386,Koparkhairne,Indian Railways,Indian Railways,19.103285,73.011297
+387,Korattur,Indian Railways,Indian Railways,13.113274,80.183919
+388,Kota Junction,Indian Railways,Indian Railways,25.224357,75.881143
+389,Kotturpuram,Indian Railways,Indian Railways,13.013704,80.248331
+390,Kozhikode,Indian Railways,Indian Railways,11.245535,75.780961
+391,Krishnanagar City Junction,Indian Railways,Indian Railways,23.388490,88.493658
+392,Krishnarajapuram,Indian Railways,Indian Railways,13.000799,77.675553
+393,Kudal,Indian Railways,Indian Railways,16.017240,73.677828
+394,Kunigal,Indian Railways,Indian Railways,13.016415,77.011165
+395,Kurduvadi Junction,Indian Railways,Indian Railways,18.091858,75.417940
+396,Kurla,Indian Railways,Indian Railways,19.065024,72.879136
+397,Kurnool City,Indian Railways,Indian Railways,15.833198,78.032533
+398,Kurukshetra Junction,Indian Railways,Indian Railways,29.969859,76.851711
+399,Kuttippuram,Indian Railways,Indian Railways,10.845746,76.033791
+400,Lakdi-ka-pul,Indian Railways,Indian Railways,17.404759,78.462716
+401,Lalaguda Gate,Indian Railways,Indian Railways,17.440901,78.524918
+402,Lalgola,Indian Railways,Indian Railways,24.421362,88.258008
+403,Lalitpur Junction,Indian Railways,Indian Railways,24.688571,78.395617
+404,Lar Road,Indian Railways,Indian Railways,26.213720,83.910233
+405,Lasalgaon,Indian Railways,Indian Railways,20.155096,74.226139
+406,Light House,Indian Railways,Indian Railways,13.045086,80.276775
+407,Lingampalli,Indian Railways,Indian Railways,17.482780,78.316645
+408,Lodhi Colony,Indian Railways,Indian Railways,28.579649,77.216795
+409,Lohardaga,Indian Railways,Indian Railways,23.446701,84.706666
+410,Lokmanya Tilak Terminus,Indian Railways,Indian Railways,19.068354,72.889917
+411,Lonavala,Indian Railways,Indian Railways,18.748931,73.408839
+412,Lottegollahalli,Indian Railways,Indian Railways,13.043525,77.563049
+413,Lower Parel,Indian Railways,Indian Railways,18.995525,72.830082
+414,Lowjee,Indian Railways,Indian Railways,18.809145,73.335267
+415,Lucknow Charbagh,Indian Railways,Indian Railways,26.830427,80.924412
+416,Lucknow Junction,Indian Railways,Indian Railways,26.831686,80.921673
+417,Ludhiana Junction,Indian Railways,Indian Railways,30.913113,75.847803
+418,Madan Mahal,Indian Railways,Indian Railways,23.160658,79.919526
+419,Madgaon Junction,Indian Railways,Indian Railways,15.267977,73.970158
+420,Madhupur Junction,Indian Railways,Indian Railways,24.270811,86.642558
+421,Madurai Junction,Indian Railways,Indian Railways,9.919278,78.110205
+422,Mahalaxmi,Indian Railways,Indian Railways,18.982185,72.823992
+423,Mahbubnagar,Indian Railways,Indian Railways,16.757625,77.999392
+424,Mahesana Junction,Indian Railways,Indian Railways,23.601812,72.389037
+425,Mahim Junction,Indian Railways,Indian Railways,19.040798,72.846932
+426,Mahwa,Indian Railways,Indian Railways,27.462447,76.615256
+427,Mahé,Indian Railways,Indian Railways,11.698978,75.546656
+428,Maihar,Indian Railways,Indian Railways,24.256022,80.763801
+429,Malad,Indian Railways,Indian Railways,19.186811,72.848785
+430,Malakhera,Indian Railways,Indian Railways,27.390852,76.618986
+431,Malakpet,Indian Railways,Indian Railways,17.375865,78.494725
+432,Malavali,Indian Railways,Indian Railways,18.744214,73.480164
+433,Malda Town,Indian Railways,Indian Railways,25.015897,88.130582
+434,Malhaur,Indian Railways,Indian Railways,26.853683,81.040798
+435,Malkajgiri,Indian Railways,Indian Railways,17.448491,78.529309
+436,Mambalam,Indian Railways,Indian Railways,13.037967,80.227703
+437,Mandaveli,Indian Railways,Indian Railways,13.027991,80.260571
+438,Mangalore Junction,Indian Railways,Indian Railways,12.866423,74.879504
+439,Mangaluru Central,Indian Railways,Indian Railways,12.862502,74.843466
+440,Mangaluru Junction,Indian Railways,Indian Railways,12.866160,74.882970
+441,Manikpur Junction,Indian Railways,Indian Railways,25.063353,81.094021
+442,Manjhagarh,Indian Railways,Indian Railways,26.417625,84.504527
+443,Mankapur Junction,Indian Railways,Indian Railways,27.038511,82.227844
+444,Mankhurd,Indian Railways,Indian Railways,19.048136,72.931912
+445,Manmad Junction,Indian Railways,Indian Railways,20.250024,74.438864
+446,Mansarovar,Indian Railways,Indian Railways,19.016469,73.080615
+447,Mantralayam Road,Indian Railways,Indian Railways,15.944615,77.297951
+448,Maraimalai Nagar Kamarajar,Indian Railways,Indian Railways,12.796482,80.020191
+449,Mararikulam,Indian Railways,Indian Railways,9.597776,76.317807
+450,Marhaura,Indian Railways,Indian Railways,25.968859,84.850938
+451,Marine Lines,Indian Railways,Indian Railways,18.946609,72.823133
+452,Masjid,Indian Railways,Indian Railways,18.951830,72.838192
+453,Masrakh Junction,Indian Railways,Indian Railways,26.100264,84.809313
+454,Mathura Junction,Indian Railways,Indian Railways,27.480442,77.673221
+455,Matunga,Indian Railways,Indian Railways,19.027454,72.850155
+456,Matunga Road,Indian Railways,Indian Railways,19.028104,72.846888
+457,Mau Junction,Indian Railways,Indian Railways,25.939591,83.564197
+458,Medchal,Indian Railways,Indian Railways,17.641311,78.475106
+459,Meenambakkam,Indian Railways,Indian Railways,12.984747,80.175214
+460,Meerut Cantonment,Indian Railways,Indian Railways,29.016413,77.686866
+461,Meerut City Junction,Indian Railways,Indian Railways,28.977121,77.674651
+462,Mira Road,Indian Railways,Indian Railways,19.281283,72.855943
+463,Modinagar,Indian Railways,Indian Railways,28.828696,77.572579
+464,Mondh,Indian Railways,Indian Railways,25.426915,82.486850
+465,Mora,Indian Railways,Indian Railways,27.511346,77.582092
+466,Moradabad Junction,Indian Railways,Indian Railways,28.830997,78.766049
+467,Morena,Indian Railways,Indian Railways,26.501576,78.003357
+468,Mulki,Indian Railways,Indian Railways,13.070774,74.805658
+469,Mulund,Indian Railways,Indian Railways,19.172504,72.956949
+470,Mumbai CSMT (Suburban),Indian Railways,Indian Railways,18.940675,72.835489
+471,Mumbai Central,Indian Railways,Indian Railways,18.970095,72.819268
+472,Mumbai Central (local),Indian Railways,Indian Railways,18.970702,72.818861
+473,Mumbra,Indian Railways,Indian Railways,19.190079,73.023422
+474,Mundakakanni Amman Koil,Indian Railways,Indian Railways,13.040629,80.270044
+475,Muri Junction,Indian Railways,Indian Railways,23.377926,85.867084
+476,Murshidabad,Indian Railways,Indian Railways,24.176867,88.281700
+477,Muzaffarnagar,Indian Railways,Indian Railways,29.469122,77.708196
+478,Mysore Junction,Indian Railways,Indian Railways,12.316829,76.645529
+479,NPA Shivaram Pally,Indian Railways,Indian Railways,17.323051,78.436567
+480,Nagda Junction,Indian Railways,Indian Railways,23.456188,75.412503
+481,Nagothane,Indian Railways,Indian Railways,18.540264,73.140864
+482,Nagpur Junction,Indian Railways,Indian Railways,21.152281,79.088632
+483,Naharkatiya,Indian Railways,Indian Railways,27.289191,95.329651
+484,Nahur,Indian Railways,Indian Railways,19.154657,72.946656
+485,Naigaon,Indian Railways,Indian Railways,19.352115,72.845959
+486,Naihati Junction,Indian Railways,Indian Railways,22.887006,88.417653
+487,Naini Junction,Indian Railways,Indian Railways,25.393638,81.860035
+488,Nalla Sopara,Indian Railways,Indian Railways,19.418378,72.818785
+489,Namakkal,Indian Railways,Indian Railways,11.225936,78.179441
+490,Namrup,Indian Railways,Indian Railways,27.196611,95.314134
+491,Nandgaon,Indian Railways,Indian Railways,20.309411,74.660419
+492,Nandi,Indian Railways,Indian Railways,13.377064,77.711049
+493,Narsinghpur,Indian Railways,Indian Railways,22.942912,79.214654
+494,Nashik Road,Indian Railways,Indian Railways,19.947986,73.842368
+495,Nature Cure Hospital,Indian Railways,Indian Railways,17.445754,78.452300
+496,Navade Road,Indian Railways,Indian Railways,19.053790,73.102891
+497,Nayagaon,Indian Railways,Indian Railways,25.762773,85.098229
+498,Necklace Road,Indian Railways,Indian Railways,17.424506,78.462631
+499,Nepanagar,Indian Railways,Indian Railways,21.463944,76.397045
+500,Neral Junction,Indian Railways,Indian Railways,19.027261,73.318538
+501,Neredmet,Indian Railways,Indian Railways,17.478110,78.536670
+502,Nerul,Indian Railways,Indian Railways,19.033553,73.018154
+503,Netaji SC Bose Junction Gomoh,Indian Railways,Indian Railways,23.871795,86.152629
+504,New Delhi,Indian Railways,Indian Railways,28.642444,77.220626
+505,New Jalpaiguri Junction,Indian Railways,Indian Railways,26.682606,88.443296
+506,New Karimganj Junction,Indian Railways,Indian Railways,24.842968,92.394793
+507,New Tinsukia Junction,Indian Railways,Indian Railways,27.479644,95.334109
+508,Nhava Sheva,Indian Railways,Indian Railways,18.898221,72.988177
+509,Nidi,Indian Railways,Indian Railways,18.473974,73.107557
+510,Nilaje,Indian Railways,Indian Railways,19.155651,73.080065
+511,Nileshwar,Indian Railways,Indian Railways,12.255877,75.135796
+512,Nungambakkam,Indian Railways,Indian Railways,13.065378,80.232754
+513,Ootwar,Indian Railways,Indian Railways,27.626136,76.732196
+514,Pachora Junction,Indian Railways,Indian Railways,20.669471,75.349555
+515,Pagla Chandi,Indian Railways,Indian Railways,23.731803,88.305452
+516,Palakkad,Indian Railways,Indian Railways,10.800454,76.639284
+517,Palanpur Junction,Indian Railways,Indian Railways,24.175083,72.430622
+518,Palasdhari,Indian Railways,Indian Railways,18.883573,73.321130
+519,Palavanthangal,Indian Railways,Indian Railways,12.990261,80.187010
+520,Pallavaram,Indian Railways,Indian Railways,12.967939,80.152326
+521,Panchpatia Deoria,Indian Railways,Indian Railways,25.768490,84.936244
+522,Panipat Junction,Indian Railways,Indian Railways,29.390329,76.964085
+523,Panki,Indian Railways,Indian Railways,26.459612,80.239461
+524,Panvel,Indian Railways,Indian Railways,18.990853,73.121217
+525,Paranur,Indian Railways,Indian Railways,12.730120,79.983963
+526,Parasnath,Indian Railways,Indian Railways,23.987500,86.037828
+527,Paravur,Indian Railways,Indian Railways,8.815058,76.669329
+528,Parel,Indian Railways,Indian Railways,19.009507,72.837609
+529,Parmanandpur Junction,Indian Railways,Indian Railways,25.741710,85.134243
+530,Parsa Kerwan Halt,Indian Railways,Indian Railways,26.053428,84.827105
+531,Parsabad,Indian Railways,Indian Railways,24.307877,85.739105
+532,Parsipur,Indian Railways,Indian Railways,25.370604,82.637422
+533,Paterhi,Indian Railways,Indian Railways,25.917719,84.800777
+534,Pathankot Cantonment,Indian Railways,Indian Railways,32.259538,75.635377
+535,Patliputra,Indian Railways,Indian Railways,25.621649,85.068801
+536,Patna Junction,Indian Railways,Indian Railways,25.602885,85.137601
+537,Pattabiram,Indian Railways,Indian Railways,13.118763,80.065012
+538,Pattaravakkam,Indian Railways,Indian Railways,13.114501,80.166445
+539,Payangadi,Indian Railways,Indian Railways,12.021825,75.259966
+540,Payyanur,Indian Railways,Indian Railways,12.091338,75.195412
+541,Pen,Indian Railways,Indian Railways,18.735370,73.086692
+542,Perambur,Indian Railways,Indian Railways,13.107405,80.244162
+543,Perambur Carriage Works,Indian Railways,Indian Railways,13.107356,80.238955
+544,Perambur Loco Works,Indian Railways,Indian Railways,13.108252,80.225802
+545,Perungudi,Indian Railways,Indian Railways,12.975869,80.231993
+546,Phaphamau Junction,Indian Railways,Indian Railways,25.525657,81.867070
+547,Phaphund,Indian Railways,Indian Railways,26.632187,79.554308
+548,Phenhara,Indian Railways,Indian Railways,26.534046,85.157470
+549,Phulpur,Indian Railways,Indian Railways,25.551988,82.090604
+550,Pimpri,Indian Railways,Indian Railways,18.623062,73.802305
+551,Pipariya,Indian Railways,Indian Railways,22.753928,78.354929
+552,Plassey,Indian Railways,Indian Railways,23.778023,88.285045
+553,Potheri,Indian Railways,Indian Railways,12.820757,80.036874
+554,Prabhadevi,Indian Railways,Indian Railways,19.007333,72.835804
+555,Prayag Junction,Indian Railways,Indian Railways,25.467871,81.867759
+556,Pune Junction,Indian Railways,Indian Railways,18.529324,73.873069
+557,Puratchi Thalaivar Dr. M. G. Ramachandran Central,Indian Railways,Indian Railways,13.083520,80.275360
+558,Putlur,Indian Railways,Indian Railways,13.123105,79.937302
+559,Puzhudivakkam,Indian Railways,Indian Railways,12.977157,80.205423
+560,Quilandi,Indian Railways,Indian Railways,11.446231,75.693524
+561,Rabale,Indian Railways,Indian Railways,19.136904,73.002716
+562,Radhakund,Indian Railways,Indian Railways,27.539422,77.521449
+563,Raichur,Indian Railways,Indian Railways,16.193294,77.339423
+564,Raipur Junction,Indian Railways,Indian Railways,21.257281,81.629692
+565,Rajapatti,Indian Railways,Indian Railways,26.180440,84.808748
+566,Rajepur,Indian Railways,Indian Railways,26.360391,85.211977
+567,Rajgarh,Indian Railways,Indian Railways,27.242539,76.606393
+568,Rajnandgaon,Indian Railways,Indian Railways,21.101289,81.037815
+569,Ram Mandir,Indian Railways,Indian Railways,19.151381,72.850058
+570,Ramachandrapuram TS,Indian Railways,Indian Railways,17.509711,78.282184
+571,Ramakistapuram Gate,Indian Railways,Indian Railways,17.476474,78.528960
+572,Ramgarh,Indian Railways,Indian Railways,27.577020,76.811100
+573,Rampur Junction,Indian Railways,Indian Railways,28.778535,79.023229
+574,Ranaghat Junction,Indian Railways,Indian Railways,23.174823,88.569012
+575,Ranchi,Indian Railways,Indian Railways,23.349235,85.336120
+576,Rangiya Junction,Indian Railways,Indian Railways,26.446386,91.607416
+577,Rani Kamlapati,Indian Railways,Indian Railways,23.221049,77.440072
+578,Ranjanpada,Indian Railways,Indian Railways,18.909268,73.015872
+579,Rasayani,Indian Railways,Indian Railways,18.894053,73.151810
+580,Ratan Sarai,Indian Railways,Indian Railways,26.373766,84.573867
+581,Ratlam Junction,Indian Railways,Indian Railways,23.340240,75.050162
+582,Ratnagiri,Indian Railways,Indian Railways,17.003304,73.358295
+583,Raver,Indian Railways,Indian Railways,21.222289,76.044725
+584,Reay Road,Indian Railways,Indian Railways,18.977429,72.844242
+585,Renigunta Junction,Indian Railways,Indian Railways,13.639141,79.507084
+586,Renukut,Indian Railways,Indian Railways,24.203218,83.039860
+587,Roha,Indian Railways,Indian Railways,18.446875,73.123961
+588,Rourkela Junction,Indian Railways,Indian Railways,22.228170,84.861448
+589,Rura,Indian Railways,Indian Railways,26.485195,79.908040
+590,Sabarmati Junction,Indian Railways,Indian Railways,23.077813,72.588515
+591,Sadar Bazar,Indian Railways,Indian Railways,28.658087,77.217009
+592,Sadat,Indian Railways,Indian Railways,25.673545,83.308921
+593,Safilguda,Indian Railways,Indian Railways,17.461801,78.532959
+594,Saharanpur Junction,Indian Railways,Indian Railways,29.961219,77.541122
+595,Saidapet,Indian Railways,Indian Railways,13.023412,80.223750
+596,Saint Thomas Mount,Indian Railways,Indian Railways,12.995151,80.199125
+597,Sakhoti Tanda,Indian Railways,Indian Railways,29.192543,77.718640
+598,Sakleshpur,Indian Railways,Indian Railways,12.945530,75.778916
+599,Salem,Indian Railways,Indian Railways,11.670506,78.113466
+600,Salempur Junction,Indian Railways,Indian Railways,26.297830,83.923587
+601,Sambalpur City,Indian Railways,Indian Railways,21.476194,84.007802
+602,Sandhurst Road,Indian Railways,Indian Railways,18.961351,72.839487
+603,Sanjeevaiah Park,Indian Railways,Indian Railways,17.435700,78.476403
+604,Sanpada,Indian Railways,Indian Railways,19.065970,73.009555
+605,Santa Cruz (CR),Indian Railways,Indian Railways,19.083907,72.841811
+606,Santa Cruz (WR),Indian Railways,Indian Railways,19.081624,72.841606
+607,Saragbundia,Indian Railways,Indian Railways,22.213777,82.732869
+608,Sarai Chandi,Indian Railways,Indian Railways,25.539384,81.979998
+609,Sarai Kansrai,Indian Railways,Indian Railways,25.516001,82.346143
+610,Sarai Rohilla,Indian Railways,Indian Railways,28.663259,77.185604
+611,Sarojini Nagar,Indian Railways,Indian Railways,28.581235,77.196316
+612,Satna Junction,Indian Railways,Indian Railways,24.566893,80.828433
+613,Sawai Madhopur Junction,Indian Railways,Indian Railways,26.018086,76.356381
+614,Sawarda,Indian Railways,Indian Railways,17.407348,73.513902
+615,Sealdah,Indian Railways,Indian Railways,22.567966,88.371105
+616,Seawoods,Indian Railways,Indian Railways,19.021819,73.019155
+617,Secunderabad Junction,Indian Railways,Indian Railways,17.432998,78.502950
+618,Sedam,Indian Railways,Indian Railways,17.181144,77.284953
+619,Sevvapet Road,Indian Railways,Indian Railways,13.124938,79.965887
+620,Sewapuri,Indian Railways,Indian Railways,25.350844,82.769258
+621,Sewri,Indian Railways,Indian Railways,18.998739,72.854544
+622,Shahabad,Indian Railways,Indian Railways,17.121662,76.943563
+623,Shahad,Indian Railways,Indian Railways,19.244064,73.158199
+624,Shahjahanpur,Indian Railways,Indian Railways,27.893404,79.904898
+625,Sham Kauria,Indian Railways,Indian Railways,26.034511,84.834125
+626,Shankargarh,Indian Railways,Indian Railways,25.180574,81.613687
+627,Shelu,Indian Railways,Indian Railways,19.063674,73.317788
+628,Sher,Indian Railways,Indian Railways,26.355949,84.616157
+629,Shikohabad,Indian Railways,Indian Railways,27.086412,78.574673
+630,Shilhauri Halt,Indian Railways,Indian Railways,25.952903,84.833848
+631,Shivajinagar,Indian Railways,Indian Railways,18.532596,73.851444
+632,Shoranur Junction,Indian Railways,Indian Railways,10.758831,76.272087
+633,Shravanabelagola,Indian Railways,Indian Railways,12.871590,76.465783
+634,Shridham,Indian Railways,Indian Railways,23.034384,79.484854
+635,Sidhwalia,Indian Railways,Indian Railways,26.334575,84.667764
+636,Sidlagatta,Indian Railways,Indian Railways,13.392236,77.864160
+637,Sihora Road,Indian Railways,Indian Railways,23.466995,80.110170
+638,Siliguri Junction,Indian Railways,Indian Railways,26.723689,88.413525
+639,Siliguri Town,Indian Railways,Indian Railways,26.705394,88.431090
+640,Simaluguri Junction,Indian Railways,Indian Railways,26.917408,94.755982
+641,Singaperumal Koil,Indian Railways,Indian Railways,12.761923,80.000780
+642,Sion,Indian Railways,Indian Railways,19.047504,72.863852
+643,Sir M Visvesvaraya Terminal,Indian Railways,Indian Railways,12.999733,77.641258
+644,Sitafalmandi,Indian Railways,Indian Railways,17.428003,78.519821
+645,Sitalpur,Indian Railways,Indian Railways,25.768654,85.036157
+646,Siwan Junction,Indian Railways,Indian Railways,26.210756,84.358588
+647,Sohagpur,Indian Railways,Indian Railways,22.693949,78.194428
+648,Solapur,Indian Railways,Indian Railways,17.664548,75.892836
+649,Somatne,Indian Railways,Indian Railways,18.952215,73.145126
+650,Sonpur Junction,Indian Railways,Indian Railways,25.696857,85.167668
+651,Sri Satya Sai Prashanthi Nilayam,Indian Railways,Indian Railways,14.161626,77.758988
+652,Srinivasapura,Indian Railways,Indian Railways,13.328651,78.206716
+653,Subrahmanya Road,Indian Railways,Indian Railways,12.731734,75.557891
+654,Suchitra Centre,Indian Railways,Indian Railways,17.489225,78.472911
+655,Sultanpur Junction,Indian Railways,Indian Railways,26.265243,82.067011
+656,Surat,Indian Railways,Indian Railways,21.205201,72.840870
+657,Surathkal,Indian Railways,Indian Railways,12.994196,74.804884
+658,Surer,Indian Railways,Indian Railways,27.190879,76.612769
+659,Suriawan,Indian Railways,Indian Railways,25.460950,82.424787
+660,Talegaon,Indian Railways,Indian Railways,18.735420,73.672033
+661,Taloja Panchand,Indian Railways,Indian Railways,19.078793,73.088214
+662,Talvadiya Junction,Indian Railways,Indian Railways,21.927810,76.444629
+663,Tambaram,Indian Railways,Indian Railways,12.925833,80.118503
+664,Tambaram Sanatorium,Indian Railways,Indian Railways,12.937812,80.131300
+665,Tandur,Indian Railways,Indian Railways,17.250707,77.584168
+666,Taramani,Indian Railways,Indian Railways,12.978646,80.241054
+667,Tatanagar,Indian Railways,Indian Railways,22.768098,86.201632
+668,Tejpurwa Halt,Indian Railways,Indian Railways,25.940165,84.820240
+669,Telapur,Indian Railways,Indian Railways,17.474867,78.284937
+670,Tenua Dumaria Halt,Indian Railways,Indian Railways,25.828308,84.759716
+671,Terha Halt,Indian Railways,Indian Railways,25.992328,84.850054
+672,Tetulmari,Indian Railways,Indian Railways,23.814603,86.343223
+673,Thakurli,Indian Railways,Indian Railways,19.226241,73.098188
+674,Thalassery,Indian Railways,Indian Railways,11.754001,75.492448
+675,Thane,Indian Railways,Indian Railways,19.186045,72.975999
+676,Thansit,Indian Railways,Indian Railways,19.550348,73.352087
+677,Thawe Junction,Indian Railways,Indian Railways,26.438871,84.394069
+678,Thirumayilai,Indian Railways,Indian Railways,13.035058,80.267212
+679,Thirumullaivoyal,Indian Railways,Indian Railways,13.115194,80.137509
+680,Thiruvallikeni,Indian Railways,Indian Railways,13.055146,80.280577
+681,Thiruvananthapuram Thampanoor Railway Station,Indian Railways,Indian Railways,8.487128,76.951035
+682,Thivim,Indian Railways,Indian Railways,15.630000,73.877127
+683,Thrissur,Indian Railways,Indian Railways,10.515534,76.208079
+684,Tilak Nagar,Indian Railways,Indian Railways,19.065738,72.890298
+685,Timarni,Indian Railways,Indian Railways,22.376382,77.230161
+686,Tiruchchirappalli Junction,Indian Railways,Indian Railways,10.794427,78.686252
+687,Tirumalpur,Indian Railways,Indian Railways,12.956567,79.673763
+688,Tiruppur,Indian Railways,Indian Railways,11.108655,77.339666
+689,Tirur,Indian Railways,Indian Railways,10.917868,75.921847
+690,Tirusulam,Indian Railways,Indian Railways,12.980262,80.165701
+691,Tiruttani,Indian Railways,Indian Railways,13.179850,79.612112
+692,Tiruvallur,Indian Railways,Indian Railways,13.115814,79.912348
+693,Tiruvanmiyur,Indian Railways,Indian Railways,12.989676,80.251328
+694,Titwala,Indian Railways,Indian Railways,19.296385,73.203083
+695,Trivikramdeo Nagar,Indian Railways,Indian Railways,26.302425,84.709277
+696,Tumakuru,Indian Railways,Indian Railways,13.333340,77.103089
+697,Tundla Junction,Indian Railways,Indian Railways,27.207933,78.233632
+698,Turavur,Indian Railways,Indian Railways,9.774937,76.310416
+699,Turbhe,Indian Railways,Indian Railways,19.076153,73.017746
+700,Udupi,Indian Railways,Indian Railways,13.337164,74.770956
+701,Ugrasenpur,Indian Railways,Indian Railways,25.568176,82.170723
+702,Ulhasnagar,Indian Railways,Indian Railways,19.217942,73.163395
+703,Umbermali,Indian Railways,Indian Railways,19.628296,73.423019
+704,Umdanagar,Indian Railways,Indian Railways,17.263319,78.392597
+705,Unnao Junction,Indian Railways,Indian Railways,26.549002,80.486931
+706,Uran,Indian Railways,Indian Railways,18.878383,72.952516
+707,Uran City,Indian Railways,Indian Railways,18.878247,72.952521
+708,Urappakkam,Indian Railways,Indian Railways,12.867366,80.072022
+709,Urga,Indian Railways,Indian Railways,22.268892,82.736385
+710,Vadakara,Indian Railways,Indian Railways,11.593351,75.587130
+711,Vadala Road,Indian Railways,Indian Railways,19.016103,72.858899
+712,Vadgaon,Indian Railways,Indian Railways,18.742587,73.636659
+713,Vadodara Junction,Indian Railways,Indian Railways,22.310034,73.180679
+714,Valsad,Indian Railways,Indian Railways,20.608293,72.933821
+715,Vandalur,Indian Railways,Indian Railways,12.891606,80.084974
+716,Vangani,Indian Railways,Indian Railways,19.094317,73.300894
+717,Vapi,Indian Railways,Indian Railways,20.372725,72.908549
+718,Varanasi City,Indian Railways,Indian Railways,25.334690,83.014607
+719,Varanasi Junction,Indian Railways,Indian Railways,25.327396,82.986124
+720,Varkala Sivagiri,Indian Railways,Indian Railways,8.740741,76.723238
+721,Vasai Road,Indian Railways,Indian Railways,19.382740,72.831992
+722,Vashi,Indian Railways,Indian Railways,19.063246,72.998946
+723,Vasind,Indian Railways,Indian Railways,19.406848,73.267604
+724,Vehaj,Indian Railways,Indian Railways,27.482288,77.387314
+725,Velachery,Indian Railways,Indian Railways,12.967330,80.219573
+726,Venkatagirikote,Indian Railways,Indian Railways,13.326194,77.731171
+727,Veppampattu,Indian Railways,Indian Railways,13.123683,79.998440
+728,Vidyanagar,Indian Railways,Indian Railways,17.401950,78.511129
+729,Vidyavihar,Indian Railways,Indian Railways,19.079474,72.897264
+730,Vijayawada Junction,Indian Railways,Indian Railways,16.518272,80.618810
+731,Vikarabad Junction,Indian Railways,Indian Railways,17.337394,77.909878
+732,Vikhroli,Indian Railways,Indian Railways,19.111780,72.928137
+733,Vile Parle,Indian Railways,Indian Railways,19.100029,72.843920
+734,Villivakkam,Indian Railways,Indian Railways,13.110113,80.209914
+735,Virangana Lakshmibai Jhansi Junction,Indian Railways,Indian Railways,25.445143,78.552971
+736,Virar,Indian Railways,Indian Railways,19.454556,72.811851
+737,Vithalwadi,Indian Railways,Indian Railways,19.228822,73.148610
+738,Vyasarpadi Jeeva,Indian Railways,Indian Railways,13.108958,80.258175
+739,Wadi Junction,Indian Railways,Indian Railways,17.052322,76.991745
+740,Waghai,Indian Railways,Indian Railways,20.772558,73.500352
+741,Yadgir,Indian Railways,Indian Railways,16.744154,77.129755
+742,Yakutpura,Indian Railways,Indian Railways,17.359775,78.491891
+743,Yamuna Bridge,Indian Railways,Indian Railways,27.192476,78.039583
+744,Yamunanagar Jagadhri,Indian Railways,Indian Railways,30.117881,77.286218
+745,Yelahanka Junction,Indian Railways,Indian Railways,13.104032,77.592144
+746,Yesvantpur Junction,Indian Railways,Indian Railways,13.023934,77.551351

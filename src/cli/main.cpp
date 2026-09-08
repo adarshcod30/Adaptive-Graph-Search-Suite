@@ -411,9 +411,9 @@ int cmd_bench(const Args& a) {
     if (a.has("graph")) {
         dirs.push_back(a.str("graph"));
     } else {
-        for (const auto& d : {"Small_Campus", "Mumbai_Pune_Expy", "Indian_Grid", "Delhi_NCR",
-                              "Bengaluru_Traffic"}) {
-            dirs.push_back(std::string("data/maps/") + d);
+        dirs.push_back("data/maps/Grid_Integer");
+        for (const auto& c : {"Mumbai", "Kolkata", "Jaipur", "Delhi", "Bengaluru"}) {
+            dirs.push_back(std::string("data/cities/") + c);
         }
     }
     const long reps = a.num("reps", 5);
@@ -442,8 +442,27 @@ int cmd_bench(const Args& a) {
             continue;
         }
         const auto& g = loaded.value().graph;
-        const auto s = agss::NodeId{0};
-        const auto t = static_cast<agss::NodeId>(g.num_nodes() - 1);
+        // Node 0 to node V-1 is a trap on real extracts: a few hundred nodes
+        // sit stranded at the clipping boundary, so the pair is often
+        // unreachable and every algorithm benchmarks an empty search. Take the
+        // endpoints from the largest strongly connected component instead.
+        agss::NodeId s = 0;
+        auto t = static_cast<agss::NodeId>(g.num_nodes() - 1);
+        {
+            const auto scc = agss::analysis::strongly_connected_components(g);
+            std::size_t biggest = 0;
+            for (std::size_t i = 0; i < scc.sizes.size(); ++i) {
+                if (scc.sizes[i] > scc.sizes[biggest]) biggest = i;
+            }
+            std::vector<agss::NodeId> members;
+            for (agss::NodeId v = 0; v < g.num_nodes(); ++v) {
+                if (scc.component_of[v] == static_cast<agss::NodeId>(biggest)) members.push_back(v);
+            }
+            if (members.size() >= 2) {
+                s = members[members.size() / 8];
+                t = members[members.size() * 7 / 8];
+            }
+        }
         // Accept either separator: Windows callers pass backslashes.
         const auto cut = dir.find_last_of("/\\");
         const auto name = cut == std::string::npos ? dir : dir.substr(cut + 1);
@@ -758,19 +777,45 @@ int cmd_transit(const Args& a) {
 }
 
 int cmd_maps(const Args& a) {
-    const std::string root = a.str("dir", "data/maps");
-    std::cout << "maps under " << root << ":\n";
-    // Deliberately no directory-walk dependency: probe the known layout.
-    for (const auto& name :
-         {"Small_Campus", "Mumbai_Pune_Expy", "Indian_Grid", "Delhi_NCR", "Bengaluru_Traffic"}) {
+    (void)a;
+    // No directory-walk dependency: probe the known layout.
+    struct Entry {
+        const char* dir;
+        const char* label;
+        bool geo;
+    };
+    const Entry entries[] = {
+        {"data/cities/Delhi", "Delhi", true},
+        {"data/cities/Mumbai", "Mumbai", true},
+        {"data/cities/Bengaluru", "Bengaluru", true},
+        {"data/cities/Jaipur", "Jaipur", true},
+        {"data/cities/Kolkata", "Kolkata", true},
+        {"data/maps/Grid_Integer", "Grid (synthetic)", false},
+    };
+
+    std::cout << std::left << std::setw(20) << "NETWORK" << std::right << std::setw(10) << "NODES"
+              << std::setw(11) << "EDGES" << "  SOURCE\n"
+              << std::string(56, '-') << "\n";
+    for (const auto& e : entries) {
         agss::LoadOptions o;
         o.lenient = true;
-        auto r = agss::load_csv_dir(root + "/" + name, o);
-        if (r) {
-            std::cout << "  " << std::left << std::setw(22) << name << r.value().graph.num_nodes()
-                      << " nodes, " << r.value().graph.num_edges() << " edges\n";
-        }
+        o.space = e.geo ? agss::CoordSpace::Geographic : agss::CoordSpace::Planar;
+        auto r = agss::load_csv_dir(e.dir, o);
+        if (!r) continue;
+        std::cout << std::left << std::setw(20) << e.label << std::right << std::setw(10)
+                  << r.value().graph.num_nodes() << std::setw(11) << r.value().graph.num_edges()
+                  << "  " << (e.geo ? "OpenStreetMap" : "generated") << "\n";
     }
+
+    for (const auto& entry : {std::pair{"data/transit", "metro networks"},
+                              std::pair{"data/railways", "Indian Railways"}}) {
+        auto net = agss::transit::load(entry.first);
+        if (!net) continue;
+        std::cout << std::left << std::setw(20) << entry.second << std::right << std::setw(10)
+                  << net.value().station_count() << std::setw(11) << net.value().link_count()
+                  << "  OpenStreetMap\n";
+    }
+    std::cout << "\nGeographic networks need --geo. Fetch more with scripts/fetch_city.py.\n";
     return 0;
 }
 
