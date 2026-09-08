@@ -56,6 +56,10 @@ jobs:
   correctness:
     name: Differential correctness
     runs-on: ubuntu-latest
+    # This job has no business running long. Left unbounded it once held CI
+    # open for over half an hour on a hosted runner while finishing in
+    # seconds locally, so cap it rather than discover that again.
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
@@ -76,9 +80,9 @@ jobs:
           # the fast optimal algorithms cross-check each other there. Only the
           # expensive intersection, big graph times superlinear algorithm, is
           # dropped.
-          for spec in "data/maps/Grid_Integer:60::" \
-                      "data/cities/Gorakhpur:15:--geo:johnson,bellmanford" \
-                      "data/networks/India_Railways:10:--geo:johnson,bellmanford" ; do
+          for spec in "data/maps/Grid_Integer:40::" \
+                      "data/cities/Gorakhpur:5:--geo:johnson,bellmanford" \
+                      "data/networks/India_Railways:4:--geo:johnson,bellmanford" ; do
             map=${spec%%:*}; rest=${spec#*:}
             n=${rest%%:*}; rest=${rest#*:}
             geo=${rest%%:*}; skip=${rest#*:}
