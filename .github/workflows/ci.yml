@@ -59,7 +59,7 @@ jobs:
     # This job has no business running long. Left unbounded it once held CI
     # open for over half an hour on a hosted runner while finishing in
     # seconds locally, so cap it rather than discover that again.
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
@@ -89,7 +89,12 @@ jobs:
             args=""
             [ -n "$skip" ] && args="--skip $skip"
             echo "== $map $geo $args (samples $n)"
+            # Timed per network: this job has twice run orders of magnitude
+            # slower here than locally, and the log needs to say which command
+            # is responsible rather than leaving it to guesswork.
+            start=$(date +%s)
             out=$(./build/bin/agss verify --graph "$map" $geo $args --samples "$n")
+            echo "   took $(( $(date +%s) - start ))s"
             echo "$out"
             # A warning here means the map violates heuristic admissibility,
             # which makes A* legitimately suboptimal -- a data bug, not a
