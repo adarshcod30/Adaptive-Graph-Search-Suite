@@ -67,19 +67,28 @@ jobs:
       - name: Every optimal algorithm must agree, on each kind of network
         run: |
           fail=0
-          # data/maps/ holds a single synthetic grid now, so looping over it
-          # alone left every real network unverified while this job stayed
-          # green. Mutual agreement between optimal algorithms is the oracle,
-          # so what matters is covering different kinds of graph: the integer
-          # grid (the only one Dial applies to), a whole real city with every
-          # algorithm including Johnson and Bellman-Ford, the sparse national
-          # rail topology, and a coastal city whose network is genuinely
-          # disconnected in places. Johnson and Bellman-Ford are skipped on
-          # the two larger networks, where they cost far more than they add.
+          # One sweep, one network of each character. There were two loops
+          # here: this one, and a second that swept every directory under
+          # data/cities and data/networks at 40 samples with no exclusions.
+          # That was affordable when the extracts were 15k-33k junctions and
+          # became untenable at 240k-488k, where Johnson is V Dijkstras and
+          # Bellman-Ford is O(VE) -- it ran CI past half an hour.
+          #
+          # Mutual agreement between optimal algorithms is the oracle, so what
+          # earns a slot is a distinct kind of graph, not another city that
+          # looks like the last one: the integer grid, which is the only place
+          # Dial and Floyd-Warshall apply; a small real city cheap enough to
+          # run every algorithm against; a coastal network that is genuinely
+          # disconnected in places; the largest extract at 488k junctions; the
+          # hierarchical highway skeleton; and the sparse national rail graph.
+          # Johnson and Bellman-Ford are skipped above city scale, where they
+          # cost minutes and add nothing the others do not already cover.
           for spec in "data/maps/Grid_Integer:80::" \
                       "data/cities/Gorakhpur:60:--geo:" \
-                      "data/networks/India_Railways:40:--geo:johnson,bellmanford" \
-                      "data/cities/Mumbai:30:--geo:johnson,bellmanford" ; do
+                      "data/cities/Mumbai:30:--geo:johnson,bellmanford" \
+                      "data/cities/Delhi_NCR:15:--geo:johnson,bellmanford" \
+                      "data/networks/India_Highways:25:--geo:johnson,bellmanford" \
+                      "data/networks/India_Railways:40:--geo:johnson,bellmanford" ; do
             map=${spec%%:*}; rest=${spec#*:}
             n=${rest%%:*}; rest=${rest#*:}
             geo=${rest%%:*}; skip=${rest#*:}
@@ -97,21 +106,6 @@ jobs:
             fi
             if ! echo "$out" | grep -q "0 cost mismatches, 0 invalid paths"; then
               echo "::error::$map produced disagreements between optimal algorithms"
-              fail=1
-            fi
-          done
-          # Real OSM extracts are the ones that actually matter; --geo selects
-          # the great-circle metric they are measured in.
-          for city in data/cities/*/ data/networks/*/ ; do
-            echo "== $city"
-            out=$(./build/bin/agss verify --graph "$city" --geo --samples 40)
-            echo "$out"
-            if echo "$out" | grep -q "WARNING"; then
-              echo "::error::$city breaks the straight-line heuristic invariant"
-              fail=1
-            fi
-            if ! echo "$out" | grep -q "0 cost mismatches, 0 invalid paths"; then
-              echo "::error::$city produced disagreements between optimal algorithms"
               fail=1
             fi
           done
