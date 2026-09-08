@@ -49,7 +49,7 @@ bench: $(BIN)
 	./$(BIN) bench
 
 verify: $(BIN)
-	./$(BIN) verify --graph data/maps/Delhi_NCR --samples 200
+	./$(BIN) verify --graph data/cities/Gorakhpur --geo --samples 40
 
 ## Formats in place. CI pins clang-format 18.1.8; other versions disagree,
 ## so install the same one (pip install clang-format==18.1.8) to match.

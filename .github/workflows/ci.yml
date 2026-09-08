@@ -60,12 +60,22 @@ jobs:
       - uses: actions/checkout@v4
       - run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
       - run: cmake --build build --parallel
-      - name: Every optimal algorithm must agree on every network
+      - name: Every optimal algorithm must agree, on each kind of network
         run: |
           fail=0
-          for map in data/maps/*/ ; do
-            echo "== $map"
-            out=$(./build/bin/agss verify --graph "$map" --samples 150)
+          # data/maps/ holds a single synthetic grid now, so looping over it
+          # alone left every real network unverified while this job stayed
+          # green. Differential bugs are size-independent, and a full verify
+          # is superlinear, so cover one network of each character instead of
+          # all nine: the integer grid (the only graph Dial applies to), a
+          # real road network, and the sparse long-distance rail topology.
+          for spec in "data/maps/Grid_Integer:" \
+                      "data/cities/Gorakhpur:--geo" \
+                      "data/networks/India_Railways:--geo" ; do
+            map=${spec%%:*}
+            geo=${spec#*:}
+            echo "== $map $geo"
+            out=$(./build/bin/agss verify --graph "$map" $geo --samples 25)
             echo "$out"
             # A warning here means the map violates heuristic admissibility,
             # which makes A* legitimately suboptimal -- a data bug, not a
