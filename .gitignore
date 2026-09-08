@@ -10,7 +10,6 @@ compile_commands.json
 # Generated traces / outputs
 out.json
 test_trace.json
-ui/trace.json
 *.trace.json
 
 # City extracts are committed now, so the demo works from a clone with no

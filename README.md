@@ -122,7 +122,7 @@ Gurugram: 21 stops, 49.5 minutes, matching the real journey.
 - [Correctness](#correctness)
 - [Project structure](#project-structure)
 - [Testing](#testing)
-- [Running it in the browser](#running-it-in-the-browser)
+- [Running it in the browser](#running-it-in-the-browser) — basemap, driving the map
 - [Deployment](#deployment)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
@@ -214,8 +214,9 @@ on disk. All committed. The demo runs from a clone with no network access.
 | **Delta traces** | Θ(V + E) event stream instead of Θ(V²) frame snapshots — 209× smaller at 19.6k nodes |
 | **Geodesy done right** | Haversine metric; A\* admissibility checked as an invariant and enforced in CI |
 | **k-d tree** | O(log V) nearest-node snapping for map clicks |
-| **Runs in the browser** | The whole engine as 403 KB of WebAssembly, no backend |
+| **Runs in the browser** | The whole engine as 404 KB of WebAssembly, no backend |
 | **Real map basemap** | Web Mercator tiles under the graph — dark, light, street, satellite, terrain |
+| **60 fps at half a million nodes** | Coalesced frames, cursor-anchored eased zoom, and detail that thins only while the camera moves |
 | **Python bindings** | `pip install .` — the engine from Python, with NumPy coordinate arrays |
 | **Race mode** | Every algorithm on one query, side by side, with optimality verdicts |
 | **Differential verification** | Optimal algorithms cross-check each other; no golden files |
@@ -320,28 +321,34 @@ WebAssembly for the browser.
 
 ## Request flow
 
+Nothing leaves the tab. The engine is WebAssembly living in the page, so a
+search is a function call across the JS/WASM boundary rather than a round trip
+to a server.
+
 ```mermaid
 sequenceDiagram
-    participant U as Browser
-    participant S as server.py
-    participant B as agss binary
+    participant U as You
+    participant P as Page (app.js)
+    participant W as Engine (WebAssembly)
     participant D as Data files
 
-    U->>S: POST /run {alg, map, source, target}
-    S->>S: validate alg against allow-list
-    S->>S: resolve map id (pattern + realpath containment)
-    Note over S: rejects "../" traversal
-    S->>S: create a per-request temp directory
-    Note over S: no shared trace file,<br/>so concurrent requests cannot collide
-    S->>B: agss route --graph ... --trace-out <temp>
-    B->>D: read nodes.csv / edges.csv
-    B->>B: validate, build CSR
-    B->>B: run search (timed alone)
-    B->>B: write delta trace (timed separately)
-    B-->>S: exit 0 = route, 2 = no route, 1 = error
-    S->>S: read the temp trace, discard the directory
-    S-->>U: {rc, trace: {metadata, graph, path, events}}
-    U->>U: replay events incrementally, O(1) per step
+    U->>P: pick a network
+    P->>D: fetch nodes.csv / edges.csv
+    Note over P,D: static files, served compressed
+    P->>W: agss_load_graph(heap pointers)
+    Note over P,W: CSV is passed by pointer, not by value:<br/>ccall's string marshalling copies onto a 64 KB stack
+    W->>W: validate rows, build CSR
+    W-->>P: {nodes, edges, admissible}
+    P->>W: geometry buffers (Float64 / Int32)
+    Note over P,W: binary, not JSON — half a million nodes<br/>as JSON is tens of MB of text
+
+    U->>P: click source, right-click target, run
+    P->>W: agss_route(alg, source, target)
+    W->>W: run search (timed alone)
+    W->>W: emit delta trace (timed separately)
+    W-->>P: {metadata, path, events}
+    P->>P: replay events incrementally, O(1) per step
+    P->>P: draw, one frame at a time
 ```
 
 ## Data pipeline
@@ -457,12 +464,18 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build -j
 
 ### Launch the visualiser
 
+The visualiser is the WebAssembly build, and it needs no server of its own —
+just something to serve the static files, because browsers refuse to load a
+`.wasm` module over `file://`.
+
 ```bash
-make -j && python3 server.py
+emcmake cmake -S . -B build/wasm -DCMAKE_BUILD_TYPE=Release \
+  -DAGSS_BUILD_TESTS=OFF -DAGSS_BUILD_CLI=OFF && cmake --build build/wasm -j
+python3 -m http.server 8000
 ```
 
-Then open <http://127.0.0.1:9000/>. Or build the WebAssembly version, which
-needs no server at all — see [Running it in the browser](#running-it-in-the-browser).
+Then open <http://127.0.0.1:8000/web/>. Or skip all of it and use the
+[live demo](https://adarshcod30.github.io/Adaptive-Graph-Search-Suite/).
 
 ### Install the Python module
 
@@ -1030,8 +1043,7 @@ again reads as an algorithm problem.
 │   ├── index.html              Shell
 │   ├── app.js                  Mercator projection, tile layer, trace replay, panels
 │   └── engine/                 Generated .wasm + glue (gitignored)
-├── ui/                         Legacy server-backed visualiser
-└── server.py                   Development bridge (optional)
+└── third_party/                microtest.hpp, the whole test framework
 ```
 
 ## Testing
@@ -1148,6 +1160,62 @@ Attribution is displayed on the map, as every provider requires. The demo is
 deliberately light on tile traffic — at most 8 requests in flight and a bounded
 cache.
 
+### Driving the map
+
+| | |
+|---|---|
+| Pan | drag, or arrow keys |
+| Zoom | scroll, pinch, `+` / `-`, or double-click (shift-double-click out) |
+| Fit the network | `0` |
+| Set endpoints | left click for the source, right click for the target |
+| Replay | space plays and pauses, `Enter` re-runs the search |
+
+Three things were wrong with this and are worth writing down, because none of
+them were visible until the networks grew past a hundred thousand nodes.
+
+**Redraws did not coalesce.** Every wheel and pointer handler called
+`requestAnimationFrame(draw)` directly, and those do not merge — each queues
+its own callback. A trackpad emits events faster than the display refreshes, so
+several full redraws, 123k nodes and 316k edges apiece, piled into a single
+frame and the map lagged behind the cursor. One scheduler, one frame, one draw.
+
+**Zoom jumped rather than moved**, and treated every device alike, though
+`deltaMode` says whether the numbers are pixels, lines or pages — so a mouse
+wheel leapt while a trackpad crawled. Deltas are now normalised and clamped,
+and zoom eases toward a target. The ease is *multiplicative*, because zoom is
+geometric: easing the ratio makes a step feel identical at street level and at
+country level, which a linear ease does not. The world point under the cursor
+is captured once and re-pinned every frame, so the map grows out of the
+pointer — measured drift across a full ease is exactly zero.
+
+**Detail did not drop while the camera moved.** A settled search is not
+readable mid-gesture anyway, so the graph is thinned while a gesture is in
+flight and a full-quality frame follows 150 ms after it settles. Nothing else
+gets half a million nodes to 60 fps.
+
+| Frame cost | Full quality | While moving |
+|---|---|---|
+| Jaipur, BFS settled | 10.8 ms | 4.3 ms |
+| Jaipur, Dijkstra over the whole city (123,037 explored) | 17.0 ms | 4.9 ms |
+| Delhi NCR, 1.25M edges | 39.3 ms | 13.0 ms |
+
+A frame is 16.7 ms, so every gesture has headroom.
+
+The search dots were the other half of the problem. They were sized as
+multiples of the base node radius, which reaches 5 px at city zoom, so explored
+dots were 7 px across and frontier dots 10 px — each with its own 8 px
+`shadowBlur`, a separate blur pass per dot and the most expensive thing in the
+frame. A few thousand of those bury the map they are drawn on. Search dots now
+have their own scale topping out near 2 px, the frontier takes its glow from a
+single translucent halo pass, and every dot in a set goes into one path and one
+fill.
+
+Squares looked like the cheaper primitive there — four segments against a
+tessellated curve — but measured slower than arcs, 113 ms against 84 ms on a
+pathological frame, because a sub-pixel arc degenerates to very few segments
+while every `rect()` opens a fresh subpath. The comment in `draw()` records the
+number so nobody retries it.
+
 ### Why WebAssembly replaced the Python bridge rather than fixing it
 
 The old flow was browser → Python server → `subprocess` → binary → shared file
@@ -1160,18 +1228,25 @@ on disk → back. Two of its defects were only visible with more than one user:
   three returned another client's algorithm** — zero correct.
 
 Both are now *unrepresentable* rather than patched: with the engine inside the
-page there is no subprocess, no filesystem path from user input, and no shared
-file, because each tab owns its own engine instance and its own memory. The
-`server.py` bridge is still there for local development and both defects are
-fixed in it too, but nothing in the published demo depends on it.
+page there is no subprocess, no filesystem path derived from user input, and no
+shared file, because each tab owns its own engine instance and its own memory.
+The bridge and the server-backed visualiser it fed have since been deleted —
+they reached ten of the twelve algorithms, knew nothing about map tiles, and
+existed only to do worse what the page now does by itself.
 
 ### What the browser build costs
 
 | | Native | WebAssembly |
 |---|---|---|
-| A\* on 47,828-node Delhi | 0.29 ms | ~2 ms |
-| Engine size | 340 KB binary | 403 KB `.wasm` + 64 KB glue |
+| Contracting Kolkata (104,085 nodes) | 27 s | 41.9 s |
+| Engine size | 380 KB binary | 404 KB `.wasm` + 63 KB glue |
 | Install steps | clone, toolchain, build | open a link |
+
+Roughly **1.5x** the native cost on allocation-heavy work, which is the usual
+WebAssembly overhead. Preprocessing is the honest thing to quote here: a single
+query is over in a few milliseconds, and the browser's timer clamp (below) is
+the same order as the measurement, so per-query native-versus-WASM numbers say
+more about the machine's background load than about either build.
 
 One caveat the UI states honestly: browsers clamp `performance.now()` to about
 0.1 ms as a Spectre mitigation, and the engine's `steady_clock` rides on it. A
@@ -1181,16 +1256,15 @@ zero, and **Race all** times a batch of runs to amortise the clamp away.
 
 ## Deployment
 
-This is a local-first tool: a static binary plus CSV data, with an optional
-development server and a browser build that needs neither.
+This is a local-first tool: a static binary plus CSV data, and a browser build
+that needs no server at all.
 
 | Environment | How |
 |---|---|
 | Local CLI | `make -j` → `./bin/agss` |
 | Python | `pip install .` → `import agss` |
-| Local UI | `python3 server.py` → <http://127.0.0.1:9000/> |
 | Live demo | GitHub Pages, rebuilt from source on every push to `main`; the WASM smoke test gates publication |
-| CI | GitHub Actions, 8 jobs on push and PR |
+| CI | GitHub Actions, 11 jobs on push and PR |
 | Library | `cmake --install` exports `agss_core` plus headers for `find_package` / `FetchContent` |
 
 The CI jobs are: a build matrix across gcc, clang and MSVC on Linux, macOS and
@@ -1198,9 +1272,6 @@ Windows; AddressSanitizer + UndefinedBehaviorSanitizer; differential
 correctness across every bundled network; a data-reproducibility check; the
 WebAssembly build and smoke test; the Python bindings; clang-format pinned to a
 fixed version; and a benchmark table published to the job summary.
-
-`server.py` binds to loopback and is a development tool, not a hardened public
-service.
 
 ## Roadmap
 
@@ -1215,6 +1286,9 @@ Done:
 - [x] Time-dependent routing
 - [x] Python bindings
 - [x] India's national highway network
+- [x] Whole-city extracts, Delhi NCR to 488,431 junctions
+- [x] Railway network built from track topology, 8,857 named stations
+- [x] 60 fps map interaction: coalesced frames, eased cursor-anchored zoom
 
 Next:
 
@@ -1223,7 +1297,7 @@ Next:
 - [ ] Parallel CH preprocessing
 - [ ] Jump Point Search for grid maps
 - [ ] Louvain community detection for neighbourhood boundaries
-- [ ] More cities, with larger extracts as release assets
+- [ ] More cities, and extracts too large to commit shipped as release assets
 
 ## Contributing
 
