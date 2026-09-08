@@ -69,41 +69,258 @@ function log(msg, cls) {
 
 /* -------------------------------------------------------------- rendering */
 
+/* ------------------------------------------------------------ projection
+
+   Node coordinates are projected into a shared "world" space once at load,
+   and the camera works entirely in that space.
+
+   For geographic graphs the world space is Web Mercator normalised to [0, 1],
+   which is the projection every raster tile server publishes in. Using it
+   here rather than the previous cos(latitude) approximation is what lets a
+   real map slide underneath the graph with the two staying pixel-aligned at
+   every zoom level -- an approximation that is merely close would drift
+   visibly as you pan north or south.
+
+   Planar graphs keep their own coordinates and have no basemap. */
+
+const DEG = Math.PI / 180;
+
+const mercX = lon => (lon + 180) / 360;
+const mercY = lat => {
+    const s = Math.sin(lat * DEG);
+    return 0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI);
+};
+const invMercX = wx => wx * 360 - 180;
+const invMercY = wy => Math.atan(Math.sinh(Math.PI * (1 - 2 * wy))) / DEG;
+
+// Parallel Float64Arrays rather than per-node objects: the projection is
+// evaluated once per load, and drawing 47k nodes then costs two array reads
+// instead of a trig call each.
+let world = { x: new Float64Array(0), y: new Float64Array(0) };
+
+/// Mercator Y grows southward, matching screen Y; planar Y grows upward.
+const yDir = () => (geographic ? 1 : -1);
+
+function projectAll() {
+    const n = graph.nodes.length;
+    world = { x: new Float64Array(n), y: new Float64Array(n) };
+    for (let i = 0; i < n; i++) {
+        const node = graph.nodes[i];
+        if (!node) continue;
+        world.x[i] = geographic ? mercX(node.x) : node.x;
+        world.y[i] = geographic ? mercY(node.y) : node.y;
+    }
+}
+
 function computeBounds() {
     if (!graph.nodes.length) return;
     let minx = Infinity, maxx = -Infinity, miny = Infinity, maxy = -Infinity;
-    for (const n of graph.nodes) {
-        if (n.x < minx) minx = n.x;
-        if (n.x > maxx) maxx = n.x;
-        if (n.y < miny) miny = n.y;
-        if (n.y > maxy) maxy = n.y;
+    for (let i = 0; i < world.x.length; i++) {
+        if (!graph.nodes[i]) continue;
+        const x = world.x[i], y = world.y[i];
+        if (x < minx) minx = x;
+        if (x > maxx) maxx = x;
+        if (y < miny) miny = y;
+        if (y > maxy) maxy = y;
     }
-    const padx = (maxx - minx) * 0.05 || 1, pady = (maxy - miny) * 0.05 || 1;
+    const padx = (maxx - minx) * 0.05 || 1e-4, pady = (maxy - miny) * 0.05 || 1e-4;
     bounds = { minx: minx - padx, maxx: maxx + padx, miny: miny - pady, maxy: maxy + pady };
 }
 
 function fitCamera() {
     computeBounds();
     const w = bounds.maxx - bounds.minx, h = bounds.maxy - bounds.miny;
-    // Latitude and longitude are not the same distance on the ground, so a
-    // geographic graph gets its aspect corrected before it is drawn.
-    const aspect = geographic ? Math.cos((bounds.miny + bounds.maxy) / 2 * Math.PI / 180) : 1;
-    camera.zoom = Math.min(cv.width / (w / (aspect || 1)), cv.height / h) * 0.9;
+    // Mercator already carries the latitude correction, so this is a plain fit.
+    camera.zoom = Math.min(cv.width / w, cv.height / h) * 0.9;
+    if (geographic) camera.zoom = clampZoom(camera.zoom);
     camera.x = (bounds.minx + bounds.maxx) / 2;
     camera.y = (bounds.miny + bounds.maxy) / 2;
 }
 
-function aspectScale() {
-    if (!geographic) return 1;
-    return Math.cos((bounds.miny + bounds.maxy) / 2 * Math.PI / 180) || 1;
+// World -> screen, and back.
+const tx = wx => (wx - camera.x) * camera.zoom + cv.width / 2;
+const ty = wy => cv.height / 2 + yDir() * (wy - camera.y) * camera.zoom;
+const inv = (px_, py_) => [
+    (px_ - cv.width / 2) / camera.zoom + camera.x,
+    yDir() * (py_ - cv.height / 2) / camera.zoom + camera.y,
+];
+
+// Node index -> screen, the form the draw loop uses.
+const nx = i => tx(world.x[i]);
+const ny = i => ty(world.y[i]);
+
+/* ------------------------------------------------------------- basemap
+
+   A minimal slippy-map tile layer, drawn straight onto the same canvas under
+   the graph.
+
+   No mapping library: the camera already works in Web Mercator, so a tile is
+   just an image placed at a known world rectangle, and reusing the existing
+   projection keeps the map and the graph aligned by construction rather than
+   by two libraries agreeing. It also keeps the page dependency-free, which is
+   the whole reason it can be a single static file. */
+
+const BASEMAPS = {
+    none: null,
+    dark: {
+        label: 'Dark map',
+        url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+        subdomains: ['a', 'b', 'c', 'd'],
+        maxZoom: 20,
+        attribution: '© OpenStreetMap contributors © CARTO',
+    },
+    light: {
+        label: 'Light map',
+        url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+        subdomains: ['a', 'b', 'c', 'd'],
+        maxZoom: 20,
+        attribution: '© OpenStreetMap contributors © CARTO',
+    },
+    osm: {
+        label: 'OpenStreetMap',
+        url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+        subdomains: null,
+        maxZoom: 19,
+        attribution: '© OpenStreetMap contributors',
+    },
+};
+
+let basemap = 'dark';
+const tileCache = new Map();     // "style/z/x/y" -> HTMLImageElement | 'failed'
+let tilesInFlight = 0;
+const MAX_IN_FLIGHT = 8;         // stay polite to the tile servers
+const TILE_PX = 256;
+
+function tileUrl(spec, z, x, y) {
+    const retina = (window.devicePixelRatio || 1) > 1.5 && spec.subdomains ? '@2x' : '';
+    return spec.url
+        .replace('{s}', spec.subdomains
+            ? spec.subdomains[(x + y) % spec.subdomains.length] : '')
+        .replace('{z}', z).replace('{x}', x).replace('{y}', y).replace('{r}', retina);
 }
 
-const tx = x => (x - camera.x) * camera.zoom / aspectScale() + cv.width / 2;
-const ty = y => cv.height / 2 - (y - camera.y) * camera.zoom;
-const inv = (px, py) => [
-    (px - cv.width / 2) * aspectScale() / camera.zoom + camera.x,
-    (cv.height / 2 - py) / camera.zoom + camera.y,
-];
+function getTile(spec, z, x, y) {
+    const key = `${basemap}/${z}/${x}/${y}`;
+    const hit = tileCache.get(key);
+    if (hit) return hit === 'failed' ? null : hit;
+    if (tilesInFlight >= MAX_IN_FLIGHT) return null;
+
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    tilesInFlight++;
+    img.onload = () => { tilesInFlight--; scheduleDraw(); };
+    img.onerror = () => { tilesInFlight--; tileCache.set(key, 'failed'); };
+    img.src = tileUrl(spec, z, x, y);
+    tileCache.set(key, img);
+
+    // An unbounded cache would grow without limit while panning a city.
+    if (tileCache.size > 900) {
+        let dropped = 0;
+        for (const k of tileCache.keys()) {
+            tileCache.delete(k);
+            if (++dropped > 300) break;
+        }
+    }
+    return null;
+}
+
+/// Tile zoom whose natural pixel size is closest to one screen pixel.
+function tileZoomFor(spec) {
+    const z = Math.round(Math.log2(camera.zoom / TILE_PX));
+    return Math.max(0, Math.min(spec.maxZoom, z));
+}
+
+function drawBasemap() {
+    const spec = BASEMAPS[basemap];
+    if (!spec || !geographic || !graph.nodes.length) return;
+
+    const z = tileZoomFor(spec);
+    const n = 2 ** z;
+    const size = camera.zoom / n;            // one tile, in screen pixels
+    if (!(size > 0)) return;
+
+    const [wx0, wy0] = inv(0, 0);
+    const [wx1, wy1] = inv(cv.width, cv.height);
+    const x0 = Math.floor(Math.min(wx0, wx1) * n), x1 = Math.ceil(Math.max(wx0, wx1) * n);
+    const y0 = Math.floor(Math.min(wy0, wy1) * n), y1 = Math.ceil(Math.max(wy0, wy1) * n);
+    if ((x1 - x0) * (y1 - y0) > 400) return;  // absurd viewport; skip rather than thrash
+
+    ctx.save();
+    ctx.imageSmoothingEnabled = true;
+    for (let ty_ = y0; ty_ < y1; ty_++) {
+        if (ty_ < 0 || ty_ >= n) continue;
+        for (let tx_ = x0; tx_ < x1; tx_++) {
+            const wrapped = ((tx_ % n) + n) % n;   // wrap across the date line
+            const img = getTile(spec, z, wrapped, ty_);
+            const sx = tx(tx_ / n);
+            const sy = ty(ty_ / n);
+            if (img && img.complete && img.naturalWidth) {
+                // +1 closes the hairline seams that rounding leaves between tiles.
+                ctx.drawImage(img, sx, sy, size + 1, size + 1);
+            } else {
+                const parent = coarserTile(spec, z, wrapped, ty_);
+                if (parent) {
+                    // Show a stretched lower-zoom tile until the sharp one lands,
+                    // so panning never flashes empty background.
+                    const { img: pimg, sxf, syf, sf } = parent;
+                    ctx.drawImage(pimg, sxf * TILE_PX, syf * TILE_PX, sf * TILE_PX,
+                                  sf * TILE_PX, sx, sy, size + 1, size + 1);
+                }
+            }
+        }
+    }
+    ctx.restore();
+}
+
+/// Nearest already-loaded ancestor tile, plus the sub-rectangle of it that
+/// covers the tile we actually wanted.
+function coarserTile(spec, z, x, y) {
+    for (let up = 1; up <= 4 && z - up >= 0; up++) {
+        const f = 2 ** up;
+        const px_ = Math.floor(x / f), py_ = Math.floor(y / f);
+        const cached = tileCache.get(`${basemap}/${z - up}/${px_}/${py_}`);
+        if (cached && cached !== 'failed' && cached.complete && cached.naturalWidth) {
+            return {
+                img: cached,
+                sxf: (x - px_ * f) / f,
+                syf: (y - py_ * f) / f,
+                sf: 1 / f,
+            };
+        }
+    }
+    return null;
+}
+
+/// Keep the camera inside a range the tile pyramid can serve. Without this,
+/// scrolling far enough leaves nothing but stretched low-zoom tiles, or
+/// collapses the graph to a point.
+function clampZoom(z) {
+    if (!geographic) return Math.max(1e-4, Math.min(1e9, z));
+    const spec = BASEMAPS[basemap];
+    const maxLevel = (spec ? spec.maxZoom : 22) + 1.5;
+    return Math.max(TILE_PX * 2 ** 1, Math.min(TILE_PX * 2 ** maxLevel, z));
+}
+
+let drawPending = false;
+function scheduleDraw() {
+    if (drawPending) return;
+    drawPending = true;
+    // setTimeout, not rAF: tiles keep arriving while the page is hidden.
+    setTimeout(() => { drawPending = false; draw(); }, 16);
+}
+
+function setBasemap(name) {
+    basemap = name;
+    const picker = $('baseSel');
+    if (picker && picker.value !== name) picker.value = name;
+    const spec = BASEMAPS[name];
+    const el = $('attribution');
+    if (el) {
+        el.textContent = spec ? spec.attribution : '';
+        el.style.display = spec ? '' : 'none';
+    }
+    draw();
+}
 
 /* Canvas sizing.
    fitCamera divides by the canvas dimensions, so fitting against a canvas that
@@ -155,22 +372,32 @@ function draw() {
     ctx.clearRect(0, 0, cv.width, cv.height);
     if (!graph.nodes.length) return;
 
+    drawBasemap();
+    const onMap = BASEMAPS[basemap] !== null && geographic;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const big = graph.nodes.length > 12000;
-    const r = px(camera.zoom * (geographic ? 0.0004 : 0.06), big ? 1.0 : 1.6, 5) * dpr;
-    const pathWidth = px(camera.zoom * (geographic ? 0.0006 : 0.06), 2, 6) * dpr;
+    // Since the camera works in Mercator units, camera.zoom is now in the
+    // millions rather than the tens, so sizes derive from the slippy zoom
+    // level instead. Reusing the old factor drew every one of 47k nodes at the
+    // 5px clamp and buried the map under a solid blob.
+    const mapZoom = geographic ? Math.log2(camera.zoom / TILE_PX) : 0;
+    const r = geographic
+        ? px((mapZoom - 9) * 0.55, 0.7, 5) * dpr
+        : px(camera.zoom * 0.06, big ? 1.0 : 1.6, 5) * dpr;
+    const pathWidth = geographic
+        ? px((mapZoom - 9) * 0.8, 2, 7) * dpr
+        : px(camera.zoom * 0.06, 2, 6) * dpr;
 
     // Base edges. On a large graph these are drawn as one path so the whole
     // network is a single stroke call rather than 120k of them.
-    ctx.strokeStyle = 'rgba(120,150,210,0.16)';
-    ctx.lineWidth = (big ? 0.5 : 1) * dpr;
+    ctx.strokeStyle = onMap ? 'rgba(125,180,255,0.55)' : 'rgba(120,150,210,0.16)';
+    ctx.lineWidth = (onMap ? 0.6 : big ? 0.5 : 1) * dpr;
     ctx.beginPath();
     for (const e of graph.edges) {
         if (e.u > e.v) continue;                 // one line per undirected pair
-        const a = graph.nodes[e.u], b = graph.nodes[e.v];
-        if (!a || !b) continue;
-        ctx.moveTo(tx(a.x), ty(a.y));
-        ctx.lineTo(tx(b.x), ty(b.y));
+        if (!graph.nodes[e.u] || !graph.nodes[e.v]) continue;
+        ctx.moveTo(nx(e.u), ny(e.u));
+        ctx.lineTo(nx(e.v), ny(e.v));
     }
     ctx.stroke();
 
@@ -181,28 +408,37 @@ function draw() {
             if (band.hull.length < 3) return;
             ctx.fillStyle = shades[Math.min(i, shades.length - 1)];
             ctx.beginPath();
-            band.hull.forEach(([x, y], j) => (j ? ctx.lineTo(tx(x), ty(y)) : ctx.moveTo(tx(x), ty(y))));
+            band.hull.forEach(([x, y], j) => {
+                const sx = tx(geographic ? mercX(x) : x);
+                const sy = ty(geographic ? mercY(y) : y);
+                j ? ctx.lineTo(sx, sy) : ctx.moveTo(sx, sy);
+            });
             ctx.closePath();
             ctx.fill();
         });
     }
 
     // Nodes, tinted by centrality when a heat map is loaded.
-    if (!big || camera.zoom > 40) {
+    // Node dots only once they are actually distinguishable. The old
+    // threshold was in the pre-Mercator zoom units and now always passes, so
+    // 47k dots covered the map they were supposed to sit on. Below this the
+    // edges carry the network and the basemap carries the context.
+    const showNodes = heat !== null || (geographic ? mapZoom >= 15 : !big || camera.zoom > 40);
+    if (showNodes) {
         for (let i = 0; i < graph.nodes.length; i++) {
-            const n = graph.nodes[i];
-            const px = tx(n.x), py = ty(n.y);
-            if (px < -20 || py < -20 || px > cv.width + 20 || py > cv.height + 20) continue;
+            if (!graph.nodes[i]) continue;
+            const px_ = nx(i), py_ = ny(i);
+            if (px_ < -20 || py_ < -20 || px_ > cv.width + 20 || py_ > cv.height + 20) continue;
             if (heat) {
                 const t = heat[i];
                 ctx.fillStyle = t > 0.01
                     ? `hsl(${(1 - t) * 210}, 90%, ${35 + t * 30}%)`
                     : 'rgba(120,150,210,0.35)';
             } else {
-                ctx.fillStyle = 'rgba(160,185,225,0.55)';
+                ctx.fillStyle = onMap ? 'rgba(140,180,255,0.45)' : 'rgba(160,185,225,0.55)';
             }
             ctx.beginPath();
-            ctx.arc(px, py, heat ? r * (0.8 + heat[i] * 2.2) : r, 0, 6.2832);
+            ctx.arc(px_, py_, heat ? r * (0.8 + heat[i] * 2.2) : r, 0, 6.2832);
             ctx.fill();
         }
     }
@@ -215,10 +451,9 @@ function draw() {
         ctx.beginPath();
         for (const key of closedEdges) {
             const [u, v] = key.split(':').map(Number);
-            const a = graph.nodes[u], b = graph.nodes[v];
-            if (!a || !b) continue;
-            ctx.moveTo(tx(a.x), ty(a.y));
-            ctx.lineTo(tx(b.x), ty(b.y));
+            if (!graph.nodes[u] || !graph.nodes[v]) continue;
+            ctx.moveTo(nx(u), ny(u));
+            ctx.lineTo(nx(v), ny(v));
         }
         ctx.stroke();
     }
@@ -228,12 +463,11 @@ function draw() {
     const path = done && finalPath.length ? finalPath : currentPath();
 
     if (state.explored.size) {
-        ctx.fillStyle = 'rgba(251,146,60,0.65)';
+        ctx.fillStyle = onMap ? 'rgba(251,146,60,0.85)' : 'rgba(251,146,60,0.65)';
         for (const id of state.explored) {
-            const n = graph.nodes[id];
-            if (!n) continue;
+            if (!graph.nodes[id]) continue;
             ctx.beginPath();
-            ctx.arc(tx(n.x), ty(n.y), r * 1.4, 0, 6.2832);
+            ctx.arc(nx(id), ny(id), r * 1.4, 0, 6.2832);
             ctx.fill();
         }
     }
@@ -242,10 +476,9 @@ function draw() {
         ctx.shadowColor = 'rgba(217,70,239,0.9)';
         ctx.shadowBlur = 8;
         for (const id of state.frontier) {
-            const n = graph.nodes[id];
-            if (!n) continue;
+            if (!graph.nodes[id]) continue;
             ctx.beginPath();
-            ctx.arc(tx(n.x), ty(n.y), r * 1.9, 0, 6.2832);
+            ctx.arc(nx(id), ny(id), r * 1.9, 0, 6.2832);
             ctx.fill();
         }
         ctx.shadowBlur = 0;
@@ -257,9 +490,8 @@ function draw() {
         ctx.lineWidth = pathWidth;
         ctx.beginPath();
         path.forEach((id, i) => {
-            const n = graph.nodes[id];
-            if (!n) return;
-            i ? ctx.lineTo(tx(n.x), ty(n.y)) : ctx.moveTo(tx(n.x), ty(n.y));
+            if (!graph.nodes[id]) return;
+            i ? ctx.lineTo(nx(id), ny(id)) : ctx.moveTo(nx(id), ny(id));
         });
         ctx.stroke();
         ctx.shadowBlur = 0;
@@ -270,23 +502,21 @@ function draw() {
         ctx.strokeStyle = '#f87171';
         ctx.lineWidth = 2 * dpr;
         for (const id of markedNodes) {
-            const n = graph.nodes[id];
-            if (!n) continue;
+            if (!graph.nodes[id]) continue;
             ctx.beginPath();
-            ctx.arc(tx(n.x), ty(n.y), r * 3, 0, 6.2832);
+            ctx.arc(nx(id), ny(id), r * 3, 0, 6.2832);
             ctx.stroke();
         }
     }
 
     // Endpoints on top.
     for (const [id, color] of [[srcNode(), '#4ea8ff'], [dstNode(), '#22c55e']]) {
-        const n = graph.nodes[id];
-        if (!n) continue;
+        if (!graph.nodes[id]) continue;
         ctx.fillStyle = color;
         ctx.strokeStyle = '#fff';
         ctx.lineWidth = 2 * dpr;
         ctx.beginPath();
-        ctx.arc(tx(n.x), ty(n.y), px(r * 2.2, 5 * dpr, 11 * dpr), 0, 6.2832);
+        ctx.arc(nx(id), ny(id), px(r * 2.2, 5 * dpr, 11 * dpr), 0, 6.2832);
         ctx.fill();
         ctx.stroke();
     }
@@ -399,6 +629,9 @@ async function loadSelected() {
             log(`${entry.label}: ${r.nodes.toLocaleString()} nodes, ${r.edges.toLocaleString()} edges`);
         }
 
+        $('baseInfo').textContent = geographic
+            ? 'Real map tiles under the graph. Scroll to zoom, drag to pan.'
+            : 'This network has no real-world coordinates, so no basemap applies.';
         $('srcIn').value = 0;
         $('dstIn').value = Math.min(graph.nodes.length - 1, Math.floor(graph.nodes.length * 0.7));
         $('srcIn').max = $('dstIn').max = graph.nodes.length - 1;
@@ -422,6 +655,7 @@ function loadGeometry() {
     const byId = new Array(graph.nodes.length);
     for (const n of graph.nodes) byId[n.id] = n;
     graph.nodes = byId;
+    projectAll();
 }
 
 function clearOverlays() {
@@ -644,8 +878,8 @@ window.addEventListener('mousemove', e => {
     const dx = e.clientX - dragStart.x, dy = e.clientY - dragStart.y;
     if (Math.abs(dx) + Math.abs(dy) > 3) dragStart.moved = true;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    camera.x = dragStart.cx - dx * dpr * aspectScale() / camera.zoom;
-    camera.y = dragStart.cy + dy * dpr / camera.zoom;
+    camera.x = dragStart.cx - dx * dpr / camera.zoom;
+    camera.y = dragStart.cy - yDir() * dy * dpr / camera.zoom;
     requestAnimationFrame(draw);
 });
 window.addEventListener('mouseup', e => {
@@ -661,17 +895,20 @@ function snapEndpoint(e, field) {
     const rect = cv.getBoundingClientRect();
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const [wx, wy] = inv((e.clientX - rect.left) * dpr, (e.clientY - rect.top) * dpr);
+    // The engine indexes the graph's own coordinates, so undo the projection.
+    const gx = geographic ? invMercX(wx) : wx;
+    const gy = geographic ? invMercY(wy) : wy;
     let node;
     if (stations.length) {
-        // Multi-modal/rail graphs have no k-d tree; scan the station list.
+        // Multi-modal/rail graphs have no k-d tree; scan in world space.
         let best = Infinity;
-        for (const n of graph.nodes) {
-            if (!n) continue;
-            const d = (n.x - wx) ** 2 + (n.y - wy) ** 2;
-            if (d < best) { best = d; node = n.id; }
+        for (let i = 0; i < world.x.length; i++) {
+            if (!graph.nodes[i]) continue;
+            const d = (world.x[i] - wx) ** 2 + (world.y[i] - wy) ** 2;
+            if (d < best) { best = d; node = i; }
         }
     } else {
-        const r = call('agss_nearest', ['number', 'number'], [wx, wy]);
+        const r = call('agss_nearest', ['number', 'number'], [gx, gy]);
         if (!r.ok) return;
         node = r.node;
     }
@@ -684,7 +921,7 @@ cv.addEventListener('wheel', e => {
     const rect = cv.getBoundingClientRect();
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const [bx, by] = inv((e.clientX - rect.left) * dpr, (e.clientY - rect.top) * dpr);
-    camera.zoom *= Math.exp(-e.deltaY * 0.0015);
+    camera.zoom = clampZoom(camera.zoom * Math.exp(-e.deltaY * 0.0015));
     const [ax, ay] = inv((e.clientX - rect.left) * dpr, (e.clientY - rect.top) * dpr);
     camera.x += bx - ax;
     camera.y += by - ay;
@@ -719,6 +956,7 @@ window.addEventListener('resize', resize);
     $('mapSel').innerHTML = CATALOG.map(c => `<option value="${c.id}">${c.label}</option>`).join('');
     $('mapSel').value = 'Delhi_NCR';
     $('mapSel').onchange = loadSelected;
+    $('baseSel').onchange = () => setBasemap($('baseSel').value);
 
     $('runBtn').onclick = runSearch;
     $('playBtn').onclick = play;
@@ -733,6 +971,7 @@ window.addEventListener('resize', resize);
     $('clearBtn').onclick = () => { clearOverlays(); draw(); };
     $('speed').oninput = () => { if (timer) { pause(); play(); } };
 
+    setBasemap($('baseSel').value);
     $('boot').classList.add('hidden');
     // The pane can still be laying out; keep trying briefly rather than
     // silently leaving the canvas at its 300x150 default. setTimeout rather

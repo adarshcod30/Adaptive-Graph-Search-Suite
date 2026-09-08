@@ -75,6 +75,7 @@ shortest-path query cannot:
 | **Geodesy done right** | Haversine and equirectangular metrics; admissible A\* on lat/lon |
 | **k-d tree** | O(log V) nearest-node snapping for coordinate queries |
 | **Runs in the browser** | The whole engine compiled to WebAssembly, 350 KB, no backend |
+| **Real map basemap** | Web Mercator tiles under the graph — watch a search expand over actual streets |
 
 ## Tech stack
 
@@ -86,6 +87,7 @@ shortest-path query cannot:
 | CI | GitHub Actions — gcc/clang/MSVC on Linux, macOS, Windows; ASan + UBSan; differential correctness; data reproducibility |
 | Data | OpenStreetMap via Overpass API; Python 3.9+ import scripts (stdlib only) |
 | Browser | Emscripten → WebAssembly; string-in/string-out JSON boundary |
+| Basemap | Custom Web Mercator tile layer on the same canvas; CARTO / OpenStreetMap raster tiles |
 | UI | Vanilla JS, HTML5 Canvas, CSS glassmorphism — no framework, no bundler |
 | Dev server | Python `http.server`, stdlib only (optional; the WASM build needs none) |
 
@@ -455,7 +457,7 @@ again reads as an algorithm problem.
 │   └── cities/                 OSM imports (gitignored, fetched on demand)
 ├── web/                        Browser app (WebAssembly)
 │   ├── index.html              Shell
-│   ├── app.js                  Delta-trace replay, rendering, interaction
+│   ├── app.js                  Mercator projection, tile layer, trace replay, rendering
 │   └── engine/                 Generated .wasm + glue (gitignored)
 ├── ui/                         Legacy server-backed visualiser
 └── server.py                   Development bridge (optional)
@@ -495,6 +497,42 @@ cmake --build build/wasm --parallel && python3 -m http.server 8080
 ```
 
 Then open <http://127.0.0.1:8080/web/>.
+
+### The basemap
+
+Geographic networks render over real map tiles, so the search is visibly
+crawling actual streets rather than an abstract diagram. Four options in the
+**Basemap** selector: dark, light, standard OpenStreetMap, or none.
+
+It is a small slippy-map layer drawn straight onto the same canvas — no
+mapping library. That is possible because the camera already works in **Web
+Mercator**, the projection every raster tile server publishes in, so a tile is
+just an image placed at a known world rectangle. Sharing one projection keeps
+the map and the graph aligned *by construction* rather than by two libraries
+agreeing, and it keeps the page dependency-free, which is the reason it can
+ship as a single static file.
+
+Some details that matter in practice:
+
+- **Node coordinates are projected once at load** into parallel `Float64Array`s.
+  Drawing 47,828 nodes then costs two array reads each, instead of a `log`/`tan`
+  per node per frame.
+- **Sizes derive from the slippy zoom level**, not from `camera.zoom`. Moving to
+  Mercator changed that number from tens to millions, and the old factor drew
+  every node at its clamp — 47k dots burying the map they were meant to sit on.
+- **Node dots appear only from zoom 15**, below which the edges carry the
+  network and the basemap carries the context.
+- **A coarser cached tile is stretched in** while a sharp one loads, so panning
+  never flashes empty background.
+- **The camera is clamped to the tile pyramid**, so scrolling cannot leave the
+  available zoom range.
+
+Planar synthetic graphs have no real-world coordinates, so no basemap applies
+and the selector says so.
+
+Tiles come from CARTO and OpenStreetMap; attribution is displayed on the map,
+as both providers require. The demo is deliberately light on tile traffic — at
+most 8 requests in flight and a bounded cache.
 
 ### Why WebAssembly replaced the Python bridge rather than fixing it
 
@@ -569,6 +607,12 @@ Road and transit data is derived from **OpenStreetMap**, © OpenStreetMap
 contributors, available under the [Open Database Licence
 (ODbL) 1.0](https://opendatacommons.org/licenses/odbl/). Any redistribution of the
 data or of works derived from it must preserve that attribution and licence.
+
+Basemap tiles are served by [CARTO](https://carto.com/basemaps/) and the
+[OpenStreetMap tile servers](https://operations.osmfoundation.org/policies/tiles/),
+© OpenStreetMap contributors © CARTO. Attribution is shown in the map view. If
+you fork this and expect real traffic, point the tile URLs at your own provider
+rather than leaning on theirs.
 
 ## Contact
 

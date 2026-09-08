@@ -21,6 +21,17 @@
     </div>
 
     <div class="group">
+      <label for="baseSel">Basemap</label>
+      <select id="baseSel">
+        <option value="dark">Dark map</option>
+        <option value="light">Light map</option>
+        <option value="osm">OpenStreetMap</option>
+        <option value="none">No map (graph only)</option>
+      </select>
+      <div class="hint" id="baseInfo">Real map tiles under the graph. Geographic networks only.</div>
+    </div>
+
+    <div class="group">
       <label for="algSel">Algorithm</label>
       <select id="algSel"></select>
       <div class="hint" id="algInfo">&mdash;</div>
@@ -99,6 +110,8 @@
     </div>
 
     <div class="overlay" id="log"></div>
+
+    <div id="attribution"></div>
 
     <div id="boot">
       <div>

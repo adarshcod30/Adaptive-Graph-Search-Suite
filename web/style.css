@@ -132,3 +132,18 @@ td.dim { color: var(--muted); }
     #panel { max-height: 46vh; border-right: none; border-bottom: 1px solid var(--border); }
     #metrics, #log { display: none; }
 }
+
+/* Tile providers require visible attribution; keep it unobtrusive but present
+   and always on top of the canvas. */
+#attribution {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 3px 8px;
+    font-size: 10px;
+    color: #cbd5e8;
+    background: rgba(7, 11, 20, 0.72);
+    border-top-left-radius: 6px;
+    pointer-events: none;
+    z-index: 5;
+}
