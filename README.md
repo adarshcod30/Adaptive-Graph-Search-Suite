@@ -426,7 +426,9 @@ carries no timetables — Rajiv Chowk to Millennium City Centre comes out at
 
 - A C++20 compiler (GCC 10+, Clang 12+, MSVC 19.29+)
 - CMake 3.16+ *or* GNU Make
-- Python 3.9+ (only for refreshing data)
+- Emscripten 3.1+, only if you want to build the browser version yourself
+- Python 3.9+ — for the bindings, for refreshing the data, and to serve
+  the browser build locally (a `.wasm` module will not load over `file://`)
 
 ### Build and run
 
