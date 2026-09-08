@@ -7,7 +7,7 @@
     --muted: #8fa2c4;
     --accent: #4ea8ff;
     --explored: #fb923c;
-    --frontier: #d946ef;
+    --frontier: #e879f9;   /* matches the canvas fill; brightened when the dots shrank */
     --path: #22c55e;
     --danger: #f87171;
     --ok: #34d399;

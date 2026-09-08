@@ -392,6 +392,79 @@ function scheduleDraw() {
     setTimeout(() => { drawPending = false; draw(); }, 16);
 }
 
+/* One draw per frame, however many events ask for one.
+ *
+ * A trackpad emits wheel and pointer events far faster than the display
+ * refreshes, and every handler used to call requestAnimationFrame(draw)
+ * directly. Those do not coalesce: each queues its own callback, so several
+ * full redraws -- 123k nodes and 316k edges apiece on Jaipur -- piled into a
+ * single frame and the map lagged behind the cursor. */
+let framePending = false;
+function requestDraw() {
+    if (framePending) return;
+    framePending = true;
+    requestAnimationFrame(() => { framePending = false; draw(); });
+}
+
+/* Level of detail while a gesture is in flight.
+ *
+ * Even one full redraw per frame is more than a half-million-node network can
+ * do in 16 ms. During a pan or zoom the map is moving and fine detail is not
+ * readable anyway, so draw() thins the graph while `gestureUntil` is in the
+ * future and paints one full-quality frame once the gesture settles. */
+let gestureUntil = 0, settleTimer = null;
+function gesture() {
+    gestureUntil = performance.now() + 110;
+    requestDraw();
+    if (settleTimer) clearTimeout(settleTimer);
+    settleTimer = setTimeout(() => { settleTimer = null; requestDraw(); }, 150);
+}
+
+/* Zoom eases toward a target rather than jumping to it.
+ *
+ * The ease is multiplicative because zoom is geometric: easing the *ratio*
+ * makes a step feel the same at street level and at country level, which a
+ * linear ease does not. The world point under the cursor is captured once and
+ * re-pinned every frame, so the map grows out of the pointer instead of
+ * drifting away from it. */
+const zoomAnim = { target: null, wx: 0, wy: 0, sx: 0, sy: 0, raf: 0 };
+
+function zoomBy(factor, sx, sy) {
+    zoomAnim.target = clampZoom((zoomAnim.target ?? camera.zoom) * factor);
+    zoomAnim.sx = sx;
+    zoomAnim.sy = sy;
+    [zoomAnim.wx, zoomAnim.wy] = inv(sx, sy);
+    if (!zoomAnim.raf) zoomAnim.raf = requestAnimationFrame(stepZoom);
+}
+
+function stepZoom() {
+    zoomAnim.raf = 0;
+    if (zoomAnim.target === null) return;
+    const ratio = zoomAnim.target / camera.zoom;
+    if (Math.abs(Math.log(ratio)) < 0.0015) {
+        camera.zoom = zoomAnim.target;
+        zoomAnim.target = null;
+    } else {
+        camera.zoom = clampZoom(camera.zoom * Math.pow(ratio, 0.3));
+    }
+    const [wx, wy] = inv(zoomAnim.sx, zoomAnim.sy);
+    camera.x += zoomAnim.wx - wx;
+    camera.y += zoomAnim.wy - wy;
+    gesture();
+    if (zoomAnim.target !== null) zoomAnim.raf = requestAnimationFrame(stepZoom);
+}
+
+/** Device pixels per CSS pixel, capped so a 3x phone screen does not triple
+    the fill rate for detail nobody can see. */
+const DPR = () => Math.min(window.devicePixelRatio || 1, 2);
+
+/** Pointer position in the canvas' device-pixel coordinates. */
+function pointerPx(e) {
+    const rect = cv.getBoundingClientRect();
+    const d = DPR();
+    return [(e.clientX - rect.left) * d, (e.clientY - rect.top) * d];
+}
+
 function setBasemap(name) {
     basemap = name;
     const picker = $('baseSel');
@@ -465,18 +538,58 @@ function draw() {
     // 5px clamp and buried the map under a solid blob.
     const mapZoom = geographic ? Math.log2(camera.zoom / TILE_PX) : 0;
     const r = geographic
-        ? px((mapZoom - 9) * 0.55, 0.7, 5) * dpr
-        : px(camera.zoom * 0.06, big ? 1.0 : 1.6, 5) * dpr;
+        ? px((mapZoom - 9) * 0.45, 0.6, 3.2) * dpr
+        : px(camera.zoom * 0.06, big ? 1.0 : 1.6, 4) * dpr;
     const pathWidth = geographic
-        ? px((mapZoom - 9) * 0.8, 2, 7) * dpr
+        ? px((mapZoom - 9) * 0.7, 1.8, 6) * dpr
         : px(camera.zoom * 0.06, 2, 6) * dpr;
+
+    // Search dots get their own scale instead of a multiple of the base node
+    // radius. Tied together, a frontier dot reached a 10 px radius with an
+    // 8 px glow at city zoom; a few thousand of those bury the map they are
+    // drawn on. Small enough to read as texture, large enough to stay visible.
+    const traceR = geographic
+        ? px(0.8 + (mapZoom - 11) * 0.2, 0.7, 2.4) * dpr
+        : px(camera.zoom * 0.03, 0.9, 3) * dpr;
+
+    // While a gesture is in flight the map is moving and fine detail is not
+    // readable, so thin it out and let the settle frame restore full quality.
+    const coarse = performance.now() < gestureUntil;
+    const TAU = 6.2832;
+
+    /** Thousands of separate fill() calls dominate the frame, so every dot in
+        a set goes into one path and one fill.
+
+        Squares looked like the cheaper primitive here -- four segments against
+        a tessellated curve -- but measuring says otherwise: rect() was 113 ms
+        against arc()'s 84 ms on a pathological 123k-dot frame, because a
+        sub-pixel arc degenerates to very few segments while every rect opens a
+        fresh subpath. Arcs it is. */
+    const dots = (ids, radius, limit) => {
+        const stride = coarse && ids.size > limit ? Math.ceil(ids.size / limit) : 1;
+        let i = 0;
+        ctx.beginPath();
+        for (const id of ids) {
+            if (stride > 1 && i++ % stride) continue;
+            if (id >= graph.nodeCount) continue;
+            const x = nx(id), y = ny(id);
+            if (x < -8 || y < -8 || x > cv.width + 8 || y > cv.height + 8) continue;
+            ctx.moveTo(x + radius, y);
+            ctx.arc(x, y, radius, 0, TAU);
+        }
+        ctx.fill();
+    };
 
     // Base edges. On a large graph these are drawn as one path so the whole
     // network is a single stroke call rather than 120k of them.
     ctx.strokeStyle = onMap ? 'rgba(125,180,255,0.55)' : 'rgba(120,150,210,0.16)';
     ctx.lineWidth = (onMap ? 0.6 : big ? 0.5 : 1) * dpr;
+    // Half a million edges will not stroke in 16 ms. Skipping some of them
+    // mid-gesture keeps the shape of the network legible while it moves.
+    const edgeStride = coarse && graph.edgeCount > 200000 ? 3
+        : coarse && graph.edgeCount > 80000 ? 2 : 1;
     ctx.beginPath();
-    for (let i = 0; i < graph.edgeCount; i++) {
+    for (let i = 0; i < graph.edgeCount; i += edgeStride) {
         const u = graph.eu[i], v = graph.ev[i];
         if (u > v) continue;                     // one line per undirected pair
         ctx.moveTo(nx(u), ny(u));
@@ -507,20 +620,29 @@ function draw() {
     // 47k dots covered the map they were supposed to sit on. Below this the
     // edges carry the network and the basemap carries the context.
     const showNodes = heat !== null || (geographic ? mapZoom >= 15 : !big || camera.zoom > 40);
-    if (showNodes) {
-        for (let i = 0; i < graph.nodeCount; i++) {
-            const px_ = nx(i), py_ = ny(i);
-            if (px_ < -20 || py_ < -20 || px_ > cv.width + 20 || py_ > cv.height + 20) continue;
-            if (heat) {
+    if (showNodes && !(coarse && !heat)) {
+        if (heat) {
+            // Each dot has its own colour, so these cannot share a path.
+            for (let i = 0; i < graph.nodeCount; i++) {
+                const px_ = nx(i), py_ = ny(i);
+                if (px_ < -20 || py_ < -20 || px_ > cv.width + 20 || py_ > cv.height + 20) continue;
                 const t = heat[i];
                 ctx.fillStyle = t > 0.01
                     ? `hsl(${(1 - t) * 210}, 90%, ${35 + t * 30}%)`
                     : 'rgba(120,150,210,0.35)';
-            } else {
-                ctx.fillStyle = onMap ? 'rgba(140,180,255,0.45)' : 'rgba(160,185,225,0.55)';
+                ctx.beginPath();
+                ctx.arc(px_, py_, r * (0.8 + t * 2.2), 0, 6.2832);
+                ctx.fill();
             }
+        } else {
+            ctx.fillStyle = onMap ? 'rgba(140,180,255,0.42)' : 'rgba(160,185,225,0.5)';
             ctx.beginPath();
-            ctx.arc(px_, py_, heat ? r * (0.8 + heat[i] * 2.2) : r, 0, 6.2832);
+            for (let i = 0; i < graph.nodeCount; i++) {
+                const px_ = nx(i), py_ = ny(i);
+                if (px_ < -20 || py_ < -20 || px_ > cv.width + 20 || py_ > cv.height + 20) continue;
+                ctx.moveTo(px_ + r, py_);
+                ctx.arc(px_, py_, r, 0, 6.2832);
+            }
             ctx.fill();
         }
     }
@@ -545,25 +667,18 @@ function draw() {
     const path = done && finalPath.length ? finalPath : currentPath();
 
     if (state.explored.size) {
-        ctx.fillStyle = onMap ? 'rgba(251,146,60,0.85)' : 'rgba(251,146,60,0.65)';
-        for (const id of state.explored) {
-            if (id >= graph.nodeCount) continue;
-            ctx.beginPath();
-            ctx.arc(nx(id), ny(id), r * 1.4, 0, 6.2832);
-            ctx.fill();
-        }
+        ctx.fillStyle = onMap ? 'rgba(251,146,60,0.72)' : 'rgba(251,146,60,0.6)';
+        dots(state.explored, traceR, 22000);
     }
     if (state.frontier.size) {
-        ctx.fillStyle = 'rgba(217,70,239,0.9)';
-        ctx.shadowColor = 'rgba(217,70,239,0.9)';
-        ctx.shadowBlur = 8;
-        for (const id of state.frontier) {
-            if (id >= graph.nodeCount) continue;
-            ctx.beginPath();
-            ctx.arc(nx(id), ny(id), r * 1.9, 0, 6.2832);
-            ctx.fill();
-        }
-        ctx.shadowBlur = 0;
+        // The frontier used to set shadowBlur per dot, which is a separate
+        // blur pass for each of several thousand arcs and the single most
+        // expensive thing in the frame. A wide translucent halo underneath
+        // reads the same and costs one extra fill.
+        ctx.fillStyle = 'rgba(217,70,239,0.16)';
+        dots(state.frontier, traceR * 2.6, 8000);
+        ctx.fillStyle = 'rgba(232,121,249,0.95)';
+        dots(state.frontier, traceR * 1.3, 8000);
     }
     if (path.length > 1) {
         ctx.strokeStyle = '#22c55e';
@@ -641,7 +756,7 @@ function play() {
     timer = setInterval(() => {
         seekTo(Math.min(events.length, eventIdx + stepSize));
         if (eventIdx >= events.length) pause();
-        requestAnimationFrame(draw);
+        requestDraw();
     }, 1000 / Number($('speed').value));
 }
 function pause() { if (timer) { clearInterval(timer); timer = null; } }
@@ -1195,35 +1310,108 @@ function closeWorstRoad() {
 
 /* -------------------------------------------------------------- interaction */
 
+/* Pointer events rather than mouse events: one code path covers a mouse, a
+   trackpad, a pen and a touchscreen, and pointer capture keeps a drag alive
+   when the cursor leaves the canvas. */
 let dragging = false, dragStart = null;
+const activePointers = new Map();   // pointerId -> {x, y}
+let pinch = null;                   // {dist, cx, cy} while two fingers are down
 
-cv.addEventListener('mousedown', e => {
-    if (e.button !== 0) return;
+cv.style.cursor = 'grab';
+cv.style.touchAction = 'none';      // we handle pan and pinch ourselves
+
+cv.addEventListener('pointerdown', e => {
+    activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+
+    if (activePointers.size === 2) {
+        // Second finger down: hand over to pinch and cancel the pan, so the
+        // map does not lurch as the gesture changes character.
+        dragging = false;
+        cv.style.cursor = 'grab';
+        pinch = pinchState();
+        return;
+    }
+    if (e.button !== 0 || activePointers.size > 2) return;
+
+    // Capture keeps the drag alive when the cursor leaves the canvas, but it
+    // throws for a pointer that is no longer active -- released between
+    // dispatch and handling, or synthesised by a test. Losing capture only
+    // costs us drags that wander off-canvas; it must not cost us the drag.
+    try { cv.setPointerCapture(e.pointerId); } catch { /* capture is optional */ }
     dragging = true;
+    cv.style.cursor = 'grabbing';
     dragStart = { x: e.clientX, y: e.clientY, cx: camera.x, cy: camera.y, moved: false };
 });
-window.addEventListener('mousemove', e => {
+
+function pinchState() {
+    const [a, b] = [...activePointers.values()];
+    return {
+        dist: Math.hypot(a.x - b.x, a.y - b.y) || 1,
+        cx: (a.x + b.x) / 2,
+        cy: (a.y + b.y) / 2,
+    };
+}
+
+cv.addEventListener('pointermove', e => {
+    if (activePointers.has(e.pointerId)) {
+        activePointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    }
+
+    if (pinch && activePointers.size === 2) {
+        const now = pinchState();
+        const rect = cv.getBoundingClientRect();
+        const d = DPR();
+        // Pinch is direct manipulation, so it drives the camera outright
+        // rather than through the wheel's easing -- an eased pinch feels
+        // detached from the fingers.
+        const [wx, wy] = inv((now.cx - rect.left) * d, (now.cy - rect.top) * d);
+        camera.zoom = clampZoom(camera.zoom * (now.dist / pinch.dist));
+        const [ax, ay] = inv((now.cx - rect.left) * d, (now.cy - rect.top) * d);
+        camera.x += wx - ax;
+        camera.y += wy - ay;
+        zoomAnim.target = null;
+        pinch = now;
+        gesture();
+        return;
+    }
+
     if (!dragging) return;
     const dx = e.clientX - dragStart.x, dy = e.clientY - dragStart.y;
     if (Math.abs(dx) + Math.abs(dy) > 3) dragStart.moved = true;
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    camera.x = dragStart.cx - dx * dpr / camera.zoom;
-    camera.y = dragStart.cy - yDir() * dy * dpr / camera.zoom;
-    requestAnimationFrame(draw);
+    const d = DPR();
+    camera.x = dragStart.cx - dx * d / camera.zoom;
+    camera.y = dragStart.cy - yDir() * dy * d / camera.zoom;
+    gesture();
 });
-window.addEventListener('mouseup', e => {
-    if (dragging && !dragStart.moved) snapEndpoint(e, 'srcIn');
+
+function endPointer(e) {
+    activePointers.delete(e.pointerId);
+    if (activePointers.size < 2) pinch = null;
+    if (!dragging) return;
+    // A press that never moved is a click, not a drag.
+    if (!dragStart.moved && e.button === 0) snapEndpoint(e, 'srcIn');
     dragging = false;
-});
+    cv.style.cursor = 'grab';
+}
+cv.addEventListener('pointerup', endPointer);
+cv.addEventListener('pointercancel', endPointer);
+
 cv.addEventListener('contextmenu', e => { e.preventDefault(); snapEndpoint(e, 'dstIn'); });
 
-/** Snap a click to the nearest node. On a 48k-node city this is the k-d tree
+/** Double-click zooms in a step, shift-double-click out, both anchored where
+    the pointer is -- the gesture every map has, and cheaper than scrolling. */
+cv.addEventListener('dblclick', e => {
+    e.preventDefault();
+    const [sx, sy] = pointerPx(e);
+    zoomBy(e.shiftKey ? 0.5 : 2, sx, sy);
+});
+
+/** Snap a click to the nearest node. On a 488k-node city this is the k-d tree
     earning its place: a linear scan per click would be visible. */
 function snapEndpoint(e, field) {
     if (!graph.nodeCount) return;
-    const rect = cv.getBoundingClientRect();
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const [wx, wy] = inv((e.clientX - rect.left) * dpr, (e.clientY - rect.top) * dpr);
+    const [sx, sy] = pointerPx(e);
+    const [wx, wy] = inv(sx, sy);
     // The engine indexes the graph's own coordinates, so undo the projection.
     const gx = geographic ? invMercX(wx) : wx;
     const gy = geographic ? invMercY(wy) : wy;
@@ -1241,20 +1429,52 @@ function snapEndpoint(e, field) {
         node = r.node;
     }
     $(field).value = node;
-    draw();
+    requestDraw();
 }
 
 cv.addEventListener('wheel', e => {
     e.preventDefault();
-    const rect = cv.getBoundingClientRect();
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const [bx, by] = inv((e.clientX - rect.left) * dpr, (e.clientY - rect.top) * dpr);
-    camera.zoom = clampZoom(camera.zoom * Math.exp(-e.deltaY * 0.0015));
-    const [ax, ay] = inv((e.clientX - rect.left) * dpr, (e.clientY - rect.top) * dpr);
-    camera.x += bx - ax;
-    camera.y += by - ay;
-    requestAnimationFrame(draw);
+    const [sx, sy] = pointerPx(e);
+
+    // deltaMode says what the numbers mean: 0 pixels, 1 lines, 2 pages. A
+    // mouse wheel usually reports lines or a ~100px jump while a trackpad
+    // reports a stream of small pixel deltas, so treating them alike made one
+    // device leap and the other crawl. Normalise, then clamp, so a flung
+    // scroll cannot teleport the camera across ten zoom levels in one event.
+    let dy = e.deltaY;
+    if (e.deltaMode === 1) dy *= 16;
+    else if (e.deltaMode === 2) dy *= cv.clientHeight || 800;
+    dy = Math.max(-260, Math.min(260, dy));
+
+    // A trackpad pinch arrives as ctrl+wheel; it is a finer instrument than a
+    // wheel notch and wants a gentler curve.
+    zoomBy(Math.exp(-dy * (e.ctrlKey ? 0.010 : 0.0024)), sx, sy);
 }, { passive: false });
+
+/* Keyboard: the map should be usable without a pointer at all. */
+window.addEventListener('keydown', e => {
+    const t = e.target;
+    if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT')) return;
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (!graph.nodeCount) return;
+
+    const centre = [cv.width / 2, cv.height / 2];
+    const panStep = 90 * DPR() / camera.zoom;
+    let handled = true;
+    switch (e.key) {
+        case '+': case '=':   zoomBy(1.6, ...centre); break;
+        case '-': case '_':   zoomBy(1 / 1.6, ...centre); break;
+        case '0':             fitCamera(); requestDraw(); break;
+        case 'ArrowLeft':     camera.x -= panStep; gesture(); break;
+        case 'ArrowRight':    camera.x += panStep; gesture(); break;
+        case 'ArrowUp':       camera.y += yDir() * panStep; gesture(); break;
+        case 'ArrowDown':     camera.y -= yDir() * panStep; gesture(); break;
+        case ' ':             timer ? pause() : play(); break;
+        case 'Enter':         $('runBtn')?.click(); break;
+        default:              handled = false;
+    }
+    if (handled) e.preventDefault();
+});
 
 window.addEventListener('resize', resize);
 
