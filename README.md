@@ -60,10 +60,13 @@ shortest-path query cannot:
 
 | Feature | Detail |
 |---|---|
-| **11 routing algorithms** | BFS, DFS, Dijkstra, A\*, Greedy best-first, Bellman-Ford, Floyd-Warshall, Johnson, Bidirectional Dijkstra, Dial's bucket queue, **Contraction Hierarchies** |
-| **Contraction Hierarchies** | The technique production routing engines use — 21–28× faster queries, 47–72× fewer nodes expanded, verified identical to Dijkstra |
+| **12 routing algorithms** | BFS, DFS, Dijkstra, A\*, Greedy, Bellman-Ford, Floyd-Warshall, Johnson, Bidirectional Dijkstra, Dial's bucket queue, **ALT**, **Contraction Hierarchies** |
+| **Speedup techniques** | Contraction Hierarchies, Customizable CH, and ALT landmarks — **44× faster, 460× fewer nodes** on India's national highway network |
+| **Time-dependent routing** | Edge costs vary through the day; a 2× rush-hour penalty you can watch, re-costed in milliseconds via CCH |
+| **Python bindings** | `pip install .` — the whole engine from Python, with NumPy coordinate arrays |
 | **6 analysis algorithms** | Bridges & articulation points, strongly connected components, minimum spanning tree, betweenness centrality, max-flow/min-cut, K-shortest paths |
-| **Five real cities** | Delhi, Mumbai, Bengaluru, Jaipur, Kolkata — 111k junctions of real OpenStreetMap road network, committed and ready to run |
+| **India's highway network** | 207,610 junctions, 279,666 edges — every expressway and national highway in the country |
+| **Five real cities** | Delhi, Mumbai, Bengaluru, Jaipur, Kolkata — 111k junctions of real OpenStreetMap road network |
 | **All Indian metros** | 922 stations, 23 systems, 22 cities — Delhi, Mumbai, Namma, Chennai, Kolkata, Hyderabad and more |
 | **Indian Railways** | 746 stations, 2,062 links from 253 long-distance train routes |
 | **Multi-modal routing** | Road and rail combined into one time-weighted graph; plain Dijkstra then solves it |
@@ -390,9 +393,65 @@ one is Θ(V + E).
 
 ---
 
-## Contraction Hierarchies
+## Speedup techniques
 
-The headline algorithm, and the one production routing engines actually use.
+Three ways to make a shortest-path query faster than Dijkstra, each trading a
+different amount of preprocessing for a different amount of speed. Measured on
+**India's national highway network** — 207,610 nodes, 279,666 edges — over 57
+random long-distance queries:
+
+| | Preprocessing | Per query | Nodes expanded | vs Dijkstra |
+|---|---|---|---|---|
+| Dijkstra | — | 3.94 ms | 91,556 | — |
+| **ALT** (12 landmarks) | 232 ms | 0.87 ms | 8,970 | 4.5× faster, 10× fewer |
+| **Customizable CH** | 101 ms + 35 ms per metric | 0.13 ms | 249 | 31× faster, 368× fewer |
+| **Contraction Hierarchies** | 1,138 ms | 0.089 ms | 198 | **44× faster, 460× fewer** |
+
+**Zero mismatches.** All three are exact: they return the same route Dijkstra
+does, verified on every query.
+
+### ALT: A\* with landmarks
+
+A\* is only as good as its heuristic, and straight-line distance is weak on a
+road network — roads bend, so the true cost sits well above the crow-flies
+estimate and the search fans out anyway. ALT replaces geometry with
+measurement: store exact distances to and from a handful of landmarks, then the
+triangle inequality gives a lower bound that is *tight* where the route runs at
+a landmark. It needs no coordinates at all, so it works where geometry is
+missing or meaningless.
+
+One subtlety cost real debugging time. Landmarks are chosen farthest-point
+first, and the seed matters: a real extract has a few hundred nodes stranded at
+the clipping boundary, and seeding from one meant the first landmark reached
+almost nothing, every distance came back infinite, and selection collapsed to
+picking the same node repeatedly. The bound was then zero everywhere and ALT
+silently degenerated into plain Dijkstra — same 4,044 expansions, no error
+anywhere. Anchoring selection to the largest strongly connected component fixes
+it, and inside one component every pair is mutually reachable so every landmark
+says something useful.
+
+### Customizable Contraction Hierarchies
+
+Plain CH bakes the weights into its shortcuts, so any change to the metric —
+live traffic, a different hour, avoiding tolls — means redoing the contraction.
+On a city that is a second of work for a change that should cost milliseconds.
+
+CCH splits preprocessing in two. **Build** records the *shape* of the shortcut
+graph without ever looking at a weight, so it is valid for every metric on that
+network. **Customize** fills in the weights by enumerating lower triangles in
+contraction order. Because build adds a shortcut for every pair of higher
+neighbours rather than only where a witness search fails, the result is chordal
+— for any triangle v < x < y the arc between x and y is guaranteed to exist,
+and that guarantee is what makes customization a single pass rather than
+another search.
+
+On Jaipur: **build 31 ms once, then 10 ms per metric** against plain CH's 745 ms
+every time — a 68× faster re-weighting, for a query that expands 213 nodes
+instead of 201.
+
+### Contraction Hierarchies
+
+The technique production routing engines actually use.
 
 Nodes are contracted one at a time in increasing order of importance. Removing
 a node means adding shortcut edges between its neighbours wherever the path
@@ -402,12 +461,11 @@ one, and a query becomes a bidirectional search that only ever moves *upward*.
 Road networks have very low highway dimension — long trips funnel onto a few
 arterials — so both searches climb to a shared core almost immediately.
 
-Measured on the committed extracts, 300 random queries each:
+Per city, 300 random queries each:
 
 | City | Nodes | Build | Dijkstra | CH | Speedup |
 |---|---|---|---|---|---|
 | Mumbai | 15,597 | 339 ms | 0.372 ms / 7,178 nodes | 0.017 ms / 142 nodes | **21× faster, 50× fewer** |
-| Jaipur | 19,110 | 814 ms | 0.526 ms / 9,719 nodes | 0.025 ms / 206 nodes | **21× faster, 47× fewer** |
 | Delhi | 24,781 | 1,113 ms | 0.719 ms / 12,429 nodes | 0.029 ms / 213 nodes | **25× faster, 58× fewer** |
 | Bengaluru | 33,360 | 1,498 ms | 0.993 ms / 17,367 nodes | 0.035 ms / 240 nodes | **28× faster, 72× fewer** |
 
@@ -432,6 +490,73 @@ Three things worth knowing about the implementation:
   direction only. Core arcs are given to *both* searches, which turns the core
   back into an ordinary bidirectional Dijkstra. Answers stay exact; only speed
   degrades.
+
+## Time-dependent routing
+
+A road network is not a static graph. Outer Ring Road at 09:00 and at 02:00 are
+different graphs with the same shape, and the fastest route changes with them.
+Each edge carries a congestion profile sampled through the day and interpolated
+between hours; the tier is assigned by length percentile, so a residential lane
+does not gridlock the way a trunk route does.
+
+Bengaluru, the same trip departing at each hour:
+
+```
+  00:00   13.6 min  ######
+  07:00   21.8 min  ##########
+  08:00   26.1 min  #############
+  18:00   27.5 min  ##############
+```
+
+**A 2.02× rush-hour penalty**, which is about right for the city.
+
+The property that makes this tractable is **FIFO**, also called non-overtaking:
+leaving later can never get you there earlier. Real traffic satisfies it — you
+cannot overtake yourself by departing later — and it is what keeps a
+label-setting search like Dijkstra correct on a time-dependent graph. Without
+it the problem is NP-hard in general. The model enforces FIFO explicitly rather
+than trusting the profile to be smooth, because a single violation invalidates
+the search silently, producing a plausible-looking wrong route.
+
+Two units bugs are worth naming, because neither had a type to catch it: edge
+weights are metres and travel times are seconds, and a first pass conflated
+them and reported 150 minutes to cross Bengaluru. Congestion tiers were also
+assigned by length *relative to the longest edge*, which a single long bypass
+flattened into a 1.13× swing; ranking by percentile fixed it.
+
+## Python bindings
+
+Researchers work in Python and will not link a C++ library to try an idea.
+
+```bash
+pip install .
+```
+
+```python
+import agss
+
+g = agss.load("data/cities/Jaipur", geographic=True)
+print(g)                                   # <agss.Graph 19110 nodes, 48721 edges>
+
+r = g.route("astar", 2746, 16278)
+print(r.cost, len(r.path), r.nodes_expanded)
+
+ch = agss.ContractionHierarchy()
+ch.build(g)                                # ~800 ms, once
+print(ch.query(2746, 16278).cost)          # microseconds, thereafter
+
+# Rush hour, without leaving Python.
+m = agss.TimeDependentModel(g)
+scan = agss.scan_departures(m, 2746, 16278, samples=24)
+print(scan.best_duration / 60, scan.worst_duration / 60)
+
+# Coordinates arrive as NumPy arrays, ready to plot.
+xs, ys = g.coordinates()
+```
+
+Analysis is exposed too: `bridges`, `betweenness_centrality`,
+`strongly_connected_components`, `minimum_spanning_tree`, `max_flow`,
+`k_shortest_paths`, `isochrone` and `directions`.
 
 ## Correctness
 
@@ -507,7 +632,9 @@ again reads as an algorithm problem.
 │   ├── fetch_city.py           OSM road networks, 10 city presets or any bbox
 │   ├── fetch_transit.py        Metro systems (--kinds metro) and railways (--kinds rail)
 │   └── generate_maps.py        The one seeded synthetic grid
+├── python/                     pybind11 bindings and their tests
 ├── data/
+│   ├── networks/               India's national highway network (207k nodes)
 │   ├── cities/                 5 real OSM road networks (committed)
 │   ├── transit/                922 metro stations, 23 systems
 │   ├── railways/               746 Indian Railways stations
@@ -642,10 +769,10 @@ service.
 
 - [x] WebAssembly build so the visualiser is a link, not a clone
 - [x] Contraction Hierarchies
-- [ ] ALT landmark preprocessing and Customizable CH
-- [ ] Time-dependent edge weights (rush-hour routing)
+- [x] ALT landmarks and Customizable CH
+- [x] Time-dependent routing
+- [x] Python bindings
 - [ ] More cities, with larger extracts as release assets
-- [ ] Python bindings via pybind11
 - [ ] Jump Point Search for grid maps
 - [ ] Louvain community detection for neighbourhood boundaries
 

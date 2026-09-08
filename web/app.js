@@ -14,6 +14,8 @@ const DATA_ROOT = '../data';
 
 const CATALOG = [
     { group: 'Road networks (OpenStreetMap)' },
+    { id: 'India_Highways', label: 'India: national highways', sub: '207,610 junctions \u2014 the whole country',
+      dir: 'networks/India_Highways', geo: true, heavy: true },
     { id: 'Delhi',     label: 'Delhi',     sub: '24,781 junctions',  dir: 'cities/Delhi',     geo: true },
     { id: 'Mumbai',    label: 'Mumbai',    sub: '15,597 junctions',  dir: 'cities/Mumbai',    geo: true },
     { id: 'Bengaluru', label: 'Bengaluru', sub: '33,360 junctions',  dir: 'cities/Bengaluru', geo: true },
@@ -22,16 +24,21 @@ const CATALOG = [
 
     { group: 'Rail networks (OpenStreetMap)' },
     { id: 'rail:',              label: 'Indian Railways',  sub: '746 stations nationwide', rail: '' },
-    { id: 'transit:',           label: 'All Indian metros', sub: '922 stations, 23 systems', transit: '' },
     { id: 'transit:Delhi',      label: 'Delhi Metro',       sub: '257 stations', transit: 'Delhi' },
     { id: 'transit:Bengaluru',  label: 'Namma Metro',       sub: '85 stations',  transit: 'Bengaluru' },
     { id: 'transit:Mumbai',     label: 'Mumbai Metro',      sub: '114 stations', transit: 'Mumbai' },
     { id: 'transit:Chennai',    label: 'Chennai Metro',     sub: '62 stations',  transit: 'Chennai' },
     { id: 'transit:Kolkata',    label: 'Kolkata Metro',     sub: '59 stations',  transit: 'Kolkata' },
     { id: 'transit:Hyderabad',  label: 'Hyderabad Metro',   sub: '59 stations',  transit: 'Hyderabad' },
+    { id: 'transit:Ahmedabad',  label: 'Ahmedabad Metro',   sub: '53 stations',  transit: 'Ahmedabad' },
+    { id: 'transit:Nagpur',     label: 'Nagpur Metro',      sub: '38 stations',  transit: 'Nagpur' },
+    { id: 'transit:Pune',       label: 'Pune Metro',        sub: '29 stations',  transit: 'Pune' },
+    { id: 'transit:Kochi',      label: 'Kochi Metro',       sub: '25 stations',  transit: 'Kochi' },
+    { id: 'transit:Lucknow',    label: 'Lucknow Metro',     sub: '21 stations',  transit: 'Lucknow' },
+    { id: 'transit:Jaipur',     label: 'Jaipur Metro',      sub: '11 stations',  transit: 'Jaipur' },
 
     { group: 'Synthetic' },
-    { id: 'Grid_Integer', label: 'Grid, integer weights', sub: '225 nodes — the only graph Dial\u2019s applies to',
+    { id: 'Grid_Integer', label: 'Grid, integer weights', sub: '225 nodes \u2014 the only graph Dial\u2019s applies to',
       dir: 'maps/Grid_Integer', geo: false },
 ];
 
@@ -41,7 +48,13 @@ const $ = id => document.getElementById(id);
 const cv = $('cv'), ctx = cv.getContext('2d');
 
 let M = null;                 // the Emscripten module
-let graph = { nodes: [], edges: [], coordSpace: 'planar' };
+/* Geometry is held in typed arrays, not objects.
+   An array of {id, x, y} objects costs roughly 60 bytes each in V8; at 207k
+   nodes plus 280k edges that is tens of megabytes of small objects and a
+   garbage-collection pause every redraw. Flat arrays make the draw loop two
+   indexed reads per node, and let the engine hand its geometry over as a
+   memory copy with no parsing. */
+let graph = { nodeCount: 0, edgeCount: 0, ex: null, ey: null, eu: null, ev: null };
 let geographic = false;
 let stations = [];            // populated for transit graphs
 let loadedTransitSet = null;  // 'metro' | 'rail' — which CSV pair is in the engine
@@ -67,6 +80,28 @@ function call(fn, sig, args) {
         return JSON.parse(M.UTF8ToString(ptr));
     } finally {
         M._agss_free(ptr);
+    }
+}
+
+/* Large strings must go to the engine as heap pointers, not as ccall 'string'
+   arguments. Emscripten marshals a string argument with stringToUTF8OnStack,
+   so an 11 MB CSV blows the 8 MB stack and the module dies with "memory access
+   out of bounds" before any of our code runs. Allocating on the heap and
+   passing the pointer costs one extra copy and works at any size. */
+function callWithBuffers(fn, strings, extraSig = [], extraArgs = []) {
+    const ptrs = strings.map(str => M.stringToNewUTF8(str));
+    try {
+        const sig = strings.map(() => 'number').concat(extraSig);
+        const args = ptrs.concat(extraArgs);
+        const out = M.ccall(fn, 'number', sig, args);
+        if (!out) throw new Error(`${fn} returned null`);
+        try {
+            return JSON.parse(M.UTF8ToString(out));
+        } finally {
+            M._agss_free(out);
+        }
+    } finally {
+        for (const p of ptrs) M._free(p);
     }
 }
 
@@ -114,21 +149,18 @@ let world = { x: new Float64Array(0), y: new Float64Array(0) };
 const yDir = () => (geographic ? 1 : -1);
 
 function projectAll() {
-    const n = graph.nodes.length;
+    const n = graph.nodeCount;
     world = { x: new Float64Array(n), y: new Float64Array(n) };
     for (let i = 0; i < n; i++) {
-        const node = graph.nodes[i];
-        if (!node) continue;
-        world.x[i] = geographic ? mercX(node.x) : node.x;
-        world.y[i] = geographic ? mercY(node.y) : node.y;
+        world.x[i] = geographic ? mercX(graph.ex[i]) : graph.ex[i];
+        world.y[i] = geographic ? mercY(graph.ey[i]) : graph.ey[i];
     }
 }
 
 function computeBounds() {
-    if (!graph.nodes.length) return;
+    if (!graph.nodeCount) return;
     let minx = Infinity, maxx = -Infinity, miny = Infinity, maxy = -Infinity;
     for (let i = 0; i < world.x.length; i++) {
-        if (!graph.nodes[i]) continue;
         const x = world.x[i], y = world.y[i];
         if (x < minx) minx = x;
         if (x > maxx) maxx = x;
@@ -260,7 +292,7 @@ function tileZoomFor(spec) {
 
 function drawBasemap() {
     const spec = BASEMAPS[basemap];
-    if (!spec || !geographic || !graph.nodes.length) return;
+    if (!spec || !geographic || !graph.nodeCount) return;
 
     const z = tileZoomFor(spec);
     const n = 2 ** z;
@@ -372,7 +404,7 @@ function resize() {
         cv.height = h;
         camera.zoom = 0;                  // extent-to-pixel mapping just changed
     }
-    if (!(camera.zoom > 0) && graph.nodes.length) fitCamera();
+    if (!(camera.zoom > 0) && graph.nodeCount) fitCamera();
     draw();
     return true;
 }
@@ -399,12 +431,12 @@ const px = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 
 function draw() {
     ctx.clearRect(0, 0, cv.width, cv.height);
-    if (!graph.nodes.length) return;
+    if (!graph.nodeCount) return;
 
     drawBasemap();
     const onMap = BASEMAPS[basemap] !== null && geographic;
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    const big = graph.nodes.length > 12000;
+    const big = graph.nodeCount > 12000;
     // Since the camera works in Mercator units, camera.zoom is now in the
     // millions rather than the tens, so sizes derive from the slippy zoom
     // level instead. Reusing the old factor drew every one of 47k nodes at the
@@ -422,11 +454,11 @@ function draw() {
     ctx.strokeStyle = onMap ? 'rgba(125,180,255,0.55)' : 'rgba(120,150,210,0.16)';
     ctx.lineWidth = (onMap ? 0.6 : big ? 0.5 : 1) * dpr;
     ctx.beginPath();
-    for (const e of graph.edges) {
-        if (e.u > e.v) continue;                 // one line per undirected pair
-        if (!graph.nodes[e.u] || !graph.nodes[e.v]) continue;
-        ctx.moveTo(nx(e.u), ny(e.u));
-        ctx.lineTo(nx(e.v), ny(e.v));
+    for (let i = 0; i < graph.edgeCount; i++) {
+        const u = graph.eu[i], v = graph.ev[i];
+        if (u > v) continue;                     // one line per undirected pair
+        ctx.moveTo(nx(u), ny(u));
+        ctx.lineTo(nx(v), ny(v));
     }
     ctx.stroke();
 
@@ -454,8 +486,7 @@ function draw() {
     // edges carry the network and the basemap carries the context.
     const showNodes = heat !== null || (geographic ? mapZoom >= 15 : !big || camera.zoom > 40);
     if (showNodes) {
-        for (let i = 0; i < graph.nodes.length; i++) {
-            if (!graph.nodes[i]) continue;
+        for (let i = 0; i < graph.nodeCount; i++) {
             const px_ = nx(i), py_ = ny(i);
             if (px_ < -20 || py_ < -20 || px_ > cv.width + 20 || py_ > cv.height + 20) continue;
             if (heat) {
@@ -480,7 +511,7 @@ function draw() {
         ctx.beginPath();
         for (const key of closedEdges) {
             const [u, v] = key.split(':').map(Number);
-            if (!graph.nodes[u] || !graph.nodes[v]) continue;
+            if (u >= graph.nodeCount || v >= graph.nodeCount) continue;
             ctx.moveTo(nx(u), ny(u));
             ctx.lineTo(nx(v), ny(v));
         }
@@ -494,7 +525,7 @@ function draw() {
     if (state.explored.size) {
         ctx.fillStyle = onMap ? 'rgba(251,146,60,0.85)' : 'rgba(251,146,60,0.65)';
         for (const id of state.explored) {
-            if (!graph.nodes[id]) continue;
+            if (id >= graph.nodeCount) continue;
             ctx.beginPath();
             ctx.arc(nx(id), ny(id), r * 1.4, 0, 6.2832);
             ctx.fill();
@@ -505,7 +536,7 @@ function draw() {
         ctx.shadowColor = 'rgba(217,70,239,0.9)';
         ctx.shadowBlur = 8;
         for (const id of state.frontier) {
-            if (!graph.nodes[id]) continue;
+            if (id >= graph.nodeCount) continue;
             ctx.beginPath();
             ctx.arc(nx(id), ny(id), r * 1.9, 0, 6.2832);
             ctx.fill();
@@ -519,7 +550,7 @@ function draw() {
         ctx.lineWidth = pathWidth;
         ctx.beginPath();
         path.forEach((id, i) => {
-            if (!graph.nodes[id]) return;
+            if (id >= graph.nodeCount) return;
             i ? ctx.lineTo(nx(id), ny(id)) : ctx.moveTo(nx(id), ny(id));
         });
         ctx.stroke();
@@ -531,7 +562,7 @@ function draw() {
         ctx.strokeStyle = '#f87171';
         ctx.lineWidth = 2 * dpr;
         for (const id of markedNodes) {
-            if (!graph.nodes[id]) continue;
+            if (id >= graph.nodeCount) continue;
             ctx.beginPath();
             ctx.arc(nx(id), ny(id), r * 3, 0, 6.2832);
             ctx.stroke();
@@ -540,7 +571,7 @@ function draw() {
 
     // Endpoints on top.
     for (const [id, color] of [[srcNode(), '#4ea8ff'], [dstNode(), '#22c55e']]) {
-        if (!graph.nodes[id]) continue;
+        if (id < 0 || id >= graph.nodeCount) continue;
         ctx.fillStyle = color;
         ctx.strokeStyle = '#fff';
         ctx.lineWidth = 2 * dpr;
@@ -615,7 +646,7 @@ async function ensureTransit(which) {
         fetchText(`${DATA_ROOT}/${dir}/stations.csv`),
         fetchText(`${DATA_ROOT}/${dir}/links.csv`),
     ]);
-    const r = call('agss_load_transit', ['string', 'string'], [st, lk]);
+    const r = callWithBuffers('agss_load_transit', [st, lk]);
     if (!r.ok) throw new Error(r.error);
     loadedTransitSet = which;
     log(`${which === 'rail' ? 'railway' : 'metro'} data: ${r.stations} stations, ` +
@@ -648,9 +679,8 @@ async function loadSelected() {
                 fetchText(`${DATA_ROOT}/${entry.dir}/nodes.csv`),
                 fetchText(`${DATA_ROOT}/${entry.dir}/edges.csv`),
             ]);
-            const r = call('agss_load_graph',
-                ['string', 'string', 'string', 'number', 'number'],
-                [entry.id, nodes, edges, entry.geo ? 1 : 0, 1]);
+            const r = callWithBuffers('agss_load_graph', [entry.id, nodes, edges],
+                                      ['number', 'number'], [entry.geo ? 1 : 0, 1]);
             if (!r.ok) throw new Error(r.error);
             stations = [];
             geographic = entry.geo;
@@ -670,7 +700,7 @@ async function loadSelected() {
             ? 'Real map tiles under the graph. Scroll to zoom, drag to pan.'
             : 'This network has no real-world coordinates, so no basemap applies.';
         pickDefaultEndpoints();
-        $('srcIn').max = $('dstIn').max = graph.nodes.length - 1;
+        $('srcIn').max = $('dstIn').max = graph.nodeCount - 1;
         // Fit on the next frame: the ResizeObserver may still be catching up
         // with the canvas, and fitting against stale dimensions is what put
         // the whole graph in a single pixel.
@@ -686,11 +716,36 @@ async function loadSelected() {
 }
 
 function loadGeometry() {
-    graph = call('agss_graph_json', [], []);
-    // Index by dense id so lookups during draw are array indexing, not a scan.
-    const byId = new Array(graph.nodes.length);
-    for (const n of graph.nodes) byId[n.id] = n;
-    graph.nodes = byId;
+    const n = M._agss_node_count();
+    const m = M._agss_edge_count();
+
+    // Views over the WASM heap, copied out before the buffers are freed. The
+    // heap can be reallocated by a later growth, so a retained view would
+    // silently start reading somewhere else.
+    const cp = M._agss_coords_buffer();
+    const coords = new Float64Array(M.HEAPF64.buffer, cp, n * 2).slice();
+    M._agss_free(cp);
+
+    const ep = M._agss_edges_buffer();
+    const edges = new Int32Array(M.HEAP32.buffer, ep, m * 2).slice();
+    M._agss_free(ep);
+
+    graph = {
+        nodeCount: n,
+        edgeCount: m,
+        ex: new Float64Array(n),
+        ey: new Float64Array(n),
+        eu: new Int32Array(m),
+        ev: new Int32Array(m),
+    };
+    for (let i = 0; i < n; i++) {
+        graph.ex[i] = coords[i * 2];
+        graph.ey[i] = coords[i * 2 + 1];
+    }
+    for (let i = 0; i < m; i++) {
+        graph.eu[i] = edges[i * 2];
+        graph.ev[i] = edges[i * 2 + 1];
+    }
     projectAll();
 }
 
@@ -702,7 +757,7 @@ function loadGeometry() {
 /// nodes from the largest strongly connected component means the default query
 /// always works, on every network.
 function pickDefaultEndpoints() {
-    const n = graph.nodes.length;
+    const n = graph.nodeCount;
     if (!n) return;
     const fallbackA = 0, fallbackB = Math.floor(n * 0.7);
     try {
@@ -773,7 +828,7 @@ function setMetrics(m, eventCount) {
 /// trades a one-off build for near-free queries, and burying the build would
 /// misrepresent exactly the bargain the feature exists to demonstrate.
 async function buildCH() {
-    if (!graph.nodes.length) return;
+    if (!graph.nodeCount) return;
     const btn = $('chBtn');
     btn.disabled = true;
     btn.textContent = 'Preprocessing\u2026';
@@ -811,7 +866,7 @@ function raceCH() {
         log('no route between those nodes', 'danger');
         return;
     }
-    const reps = graph.nodes.length > 20000 ? 20 : 100;
+    const reps = graph.nodeCount > 20000 ? 20 : 100;
     const djBench = call('agss_bench', ['string', 'number', 'number', 'number'],
         ['dijkstra', s, t, reps]);
 
@@ -838,6 +893,77 @@ function raceCH() {
     play();
 }
 
+/// Route with traffic at the selected hour, via Customizable CH.
+///
+/// This is the pairing that motivates CCH: the metric changes every hour, and
+/// rebuilding a plain hierarchy each time would cost seconds where
+/// re-customizing costs milliseconds.
+async function routeAtHour() {
+    if (!graph.nodeCount) return;
+    const hour = Number($('hourSlider').value);
+    const btn = $('trafficBtn');
+    btn.disabled = true;
+    btn.textContent = 'Working\u2026';
+    await new Promise(r => setTimeout(r, 20));
+
+    const c = call('agss_cch_customize', ['number'], [hour]);
+    btn.disabled = false;
+    btn.textContent = 'Route at this hour';
+    if (!c.ok) { log(c.error, 'danger'); return; }
+
+    const q = call('agss_cch_query', ['number', 'number', 'number'], [srcNode(), dstNode(), 1]);
+    if (q.ok === false) { log(q.error, 'danger'); return; }
+    if (!q.metadata.success) { log('no route between those nodes', 'danger'); return; }
+
+    events = q.events || [];
+    finalPath = q.path || [];
+    resetState();
+    stepSize = Math.max(1, Math.ceil(events.length / 200));
+    setMetrics(q.metadata, events.length);
+
+    const mins = q.metadata.pathCost / 60;
+    $('trafficInfo').innerHTML =
+        `<b>${mins.toFixed(1)} min</b> departing at ${String(hour).padStart(2, '0')}:00.` +
+        (c.builtNow ? ` Structure built once in ${c.buildMs.toFixed(0)} ms;` : '') +
+        ` re-costed in <b>${c.customizeMs.toFixed(0)} ms</b>.`;
+    log(`traffic ${String(hour).padStart(2, '0')}:00 \u2192 ${mins.toFixed(1)} min ` +
+        `(customize ${c.customizeMs.toFixed(0)} ms)`);
+    play();
+}
+
+/// Duration of the same trip departing at every hour, so rush hour is
+/// something you see rather than something the page asserts.
+function scanDay() {
+    if (!graph.nodeCount) return;
+    const r = call('agss_traffic_scan', ['number', 'number', 'number'],
+        [srcNode(), dstNode(), 24]);
+    if (!r.ok) { log(r.error, 'danger'); return; }
+    const finite = r.durations.filter(d => d !== null && isFinite(d));
+    if (!finite.length) { log('no route between those nodes', 'danger'); return; }
+    const max = Math.max(...finite);
+
+    const rows = r.durations.map((d, i) => {
+        const hour = String(i).padStart(2, '0') + ':00';
+        if (d === null || !isFinite(d)) return `<tr><td>${hour}</td><td>\u2014</td><td></td></tr>`;
+        const mins = d / 60;
+        const width = Math.round(100 * d / max);
+        const peak = d === r.worstDuration;
+        const quiet = d === r.bestDuration;
+        return `<tr><td>${hour}</td><td class="${peak ? 'bad' : quiet ? 'good' : ''}">` +
+               `${mins.toFixed(1)}</td><td><div style="height:8px;border-radius:3px;` +
+               `width:${width}%;background:${peak ? '#f87171' : quiet ? '#34d399' : '#4ea8ff'}` +
+               `"></div></td></tr>`;
+    }).join('');
+    $('results').innerHTML =
+        `<table><tr><th>depart</th><th>min</th><th></th></tr>${rows}</table>` +
+        `<div class="hint">Slowest is ${(r.worstDuration / r.bestDuration).toFixed(2)}\u00d7 ` +
+        `the quietest departure.</div>`;
+    log(`day scan: ${(r.bestDuration / 60).toFixed(1)} min at ` +
+        `${String(Math.round(r.bestDeparture / 3600)).padStart(2, '0')}:00, ` +
+        `${(r.worstDuration / 60).toFixed(1)} min at ` +
+        `${String(Math.round(r.worstDeparture / 3600)).padStart(2, '0')}:00`);
+}
+
 function invalidateCH() {
     chReady = false;
     const info = $('chInfo');
@@ -849,7 +975,7 @@ function invalidateCH() {
 }
 
 function runSearch(showDirs = true) {
-    if (!graph.nodes.length) return;
+    if (!graph.nodeCount) return;
     pause();
     heat = null;
     isoBands = null;
@@ -895,14 +1021,14 @@ function showDirections() {
 }
 
 function race() {
-    if (!graph.nodes.length) return;
+    if (!graph.nodeCount) return;
     pause();
     const r = call('agss_race', ['string', 'number', 'number'], ['', srcNode(), dstNode()]);
     if (!r.ok) { log(r.error, 'danger'); return; }
 
     // Time each algorithm over a batch so the browser's clock clamp does not
     // flatten every small graph to 0.0 ms.
-    const reps = graph.nodes.length > 20000 ? 3 : graph.nodes.length > 2000 ? 25 : 200;
+    const reps = graph.nodeCount > 20000 ? 3 : graph.nodeCount > 2000 ? 25 : 200;
     const timing = {};
     for (const x of r.rows) {
         if (x.declined) continue;
@@ -956,7 +1082,7 @@ function bridges() {
 function centrality() {
     pause();
     clearOverlays();
-    const samples = graph.nodes.length > 2000 ? 256 : 0;
+    const samples = graph.nodeCount > 2000 ? 256 : 0;
     const r = call('agss_analyze', ['string', 'number', 'number', 'number'],
         ['centrality', 0, 0, samples]);
     if (!r.ok) { log(r.error, 'danger'); return; }
@@ -986,7 +1112,7 @@ function isochrone() {
         : v.toFixed(0);
     $('results').innerHTML = `<table><tr><th>within</th><th>reachable</th><th>share</th></tr>` +
         r.bands.map(b => `<tr><td>${unitOf(b.cutoff)}</td><td>${b.count.toLocaleString()}</td>` +
-            `<td>${(100 * b.count / graph.nodes.length).toFixed(1)}%</td></tr>`).join('') + '</table>';
+            `<td>${(100 * b.count / graph.nodeCount).toFixed(1)}%</td></tr>`).join('') + '</table>';
     log(`isochrones from node ${srcNode()} in ${r.ms.toFixed(1)} ms`);
     draw();
 }
@@ -1046,7 +1172,7 @@ cv.addEventListener('contextmenu', e => { e.preventDefault(); snapEndpoint(e, 'd
 /** Snap a click to the nearest node. On a 48k-node city this is the k-d tree
     earning its place: a linear scan per click would be visible. */
 function snapEndpoint(e, field) {
-    if (!graph.nodes.length) return;
+    if (!graph.nodeCount) return;
     const rect = cv.getBoundingClientRect();
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const [wx, wy] = inv((e.clientX - rect.left) * dpr, (e.clientY - rect.top) * dpr);
@@ -1058,7 +1184,6 @@ function snapEndpoint(e, field) {
         // Multi-modal/rail graphs have no k-d tree; scan in world space.
         let best = Infinity;
         for (let i = 0; i < world.x.length; i++) {
-            if (!graph.nodes[i]) continue;
             const d = (world.x[i] - wx) ** 2 + (world.y[i] - wy) ** 2;
             if (d < best) { best = d; node = i; }
         }
@@ -1136,6 +1261,12 @@ window.addEventListener('resize', resize);
     $('closeBtn').onclick = closeWorstRoad;
     $('chBtn').onclick = buildCH;
     $('chRaceBtn').onclick = raceCH;
+    $('trafficBtn').onclick = routeAtHour;
+    $('scanBtn').onclick = scanDay;
+    $('hourSlider').oninput = () => {
+        $('hourInfo').innerHTML =
+            `Departing at <b>${String($('hourSlider').value).padStart(2, '0')}:00</b>`;
+    };
     $('clearBtn').onclick = () => { clearOverlays(); draw(); };
     $('speed').oninput = () => { if (timer) { pause(); play(); } };
 

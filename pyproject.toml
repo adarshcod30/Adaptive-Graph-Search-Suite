@@ -1,0 +1,31 @@
+[build-system]
+requires = ["scikit-build-core>=0.8", "pybind11>=2.11"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "agss"
+version = "0.3.0"
+description = "Pathfinding and network analysis on real road and transit networks"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [{ name = "Adarsh Dwivedi" }]
+keywords = ["pathfinding", "graph", "routing", "dijkstra", "astar",
+            "contraction-hierarchies", "openstreetmap"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: C++",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+
+[project.urls]
+Homepage = "https://github.com/adarshcod30/Adaptive-Graph-Search-Suite"
+Demo = "https://adarshcod30.github.io/Adaptive-Graph-Search-Suite/"
+
+[tool.scikit-build]
+cmake.version = ">=3.16"
+cmake.args = ["-DAGSS_BUILD_PYTHON=ON", "-DAGSS_BUILD_TESTS=OFF", "-DAGSS_BUILD_CLI=OFF"]
+wheel.packages = ["python/agss"]

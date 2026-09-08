@@ -24,8 +24,10 @@
 #include <vector>
 
 #include "agss/algorithm.hpp"
+#include "agss/alt.hpp"
 #include "agss/analysis.hpp"
 #include "agss/contraction_hierarchy.hpp"
+#include "agss/customizable_ch.hpp"
 #include "agss/directions.hpp"
 #include "agss/graph_builder.hpp"
 #include "agss/isochrone.hpp"
@@ -33,6 +35,7 @@
 #include "agss/kdtree.hpp"
 #include "agss/kshortest.hpp"
 #include "agss/loader.hpp"
+#include "agss/time_dependent.hpp"
 #include "agss/transit.hpp"
 
 namespace {
@@ -49,6 +52,10 @@ struct Session {
     /// preprocessing amortises across queries.
     agss::ContractionHierarchy ch;
     const agss::Graph* ch_prepared_for = nullptr;
+
+    agss::CustomizableCH cch;
+    const agss::Graph* cch_prepared_for = nullptr;
+    std::unique_ptr<agss::TimeDependentModel> traffic;
 
     agss::transit::Network network;
     agss::transit::MultiModal multimodal;
@@ -269,6 +276,152 @@ char* agss_ch_query(int source, int target, int want_trace) {
     doc.trace = want_trace ? &trace : nullptr;
     agss::json::write_trace(os, doc);
     return to_js(os.str());
+}
+
+/// Customizable CH: build the metric-independent structure once, then apply a
+/// metric in milliseconds. `hour` < 0 uses the graph's own weights; otherwise
+/// it customizes for traffic at that hour of the day.
+EMSCRIPTEN_KEEPALIVE
+char* agss_cch_customize(double hour) {
+    auto& s = session();
+    if (!s.loaded) return error_json("no graph loaded");
+    const auto& g = active_graph();
+
+    double build_ms = 0.0;
+    if (!s.cch.ready() || s.cch_prepared_for != &g) {
+        agss::CustomizableCH::BuildOptions o;
+        o.budget_ms = 30000.0;
+        s.cch.build(g, o);
+        s.cch_prepared_for = &g;
+        build_ms = s.cch.stats().build_ms;
+    }
+
+    if (hour < 0) {
+        s.cch.customize();
+    } else {
+        if (!s.traffic) s.traffic = std::make_unique<agss::TimeDependentModel>(g);
+        std::vector<double> w(static_cast<std::size_t>(g.num_edges()));
+        for (agss::EdgeId e = 0; e < g.num_edges(); ++e) {
+            w[static_cast<std::size_t>(e)] = s.traffic->travel_time(e, hour * 3600.0);
+        }
+        s.cch.customize(w);
+    }
+
+    const auto& st = s.cch.stats();
+    std::ostringstream os;
+    os << "{\"ok\":true,\"builtNow\":" << (build_ms > 0 ? "true" : "false")
+       << ",\"buildMs\":" << agss::json::number(st.build_ms)
+       << ",\"customizeMs\":" << agss::json::number(st.customize_ms)
+       << ",\"chordalEdges\":" << st.chordal_edges
+       << ",\"edgeGrowth\":" << agss::json::number(st.edge_growth)
+       << ",\"hour\":" << agss::json::number(hour) << "}";
+    return to_js(os.str());
+}
+
+EMSCRIPTEN_KEEPALIVE
+char* agss_cch_query(int source, int target, int want_trace) {
+    auto& s = session();
+    if (!s.cch.ready()) return error_json("customize the hierarchy first");
+    agss::Trace trace;
+    agss::SearchOptions opts;
+    if (want_trace) {
+        trace.reserve(4096);
+        opts.trace = &trace;
+    }
+    const auto res = s.cch.query(source, target, opts);
+    std::ostringstream os;
+    agss::json::TraceDocument doc;
+    doc.result = &res;
+    doc.trace = want_trace ? &trace : nullptr;
+    agss::json::write_trace(os, doc);
+    return to_js(os.str());
+}
+
+/// Duration of the same trip departing at each hour of the day.
+EMSCRIPTEN_KEEPALIVE
+char* agss_traffic_scan(int source, int target, int samples) {
+    auto& s = session();
+    if (!s.loaded) return error_json("no graph loaded");
+    const auto& g = active_graph();
+    if (!s.traffic) s.traffic = std::make_unique<agss::TimeDependentModel>(g);
+
+    const auto scan = agss::scan_departures(*s.traffic, source, target, samples > 0 ? samples : 24);
+    std::ostringstream os;
+    os << "{\"ok\":true,\"bestDeparture\":" << agss::json::number(scan.best_departure)
+       << ",\"bestDuration\":" << agss::json::number(scan.best_duration)
+       << ",\"worstDeparture\":" << agss::json::number(scan.worst_departure)
+       << ",\"worstDuration\":" << agss::json::number(scan.worst_duration) << ",\"departures\":[";
+    for (std::size_t i = 0; i < scan.departures.size(); ++i) {
+        if (i) os << ',';
+        os << agss::json::number(scan.departures[i]);
+    }
+    os << "],\"durations\":[";
+    for (std::size_t i = 0; i < scan.durations.size(); ++i) {
+        if (i) os << ',';
+        os << agss::json::number(scan.durations[i]);
+    }
+    os << "]}";
+    return to_js(os.str());
+}
+
+/// Geometry as packed binary rather than JSON.
+///
+/// JSON is fine for a 20k-node city and fatal for a 200k-node country: the
+/// text alone runs to tens of megabytes, the ostringstream needs it twice
+/// over, and the browser then materialises half a million small objects to
+/// parse it. The national highway network failed with "memory access out of
+/// bounds" before it drew a single pixel.
+///
+/// Coordinates go out as interleaved float64 (precision matters -- float32
+/// quantises longitude to about a metre) and the edge list as int32 pairs.
+/// For 207k nodes that is 3.3 MB and 2.2 MB, read straight into typed arrays
+/// with no parsing at all.
+EMSCRIPTEN_KEEPALIVE int agss_node_count() {
+    auto& s = session();
+    return s.loaded ? active_graph().num_nodes() : 0;
+}
+
+EMSCRIPTEN_KEEPALIVE int agss_edge_count() {
+    auto& s = session();
+    return s.loaded ? active_graph().num_edges() : 0;
+}
+
+EMSCRIPTEN_KEEPALIVE int agss_is_geographic() {
+    auto& s = session();
+    return s.loaded && active_graph().coord_space() == agss::CoordSpace::Geographic ? 1 : 0;
+}
+
+/// 2 * node_count doubles, interleaved (x, y). Caller frees with agss_free.
+EMSCRIPTEN_KEEPALIVE double* agss_coords_buffer() {
+    auto& s = session();
+    if (!s.loaded) return nullptr;
+    const auto& g = active_graph();
+    const auto n = static_cast<std::size_t>(g.num_nodes());
+    auto* out = static_cast<double*>(std::malloc(n * 2 * sizeof(double)));
+    if (out == nullptr) return nullptr;
+    for (std::size_t i = 0; i < n; ++i) {
+        out[i * 2] = g.x(static_cast<agss::NodeId>(i));
+        out[i * 2 + 1] = g.y(static_cast<agss::NodeId>(i));
+    }
+    return out;
+}
+
+/// 2 * edge_count int32s, interleaved (u, v). Caller frees with agss_free.
+EMSCRIPTEN_KEEPALIVE int* agss_edges_buffer() {
+    auto& s = session();
+    if (!s.loaded) return nullptr;
+    const auto& g = active_graph();
+    auto* out =
+        static_cast<int*>(std::malloc(static_cast<std::size_t>(g.num_edges()) * 2 * sizeof(int)));
+    if (out == nullptr) return nullptr;
+    std::size_t k = 0;
+    for (agss::NodeId u = 0; u < g.num_nodes(); ++u) {
+        for (agss::EdgeId e = g.edge_begin(u); e < g.edge_end(u); ++e) {
+            out[k++] = u;
+            out[k++] = g.edge_target(e);
+        }
+    }
+    return out;
 }
 
 EMSCRIPTEN_KEEPALIVE

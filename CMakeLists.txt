@@ -14,6 +14,7 @@ option(AGSS_BUILD_TESTS "Build the test suite" ON)
 option(AGSS_BUILD_CLI   "Build the command line tool" ON)
 option(AGSS_SANITIZE    "Build with address+UB sanitizers" OFF)
 option(AGSS_WERROR      "Treat warnings as errors" OFF)
+option(AGSS_BUILD_PYTHON "Build the Python extension module" OFF)
 
 add_library(agss_core
     src/graph_builder.cpp
@@ -28,6 +29,9 @@ add_library(agss_core
     src/algorithms/global.cpp
     src/algorithms/kshortest.cpp
     src/algorithms/contraction_hierarchy.cpp
+    src/algorithms/alt.cpp
+    src/algorithms/time_dependent.cpp
+    src/algorithms/customizable_ch.cpp
     src/analysis/connectivity.cpp
     src/analysis/centrality.cpp
     src/analysis/spanning.cpp
@@ -69,6 +73,9 @@ if(AGSS_BUILD_TESTS)
         tests/test_analysis.cpp
         tests/test_features.cpp
         tests/test_ch.cpp
+        tests/test_alt.cpp
+        tests/test_time_dependent.cpp
+        tests/test_cch.cpp
     )
     target_link_libraries(agss_tests PRIVATE agss_core)
     target_include_directories(agss_tests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/third_party)
@@ -93,14 +100,30 @@ if(EMSCRIPTEN)
         "-sMODULARIZE=1"
         "-sEXPORT_NAME=createAgssEngine"
         "-sENVIRONMENT=web,worker,node"   # node so CI can smoke-test the module headlessly
-        "-sALLOW_MEMORY_GROWTH=1"          # a real city graph is tens of MB
-        "-sINITIAL_MEMORY=64MB"
+        "-sALLOW_MEMORY_GROWTH=1"
+        "-sMAXIMUM_MEMORY=2GB"            # a national network is tens of MB
+        "-sINITIAL_MEMORY=256MB"          # enough to stage a national extract without growing
         "-sSTACK_SIZE=8MB"                 # iterative algorithms still recurse in Dinic
-        "-sEXPORTED_RUNTIME_METHODS=['ccall','cwrap','UTF8ToString','stringToNewUTF8']"
-        "-sEXPORTED_FUNCTIONS=['_malloc','_free','_agss_free','_agss_load_graph','_agss_algorithms','_agss_route','_agss_graph_json','_agss_race','_agss_bench','_agss_ch_build','_agss_ch_ready','_agss_ch_query','_agss_analyze','_agss_isochrone','_agss_kpaths','_agss_directions','_agss_nearest','_agss_load_transit','_agss_build_transit','_agss_use_road_graph']"
+        # HEAP* views are needed to read the packed geometry buffers without a copy
+        # through JSON; they are not exported by default.
+        "-sEXPORTED_RUNTIME_METHODS=['ccall','cwrap','UTF8ToString','stringToNewUTF8','HEAPF64','HEAP32','HEAPU8']"
+        "-sEXPORTED_FUNCTIONS=['_malloc','_free','_agss_free','_agss_load_graph','_agss_algorithms','_agss_route','_agss_graph_json','_agss_race','_agss_bench','_agss_ch_build','_agss_ch_ready','_agss_ch_query','_agss_cch_customize','_agss_cch_query','_agss_traffic_scan','_agss_node_count','_agss_edge_count','_agss_is_geographic','_agss_coords_buffer','_agss_edges_buffer','_agss_analyze','_agss_isochrone','_agss_kpaths','_agss_directions','_agss_nearest','_agss_load_transit','_agss_build_transit','_agss_use_road_graph']"
         "-sFILESYSTEM=1"                   # in-memory only; nothing touches a host disk
         "--closure=0"
         "-O3")
+endif()
+
+# ------------------------------------------------------------------ Python
+#
+# Researchers work in Python and will not link a C++ library to try an idea,
+# so the engine is exposed there too. Built through scikit-build-core; see
+# pyproject.toml.
+if(AGSS_BUILD_PYTHON)
+    find_package(pybind11 CONFIG REQUIRED)
+    pybind11_add_module(_agss python/bindings.cpp)
+    target_link_libraries(_agss PRIVATE agss_core)
+    set_target_properties(agss_core PROPERTIES POSITION_INDEPENDENT_CODE ON)
+    install(TARGETS _agss DESTINATION agss)
 endif()
 
 install(TARGETS agss_core EXPORT agssTargets ARCHIVE DESTINATION lib)

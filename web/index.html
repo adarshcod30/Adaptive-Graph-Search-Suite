@@ -99,6 +99,20 @@
       </div>
     </div>
 
+    <div class="group accent">
+      <label>Traffic &amp; time of day</label>
+      <input id="hourSlider" type="range" min="0" max="23" value="9" aria-label="departure hour">
+      <div class="hint" id="hourInfo">Departing at <b>09:00</b></div>
+      <div class="row" style="margin-top:8px">
+        <button id="trafficBtn">Route at this hour</button>
+        <button id="scanBtn">Scan the day</button>
+      </div>
+      <div class="hint" id="trafficInfo">
+        Edge costs become travel times that vary through the day. Re-weighting uses
+        Customizable CH, which re-costs the hierarchy without rebuilding it.
+      </div>
+    </div>
+
     <div id="results"></div>
   </aside>
 

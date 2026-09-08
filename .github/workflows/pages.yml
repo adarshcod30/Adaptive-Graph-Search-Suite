@@ -42,7 +42,7 @@ jobs:
           mkdir -p site
           cp -r web/* site/
           mkdir -p site/data
-          cp -r data/maps data/transit data/railways data/cities site/data/
+          cp -r data/maps data/transit data/railways data/cities data/networks site/data/
           # In the repo the page sits in web/ with data one level up. On Pages
           # they are siblings, so retarget the single constant that says where
           # data lives, and fail loudly if that line ever moves.

@@ -25,3 +25,6 @@ __pycache__/
 .DS_Store
 web/engine/
 site/
+python/agss/_agss*.so
+*.egg-info/
+_skbuild/

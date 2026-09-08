@@ -36,6 +36,11 @@ OVERPASS = "https://overpass-api.de/api/interpreter"
 DRIVABLE = ("motorway|trunk|primary|secondary|tertiary|unclassified|residential|"
             "living_street|motorway_link|trunk_link|primary_link|secondary_link|tertiary_link")
 
+# The inter-city skeleton: expressways and national highways only. Roughly
+# 189k ways across India, which collapses to a graph small enough to ship and
+# large enough that Contraction Hierarchies genuinely earn their keep.
+MAJOR = "motorway|trunk|motorway_link|trunk_link"
+
 # south, west, north, east. Kept deliberately modest so a fetch finishes in
 # seconds; widen for a full-city extract.
 CITIES = {
@@ -59,22 +64,32 @@ def haversine(lat1, lon1, lat2, lon2):
     return 2 * EARTH_R * math.asin(math.sqrt(min(1.0, a)))
 
 
-def fetch(bbox) -> dict:
+def fetch(bbox, classes: str = DRIVABLE, country: str | None = None) -> dict:
     """Fetch via curl.
 
     urllib is avoided deliberately: several Python builds ship without a usable
     CA bundle, and curl uses the system trust store.
     """
-    s, w, n, e = bbox
-    query = f"""
-[out:json][timeout:600];
-way["highway"~"^({DRIVABLE})$"]({s},{w},{n},{e});
+    if country:
+        query = f"""
+[out:json][timeout:1800];
+area["ISO3166-1"="{country}"][admin_level=2]->.in;
+way(area.in)["highway"~"^({classes})$"];
+out body;
+node(w);
+out skel qt;
+"""
+    else:
+        s, w, n, e = bbox
+        query = f"""
+[out:json][timeout:900];
+way["highway"~"^({classes})$"]({s},{w},{n},{e});
 out body;
 node(w);
 out skel qt;
 """
     proc = subprocess.run(
-        ["curl", "-s", "--max-time", "700", "-X", "POST",
+        ["curl", "-s", "--max-time", "2400", "-X", "POST",
          "--data-urlencode", f"data={query}",
          "-H", "User-Agent: agss-city-import", OVERPASS],
         capture_output=True, text=True)
@@ -89,6 +104,9 @@ out skel qt;
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--city", choices=sorted(CITIES))
+    ap.add_argument("--highways", metavar="CC",
+                    help="fetch the expressway and national-highway skeleton for a "
+                         "country by ISO code, e.g. --highways IN")
     ap.add_argument("--bbox", help="south,west,north,east")
     ap.add_argument("--name", help="output directory name")
     ap.add_argument("--out-root", default="data/cities")
@@ -96,7 +114,14 @@ def main() -> int:
     ap.add_argument("--save-raw")
     args = ap.parse_args()
 
-    if args.city:
+    classes = DRIVABLE
+    country = None
+    if args.highways:
+        country = args.highways.upper()
+        classes = MAJOR
+        bbox = None
+        name = args.name or f"{country}_Highways"
+    elif args.city:
         s, w, n, e, default_name = CITIES[args.city]
         bbox = (s, w, n, e)
         name = args.name or default_name
@@ -104,13 +129,14 @@ def main() -> int:
         bbox = tuple(float(x) for x in args.bbox.split(","))
         name = args.name or "Custom_Area"
     else:
-        ap.error("pass --city or --bbox")
+        ap.error("pass --city, --bbox or --highways")
 
     if args.cache:
         payload = json.load(open(args.cache))
     else:
-        print(f"fetching {name} {bbox} from Overpass ...", file=sys.stderr)
-        payload = fetch(bbox)
+        target = f"country {country}" if country else str(bbox)
+        print(f"fetching {name} ({target}) from Overpass ...", file=sys.stderr)
+        payload = fetch(bbox, classes, country)
         if args.save_raw:
             json.dump(payload, open(args.save_raw, "w"))
 
@@ -190,7 +216,9 @@ def main() -> int:
             wr.writerow([remap[a], remap[b], format(d, f".{WEIGHT_DP}f")])
 
     with open(f"{out_dir}/manifest.json", "w") as fh:
-        json.dump({"name": name, "bbox": list(bbox), "source": "OpenStreetMap via Overpass",
+        json.dump({"name": name, "bbox": list(bbox) if bbox else None,
+                   "country": country, "classes": classes,
+                   "source": "OpenStreetMap via Overpass",
                    "licence": "ODbL 1.0", "nodes": len(kept), "edges": len(edges),
                    "raw_osm_nodes": len(coords), "ways": len(ways)}, fh, indent=2)
 

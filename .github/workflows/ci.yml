@@ -81,7 +81,7 @@ jobs:
           done
           # Real OSM extracts are the ones that actually matter; --geo selects
           # the great-circle metric they are measured in.
-          for city in data/cities/*/ ; do
+          for city in data/cities/*/ data/networks/*/ ; do
             echo "== $city"
             out=$(./build/bin/agss verify --graph "$city" --geo --samples 40)
             echo "$out"
@@ -149,6 +149,18 @@ jobs:
         with:
           name: wasm-engine
           path: web/engine/
+
+  python:
+    name: Python bindings
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install pybind11 scikit-build-core numpy pytest
+      - name: Build and install the extension
+        run: pip install --no-build-isolation -e .
+      - run: pytest python/tests -q
 
   format:
     name: clang-format

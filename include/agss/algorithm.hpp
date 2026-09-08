@@ -112,5 +112,6 @@ void register_uninformed(Registry& r);
 void register_weighted(Registry& r);
 void register_global(Registry& r);
 void register_contraction(Registry& r);
+void register_alt(Registry& r);
 
 }  // namespace agss

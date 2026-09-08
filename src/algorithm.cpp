@@ -29,6 +29,7 @@ Registry& Registry::instance() {
         register_weighted(reg);
         register_global(reg);
         register_contraction(reg);
+        register_alt(reg);
         return reg;
     }();
     return r;

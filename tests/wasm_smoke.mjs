@@ -38,8 +38,11 @@ check('OSM extract keeps the heuristic admissible', r.admissible === true,
       `worst ratio ${r.admissibility}`);
 
 r = call('agss_algorithms', [], []);
-check('all 11 algorithms registered', r.algorithms.length === 11,
+check('every algorithm is registered', r.algorithms.length === 12,
       r.algorithms.map(a => a.key).join(','));
+for (const key of ['dijkstra', 'astar', 'ch', 'alt', 'bidijkstra']) {
+    check(`  ${key} present`, r.algorithms.some(a => a.key === key));
+}
 
 r = call('agss_route', ['string','number','number','number','string'], ['astar', 0, 9000, 1, '']);
 check('route succeeds and emits a delta trace',
@@ -102,6 +105,45 @@ check('CH matches Dijkstra on every query',
       chChecked >= 3 && chAgree === chChecked, `${chAgree}/${chChecked} agreed`);
 check('CH expands far less of the graph', chExpanded * 5 < dijExpanded,
       `CH ${chExpanded} vs Dijkstra ${dijExpanded} (build ${chBuildMs.toFixed(0)} ms)`);
+
+// Customizable CH and the time-dependent metric, through the same boundary.
+r = call('agss_cch_customize', ['number'], [-1]);
+check('CCH builds and customizes', r.ok && r.customizeMs >= 0 && r.chordalEdges > 0,
+      JSON.stringify(r).slice(0, 140));
+const cchStatic = call('agss_cch_query', ['number', 'number', 'number'], [0, 9000, 0]);
+const dijStatic = call('agss_route', ['string', 'number', 'number', 'number', 'string'],
+                       ['dijkstra', 0, 9000, 0, '']);
+check('CCH matches Dijkstra on the graph metric',
+      cchStatic.metadata.success === dijStatic.metadata.success &&
+      (!dijStatic.metadata.success ||
+       Math.abs(cchStatic.metadata.pathCost - dijStatic.metadata.pathCost) < 1e-6),
+      `CCH ${cchStatic.metadata.pathCost} vs ${dijStatic.metadata.pathCost}`);
+
+const quiet = call('agss_cch_customize', ['number'], [3]);
+const atQuiet = call('agss_cch_query', ['number', 'number', 'number'], [0, 9000, 0]);
+const peak = call('agss_cch_customize', ['number'], [18]);
+const atPeak = call('agss_cch_query', ['number', 'number', 'number'], [0, 9000, 0]);
+check('re-customizing for traffic is cheap', quiet.ok && peak.ok && peak.customizeMs < 5000,
+      `${peak.customizeMs} ms`);
+check('rush hour costs more than the small hours',
+      atPeak.metadata.pathCost > atQuiet.metadata.pathCost,
+      `18:00 ${atPeak.metadata.pathCost} vs 03:00 ${atQuiet.metadata.pathCost}`);
+
+const scan = call('agss_traffic_scan', ['number', 'number', 'number'], [0, 9000, 24]);
+check('a day scan finds a peak and a trough',
+      scan.ok && scan.durations.length === 24 && scan.worstDuration > scan.bestDuration,
+      scan.ok ? `${(scan.bestDuration / 60).toFixed(1)}-${(scan.worstDuration / 60).toFixed(1)} min` : scan.error);
+
+// Binary geometry transfer: the path that let a 207k-node network load at all.
+const nCount = M._agss_node_count(), eCount = M._agss_edge_count();
+check('binary geometry reports the right sizes', nCount === 19110 && eCount === 48721,
+      `${nCount} nodes, ${eCount} edges`);
+const cp = M._agss_coords_buffer();
+const coords = new Float64Array(M.HEAPF64.buffer, cp, nCount * 2).slice();
+M._agss_free(cp);
+check('coordinates come back as finite lat/lon',
+      coords.length === nCount * 2 && Number.isFinite(coords[0]) &&
+      coords[0] > 70 && coords[0] < 80, `first = ${coords[0]}, ${coords[1]}`);
 
 const st = readFileSync(`${ROOT}/data/transit/stations.csv`, 'utf8');
 const lk = readFileSync(`${ROOT}/data/transit/links.csv`, 'utf8');

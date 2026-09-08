@@ -1,0 +1,12 @@
+{
+  "name": "India_Highways",
+  "bbox": null,
+  "country": "IN",
+  "classes": "motorway|trunk|motorway_link|trunk_link",
+  "source": "OpenStreetMap via Overpass",
+  "licence": "ODbL 1.0",
+  "nodes": 207610,
+  "edges": 279666,
+  "raw_osm_nodes": 2853629,
+  "ways": 188839
+}
