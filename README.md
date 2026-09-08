@@ -34,74 +34,54 @@ no install, nothing uploaded.
 
 <div align="center">
 
-**Dijkstra's wavefront crawling real Chennai streets.**
-Orange is settled, magenta is the frontier, green is the route.
+**Dijkstra's wavefront crawling real Jaipur streets.**
+Orange is settled, magenta is the live frontier, green is the route so far.
 
-<img src="docs/screenshots/dijkstra-wavefront.png" alt="Dijkstra expanding in a circular wavefront across the Chennai road network on a dark basemap" width="880">
+<img src="docs/screenshots/dijkstra-wavefront.jpg" alt="Dijkstra expanding as an orange wavefront across the Jaipur road network, with a magenta frontier along its edge and a green route" width="900">
 
 </div>
 
-### Why Contraction Hierarchies matter
-
-The same 2,108 km query from Bengaluru to Delhi, on India's national highway
-network. Both return **the identical route**. The difference is how much of the
-country each one had to look at.
-
-<table>
-<tr>
-<td width="50%" align="center"><b>Dijkstra</b><br><sub>145,527 nodes settled</sub></td>
-<td width="50%" align="center"><b>Contraction Hierarchies</b><br><sub>259 nodes settled — <b>562× fewer</b></sub></td>
-</tr>
-<tr>
-<td><img src="docs/screenshots/dijkstra-india.png" alt="Dijkstra settling almost the entire Indian highway network, shown in orange across the whole country" width="100%"></td>
-<td><img src="docs/screenshots/contraction-hierarchies.png" alt="Contraction Hierarchies settling only a faint scattering of nodes for the same route" width="100%"></td>
-</tr>
-</table>
-
-### The networks
+The shape is the algorithm. Dijkstra has no idea where the target is, so it
+settles a disc that grows outward in every direction at once and stops only
+when the target falls inside it.
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-**India: national highways** — 207,610 junctions. The road network draws the
-outline of the country.
+### It does not have to be that way
 
-<img src="docs/screenshots/india-highways.png" alt="India's national highway network rendered over a dark basemap" width="100%">
+**Contraction Hierarchies**, same engine, on India's national highway network.
+This is the longest route the network holds — 2,935 km, 3,694 hops — and the
+one where CH looks best, since its advantage grows with distance: **649 events
+against Dijkstra's 392,569**. Across 300 random queries the average is 486×
+fewer. Either way the route is exact, hop for hop and metre for metre.
+
+<img src="docs/screenshots/contraction-hierarchies.jpg" alt="India's national highway network on a dark basemap with a green route running from Delhi to the southern tip" width="100%">
 
 </td>
 <td width="50%" valign="top">
 
-**India: railways** — 69,944 track nodes and 8,857 named stations. A\* routing
-New Delhi to Chennai Egmore, 2,615 km.
+### It is not only roads
 
-<img src="docs/screenshots/india-railways.png" alt="The Indian railway network with a long-distance route highlighted in green" width="100%">
+**India's railways**, built from track geometry rather than timetables:
+69,944 track nodes and 8,857 named stations. A\* from New Delhi to Howrah
+Junction comes to **1,444 km** against roughly 1,451 on the ground.
 
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top">
-
-**Delhi, the whole NCT** — 253,748 junctions. Dijkstra leaving Indira Gandhi
-International Airport for Anand Vihar, 28.4 km east: 171,202 nodes settled in
-34.9 ms. The airport, the outer ring and the Yamuna crossings are all in the
-extract.
-
-<img src="docs/screenshots/delhi-full-network.png" alt="The full Delhi road network in blue with Dijkstra's orange wavefront expanding from the airport toward east Delhi" width="100%">
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top">
-
-**Delhi Metro over satellite imagery** — Rajiv Chowk to Millennium City Centre
-Gurugram: 21 stops, 49.5 minutes, matching the real journey.
-
-<img src="docs/screenshots/delhi-metro.jpg" alt="The Delhi Metro network drawn over satellite imagery with a routed journey in green" width="100%">
+<img src="docs/screenshots/india-railways.jpg" alt="The Indian railway network with an A-star route from New Delhi to Howrah Junction and its explored corridor in orange" width="100%">
 
 </td>
 </tr>
 </table>
+
+<div align="center">
+
+**The Delhi Metro, all 257 stations.** Rajiv Chowk to Millennium City Centre
+Gurugram: 21 stops, 49.5 minutes — the real journey takes about the same.
+
+<img src="docs/screenshots/delhi-metro.jpg" alt="The Delhi Metro network drawn over a dark basemap, stations as orange dots on blue lines, with a green routed journey" width="900">
+
+</div>
 
 ---
 
@@ -1034,7 +1014,7 @@ again reads as an algorithm problem.
 │   ├── fetch_railway_network.py  Railway track topology and stations
 │   ├── fetch_transit.py        Metros (--kinds metro) and named train services
 │   └── generate_maps.py        The one seeded synthetic grid
-├── docs/screenshots/           Demo captures used by this README
+├── docs/screenshots/           Four demo captures used by this README
 ├── data/
 │   ├── networks/               India: highways (207k nodes), railways (70k nodes)
 │   ├── cities/                 9 real OSM road networks, 32k-488k junctions
