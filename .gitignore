@@ -27,3 +27,10 @@ site/
 python/agss/_agss*.so
 *.egg-info/
 _skbuild/
+
+# local agent and editor files, never committed
+.claude/
+.claude.json
+CLAUDE.local.md
+CLAUDE.md
+AGENTS.md
