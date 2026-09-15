@@ -27,3 +27,8 @@ site/
 python/agss/_agss*.so
 *.egg-info/
 _skbuild/
+
+# secrets, build output and local noise
+.env
+.env.local
+*.log
