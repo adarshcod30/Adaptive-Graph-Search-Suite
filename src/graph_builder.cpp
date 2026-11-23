@@ -1,6 +1,7 @@
 #include "agss/graph_builder.hpp"
 
 #include <algorithm>
+#include <atomic>
 #include <cmath>
 #include <limits>
 #include <numeric>
@@ -49,8 +50,16 @@ Result<std::monostate> GraphBuilder::add_undirected(std::int64_t a, std::int64_t
     return add_edge(b, a, weight, allow_negative);
 }
 
+namespace {
+std::uint64_t next_graph_id() {
+    static std::atomic<std::uint64_t> counter{0};
+    return ++counter;  // starts at 1, so 0 is free to mean "no graph"
+}
+}  // namespace
+
 Graph GraphBuilder::build() {
     Graph g;
+    g.id_ = next_graph_id();
     const auto n = static_cast<NodeId>(external_ids_.size());
 
     g.space_ = space_;

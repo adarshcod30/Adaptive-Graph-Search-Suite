@@ -242,9 +242,9 @@ public:
 
     SearchResult run(const Graph& g, NodeId source, NodeId target,
                      const SearchOptions& opts) const override {
-        if (prepared_for_ != &g) {
+        if (prepared_id_ != g.id() || g.id() == 0) {
             index_.build(g);
-            prepared_for_ = &g;
+            prepared_id_ = g.id();
         }
         auto res = index_.query(source, target, opts);
         res.algorithm = name();
@@ -253,7 +253,7 @@ public:
 
 private:
     mutable AltIndex index_;
-    mutable const Graph* prepared_for_ = nullptr;
+    mutable std::uint64_t prepared_id_ = ~std::uint64_t{0};
 };
 
 void register_alt(Registry& r) {

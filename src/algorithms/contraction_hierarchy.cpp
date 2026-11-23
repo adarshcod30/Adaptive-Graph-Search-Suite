@@ -464,9 +464,11 @@ public:
             res.algorithm = name() + " (skipped: closures need re-preprocessing)";
             return res;
         }
-        if (prepared_for_ != &g) {
+        // Keyed on the graph's identity, not its address: a different graph
+        // can be allocated where the last one stood.
+        if (prepared_id_ != g.id() || g.id() == 0) {
             ch_.build(g);
-            prepared_for_ = &g;
+            prepared_id_ = g.id();
         }
         auto res = ch_.query(source, target, opts);
         res.algorithm = name();
@@ -477,7 +479,7 @@ public:
 
 private:
     mutable ContractionHierarchy ch_;
-    mutable const Graph* prepared_for_ = nullptr;
+    mutable std::uint64_t prepared_id_ = ~std::uint64_t{0};
 };
 
 void register_contraction(Registry& r) {

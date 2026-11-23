@@ -207,7 +207,7 @@ on disk. All committed. The demo runs from a clone with no network access.
 |---|---|
 | Engine | C++20 — `std::span`, structured bindings, CTAD; no third-party runtime dependencies |
 | Build | CMake 3.16+ (primary), plain Makefile (fallback, no CMake needed) |
-| Tests | Custom 138-line header harness; **101 C++ cases, 257,010 assertions**, plus 13 Python cases |
+| Tests | Custom 138-line header harness; **105 C++ cases, 257,188 assertions**, plus 13 Python cases |
 | CI | GitHub Actions, 8 jobs — gcc/clang/MSVC on Linux, macOS and Windows; ASan + UBSan; differential correctness; data reproducibility; WASM smoke test; Python bindings; clang-format |
 | Data | OpenStreetMap via Overpass API; Python 3.9+ import scripts (stdlib only) |
 | Browser | Emscripten → WebAssembly; JSON for results, packed binary for geometry |
@@ -1008,7 +1008,7 @@ again reads as an algorithm problem.
 │   ├── bindings.cpp            pybind11 module
 │   ├── agss/__init__.py        Package surface
 │   └── tests/                  13 binding tests
-├── tests/                      102 C++ cases across 10 files
+├── tests/                      105 C++ cases across 10 files
 ├── scripts/
 │   ├── fetch_city.py           City roads and national highways; tiles large areas
 │   ├── fetch_railway_network.py  Railway track topology and stations
@@ -1034,7 +1034,7 @@ again reads as an algorithm problem.
 make test
 ```
 
-**102 C++ cases, 257,014 assertions**, in about 11 seconds.
+**105 C++ cases, 257,188 assertions**, in about 11 seconds.
 
 ```bash
 make sanitize
@@ -1077,12 +1077,19 @@ The suite is built around properties rather than golden files:
   expanded correctly;
 - ALT's lower bound never exceeds the true distance;
 - the time-dependent model is FIFO both per edge and end-to-end along a route;
-- CCH re-customization never rebuilds and keeps answering correctly;
+- CCH re-customization never rebuilds and keeps answering correctly, and a
+  metric of the wrong length, or a graph that changed under a built index, is
+  refused instead of indexed;
+- an index (CH, ALT, CCH) is tied to the graph's identity, not its address, so
+  a new graph allocated where an old one stood never inherits its hierarchy;
 - a delta trace replays into exactly the path the search returned;
 - every generated graph keeps the straight-line heuristic admissible.
 
-Two of these were written *after* the property they check caught a real bug —
-Dial's silent rounding and ALT's degenerate landmark selection.
+Three of these were written *after* the property they check caught a real bug —
+Dial's silent rounding, ALT's degenerate landmark selection, and a cache that
+identified a graph by its address (AddressSanitizer found a heap overflow when a
+second network was loaded into the browser session; a freed graph's address can
+be reused, so an address says nothing about what is stored there).
 
 ## Running it in the browser
 

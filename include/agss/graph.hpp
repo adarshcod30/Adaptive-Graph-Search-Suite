@@ -50,6 +50,14 @@ public:
     EdgeId num_edges() const noexcept { return static_cast<EdgeId>(targets_.size()); }
     CoordSpace coord_space() const noexcept { return space_; }
 
+    /// Identity of this graph's *content*, unique within the process and
+    /// assigned by GraphBuilder::build(). Moves and copies keep it, because
+    /// the content is the same. Cached indices (CH, CCH, ALT) key on this and
+    /// not on the graph's address: a new graph can be allocated at the address
+    /// of one that was just destroyed, and an address says nothing about what
+    /// is stored there. Zero means "not built by a builder".
+    std::uint64_t id() const noexcept { return id_; }
+
     /// Contiguous view of a node's outgoing edges. No allocation, no copy.
     std::span<const NodeId> targets(NodeId u) const noexcept {
         return {targets_.data() + offsets_[u], static_cast<std::size_t>(degree(u))};
@@ -138,6 +146,7 @@ private:
     std::vector<double> xs_, ys_;  // size V
     std::vector<std::int64_t> external_ids_;
     std::unordered_map<std::int64_t, NodeId> index_;
+    std::uint64_t id_ = 0;
     CoordSpace space_ = CoordSpace::Planar;
     double min_weight_ = 1.0;
 };

@@ -167,8 +167,16 @@ void CustomizableCH::customize() {
 
 void CustomizableCH::customize(const std::vector<double>& weight_of_edge) {
     if (!built_ || graph_ == nullptr) return;
-    const auto t0 = Clock::now();
     const Graph& g = *graph_;
+    // The structure was built for one graph. If the graph behind the pointer
+    // has changed shape, or the metric has the wrong length, indexing below
+    // would run off the end of level_ or the weight vector. Refuse instead.
+    if (static_cast<std::size_t>(g.num_nodes()) != level_.size() ||
+        weight_of_edge.size() != static_cast<std::size_t>(g.num_edges())) {
+        customized_ = false;
+        return;
+    }
+    const auto t0 = Clock::now();
 
     for (auto& e : edges_) {
         e.fwd = kInf;

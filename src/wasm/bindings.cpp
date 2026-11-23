@@ -51,10 +51,10 @@ struct Session {
     /// Prepared once per graph and reused: the whole point of CH is that
     /// preprocessing amortises across queries.
     agss::ContractionHierarchy ch;
-    const agss::Graph* ch_prepared_for = nullptr;
+    std::uint64_t ch_prepared_id = 0;  // 0: nothing prepared
 
     agss::CustomizableCH cch;
-    const agss::Graph* cch_prepared_for = nullptr;
+    std::uint64_t cch_prepared_id = 0;
     std::unique_ptr<agss::TimeDependentModel> traffic;
 
     agss::transit::Network network;
@@ -103,7 +103,9 @@ char* agss_load_graph(const char* name, const char* nodes_csv, const char* edges
                       int geographic, int lenient) {
     auto& s = session();
     s.multimodal_ready = false;
-    s.ch_prepared_for = nullptr;  // the hierarchy belongs to the old graph
+    s.ch_prepared_id = 0;  // the indices and the traffic model belong to the old graph
+    s.cch_prepared_id = 0;
+    s.traffic.reset();
 
     // load_csv reads paths, so mirror its parsing over in-memory text by
     // writing to the Emscripten in-memory filesystem -- no host disk involved.
@@ -230,7 +232,7 @@ char* agss_ch_build(double budget_ms) {
     agss::ContractionHierarchy::BuildOptions opts;
     if (budget_ms > 0) opts.budget_ms = budget_ms;
     s.ch.build(g, opts);
-    s.ch_prepared_for = &g;
+    s.ch_prepared_id = g.id();
 
     const auto& st = s.ch.stats();
     std::ostringstream os;
@@ -245,7 +247,7 @@ char* agss_ch_build(double budget_ms) {
 EMSCRIPTEN_KEEPALIVE
 char* agss_ch_ready() {
     auto& s = session();
-    const bool ok = s.loaded && s.ch.ready() && s.ch_prepared_for == &active_graph();
+    const bool ok = s.loaded && s.ch.ready() && s.ch_prepared_id == active_graph().id();
     std::ostringstream os;
     os << "{\"ok\":true,\"ready\":" << (ok ? "true" : "false") << "}";
     return to_js(os.str());
@@ -258,7 +260,7 @@ char* agss_ch_query(int source, int target, int want_trace) {
     auto& s = session();
     if (!s.loaded) return error_json("no graph loaded");
     const auto& g = active_graph();
-    if (!s.ch.ready() || s.ch_prepared_for != &g) {
+    if (!s.ch.ready() || s.ch_prepared_id != g.id()) {
         return error_json("this graph has not been preprocessed yet");
     }
 
@@ -288,11 +290,11 @@ char* agss_cch_customize(double hour) {
     const auto& g = active_graph();
 
     double build_ms = 0.0;
-    if (!s.cch.ready() || s.cch_prepared_for != &g) {
+    if (!s.cch.ready() || s.cch_prepared_id != g.id()) {
         agss::CustomizableCH::BuildOptions o;
         o.budget_ms = 30000.0;
         s.cch.build(g, o);
-        s.cch_prepared_for = &g;
+        s.cch_prepared_id = g.id();
         build_ms = s.cch.stats().build_ms;
     }
 
@@ -757,6 +759,7 @@ char* agss_build_transit(const char* city, int with_roads) {
 
     s.multimodal = std::move(built.value());
     s.multimodal_ready = true;
+    s.traffic.reset();  // it was built for the previous active graph
     s.loaded = true;
 
     std::ostringstream os;
@@ -788,7 +791,9 @@ EMSCRIPTEN_KEEPALIVE
 char* agss_use_road_graph() {
     auto& s = session();
     s.multimodal_ready = false;
-    s.ch_prepared_for = nullptr;  // the hierarchy belongs to the old graph
+    s.ch_prepared_id = 0;  // the indices and the traffic model belong to the old graph
+    s.cch_prepared_id = 0;
+    s.traffic.reset();
     std::ostringstream os;
     os << "{\"ok\":true,\"nodes\":" << s.graph.num_nodes() << ",\"edges\":" << s.graph.num_edges()
        << "}";
