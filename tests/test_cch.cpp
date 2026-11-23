@@ -1,5 +1,6 @@
 // CCH must answer exactly like Dijkstra for whatever metric it was last
 // customized with, and re-customizing must be far cheaper than rebuilding.
+#include <optional>
 #include <random>
 
 #include "agss/customizable_ch.hpp"
@@ -195,4 +196,39 @@ TEST("cch", "degenerate inputs") {
     partial.build(g);
     CHECK(!partial.ready());
     CHECK(!partial.query(0, 35, {}).success);
+}
+
+TEST("cch", "a metric of the wrong length is refused, not indexed") {
+    // customize() indexes weight_of_edge by EdgeId. A short vector used to be
+    // read past its end; it must be refused, and a correct metric must recover.
+    const auto g = testing::unit_grid(6, 6);
+    CustomizableCH cch;
+    cch.build(g);
+    cch.customize();
+    CHECK(cch.ready());
+    cch.customize(std::vector<double>(static_cast<std::size_t>(g.num_edges()) - 1, 1.0));
+    CHECK(!cch.ready());
+    cch.customize(std::vector<double>(static_cast<std::size_t>(g.num_edges()) + 5, 1.0));
+    CHECK(!cch.ready());
+    cch.customize();
+    CHECK(cch.ready());
+    expect_matches(g, cch, 40, 77, "after refusing bad metrics");
+}
+
+TEST("cch", "customizing after the graph behind it was replaced is refused") {
+    // The browser keeps one session and loads a second network into the same
+    // object. A structure built for the first must not be customized against
+    // the second: level_ has the first graph's node count, and indexing it with
+    // the second graph's node ids ran off the end (found by AddressSanitizer).
+    std::optional<Graph> slot;
+    slot.emplace(testing::unit_grid(6, 6));
+    CustomizableCH cch;
+    cch.build(*slot);
+    cch.customize();
+    CHECK(cch.ready());
+    slot.reset();
+    slot.emplace(testing::unit_grid(9, 9));  // more nodes, same object
+    cch.customize();
+    CHECK(!cch.ready());
+    CHECK(!cch.query(0, 10, {}).success);
 }

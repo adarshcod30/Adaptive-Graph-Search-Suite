@@ -1,6 +1,7 @@
 // Contraction Hierarchies must agree with Dijkstra on every query. It is a
 // preprocessing technique, not an approximation: a missed witness may cost an
 // unnecessary shortcut, but never a different answer.
+#include <optional>
 #include <random>
 
 #include "agss/contraction_hierarchy.hpp"
@@ -239,4 +240,29 @@ TEST("ch", "an exhausted preprocessing budget still answers correctly") {
         seen[l] = 1;
     }
     expect_matches_dijkstra(g, ch, 120, 66, "aborted build");
+}
+
+TEST("ch", "a reused instance rebuilds when a different graph takes the same address") {
+    // The registry adapters used to remember "the graph I prepared for" as an
+    // address. Allocate a new graph where the last one stood and the stale
+    // hierarchy was served: CH answered 5 where the true cost was 35, with no
+    // error anywhere. Identity, not address, is what has to match.
+    auto chain = [](double w) {
+        GraphBuilder b;
+        for (int i = 0; i < 6; ++i) b.add_node(i, i, 0);
+        for (int i = 0; i + 1 < 6; ++i) b.add_undirected(i, i + 1, w);
+        return b.build();
+    };
+    for (const char* key : {"ch", "alt"}) {
+        auto alg = Registry::instance().create(key);
+        std::optional<Graph> slot;
+        slot.emplace(chain(1.0));
+        CHECK_NEAR(alg->run(*slot, 0, 5, {}).path_cost, 5.0, 1e-9);
+        slot.reset();
+        slot.emplace(chain(7.0));  // typically the very same address
+        const auto r = alg->run(*slot, 0, 5, {});
+        CHECK_MSG(r.success, key << " found no path on the second graph");
+        CHECK_MSG(mt::close(r.path_cost, 35.0, 1e-9),
+                  key << " answered " << r.path_cost << " on the second graph, expected 35");
+    }
 }
